@@ -220,10 +220,10 @@ function getNamespace(api: ApiDesc) {
 }
 
 function getFilename(api: ApiDesc) {
-    return _.kebabCase(api.api.replace(/^youzan\./, '')) + '.ts';
+    return _.kebabCase(api.api.replace(/^youzan\./, '')) + '.d.ts';
 }
 
-const outputFolder = '../model';
+const outputFolder = '../../model';
 
 @Injectable()
 export class YouzanApiModelInterfaceGenerateService {
@@ -272,7 +272,7 @@ export class YouzanApiModelInterfaceGenerateService {
 import { RequestService } from './request.service';
 `;
 
-        source += `import { ${imports.join(', ')} } from '../model';\n`;
+        source += `import { ${imports.join(', ')} } from '../../model';\n`;
         source += `
 /**
  * Generated at ${new Date().toISOString()}
@@ -305,10 +305,10 @@ export class GeneratedYouzanService {
 
     async generateIndex() {
         const dirs = fs.readdirSync(path.join(__dirname, outputFolder), {withFileTypes: true});
-        const re = /\.ts$/;
+        const re = /\.d\.ts$/;
         let code = '';
         for (const dir of dirs) {
-            if (dir.name === 'index.ts') {
+            if (dir.name === 'index.d.ts') {
                 continue;
             }
             if (dir.isDirectory()) {
@@ -321,7 +321,7 @@ export class GeneratedYouzanService {
                 }
             }
         }
-        fs.writeFileSync(path.join(__dirname, outputFolder, 'index.ts'), code);
+        fs.writeFileSync(path.join(__dirname, outputFolder, 'index.d.ts'), code);
     }
 
     private async getAllApiDesc() {
