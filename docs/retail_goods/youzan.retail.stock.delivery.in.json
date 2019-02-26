@@ -1,0 +1,114 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.stock.delivery/3.0.0/in"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.stock.delivery/3.0.0/in"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "biz_bill_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "单据号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "business_time",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "业务时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "备注",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "来源",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "成功时返回的入库单据号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "response",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "成功时返回的入库单据号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailStockDeliveryInParams youzanRetailStockDeliveryInParams = new YouzanRetailStockDeliveryInParams();\n\nyouzanRetailStockDeliveryInParams.setRetailSource(\"test\");\nyouzanRetailStockDeliveryInParams.setRemark(\"配送入库测试\");\nyouzanRetailStockDeliveryInParams.setBizBillNo(\"SCS180717145450550478\");\nyouzanRetailStockDeliveryInParams.setBusinessTime(\"“2018-08-04 18:00:00”\");\n\nYouzanRetailStockDeliveryIn youzanRetailStockDeliveryIn = new YouzanRetailStockDeliveryIn();\nyouzanRetailStockDeliveryIn.setAPIParams(youzanRetailStockDeliveryInParams);\nYouzanRetailStockDeliveryInResult result = client.invoke(youzanRetailStockDeliveryIn);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"retail_source\", \"test\");\ndict.Add(\"remark\", \"配送入库测试\");\ndict.Add(\"biz_bill_no\", \"SCS180717145450550478\");\ndict.Add(\"business_time\", \"“2018-08-04 18:00:00”\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.stock.delivery.in\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.stock.delivery.in'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'retail_source' => 'test',\n    'remark' => '配送入库测试',\n    'biz_bill_no' => 'SCS180717145450550478',\n    'business_time' => '“2018-08-04 18:00:00”',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['retail_source']=\"test\"\nparams['remark']=\"配送入库测试\"\nparams['biz_bill_no']=\"SCS180717145450550478\"\nparams['business_time']=\"“2018-08-04 18:00:00”\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.stock.delivery.in', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['retail_source']=\"test\";\nparams['remark']=\"配送入库测试\";\nparams['biz_bill_no']=\"SCS180717145450550478\";\nparams['business_time']=\"“2018-08-04 18:00:00”\";\n\n\nvar promise = YZClient.invoke('youzan.retail.stock.delivery.in', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":\"SRK180805183225346436\"}",
+    "errorResponseDemo": null
+  },
+  "name": "in",
+  "ids": [
+    10306
+  ],
+  "scenarios": "配送单入库操作",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "配送单入库操作"
+}

@@ -1,0 +1,521 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.customer/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.customer/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "yz_uid",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "会员id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "birthday",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "生日，例如1989-12-21",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "birthday",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "生日，例如1989-12-21",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "gender",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "性别\n0 未知\n1 男\n2 女",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "gender",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "性别\n0 未知\n1 男\n2 女",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "member_no",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "会员编号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "member_no",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "会员编号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "level_alias",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "等级别名",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "level_alias",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "等级别名",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "created_at",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "创建时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "created_at",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "创建时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "备注",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "remark",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "备注",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "belong_dept_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "附属门店id。如果是0 则表示不属于任何门店",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "belong_dept_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "附属门店id。如果是0 则表示不属于任何门店",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "kdt_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "店铺id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "kdt_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "店铺id",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "updated_at",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "更新时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "updated_at",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "更新时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "member",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "是否是会员。1表示是会员",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "member",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "是否是会员。1表示是会员",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "customer_source",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "来源id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "customer_source",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "来源id",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "level",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "等级id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "level",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "等级id",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "area_code",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "地区编码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "area_code",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "地区编码",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "手机号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "mobile",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "手机号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "memo_name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "会员备注姓名，商家对会员的备注名称。例如张总",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "memo_name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "会员备注姓名，商家对会员的备注名称。例如张总",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "consultant_ids",
+        "type": "Number[]",
+        "isRequired": "否",
+        "desc": "营销顾问id列表",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "consultant_ids",
+          "type": "Number[]",
+          "isNeed": "true",
+          "desc": "营销顾问id列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "avatar",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "头像url",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "avatar",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "头像url",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "member_name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "会员名称，例如张三",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "member_name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "会员名称，例如张三",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "yz_uid",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "会员id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "yz_uid",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "会员id",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "contact_number",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "联系电话",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "contact_number",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "联系电话",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "level_name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "等级名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "level_name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "等级名称",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "wx_account",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "微信账号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "wx_account",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "微信账号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "会员名称。买家自己写的名字，例如如花",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "会员名称。买家自己写的名字，例如如花",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "growth",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "成长值",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "growth",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "成长值",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "source_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "用户来源id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "source_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "用户来源id",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "customer_source_name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "来源名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "customer_source_name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "来源名称",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\n    \"response\": {\n        \"birthday\": \"2018-08-10\", \n        \"gender\": 0, \n        \"member_no\": \"47396555\", \n        \"level_alias\": \"fd8pft4piwwb35\", \n        \"created_at\": 1533350542000, \n        \"remark\": \"flkigj\", \n        \"belong_dept_id\": 31042526, \n        \"kdt_id\": 40328097, \n        \"updated_at\": 1533361860000, \n        \"member\": 1, \n        \"customer_source\": 700, \n        \"customer_source_name\": \"wwww\", \n        \"level\": 2, \n        \"area_code\": 0, \n        \"mobile\": \"132****3456\", \n        \"memo_name\": \"eeeee\", \n        \"consultant_ids\": [ ], \n        \"avatar\": \"\", \n        \"member_name\": \"wwww1\", \n        \"yz_uid\": 913614332, \n        \"contact_number\": \"132****3456\", \n        \"level_name\": \"123\", \n        \"wx_account\": \"qaw\",\n        \"name\": \"wwww\", \n        \"growth\": 111, \n        \"source_id\": 0\n    }\n}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"票据无效,请重新登录\",\"code\":230101003}}"
+  },
+  "name": "get",
+  "ids": [
+    10324
+  ],
+  "scenarios": "获取某个会员的基础信息",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "获取某个会员的基础信息"
+}

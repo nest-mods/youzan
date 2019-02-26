@@ -1,0 +1,262 @@
+{
+  "name": "get",
+  "ids": [
+    8487
+  ],
+  "scenarios": "查询用户积分以及三方积分变更记录  mobile/fans_id/open_user_id 三选一传入",
+  "3.0.1": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.crm.customer.points.changelog/3.0.1/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.crm.customer.points.changelog/3.0.1/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "app_id",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商家签名模式调用接口时的app_id, 若无则无需填写。",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "end_date",
+        "type": "String",
+        "example": "",
+        "defaultValue": "date('YmdHis', strtotime('+1day'))",
+        "isRequired": "否",
+        "desc": "结束时间（以start_date开始7天内的某个时刻）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fans_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "粉丝id\nmobile/fans_id/open_user_id 三选一传入",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fans_type",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "粉丝类型（自有粉丝: fans_type = 1）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "用户手机号\nmobile/fans_id/open_user_id 三选一传入",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "open_user_id",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "三方用户ID \nmobile/fans_id/open_user_id 三选一传入",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "页码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "分页大小",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "start_date",
+        "type": "String",
+        "example": "",
+        "defaultValue": "date('YmdHis', strtotime('-7day'))",
+        "isRequired": "否",
+        "desc": "起始时间（30天内的某个时刻, 默认取7天内的记录）例如20170821080808",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "total_results",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "总记录条数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "total_results",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "总记录条数",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "total_points",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "用户总积分",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "total_points",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "用户总积分",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "details",
+        "type": "UserPointsChangeLogDTO[]",
+        "isRequired": "否",
+        "desc": "积分变动记录",
+        "isStruct": true,
+        "structUrl": "/web/meta/UserPointsChangeLogDTO",
+        "struct": {
+          "name": "details",
+          "type": "UserPointsChangeLogDTO[]",
+          "isNeed": "true",
+          "desc": "积分变动记录",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "amount",
+              "type": "String",
+              "isNeed": null,
+              "desc": "积分值（负数为扣积分）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "total",
+              "type": "String",
+              "isNeed": null,
+              "desc": "操作之后的最新积分数值",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "description",
+              "type": "String",
+              "isNeed": null,
+              "desc": "描述",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created_time",
+              "type": "String",
+              "isNeed": null,
+              "desc": "创建时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanCrmCustomerPointsChangelogGetParams youzanCrmCustomerPointsChangelogGetParams = new YouzanCrmCustomerPointsChangelogGetParams();\n\nyouzanCrmCustomerPointsChangelogGetParams.setMobile(\"18768927634\");\n\nYouzanCrmCustomerPointsChangelogGet youzanCrmCustomerPointsChangelogGet = new YouzanCrmCustomerPointsChangelogGet();\nyouzanCrmCustomerPointsChangelogGet.setAPIParams(youzanCrmCustomerPointsChangelogGetParams);\nYouzanCrmCustomerPointsChangelogGetResult result = client.invoke(youzanCrmCustomerPointsChangelogGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"mobile\", \"18768927634\");\n\n\nvar result = yzClient.Invoke(\"youzan.crm.customer.points.changelog.get\", \"3.0.1\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['mobile']=\"18768927634\"\n\nfiles=[]\n\nprint client.invoke('youzan.crm.customer.points.changelog.get', '3.0.1', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['mobile']=\"18768927634\";\n\n\nvar promise = YZClient.invoke('youzan.crm.customer.points.changelog.get', '3.0.1', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.crm.customer.points.changelog.get'; //要调用的api名称\n$api_version = '3.0.1'; //要调用的api版本号\n\n$my_params = [\n    'mobile' => '18768927634',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "141500101",
+        "errorDesc": "非法参数或缺少参数",
+        "solution": "根据message提示信息进行修改"
+      },
+      {
+        "errorCode": "141503101",
+        "errorDesc": "不存在该手机号会员",
+        "solution": "根据message提示信息进行修改"
+      },
+      {
+        "errorCode": "141503102",
+        "errorDesc": "不存在该fansId",
+        "solution": "根据message提示信息进行修改"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"total_points\":\"117\",\"details\":[],\"total_results\":\"0\"}}",
+    "errorResponseDemo": "{\"error_response\":{\"code\":141500101,\"message\":\"日期超出可选范围\"}}"
+  },
+  "version": [
+    "3.0.1"
+  ],
+  "desc": "查询用户积分以及三方积分变更记录"
+}

@@ -1,0 +1,528 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.item/3.0.0/update"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.item/3.0.0/update"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "auto_listing_time",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "开始出售时间。默认0，设置为0 立即出售",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "buy_quota",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "每人限购多少件。0代表无限购，默认为0",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "cid",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品分类的叶子类目id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "delivery_template_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "运费模版id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "desc",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品描述。字数要大于5个字符，小于25000个字符 ，受违禁词控制",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "etd_days",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "付款成功 后发货天数, 默认0",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "etd_end",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "预计发货结束时间, 字符串格式的时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "etd_start",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "预计发货开始时间, 字符串格式的时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "etd_type",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "预计发货结束时间, 字符串格式的时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "hide_stock",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否隐藏商品库存。在商品展示时不显示商品的库存，默认0 显示库存，设置为1 不显示库存",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "hotel_extra",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "酒店扩展信息，按以下格式：\n{\n\"service_tel_code\":\"0571\",//服务电话区号\n\"service_tel\":\"4790043\"//服务电话\n}",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "image_ids",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "图片id列表，用逗号分隔。可以通过 youzan.materials.storage.platform.img.upload 上传图片接口去上传图片后获取图片id 。",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "is_display",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否上架商品。默认1 上架商品，设置为0 不上架商品，放入仓库",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "is_used",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否为二手商品",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "item_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "item_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品货号（商家为商品设置的外部编号）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "item_sku_extends",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品sku扩展信息，组装成一个JSON,与sku_stocks参数匹配。如上面传入的sku_stocks，则s1为颜色对应的vid，传入一定要按照这个格式\n     [\n     {\n     \"cost_price\":2000, //成本价\n     \"s1\":1217,规格层级1对应的规格属性ID\n     \"s2\":1367,\n     \"s3\":303435,\n     \"s4\":0,\n     \"s5\":0\n     },\n     {\n     \"cost_price\":2000,\n     \"s1\":1217,\n     \"s2\":1367,\n     \"s3\":6356,\n     \"s4\":0,\n     \"s5\":0\n     }\n     ]",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "item_weight",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品重量，没有SKU时用",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "join_level_discount",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否参加会员折扣。默认1，设置为1 参加会员折扣",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "messages",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品留言",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "num",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商家自定义的序号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "origin_price",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "显示在“原价”一栏中的信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "post_fee",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "运费 ",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "pre_sale",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否预售",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "pre_sale_end",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "预售结束时间, 字符串格式的时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "price",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "价格，单位分",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "purchase_right",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否设置商品购买权限",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "quantity",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "总库存",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "remove_image_ids",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "要删除的商品图片id列表，英文逗号分隔，格式如\"1,2\"",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sell_point",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品卖点信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_images",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "SKU图片，仅支持第一级规格，\n参数一定要与sku_stocks参数匹配，\n如sku_stocks参数是这样的\n[ { \"price\":10000, \"quantity\":100, \"item_no\":\"MOYU-1\", \"skus\":[ { \"k\":\"颜色\", \"v\":\"绿色\", }, { \"k\":\"尺寸\", \"v\":\"l\", }, { \"k\":\"内存\", \"v\":\"1024G\", } ] }, { \"price\":10000, \"quantity\":100, \"item_no\":\"MOYU-2\",\"skus\":[ { \"k\":\"颜色\", \"v\":\"绿色\", }, { \"k\":\"尺寸\", \"v\":\"l\", }, { \"k\":\"内存\", \"v\":\"16G\", } ] } ]\n颜色就是第一级规格。它下面的规格只有“绿色”这一项，sku_images应该与之一一对应，如下\n[{\"v\":\"绿色\",\"img_url\":\"www.youzan.com\"}]\n请务必按此格式传参数，不然校验通不过，无法新增商品\n",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_stocks",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "新接口重新组装成一个大JSON，传入一定要按照这个格式\n     [\n     {\n     \"price\":10000,\n     \"quantity\":100,\n      \"item_no\":\"ATC-002\",\n     \"skus\":[\n     {\n     \"k\":\"颜色\",\n     \"kid\":1,\n     \"v\":\"绿色\",\n     \"vid\":1217\n     },\n     {\n     \"k\":\"尺寸\",\n     \"kid\":2,\n     \"v\":\"l\",\n     \"vid\":1367\n     },\n     {\n     \"k\":\"内存\",\n     \"kid\":41,\n     \"v\":\"1024G\",\n     \"vid\":303435\n     }\n     ]\n     },\n     {\n     \"price\":10000,\n     \"quantity\":100,\n     \"item_no\":\"ATC-002\",\n     \"skus\":[\n     {\n     \"k\":\"颜色\",\n     \"kid\":1,\n     \"v\":\"绿色\",\n     \"vid\":1217\n     },\n     {\n     \"k\":\"尺寸\",\n     \"kid\":2,\n     \"v\":\"l\",\n     \"vid\":1367\n     },\n     {\n     \"k\":\"内存\",\n     \"kid\":41,\n     \"v\":\"16G\",\n     \"vid\":6356\n     }\n     ]\n     }\n     ]\n注意：sku_stocks数量=规格1数量 * 规格2数量 * 规格3数量",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_weight",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "带有SKU时用\n按如下格式\n    100,200\n并且和SKU对应",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "standard",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否标品，true表示是，false表示否",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tag_ids",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "分组列表，字符串类型，分组id以逗号分割，默认只允许传入店铺下其他以及列表中隐藏分组",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "template_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品页模板",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "title",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品标题。不能超过100字，受违禁词控制",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "ump_level",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "允许购买的粉丝等级，用逗号分隔",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "ump_tags",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "允许购买的粉丝标签，用,号分隔",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "virtual_extra",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "虚拟信息扩展信息，一定要按如下JSON格式，否则校验不通过\n{\n\t\"item_id\":122111,\n\t\"item_validity_start\":2322222,//虚拟商品有效期开始时间, 1970-01-01 开始的秒数,留空表示长期有效\n\t\"item_validity_end\":2322222,//虚拟商品有效期结束时间,1970-01-01 开始的秒数,留空表示长期有效\n\t\"effective_type\":1,//电子凭证生效类型，0 立即生效， 1 自定义推迟时间， 2 隔天生效\n\t\"effective_delay_hours\":1,//电子凭证自定义推迟时间\n\t\"holidays_available\":true//节假日是否可用\n}",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "item_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "商品ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "item_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "商品ID",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "操作是否成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "操作是否成功",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanItemUpdateParams youzanItemUpdateParams = new YouzanItemUpdateParams();\n\nyouzanItemUpdateParams.setTitle(\"更新操作增加成本价测试删除规格\");\nyouzanItemUpdateParams.setPrice(9999L);\nyouzanItemUpdateParams.setItemId(451087438L);\nyouzanItemUpdateParams.setNum(44L);\nyouzanItemUpdateParams.setDesc(\"测试测试测试\");\nyouzanItemUpdateParams.setSellPoint(\"test\");\nyouzanItemUpdateParams.setItemSkuExtends(\"[{\"cost_price\":900,\"s1\": 0,\"s2\": 0,\"s3\":0,\"s4\":0,\"s5\":0}]\");\nyouzanItemUpdateParams.setSkuStocks(\"[]\");\nyouzanItemUpdateParams.setQuantity(21L);\n\nYouzanItemUpdate youzanItemUpdate = new YouzanItemUpdate();\nyouzanItemUpdate.setAPIParams(youzanItemUpdateParams);\nYouzanItemUpdateResult result = client.invoke(youzanItemUpdate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"title\", \"更新操作增加成本价测试删除规格\");\ndict.Add(\"price\", 9999);\ndict.Add(\"item_id\", 451087438);\ndict.Add(\"num\", 44);\ndict.Add(\"desc\", \"测试测试测试\");\ndict.Add(\"sell_point\", \"test\");\ndict.Add(\"item_sku_extends\", \"[{\"cost_price\":900,\"s1\": 0,\"s2\": 0,\"s3\":0,\"s4\":0,\"s5\":0}]\");\ndict.Add(\"sku_stocks\", \"[]\");\ndict.Add(\"quantity\", 21);\n\n\nvar result = yzClient.Invoke(\"youzan.item.update\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['title']=\"更新操作增加成本价测试删除规格\"\nparams['price']=9999\nparams['item_id']=451087438\nparams['num']=44\nparams['desc']=\"测试测试测试\"\nparams['sell_point']=\"test\"\nparams['item_sku_extends']=\"[{\"cost_price\":900,\"s1\": 0,\"s2\": 0,\"s3\":0,\"s4\":0,\"s5\":0}]\"\nparams['sku_stocks']=\"[]\"\nparams['quantity']=21\n\nfiles=[]\n\nprint client.invoke('youzan.item.update', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['title']=\"更新操作增加成本价测试删除规格\";\nparams['price']=9999;\nparams['item_id']=451087438;\nparams['num']=44;\nparams['desc']=\"测试测试测试\";\nparams['sell_point']=\"test\";\nparams['item_sku_extends']=\"[{\"cost_price\":900,\"s1\": 0,\"s2\": 0,\"s3\":0,\"s4\":0,\"s5\":0}]\";\nparams['sku_stocks']=\"[]\";\nparams['quantity']=21;\n\n\nvar promise = YZClient.invoke('youzan.item.update', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.item.update'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'title' => '更新操作增加成本价测试删除规格',\n    'price' => '9999',\n    'item_id' => '451087438',\n    'num' => '44',\n    'desc' => '测试测试测试',\n    'sell_point' => 'test',\n    'item_sku_extends' => '[{\"cost_price\":900,\"s1\": 0,\"s2\": 0,\"s3\":0,\"s4\":0,\"s5\":0}]',\n    'sku_stocks' => '[]',\n    'quantity' => '21',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"item_id\":451087438,\"is_success\":true}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"参数不正确: sku扩展参数错误\",\"code\":121010100}}"
+  },
+  "name": "update",
+  "ids": [
+    7989
+  ],
+  "scenarios": "更新商品信息",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "更新商品"
+}

@@ -1,0 +1,231 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.dept.available/3.0.0/query"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.dept.available/3.0.0/query"
+      }
+    ],
+    "requestParams": [],
+    "responseParams": [
+      {
+        "name": "depts",
+        "type": "MeiDeptInfo[]",
+        "isRequired": "否",
+        "desc": "门店列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiDeptInfo",
+        "struct": {
+          "name": "depts",
+          "type": "MeiDeptInfo[]",
+          "isNeed": "true",
+          "desc": "门店列表",
+          "defaultValue": null,
+          "example": "[{\"role_name\":\"店长\",\"kdt_id\":4032897,\"role_id\":3,\"dept_name\":\"红枫叶\",\"logo\":\"http://img.yzcdn.cn/upload_files/2018/01/22/Fp0D9eJJO5FyQZz-SQ_I7u-xcLm.jpg\",\"dept_id\":3040434,\"shop_name\":\"枫叶\",\"shop_address\":{\"detailed_address\":\"广东省深圳市南山区粤海街道北京银行(软件园社区支行)深圳市软件产业基地\",\"province\":\"广东省\",\"city\":\"广东省\",\"area_code\":\"440305\",\"district\":\"南山区\",\"latitude\":12.523826,\"longitude\":13.935416},\"status\":1}]",
+          "isStruct": true,
+          "children": [
+            {
+              "name": "dept_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "门店名字",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "kdt_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "店铺ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "role_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "角色ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "dept_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "门店ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "role_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "角色名字",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "logo",
+              "type": "String",
+              "isNeed": null,
+              "desc": "门店logo",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "shop_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "店铺名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "status",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "店铺状态",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "shop_address",
+              "type": "mei_shop_address",
+              "isNeed": null,
+              "desc": "店铺地址",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "detailed_address",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "详细地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "province",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "省份",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "city",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "城市",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "area_code",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "区域编码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "district",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "区",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "latitude",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "维度",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "longitude",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "精度",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanMeiDeptAvailableQueryParams youzanMeiDeptAvailableQueryParams = new YouzanMeiDeptAvailableQueryParams();\n\n\nYouzanMeiDeptAvailableQuery youzanMeiDeptAvailableQuery = new YouzanMeiDeptAvailableQuery();\nyouzanMeiDeptAvailableQuery.setAPIParams(youzanMeiDeptAvailableQueryParams);\nYouzanMeiDeptAvailableQueryResult result = client.invoke(youzanMeiDeptAvailableQuery);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\n\n\nvar result = yzClient.Invoke(\"youzan.mei.dept.available.query\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\n\nfiles=[]\n\nprint client.invoke('youzan.mei.dept.available.query', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\n\n\nvar promise = YZClient.invoke('youzan.mei.dept.available.query', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.mei.dept.available.query'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\n    \"response\": [\n        {\n            \"role_name\": \"店长\", \n            \"kdt_id\": 4032897, \n            \"role_id\": 3, \n            \"dept_name\": \"红枫叶\", \n            \"logo\": \"http://img.yzcdn.cn/upload_files/2018/01/22/Fp0D9eJJO5FyQZz-SQ_I7u-xcLm.jpg\", \n            \"dept_id\": 3040434, \n            \"shop_name\": \"枫叶\", \n            \"shop_address\": {\n                \"detailed_address\": \"广东省深圳市南山区粤海街道北京银行(软件园社区支行)深圳市软件产业基地\", \n                \"province\": \"广东省\", \n                \"city\": \"广东省\", \n                \"area_code\": \"440305\", \n                \"district\": \"南山区\", \n                \"latitude\": 12.523826, \n                \"longitude\": 13.935416\n            }, \n            \"status\": 1\n        }\n    ]\n}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"参数 token 无效\",\"code\":40010,\"sub_msg\":\"token无效，该token不存在或已过期\",\"sub_code\":10000,\"sub_data\":\"\"}}"
+  },
+  "name": "query",
+  "ids": [
+    10145
+  ],
+  "scenarios": "查询可访问的店铺",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "查询可访问的店铺"
+}

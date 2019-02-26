@@ -1,0 +1,103 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.logistics.online/3.0.0/delay"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.logistics.online/3.0.0/delay"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "delay_issue",
+        "type": "Number",
+        "example": "1",
+        "defaultValue": "1",
+        "isRequired": "否",
+        "desc": "延期数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "issue",
+        "type": "Number",
+        "example": "1",
+        "defaultValue": "0",
+        "isRequired": "是",
+        "desc": "待配送期次",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tid",
+        "type": "String",
+        "example": "'E123456'",
+        "defaultValue": "''",
+        "isRequired": "是",
+        "desc": "交易编号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "操作是否成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "操作是否成功",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanLogisticsOnlineDelayParams youzanLogisticsOnlineDelayParams = new YouzanLogisticsOnlineDelayParams();\n\nyouzanLogisticsOnlineDelayParams.setIssue(1L);\nyouzanLogisticsOnlineDelayParams.setTid(\"E20180816145458037600013\");\nyouzanLogisticsOnlineDelayParams.setDelayIssue(3L);\n\nYouzanLogisticsOnlineDelay youzanLogisticsOnlineDelay = new YouzanLogisticsOnlineDelay();\nyouzanLogisticsOnlineDelay.setAPIParams(youzanLogisticsOnlineDelayParams);\nYouzanLogisticsOnlineDelayResult result = client.invoke(youzanLogisticsOnlineDelay);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"issue\", 1);\ndict.Add(\"tid\", \"E20180816145458037600013\");\ndict.Add(\"delay_issue\", 3);\n\n\nvar result = yzClient.Invoke(\"youzan.logistics.online.delay\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.logistics.online.delay'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'issue' => '1',\n    'tid' => 'E20180816145458037600013',\n    'delay_issue' => '3',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['issue']=1\nparams['tid']=\"E20180816145458037600013\"\nparams['delay_issue']=3\n\nfiles=[]\n\nprint client.invoke('youzan.logistics.online.delay', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['issue']=1;\nparams['tid']=\"E20180816145458037600013\";\nparams['delay_issue']=3;\n\n\nvar promise = YZClient.invoke('youzan.logistics.online.delay', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "\"response\": {\n   \"is_success\": true\n}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"因周期购升级，顺延请在PC端操作\",\"code\":50000}}"
+  },
+  "name": "delay",
+  "ids": [
+    8200
+  ],
+  "scenarios": "商家因为某种原因未能按照预定送达时间发货时，使用该接口可以顺延预定送达时间到下一个配送周期。",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "周期购发货顺延"
+}

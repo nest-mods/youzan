@@ -1,0 +1,253 @@
+{
+  "name": "search",
+  "ids": [
+    10948
+  ],
+  "scenarios": "查询限时折扣活动列表，带分页",
+  "1.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.ump.limitdiscount/1.0.0/search"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.ump.limitdiscount/1.0.0/search"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "page_no",
+        "type": "Number",
+        "example": "1",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "页码，最大翻页限制：4000",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "10",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "每页条数，最大限制：200",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "status",
+        "type": "Number",
+        "example": "0",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "活动状态，0: 所有，1: 未开始，2: 进行中，3: 已结束",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "total",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "总条数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "total",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "总条数",
+          "defaultValue": null,
+          "example": "",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "items",
+        "type": "BriefTimeLimitedDiscount[]",
+        "isRequired": "否",
+        "desc": "活动信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/BriefTimeLimitedDiscount",
+        "struct": {
+          "name": "items",
+          "type": "BriefTimeLimitedDiscount[]",
+          "isNeed": "true",
+          "desc": "活动信息",
+          "defaultValue": null,
+          "example": "",
+          "isStruct": true,
+          "children": [
+            {
+              "name": "id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "活动id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "活动名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "start_at",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "活动开始时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "end_at",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "活动结束时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "valid",
+              "type": "Boolean",
+              "isNeed": null,
+              "desc": "是否有效；true:有效；false:无效",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "desc",
+              "type": "String",
+              "isNeed": null,
+              "desc": "活动标签",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "create_at",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "创建时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "update_at",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "编辑时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "period",
+              "type": "PeriodDTO",
+              "isNeed": null,
+              "desc": "限时折扣周期类型",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "type",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "重复类型；每天:daily; 每周:weekly; 每月:monthly；",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "days",
+                  "type": "Number[]",
+                  "isNeed": null,
+                  "desc": "按周、月重复时有值，按月时1-31，按周时0-6，周日是0",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "start_at",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "开始时间，格式：HH:mm",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "end_at",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "结束时间，格式：HH:mm",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanUmpLimitdiscountSearchParams youzanUmpLimitdiscountSearchParams = new YouzanUmpLimitdiscountSearchParams();\n\nyouzanUmpLimitdiscountSearchParams.setPageNo(1L);\nyouzanUmpLimitdiscountSearchParams.setPageSize(2L);\nyouzanUmpLimitdiscountSearchParams.setStatus(0L);\n\nYouzanUmpLimitdiscountSearch youzanUmpLimitdiscountSearch = new YouzanUmpLimitdiscountSearch();\nyouzanUmpLimitdiscountSearch.setAPIParams(youzanUmpLimitdiscountSearchParams);\nYouzanUmpLimitdiscountSearchResult result = client.invoke(youzanUmpLimitdiscountSearch);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"page_no\", 1);\ndict.Add(\"page_size\", 2);\ndict.Add(\"status\", 0);\n\n\nvar result = yzClient.Invoke(\"youzan.ump.limitdiscount.search\", \"1.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['page_no']=1\nparams['page_size']=2\nparams['status']=0\n\nfiles=[]\n\nprint client.invoke('youzan.ump.limitdiscount.search', '1.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['page_no']=1;\nparams['page_size']=2;\nparams['status']=0;\n\n\nvar promise = YZClient.invoke('youzan.ump.limitdiscount.search', '1.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.ump.limitdiscount.search'; //要调用的api名称\n$api_version = '1.0.0'; //要调用的api版本号\n\n$my_params = [\n    'page_no' => '1',\n    'page_size' => '2',\n    'status' => '0',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"total\":2,\"items\":[{\"valid\":true,\"end_at\":1546237560000,\"updated_at\":1542615590000,\"name\":\"啊\",\"created_at\":1542608818000,\"id\":2200106,\"start_at\":1542701880000,\"desc\":\"限时折扣\"},{\"valid\":true,\"end_at\":1548917220000,\"period\":{\"end_at\":\"23:59\",\"days\":[0,1,2,3],\"type\":\"weekly\",\"start_at\":\"00:00\"},\"updated_at\":1542703762000,\"name\":\"fd测试核心链路\",\"created_at\":1529995694000,\"id\":2065149,\"start_at\":1536930300000,\"desc\":\"限时折扣\"}]}}",
+    "errorResponseDemo": null
+  },
+  "version": [
+    "1.0.0"
+  ],
+  "desc": "查询限时折扣活动列表"
+}

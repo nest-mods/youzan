@@ -1,0 +1,342 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.product.spu/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.product.spu/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "bar_codes",
+        "type": "String[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "更多编码(最多10个编码，仅限英文字符与数据组合)",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "category_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品所属分类id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "default_vendor_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "默认供应商id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "last_cost_price",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "成本价（单店版使用）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "photo_url",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "图片地址 \n[{\"url\":\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\"}]",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_price",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "建议零售价 无规格商品时传输\n最大为9999999元\n最小为0.01元",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "调用来源（例如：OPEN-XXX）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "skus",
+        "type": "SkuSaveRequest[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "sku定义",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/SkuSaveRequest",
+        "struct": {
+          "name": "SkuSaveRequest[]",
+          "type": "SkuSaveRequest[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "bar_codes",
+              "type": "String[]",
+              "isStruct": false,
+              "desc": "更多编码",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "delivery_price",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "配送价 ",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "last_cost_price",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "成本价（单店版生效）",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "retail_price",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "建议零售价 建议零售价最大为9999999元 建议零售价最小为0.01元",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": " skuId    更新时规格组成没有变化传输",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_no",
+              "type": "String",
+              "isStruct": false,
+              "desc": "商品编码",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "specs",
+              "type": "SpecKeyValue[]",
+              "isStruct": true,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": [
+                {
+                  "name": "k",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "规格属性名称",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "kId",
+                  "type": "Number",
+                  "isStruct": false,
+                  "desc": "规格属性id",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "v",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "规格值名称",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "vId",
+                  "type": "Number",
+                  "isStruct": false,
+                  "desc": "规格值id",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "stock_num",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "初始库存（单店版生效）",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "spec_define_tuple",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "规格定义组\n[{\"key\":{\"k\":\"颜色\",\"kId\":1},\"values\":[{\"v\":\"蓝色 \",\"vId\":3},{\"v\":\"红色 \",\"vId\":10}]}]",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "specifications",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "规格型号（规格最多100个字）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "spu_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品编码（最多20个字符，仅限英文字符与数据组合。如果为空，系统自动生成）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "stock_num",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "初始库存（单店版使用,初始库存量最大为100000）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "unit",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "单位，如：克、千克",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "result",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "保存成功的商品库商品spuId",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "result",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "保存成功的商品库商品spuId",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailProductSpuCreateParams youzanRetailProductSpuCreateParams = new YouzanRetailProductSpuCreateParams();\n\nyouzanRetailProductSpuCreateParams.setUnit(\"件\");\nyouzanRetailProductSpuCreateParams.setSpecDefineTuple(\"[{\"key\":{\"k\":\"颜色\",\"kId\":1},\"values\":[{\"v\":\"绿色\",\"vId\":247},{\"v\":\"蓝色\",\"vId\":3}]}]\");\nyouzanRetailProductSpuCreateParams.setSkus(\"[{\"specs\":[{\"k\":\"颜色\",\"kId\":1,\"v\":\"绿色\",\"vId\":247}],\"sku_no\":\"\",\"bar_codes\":[],\"retail_price\":1200,\"stock_num\":12000,\"last_cost_price\":1200},{\"specs\":[{\"k\":\"颜色\",\"kId\":1,\"v\":\"蓝色\",\"vId\":3}],\"sku_no\":\"\",\"bar_codes\":[],\"retail_price\":1200,\"stock_num\":12000,\"last_cost_price\":1200}]\");\nyouzanRetailProductSpuCreateParams.setPhotoUrl(\"[{\"url\":\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\"}]\");\nyouzanRetailProductSpuCreateParams.setName(\"测试商品库商品创建\");\nyouzanRetailProductSpuCreateParams.setCategoryId(302980L);\n\nYouzanRetailProductSpuCreate youzanRetailProductSpuCreate = new YouzanRetailProductSpuCreate();\nyouzanRetailProductSpuCreate.setAPIParams(youzanRetailProductSpuCreateParams);\nYouzanRetailProductSpuCreateResult result = client.invoke(youzanRetailProductSpuCreate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"unit\", \"件\");\ndict.Add(\"spec_define_tuple\", \"[{\"key\":{\"k\":\"颜色\",\"kId\":1},\"values\":[{\"v\":\"绿色\",\"vId\":247},{\"v\":\"蓝色\",\"vId\":3}]}]\");\ndict.Add(\"skus\", \"[{\"specs\":[{\"k\":\"颜色\",\"kId\":1,\"v\":\"绿色\",\"vId\":247}],\"sku_no\":\"\",\"bar_codes\":[],\"retail_price\":1200,\"stock_num\":12000,\"last_cost_price\":1200},{\"specs\":[{\"k\":\"颜色\",\"kId\":1,\"v\":\"蓝色\",\"vId\":3}],\"sku_no\":\"\",\"bar_codes\":[],\"retail_price\":1200,\"stock_num\":12000,\"last_cost_price\":1200}]\");\ndict.Add(\"photo_url\", \"[{\"url\":\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\"}]\");\ndict.Add(\"name\", \"测试商品库商品创建\");\ndict.Add(\"category_id\", 302980);\n\n\nvar result = yzClient.Invoke(\"youzan.retail.product.spu.create\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.product.spu.create'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'unit' => '件',\n    'spec_define_tuple' => '[{\"key\":{\"k\":\"颜色\",\"kId\":1},\"values\":[{\"v\":\"绿色\",\"vId\":247},{\"v\":\"蓝色\",\"vId\":3}]}]',\n    'skus' => '[{\"specs\":[{\"k\":\"颜色\",\"kId\":1,\"v\":\"绿色\",\"vId\":247}],\"sku_no\":\"\",\"bar_codes\":[],\"retail_price\":1200,\"stock_num\":12000,\"last_cost_price\":1200},{\"specs\":[{\"k\":\"颜色\",\"kId\":1,\"v\":\"蓝色\",\"vId\":3}],\"sku_no\":\"\",\"bar_codes\":[],\"retail_price\":1200,\"stock_num\":12000,\"last_cost_price\":1200}]',\n    'photo_url' => '[{\"url\":\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\"}]',\n    'name' => '测试商品库商品创建',\n    'category_id' => '302980',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['unit']=\"件\"\nparams['spec_define_tuple']=\"[{\"key\":{\"k\":\"颜色\",\"kId\":1},\"values\":[{\"v\":\"绿色\",\"vId\":247},{\"v\":\"蓝色\",\"vId\":3}]}]\"\nparams['skus']=\"[{\"specs\":[{\"k\":\"颜色\",\"kId\":1,\"v\":\"绿色\",\"vId\":247}],\"sku_no\":\"\",\"bar_codes\":[],\"retail_price\":1200,\"stock_num\":12000,\"last_cost_price\":1200},{\"specs\":[{\"k\":\"颜色\",\"kId\":1,\"v\":\"蓝色\",\"vId\":3}],\"sku_no\":\"\",\"bar_codes\":[],\"retail_price\":1200,\"stock_num\":12000,\"last_cost_price\":1200}]\"\nparams['photo_url']=\"[{\"url\":\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\"}]\"\nparams['name']=\"测试商品库商品创建\"\nparams['category_id']=302980\n\nfiles=[]\n\nprint client.invoke('youzan.retail.product.spu.create', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['unit']=\"件\";\nparams['spec_define_tuple']=\"[{\"key\":{\"k\":\"颜色\",\"kId\":1},\"values\":[{\"v\":\"绿色\",\"vId\":247},{\"v\":\"蓝色\",\"vId\":3}]}]\";\nparams['skus']=\"[{\"specs\":[{\"k\":\"颜色\",\"kId\":1,\"v\":\"绿色\",\"vId\":247}],\"sku_no\":\"\",\"bar_codes\":[],\"retail_price\":1200,\"stock_num\":12000,\"last_cost_price\":1200},{\"specs\":[{\"k\":\"颜色\",\"kId\":1,\"v\":\"蓝色\",\"vId\":3}],\"sku_no\":\"\",\"bar_codes\":[],\"retail_price\":1200,\"stock_num\":12000,\"last_cost_price\":1200}]\";\nparams['photo_url']=\"[{\"url\":\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\"}]\";\nparams['name']=\"测试商品库商品创建\";\nparams['category_id']=302980;\n\n\nvar promise = YZClient.invoke('youzan.retail.product.spu.create', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":426130304}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"类目不存在\",\"code\":221200001}}"
+  },
+  "name": "create",
+  "ids": [
+    10220
+  ],
+  "scenarios": "商品库商品创建",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "商品库商品创建"
+}

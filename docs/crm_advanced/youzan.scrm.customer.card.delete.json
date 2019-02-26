@@ -1,0 +1,136 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.scrm.customer.card/3.0.0/delete"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.scrm.customer.card/3.0.0/delete"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "card_alias",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商家会员卡唯一标识，没有则写''，与card_no任选其一，优先级低于card_no",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "card_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "用户会员卡号，没有则写''，与card_alias任选其一，优先级高于card_alias",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fans_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "粉丝ID，与 fans_type 同时出现，如果没有写0\nmobile/fans_id/open_user_id 三选一传入",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fans_type",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "粉丝类型（自有粉丝: fans_type = 1）\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "手机号，如果没有则写 0\nmobile/fans_id/open_user_id 三选一传入",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "open_user_id",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "三方用户ID\nmobile/fans_id/open_user_id 三选一传入",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "是否成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "是否成功",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanScrmCustomerCardDeleteParams youzanScrmCustomerCardDeleteParams = new YouzanScrmCustomerCardDeleteParams();\n\nyouzanScrmCustomerCardDeleteParams.setMobile(\"18658239103\");\nyouzanScrmCustomerCardDeleteParams.setFansType(0L);\nyouzanScrmCustomerCardDeleteParams.setFansId(0L);\nyouzanScrmCustomerCardDeleteParams.setCardAlias(\"26vbx1l19wti8M\");\nyouzanScrmCustomerCardDeleteParams.setCardNo(\"\");\nyouzanScrmCustomerCardDeleteParams.setOpenUserId(\"dssd\");\n\nYouzanScrmCustomerCardDelete youzanScrmCustomerCardDelete = new YouzanScrmCustomerCardDelete();\nyouzanScrmCustomerCardDelete.setAPIParams(youzanScrmCustomerCardDeleteParams);\nYouzanScrmCustomerCardDeleteResult result = client.invoke(youzanScrmCustomerCardDelete);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"mobile\", \"18658239103\");\ndict.Add(\"fans_type\", 0);\ndict.Add(\"fans_id\", 0);\ndict.Add(\"card_alias\", \"26vbx1l19wti8M\");\ndict.Add(\"card_no\", \"\");\ndict.Add(\"open_user_id\", \"dssd\");\n\n\nvar result = yzClient.Invoke(\"youzan.scrm.customer.card.delete\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.scrm.customer.card.delete'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'mobile' => '18658239103',\n    'fans_type' => '0',\n    'fans_id' => '0',\n    'card_alias' => '26vbx1l19wti8M',\n    'card_no' => '',\n    'open_user_id' => 'dssd',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['mobile']=\"18658239103\"\nparams['fans_type']=0\nparams['fans_id']=0\nparams['card_alias']=\"26vbx1l19wti8M\"\nparams['card_no']=\"\"\nparams['open_user_id']=\"dssd\"\n\nfiles=[]\n\nprint client.invoke('youzan.scrm.customer.card.delete', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['mobile']=\"18658239103\";\nparams['fans_type']=0;\nparams['fans_id']=0;\nparams['card_alias']=\"26vbx1l19wti8M\";\nparams['card_no']=\"\";\nparams['open_user_id']=\"dssd\";\n\n\nvar promise = YZClient.invoke('youzan.scrm.customer.card.delete', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"is_success\":true}}",
+    "errorResponseDemo": "{\n  \"error_response\": {\n    \"code\": 141502107,\n    \"message\": \"card number not exist\"\n  }\n}"
+  },
+  "name": "delete",
+  "ids": [
+    7750
+  ],
+  "scenarios": "删除用户的会员卡，此接口需申请高级权限方可调用。仅支持免签名通讯协议(AccessToken)调用,不支持签名通讯协议(AppId/AppSecret)调用。",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "删除用户的会员卡"
+}

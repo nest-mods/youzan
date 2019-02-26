@@ -1,0 +1,1452 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.open.online.spu/3.0.0/release"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.open.online.spu/3.0.0/release"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "all_batch_operate",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否全量上下架状态\n0 下架\n1 上架\n未操作不传",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "biz_mark_city_delivery",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否支持同城送",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "biz_mark_code",
+        "type": "String",
+        "example": "：010000000001 蛋糕烘焙标 （20001,50001）, 010000000002  预",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品所属业务标编码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "biz_mark_express",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否支持快递",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "biz_mark_prepare_time",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "无规格时的备货时间(毫秒ms)",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "biz_mark_self_pick",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否支持自提",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "buy_url",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "购买地址",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "buy_way",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "购买方式0：淘宝连接购买，1：在有赞购买",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "category_id",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "渠道扩展信息\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "category_name",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "渠道扩展信息\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "channel",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "渠道 0: 网店 1:门店",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "combine_params",
+        "type": "OpenOnlineCombineParam[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "组合商品关联关系",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/OpenOnlineCombineParam",
+        "struct": {
+          "name": "OpenOnlineCombineParam[]",
+          "type": "OpenOnlineCombineParam[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "related_combine_num",
+              "type": "String",
+              "isStruct": false,
+              "desc": "子商品 捆绑数量",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "related_combine_price",
+              "type": "String",
+              "isStruct": false,
+              "desc": "子商品 价格",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "related_combine_sku_code",
+              "type": "String",
+              "isStruct": false,
+              "desc": "组合商品子商品关联商品库商品code",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "components",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "自定义组件信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "components_extra_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品详情额外组件",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "content",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "详情内容",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "delivery_template_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "运费模板id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "effective_delay_hours",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "电子卡券扩展信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "effective_type",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "电子卡券扩展信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "etd_days",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "付款成功 后发货天数, 默认0。",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "etd_start",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "预计发货开始时间, 字符串格式的时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "etd_type",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "发货类型: 0, xxx 时间开始发货(默认), 1, 付款 n 天后发货",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "first_level_class",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "一级品类",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "freezing_endtime",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "活动冻结结束时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "goods_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "货号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "goods_platform",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品参与平台 0：普通商品 10：分销平台",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "goods_type",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品类型：0：普通商品，1: 拍卖商品, 3：ump降价拍，10:分销商品；20：会员卡商品；25：批发商品；30：收银台商品；35：酒店商品。",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "hide_stock",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "页面不显示商品库存: 0, 显示; 1, 不显示",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "holidays_available",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "假日",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "invoice",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否提供发票，目前应该无用",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "is_display",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否上架\n0：未发布，草稿状态（wap看不到） 1：发布 （正常状态）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "is_init",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否店铺初始化任务，会回调店铺的 接口",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "is_lock",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "否锁定 1:是;0:否; 2,活动冻结",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "is_virtual",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否虚拟商品，0否, 2 虚拟商品， 3 电子卡券",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "is_virtual_stock",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否使用虚拟库存（仅限预售商品）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "item_sku_mark_aggregates",
+        "type": "OpenProductSkuMarkAggregateParam[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "多规格时的标记属性",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/OpenProductSkuMarkAggregateParam",
+        "struct": {
+          "name": "OpenProductSkuMarkAggregateParam[]",
+          "type": "OpenProductSkuMarkAggregateParam[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "prepare_time_mark",
+              "type": "OpenPrepareTimeMark",
+              "isStruct": true,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": [
+                {
+                  "name": "prepareTime",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "备货时间",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "s1",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "s2",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "s3",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "s4",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "s5",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_code",
+              "type": "String",
+              "isStruct": false,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "item_sku_meas_props",
+        "type": "OpenProductSkuMeasProp[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "有sku规格情况下，\n商品的计量属性",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/OpenProductSkuMeasProp",
+        "struct": {
+          "name": "OpenProductSkuMeasProp[]",
+          "type": "OpenProductSkuMeasProp[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "s1",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "s2",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "s3",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "s4",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "s5",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_code",
+              "type": "String",
+              "isStruct": false,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "weight",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "item_validity_end",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "电子卡券扩展信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "item_validity_start",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "电子卡券扩展信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "item_weight",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品重量, 没有sku规格情况下",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "join_level_discount",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否参加会员折扣，默认：0 不参加",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "mark",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "标记",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "messages",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "留言信息，json",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "need_customs_info",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否开启海淘身份认证",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "need_customs_picture",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否需要上传身份证图片",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "num",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "序号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "origin",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "现实在原价的信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "out_id",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "外部id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "picture",
+        "type": "String",
+        "example": "[{\"url\":\"upload_files/2016/05/16/FjvGju7UwGfol_yAX",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "图片地址",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "picture_height",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "照片高度",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "postage",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "运费(元）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "pre_sale",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "是否预售",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "price",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "价格（元）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "pricing_strategy",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "渠道扩展信息\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "purchase_right",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "会员权限",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "quota",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "0",
+        "isRequired": "否",
+        "desc": "用户购买限额",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "备注",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "来源",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sale_down_kdt_ids",
+        "type": "Number[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "下架分店店铺id列表",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sale_up_kdt_ids",
+        "type": "Number[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "上架分店店铺id列表",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "second_level_class",
+        "type": "String",
+        "example": "({\"id\":\"8-1\",\"name\":\"礼品鲜花\"},{\"id\":\"8-2\",\"name\":\"餐饮",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "二级品类（不填 后端默认填\"\"，当一级分类不是8其他的时候，需传\"0\"）\n",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sell_point",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "卖点",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sell_type",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "销售类型：1单个销售，2组合销售",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_center_code",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "关联商品库的skucode，无规格商品必传",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_img_dict_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "sku图片目录值",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_img_dict_value",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "sku图片目录id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_img_is_show",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "图片是否展示",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_img_parent_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "sku图片id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_img_urls",
+        "type": "ImgUrlParam[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "sku图片地址",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/ImgUrlParam",
+        "struct": {
+          "name": "ImgUrlParam[]",
+          "type": "ImgUrlParam[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "id",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "img_url",
+              "type": "String",
+              "isStruct": false,
+              "desc": "url",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "sold_time",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "开卖时间: 0 立即开售, 1 定时开售",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "来源",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "source_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "0",
+        "isRequired": "否",
+        "desc": "0 自建 1导入 2 api 3 拍拍 4 模板商品",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "spec",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "渠道扩展信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "spu_code",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "关联商品库的商品code",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "star",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "加星",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "start_sold_time",
+        "type": "String",
+        "example": "",
+        "defaultValue": "0",
+        "isRequired": "否",
+        "desc": "定时上架时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "status_map",
+        "type": "Map<String, Boolean>[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "状态位",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/Map<String, Boolean>",
+        "struct": {
+          "name": "Map<String, Boolean>[]",
+          "type": "Map<String, Boolean>[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": []
+        }
+      },
+      {
+        "name": "stocks",
+        "type": "OpenOnlineStock[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "网店商品规格信息，规格商品必传",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/OpenOnlineStock",
+        "struct": {
+          "name": "OpenOnlineStock[]",
+          "type": "OpenOnlineStock[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "combineParams",
+              "type": "OpenOnlineCombineParam[]",
+              "isStruct": true,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": [
+                {
+                  "name": "related_combine_num",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "子商品 捆绑数量",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "related_combine_price",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "子商品 价格",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "related_combine_sku_code",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "组合商品子商品关联商品库商品code",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "costPrice",
+              "type": "String",
+              "isStruct": false,
+              "desc": "成本价",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "isSell",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "是否分销",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "max_retail_price",
+              "type": "String",
+              "isStruct": false,
+              "desc": "最大建议零售价",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "min_retail_price",
+              "type": "String",
+              "isStruct": false,
+              "desc": "最小建议零售价",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "isStruct": false,
+              "desc": "组合商品名称",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "pre_related_sku_code",
+              "type": "String",
+              "isStruct": false,
+              "desc": "前一次关联的商品库商品code",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "price",
+              "type": "String",
+              "isStruct": false,
+              "desc": "售价",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "related_sku_code",
+              "type": "String",
+              "isStruct": false,
+              "desc": "关联skucode",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "related_spu_code",
+              "type": "String",
+              "isStruct": false,
+              "desc": "关联商品code",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sell_stock_count",
+              "type": "String",
+              "isStruct": false,
+              "desc": "销售库存",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "skus",
+              "type": "SkuParam[]",
+              "isStruct": true,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": [
+                {
+                  "name": "k",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "规格分类 值; eg: 颜色",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "kid",
+                  "type": "Number",
+                  "isStruct": false,
+                  "desc": "规格分类 id",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "v",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": " 规格具体值:eg: 白色",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "vid",
+                  "type": "Number",
+                  "isStruct": false,
+                  "desc": "规则值id",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "sku_no",
+              "type": "String",
+              "isStruct": false,
+              "desc": "条码",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "sub_title",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "子标题",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tag",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品分类，tagIds 的json 格式",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "title",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "标题",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "total_stock",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "总库存",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "ump_level",
+        "type": "String[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "允许购买的粉丝等级",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "ump_tags",
+        "type": "String[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "允许购买的粉丝标签",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "unit",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "单位信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "video_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "视频id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "reponse",
+        "type": "OpenReleaseOnlineProductResponse",
+        "isRequired": "否",
+        "desc": "商品发布网店返回值",
+        "isStruct": true,
+        "structUrl": "/web/meta/OpenReleaseOnlineProductResponse",
+        "struct": {
+          "name": "reponse",
+          "type": "OpenReleaseOnlineProductResponse",
+          "isNeed": "true",
+          "desc": "商品发布网店返回值",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "item_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "alias",
+              "type": "String",
+              "isNeed": null,
+              "desc": "别名",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sku_id",
+              "type": "Number[]",
+              "isNeed": null,
+              "desc": "sku",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailOpenOnlineSpuReleaseParams youzanRetailOpenOnlineSpuReleaseParams = new YouzanRetailOpenOnlineSpuReleaseParams();\n\nyouzanRetailOpenOnlineSpuReleaseParams.setTitle(\"网店发布测试商品\");\nyouzanRetailOpenOnlineSpuReleaseParams.setSpuCode(\"BM9620842281\");\nyouzanRetailOpenOnlineSpuReleaseParams.setSoldTime(\"0\");\nyouzanRetailOpenOnlineSpuReleaseParams.setSellType(\"2\");\nyouzanRetailOpenOnlineSpuReleaseParams.setPurchaseRight(\"true\");\nyouzanRetailOpenOnlineSpuReleaseParams.setPrice(\"1\");\nyouzanRetailOpenOnlineSpuReleaseParams.setPreSale(\"false\");\nyouzanRetailOpenOnlineSpuReleaseParams.setPostage(0L);\nyouzanRetailOpenOnlineSpuReleaseParams.setIsVirtual(0L);\nyouzanRetailOpenOnlineSpuReleaseParams.setIsDisplay(1L);\nyouzanRetailOpenOnlineSpuReleaseParams.setDeliveryTemplateId(0L);\nyouzanRetailOpenOnlineSpuReleaseParams.setComponentsExtraId(-1L);\nyouzanRetailOpenOnlineSpuReleaseParams.setPicture(\"[{\"url\":\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\"}]\");\nyouzanRetailOpenOnlineSpuReleaseParams.setSkuCenterCode(\"BM9620842281\");\nyouzanRetailOpenOnlineSpuReleaseParams.setRetailSource(\"RENWOXING\");\n\nYouzanRetailOpenOnlineSpuRelease youzanRetailOpenOnlineSpuRelease = new YouzanRetailOpenOnlineSpuRelease();\nyouzanRetailOpenOnlineSpuRelease.setAPIParams(youzanRetailOpenOnlineSpuReleaseParams);\nYouzanRetailOpenOnlineSpuReleaseResult result = client.invoke(youzanRetailOpenOnlineSpuRelease);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"title\", \"网店发布测试商品\");\ndict.Add(\"spu_code\", \"BM9620842281\");\ndict.Add(\"sold_time\", \"0\");\ndict.Add(\"sell_type\", \"2\");\ndict.Add(\"purchase_right\", \"true\");\ndict.Add(\"price\", \"1\");\ndict.Add(\"pre_sale\", \"false\");\ndict.Add(\"postage\", 0);\ndict.Add(\"is_virtual\", 0);\ndict.Add(\"is_display\", 1);\ndict.Add(\"delivery_template_id\", 0);\ndict.Add(\"components_extra_id\", -1);\ndict.Add(\"picture\", \"[{\"url\":\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\"}]\");\ndict.Add(\"sku_center_code\", \"BM9620842281\");\ndict.Add(\"retail_source\", \"RENWOXING\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.open.online.spu.release\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['title']=\"网店发布测试商品\"\nparams['spu_code']=\"BM9620842281\"\nparams['sold_time']=\"0\"\nparams['sell_type']=\"2\"\nparams['purchase_right']=\"true\"\nparams['price']=\"1\"\nparams['pre_sale']=\"false\"\nparams['postage']=0\nparams['is_virtual']=0\nparams['is_display']=1\nparams['delivery_template_id']=0\nparams['components_extra_id']=-1\nparams['picture']=\"[{\"url\":\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\"}]\"\nparams['sku_center_code']=\"BM9620842281\"\nparams['retail_source']=\"RENWOXING\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.open.online.spu.release', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['title']=\"网店发布测试商品\";\nparams['spu_code']=\"BM9620842281\";\nparams['sold_time']=\"0\";\nparams['sell_type']=\"2\";\nparams['purchase_right']=\"true\";\nparams['price']=\"1\";\nparams['pre_sale']=\"false\";\nparams['postage']=0;\nparams['is_virtual']=0;\nparams['is_display']=1;\nparams['delivery_template_id']=0;\nparams['components_extra_id']=-1;\nparams['picture']=\"[{\"url\":\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\"}]\";\nparams['sku_center_code']=\"BM9620842281\";\nparams['retail_source']=\"RENWOXING\";\n\n\nvar promise = YZClient.invoke('youzan.retail.open.online.spu.release', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.open.online.spu.release'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'title' => '网店发布测试商品',\n    'spu_code' => 'BM9620842281',\n    'sold_time' => '0',\n    'sell_type' => '2',\n    'purchase_right' => 'true',\n    'price' => '1',\n    'pre_sale' => 'false',\n    'postage' => '0',\n    'is_virtual' => '0',\n    'is_display' => '1',\n    'delivery_template_id' => '0',\n    'components_extra_id' => '-1',\n    'picture' => '[{\"url\":\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\"}]',\n    'sku_center_code' => 'BM9620842281',\n    'retail_source' => 'RENWOXING',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"item_id\":96190111,\"alias\":\"2z48f394tpkrt\",\"sku_id\":[280070]}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"数据异常\",\"code\":234000006}}"
+  },
+  "name": "release",
+  "ids": [
+    11186
+  ],
+  "scenarios": "发布网店商品 \n1.实物商品至少关联一个商品库商品，关联关系全量更新。\n2.虚拟商品不需要关联商品库商品。\n3.非特别说明，统一时间戳格式 : yyyy-MM-dd HH:mm:ss\n4.价格单位 元",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "发布网店商品"
+}

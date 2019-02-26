@@ -1,0 +1,2049 @@
+{
+  "name": "get",
+  "ids": [
+    9447
+  ],
+  "4.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.trade/4.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.trade/4.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "tid",
+        "type": "String",
+        "example": "E20180101111112340001",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "full_order_info",
+        "type": "StructurizationTradeOrderInfo",
+        "isRequired": "否",
+        "desc": "交易基础信息结构体",
+        "isStruct": true,
+        "structUrl": "/web/meta/StructurizationTradeOrderInfo",
+        "struct": {
+          "name": "full_order_info",
+          "type": "StructurizationTradeOrderInfo",
+          "isNeed": "true",
+          "desc": "交易基础信息结构体",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "order_info",
+              "type": "StructurizationOrderInfoDetail",
+              "isNeed": null,
+              "desc": "交易明细详情",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "status",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "主订单状态 WAIT_BUYER_PAY （等待买家付款，定金预售描述：定金待付、等待尾款支付开始、尾款待付）； TRADE_PAID（订单已支付 ）； WAIT_CONFIRM（待确认，包含待成团、待接单等等。即：买家已付款，等待成团或等待接单）； WAIT_SELLER_SEND_GOODS（等待卖家发货，即：买家已付款）； WAIT_BUYER_CONFIRM_GOODS (等待买家确认收货，即：卖家已发货) ； TRADE_SUCCESS（买家已签收以及订单成功）； TRADE_CLOSED（交易关闭）； PS：TRADE_PAID状态仅代表当前订单已支付成功，表示瞬时状态，稍后会自动修改成后面的状态。如果不关心此状态请再次请求详情接口获取下一个状态。",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "type",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "主订单类型\n0:普通订单; 1:送礼订单; 2:代付; 3:分销采购单; 4:赠品; 5:心愿单; 6:二维码订单; 7:合并付货款; 8:1分钱实名认证; 9:品鉴; 10:拼团; 15:返利; 35:酒店; 40:外卖; 41:堂食点餐; 46:外卖买单; 51:全员开店; 61:线下收银台订单; 71:美业预约单; 72:美业服务单; 75:知识付费; 81:礼品卡; 100:批发",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "tid",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "订单号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "status_str",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "主订单状态 描述",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pay_type",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "支付类型\n0:默认值,未支付; 1:微信自有支付; 2:支付宝wap; 3:支付宝wap; 5:财付通; 7:代付; 8:联动优势; 9:货到付款; 10:大账号代销; 11:受理模式; 12:百付宝; 13:sdk支付; 14:合并付货款; 15:赠品; 16:优惠兑换; 17:自动付货款; 18:爱学贷; 19:微信wap; 20:微信红包支付; 21:返利; 22:ump红包; 24:易宝支付; 25:储值卡; 27:qq支付; 28:有赞E卡支付; 29:微信条码; 30:支付宝条码; 33:礼品卡支付; 35:会员余额; 72:微信扫码二维码支付; 100:代收账户; 300:储值账户; 400:保证金账户; 101:收款码; 102:微信; 103:支付宝; 104:刷卡; 105:二维码台卡; 106:储值卡; 107:有赞E卡; 110:标记收款-自有微信支付; 111:标记收款-自有支付宝; 112:标记收款-自有POS刷卡; 113:通联刷卡支付; 200:记账账户; 201:现金",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "team_type",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "店铺类型\n0:微商城; 1:微小店; 2:爱学贷微商城; 3:批发店铺; 4:批发商城; 5:外卖; 6:美业; 7:超级门店; 8:收银; 9:收银加微商城; 10:零售总部; 99:有赞开放平台平台型应用创建的店铺",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "close_type",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "关闭类型\n0:未关闭; 1:过期关闭; 2:标记退款; 3:订单取消; 4:买家取消; 5:卖家取消; 6:部分退款; 10:无法联系上买家; 11:买家误拍或重拍了; 12:买家无诚意完成交易; 13:已通过银行线下汇款; 14:已通过同城见面交易; 15:已通过货到付款交易; 16:已通过网上银行直接汇款; 17:已经缺货无法交易",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "express_type",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "物流类型\n0:快递发货; 1:到店自提; 2:同城配送; 9:无需发货（虚拟商品订单）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "order_tags",
+                  "type": "StructurizationOrderInfoDetailTags",
+                  "isNeed": null,
+                  "desc": "订单信息打标",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "is_virtual",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否虚拟订单",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_purchase_order",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否采购单",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_fenxiao_order",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否分销单",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_member",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否会员订单",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_preorder",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否预订单",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_offline_order",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否线下订单",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_multi_store",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否多门店订单",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_settle",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否结算",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_payed",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否支付",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_secured_transactions",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否担保交易",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_postage_free",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否享受免邮",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_feedback",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否有维权",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_refund",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否有退款",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_down_payment_pre",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否定金预售",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "order_extra",
+                  "type": "StructurizationOrderInfoDetailExtra",
+                  "isNeed": null,
+                  "desc": "订单扩展字段",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "is_from_cart",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "是否来自购物车 是：true 不是：false",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "cashier_id",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "收银员id",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "cashier_name",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "收银员名字",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "invoice_title",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "发票抬头",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "settle_time",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "结算时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_parent_order",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "是否父单(分销合并订单) 是：1 其他：null",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_sub_order",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "是否子单(分销买家订单) 是：1 其他：null",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "fx_order_no",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "分销单订单号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "fx_kdt_id",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "分销店铺id",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "parent_order_no",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "父单号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "purchase_order_no",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "采购单订单号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "dept_id",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "美业分店id",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "create_device_id",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "下单设备号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_points_order",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "是否是积分订单：1：是  0：不是",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "id_card_number",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "海淘身份证信息：332527XXXXXXXXX",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "buyer_name",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "下单人昵称",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_member",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "是否会员订单",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "tm_cash",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "团购返现优惠金额",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "t_cash",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "团购返现最大返现金额",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "cash",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "订单返现金额",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "orders_combine_id",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "虚拟总单号：一次下单发生拆单时，会生成一个虚拟总单号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "kdt_dimension_combine_id",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "拆单时店铺维度的虚拟总单号：发生拆单时，单个店铺生成了多笔订单会生成一个店铺维度的虚拟总单号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "promotion_combine_id",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "使用了同一张优惠券&优惠码的多笔订单对应的虚拟总单号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "created",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "订单创建时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "update_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "订单更新时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "expired_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "订单过期时间（未付款将自动关单）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pay_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "订单支付时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "consign_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "订单发货时间（当所有商品发货后才会更新）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "confirm_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "订单确认时间（多人拼团成团）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "refund_state",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "退款状态\n0:未退款; 1:部分退款中; 2:部分退款成功; 11:全额退款中; 12:全额退款成功",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "is_retail_order",
+                  "type": "Boolean",
+                  "isNeed": null,
+                  "desc": "是否零售订单",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "success_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "订单成功时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "offline_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "网点id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pay_type_str",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "支付类型。取值范围： WEIXIN (微信自有支付) WEIXIN_DAIXIAO (微信代销支付) ALIPAY (支付宝支付) BANKCARDPAY (银行卡支付) PEERPAY (代付) CODPAY (货到付款) BAIDUPAY (百度钱包支付) PRESENTTAKE (直接领取赠品) COUPONPAY(优惠券/码全额抵扣) BULKPURCHASE(来自分销商的采购) MERGEDPAY(合并付货款) ECARD(有赞E卡支付) PURCHASE_PAY (采购单支付) MARKPAY (标记收款) OFCASH (现金支付) PREPAIDCARD (储值卡余额支付)",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "source_info",
+              "type": "StructurizationTradeSourceInfo",
+              "isNeed": null,
+              "desc": "订单来源",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "is_offline_order",
+                  "type": "Boolean",
+                  "isNeed": null,
+                  "desc": "是否来自线下订单",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "source",
+                  "type": "StructurizationTradeSource",
+                  "isNeed": null,
+                  "desc": "订单来源平台",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "platform",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "平台\nwx:微信; merchant_3rd:商家自有app; buyer_v:买家版; browser:系统浏览器; alipay:支付宝;qq:腾讯QQ; wb:微博; other:其他",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "wx_entrance",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "微信平台细分\nwx_gzh:微信公众号; yzdh:有赞大号; merchant_xcx:商家小程序; yzdh_xcx:有赞大号小程序; direct_buy:直接购买",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "order_mark",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "订单标记\nwx_apps:微信小程序买家版\nwx_shop:微信小程序商家版\nwx_wm:微信小程序外卖\nwap_wm:移动端外卖\nsuper_store:超级门店\nweapp_spotlight:新微信小程序买家版\nwx_meiye:美业小程序\nwx_apps_maidan:小程序餐饮买单\nwx_apps_diancan:小程序堂食\nweapp_youzan:有赞小程序\nretail_free_buy:零售自由购\nweapp_owl:知识付费小程序\napp_spotlight:有赞精选app\nretail_scan_buy:零售扫码购\nweapp_plugin:小程序插件\n除以上之外为其他",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "book_key",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "订单唯一识别码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "biz_source",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "活动类型：如群团购：”mall_group_buy“",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "buyer_info",
+              "type": "StructurizationTradeBuyerInfoDetail",
+              "isNeed": null,
+              "desc": "订单买家信息结构体",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "buyer_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "买家id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "buyer_phone",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "买家手机号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "fans_type",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "粉丝类型\n1:自有粉丝; 9:代销粉丝",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "fans_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "粉丝id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "fans_nickname",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "粉丝昵称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "outer_user_id",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "微信H5和微信小程序（有赞小程序和小程序插件）的订单会返回微信weixin_openid，三方App（有赞APP开店）的订单会返回open_user_id，2019年1月30号后的订单支持返回该参数",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "pay_info",
+              "type": "StructurizationTradePayInfoDetail",
+              "isNeed": null,
+              "desc": "交易支付信息结构体",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "total_fee",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "优惠前商品总价",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "post_fee",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "邮费",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "payment",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "最终支付价格\npayment=orders.payment的总和",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "transaction",
+                  "type": "String[]",
+                  "isNeed": null,
+                  "desc": "有赞支付流水号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "outer_transactions",
+                  "type": "String[]",
+                  "isNeed": null,
+                  "desc": "外部支付单号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "phase_payments",
+                  "type": "StructurizationTradePhasePaymentsDetail[]",
+                  "isNeed": null,
+                  "desc": "多阶段信息结构体",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "phase",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "支付阶段",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "pay_start_time",
+                      "type": "Date",
+                      "isNeed": null,
+                      "desc": "支付开始时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "pay_end_time",
+                      "type": "Date",
+                      "isNeed": null,
+                      "desc": "支付结束时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "real_price",
+                      "type": "Price",
+                      "isNeed": null,
+                      "desc": "阶段支付金额",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "outer_transaction_no",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "外部支付流水号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "inner_transaction_no",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "内部支付流水号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "pay_way_str",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "支付类型。取值范围： WEIXIN (微信自有支付) WEIXIN_DAIXIAO (微信代销支付) ALIPAY (支付宝支付) BANKCARDPAY (银行卡支付) PEERPAY (代付) CODPAY (货到付款) BAIDUPAY (百度钱包支付) PRESENTTAKE (直接领取赠品) COUPONPAY(优惠券/码全额抵扣) BULKPURCHASE(来自分销商的采购) MERGEDPAY(合并付货款) ECARD(有赞E卡支付) PURCHASE_PAY (采购单支付) MARKPAY (标记收款) OFCASH (现金支付) PREPAIDCARD (储值卡余额支付)",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "remark_info",
+              "type": "StructurizationTradeRemarkInfoDetail",
+              "isNeed": null,
+              "desc": "订单标记信息结构体",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "buyer_message",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "订单买家留言",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "star",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "订单标星等级 0-5",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "trade_memo",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "订单商家备注",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "address_info",
+              "type": "StructurizationTradeAddressInfoDetail",
+              "isNeed": null,
+              "desc": "订单收货地址信息结构体",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "receiver_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "收货人姓名",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "receiver_tel",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "收货人手机号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "delivery_province",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "省",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "delivery_city",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "市",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "delivery_district",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "区",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "delivery_address",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "详细地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "address_extra",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "字段为json格式，需要开发者自行解析\nlng、lon（经纬度）；\ncheckOutTime（酒店退房时间）；\nrecipients（入住人）；\ncheckInTime（酒店入住时间）；\nidCardNumber（海淘身份证信息）；\nareaCode（邮政编码）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "delivery_postal_code",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "邮政编码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "self_fetch_info",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "到店自提信息 json格式",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "delivery_start_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "同城送预计送达时间-开始时间\n非同城送以及没有开启定时达的订单不返回",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "delivery_end_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "同城送预计送达时间-结束时间\n非同城送以及没有开启定时达的订单不返回",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "orders",
+              "type": "StructurizationTradeItemDetail[]",
+              "isNeed": null,
+              "desc": "订单明细结构体",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "oid",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "订单明细id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "item_type",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "订单类型\n0:普通类型商品; 1:拍卖商品; 5:餐饮商品; 10:分销商品; 20:会员卡商品; 21:礼品卡商品; 23:有赞会议商品; 24:周期购; 30:收银台商品; 31:知识付费商品; 35:酒店商品; 40:普通服务类商品; 182:普通虚拟商品; 183:电子卡券商品; 201:外部会员卡商品; 202:外部直接收款商品; 203:外部普通商品; 205:mock不存在商品; 206:小程序二维码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "title",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "num",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "outer_sku_id",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商家编码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "buyer_messages",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品留言",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "price",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "单商品原价",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "total_fee",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "商品优惠后总价",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "payment",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "商品最终均摊价",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "item_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sku_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "规格id（无规格商品为0）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sku_properties_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "规格信息（无规格商品为空）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "outer_item_id",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品编码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "points_price",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品积分价（非积分商品则为0）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pic_path",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品图片地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "goods_url",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品详情链接",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "alias",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品别名",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "is_present",
+                  "type": "Boolean",
+                  "isNeed": null,
+                  "desc": "是否赠品",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "discount_price",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "单商品现价，减去了商品的优惠金额",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sku_unique_code",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品唯一编码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pre_sale_type",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "0 全款预售，1 定金预售",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "is_pre_sale",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "是否为预售商品 如果是预售商品则为1",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "is_cross_border",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "是否是跨境海淘订单(\"1\":是,\"0\":否)",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "port_code",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "海淘口岸编码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "cross_border_trade_mode",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "海淘商品贸易模式",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "custom_entry_no",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "报关单号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "child_info",
+              "type": "StructurizationTradeChildOrderInfo",
+              "isNeed": null,
+              "desc": "交易送礼子单",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "gift_no",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "送礼编号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "gift_sign",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "送礼标记",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "child_orders",
+                  "type": "StructurizationTradeChildOrderDetail[]",
+                  "isNeed": null,
+                  "desc": "送礼子单详情",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "tid",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "订单号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "user_name",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "领取人姓名",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "user_tel",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "领取人电话",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "province",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "省",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "city",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "市",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "county",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "区",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "address_detail",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "收货地址详情",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "order_state",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "老送礼订单状态：WAIT_EXPRESS(5, \"待发货\"), EXPRESS(6, \"已发货\"), SUCCESS(100, \"成功\")",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "refund_order",
+        "type": "StructurizationTradeRefundInfoDetail[]",
+        "isRequired": "否",
+        "desc": "订单退款信息结构体",
+        "isStruct": true,
+        "structUrl": "/web/meta/StructurizationTradeRefundInfoDetail",
+        "struct": {
+          "name": "refund_order",
+          "type": "StructurizationTradeRefundInfoDetail[]",
+          "isNeed": "true",
+          "desc": "订单退款信息结构体",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "refund_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "退款类型\n1:退款 - 买家申请退款; 2:退款 - 商家主动退款; 3:退款 - 一键退款",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "refund_fee",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "退款金额",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "refund_id",
+              "type": "String",
+              "isNeed": null,
+              "desc": "退款id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "refund_state",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "退款状态\n1:买家已经申请退款，等待卖家同意;  10:卖家拒绝退款;  20:卖家已经同意退货，等待买家退货;  30:买家已经退货，等待卖家确认收货;  40:卖家未收到货,拒绝退款;  50:退款关闭;  60:退款成功;",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "oids",
+              "type": "StructurizationTradeRefundItemDetail[]",
+              "isNeed": null,
+              "desc": "退款交易明细信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "oid",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "交易明细id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "delivery_order",
+        "type": "StructurizationTradeDeliveryDetail[]",
+        "isRequired": "否",
+        "desc": "订单发货详情结构体",
+        "isStruct": true,
+        "structUrl": "/web/meta/StructurizationTradeDeliveryDetail",
+        "struct": {
+          "name": "delivery_order",
+          "type": "StructurizationTradeDeliveryDetail[]",
+          "isNeed": "true",
+          "desc": "订单发货详情结构体",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "pk_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "改字段已弃用\n包裹id已移至dists中的dist_id字段",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "express_state",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "物流状态\n0:待发货; 1:已发货",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "express_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "物流类型\n0:手动发货; 1:系统自动发货",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "oids",
+              "type": "StructurizationTradeDeliveryItemDetail[]",
+              "isNeed": null,
+              "desc": "交易明细发货信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "oid",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "交易明细id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "dists",
+              "type": "StructurizationTradeDeliveryDist[]",
+              "isNeed": null,
+              "desc": "物流包裹详情",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "dist_id",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "包裹id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "express_info",
+                  "type": "StructurizationTradeDeliveryExpressInfo",
+                  "isNeed": null,
+                  "desc": "包裹物流详情",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "express_id",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "物流类型",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "express_no",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "物流编号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "order_promotion",
+        "type": "StructurizationTradePromotionInfoDetail",
+        "isRequired": "否",
+        "desc": "订单优惠详情结构体",
+        "isStruct": true,
+        "structUrl": "/web/meta/StructurizationTradePromotionInfoDetail",
+        "struct": {
+          "name": "order_promotion",
+          "type": "StructurizationTradePromotionInfoDetail",
+          "isNeed": "true",
+          "desc": "订单优惠详情结构体",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "item",
+              "type": "StructurizationTradePromotionItemDetail[]",
+              "isNeed": null,
+              "desc": "订单商品级优惠结构结构体",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "is_present",
+                  "type": "Boolean",
+                  "isNeed": null,
+                  "desc": "是否赠品",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "oid",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "交易明细id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "item_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sku_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "规格id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "promotions",
+                  "type": "StructurizationTradePromotionDetail[]",
+                  "isNeed": null,
+                  "desc": "优惠明细结构体",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "promotion_type",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "优惠类型\ntuan:团购返现\nauction:降价拍\ngroupOn:多人拼团\npointsExchange:积分抵扣\nseckill:秒杀\npackageBuy:优惠套餐\npresentExchange:赠品领取\ngoodsScan:商品扫码\ncustomerDiscount:会员折扣\ntimelimitedDiscount:限时折扣\npaidPromotion:支付有礼\nperiodBuy:周期购\nscanReduce:收款码优惠\nmeetReduce:满减送\ncashBack:订单返现\nsupplierMeetReduce:供货商满包邮\nbale:打包一口价\ncoupon:优惠卡券\nentireDiscount:整单优惠\ngroupOnHeaderDiscount:团长优惠\ncustomerPostageFree:会员包邮\nperiodBuyPostageFree:周期购包邮\nignoreOddChange:抹零\npfGuideMarketing:引导促销",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "promotion_title",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "优惠别名",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "promotion_type_name",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "优惠类型描述",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "promotion_type_id",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "优惠类型id",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "discount_fee",
+                      "type": "Price",
+                      "isNeed": null,
+                      "desc": "优惠金额",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "promotion_condition",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "优惠描述",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "promotion_content",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "优惠活动别名",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "promotion_id",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "优惠id",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "sub_promotion_type",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "优惠子类型\ncard 优惠券\ncode 优惠码",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "coupon_id",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "优惠券/码编号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "order",
+              "type": "StructurizationTradePromotionDetail[]",
+              "isNeed": null,
+              "desc": "优惠明细结构体",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "promotion_type",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "优惠类型\ntuan:团购返现\nauction:降价拍\ngroupOn:多人拼团\npointsExchange:积分抵扣\nseckill:秒杀\npackageBuy:优惠套餐\npresentExchange:赠品领取\ngoodsScan:商品扫码\ncustomerDiscount:会员折扣\ntimelimitedDiscount:限时折扣\npaidPromotion:支付有礼\nperiodBuy:周期购\nscanReduce:收款码优惠\nmeetReduce:满减送\ncashBack:订单返现\nsupplierMeetReduce:供货商满包邮\nbale:打包一口价\ncoupon:优惠卡券\nentireDiscount:整单优惠\ngroupOnHeaderDiscount:团长优惠\ncustomerPostageFree:会员包邮\nperiodBuyPostageFree:周期购包邮\nignoreOddChange:抹零\npfGuideMarketing:引导促销",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "promotion_title",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "优惠别名",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "promotion_type_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "优惠类型描述",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "promotion_type_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "优惠类型id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "discount_fee",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "优惠金额",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "promotion_condition",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "优惠描述",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "promotion_content",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "优惠活动别名",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "promotion_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "优惠id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sub_promotion_type",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "优惠子类型\ncard 优惠券\ncode 优惠码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "coupon_id",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "优惠券/码编号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "item_discount_fee",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "商品优惠总金额",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "order_discount_fee",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "订单优惠总金额",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "adjust_fee",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "订单改价金额",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanTradeGetParams youzanTradeGetParams = new YouzanTradeGetParams();\n\nyouzanTradeGetParams.setTid(\"E20180305174207060900001\");\n\nYouzanTradeGet youzanTradeGet = new YouzanTradeGet();\nyouzanTradeGet.setAPIParams(youzanTradeGetParams);\nYouzanTradeGetResult result = client.invoke(youzanTradeGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"tid\", \"E20180305174207060900001\");\n\n\nvar result = yzClient.Invoke(\"youzan.trade.get\", \"4.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.trade.get'; //要调用的api名称\n$api_version = '4.0.0'; //要调用的api版本号\n\n$my_params = [\n    'tid' => 'E20180305174207060900001',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['tid']=\"E20180305174207060900001\"\n\nfiles=[]\n\nprint client.invoke('youzan.trade.get', '4.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['tid']=\"E20180305174207060900001\";\n\n\nvar promise = YZClient.invoke('youzan.trade.get', '4.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"delivery_order\":[{\"pk_id\":2621633,\"express_state\":1,\"orders\":[{\"item_id\":1436413407076030200},{\"item_id\":1436413407076030200},{\"item_id\":1436413407076030200},{\"item_id\":1436413407076030200}],\"express_type\":0}],\"order_promotion\":{\"item\":[{\"is_present\":false,\"promotions\":[{\"promotion_type\":\"customerDiscount\",\"promotion_title\":\"会员折扣\",\"promotion_type_name\":\"会员折扣\",\"promotion_type_id\":10,\"decrease\":\"10.56\"}],\"item_id\":1436413407076030200,\"goods_id\":410405681,\"sku_id\":36203237},{\"is_present\":false,\"promotions\":[{\"promotion_type\":\"customerDiscount\",\"promotion_title\":\"会员折扣\",\"promotion_type_name\":\"会员折扣\",\"promotion_type_id\":10,\"decrease\":\"18.96\"}],\"item_id\":1436413407076030200,\"goods_id\":409382504,\"sku_id\":36218994},{\"is_present\":false,\"promotions\":[{\"promotion_type\":\"customerDiscount\",\"promotion_title\":\"会员折扣\",\"promotion_type_name\":\"会员折扣\",\"promotion_type_id\":10,\"decrease\":\"6.96\"}],\"item_id\":1436413407076030200,\"goods_id\":409545437,\"sku_id\":36196197},{\"is_present\":false,\"promotions\":[{\"promotion_type\":\"customerDiscount\",\"promotion_title\":\"会员折扣\",\"promotion_type_name\":\"会员折扣\",\"promotion_type_id\":10,\"decrease\":\"8.28\"}],\"item_id\":1436413407076030200,\"goods_id\":409558156,\"sku_id\":36199433}],\"order_decrease\":\"7.64\",\"goods_decrease\":\"44.76\",\"order\":[{\"promotion_type\":\"coupon\",\"promotion_title\":\"福当先！领福券！\",\"promotion_type_name\":\"优惠卡券\",\"promotion_type_id\":105,\"decrease\":\"7.64\"}]},\"refund_order\":[],\"full_order_info\":{\"address_info\":{\"self_fetch_info\":\"\",\"delivery_address\":\"下沙泰然广场707-706\",\"delivery_postal_code\":\"\",\"receiver_name\":\"李维\",\"delivery_province\":\"广东省\",\"delivery_city\":\"深圳市\",\"delivery_district\":\"福田区\",\"address_extra\":\"{\\\"areaCode\\\":\\\"440304\\\",\\\"lon\\\":114.03030714899697,\\\"lat\\\":22.53446797278408}\",\"receiver_tel\":\"13760105707\"},\"remark_info\":{\"buyer_message\":\"\",\"star\":0,\"trade_memo\":\"27413-582七款T集合 彩虹 L-1 到货补发 3.9 刘 补发单号3869691192817 林3.10 27413 暂时未到 3.13（已留言） 刘\"},\"pay_info\":{\"outer_transactions\":[\"4200000051201803085172488366\"],\"post_fee\":\"0.00\",\"total_fee\":\"373.00\",\"payment\":\"320.60\",\"transaction\":[\"180308214647000011\"]},\"buyer_info\":{\"buyer_phone\":\"13760105707\",\"fans_type\":9,\"buyer_id\":493309932,\"fans_id\":2082418008,\"fans_nickname\":\"\"},\"orders\":[{\"outer_sku_id\":\"\",\"buyer_messages\":\"\",\"item_id\":1436413407076030200,\"item_type\":0,\"price\":\"88.00\",\"num\":1,\"total_fee\":\"77.44\",\"goods_id\":410405681,\"sku_id\":36203237,\"sku_properties_name\":\"[{\\\"k\\\":\\\"颜色\\\",\\\"k_id\\\":1,\\\"v\\\":\\\"黑色\\\",\\\"v_id\\\":137},{\\\"k\\\":\\\"尺码\\\",\\\"k_id\\\":12,\\\"v\\\":\\\"L\\\",\\\"v_id\\\":4}]\",\"payment\":\"75.65\",\"title\":\"28316 彰显气质风度！ 最低调！ 经典！豪华德国机器工艺！夏季刺绣T恤！\"},{\"outer_sku_id\":\"\",\"buyer_messages\":\"\",\"item_id\":1436413407076030200,\"item_type\":0,\"price\":\"158.00\",\"num\":1,\"total_fee\":\"139.04\",\"goods_id\":409382504,\"sku_id\":36218994,\"sku_properties_name\":\"[{\\\"k\\\":\\\"颜色\\\",\\\"k_id\\\":1,\\\"v\\\":\\\"牛仔蓝\\\",\\\"v_id\\\":838},{\\\"k\\\":\\\"尺码\\\",\\\"k_id\\\":12,\\\"v\\\":\\\"34\\\",\\\"v_id\\\":144}]\",\"payment\":\"135.80\",\"title\":\"27328 让你完美自信的出门！走哪都是焦点！精英男士的高功能商务牛仔裤！\"},{\"outer_sku_id\":\"\",\"buyer_messages\":\"\",\"item_id\":1436413407076030200,\"item_type\":0,\"price\":\"58.00\",\"num\":1,\"total_fee\":\"51.04\",\"goods_id\":409545437,\"sku_id\":36196197,\"sku_properties_name\":\"[{\\\"k\\\":\\\"颜色\\\",\\\"k_id\\\":1,\\\"v\\\":\\\"彩虹\\\",\\\"v_id\\\":317799},{\\\"k\\\":\\\"尺码\\\",\\\"k_id\\\":12,\\\"v\\\":\\\"L\\\",\\\"v_id\\\":4}]\",\"payment\":\"49.85\",\"title\":\"27413 高端LAB支线联名！罕见珍迹版本！Old School复古系列短袖，7款合集！\"},{\"outer_sku_id\":\"\",\"buyer_messages\":\"\",\"item_id\":1436413407076030200,\"item_type\":0,\"price\":\"69.00\",\"num\":1,\"total_fee\":\"60.72\",\"goods_id\":409558156,\"sku_id\":36199433,\"sku_properties_name\":\"[{\\\"k\\\":\\\"颜色\\\",\\\"k_id\\\":1,\\\"v\\\":\\\"白色\\\",\\\"v_id\\\":187},{\\\"k\\\":\\\"尺码\\\",\\\"k_id\\\":12,\\\"v\\\":\\\"XL\\\",\\\"v_id\\\":199}]\",\"payment\":\"59.30\",\"title\":\"27414 合作款 海外版 时尚的弄潮儿 必然要来一发 最具代表性的就是普通的短Tee\"}],\"source_info\":{\"is_offline_order\":false,\"source\":{\"platform\":\"other\",\"wx_entrance\":\"direct_buy\"}},\"order_info\":{\"consign_time\":\"2018-03-09 21:00:08\",\"order_extra\":{},\"created\":\"2018-03-08 21:46:44\",\"status_str\":\"已发货\",\"expired_time\":\"2018-03-09 07:46:44\",\"success_time\":\"1970-01-01 08:00:00\",\"type\":0,\"tid\":\"E20180308214644100400012\",\"confirm_time\":\"\",\"pay_time\":\"2018-03-08 21:46:52\",\"update_time\":\"2018-03-09 21:00:08\",\"is_retail_order\":false,\"pay_type\":10,\"team_type\":0,\"refund_state\":0,\"close_type\":0,\"status\":60,\"express_type\":0,\"order_tags\":{}}}}}\n",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"参数 token 无效\",\"code\":40010,\"sub_msg\":\"token无效，该token不存在或已过期\",\"sub_code\":10000,\"sub_data\":\"\"}}"
+  },
+  "scenarios": "为了提升订单详情的数据理解以及订单数据的扩展能力，在youzan.trade.get 3.0接口数据基础上重组订单信息，并返回新的结构体。",
+  "version": [
+    "4.0.0"
+  ],
+  "desc": "交易订单详情4.0接口"
+}

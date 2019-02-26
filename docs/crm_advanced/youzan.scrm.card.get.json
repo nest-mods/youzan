@@ -1,0 +1,546 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.scrm.card/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.scrm.card/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "card_alias",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商家会员卡的唯一标识",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "card_alias",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "商家会员卡的唯一标识",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "card_alias",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "商家会员卡的唯一标识",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "会员卡名",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "会员卡名",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "color_code",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "卡背景颜色",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "color_code",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "卡背景颜色",
+          "defaultValue": null,
+          "example": "#000000",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "description",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "使用须知",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "description",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "使用须知",
+          "defaultValue": null,
+          "example": " 包邮专用会员卡",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "service_phone",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "客服电话",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "service_phone",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "客服电话",
+          "defaultValue": null,
+          "example": "15757888888",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "activate_mode",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "激活方式，0:不需要激活；1:仅需手机激活；2:手机+填写资料",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "activate_mode",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "激活方式，0:不需要激活；1:仅需手机激活；2:手机+填写资料",
+          "defaultValue": null,
+          "example": "1",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "sync_weixin_mode",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "微信卡包的同步设置\n0:不同步；1:基于卡号核销；2:基于卡号和条形码；3:基于卡号和二维码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "sync_weixin_mode",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "微信卡包的同步设置\n0:不同步；1:基于卡号核销；2:基于卡号和条形码；3:基于卡号和二维码",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "rights",
+        "type": "CardRightsV2DTO[]",
+        "isRequired": "否",
+        "desc": "会员卡权益",
+        "isStruct": true,
+        "structUrl": "/web/meta/CardRightsV2DTO",
+        "struct": {
+          "name": "rights",
+          "type": "CardRightsV2DTO[]",
+          "isNeed": "true",
+          "desc": "会员卡权益",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "权益类型",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "权益名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_available",
+              "type": "Boolean",
+              "isNeed": null,
+              "desc": "是否可用",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "discount",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "折扣权益字段，折数 ，1表示0.01折 范围选择：1-100, type为2时必传",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "points",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "积分权益字段，积分数量,type为4时必传",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "coupon",
+              "type": "CouponRightsValueDTO[]",
+              "isNeed": null,
+              "desc": "优惠券内容",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "coupon_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "优惠券ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "优惠券名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "number",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "优惠券数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "term_start_time",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "生效开始时间，如：\"2017-03-07 00:00:00\"",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "term_start_time",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "生效开始时间，如：\"2017-03-07 00:00:00\"",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "term_end_time",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "生效结束时间，如：\"2017-03-08 00:00:00\"",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "term_end_time",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "生效结束时间，如：\"2017-03-08 00:00:00\"",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "term_days",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "生效持续天数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "term_days",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "生效持续天数",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "term_type",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "生效方式类型，1:从领取开始无期限；2:从固定时刻开始，到固定时刻结束；\n3:从领取开始，持续一段时长(termDays)",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "term_type",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "生效方式类型，1:从领取开始无期限；2:从固定时刻开始，到固定时刻结束；\n3:从领取开始，持续一段时长(termDays)",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "term_to_card_alias",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "失效后，默认转变的会员卡，默认不转变",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "term_to_card_alias",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "失效后，默认转变的会员卡，默认不转变",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "is_allow_share",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "是否允许微信端分享 ，默认允许",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_allow_share",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "是否允许微信端分享 ，默认允许",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "card_url",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "发卡链接",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "card_url",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "发卡链接",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "sync_weixin_status",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "同步微信卡状态，1：不同步；2：审核中；3：通过；4：失败",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "sync_weixin_status",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "同步微信卡状态，1：不同步；2：审核中；3：通过；4：失败",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "status",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "会员卡状态，1：正常；2：已禁用；3：已删除",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "status",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "会员卡状态，1：正常；2：已禁用；3：已删除",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "level",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "会员卡等级，没有则为0",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "level",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "会员卡等级，没有则为0",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "card_type",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "卡的类型;1:无门槛卡,2:规则卡,3:付费卡",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "card_type",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "卡的类型;1:无门槛卡,2:规则卡,3:付费卡",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "grant_condition",
+        "type": "GrantCondition",
+        "isRequired": "否",
+        "desc": "当卡为规则卡时卡的发放规则",
+        "isStruct": true,
+        "structUrl": "/web/meta/GrantCondition",
+        "struct": {
+          "name": "grant_condition",
+          "type": "GrantCondition",
+          "isNeed": "false",
+          "desc": "当卡为规则卡时卡的发放规则",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "trade_limit",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "累积下单成功次数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "amount_limit",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "累积消费金额(金额单位为分)",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "points_limit",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "累积积分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanScrmCardGetParams youzanScrmCardGetParams = new YouzanScrmCardGetParams();\n\nyouzanScrmCardGetParams.setCardAlias(\"36dy4es7qkhzji\");\n\nYouzanScrmCardGet youzanScrmCardGet = new YouzanScrmCardGet();\nyouzanScrmCardGet.setAPIParams(youzanScrmCardGetParams);\nYouzanScrmCardGetResult result = client.invoke(youzanScrmCardGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"card_alias\", \"36dy4es7qkhzji\");\n\n\nvar result = yzClient.Invoke(\"youzan.scrm.card.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.scrm.card.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'card_alias' => '36dy4es7qkhzji',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['card_alias']=\"36dy4es7qkhzji\"\n\nfiles=[]\n\nprint client.invoke('youzan.scrm.card.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['card_alias']=\"36dy4es7qkhzji\";\n\n\nvar promise = YZClient.invoke('youzan.scrm.card.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"level\":0,\"sync_weixin_mode\":0,\"card_url\":\"https://j.youzan.com/xeNrrY\",\"description\":\"dddd\",\"card_type\":1,\"card_alias\":\"36dy4es7qkhzji\",\"service_phone\":\"\",\"term_to_card_alias\":\"\",\"rights\":[{\"name\":\"包邮\",\"type\":1,\"is_available\":true}],\"name\":\"静静的\",\"sync_weixin_status\":1,\"term_type\":1,\"color_code\":\"#f9861f\",\"is_allow_share\":true,\"activate_mode\":0,\"status\":1}}",
+    "errorResponseDemo": "{\"error_response\":{\"code\":141502105,\"message\":\"card not exist\"}}"
+  },
+  "name": "get",
+  "ids": [
+    8143
+  ],
+  "scenarios": "通过卡id获取卡详情，此接口需申请高级权限方可调用。仅支持免签名通讯协议(AccessToken)调用,不支持签名通讯协议(AppId/AppSecret)调用。",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "通过商家会员卡的唯一标识获取会员卡详情"
+}

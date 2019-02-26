@@ -1,0 +1,209 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.shop.address/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.shop.address/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "address",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "详细地址",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "area",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "区",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "city",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "市",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "contact_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "联系人",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "is_invoice",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否发票地址",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "is_invoice_default",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否默认发票地址",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "is_return",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否退货地址",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "is_return_default",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否默认退货地址",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "手机号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "province",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "省",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "region_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "地区id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "是否成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "是否成功",
+          "defaultValue": null,
+          "example": "true",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "新增的地址id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "新增的地址id",
+          "defaultValue": null,
+          "example": "233",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanShopAddressCreateParams youzanShopAddressCreateParams = new YouzanShopAddressCreateParams();\n\nyouzanShopAddressCreateParams.setAddress(\"黄龙万科中心G\");\nyouzanShopAddressCreateParams.setArea(\"西湖区\");\nyouzanShopAddressCreateParams.setCity(\"杭州市\");\nyouzanShopAddressCreateParams.setContactName(\"youzan\");\nyouzanShopAddressCreateParams.setIsInvoice(1L);\nyouzanShopAddressCreateParams.setIsInvoiceDefault(0L);\nyouzanShopAddressCreateParams.setIsReturn(1L);\nyouzanShopAddressCreateParams.setIsReturnDefault(1L);\nyouzanShopAddressCreateParams.setMobile(\"18888888888\");\nyouzanShopAddressCreateParams.setProvince(\"浙江省\");\nyouzanShopAddressCreateParams.setRegionId(330106L);\n\nYouzanShopAddressCreate youzanShopAddressCreate = new YouzanShopAddressCreate();\nyouzanShopAddressCreate.setAPIParams(youzanShopAddressCreateParams);\nYouzanShopAddressCreateResult result = client.invoke(youzanShopAddressCreate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"address\", \"黄龙万科中心G\");\ndict.Add(\"area\", \"西湖区\");\ndict.Add(\"city\", \"杭州市\");\ndict.Add(\"contact_name\", \"youzan\");\ndict.Add(\"is_invoice\", 1);\ndict.Add(\"is_invoice_default\", 0);\ndict.Add(\"is_return\", 1);\ndict.Add(\"is_return_default\", 1);\ndict.Add(\"mobile\", \"18888888888\");\ndict.Add(\"province\", \"浙江省\");\ndict.Add(\"region_id\", 330106);\n\n\nvar result = yzClient.Invoke(\"youzan.shop.address.create\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.shop.address.create'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'address' => '黄龙万科中心G',\n    'area' => '西湖区',\n    'city' => '杭州市',\n    'contact_name' => 'youzan',\n    'is_invoice' => '1',\n    'is_invoice_default' => '0',\n    'is_return' => '1',\n    'is_return_default' => '1',\n    'mobile' => '18888888888',\n    'province' => '浙江省',\n    'region_id' => '330106',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['address']=\"黄龙万科中心G\"\nparams['area']=\"西湖区\"\nparams['city']=\"杭州市\"\nparams['contact_name']=\"youzan\"\nparams['is_invoice']=1\nparams['is_invoice_default']=0\nparams['is_return']=1\nparams['is_return_default']=1\nparams['mobile']=\"18888888888\"\nparams['province']=\"浙江省\"\nparams['region_id']=330106\n\nfiles=[]\n\nprint client.invoke('youzan.shop.address.create', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['address']=\"黄龙万科中心G\";\nparams['area']=\"西湖区\";\nparams['city']=\"杭州市\";\nparams['contact_name']=\"youzan\";\nparams['is_invoice']=1;\nparams['is_invoice_default']=0;\nparams['is_return']=1;\nparams['is_return_default']=1;\nparams['mobile']=\"18888888888\";\nparams['province']=\"浙江省\";\nparams['region_id']=330106;\n\n\nvar promise = YZClient.invoke('youzan.shop.address.create', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"is_success\":true,\"id\":\"405\"}}",
+    "errorResponseDemo": "{\n\t\"error_response\": {\n\t\t\"code\": 53002,\n\t\t\"msg\": \"region_id type error\"\n\t}\n}"
+  },
+  "name": "create",
+  "ids": [
+    7996
+  ],
+  "scenarios": "店铺地址库新建一个地址",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "店铺地址库新建一个地址"
+}

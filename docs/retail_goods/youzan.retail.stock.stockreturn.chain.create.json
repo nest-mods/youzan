@@ -1,0 +1,263 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.stock.stockreturn.chain/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.stock.stockreturn.chain/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "business_time",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "业务时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "idempotent_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "幂等单号(请求唯一标识)",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "is_need_pd",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "false",
+        "isRequired": "否",
+        "desc": "是否将库存盘点成0，默认false不盘点",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "入库备注",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "WEB_BACK_END",
+        "isRequired": "是",
+        "desc": "请求来源（需调用方自定义标识：OPEN_XXXX）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "stock_return_order_items",
+        "type": "HqStockReturnOrderItemCreateRequest[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "退货单明细",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/HqStockReturnOrderItemCreateRequest",
+        "struct": {
+          "name": "HqStockReturnOrderItemCreateRequest[]",
+          "type": "HqStockReturnOrderItemCreateRequest[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "amount",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "实际入库数量（千倍）非空",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "idempotent_no",
+              "type": "String",
+              "isStruct": false,
+              "desc": "幂等单号",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "loss_amount",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "破损数量（千倍）非空",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "product_name",
+              "type": "String",
+              "isStruct": false,
+              "desc": "商品名称 非空",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "return_amount",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "退货数量（千倍）非空 returnAmount= amount + lossAmount",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "商品skuId 非空",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_no",
+              "type": "String",
+              "isStruct": false,
+              "desc": "条码 非空",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "source_kdt_id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "商品所属kdtId 连锁版退货入库必填",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "source_no",
+              "type": "String",
+              "isStruct": false,
+              "desc": "关联退货单  非空",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "specifications",
+              "type": "String",
+              "isStruct": false,
+              "desc": "规格信息",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "unit",
+              "type": "String",
+              "isStruct": false,
+              "desc": "单位  非空",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "warehouse_id",
+        "type": "Long",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "入库的仓库或门店id",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/Long",
+        "struct": {
+          "name": "Long",
+          "type": "Long",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": []
+        }
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "business_order_no",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "退货入库单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "business_order_no",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "退货入库单号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailStockStockreturnChainCreateParams youzanRetailStockStockreturnChainCreateParams = new YouzanRetailStockStockreturnChainCreateParams();\n\nyouzanRetailStockStockreturnChainCreateParams.setWarehouseId(23502018L);\nyouzanRetailStockStockreturnChainCreateParams.setStockReturnOrderItems(\"[{\"sku_no\":\"P180605385187441\",\"specifications\":\"\",\"unit\":\"件\",\"sku_id\":2666499,\"return_amount\":4000,\"amount\":3000,\"loss_amount\":1000,\"product_name\":\"测试商品1\",\"source_no\":\"201806281702320000010126\",\"idempotent_no\":\"201806281702320000010126-2666499-1\",\"source_kdt_id\":23502018}]\");\nyouzanRetailStockStockreturnChainCreateParams.setRetailSource(\"test\");\nyouzanRetailStockStockreturnChainCreateParams.setRemark(\"备注\");\nyouzanRetailStockStockreturnChainCreateParams.setIsNeedPd(\"false\");\nyouzanRetailStockStockreturnChainCreateParams.setIdempotentNo(\"test_20180710_1\");\n\nYouzanRetailStockStockreturnChainCreate youzanRetailStockStockreturnChainCreate = new YouzanRetailStockStockreturnChainCreate();\nyouzanRetailStockStockreturnChainCreate.setAPIParams(youzanRetailStockStockreturnChainCreateParams);\nYouzanRetailStockStockreturnChainCreateResult result = client.invoke(youzanRetailStockStockreturnChainCreate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"warehouse_id\", 23502018);\ndict.Add(\"stock_return_order_items\", \"[{\"sku_no\":\"P180605385187441\",\"specifications\":\"\",\"unit\":\"件\",\"sku_id\":2666499,\"return_amount\":4000,\"amount\":3000,\"loss_amount\":1000,\"product_name\":\"测试商品1\",\"source_no\":\"201806281702320000010126\",\"idempotent_no\":\"201806281702320000010126-2666499-1\",\"source_kdt_id\":23502018}]\");\ndict.Add(\"retail_source\", \"test\");\ndict.Add(\"remark\", \"备注\");\ndict.Add(\"is_need_pd\", \"false\");\ndict.Add(\"idempotent_no\", \"test_20180710_1\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.stock.stockreturn.chain.create\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.stock.stockreturn.chain.create'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'warehouse_id' => '23502018',\n    'stock_return_order_items' => '[{\"sku_no\":\"P180605385187441\",\"specifications\":\"\",\"unit\":\"件\",\"sku_id\":2666499,\"return_amount\":4000,\"amount\":3000,\"loss_amount\":1000,\"product_name\":\"测试商品1\",\"source_no\":\"201806281702320000010126\",\"idempotent_no\":\"201806281702320000010126-2666499-1\",\"source_kdt_id\":23502018}]',\n    'retail_source' => 'test',\n    'remark' => '备注',\n    'is_need_pd' => 'false',\n    'idempotent_no' => 'test_20180710_1',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['warehouse_id']=23502018\nparams['stock_return_order_items']=\"[{\"sku_no\":\"P180605385187441\",\"specifications\":\"\",\"unit\":\"件\",\"sku_id\":2666499,\"return_amount\":4000,\"amount\":3000,\"loss_amount\":1000,\"product_name\":\"测试商品1\",\"source_no\":\"201806281702320000010126\",\"idempotent_no\":\"201806281702320000010126-2666499-1\",\"source_kdt_id\":23502018}]\"\nparams['retail_source']=\"test\"\nparams['remark']=\"备注\"\nparams['is_need_pd']=\"false\"\nparams['idempotent_no']=\"test_20180710_1\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.stock.stockreturn.chain.create', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['warehouse_id']=23502018;\nparams['stock_return_order_items']=\"[{\"sku_no\":\"P180605385187441\",\"specifications\":\"\",\"unit\":\"件\",\"sku_id\":2666499,\"return_amount\":4000,\"amount\":3000,\"loss_amount\":1000,\"product_name\":\"测试商品1\",\"source_no\":\"201806281702320000010126\",\"idempotent_no\":\"201806281702320000010126-2666499-1\",\"source_kdt_id\":23502018}]\";\nparams['retail_source']=\"test\";\nparams['remark']=\"备注\";\nparams['is_need_pd']=\"false\";\nparams['idempotent_no']=\"test_20180710_1\";\n\n\nvar promise = YZClient.invoke('youzan.retail.stock.stockreturn.chain.create', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":\"STHRK180730223840020654\"}",
+    "errorResponseDemo": null
+  },
+  "name": "create",
+  "ids": [
+    10211
+  ],
+  "scenarios": "连锁版退货入库创建接口",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "连锁版退货入库创建接口"
+}

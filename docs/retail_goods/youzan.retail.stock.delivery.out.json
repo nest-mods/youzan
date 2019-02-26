@@ -1,0 +1,150 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.stock.delivery/3.0.0/out"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.stock.delivery/3.0.0/out"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "biz_bill_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "单据号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "items",
+        "type": "DeliveryOutItemRequest[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品列表",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/DeliveryOutItemRequest",
+        "struct": {
+          "name": "DeliveryOutItemRequest[]",
+          "type": "DeliveryOutItemRequest[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "out_num",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "实际出库数量（须乘以1000传入，如：现实中出库数量为5，则须传5000）",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "商品skuId",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "unit_cost",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "商品成本价（须乘以100传入）",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "备注",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "来源参数（需调用方自定义标识：OPEN_XXXX）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "成功生成的出库单据号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "response",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "成功生成的出库单据号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailStockDeliveryOutParams youzanRetailStockDeliveryOutParams = new YouzanRetailStockDeliveryOutParams();\n\nyouzanRetailStockDeliveryOutParams.setRetailSource(\"test\");\nyouzanRetailStockDeliveryOutParams.setRemark(\"测试配送出库\");\nyouzanRetailStockDeliveryOutParams.setItems(\"[{\"out_num\":3000,\"sku_id\": 7219116,\"unit_cost\":8000}]\");\nyouzanRetailStockDeliveryOutParams.setBizBillNo(\"SCS180813164732052427\");\n\nYouzanRetailStockDeliveryOut youzanRetailStockDeliveryOut = new YouzanRetailStockDeliveryOut();\nyouzanRetailStockDeliveryOut.setAPIParams(youzanRetailStockDeliveryOutParams);\nYouzanRetailStockDeliveryOutResult result = client.invoke(youzanRetailStockDeliveryOut);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"retail_source\", \"test\");\ndict.Add(\"remark\", \"测试配送出库\");\ndict.Add(\"items\", \"[{\"out_num\":3000,\"sku_id\": 7219116,\"unit_cost\":8000}]\");\ndict.Add(\"biz_bill_no\", \"SCS180813164732052427\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.stock.delivery.out\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['retail_source']=\"test\"\nparams['remark']=\"测试配送出库\"\nparams['items']=\"[{\"out_num\":3000,\"sku_id\": 7219116,\"unit_cost\":8000}]\"\nparams['biz_bill_no']=\"SCS180813164732052427\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.stock.delivery.out', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['retail_source']=\"test\";\nparams['remark']=\"测试配送出库\";\nparams['items']=\"[{\"out_num\":3000,\"sku_id\": 7219116,\"unit_cost\":8000}]\";\nparams['biz_bill_no']=\"SCS180813164732052427\";\n\n\nvar promise = YZClient.invoke('youzan.retail.stock.delivery.out', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.stock.delivery.out'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'retail_source' => 'test',\n    'remark' => '测试配送出库',\n    'items' => '[{\"out_num\":3000,\"sku_id\": 7219116,\"unit_cost\":8000}]',\n    'biz_bill_no' => 'SCS180813164732052427',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":\"SCK180805182521180252\"}",
+    "errorResponseDemo": null
+  },
+  "name": "out",
+  "ids": [
+    10307
+  ],
+  "scenarios": "配送单出库",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "配送单出库"
+}

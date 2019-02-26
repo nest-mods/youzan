@@ -1,0 +1,213 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.dept.security.codelog/3.0.0/list"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.dept.security.codelog/3.0.0/list"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "code_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "安全码id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "页码，要查询的页数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "每页数量，最大200",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "paginator",
+        "type": "MeiPaginator",
+        "isRequired": "否",
+        "desc": "分页信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiPaginator",
+        "struct": {
+          "name": "paginator",
+          "type": "MeiPaginator",
+          "isNeed": "true",
+          "desc": "分页信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "total_count",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总记录数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "第几页",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page_size",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "每页显示的记录数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "items",
+        "type": "MeiSecurityCodeLogItem[]",
+        "isRequired": "否",
+        "desc": "操作记录列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiSecurityCodeLogItem",
+        "struct": {
+          "name": "items",
+          "type": "MeiSecurityCodeLogItem[]",
+          "isNeed": "true",
+          "desc": "操作记录列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "kdt_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "店铺id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "code_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "安全码id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "yz_uid",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "操作者账号id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "user_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "操作者姓名",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "dept_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "操作者所在店铺",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "role",
+              "type": "String",
+              "isNeed": null,
+              "desc": "操作者角色",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "updated_at",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "操作时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\n    \"response\": {\n        \"paginator\": {\n            \"total_count\": 1, \n            \"page\": 1, \n            \"page_size\": 20\n        }, \n        \"items\": [\n            {\n                \"kdt_id\": 40328097, \n                \"role\": \"店长\", \n                \"updated_at\": 1533122942000, \n                \"dept_name\": \"红枫叶\", \n                \"yz_uid\": 51471836, \n                \"code_id\": 10032937134, \n                \"username\": \"杜风涛\"\n            }\n        ]\n    }\n}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"抱歉, 服务器开了个小差: \",\"code\":230100000}}"
+  },
+  "name": "list",
+  "ids": [
+    10323
+  ],
+  "scenarios": "拉取安全码使用记录",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "拉取安全码使用记录"
+}

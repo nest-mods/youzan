@@ -1,0 +1,508 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.stocks.stockin/3.0.0/search"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.stocks.stockin/3.0.0/search"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "business_order_no",
+        "type": "String",
+        "example": "RK100000000",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "入库单单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "end_time",
+        "type": "String",
+        "example": "2017-08-22",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "结束时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "order_types",
+        "type": "Number[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "入库单类型（TOCK_IN(2, \"采购入库单\"),STOCK_RETURN(3, \"退货入库单\")）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_no",
+        "type": "Number",
+        "example": "1",
+        "defaultValue": "1",
+        "isRequired": "否",
+        "desc": "查询页面",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "20",
+        "defaultValue": "20",
+        "isRequired": "否",
+        "desc": "一页数量",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "source",
+        "type": "String",
+        "example": "WEB_BACK_END",
+        "defaultValue": "WEB_BACK_END",
+        "isRequired": "是",
+        "desc": "请求来源（需调用方自定义标识：OPEN_XXXX）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "start_time",
+        "type": "String",
+        "example": "2017-08-22",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "开始时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "vendor_id",
+        "type": "Long",
+        "example": "10010",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "供货商id",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/Long",
+        "struct": {
+          "name": "Long",
+          "type": "Long",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": []
+        }
+      },
+      {
+        "name": "warehouse_ids",
+        "type": "Number[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "仓库id列表  注意：连锁版必填",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "paginator",
+        "type": "Paginator",
+        "isRequired": "否",
+        "desc": "分页信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/Paginator",
+        "struct": {
+          "name": "paginator",
+          "type": "Paginator",
+          "isNeed": "false",
+          "desc": "分页信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "page",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "页码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "size",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "数量",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "totalCount",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总条数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "items",
+        "type": "StockInOrderVO[]",
+        "isRequired": "否",
+        "desc": "入库单详细信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/StockInOrderVO",
+        "struct": {
+          "name": "items",
+          "type": "StockInOrderVO[]",
+          "isNeed": "false",
+          "desc": "入库单详细信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "operato_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "操作人",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "vendor_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "供应商ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "vendor_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "供应商名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "real_payment",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "实付金额(单位分)",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "remark",
+              "type": "String",
+              "isNeed": null,
+              "desc": "入库备注",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "stock_in_order_items",
+              "type": "StockInOrderItemVO[]",
+              "isNeed": null,
+              "desc": "入库单明细",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "product_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "specifications",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "规格描述",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sku_no",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "条码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "unit",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "单位",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "amount",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "数量（一千倍）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sku_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "skuId",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "unit_cost",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "成本单价（单位：分）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "total_cost",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "成本价小计",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "admin_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "操作者id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "biz_bill_no",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "业务单据单号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "kdt_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商家id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "type",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "业务类型",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "kdt_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商家id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "biz_bill_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "业务单据单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "业务类型",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "admin_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "操作者id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "status",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "状态",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "business_time",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "业务时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "idempotent_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "幂等单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "source_order_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "原单号--记录订单数据（其他单据为业务单号）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "version",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "版本号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "warehouse_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "仓库名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailStocksStockinSearchParams youzanRetailStocksStockinSearchParams = new YouzanRetailStocksStockinSearchParams();\n\nyouzanRetailStocksStockinSearchParams.setVendorId(12L);\nyouzanRetailStocksStockinSearchParams.setStartTime(\"2017-10-12 00:00:00\");\nyouzanRetailStocksStockinSearchParams.setSource(\"test\");\nyouzanRetailStocksStockinSearchParams.setPageSize(20L);\nyouzanRetailStocksStockinSearchParams.setPageNo(1L);\nyouzanRetailStocksStockinSearchParams.setOrderTypes(\"[2]\");\nyouzanRetailStocksStockinSearchParams.setBusinessOrderNo(\"SRK171012183646498526\");\nyouzanRetailStocksStockinSearchParams.setEndTime(\"2017-10-12 23:59:59\");\n\nYouzanRetailStocksStockinSearch youzanRetailStocksStockinSearch = new YouzanRetailStocksStockinSearch();\nyouzanRetailStocksStockinSearch.setAPIParams(youzanRetailStocksStockinSearchParams);\nYouzanRetailStocksStockinSearchResult result = client.invoke(youzanRetailStocksStockinSearch);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"vendor_id\", 12);\ndict.Add(\"start_time\", \"2017-10-12 00:00:00\");\ndict.Add(\"source\", \"test\");\ndict.Add(\"page_size\", 20);\ndict.Add(\"page_no\", 1);\ndict.Add(\"order_types\", \"[2]\");\ndict.Add(\"business_order_no\", \"SRK171012183646498526\");\ndict.Add(\"end_time\", \"2017-10-12 23:59:59\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.stocks.stockin.search\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.stocks.stockin.search'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'vendor_id' => '12',\n    'start_time' => '2017-10-12 00:00:00',\n    'source' => 'test',\n    'page_size' => '20',\n    'page_no' => '1',\n    'order_types' => '[2]',\n    'business_order_no' => 'SRK171012183646498526',\n    'end_time' => '2017-10-12 23:59:59',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['vendor_id']=12\nparams['start_time']=\"2017-10-12 00:00:00\"\nparams['source']=\"test\"\nparams['page_size']=20\nparams['page_no']=1\nparams['order_types']=\"[2]\"\nparams['business_order_no']=\"SRK171012183646498526\"\nparams['end_time']=\"2017-10-12 23:59:59\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.stocks.stockin.search', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['vendor_id']=12;\nparams['start_time']=\"2017-10-12 00:00:00\";\nparams['source']=\"test\";\nparams['page_size']=20;\nparams['page_no']=1;\nparams['order_types']=\"[2]\";\nparams['business_order_no']=\"SRK171012183646498526\";\nparams['end_time']=\"2017-10-12 23:59:59\";\n\n\nvar promise = YZClient.invoke('youzan.retail.stocks.stockin.search', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"paginator\":{\"total_count\":1,\"page\":1,\"page_size\":20},\"items\":[{\"biz_bill_no\":\"SRK171012183646498526\",\"idempotent_no\":\"test_stockin_20171012\",\"business_time\":1507737600000,\"vendor_name\":\"测试\",\"created_at\":1507804606000,\"remark\":\"备注\",\"type\":2,\"source_order_no\":\"SRK171012183646498526\",\"version\":0,\"operator_name\":\"chensu\",\"kdt_id\":311833,\"updated_at\":1507804606000,\"vendor_id\":12,\"admin_id\":70503,\"id\":101617,\"status\":0}]}}",
+    "errorResponseDemo": ""
+  },
+  "name": "search",
+  "ids": [
+    9021
+  ],
+  "scenarios": "入库单查询接口",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "入库单查询接口"
+}

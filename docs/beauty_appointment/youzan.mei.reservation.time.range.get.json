@@ -1,0 +1,149 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.reservation.time.range/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.reservation.time.range/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "date",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "要查询的日期",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "dept_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "分店id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "reservation_start_time",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "可预约开始时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "reservation_start_time",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "可预约开始时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "reservation_end_time",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "可预约结束时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "reservation_end_time",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "可预约结束时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "unreservable_time",
+        "type": "MeiUnreservableTime[]",
+        "isRequired": "否",
+        "desc": "不可预约时间段列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiUnreservableTime",
+        "struct": {
+          "name": "unreservable_time",
+          "type": "MeiUnreservableTime[]",
+          "isNeed": "true",
+          "desc": "不可预约时间段列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "start_time",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "不可预约开始时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "end_time",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "不可预约结束时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "status",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "不可预约原因\n101 已经被预约满的不可预约时间\n102 商家定义的不可预约时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\n    \"response\": {\n        \"reservation_end_time\": 1532786400000, \n        \"reservation_start_time\": 1532743200000, \n        \"unreservable_time\": [\n            {\n                \"start_time\": 1532753100000, \n                \"end_time\": 1532754000000, \n                \"status\": 101\n            }, \n            {\n                \"start_time\": 1532754000000, \n                \"end_time\": 1532754900000, \n                \"status\": 101\n            } \n        ]\n    }\n}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"抱歉, 服务器开了个小差, 请重试\",\"code\":233099301}}"
+  },
+  "name": "get",
+  "ids": [
+    10322
+  ],
+  "scenarios": "获取到预约的时间范围，包含可以预约的时间范围和不可预约的时间范围",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "获取预约的时间范围"
+}

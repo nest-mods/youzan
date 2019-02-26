@@ -1,0 +1,89 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.goods.product.category/3.0.0/delete"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.goods.product.category/3.0.0/delete"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "category_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "分组ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "data",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "结果，0代表成功，否则代表失败",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "data",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "结果，0代表成功，否则代表失败",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "msg",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "失败时的提示信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "msg",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "失败时的提示信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\"response\":0}",
+    "errorResponseDemo": null
+  },
+  "name": "delete",
+  "ids": [
+    10407
+  ],
+  "scenarios": "产品分组删除",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "产品分组删除"
+}

@@ -1,0 +1,316 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.users.weixin.followers.info/3.0.0/search"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.users.weixin.followers.info/3.0.0/search"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "end_follow",
+        "type": "Date",
+        "example": "2017-01-02 12:00:00",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "关注的结束时间。查询在该时间之前关注的粉丝，不能为空，查询时间间隔不能超过一天，格式同start_follow",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fields",
+        "type": "String",
+        "example": "points",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "需要返回的除微信粉丝基础信息外的资产信息。枚举值：points，trade，level。points可获取“points”字段，trade可获取”traded_num,trade_money”两个字段，level可获取”level_info”字段信息。传多个枚举值需用“,”分隔，如果该字段为空则只返回粉丝基础信息。默认为空。(“fields”字段传入枚举值越多，查询数据耗费时间越长。）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "only_follow",
+        "type": "Number",
+        "example": "1",
+        "defaultValue": "1",
+        "isRequired": "否",
+        "desc": "是否仅拉取关注的粉丝。1:仅拉取已关注的粉丝 0:拉取已关注和已跑路粉丝",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_no",
+        "type": "Number",
+        "example": "1",
+        "defaultValue": "1",
+        "isRequired": "否",
+        "desc": "页码，page_no * page_size参数不超过10000。若备选数据多于10000条，请通过调整start_follow/end_follow来缩小时间范围。",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "10",
+        "defaultValue": "10",
+        "isRequired": "否",
+        "desc": "每页条数，最大值：50。默认为10。",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "start_follow",
+        "type": "Date",
+        "example": "2017-01-01 12:00:00",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "关注的起始时间。查询在该时间之后（包含该时间）关注的粉丝，不能为空。格式可为“20170101”或“2017-01-01 12:00:00\"",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "total_results",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "搜索到的微信粉丝用户总数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "total_results",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "搜索到的微信粉丝用户总数",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "users",
+        "type": "WeixinFansCustomerInfo[]",
+        "isRequired": "否",
+        "desc": "搜索到的微信粉丝用户详细信息列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/WeixinFansCustomerInfo",
+        "struct": {
+          "name": "users",
+          "type": "WeixinFansCustomerInfo[]",
+          "isNeed": "true",
+          "desc": "搜索到的微信粉丝用户详细信息列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "user_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "微信粉丝用户ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "weixin_open_id",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微信粉丝用户的openid，可用于微信Api",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "nick",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微信粉丝用户的昵称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "avatar",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微信粉丝用户的头像Url",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "follow_time",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "关注时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sex",
+              "type": "String",
+              "isNeed": null,
+              "desc": "性别。可选值：m(男)，f(女)。未知则为空",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "city",
+              "type": "String",
+              "isNeed": null,
+              "desc": "所在城市",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "province",
+              "type": "String",
+              "isNeed": null,
+              "desc": "所在身份",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "country",
+              "type": "String",
+              "isNeed": null,
+              "desc": "所在国家",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "points",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "当前积分（当入参fields字段传入\"points\"枚举值才会返回该字段。）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "traded_num",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "成交订单笔数（当入参fields字段传入\"trade\"枚举值才会返回该字段。）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "trade_money",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "成交订单总额。单位：元。（当入参fields字段传入\"trade\"枚举值才会返回该字段。）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "level_info",
+              "type": "CrmFansLevel",
+              "isNeed": null,
+              "desc": "粉丝会员等级的数据结构",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "level_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "会员等级编码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "level_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "会员等级名",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "is_follow",
+              "type": "Boolean",
+              "isNeed": null,
+              "desc": "是否关注",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanUsersWeixinFollowersInfoSearchParams youzanUsersWeixinFollowersInfoSearchParams = new YouzanUsersWeixinFollowersInfoSearchParams();\n\nyouzanUsersWeixinFollowersInfoSearchParams.setStartFollow(\"2018-11-02\");\nyouzanUsersWeixinFollowersInfoSearchParams.setPageSize(20L);\nyouzanUsersWeixinFollowersInfoSearchParams.setEndFollow(\"2018-11-03\");\nyouzanUsersWeixinFollowersInfoSearchParams.setOnlyFollow(0L);\nyouzanUsersWeixinFollowersInfoSearchParams.setFields(\"points\");\n\nYouzanUsersWeixinFollowersInfoSearch youzanUsersWeixinFollowersInfoSearch = new YouzanUsersWeixinFollowersInfoSearch();\nyouzanUsersWeixinFollowersInfoSearch.setAPIParams(youzanUsersWeixinFollowersInfoSearchParams);\nYouzanUsersWeixinFollowersInfoSearchResult result = client.invoke(youzanUsersWeixinFollowersInfoSearch);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"start_follow\", \"2018-11-02\");\ndict.Add(\"page_size\", 20);\ndict.Add(\"end_follow\", \"2018-11-03\");\ndict.Add(\"only_follow\", 0);\ndict.Add(\"fields\", \"points\");\n\n\nvar result = yzClient.Invoke(\"youzan.users.weixin.followers.info.search\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['start_follow']=\"2018-11-02\"\nparams['page_size']=20\nparams['end_follow']=\"2018-11-03\"\nparams['only_follow']=0\nparams['fields']=\"points\"\n\nfiles=[]\n\nprint client.invoke('youzan.users.weixin.followers.info.search', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['start_follow']=\"2018-11-02\";\nparams['page_size']=20;\nparams['end_follow']=\"2018-11-03\";\nparams['only_follow']=0;\nparams['fields']=\"points\";\n\n\nvar promise = YZClient.invoke('youzan.users.weixin.followers.info.search', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.users.weixin.followers.info.search'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'start_follow' => '2018-11-02',\n    'page_size' => '20',\n    'end_follow' => '2018-11-03',\n    'only_follow' => '0',\n    'fields' => 'points',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"users\":[],\"total_results\":0}}",
+    "errorResponseDemo": "{\"error_response\":{\"code\":141500101,\"message\":\"end_follow不能为空\"}}"
+  },
+  "name": "search",
+  "ids": [
+    8911
+  ],
+  "scenarios": "根据关注时间段批量查询微信粉丝用户信息（支持粉丝基础信息、积分、交易等数据查询，详见入参fields字段描述）。\n注意： \n1. 如果接口频繁抛异常，且入参无误，请减小page_size并重试。\n2.请尽量按需自定义入参“fields”字段获取数据。“fields”字段传入枚举值越多，查询数据耗费时间越长。",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "根据微信粉丝关注时间段批量查询微信粉丝用户信息，绑定微信公众号后可拉取"
+}

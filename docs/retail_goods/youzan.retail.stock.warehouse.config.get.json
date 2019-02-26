@@ -1,0 +1,81 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.stock.warehouse.config/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.stock.warehouse.config/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "WEB_BACK_END",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "系统来源",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "是否开启调拨审核",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "response",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "是否开启调拨审核",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailStockWarehouseConfigGetParams youzanRetailStockWarehouseConfigGetParams = new YouzanRetailStockWarehouseConfigGetParams();\n\nyouzanRetailStockWarehouseConfigGetParams.setRetailSource(\"test\");\n\nYouzanRetailStockWarehouseConfigGet youzanRetailStockWarehouseConfigGet = new YouzanRetailStockWarehouseConfigGet();\nyouzanRetailStockWarehouseConfigGet.setAPIParams(youzanRetailStockWarehouseConfigGetParams);\nYouzanRetailStockWarehouseConfigGetResult result = client.invoke(youzanRetailStockWarehouseConfigGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"retail_source\", \"test\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.stock.warehouse.config.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.stock.warehouse.config.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'retail_source' => 'test',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['retail_source']=\"test\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.stock.warehouse.config.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['retail_source']=\"test\";\n\n\nvar promise = YZClient.invoke('youzan.retail.stock.warehouse.config.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":true}",
+    "errorResponseDemo": null
+  },
+  "name": "get",
+  "ids": [
+    10206
+  ],
+  "scenarios": "查询仓库单据是否需要审核",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "查询仓库单据是否需要审核"
+}

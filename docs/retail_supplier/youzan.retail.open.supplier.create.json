@@ -1,0 +1,387 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.open.supplier/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.open.supplier/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "address",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "地址",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "contacts",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "联系人",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "contacts_phone",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "联系人电话",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "email",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "邮箱",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fax",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "传真\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "phone",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "公司电话\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "qq",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "qq号\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "备注",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "零售调用来源(调用方和有赞约定的值)",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "supplier_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "供应商名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "wei_xin",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "微信号\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "supplier_name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "供应商名称\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "supplier_name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "供应商名称\t",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "supplier_code",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "供应商编码\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "supplier_code",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "供应商编码\t",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "phone",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "公司电话\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "phone",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "公司电话\t",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "contacts",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "联系人\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "contacts",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "联系人\t",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "contacts_phone",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "联系人电话\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "contacts_phone",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "联系人电话\t",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "address",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "地址",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "address",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "地址",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "备注",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "remark",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "备注",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "qq",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "qq号\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "qq",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "qq号\t",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "wei_xin",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "微信号\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "wei_xin",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "微信号\t",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "fax",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "传真\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "fax",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "传真\t",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "email",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "邮箱",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "email",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "邮箱",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailOpenSupplierCreateParams youzanRetailOpenSupplierCreateParams = new YouzanRetailOpenSupplierCreateParams();\n\nyouzanRetailOpenSupplierCreateParams.setWeiXin(\"326575456\");\nyouzanRetailOpenSupplierCreateParams.setSupplierName(\"特步的供应商\");\nyouzanRetailOpenSupplierCreateParams.setRetailSource(\"RENWOXING\");\nyouzanRetailOpenSupplierCreateParams.setRemark(\"江南大道\");\nyouzanRetailOpenSupplierCreateParams.setQq(\"47675432\");\nyouzanRetailOpenSupplierCreateParams.setPhone(\"\");\nyouzanRetailOpenSupplierCreateParams.setFax(\"\");\nyouzanRetailOpenSupplierCreateParams.setEmail(\"47675432@qq.com\");\nyouzanRetailOpenSupplierCreateParams.setContactsPhone(\"13587678765\");\nyouzanRetailOpenSupplierCreateParams.setContacts(\"老王\");\nyouzanRetailOpenSupplierCreateParams.setAddress(\"江南大道\");\n\nYouzanRetailOpenSupplierCreate youzanRetailOpenSupplierCreate = new YouzanRetailOpenSupplierCreate();\nyouzanRetailOpenSupplierCreate.setAPIParams(youzanRetailOpenSupplierCreateParams);\nYouzanRetailOpenSupplierCreateResult result = client.invoke(youzanRetailOpenSupplierCreate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"wei_xin\", \"326575456\");\ndict.Add(\"supplier_name\", \"特步的供应商\");\ndict.Add(\"retail_source\", \"RENWOXING\");\ndict.Add(\"remark\", \"江南大道\");\ndict.Add(\"qq\", \"47675432\");\ndict.Add(\"phone\", \"\");\ndict.Add(\"fax\", \"\");\ndict.Add(\"email\", \"47675432@qq.com\");\ndict.Add(\"contacts_phone\", \"13587678765\");\ndict.Add(\"contacts\", \"老王\");\ndict.Add(\"address\", \"江南大道\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.open.supplier.create\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['wei_xin']=\"326575456\"\nparams['supplier_name']=\"特步的供应商\"\nparams['retail_source']=\"RENWOXING\"\nparams['remark']=\"江南大道\"\nparams['qq']=\"47675432\"\nparams['phone']=\"\"\nparams['fax']=\"\"\nparams['email']=\"47675432@qq.com\"\nparams['contacts_phone']=\"13587678765\"\nparams['contacts']=\"老王\"\nparams['address']=\"江南大道\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.open.supplier.create', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['wei_xin']=\"326575456\";\nparams['supplier_name']=\"特步的供应商\";\nparams['retail_source']=\"RENWOXING\";\nparams['remark']=\"江南大道\";\nparams['qq']=\"47675432\";\nparams['phone']=\"\";\nparams['fax']=\"\";\nparams['email']=\"47675432@qq.com\";\nparams['contacts_phone']=\"13587678765\";\nparams['contacts']=\"老王\";\nparams['address']=\"江南大道\";\n\n\nvar promise = YZClient.invoke('youzan.retail.open.supplier.create', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.open.supplier.create'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'wei_xin' => '326575456',\n    'supplier_name' => '特步的供应商',\n    'retail_source' => 'RENWOXING',\n    'remark' => '江南大道',\n    'qq' => '47675432',\n    'phone' => '',\n    'fax' => '',\n    'email' => '47675432@qq.com',\n    'contacts_phone' => '13587678765',\n    'contacts' => '老王',\n    'address' => '江南大道',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "234003020",
+        "errorDesc": "新增供应商失败",
+        "solution": null
+      },
+      {
+        "errorCode": "223008001",
+        "errorDesc": "供应商编码已存在",
+        "solution": "尝试重新创建"
+      },
+      {
+        "errorCode": "223008002",
+        "errorDesc": "供应商名称已存在",
+        "solution": "修改供应商名称"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"qq\":\"47675432\",\"contacts_phone\":\"13587678765\",\"address\":\"江南大道\",\"phone\":\"\",\"wei_xin\":\"326575456\",\"remark\":\"江南大道\",\"supplier_name\":\"特步的供应商\",\"fax\":\"\",\"supplier_code\":\"SGYS181122215829019606\",\"contacts\":\"老王\",\"email\":\"47675432@qq.com\"}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"供应商名称已存在\",\"code\":223008002}}"
+  },
+  "name": "create",
+  "ids": [
+    10767
+  ],
+  "scenarios": "供应商信息新增",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "供应商信息新增"
+}

@@ -1,0 +1,81 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.trade.later.receive/3.0.0/update"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.trade.later.receive/3.0.0/update"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "tid",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "交易编号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "操作是否成功，true为成功，false为失败",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "操作是否成功，true为成功，false为失败",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanTradeLaterReceiveUpdateParams youzanTradeLaterReceiveUpdateParams = new YouzanTradeLaterReceiveUpdateParams();\n\nyouzanTradeLaterReceiveUpdateParams.setOrderNo(\"E20181206172055079200001\");\n\nYouzanTradeLaterReceiveUpdate youzanTradeLaterReceiveUpdate = new YouzanTradeLaterReceiveUpdate();\nyouzanTradeLaterReceiveUpdate.setAPIParams(youzanTradeLaterReceiveUpdateParams);\nYouzanTradeLaterReceiveUpdateResult result = client.invoke(youzanTradeLaterReceiveUpdate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"order_no\", \"E20181206172055079200001\");\n\nvar result = yzClient.Invoke(\"youzan.trade.later.receive.update\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.trade.later.receive.update'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'order_no' => 'E20181206172055079200001',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['order_no']=\"E20181206172055079200001\"\n\nfiles=[]\n\nprint client.invoke('youzan.trade.later.receive.update', '3.0.0', 'POST', params=params, files=files)"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['order_no']=\"1\";\n\nvar promise = YZClient.invoke('youzan.trade.later.receive.update', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"is_success\":true}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"参数 token 无效\",\"code\":40010,\"sub_msg\":\"token无效，该token不存在或已过期\",\"sub_code\":10000,\"sub_data\":\"\"}}"
+  },
+  "name": "update",
+  "ids": [
+    8178
+  ],
+  "scenarios": "订单延长收货接口",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "订单延长收货接口"
+}

@@ -1,0 +1,92 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.products.offline/3.0.0/delete"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.products.offline/3.0.0/delete"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "item_ids",
+        "type": "Number[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "批量删除门店商品id列表",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "source",
+        "type": "String",
+        "example": "OPEN_BACK_END",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "请求来源（需调用方自定义标识：OPEN_XXXX）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "delete_result",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "批量删除是否成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "delete_result",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "批量删除是否成功",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailProductsOfflineDeleteParams youzanRetailProductsOfflineDeleteParams = new YouzanRetailProductsOfflineDeleteParams();\n\nyouzanRetailProductsOfflineDeleteParams.setSource(\"test\");\nyouzanRetailProductsOfflineDeleteParams.setItemIds(\"[426626239]\");\n\nYouzanRetailProductsOfflineDelete youzanRetailProductsOfflineDelete = new YouzanRetailProductsOfflineDelete();\nyouzanRetailProductsOfflineDelete.setAPIParams(youzanRetailProductsOfflineDeleteParams);\nYouzanRetailProductsOfflineDeleteResult result = client.invoke(youzanRetailProductsOfflineDelete);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"source\", \"test\");\ndict.Add(\"item_ids\", \"[426626239]\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.products.offline.delete\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.products.offline.delete'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'source' => 'test',\n    'item_ids' => '[426626239]',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['source']=\"test\"\nparams['item_ids']=\"[426626239]\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.products.offline.delete', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['source']=\"test\";\nparams['item_ids']=\"[426626239]\";\n\n\nvar promise = YZClient.invoke('youzan.retail.products.offline.delete', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":true}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"商品不存在!\",\"code\":122001001}}"
+  },
+  "name": "delete",
+  "ids": [
+    8934
+  ],
+  "scenarios": "批量删除门店商品 ",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "批量删除门店商品"
+}

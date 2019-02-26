@@ -1,0 +1,183 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.reservation/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.reservation/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "arrive_at",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "预约到店时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "customer_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "顾客姓名",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "dept_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "预约的分店id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "顾客手机号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "备注信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "reservation_items",
+        "type": "mei_reservation_item_entity[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "预约的服务项目",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/mei_reservation_item_entity",
+        "struct": {
+          "name": "mei_reservation_item_entity[]",
+          "type": "mei_reservation_item_entity[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "goods_id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "商品id",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "商品skuid",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "technician_id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "技师id",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "order_no",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "预约单单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "order_no",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "预约单单号",
+          "defaultValue": null,
+          "example": "",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanMeiReservationCreateParams youzanMeiReservationCreateParams = new YouzanMeiReservationCreateParams();\n\nyouzanMeiReservationCreateParams.setArriveAt(1536984200000L);\nyouzanMeiReservationCreateParams.setCustomerName(\"liuliu\");\nyouzanMeiReservationCreateParams.setDeptId(31911490L);\nyouzanMeiReservationCreateParams.setMToken(\"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUvO3bmIIMuT8XE1FB4f46pjN6HyPc3s4umlFKzyAT1o_xpkE3b4vl452ws9GKHUeoo\");\nyouzanMeiReservationCreateParams.setMobile(\"13827788989\");\nyouzanMeiReservationCreateParams.setRemark(\"aaaa\");\nyouzanMeiReservationCreateParams.setReservationItems(\"[{\"goods_id\":356007548,\"sku_id\":1056042,\"technician_id\":0}]\");\n\nYouzanMeiReservationCreate youzanMeiReservationCreate = new YouzanMeiReservationCreate();\nyouzanMeiReservationCreate.setAPIParams(youzanMeiReservationCreateParams);\nYouzanMeiReservationCreateResult result = client.invoke(youzanMeiReservationCreate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"arrive_at\", 1536984200000);\ndict.Add(\"customer_name\", \"liuliu\");\ndict.Add(\"dept_id\", 31911490);\ndict.Add(\"m_token\", \"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUvO3bmIIMuT8XE1FB4f46pjN6HyPc3s4umlFKzyAT1o_xpkE3b4vl452ws9GKHUeoo\");\ndict.Add(\"mobile\", \"13827788989\");\ndict.Add(\"remark\", \"aaaa\");\ndict.Add(\"reservation_items\", \"[{\"goods_id\":356007548,\"sku_id\":1056042,\"technician_id\":0}]\");\n\n\nvar result = yzClient.Invoke(\"youzan.mei.reservation.create\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['arrive_at']=1536984200000\nparams['customer_name']=\"liuliu\"\nparams['dept_id']=31911490\nparams['m_token']=\"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUvO3bmIIMuT8XE1FB4f46pjN6HyPc3s4umlFKzyAT1o_xpkE3b4vl452ws9GKHUeoo\"\nparams['mobile']=\"13827788989\"\nparams['remark']=\"aaaa\"\nparams['reservation_items']=\"[{\"goods_id\":356007548,\"sku_id\":1056042,\"technician_id\":0}]\"\n\nfiles=[]\n\nprint client.invoke('youzan.mei.reservation.create', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['arrive_at']=1536984200000;\nparams['customer_name']=\"liuliu\";\nparams['dept_id']=31911490;\nparams['m_token']=\"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUvO3bmIIMuT8XE1FB4f46pjN6HyPc3s4umlFKzyAT1o_xpkE3b4vl452ws9GKHUeoo\";\nparams['mobile']=\"13827788989\";\nparams['remark']=\"aaaa\";\nparams['reservation_items']=\"[{\"goods_id\":356007548,\"sku_id\":1056042,\"technician_id\":0}]\";\n\n\nvar promise = YZClient.invoke('youzan.mei.reservation.create', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.mei.reservation.create'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'arrive_at' => '1536984200000',\n    'customer_name' => 'liuliu',\n    'dept_id' => '31911490',\n    'm_token' => 'DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUvO3bmIIMuT8XE1FB4f46pjN6HyPc3s4umlFKzyAT1o_xpkE3b4vl452ws9GKHUeoo',\n    'mobile' => '13827788989',\n    'remark' => 'aaaa',\n    'reservation_items' => '[{\"goods_id\":356007548,\"sku_id\":1056042,\"technician_id\":0}]',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"order_no\":\"R20180903193054034141097\"}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"GOODS_ID无效\",\"code\":233001021}}"
+  },
+  "name": "create",
+  "ids": [
+    10230
+  ],
+  "scenarios": "创建一个服务预约",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "创建一个服务预约"
+}

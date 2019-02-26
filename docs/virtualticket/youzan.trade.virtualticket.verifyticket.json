@@ -1,0 +1,87 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.trade.virtualticket/3.0.0/verifyticket"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.trade.virtualticket/3.0.0/verifyticket"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "ticket_code",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "电子卡券码券号（每个电子卡券下的12位的码券号）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "核销是否成功，true 为成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "核销是否成功，true 为成功",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanTradeVirtualticketVerifyticketParams youzanTradeVirtualticketVerifyticketParams = new YouzanTradeVirtualticketVerifyticketParams();\n\nyouzanTradeVirtualticketVerifyticketParams.setTicketCode(\"568914998478\");\n\nYouzanTradeVirtualticketVerifyticket youzanTradeVirtualticketVerifyticket = new YouzanTradeVirtualticketVerifyticket();\nyouzanTradeVirtualticketVerifyticket.setAPIParams(youzanTradeVirtualticketVerifyticketParams);\nYouzanTradeVirtualticketVerifyticketResult result = client.invoke(youzanTradeVirtualticketVerifyticket);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"ticket_code\", \"568914998478\");\n\n\nvar result = yzClient.Invoke(\"youzan.trade.virtualticket.verifyticket\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.trade.virtualticket.verifyticket'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'ticket_code' => '568914998478',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['ticket_code']=\"568914998478\"\n\nfiles=[]\n\nprint client.invoke('youzan.trade.virtualticket.verifyticket', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['ticket_code']=\"568914998478\";\n\n\nvar promise = YZClient.invoke('youzan.trade.virtualticket.verifyticket', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "5000",
+        "errorDesc": "内部业务异常",
+        "solution": "请联系技术支持答疑"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"is_success\":true}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"电子码券不存在\",\"code\":50000}}"
+  },
+  "name": "verifyticket",
+  "ids": [
+    7983
+  ],
+  "scenarios": "电子卡券单个码券核销",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "电子卡券单个码券核销"
+}

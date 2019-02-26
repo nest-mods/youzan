@@ -1,0 +1,146 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.customer.fileinfo/3.0.0/update"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.customer.fileinfo/3.0.0/update"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "file_infos",
+        "type": "MeiMemberFileInfo[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "基础档案信息",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/MeiMemberFileInfo",
+        "struct": {
+          "name": "MeiMemberFileInfo[]",
+          "type": "MeiMemberFileInfo[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "档案项的id",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "value",
+              "type": "String",
+              "isStruct": false,
+              "desc": "档案项的值，单值档案使用此字段。例如日期档案、文本档案",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "value_list",
+              "type": "MeiMemberFileInfoItem[]",
+              "isStruct": true,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": [
+                {
+                  "name": "key",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "档案项",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "name",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "档案名",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "value",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "档案值",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "没有token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "yz_uid",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "会员id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "更新结果",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "更新结果",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\"response\":true}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"票据无效,请重新登录\",\"code\":230101003}}"
+  },
+  "name": "update",
+  "ids": [
+    10319
+  ],
+  "scenarios": "更新基础档案信息",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "更新基础档案信息"
+}

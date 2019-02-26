@@ -1,0 +1,130 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.trade.returngoods/3.0.0/fill"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.trade.returngoods/3.0.0/fill"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "logistics_company_code",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "3",
+        "isRequired": "是",
+        "desc": "物流公司编号: 查询youzan.logistics.express.get接口获取",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "logistics_waybill_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "EG893082275CS",
+        "isRequired": "是",
+        "desc": "物流公司运单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "refund_id",
+        "type": "String",
+        "example": "",
+        "defaultValue": "W12345678",
+        "isRequired": "是",
+        "desc": "退款ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "version",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "1493886089274",
+        "isRequired": "是",
+        "desc": "退款版本号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "是否成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "是否成功",
+          "defaultValue": null,
+          "example": "true",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanTradeReturngoodsFillParams youzanTradeReturngoodsFillParams = new YouzanTradeReturngoodsFillParams();\n\nyouzanTradeReturngoodsFillParams.setRefundId(\"201805241558440000030485\");\nyouzanTradeReturngoodsFillParams.setLogisticsWaybillNo(\"S1324654974\");\nyouzanTradeReturngoodsFillParams.setLogisticsCompanyCode(5L);\nyouzanTradeReturngoodsFillParams.setVersion(1527148724083L);\n\nYouzanTradeReturngoodsFill youzanTradeReturngoodsFill = new YouzanTradeReturngoodsFill();\nyouzanTradeReturngoodsFill.setAPIParams(youzanTradeReturngoodsFillParams);\nYouzanTradeReturngoodsFillResult result = client.invoke(youzanTradeReturngoodsFill);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"refund_id\", \"201805241558440000030485\");\ndict.Add(\"logistics_waybill_no\", \"S1324654974\");\ndict.Add(\"logistics_company_code\", 5);\ndict.Add(\"version\", 1527148724083);\n\n\nvar result = yzClient.Invoke(\"youzan.trade.returngoods.fill\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.trade.returngoods.fill'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'refund_id' => '201805241558440000030485',\n    'logistics_waybill_no' => 'S1324654974',\n    'logistics_company_code' => '5',\n    'version' => '1527148724083',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['refund_id']=\"201805241558440000030485\"\nparams['logistics_waybill_no']=\"S1324654974\"\nparams['logistics_company_code']=5\nparams['version']=1527148724083\n\nfiles=[]\n\nprint client.invoke('youzan.trade.returngoods.fill', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['refund_id']=\"201805241558440000030485\";\nparams['logistics_waybill_no']=\"S1324654974\";\nparams['logistics_company_code']=5;\nparams['version']=1527148724083;\n\n\nvar promise = YZClient.invoke('youzan.trade.returngoods.fill', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "103010039",
+        "errorDesc": "退款版本号错误",
+        "solution": "version错误，使用trade.refund.get获取最新的version"
+      },
+      {
+        "errorCode": "103011024",
+        "errorDesc": "退款记录不存在",
+        "solution": "检查退款单是否正确"
+      },
+      {
+        "errorCode": "103010035",
+        "errorDesc": "您无权限操作，非法用户",
+        "solution": "检查操作权限"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"is_success\":true}}",
+    "errorResponseDemo": "{\"error_response\":{\"code\":103010039,\"message\":\"退款版本号错误！\"}}"
+  },
+  "name": "fill",
+  "ids": [
+    8170
+  ],
+  "scenarios": "上传退货物流信息",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "上传退货物流信息"
+}

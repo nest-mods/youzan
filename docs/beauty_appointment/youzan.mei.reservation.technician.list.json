@@ -1,0 +1,166 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.reservation.technician/3.0.0/list"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.reservation.technician/3.0.0/list"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "dept_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "分店id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "goods_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "要查询的服务id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "要查询的服务的skuid",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "time",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "要查询的日期",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "resources",
+        "type": "MeiResource[]",
+        "isRequired": "否",
+        "desc": "技师信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiResource",
+        "struct": {
+          "name": "resources",
+          "type": "MeiResource[]",
+          "isNeed": "true",
+          "desc": "技师信息",
+          "defaultValue": null,
+          "example": "",
+          "isStruct": true,
+          "children": [
+            {
+              "name": "name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "资源名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "resource_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "资源类型\n1 技师（目前只有这一种类型）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "resource_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "资源id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "tags",
+              "type": "String[]",
+              "isNeed": null,
+              "desc": "资源标签，可以用来表示分组",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanMeiReservationTechnicianListParams youzanMeiReservationTechnicianListParams = new YouzanMeiReservationTechnicianListParams();\n\nyouzanMeiReservationTechnicianListParams.setDeptId(1L);\nyouzanMeiReservationTechnicianListParams.setMToken(\"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUvO3bmIIMuT8XE1FB4f46pjN6HyPc3s4umlFKzyAT1o_xpkE3b4vl452ws9GKHUeoo\");\nyouzanMeiReservationTechnicianListParams.setTime(1535731200000L);\n\nYouzanMeiReservationTechnicianList youzanMeiReservationTechnicianList = new YouzanMeiReservationTechnicianList();\nyouzanMeiReservationTechnicianList.setAPIParams(youzanMeiReservationTechnicianListParams);\nYouzanMeiReservationTechnicianListResult result = client.invoke(youzanMeiReservationTechnicianList);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"dept_id\", 1);\ndict.Add(\"m_token\", \"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUvO3bmIIMuT8XE1FB4f46pjN6HyPc3s4umlFKzyAT1o_xpkE3b4vl452ws9GKHUeoo\");\ndict.Add(\"time\", 1535731200000);\n\n\nvar result = yzClient.Invoke(\"youzan.mei.reservation.technician.list\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['dept_id']=1\nparams['m_token']=\"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUvO3bmIIMuT8XE1FB4f46pjN6HyPc3s4umlFKzyAT1o_xpkE3b4vl452ws9GKHUeoo\"\nparams['time']=1535731200000\n\nfiles=[]\n\nprint client.invoke('youzan.mei.reservation.technician.list', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['dept_id']=1;\nparams['m_token']=\"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUvO3bmIIMuT8XE1FB4f46pjN6HyPc3s4umlFKzyAT1o_xpkE3b4vl452ws9GKHUeoo\";\nparams['time']=1535731200000;\n\n\nvar promise = YZClient.invoke('youzan.mei.reservation.technician.list', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.mei.reservation.technician.list'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'dept_id' => '1',\n    'm_token' => 'DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUvO3bmIIMuT8XE1FB4f46pjN6HyPc3s4umlFKzyAT1o_xpkE3b4vl452ws9GKHUeoo',\n    'time' => '1535731200000',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":[]}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"抱歉, 服务器开了个小差\",\"code\":230100000}}"
+  },
+  "name": "list",
+  "ids": [
+    10321
+  ],
+  "scenarios": "可以通过服务或者工作时间段拉取技师列表",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "拉取技师列表"
+}

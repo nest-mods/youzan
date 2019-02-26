@@ -1,0 +1,207 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.open.stockcheck/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.open.stockcheck/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "biz_bill_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "单据编码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "create_time",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "单据日期",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "creator",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "创建人",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "order_items",
+        "type": "OpenStockCheckOrderItem[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "盘点单明细",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/OpenStockCheckOrderItem",
+        "struct": {
+          "name": "OpenStockCheckOrderItem[]",
+          "type": "OpenStockCheckOrderItem[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "real_amount",
+              "type": "String",
+              "isStruct": false,
+              "desc": "真实库存数量",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_code",
+              "type": "String",
+              "isStruct": false,
+              "desc": "skuCode",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "page_no",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "页码（从第一页开始）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "每页记录数（最大值为500）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "备注",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "零售调用来源(调用方和有赞约定的值)",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "total_count",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "总记录数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "warehouse_code",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "仓库编码（连锁版必须）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "业务单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "response",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "业务单号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailOpenStockcheckCreateParams youzanRetailOpenStockcheckCreateParams = new YouzanRetailOpenStockcheckCreateParams();\n\nyouzanRetailOpenStockcheckCreateParams.setWarehouseCode(\"30242973\");\nyouzanRetailOpenStockcheckCreateParams.setTotalCount(100L);\nyouzanRetailOpenStockcheckCreateParams.setRemark(\"测试\");\nyouzanRetailOpenStockcheckCreateParams.setPageSize(10L);\nyouzanRetailOpenStockcheckCreateParams.setPageNo(12L);\nyouzanRetailOpenStockcheckCreateParams.setOrderItems(\"[{\"sku_code\":\"test\",\"real_amount\":\"10\"}]\");\nyouzanRetailOpenStockcheckCreateParams.setCreator(\"vam\");\nyouzanRetailOpenStockcheckCreateParams.setBizBillNo(\"123123\");\n\nYouzanRetailOpenStockcheckCreate youzanRetailOpenStockcheckCreate = new YouzanRetailOpenStockcheckCreate();\nyouzanRetailOpenStockcheckCreate.setAPIParams(youzanRetailOpenStockcheckCreateParams);\nYouzanRetailOpenStockcheckCreateResult result = client.invoke(youzanRetailOpenStockcheckCreate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"warehouse_code\", \"30242973\");\ndict.Add(\"total_count\", 100);\ndict.Add(\"remark\", \"测试\");\ndict.Add(\"page_size\", 10);\ndict.Add(\"page_no\", 12);\ndict.Add(\"order_items\", \"[{\"sku_code\":\"test\",\"real_amount\":\"10\"}]\");\ndict.Add(\"creator\", \"vam\");\ndict.Add(\"biz_bill_no\", \"123123\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.open.stockcheck.create\", \"1.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.open.stockcheck.create'; //要调用的api名称\n$api_version = '1.0.0'; //要调用的api版本号\n\n$my_params = [\n    'warehouse_code' => '30242973',\n    'total_count' => '100',\n    'remark' => '测试',\n    'page_size' => '10',\n    'page_no' => '12',\n    'order_items' => '[{\"sku_code\":\"test\",\"real_amount\":\"10\"}]',\n    'creator' => 'vam',\n    'biz_bill_no' => '123123',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['warehouse_code']=\"30242973\"\nparams['total_count']=100\nparams['remark']=\"测试\"\nparams['page_size']=10\nparams['page_no']=12\nparams['order_items']=\"[{\"sku_code\":\"test\",\"real_amount\":\"10\"}]\"\nparams['creator']=\"vam\"\nparams['biz_bill_no']=\"123123\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.open.stockcheck.create', '1.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['warehouse_code']=\"30242973\";\nparams['total_count']=100;\nparams['remark']=\"测试\";\nparams['page_size']=10;\nparams['page_no']=12;\nparams['order_items']=\"[{\"sku_code\":\"test\",\"real_amount\":\"10\"}]\";\nparams['creator']=\"vam\";\nparams['biz_bill_no']=\"123123\";\n\n\nvar promise = YZClient.invoke('youzan.retail.open.stockcheck.create', '1.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":\"123123\"}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"不合法地仓库code: 28169835\",\"code\":234007003}}"
+  },
+  "name": "create",
+  "ids": [
+    10629
+  ],
+  "scenarios": "创建分页盘点单",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "分页盘点单创建"
+}

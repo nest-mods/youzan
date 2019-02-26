@@ -1,0 +1,518 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.dept/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.dept/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "dept_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "要查询的分店id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "dept_short_url",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "分店url短连接",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "dept_short_url",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "分店url短连接",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "principal_cert_status",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "主体认证状态",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "principal_cert_status",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "主体认证状态",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "create_time",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "创建时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "create_time",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "创建时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "pre_code",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "客服电话区号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "pre_code",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "客服电话区号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "principal_cert_type",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "主体认证类型",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "principal_cert_type",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "主体认证类型",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "telephone_number",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "客服电话",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "telephone_number",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "客服电话",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "dept_name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "分店名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "dept_name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "分店名称",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "description",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "简介",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "description",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "简介",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "principal_cert_name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "主体认证名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "principal_cert_name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "主体认证名称",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "business_hour",
+        "type": "MeiBusinessHour",
+        "isRequired": "否",
+        "desc": "营业时间",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiBusinessHour",
+        "struct": {
+          "name": "business_hour",
+          "type": "MeiBusinessHour",
+          "isNeed": "true",
+          "desc": "营业时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "time",
+              "type": "MeiHourTime",
+              "isNeed": null,
+              "desc": "HourTime结构",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "start",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "开始的分钟数",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "end",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "结束的分钟数",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "allWeek",
+              "type": "Boolean",
+              "isNeed": null,
+              "desc": "是否7*24小时营业",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "date",
+              "type": "Number[]",
+              "isNeed": null,
+              "desc": "工作的的日期",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "valid",
+              "type": "Boolean",
+              "isNeed": null,
+              "desc": "判断businessHour是否有效",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "dept_url",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "分店url",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "dept_url",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "分店url",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "shop_address",
+        "type": "MeiShopAddress",
+        "isRequired": "否",
+        "desc": "分店地址",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiShopAddress",
+        "struct": {
+          "name": "shop_address",
+          "type": "MeiShopAddress",
+          "isNeed": "true",
+          "desc": "分店地址",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "detailed_address",
+              "type": "String",
+              "isNeed": null,
+              "desc": "详细地址",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "province",
+              "type": "String",
+              "isNeed": null,
+              "desc": "省份",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "city",
+              "type": "String",
+              "isNeed": null,
+              "desc": "城市",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "area_code",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "区域编码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "district",
+              "type": "String",
+              "isNeed": null,
+              "desc": "区",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "latitude",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "维度",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "longitude",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "精度",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "kdt_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "店铺id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "kdt_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "店铺id",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "logo",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "分店logo",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "logo",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "分店logo",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "reserve_hour",
+        "type": "MeiBusinessHour",
+        "isRequired": "否",
+        "desc": "可预约时间",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiBusinessHour",
+        "struct": {
+          "name": "reserve_hour",
+          "type": "MeiBusinessHour",
+          "isNeed": "true",
+          "desc": "可预约时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "time",
+              "type": "MeiHourTime",
+              "isNeed": null,
+              "desc": "HourTime结构",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "start",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "开始的分钟数",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "end",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "结束的分钟数",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "allWeek",
+              "type": "Boolean",
+              "isNeed": null,
+              "desc": "是否7*24小时营业",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "date",
+              "type": "Number[]",
+              "isNeed": null,
+              "desc": "工作的的日期",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "valid",
+              "type": "Boolean",
+              "isNeed": null,
+              "desc": "判断businessHour是否有效",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\n    \"response\": {\n        \"dept_short_url\": \"https://j.youzan.com/xynXSY\", \n        \"principal_cert_status\": 10, \n        \"create_time\": 1516585216000, \n        \"pre_code\": \"\", \n        \"principal_cert_type\": 2, \n        \"telephone_number\": \"13425130472\", \n        \"dept_name\": \"红枫叶\", \n        \"description\": \"\", \n        \"principal_cert_name\": \"深圳有赞信息技术有限公司\", \n        \"business_hour\": {\n            \"date\": [\n                1, \n                2, \n                3, \n                4, \n                5, \n                6, \n                7\n            ], \n            \"valid\": true, \n            \"all_week\": true, \n            \"time\": {\n                \"start\": 600, \n                \"end\": 1320\n            }\n        }, \n        \"dept_url\": \"https://mei.youzan.com/h5/home?kdtId=40328097&deptId=31040434\", \n        \"shop_address\": {\n            \"detailed_address\": \"广东省深圳市南山区粤海街道北京银行(软件园社区支行)深圳市软件产业基地\", \n            \"province\": \"广东省\", \n            \"city\": \"广东省\", \n            \"area_code\": \"440305\", \n            \"district\": \"南山区\", \n            \"latitude\": 22.523826, \n            \"longitude\": 113.935416\n        }, \n        \"kdt_id\": 40328097, \n        \"logo\": \"http://img.yzcdn.cn/upload_files/2018/01/22/Fp0D9eJJO5FyQZz-SQ_I7u-xDcLm.jpg\", \n        \"reserve_hour\": {\n            \"date\": [\n                1, \n                2, \n                3, \n                4, \n                5, \n                6, \n                7\n            ], \n            \"valid\": true, \n            \"all_week\": true, \n            \"time\": {\n                \"start\": 600, \n                \"end\": 1320\n            }\n        }, \n        \"dept_id\": 31040434, \n        \"status\": 1\n    }\n}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"抱歉, 服务器开了个小差: \",\"code\":230100000}}"
+  },
+  "name": "get",
+  "ids": [
+    10356
+  ],
+  "scenarios": "获取分店信息",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "获取分店信息"
+}

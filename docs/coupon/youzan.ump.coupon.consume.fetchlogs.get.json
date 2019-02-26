@@ -1,0 +1,264 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.ump.coupon.consume.fetchlogs/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.ump.coupon.consume.fetchlogs/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "coupon_group_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "优惠券/优惠码id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "end_taked",
+        "type": "Date",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "按照领取时间筛选（结束时间）格式：'2017-09-09 17:12:41'",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_no",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "页码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "每页数量，最大值500",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "start_taked",
+        "type": "Date",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "按照领取时间筛选（开始时间）格式：'2017-09-09 17:12:41'",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "fetchlogs",
+        "type": "UmpPromotionFetchlog[]",
+        "isRequired": "否",
+        "desc": "领取记录",
+        "isStruct": true,
+        "structUrl": "/web/meta/UmpPromotionFetchlog",
+        "struct": {
+          "name": "fetchlogs",
+          "type": "UmpPromotionFetchlog[]",
+          "isNeed": "true",
+          "desc": "领取记录",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "title",
+              "type": "String",
+              "isNeed": null,
+              "desc": "优惠券／优惠码活动的名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "fans_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "领取人fans_id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "fans_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "领取人用户类型",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "used_in_order_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "使用的订单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_used",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否已使用 0未使用 1已使用",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "used_at",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "使用时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created_at",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "优惠券和通用优惠码的领取时间；若优惠码是用户自行导入的，则\b为优惠码导入时间。",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "promocode_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "优惠码ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "promocard_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "优惠券ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "mobile",
+              "type": "String",
+              "isNeed": null,
+              "desc": "手机号（若有）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "taked_at",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "领取时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "open_user_id",
+              "type": "String",
+              "isNeed": null,
+              "desc": "三方用户ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "total_results",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "领取总数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "total_results",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "领取总数",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanUmpCouponConsumeFetchlogsGetParams youzanUmpCouponConsumeFetchlogsGetParams = new YouzanUmpCouponConsumeFetchlogsGetParams();\n\nyouzanUmpCouponConsumeFetchlogsGetParams.setPageSize(20L);\nyouzanUmpCouponConsumeFetchlogsGetParams.setPageNo(1L);\nyouzanUmpCouponConsumeFetchlogsGetParams.setCouponGroupId(2906298L);\n\nYouzanUmpCouponConsumeFetchlogsGet youzanUmpCouponConsumeFetchlogsGet = new YouzanUmpCouponConsumeFetchlogsGet();\nyouzanUmpCouponConsumeFetchlogsGet.setAPIParams(youzanUmpCouponConsumeFetchlogsGetParams);\nYouzanUmpCouponConsumeFetchlogsGetResult result = client.invoke(youzanUmpCouponConsumeFetchlogsGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"page_size\", 20);\ndict.Add(\"page_no\", 1);\ndict.Add(\"coupon_group_id\", 2906298);\n\n\nvar result = yzClient.Invoke(\"youzan.ump.coupon.consume.fetchlogs.get\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['page_size']=20\nparams['page_no']=1\nparams['coupon_group_id']=2906298\n\nfiles=[]\n\nprint client.invoke('youzan.ump.coupon.consume.fetchlogs.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['page_size']=20;\nparams['page_no']=1;\nparams['coupon_group_id']=2906298;\n\n\nvar promise = YZClient.invoke('youzan.ump.coupon.consume.fetchlogs.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.ump.coupon.consume.fetchlogs.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'page_size' => '20',\n    'page_no' => '1',\n    'coupon_group_id' => '2906298',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"fetchlogs\":[{\"title\":\"\\u6d4b\\u8bd5\\u4e09\\u65b9\\u63a5\\u53e3\\u53d1\\u653e\",\"fans_id\":4308582234,\"fans_type\":1745,\"used_in_order_no\":\"\",\"mobile\":\"\",\"is_used\":\"0\",\"used_at\":\"0000-00-00 00:00:00\",\"created_at\":\"2017-10-30 19:37:00\",\"taked_at\":\"2017-10-30 19:37:00\",\"open_user_id\":\"10106\",\"promocard_id\":10724108},{\"title\":\"\\u6d4b\\u8bd5\\u4e09\\u65b9\\u63a5\\u53e3\\u53d1\\u653e\",\"fans_id\":4308582234,\"fans_type\":1745,\"used_in_order_no\":\"\",\"mobile\":\"\",\"is_used\":\"0\",\"used_at\":\"0000-00-00 00:00:00\",\"created_at\":\"2017-10-30 20:30:22\",\"taked_at\":\"2017-10-30 20:30:22\",\"open_user_id\":\"10106\",\"promocard_id\":10724109},{\"title\":\"\\u6d4b\\u8bd5\\u4e09\\u65b9\\u63a5\\u53e3\\u53d1\\u653e\",\"fans_id\":4308582234,\"fans_type\":1745,\"used_in_order_no\":\"\",\"mobile\":\"\",\"is_used\":\"0\",\"used_at\":\"0000-00-00 00:00:00\",\"created_at\":\"2017-10-30 20:35:45\",\"taked_at\":\"2017-10-30 20:35:45\",\"open_user_id\":\"10106\",\"promocard_id\":10724110},{\"title\":\"\\u6d4b\\u8bd5\\u4e09\\u65b9\\u63a5\\u53e3\\u53d1\\u653e\",\"fans_id\":3899466886,\"fans_type\":9,\"used_in_order_no\":\"\",\"mobile\":\"15715806895\",\"is_used\":\"0\",\"used_at\":\"0000-00-00 00:00:00\",\"created_at\":\"2017-10-31 15:40:42\",\"taked_at\":\"2017-10-31 15:40:42\",\"open_user_id\":\"\",\"promocard_id\":10724118},{\"title\":\"\\u6d4b\\u8bd5\\u4e09\\u65b9\\u63a5\\u53e3\\u53d1\\u653e\",\"fans_id\":4308582234,\"fans_type\":1745,\"used_in_order_no\":\"\",\"mobile\":\"\",\"is_used\":\"0\",\"used_at\":\"0000-00-00 00:00:00\",\"created_at\":\"2017-10-31 19:21:50\",\"taked_at\":\"2017-10-31 19:21:50\",\"open_user_id\":\"10106\",\"promocard_id\":10724122},{\"title\":\"\\u6d4b\\u8bd5\\u4e09\\u65b9\\u63a5\\u53e3\\u53d1\\u653e\",\"fans_id\":1476636315,\"fans_type\":9,\"used_in_order_no\":\"\",\"mobile\":\"\",\"is_used\":\"0\",\"used_at\":\"0000-00-00 00:00:00\",\"created_at\":\"2017-10-31 19:52:33\",\"taked_at\":\"2017-10-31 19:52:33\",\"open_user_id\":\"\",\"promocard_id\":10724123},{\"title\":\"\\u6d4b\\u8bd5\\u4e09\\u65b9\\u63a5\\u53e3\\u53d1\\u653e\",\"fans_id\":4308582234,\"fans_type\":1745,\"used_in_order_no\":\"\",\"mobile\":\"\",\"is_used\":\"0\",\"used_at\":\"0000-00-00 00:00:00\",\"created_at\":\"2017-10-31 20:10:12\",\"taked_at\":\"2017-10-31 20:10:12\",\"open_user_id\":\"10106\",\"promocard_id\":10724124},{\"title\":\"\\u6d4b\\u8bd5\\u4e09\\u65b9\\u63a5\\u53e3\\u53d1\\u653e\",\"fans_id\":4308582234,\"fans_type\":1745,\"used_in_order_no\":\"\",\"mobile\":\"\",\"is_used\":\"0\",\"used_at\":\"0000-00-00 00:00:00\",\"created_at\":\"2017-10-31 21:33:07\",\"taked_at\":\"2017-10-31 21:33:07\",\"open_user_id\":\"10106\",\"promocard_id\":10724125},{\"title\":\"\\u6d4b\\u8bd5\\u4e09\\u65b9\\u63a5\\u53e3\\u53d1\\u653e\",\"fans_id\":4308582234,\"fans_type\":1745,\"used_in_order_no\":\"\",\"mobile\":\"\",\"is_used\":\"0\",\"used_at\":\"0000-00-00 00:00:00\",\"created_at\":\"2017-10-31 21:35:16\",\"taked_at\":\"2017-10-31 21:35:16\",\"open_user_id\":\"10106\",\"promocard_id\":10724126},{\"title\":\"\\u6d4b\\u8bd5\\u4e09\\u65b9\\u63a5\\u53e3\\u53d1\\u653e\",\"fans_id\":4308582234,\"fans_type\":1745,\"used_in_order_no\":\"\",\"mobile\":\"\",\"is_used\":\"0\",\"used_at\":\"0000-00-00 00:00:00\",\"created_at\":\"2017-10-31 22:03:29\",\"taked_at\":\"2017-10-31 22:03:29\",\"open_user_id\":\"10106\",\"promocard_id\":10724127}],\"total_results\":10}}",
+    "errorResponseDemo": null
+  },
+  "name": "get",
+  "ids": [
+    8132
+  ],
+  "scenarios": "获取优惠券/优惠码领取记录，需申请高级权限方可调用。",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "获取优惠券/优惠码领取记录"
+}

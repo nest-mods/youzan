@@ -1,0 +1,323 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.staff/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.staff/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "account",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "账号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "dept_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "部门ID 1代表总店",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "手机",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "position_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "职位ID 2 高级管理员 3 店长 4 普通职员 5 手艺人 7 总部财务 8 驻店财务 9 营销顾问  总店的员工只能选择2 分店员工除了2其他都可以选 ",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "real_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "真实姓名",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "备注",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "roles",
+        "type": "MeiBeautyStoreRoleDTO[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "角色ID列表",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/MeiBeautyStoreRoleDTO",
+        "struct": {
+          "name": "MeiBeautyStoreRoleDTO[]",
+          "type": "MeiBeautyStoreRoleDTO[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "role_id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "角色ID",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "real_name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "员工姓名",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "real_name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "员工姓名",
+          "defaultValue": null,
+          "example": "张三",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "kdt_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "店铺id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "kdt_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "店铺id",
+          "defaultValue": null,
+          "example": "234234",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "dept_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "分店id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "dept_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "分店id",
+          "defaultValue": null,
+          "example": "34535",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "yz_uid",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "员工账号id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "yz_uid",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "员工账号id",
+          "defaultValue": null,
+          "example": "32443",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "account",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "员工账号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "account",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "员工账号",
+          "defaultValue": null,
+          "example": "13454344556",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "联系电话",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "mobile",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "联系电话",
+          "defaultValue": null,
+          "example": "13454433456",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "roles",
+        "type": "mei_role[]",
+        "isRequired": "否",
+        "desc": "角色列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/mei_role",
+        "struct": {
+          "name": "roles",
+          "type": "mei_role[]",
+          "isNeed": "true",
+          "desc": "角色列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "role_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "角色id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "role_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "角色名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "position_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "职位ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "position_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "职位ID",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanMeiStaffCreateParams youzanMeiStaffCreateParams = new YouzanMeiStaffCreateParams();\n\nyouzanMeiStaffCreateParams.setAccount(\"111\");\nyouzanMeiStaffCreateParams.setMobile(\"111\");\nyouzanMeiStaffCreateParams.setMToken(\"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUtNYNsR8TCXJ_3vRcbRfEZOyXWxvf-IBF7B7S1U8qpi3BpkE3b4vl452ws9GKHUeoo\");\nyouzanMeiStaffCreateParams.setRealName(\"hhhhhh\");\nyouzanMeiStaffCreateParams.setDeptId(31040434L);\nyouzanMeiStaffCreateParams.setRoles(\"[{\"roleId\":4}]\");\nyouzanMeiStaffCreateParams.setPositionId(4L);\n\nYouzanMeiStaffCreate youzanMeiStaffCreate = new YouzanMeiStaffCreate();\nyouzanMeiStaffCreate.setAPIParams(youzanMeiStaffCreateParams);\nYouzanMeiStaffCreateResult result = client.invoke(youzanMeiStaffCreate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"account\", \"111\");\ndict.Add(\"mobile\", \"111\");\ndict.Add(\"m_token\", \"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUtNYNsR8TCXJ_3vRcbRfEZOyXWxvf-IBF7B7S1U8qpi3BpkE3b4vl452ws9GKHUeoo\");\ndict.Add(\"real_name\", \"hhhhhh\");\ndict.Add(\"dept_id\", 31040434);\ndict.Add(\"roles\", \"[{\"roleId\":4}]\");\ndict.Add(\"position_id\", 4);\n\n\nvar result = yzClient.Invoke(\"youzan.mei.staff.create\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.mei.staff.create'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'account' => '111',\n    'mobile' => '111',\n    'm_token' => 'DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUtNYNsR8TCXJ_3vRcbRfEZOyXWxvf-IBF7B7S1U8qpi3BpkE3b4vl452ws9GKHUeoo',\n    'real_name' => 'hhhhhh',\n    'dept_id' => '31040434',\n    'roles' => '[{\"roleId\":4}]',\n    'position_id' => '4',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['account']=\"111\"\nparams['mobile']=\"111\"\nparams['m_token']=\"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUtNYNsR8TCXJ_3vRcbRfEZOyXWxvf-IBF7B7S1U8qpi3BpkE3b4vl452ws9GKHUeoo\"\nparams['real_name']=\"hhhhhh\"\nparams['dept_id']=31040434\nparams['roles']=\"[{\"roleId\":4}]\"\nparams['position_id']=4\n\nfiles=[]\n\nprint client.invoke('youzan.mei.staff.create', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['account']=\"111\";\nparams['mobile']=\"111\";\nparams['m_token']=\"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUtNYNsR8TCXJ_3vRcbRfEZOyXWxvf-IBF7B7S1U8qpi3BpkE3b4vl452ws9GKHUeoo\";\nparams['real_name']=\"hhhhhh\";\nparams['dept_id']=31040434;\nparams['roles']=\"[{\"roleId\":4}]\";\nparams['position_id']=4;\n\n\nvar promise = YZClient.invoke('youzan.mei.staff.create', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\n  \"response\": {\n    \"kdt_id\": 30110346,\n    \"roles\": [\n      {\n        \"role_id\": 4\n      }\n    ],\n    \"mobile\": \"111\",\n    \"real_name\": \"hhhhhh\",\n    \"dept_id\": 31040434,\n    \"yz_uid\": 70306,\n    \"account\": \"111\",\n    \"position_id\": 4\n  }\n}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"该员工已在-任职\",\"code\":230100003}}"
+  },
+  "name": "create",
+  "ids": [
+    10186
+  ],
+  "scenarios": "创建员工",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "创建员工"
+}

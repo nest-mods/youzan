@@ -1,0 +1,109 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.trade.memo/3.0.0/update"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.trade.memo/3.0.0/update"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "flag",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "订单备注加星标，取值为1-5",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "memo",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "订单备注",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tid",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "是否成功，true为成功，false为否",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "是否成功，true为成功，false为否",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanTradeMemoUpdateParams youzanTradeMemoUpdateParams = new YouzanTradeMemoUpdateParams();\n\nyouzanTradeMemoUpdateParams.setTid(\"E20170607220305012000001\");\nyouzanTradeMemoUpdateParams.setMemo(\"墨鱼测试1111\");\n\nYouzanTradeMemoUpdate youzanTradeMemoUpdate = new YouzanTradeMemoUpdate();\nyouzanTradeMemoUpdate.setAPIParams(youzanTradeMemoUpdateParams);\nYouzanTradeMemoUpdateResult result = client.invoke(youzanTradeMemoUpdate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"tid\", \"E20170607220305012000001\");\ndict.Add(\"memo\", \"墨鱼测试1111\");\n\n\nvar result = yzClient.Invoke(\"youzan.trade.memo.update\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.trade.memo.update'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'tid' => 'E20170607220305012000001',\n    'memo' => '墨鱼测试1111',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['tid']=\"E20170607220305012000001\"\nparams['memo']=\"墨鱼测试1111\"\n\nfiles=[]\n\nprint client.invoke('youzan.trade.memo.update', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['tid']=\"E20170607220305012000001\";\nparams['memo']=\"墨鱼测试1111\";\n\n\nvar promise = YZClient.invoke('youzan.trade.memo.update', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "50000",
+        "errorDesc": "内部业务异常",
+        "solution": "请联系技术支持答疑"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"is_success\":true}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"订单不存在\",\"code\":50000}}"
+  },
+  "name": "update",
+  "ids": [
+    8153
+  ],
+  "scenarios": "增加/修改订单备注",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "增加/修改订单备注"
+}

@@ -1,0 +1,378 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.open.stockinorder/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.open.stockinorder/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "biz_bill_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "入库单单据编号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "零售调用来源（调用方和有赞约定的值）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "warehouse_code",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "仓库编码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "biz_bill_no",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "单据编号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "biz_bill_no",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "单据编号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "warehouse_code",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "仓库编码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "warehouse_code",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "仓库编码",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "create_time",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "单据创建时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "create_time",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "单据创建时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "order_type",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "入库单据类型：\nBYRK=报溢入库\nPYRK=盘盈入库\nCGRK=采购入库\nTHRK=退货入库\nDBRK=调拨入库",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "order_type",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "入库单据类型：\nBYRK=报溢入库\nPYRK=盘盈入库\nCGRK=采购入库\nTHRK=退货入库\nDBRK=调拨入库",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "备注",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "remark",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "备注",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "creator",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "制单人",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "creator",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "制单人",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "source_order_no",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "关联单据号，如交易出库关联的订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "source_order_no",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "关联单据号，如交易出库关联的订单号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "order_items",
+        "type": "OpenStockOrderItemDTO[]",
+        "isRequired": "否",
+        "desc": "单据明细",
+        "isStruct": true,
+        "structUrl": "/web/meta/OpenStockOrderItemDTO",
+        "struct": {
+          "name": "order_items",
+          "type": "OpenStockOrderItemDTO[]",
+          "isNeed": "true",
+          "desc": "单据明细",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "sku_code",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品编码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sku_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品条码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "product_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "unit",
+              "type": "String",
+              "isNeed": null,
+              "desc": "单位",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "quantity",
+              "type": "String",
+              "isNeed": null,
+              "desc": "出库数量",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "with_tax_cost",
+              "type": "String",
+              "isNeed": null,
+              "desc": "含税成本单价（元）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "with_tax_amount",
+              "type": "String",
+              "isNeed": null,
+              "desc": "税总金额（含税成本单价*数量）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "without_tax_cost",
+              "type": "String",
+              "isNeed": null,
+              "desc": "不含税成本单价（元）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "without_tax_amount",
+              "type": "String",
+              "isNeed": null,
+              "desc": "不含税总金额（不含税成本单价*数量）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "output_tax_rate",
+              "type": "String",
+              "isNeed": null,
+              "desc": "销项税率",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "input_tax_rate",
+              "type": "String",
+              "isNeed": null,
+              "desc": "进项税率",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "real_sales_price",
+              "type": "String",
+              "isNeed": null,
+              "desc": "成交单价（单个商品的实付单价，销售出库单中才存在）（元）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "with_tax_income",
+              "type": "String",
+              "isNeed": null,
+              "desc": "成交单价（单个商品的实付单价，销售出库单中才存在）（元）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "supplier_code",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "供应商编码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "supplier_code",
+          "type": "String",
+          "isNeed": "false",
+          "desc": "供应商编码",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailOpenStockinorderGetParams youzanRetailOpenStockinorderGetParams = new YouzanRetailOpenStockinorderGetParams();\n\nyouzanRetailOpenStockinorderGetParams.setBizBillNo(\"SRK181106164749208744\");\nyouzanRetailOpenStockinorderGetParams.setRetailSource(\"GUANJIAPO\");\nyouzanRetailOpenStockinorderGetParams.setWarehouseCode(\"store001\");\n\nYouzanRetailOpenStockinorderGet youzanRetailOpenStockinorderGet = new YouzanRetailOpenStockinorderGet();\nyouzanRetailOpenStockinorderGet.setAPIParams(youzanRetailOpenStockinorderGetParams);\nYouzanRetailOpenStockinorderGetResult result = client.invoke(youzanRetailOpenStockinorderGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"biz_bill_no\", \"SRK181106164749208744\");\ndict.Add(\"retail_source\", \"GUANJIAPO\");\ndict.Add(\"warehouse_code\", \"store001\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.open.stockinorder.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.open.stockinorder.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'biz_bill_no' => 'SRK181106164749208744',\n    'retail_source' => 'GUANJIAPO',\n    'warehouse_code' => 'store001',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['biz_bill_no']=\"SRK181106164749208744\"\nparams['retail_source']=\"GUANJIAPO\"\nparams['warehouse_code']=\"store001\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.open.stockinorder.get', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['biz_bill_no']=\"SRK181106164749208744\";\nparams['retail_source']=\"GUANJIAPO\";\nparams['warehouse_code']=\"store001\";\n\n\nvar promise = YZClient.invoke('youzan.retail.open.stockinorder.get', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"biz_bill_no\":\"SRK181106164749208744\",\"creator\":\"chens\",\"create_time\":\"2018-11-06 16:47:49\",\"warehouse_code\":\"store001\",\"remark\":\"\",\"source_order_no\":\"SCS181106144146375355\",\"order_type\":\"PSRK\",\"order_items\":[{\"input_tax_rate\":\"0.03\",\"unit\":\"件\",\"quantity\":\"1\",\"sku_no\":\"201810290010033\",\"output_tax_rate\":\"0.03\",\"without_tax_cost\":\"0.9709\",\"without_tax_amount\":\"0.9709\",\"product_name\":\"挂件\",\"sku_code\":\"20181029001003\",\"with_tax_amount\":\"1.0000\",\"with_tax_cost\":\"1.0000\"},{\"input_tax_rate\":\"0.03\",\"unit\":\"件\",\"quantity\":\"2\",\"sku_no\":\"201810290010044\",\"output_tax_rate\":\"0.03\",\"without_tax_cost\":\"0.9709\",\"without_tax_amount\":\"1.9417\",\"product_name\":\"挂件\",\"sku_code\":\"20181029001004\",\"with_tax_amount\":\"2.0000\",\"with_tax_cost\":\"1.0000\"}]}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"数据异常\",\"code\":234000006}}"
+  },
+  "name": "get",
+  "ids": [
+    10635
+  ],
+  "scenarios": "查询入库单",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "查询入库单"
+}

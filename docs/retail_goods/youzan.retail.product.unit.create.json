@@ -1,0 +1,103 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.product.unit/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.product.unit/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "source",
+        "type": "String",
+        "example": "OPEN_BACK_END",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "请求来源（需调用方自定义标识：OPEN_XXXX）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "status",
+        "type": "Number",
+        "example": "0表示禁用，1表示启用",
+        "defaultValue": "1",
+        "isRequired": "否",
+        "desc": "状态（0表示禁用，1表示启用）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "unit_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "单位名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "unit_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "保存成功的单位id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "unit_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "保存成功的单位id",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailProductUnitCreateParams youzanRetailProductUnitCreateParams = new YouzanRetailProductUnitCreateParams();\n\nyouzanRetailProductUnitCreateParams.setUnitName(\"测试单位添加\");\nyouzanRetailProductUnitCreateParams.setSource(\"OPEN_XXX\");\nyouzanRetailProductUnitCreateParams.setStatus(1L);\n\nYouzanRetailProductUnitCreate youzanRetailProductUnitCreate = new YouzanRetailProductUnitCreate();\nyouzanRetailProductUnitCreate.setAPIParams(youzanRetailProductUnitCreateParams);\nYouzanRetailProductUnitCreateResult result = client.invoke(youzanRetailProductUnitCreate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"unit_name\", \"测试单位添加\");\ndict.Add(\"source\", \"OPEN_XXX\");\ndict.Add(\"status\", 1);\n\n\nvar result = yzClient.Invoke(\"youzan.retail.product.unit.create\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.product.unit.create'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'unit_name' => '测试单位添加',\n    'source' => 'OPEN_XXX',\n    'status' => '1',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['unit_name']=\"测试单位添加\"\nparams['source']=\"OPEN_XXX\"\nparams['status']=1\n\nfiles=[]\n\nprint client.invoke('youzan.retail.product.unit.create', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['unit_name']=\"测试单位添加\";\nparams['source']=\"OPEN_XXX\";\nparams['status']=1;\n\n\nvar promise = YZClient.invoke('youzan.retail.product.unit.create', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":1684876}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"参数错误 : 单位名称最多20个字\",\"code\":-101}}"
+  },
+  "name": "create",
+  "ids": [
+    8956
+  ],
+  "scenarios": "创建单位字典",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "创建单位字典"
+}

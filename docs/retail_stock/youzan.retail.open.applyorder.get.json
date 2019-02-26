@@ -1,0 +1,374 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.open.applyorder/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.open.applyorder/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "apply_order_no",
+        "type": "String",
+        "example": "123",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "要货单编号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "test",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "零售调用来源(调用方和有赞约定的值)",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "OpenGoodsApplyOrderDTO",
+        "isRequired": "否",
+        "desc": "要货申请单",
+        "isStruct": true,
+        "structUrl": "/web/meta/OpenGoodsApplyOrderDTO",
+        "struct": {
+          "name": "response",
+          "type": "OpenGoodsApplyOrderDTO",
+          "isNeed": "true",
+          "desc": "要货申请单",
+          "defaultValue": null,
+          "example": "",
+          "isStruct": true,
+          "children": [
+            {
+              "name": "apply_biz_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "要货申请单单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "from_warehouse_code",
+              "type": "String",
+              "isNeed": null,
+              "desc": "出库仓库编码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "to_warehouse_code",
+              "type": "String",
+              "isNeed": null,
+              "desc": "入库仓库编码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "from_warehouse_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "出库仓库名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "to_warehouse_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "入库仓库名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "status",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "1-待审核 2-待出库 3-待入库 4-已驳回 5-已关闭 6-已完成 7-出库执行中 8-入库执行中",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "refused_reason",
+              "type": "String",
+              "isNeed": null,
+              "desc": "拒绝理由",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "out_biz_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "出库单据编号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "in_biz_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "入库单据编号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "remark",
+              "type": "String",
+              "isNeed": null,
+              "desc": "备注",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "creator",
+              "type": "String",
+              "isNeed": null,
+              "desc": "制单人",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created_time",
+              "type": "String",
+              "isNeed": null,
+              "desc": "单据日期",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "order_items",
+              "type": "OpenApplyOrderItemDTO[]",
+              "isNeed": null,
+              "desc": "要货申请单-商品详情",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "apply_num",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "申请数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pre_out_num",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "预发数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "actual_out_num",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "实际出库数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "actual_in_num",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "实际入库数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "delivery_cost",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "配送价（元）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "checked_delivery_cost",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "审核配送价（元）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sku_code",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品sku编码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "product_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sku_no",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品sku条码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "unit",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "单位",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "with_tax_cost",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "含税成本单价（元）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "without_tax_cost",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "不含税成本单价（元）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "without_tax_amount",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "不含税总金额",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "with_tax_amount",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "含税总金额",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "dis_orders",
+              "type": "String[]",
+              "isNeed": null,
+              "desc": "关联配送单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailOpenApplyorderGetParams youzanRetailOpenApplyorderGetParams = new YouzanRetailOpenApplyorderGetParams();\n\nyouzanRetailOpenApplyorderGetParams.setApplyOrderNo(\"SYH181024160304068857\");\nyouzanRetailOpenApplyorderGetParams.setRetailSource(\"test\");\n\nYouzanRetailOpenApplyorderGet youzanRetailOpenApplyorderGet = new YouzanRetailOpenApplyorderGet();\nyouzanRetailOpenApplyorderGet.setAPIParams(youzanRetailOpenApplyorderGetParams);\nYouzanRetailOpenApplyorderGetResult result = client.invoke(youzanRetailOpenApplyorderGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"apply_order_no\", \"SYH181024160304068857\");\ndict.Add(\"retail_source\", \"test\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.open.applyorder.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.open.applyorder.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'apply_order_no' => 'SYH181024160304068857',\n    'retail_source' => 'test',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['apply_order_no']=\"SYH181024160304068857\"\nparams['retail_source']=\"test\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.open.applyorder.get', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['apply_order_no']=\"SYH181024160304068857\";\nparams['retail_source']=\"test\";\n\n\nvar promise = YZClient.invoke('youzan.retail.open.applyorder.get', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"from_warehouse_name\":\"异星的仓库啦啦啦啦\",\"created_time\":\"2018-10-22 15:33:01\",\"creator\":\"兴芹\",\"from_warehouse_code\":\"test\",\"apply_biz_no\":\"SYH181022153301936110\",\"remark\":\"线上监控\",\"out_biz_no\":\"\",\"dis_orders\":[\"SCS181022154712215704\"],\"to_warehouse_name\":\"杭州市民中心分店\",\"in_biz_no\":\"\",\"to_warehouse_code\":\"40687714\",\"order_items\":[{\"actual_out_num\":\"0\",\"unit\":\"件\",\"actual_in_num\":\"0\",\"sku_no\":\"P181009715986133\",\"checked_delivery_cost\":\"11000\",\"pre_out_num\":\"1\",\"apply_num\":\"1\",\"product_name\":\"勿动兴芹线上测试商品\"}],\"status\":2}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"查询退货单单失败\",\"code\":0}}"
+  },
+  "name": "get",
+  "ids": [
+    10775
+  ],
+  "scenarios": "通过要货申请单编号查询要货申请单详细信息",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "要货申请单查询"
+}

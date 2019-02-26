@@ -1,0 +1,103 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.stock.warehouse.config/3.0.0/set"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.stock.warehouse.config/3.0.0/set"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "is_need_check",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "配置项",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "系统来源",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "PlainBoolResult",
+        "isRequired": "否",
+        "desc": "是否成功",
+        "isStruct": true,
+        "structUrl": "/web/meta/PlainBoolResult",
+        "struct": {
+          "name": "response",
+          "type": "PlainBoolResult",
+          "isNeed": "true",
+          "desc": "是否成功",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "is_success",
+              "type": "Boolean",
+              "isNeed": null,
+              "desc": "是否成功",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailStockWarehouseConfigSetParams youzanRetailStockWarehouseConfigSetParams = new YouzanRetailStockWarehouseConfigSetParams();\n\nyouzanRetailStockWarehouseConfigSetParams.setRetailSource(\"test\");\nyouzanRetailStockWarehouseConfigSetParams.setIsNeedCheck(\"true\");\n\nYouzanRetailStockWarehouseConfigSet youzanRetailStockWarehouseConfigSet = new YouzanRetailStockWarehouseConfigSet();\nyouzanRetailStockWarehouseConfigSet.setAPIParams(youzanRetailStockWarehouseConfigSetParams);\nYouzanRetailStockWarehouseConfigSetResult result = client.invoke(youzanRetailStockWarehouseConfigSet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"retail_source\", \"test\");\ndict.Add(\"is_need_check\", \"true\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.stock.warehouse.config.set\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.stock.warehouse.config.set'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'retail_source' => 'test',\n    'is_need_check' => 'true',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['retail_source']=\"test\"\nparams['is_need_check']=\"true\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.stock.warehouse.config.set', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['retail_source']=\"test\";\nparams['is_need_check']=\"true\";\n\n\nvar promise = YZClient.invoke('youzan.retail.stock.warehouse.config.set', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"is_success\":true}}",
+    "errorResponseDemo": null
+  },
+  "name": "set",
+  "ids": [
+    10204
+  ],
+  "scenarios": "设置仓库单据是否需要审核",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "设置仓库单据是否需要审核"
+}

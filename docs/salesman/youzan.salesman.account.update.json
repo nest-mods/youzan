@@ -1,0 +1,126 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.salesman.account/3.0.0/update"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.salesman.account/3.0.0/update"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "fans_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "粉丝id（mobile 或 fans_id 选其一，另者置为0，都有值以mobile为准）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fans_type",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "粉丝类型（自有粉丝: fans_type = 1）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "level",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "需要设置的等级",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "手机号（mobile 或 fans_id 选其一，另者置为0，都有值以mobile为准）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": null,
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanSalesmanAccountUpdateParams youzanSalesmanAccountUpdateParams = new YouzanSalesmanAccountUpdateParams();\n\nyouzanSalesmanAccountUpdateParams.setLevel(2L);\nyouzanSalesmanAccountUpdateParams.setMobile(\"15757872643\");\nyouzanSalesmanAccountUpdateParams.setFansType(0L);\nyouzanSalesmanAccountUpdateParams.setFansId(0L);\n\nYouzanSalesmanAccountUpdate youzanSalesmanAccountUpdate = new YouzanSalesmanAccountUpdate();\nyouzanSalesmanAccountUpdate.setAPIParams(youzanSalesmanAccountUpdateParams);\nYouzanSalesmanAccountUpdateResult result = client.invoke(youzanSalesmanAccountUpdate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"level\", 2);\ndict.Add(\"mobile\", \"15757872643\");\ndict.Add(\"fans_type\", 0);\ndict.Add(\"fans_id\", 0);\n\n\nvar result = yzClient.Invoke(\"youzan.salesman.account.update\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['level']=2\nparams['mobile']=\"15757872643\"\nparams['fans_type']=0\nparams['fans_id']=0\n\nfiles=[]\n\nprint client.invoke('youzan.salesman.account.update', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['level']=2;\nparams['mobile']=\"15757872643\";\nparams['fans_type']=0;\nparams['fans_id']=0;\n\n\nvar promise = YZClient.invoke('youzan.salesman.account.update', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.salesman.account.update'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'level' => '2',\n    'mobile' => '15757872643',\n    'fans_type' => '0',\n    'fans_id' => '0',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "341007003",
+        "errorDesc": "请求参数非法",
+        "solution": null
+      },
+      {
+        "errorCode": "341007002",
+        "errorDesc": "参数缺失",
+        "solution": null
+      },
+      {
+        "errorCode": "341007102",
+        "errorDesc": "店铺未开启分销员插件",
+        "solution": null
+      },
+      {
+        "errorCode": "341007104",
+        "errorDesc": "店铺未开通高级版",
+        "solution": null
+      },
+      {
+        "errorCode": "341007204",
+        "errorDesc": "用户不是分销员",
+        "solution": null
+      },
+      {
+        "errorCode": "341007103",
+        "errorDesc": "等级不存在",
+        "solution": null
+      }
+    ],
+    "responseDemo": "{\"response\":{\"isSuccess\":true}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"用户id不存在-buyerId\",\"code\":341007202}}"
+  },
+  "name": "update",
+  "ids": [
+    11246
+  ],
+  "scenarios": "更新分销员信息",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "更新分销员信息"
+}

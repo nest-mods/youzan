@@ -1,0 +1,186 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.stock.goodsapply/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.stock.goodsapply/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "business_order_items",
+        "type": "out_stock_allot_item[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "单据明细",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/out_stock_allot_item",
+        "struct": {
+          "name": "out_stock_allot_item[]",
+          "type": "out_stock_allot_item[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "apply_num",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "申请数量",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "picture_name",
+              "type": "String",
+              "isStruct": false,
+              "desc": "商品名称",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "picture_url",
+              "type": "String",
+              "isStruct": false,
+              "desc": "商品图片",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "商品id",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_no",
+              "type": "String",
+              "isStruct": false,
+              "desc": "商品条码",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "specifications",
+              "type": "String",
+              "isStruct": false,
+              "desc": "规格信息",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "unit",
+              "type": "String",
+              "isStruct": false,
+              "desc": "单位",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "idempotent_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "幂等单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "备注",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "请求来源",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "成功创建的单据号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "response",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "成功创建的单据号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailStockGoodsapplyCreateParams youzanRetailStockGoodsapplyCreateParams = new YouzanRetailStockGoodsapplyCreateParams();\n\nyouzanRetailStockGoodsapplyCreateParams.setRetailSource(\"test\");\nyouzanRetailStockGoodsapplyCreateParams.setRemark(\"测试开放接口\");\nyouzanRetailStockGoodsapplyCreateParams.setIdempotentNo(\"sdgqertgaedg12312\");\nyouzanRetailStockGoodsapplyCreateParams.setBusinessOrderItems(\"[{\"sku_id\":2665001,\"product_name\":\"hey\",\"sku_no\":\"P180605462930210\",\"unit\":\"件\",\"specifications\":\"\",\"picture_url\":\"[{\\\"url\\\":\\\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\\\"}]\",\"apply_num\":1000}]\");\n\nYouzanRetailStockGoodsapplyCreate youzanRetailStockGoodsapplyCreate = new YouzanRetailStockGoodsapplyCreate();\nyouzanRetailStockGoodsapplyCreate.setAPIParams(youzanRetailStockGoodsapplyCreateParams);\nYouzanRetailStockGoodsapplyCreateResult result = client.invoke(youzanRetailStockGoodsapplyCreate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"retail_source\", \"test\");\ndict.Add(\"remark\", \"测试开放接口\");\ndict.Add(\"idempotent_no\", \"sdgqertgaedg12312\");\ndict.Add(\"business_order_items\", \"[{\"sku_id\":2665001,\"product_name\":\"hey\",\"sku_no\":\"P180605462930210\",\"unit\":\"件\",\"specifications\":\"\",\"picture_url\":\"[{\\\"url\\\":\\\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\\\"}]\",\"apply_num\":1000}]\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.stock.goodsapply.create\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['retail_source']=\"test\"\nparams['remark']=\"测试开放接口\"\nparams['idempotent_no']=\"sdgqertgaedg12312\"\nparams['business_order_items']=\"[{\"sku_id\":2665001,\"product_name\":\"hey\",\"sku_no\":\"P180605462930210\",\"unit\":\"件\",\"specifications\":\"\",\"picture_url\":\"[{\\\"url\\\":\\\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\\\"}]\",\"apply_num\":1000}]\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.stock.goodsapply.create', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['retail_source']=\"test\";\nparams['remark']=\"测试开放接口\";\nparams['idempotent_no']=\"sdgqertgaedg12312\";\nparams['business_order_items']=\"[{\"sku_id\":2665001,\"product_name\":\"hey\",\"sku_no\":\"P180605462930210\",\"unit\":\"件\",\"specifications\":\"\",\"picture_url\":\"[{\\\"url\\\":\\\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\\\"}]\",\"apply_num\":1000}]\";\n\n\nvar promise = YZClient.invoke('youzan.retail.stock.goodsapply.create', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.stock.goodsapply.create'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'retail_source' => 'test',\n    'remark' => '测试开放接口',\n    'idempotent_no' => 'sdgqertgaedg12312',\n    'business_order_items' => '[{\"sku_id\":2665001,\"product_name\":\"hey\",\"sku_no\":\"P180605462930210\",\"unit\":\"件\",\"specifications\":\"\",\"picture_url\":\"[{\\\"url\\\":\\\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\\\"}]\",\"apply_num\":1000}]',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":\"SYH180731144627639086\"}",
+    "errorResponseDemo": null
+  },
+  "name": "create",
+  "ids": [
+    10309
+  ],
+  "scenarios": "要货申请单创建",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "要货申请单创建"
+}

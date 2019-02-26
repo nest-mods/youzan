@@ -1,0 +1,205 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.goods.product/3.0.0/list"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.goods.product/3.0.0/list"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "category_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "分类Id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "contain_category_info",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否包含分类信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "contain_sku_info",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否包含规格信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "contain_sold_out",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否售罄",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "contain_spec_tree",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否包含规格项信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "contain_stock",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否包含库存",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "contain_tag_info",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否包含分类信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "goods_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_no",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "页码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "每页数目",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sold_out",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "售卖属性 1, \"销售\" 2, \"售罄\" 3, \"部分售罄\"",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "status",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "上下架 1, \"上架\" 2, \"下架\"",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tag_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "标签id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": null,
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanMeiGoodsProductListParams youzanMeiGoodsProductListParams = new YouzanMeiGoodsProductListParams();\n\nyouzanMeiGoodsProductListParams.setMToken(\"plLrpT7izAlj4KNleDpWlEfMqcVH_jkNByAMEJkZi7fv-djQcx9wMNNBpkhNGabS1s8jyMBEiZeW7iNJ4eXgYg\");\n\nYouzanMeiGoodsProductList youzanMeiGoodsProductList = new YouzanMeiGoodsProductList();\nyouzanMeiGoodsProductList.setAPIParams(youzanMeiGoodsProductListParams);\nYouzanMeiGoodsProductListResult result = client.invoke(youzanMeiGoodsProductList);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"m_token\", \"plLrpT7izAlj4KNleDpWlEfMqcVH_jkNByAMEJkZi7fv-djQcx9wMNNBpkhNGabS1s8jyMBEiZeW7iNJ4eXgYg\");\n\n\nvar result = yzClient.Invoke(\"youzan.mei.goods.product.list\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['m_token']=\"plLrpT7izAlj4KNleDpWlEfMqcVH_jkNByAMEJkZi7fv-djQcx9wMNNBpkhNGabS1s8jyMBEiZeW7iNJ4eXgYg\"\n\nfiles=[]\n\nprint client.invoke('youzan.mei.goods.product.list', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['m_token']=\"plLrpT7izAlj4KNleDpWlEfMqcVH_jkNByAMEJkZi7fv-djQcx9wMNNBpkhNGabS1s8jyMBEiZeW7iNJ4eXgYg\";\n\n\nvar promise = YZClient.invoke('youzan.mei.goods.product.list', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.mei.goods.product.list'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'm_token' => 'plLrpT7izAlj4KNleDpWlEfMqcVH_jkNByAMEJkZi7fv-djQcx9wMNNBpkhNGabS1s8jyMBEiZeW7iNJ4eXgYg',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"paginator\":{\"total_count\":2,\"page\":0,\"page_size\":0},\"items\":[{\"product\":{\"postage\":555},\"create_time\":1534575788000,\"promotion_link\":\"https://mei.youzan.com/h5/goods/product?keyword=2fz0h5ytataga&kdtId=30110346\",\"sku_info_list\":[{\"price\":666,\"sku_id\":1056107,\"sn\":\"fala222\",\"cost_price\":0}],\"item_id\":3267,\"goods_id\":356052589,\"title\":\"发蜡2\",\"price_min\":666,\"update_time\":1534575789000,\"tag_list\":[],\"price\":666,\"goods_alias\":\"2fz0h5ytataga\",\"sku_tree_list\":[],\"goods_type\":2,\"goods_picture_list\":[{\"image_url\":\"http://img.yzcdn.cn/upload_files/2018/08/16/FofS08agSPl6Bph7QH7ldOoUySPR.png\",\"width\":0,\"height\":0}],\"stock\":{\"goods_sku_stock_list\":[{\"stock_num\":0,\"sku_id\":1056107,\"total_sold_num\":0}],\"stock_num\":0},\"price_max\":666,\"seq\":0,\"cost_price\":0},{\"product\":{\"postage\":11100},\"create_time\":1534575268000,\"promotion_link\":\"https://mei.youzan.com/h5/goods/product?keyword=3f0dbw82zi5qi&kdtId=30110346\",\"sku_info_list\":[{\"price\":11100,\"sku_id\":1056106,\"sn\":\"fala111\",\"cost_price\":10000}],\"item_id\":3266,\"goods_id\":356052588,\"original_text\":\"666\",\"title\":\"发蜡1\",\"price_min\":11100,\"update_time\":1534575268000,\"tag_list\":[],\"price\":11100,\"goods_alias\":\"3f0dbw82zi5qi\",\"sku_tree_list\":[],\"goods_type\":2,\"goods_picture_list\":[{\"image_url\":\"http://img.yzcdn.cn/upload_files/2018/08/16/FofS08agSPl6Bph7QH7ldOoUySPR.png\",\"width\":936,\"height\":638}],\"stock\":{\"goods_sku_stock_list\":[{\"stock_num\":0,\"sku_id\":1056106,\"total_sold_num\":0}],\"stock_num\":0},\"price_max\":11100,\"seq\":0,\"cost_price\":10000}]}}",
+    "errorResponseDemo": null
+  },
+  "name": "list",
+  "ids": [
+    10401
+  ],
+  "scenarios": "产品列表查询",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "产品列表查询"
+}

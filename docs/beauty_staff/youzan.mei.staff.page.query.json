@@ -1,0 +1,316 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.staff.page/3.0.0/query"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.staff.page/3.0.0/query"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "dept_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "部门ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "页数，默认查询第一页",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "每页数据量，默认每页20条",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "status",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "员工状态，0:正常 1:已删除，默认是0",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "paginator",
+        "type": "mei_paginator",
+        "isRequired": "否",
+        "desc": "分页信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/mei_paginator",
+        "struct": {
+          "name": "paginator",
+          "type": "mei_paginator",
+          "isNeed": "true",
+          "desc": "分页信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "total_count",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总记录数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "第几页",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page_size",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "每页显示的记录数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "items",
+        "type": "mei_staff_info",
+        "isRequired": "否",
+        "desc": "员工信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/mei_staff_info",
+        "struct": {
+          "name": "items",
+          "type": "mei_staff_info",
+          "isNeed": "true",
+          "desc": "员工信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "roles",
+              "type": "mei_role[]",
+              "isNeed": null,
+              "desc": "角色信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "role_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "角色id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "role_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "角色名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "mobile",
+              "type": "String",
+              "isNeed": null,
+              "desc": "联系电话",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "dept_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "分店名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "remark",
+              "type": "String",
+              "isNeed": null,
+              "desc": "备注信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "real_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "员工姓名",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "yz_uid",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "账号id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "kdt_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "店铺id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "dept_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "分店id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created_at",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "创建时间，是从1970年开始的毫秒值",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "updated_at",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "更新时间，是从1970年开始的毫秒值",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "account",
+              "type": "String",
+              "isNeed": null,
+              "desc": "员工账号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "status",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "员工状态",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanMeiStaffPageQueryParams youzanMeiStaffPageQueryParams = new YouzanMeiStaffPageQueryParams();\n\nyouzanMeiStaffPageQueryParams.setPageSize(1L);\nyouzanMeiStaffPageQueryParams.setMToken(\"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUtNYNsR8TCXJ_3vRcbRfEZOyXWxvf-IBF7B7S1U8qpi3BpkE3b4vl452ws9GKHUeoo\");\nyouzanMeiStaffPageQueryParams.setPage(1L);\nyouzanMeiStaffPageQueryParams.setDeptId(31040434L);\n\nYouzanMeiStaffPageQuery youzanMeiStaffPageQuery = new YouzanMeiStaffPageQuery();\nyouzanMeiStaffPageQuery.setAPIParams(youzanMeiStaffPageQueryParams);\nYouzanMeiStaffPageQueryResult result = client.invoke(youzanMeiStaffPageQuery);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"page_size\", 1);\ndict.Add(\"m_token\", \"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUtNYNsR8TCXJ_3vRcbRfEZOyXWxvf-IBF7B7S1U8qpi3BpkE3b4vl452ws9GKHUeoo\");\ndict.Add(\"page\", 1);\ndict.Add(\"dept_id\", 31040434);\n\n\nvar result = yzClient.Invoke(\"youzan.mei.staff.page.query\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['page_size']=1\nparams['m_token']=\"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUtNYNsR8TCXJ_3vRcbRfEZOyXWxvf-IBF7B7S1U8qpi3BpkE3b4vl452ws9GKHUeoo\"\nparams['page']=1\nparams['dept_id']=31040434\n\nfiles=[]\n\nprint client.invoke('youzan.mei.staff.page.query', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['page_size']=1;\nparams['m_token']=\"DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUtNYNsR8TCXJ_3vRcbRfEZOyXWxvf-IBF7B7S1U8qpi3BpkE3b4vl452ws9GKHUeoo\";\nparams['page']=1;\nparams['dept_id']=31040434;\n\n\nvar promise = YZClient.invoke('youzan.mei.staff.page.query', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.mei.staff.page.query'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'page_size' => '1',\n    'm_token' => 'DUgpGG0tdPEr9wrnySAC51OXeNss341kZE_hEmn7FUtNYNsR8TCXJ_3vRcbRfEZOyXWxvf-IBF7B7S1U8qpi3BpkE3b4vl452ws9GKHUeoo',\n    'page' => '1',\n    'dept_id' => '31040434',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\n  \"response\": {\n    \"paginator\": {\n      \"total_count\": 4,\n      \"page\": 0,\n      \"page_size\": 0\n    },\n    \"items\": [\n      {\n        \"roles\": [\n          {\n            \"role_name\": \"普通职员\",\n            \"role_id\": 4\n          }\n        ],\n        \"mobile\": \"33333333333\",\n        \"created_at\": 1535098310000,\n        \"remark\": \"eeeeeeee2222\",\n        \"real_name\": \"rrrrrr1111\",\n        \"avatar\": \"\",\n        \"yz_uid\": 70306,\n        \"operator_name\": \"\",\n        \"kdt_id\": 30110346,\n        \"updated_at\": 1535098631000,\n        \"dept_id\": 31040434,\n        \"account\": \"89887691\",\n        \"position_id\": 4,\n        \"status\": 0\n      }\n    ]\n  }\n}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"status type error\",\"code\":53002}}"
+  },
+  "name": "query",
+  "ids": [
+    10185
+  ],
+  "scenarios": "分页查询员工",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "分页查询员工"
+}

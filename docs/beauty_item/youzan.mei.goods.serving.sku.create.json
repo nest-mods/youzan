@@ -1,0 +1,89 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.goods.serving.sku/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.goods.serving.sku/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "规格名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "sku_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "规格ID，成功时会返回",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "sku_id",
+          "type": "Number",
+          "isNeed": "false",
+          "desc": "规格ID，成功时会返回",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "msg",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "错误提示信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "msg",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "错误提示信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\"response\":4399368}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"规格名称重复\",\"code\":232101201}}"
+  },
+  "name": "create",
+  "ids": [
+    10391
+  ],
+  "scenarios": "服务规格创建",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "服务规格创建"
+}

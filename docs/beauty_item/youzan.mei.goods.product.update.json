@@ -1,0 +1,389 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.goods.product/3.0.0/update"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.goods.product/3.0.0/update"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "category",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "分组ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "cost_price",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "成本价，单位：分",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "goods_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "goods_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品编号/条形码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "goods_pictures",
+        "type": "MeiGoodsPictureInfo[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品图片列表",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/MeiGoodsPictureInfo",
+        "struct": {
+          "name": "MeiGoodsPictureInfo[]",
+          "type": "MeiGoodsPictureInfo[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "image_url",
+              "type": "String",
+              "isStruct": false,
+              "desc": "图片URL",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "goods_skus",
+        "type": "MeiGoodsSkuInfo[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "服务规格信息列表",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/MeiGoodsSkuInfo",
+        "struct": {
+          "name": "MeiGoodsSkuInfo[]",
+          "type": "MeiGoodsSkuInfo[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "code",
+              "type": "String",
+              "isStruct": false,
+              "desc": "规格项编码",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "goods_stock_sku_param_list",
+              "type": "MeiGoodsCreateSkuLeafReq[]",
+              "isStruct": true,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": [
+                {
+                  "name": "key_id",
+                  "type": "Number",
+                  "isStruct": false,
+                  "desc": "规格项目Id",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "key_name",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "规格项目名称",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "value_id",
+                  "type": "Number",
+                  "isStruct": false,
+                  "desc": "规格Id",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "value_name",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "规格名称",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "price",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "价格",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "规格项Id",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "item_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "产品ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "memo",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "服务详情 支持富文本",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "服务名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "on_shelve",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否上架 1 是 0 否",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "postage",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "运费，单位：分",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "price",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "价格，有规格时不需要传这个参数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "short_memo",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "服务简介 支持富文本",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_images",
+        "type": "MeiSkuTreeImageInfo[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品Sku图片信息列表，当规格需要设置图片时 需要传此参数",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/MeiSkuTreeImageInfo",
+        "struct": {
+          "name": "MeiSkuTreeImageInfo[]",
+          "type": "MeiSkuTreeImageInfo[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "服务规格ID",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "isStruct": false,
+              "desc": "服务规格名称",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "skuLeafList",
+              "type": "MeiSkuLeafImage[]",
+              "isStruct": true,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": [
+                {
+                  "name": "id",
+                  "type": "Number",
+                  "isStruct": false,
+                  "desc": "规格项ID",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "image_url",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "规格图片URL",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "name",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "规格项名称",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "tags",
+        "type": "Number[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品标签ID列表",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "goods_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "更新的商品ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "goods_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "更新的商品ID",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"goods_id\":356007544}}",
+    "errorResponseDemo": null
+  },
+  "name": "update",
+  "ids": [
+    10379
+  ],
+  "scenarios": "产品更新",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "产品更新"
+}

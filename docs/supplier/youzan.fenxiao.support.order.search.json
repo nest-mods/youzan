@@ -1,0 +1,542 @@
+{
+  "name": "search",
+  "ids": [
+    10840
+  ],
+  "scenarios": "查询分销精选供货商供货订单，如查询3个月内未发货的订单。",
+  "1.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.fenxiao.support.order/1.0.0/search"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.fenxiao.support.order/1.0.0/search"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "close_time_begin",
+        "type": "String",
+        "example": "2018-08-10 13:30:58",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "关闭时间范围（yyyy-MM-dd HH:dd:ss）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "close_time_end",
+        "type": "String",
+        "example": "2018-08-23 13:30:58",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "关闭时间范围（yyyy-MM-dd HH:dd:ss）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "is_star",
+        "type": "Boolean",
+        "example": "true",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否加星",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "kdt_id",
+        "type": "Number",
+        "example": "55",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "供货商店铺id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "order_by_key",
+        "type": "String",
+        "example": "",
+        "defaultValue": "order_time",
+        "isRequired": "否",
+        "desc": "排序key（默认按下单时间排序）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "order_by_order",
+        "type": "String",
+        "example": "",
+        "defaultValue": "desc",
+        "isRequired": "否",
+        "desc": "desc: 降序，asc: 升序",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "order_no",
+        "type": "String",
+        "example": "S7387438643764373344",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "查询的订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "order_time_begin",
+        "type": "String",
+        "example": "2018-08-10 13:30:58",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "下单时间范围（yyyy-MM-dd HH:dd:ss）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "order_time_end",
+        "type": "String",
+        "example": "2018-08-23 13:30:58",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "下单时间范围（yyyy-MM-dd HH:dd:ss）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page",
+        "type": "Number",
+        "example": "2",
+        "defaultValue": "1",
+        "isRequired": "否",
+        "desc": "页码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "30",
+        "defaultValue": "20",
+        "isRequired": "否",
+        "desc": "每页大小",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "pay_time_begin",
+        "type": "String",
+        "example": "2018-08-10 13:30:58",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "支付时间范围（yyyy-MM-dd HH:dd:ss）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "pay_time_end",
+        "type": "String",
+        "example": "2018-08-23 13:30:58",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "支付时间范围（yyyy-MM-dd HH:dd:ss）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "receiver_name",
+        "type": "String",
+        "example": "xx",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "收货人姓名",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "receiver_phone",
+        "type": "String",
+        "example": "187652543543",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "收货人手机号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "refund_status",
+        "type": "Number",
+        "example": "0",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "维权状态\n0:没有维权, 1:维权申请中,2:等待精选供货商收货中,3:退货退款完成,4:仅退款完成",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "status",
+        "type": "Number",
+        "example": "50",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "订单状态\n10:待支付, 50:待发货, 60:已发货, 80:已收货, 99:已关闭,100:已完成",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "success_time_begin",
+        "type": "String",
+        "example": "2018-08-10 13:30:58",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "完成时间范围（yyyy-MM-dd HH:dd:ss）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "success_time_end",
+        "type": "String",
+        "example": "2018-08-23 13:30:58",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "完成时间范围（yyyy-MM-dd HH:dd:ss）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "total",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "订单总数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "total",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "订单总数",
+          "defaultValue": null,
+          "example": "48",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "10",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "page_size",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "10",
+          "defaultValue": "20",
+          "example": "分页大小",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "page",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "2",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "page",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "2",
+          "defaultValue": "1",
+          "example": "页码",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "data_list",
+        "type": "OrderSimpleResponseDTO[]",
+        "isRequired": "否",
+        "desc": "订单列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/OrderSimpleResponseDTO",
+        "struct": {
+          "name": "data_list",
+          "type": "OrderSimpleResponseDTO[]",
+          "isNeed": "true",
+          "desc": "订单列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "order_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "订单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "book_time",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "下单时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "postage",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "邮费（分）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "status",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "订单状态(10：待支付，50：待发货，60：已发货，80：已收货，99：已关闭，100：已完成）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "real_price",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "实付金额（分）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "current_price",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "订单价格（分）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "refund_status",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "退款状态（0：没有维权，1：维权中，2：维权中-等待精选供货商收货，3：退货退款维权完成，4：仅退款维权完成）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "star",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "订单加星（0-5）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "seller_memo",
+              "type": "String",
+              "isNeed": null,
+              "desc": "卖家留言",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "receiver",
+              "type": "ReceiverSimpleDTO",
+              "isNeed": null,
+              "desc": "收货人基本信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "receiver_phone",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "收货人手机号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "receiver_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "收货人姓名",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "itemList",
+              "type": "ItemSimpleDTO[]",
+              "isNeed": null,
+              "desc": "商品基本信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "title",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品标题",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sku",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品sku json信息",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "url",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品url",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "picture",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品图片信息",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "price",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品价格（分）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "num",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "code",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品编码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanFenxiaoSupportOrderSearchParams youzanFenxiaoSupportOrderSearchParams = new YouzanFenxiaoSupportOrderSearchParams();\n\nyouzanFenxiaoSupportOrderSearchParams.setStatus(100L);\n\nYouzanFenxiaoSupportOrderSearch youzanFenxiaoSupportOrderSearch = new YouzanFenxiaoSupportOrderSearch();\nyouzanFenxiaoSupportOrderSearch.setAPIParams(youzanFenxiaoSupportOrderSearchParams);\nYouzanFenxiaoSupportOrderSearchResult result = client.invoke(youzanFenxiaoSupportOrderSearch);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"status\", 100);\n\n\nvar result = yzClient.Invoke(\"youzan.fenxiao.support.order.search\", \"1.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.fenxiao.support.order.search'; //要调用的api名称\n$api_version = '1.0.0'; //要调用的api版本号\n\n$my_params = [\n    'status' => '100',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['status']=100\n\nfiles=[]\n\nprint client.invoke('youzan.fenxiao.support.order.search', '1.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['status']=100;\n\n\nvar promise = YZClient.invoke('youzan.fenxiao.support.order.search', '1.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "606000000",
+        "errorDesc": "查询失败",
+        "solution": "重试"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"data_list\":[{\"order_no\":\"S20180815141530000075597\",\"postage\":3,\"refund_status\":0,\"book_time\":1534313730000,\"receiver\":{\"receiver_name\":\"黎乐敏\",\"receiver_phone\":\"18868876440\"},\"star\":0,\"seller_memo\":\"\",\"item_list\":[{\"code\":\"\",\"price\":100,\"num\":1,\"sku\":\"规格1：小\",\"title\":\"mengoo\",\"picture\":\"[{\\\"height\\\":768,\\\"id\\\":6743,\\\"url\\\":\\\"upload_files/2016/12/27/FtfdgGrK-rkANCouXc2yjNtftctZ.jpg\\\",\\\"width\\\":1024}]\",\"url\":\"https://h5.youzan.com/v2/showcase/goods?alias=1ylbcatsg2fun\"}],\"current_price\":103,\"real_price\":103,\"status\":100},{\"order_no\":\"S20180731202529000073211\",\"postage\":0,\"refund_status\":0,\"book_time\":1533039929000,\"receiver\":{\"receiver_name\":\"林军\",\"receiver_phone\":\"18768116294\"},\"star\":5,\"seller_memo\":\"\",\"item_list\":[{\"code\":\"\",\"price\":1000,\"num\":1,\"sku\":\"\",\"title\":\"我来试试四十岁后四十四\",\"picture\":\"[{\\\"height\\\":383,\\\"id\\\":1113401,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/07/31/FqJqoozjegFnVyv7PD9Qa0cjN0zF.png\\\",\\\"width\\\":426}]\",\"url\":\"https://h5.youzan.com/v2/showcase/goods?alias=2fz0b1lqvigsv\"}],\"current_price\":1000,\"real_price\":1000,\"status\":100},{\"order_no\":\"S20180726215548000071991\",\"postage\":0,\"refund_status\":0,\"book_time\":1532613349000,\"receiver\":{\"receiver_name\":\"林军\",\"receiver_phone\":\"18768116294\"},\"star\":0,\"seller_memo\":\"\",\"item_list\":[{\"code\":\"\",\"price\":10000,\"num\":1,\"sku\":\"\",\"title\":\"子木测试商品\",\"picture\":\"[{\\\"height\\\":307,\\\"id\\\":1082600,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/07/26/Fs-LjDnAnKfg53TXYswnokuGg6YU.png\\\",\\\"width\\\":501}]\",\"url\":\"https://h5.youzan.com/v2/showcase/goods?alias=2octimxj1j1sf\"}],\"current_price\":10000,\"real_price\":10000,\"status\":100},{\"order_no\":\"S20180725112312000071191\",\"postage\":10,\"refund_status\":0,\"book_time\":1532488992000,\"receiver\":{\"receiver_name\":\"哦哟哟\",\"receiver_phone\":\"15158113500\"},\"star\":3,\"seller_memo\":\"\",\"item_list\":[{\"code\":\"\",\"price\":100,\"num\":1,\"sku\":\"颜色：小 尺寸：S 款式：8\",\"title\":\"翁老板的多规格商品\",\"picture\":\"[{\\\"height\\\":741,\\\"id\\\":1052400,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/07/24/FmFxUJnNnSWHgZJ01t0JOSvJSX6q.jpg\\\",\\\"width\\\":1024}]\",\"url\":\"https://h5.youzan.com/v2/showcase/goods?alias=2ova5i7dozzxb\"}],\"current_price\":110,\"real_price\":110,\"status\":100},{\"order_no\":\"S20180725111539000071171\",\"postage\":10,\"refund_status\":0,\"book_time\":1532488540000,\"receiver\":{\"receiver_name\":\"哦哟哟\",\"receiver_phone\":\"15158113500\"},\"star\":0,\"seller_memo\":\"\",\"item_list\":[{\"code\":\"\",\"price\":100,\"num\":1,\"sku\":\"颜色：小 尺寸：S 款式：8\",\"title\":\"翁老板的多规格商品\",\"picture\":\"[{\\\"height\\\":741,\\\"id\\\":1052400,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/07/24/FmFxUJnNnSWHgZJ01t0JOSvJSX6q.jpg\\\",\\\"width\\\":1024}]\",\"url\":\"https://h5.youzan.com/v2/showcase/goods?alias=2ova5i7dozzxb\"}],\"current_price\":110,\"real_price\":110,\"status\":100},{\"order_no\":\"S20180724125853000070701\",\"postage\":10,\"refund_status\":0,\"book_time\":1532408333000,\"receiver\":{\"receiver_name\":\"哦哟哟\",\"receiver_phone\":\"15158113500\"},\"star\":4,\"seller_memo\":\"2131313\",\"item_list\":[{\"code\":\"\",\"price\":100,\"num\":1,\"sku\":\"颜色：小 尺寸：S 款式：8\",\"title\":\"翁老板的多规格商品\",\"picture\":\"[{\\\"height\\\":741,\\\"id\\\":1052400,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/07/24/FmFxUJnNnSWHgZJ01t0JOSvJSX6q.jpg\\\",\\\"width\\\":1024}]\",\"url\":\"https://h5.youzan.com/v2/showcase/goods?alias=2ova5i7dozzxb\"}],\"current_price\":110,\"real_price\":110,\"status\":100},{\"order_no\":\"S20180723195053000070551\",\"postage\":10,\"refund_status\":0,\"book_time\":1532346653000,\"receiver\":{\"receiver_name\":\"翁晓峰\",\"receiver_phone\":\"15158113500\"},\"star\":0,\"seller_memo\":\"\",\"item_list\":[{\"code\":\"\",\"price\":100,\"num\":1,\"sku\":\"\",\"title\":\"翁晓峰的商品\",\"picture\":\"[{\\\"height\\\":1200,\\\"id\\\":1047205,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/07/23/FinXOZlVIF_2bSdKnSF9IAA-QFDG.jpg\\\",\\\"width\\\":900}]\",\"url\":\"https://h5.youzan.com/v2/showcase/goods?alias=2fu4uaapvejcv\"}],\"current_price\":110,\"real_price\":110,\"status\":100},{\"order_no\":\"S20180721103828000070011\",\"postage\":10,\"refund_status\":0,\"book_time\":1532140709000,\"receiver\":{\"receiver_name\":\"徐静\",\"receiver_phone\":\"18768178967\"},\"star\":0,\"seller_memo\":\"发发发\",\"item_list\":[{\"code\":\"\",\"price\":100,\"num\":1,\"sku\":\"尺寸：XL\",\"title\":\"老张是傻逼\",\"picture\":\"[{\\\"height\\\":340,\\\"id\\\":1027800,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/07/20/FiXq2LWe8s22U1KNvfnL23lcEBMs.png\\\",\\\"width\\\":441}]\",\"url\":\"https://h5.youzan.com/v2/showcase/goods?alias=2ogi72phrt4un\"}],\"current_price\":110,\"real_price\":110,\"status\":100},{\"order_no\":\"S20180720195954000060422\",\"postage\":20,\"refund_status\":0,\"book_time\":1532087994000,\"receiver\":{\"receiver_name\":\"毛小峰\",\"receiver_phone\":\"15068133535\"},\"star\":0,\"seller_memo\":\"\",\"item_list\":[{\"code\":\"\",\"price\":100,\"num\":3,\"sku\":\"尺寸：XL\",\"title\":\"老张是傻逼\",\"picture\":\"[{\\\"height\\\":340,\\\"id\\\":1027800,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/07/20/FiXq2LWe8s22U1KNvfnL23lcEBMs.png\\\",\\\"width\\\":441}]\",\"url\":\"https://h5.youzan.com/v2/showcase/goods?alias=2ogi72phrt4un\"}],\"current_price\":320,\"real_price\":320,\"status\":100},{\"order_no\":\"S20180717163143000044786\",\"postage\":200,\"refund_status\":0,\"book_time\":1531816303000,\"receiver\":{\"receiver_name\":\"毛小峰\",\"receiver_phone\":\"15068133535\"},\"star\":0,\"seller_memo\":\"\",\"item_list\":[{\"code\":\"\",\"price\":700,\"num\":1,\"sku\":\"颜色：天蓝色 尺寸：XXL 内存：8G\",\"title\":\"林老板交易测试专用-qa-20180711【勿删勿动】\",\"picture\":\"[{\\\"height\\\":225,\\\"id\\\":703901,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/05/28/FtLvfzO7QNcjvSmEd8S_KJA8vZoW.jpeg\\\",\\\"width\\\":225},{\\\"height\\\":900,\\\"id\\\":642900,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/05/21/FgmLS0Y7FwFI6h7IgjPPHwYUX78t.jpeg\\\",\\\"width\\\":600}]\",\"url\":\"https://h5.youzan.com/v2/showcase/goods?alias=2xiyanauz0sov\"}],\"current_price\":900,\"real_price\":0,\"status\":100},{\"order_no\":\"S20180714191755000044092\",\"postage\":200,\"refund_status\":0,\"book_time\":1531567075000,\"receiver\":{\"receiver_name\":\"林军\",\"receiver_phone\":\"18768116294\"},\"star\":0,\"seller_memo\":\"\",\"item_list\":[{\"code\":\"\",\"price\":800,\"num\":1,\"sku\":\"颜色：天蓝色 尺寸：XXL 内存：16G\",\"title\":\"林老板交易测试专用-qa-20180711【勿删勿动】\",\"picture\":\"[{\\\"height\\\":225,\\\"id\\\":703901,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/05/28/FtLvfzO7QNcjvSmEd8S_KJA8vZoW.jpeg\\\",\\\"width\\\":225},{\\\"height\\\":900,\\\"id\\\":642900,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/05/21/FgmLS0Y7FwFI6h7IgjPPHwYUX78t.jpeg\\\",\\\"width\\\":600}]\",\"url\":\"https://h5.youzan.com/v2/showcase/goods?alias=2xiyanauz0sov\"}],\"current_price\":1000,\"real_price\":0,\"status\":100},{\"order_no\":\"S20180714191616000044091\",\"postage\":200,\"refund_status\":0,\"book_time\":1531566977000,\"receiver\":{\"receiver_name\":\"林军\",\"receiver_phone\":\"18768116294\"},\"star\":0,\"seller_memo\":\"\",\"item_list\":[{\"code\":\"\",\"price\":800,\"num\":1,\"sku\":\"颜色：天蓝色 尺寸：XXL 内存：16G\",\"title\":\"林老板交易测试专用-qa-20180711【勿删勿动】\",\"picture\":\"[{\\\"height\\\":225,\\\"id\\\":703901,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/05/28/FtLvfzO7QNcjvSmEd8S_KJA8vZoW.jpeg\\\",\\\"width\\\":225},{\\\"height\\\":900,\\\"id\\\":642900,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/05/21/FgmLS0Y7FwFI6h7IgjPPHwYUX78t.jpeg\\\",\\\"width\\\":600}]\",\"url\":\"https://h5.youzan.com/v2/showcase/goods?alias=2xiyanauz0sov\"}],\"current_price\":1000,\"real_price\":0,\"status\":100},{\"order_no\":\"S20180714190528000044051\",\"postage\":200,\"refund_status\":0,\"book_time\":1531566329000,\"receiver\":{\"receiver_name\":\"林军\",\"receiver_phone\":\"18768116294\"},\"star\":0,\"seller_memo\":\"\",\"item_list\":[{\"code\":\"\",\"price\":800,\"num\":1,\"sku\":\"颜色：天蓝色 尺寸：XXL 内存：16G\",\"title\":\"林老板交易测试专用-qa-20180711【勿删勿动】\",\"picture\":\"[{\\\"height\\\":225,\\\"id\\\":703901,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/05/28/FtLvfzO7QNcjvSmEd8S_KJA8vZoW.jpeg\\\",\\\"width\\\":225},{\\\"height\\\":900,\\\"id\\\":642900,\\\"url\\\":\\\"http://img.yzcdn.cn/upload_files/2018/05/21/FgmLS0Y7FwFI6h7IgjPPHwYUX78t.jpeg\\\",\\\"width\\\":600}]\",\"url\":\"https://h5.youzan.com/v2/showcase/goods?alias=2xiyanauz0sov\"}],\"current_price\":1000,\"real_price\":0,\"status\":100}],\"total\":13,\"page\":1,\"page_size\":20}}",
+    "errorResponseDemo": null
+  },
+  "version": [
+    "1.0.0"
+  ],
+  "desc": "查询分销精选供货商供货订单"
+}

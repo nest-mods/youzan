@@ -1,0 +1,87 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.trade.refund/3.0.0/close"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.trade.refund/3.0.0/close"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "refund_id",
+        "type": "String",
+        "example": "",
+        "defaultValue": "W12345678",
+        "isRequired": "是",
+        "desc": "退款ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "version",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "1493882800081",
+        "isRequired": "是",
+        "desc": "退款版本号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "是否成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "是否成功",
+          "defaultValue": "",
+          "example": "true",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": [
+      {
+        "errorCode": "103010039",
+        "errorDesc": "退款版本号错误",
+        "solution": "version错误，使用trade.refund.get获取最新的version"
+      },
+      {
+        "errorCode": "103011024",
+        "errorDesc": "退款记录不存在",
+        "solution": "检查退款单是否正确"
+      },
+      {
+        "errorCode": "103010035",
+        "errorDesc": "您无权限操作，非法用户",
+        "solution": "检查操作权限"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"is_success\":true}}",
+    "errorResponseDemo": "{\"error_response\":{\"code\":103010039,\"message\":\"退款版本号错误！\"}}"
+  },
+  "name": "close",
+  "ids": [
+    8172
+  ],
+  "scenarios": "买家撤销退款申请",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "买家撤销退款申请"
+}

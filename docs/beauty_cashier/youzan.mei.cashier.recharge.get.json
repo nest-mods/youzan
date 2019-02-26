@@ -1,0 +1,125 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.cashier.recharge/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.cashier.recharge/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "order_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "要查询的订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "order_no",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "充值单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "order_no",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "充值单号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "channel_name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "充值支付通道名称\n微信、支付宝、刷卡、现金\n",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "channel_name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "充值支付通道名称\n微信、支付宝、刷卡、现金\n",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "pay_status",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "充值结果\n10, \"准备充值\"\n20, \"支付中\"\n30, \"已支付\"\n33, \"已充值\"\n35, \"发放权益\"\n98, \"支付失败\"",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "pay_status",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "充值结果\n10, \"准备充值\"\n20, \"支付中\"\n30, \"已支付\"\n33, \"已充值\"\n35, \"发放权益\"\n98, \"支付失败\"",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "channel_type",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "充值支付通道类型\n1,\"微信\"\n3，“支付宝”\n201, \"现金\"\n204, \"刷卡\"",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "channel_type",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "充值支付通道类型\n1,\"微信\"\n3，“支付宝”\n201, \"现金\"\n204, \"刷卡\"",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"order_no\":\"M2018081409063354917540\",\"channel_name\":\"现金\",\"pay_status\":33,\"channel_type\":201}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"抱歉, 服务器开了个小差: \",\"code\":230100000}}"
+  },
+  "name": "get",
+  "ids": [
+    10351
+  ],
+  "scenarios": "获取充值支付结果",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "获取充值支付结果"
+}

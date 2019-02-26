@@ -1,0 +1,103 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.staff/3.0.0/delete"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.staff/3.0.0/delete"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "dept_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "部门ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "yz_uid",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "员工ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "操作成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "操作成功",
+          "defaultValue": null,
+          "example": "true",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanMeiStaffDeleteParams youzanMeiStaffDeleteParams = new YouzanMeiStaffDeleteParams();\n\nyouzanMeiStaffDeleteParams.setYzUid(675036012L);\nyouzanMeiStaffDeleteParams.setMToken(\"trmCNFV8BXBh3gKDtROTjB1yUkXfvJSIeSTMWMIkv6QyvNnZIH3nLIIt9FkEgQ3f1s8jyMBEiZeW7iNJ4eXgYg\");\nyouzanMeiStaffDeleteParams.setDeptId(31040434L);\n\nYouzanMeiStaffDelete youzanMeiStaffDelete = new YouzanMeiStaffDelete();\nyouzanMeiStaffDelete.setAPIParams(youzanMeiStaffDeleteParams);\nYouzanMeiStaffDeleteResult result = client.invoke(youzanMeiStaffDelete);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"yz_uid\", 675036012);\ndict.Add(\"m_token\", \"trmCNFV8BXBh3gKDtROTjB1yUkXfvJSIeSTMWMIkv6QyvNnZIH3nLIIt9FkEgQ3f1s8jyMBEiZeW7iNJ4eXgYg\");\ndict.Add(\"dept_id\", 31040434);\n\n\nvar result = yzClient.Invoke(\"youzan.mei.staff.delete\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.mei.staff.delete'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'yz_uid' => '675036012',\n    'm_token' => 'trmCNFV8BXBh3gKDtROTjB1yUkXfvJSIeSTMWMIkv6QyvNnZIH3nLIIt9FkEgQ3f1s8jyMBEiZeW7iNJ4eXgYg',\n    'dept_id' => '31040434',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['yz_uid']=675036012\nparams['m_token']=\"trmCNFV8BXBh3gKDtROTjB1yUkXfvJSIeSTMWMIkv6QyvNnZIH3nLIIt9FkEgQ3f1s8jyMBEiZeW7iNJ4eXgYg\"\nparams['dept_id']=31040434\n\nfiles=[]\n\nprint client.invoke('youzan.mei.staff.delete', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['yz_uid']=675036012;\nparams['m_token']=\"trmCNFV8BXBh3gKDtROTjB1yUkXfvJSIeSTMWMIkv6QyvNnZIH3nLIIt9FkEgQ3f1s8jyMBEiZeW7iNJ4eXgYg\";\nparams['dept_id']=31040434;\n\n\nvar promise = YZClient.invoke('youzan.mei.staff.delete', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\n    \"response\": true\n}",
+    "errorResponseDemo": "{\n    \"error_response\": {\n        \"msg\": \"员工不存在\", \n        \"code\": 99999\n    }\n}"
+  },
+  "name": "delete",
+  "ids": [
+    10144
+  ],
+  "scenarios": "删除员工",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "删除员工"
+}

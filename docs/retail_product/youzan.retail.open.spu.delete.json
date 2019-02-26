@@ -1,0 +1,113 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.open.spu/3.0.0/delete"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.open.spu/3.0.0/delete"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "零售调用来源（调用方和有赞约定的值）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "spu_codes",
+        "type": "String[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品编码列表（最多20个）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "删除结果",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "response",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "删除结果",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailOpenSpuDeleteParams youzanRetailOpenSpuDeleteParams = new YouzanRetailOpenSpuDeleteParams();\n\nyouzanRetailOpenSpuDeleteParams.setRetailSource(\"CLIENT\");\nyouzanRetailOpenSpuDeleteParams.setSpuCodes(\"[\"BM961767374\"]\");\n\nYouzanRetailOpenSpuDelete youzanRetailOpenSpuDelete = new YouzanRetailOpenSpuDelete();\nyouzanRetailOpenSpuDelete.setAPIParams(youzanRetailOpenSpuDeleteParams);\nYouzanRetailOpenSpuDeleteResult result = client.invoke(youzanRetailOpenSpuDelete);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"retail_source\", \"CLIENT\");\ndict.Add(\"spu_codes\", \"[\"BM961767374\"]\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.open.spu.delete\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.open.spu.delete'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'retail_source' => 'CLIENT',\n    'spu_codes' => '[\"BM961767374\"]',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['retail_source']=\"CLIENT\"\nparams['spu_codes']=\"[\"BM961767374\"]\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.open.spu.delete', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['retail_source']=\"CLIENT\";\nparams['spu_codes']=\"[\"BM961767374\"]\";\n\n\nvar promise = YZClient.invoke('youzan.retail.open.spu.delete', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "234008005",
+        "errorDesc": "删除商品失败（spu）",
+        "solution": "确认入参是否正常，重试后如果失败，联系有赞技术支持"
+      },
+      {
+        "errorCode": "234000003",
+        "errorDesc": "参数错误",
+        "solution": "确认参数是否正常"
+      },
+      {
+        "errorCode": "234000006",
+        "errorDesc": "数据异常",
+        "solution": "确认入参是否正常，重试后如果失败，联系有赞技术支持"
+      },
+      {
+        "errorCode": "221120001",
+        "errorDesc": "SPU不存在",
+        "solution": "确认spu是否存在"
+      }
+    ],
+    "responseDemo": "{\"response\":true}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"数据异常\",\"code\":234000006}}"
+  },
+  "name": "delete",
+  "ids": [
+    11097
+  ],
+  "scenarios": "批量删除商品（最多20个）",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "商品删除"
+}

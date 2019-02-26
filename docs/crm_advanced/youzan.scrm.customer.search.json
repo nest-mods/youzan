@@ -1,0 +1,197 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.scrm.customer/3.0.0/search"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.scrm.customer/3.0.0/search"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "card_alias",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商家会员卡的唯一标识",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "1",
+        "isRequired": "是",
+        "desc": "每页默认20条，最大支持500页",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "total",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "会员卡对应的会员个数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "total",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "会员卡对应的会员个数",
+          "defaultValue": null,
+          "example": "",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "page",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "当前页码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "page",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "当前页码",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "每页的记录数20",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "page_size",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "每页的记录数20",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "items",
+        "type": "CardCustomerListItemDTO[]",
+        "isRequired": "否",
+        "desc": "客户信息项",
+        "isStruct": true,
+        "structUrl": "/web/meta/CardCustomerListItemDTO",
+        "struct": {
+          "name": "items",
+          "type": "CardCustomerListItemDTO[]",
+          "isNeed": "true",
+          "desc": "客户信息项",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "客户名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "fans_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "粉丝id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "fasn_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "粉丝类型",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "mobile",
+              "type": "String",
+              "isNeed": null,
+              "desc": "客户手机号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "wx_nickname",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微信昵称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanScrmCustomerSearchParams youzanScrmCustomerSearchParams = new YouzanScrmCustomerSearchParams();\n\nyouzanScrmCustomerSearchParams.setPage(1L);\nyouzanScrmCustomerSearchParams.setCardAlias(\"Y2x42qhvviya8l\");\n\nYouzanScrmCustomerSearch youzanScrmCustomerSearch = new YouzanScrmCustomerSearch();\nyouzanScrmCustomerSearch.setAPIParams(youzanScrmCustomerSearchParams);\nYouzanScrmCustomerSearchResult result = client.invoke(youzanScrmCustomerSearch);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"page\", 1);\ndict.Add(\"card_alias\", \"Y2x42qhvviya8l\");\n\n\nvar result = yzClient.Invoke(\"youzan.scrm.customer.search\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['page']=1\nparams['card_alias']=\"Y2x42qhvviya8l\"\n\nfiles=[]\n\nprint client.invoke('youzan.scrm.customer.search', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['page']=1;\nparams['card_alias']=\"Y2x42qhvviya8l\";\n\n\nvar promise = YZClient.invoke('youzan.scrm.customer.search', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.scrm.customer.search'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'page' => '1',\n    'card_alias' => 'Y2x42qhvviya8l',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"total\":5,\"page\":1,\"items\":[{\"name\":\"\",\"wx_nickname\":\"\"},{\"name\":\"\",\"wx_nickname\":\"\"},{\"name\":\"\",\"mobile\":\"18924172346\",\"wx_nickname\":\"有赞_杨扬\",\"fans_type\":1,\"fans_id\":6356892261},{\"name\":\"测试婷婷\",\"mobile\":\"15868841025\",\"wx_nickname\":\"婷婷\",\"fans_type\":1,\"fans_id\":2221074522},{\"name\":\"test\",\"mobile\":\"18611579040\",\"wx_nickname\":\"赵向华\",\"fans_type\":1,\"fans_id\":1367191346}],\"page_size\":30}}",
+    "errorResponseDemo": ""
+  },
+  "name": "search",
+  "ids": [
+    7751
+  ],
+  "scenarios": "会员卡对应的会员列表，此接口需申请高级权限方可调用。仅支持免签名通讯协议(AccessToken)调用,不支持签名通讯协议(AppId/AppSecret)调用。",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "会员卡对应的会员列表"
+}

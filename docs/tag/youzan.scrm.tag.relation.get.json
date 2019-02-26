@@ -1,0 +1,119 @@
+{
+  "name": "get",
+  "ids": [
+    10157
+  ],
+  "4.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.scrm.tag.relation/4.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.scrm.tag.relation/4.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "account_id",
+        "type": "String",
+        "example": "18276514316",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "账户ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "account_type",
+        "type": "String",
+        "example": "Mobile",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "帐号类型。目前支持以下选项（只支持传一种）： FansID：自有粉丝ID， Mobile：手机号， YouZanAccount：有赞账号，OpenUserId：三方自身账号， WeiXinOpenId：微信openId",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "tags",
+        "type": "CrmUserTag[]",
+        "isRequired": "否",
+        "desc": "客户标签集合",
+        "isStruct": true,
+        "structUrl": "/web/meta/CrmUserTag",
+        "struct": {
+          "name": "tags",
+          "type": "CrmUserTag[]",
+          "isNeed": "true",
+          "desc": "客户标签集合",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "标签ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "标签名",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanScrmTagRelationGetParams youzanScrmTagRelationGetParams = new YouzanScrmTagRelationGetParams();\n\nyouzanScrmTagRelationGetParams.setAccountType(\"YouZanAccount\");\nyouzanScrmTagRelationGetParams.setAccountId(\"1117747227\");\n\nYouzanScrmTagRelationGet youzanScrmTagRelationGet = new YouzanScrmTagRelationGet();\nyouzanScrmTagRelationGet.setAPIParams(youzanScrmTagRelationGetParams);\nYouzanScrmTagRelationGetResult result = client.invoke(youzanScrmTagRelationGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"account_type\", \"YouZanAccount\");\ndict.Add(\"account_id\", \"1117747227\");\n\n\nvar result = yzClient.Invoke(\"youzan.scrm.tag.relation.get\", \"4.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.scrm.tag.relation.get'; //要调用的api名称\n$api_version = '4.0.0'; //要调用的api版本号\n\n$my_params = [\n    'account_type' => 'YouZanAccount',\n    'account_id' => '1117747227',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['account_type']=\"YouZanAccount\"\nparams['account_id']=\"1117747227\"\n\nfiles=[]\n\nprint client.invoke('youzan.scrm.tag.relation.get', '4.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['account_type']=\"YouZanAccount\";\nparams['account_id']=\"1117747227\";\n\n\nvar promise = YZClient.invoke('youzan.scrm.tag.relation.get', '4.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "142400105",
+        "errorDesc": "客户不存在",
+        "solution": "检查accountId和accountType正确性"
+      }
+    ],
+    "responseDemo": "{\"response\":[]}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"客户不存在\",\"code\":142400105}}"
+  },
+  "scenarios": "获取指定客户下所有标签集合",
+  "version": [
+    "4.0.0"
+  ],
+  "desc": "获取客户标签信息"
+}

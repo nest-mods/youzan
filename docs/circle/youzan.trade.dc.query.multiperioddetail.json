@@ -1,0 +1,547 @@
+{
+  "2.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.trade.dc.query/2.0.0/multiperioddetail"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.trade.dc.query/2.0.0/multiperioddetail"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "oid",
+        "type": "String",
+        "example": "1471237727532359491",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "子订单ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tid",
+        "type": "String",
+        "example": "E20180912141902056700012",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "主订单ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "multiPeriodDetailOpenDTO",
+        "type": "MultiPeriodDetailOpenDTO",
+        "isRequired": "否",
+        "desc": "周期购多期发货明细",
+        "isStruct": true,
+        "structUrl": "/web/meta/MultiPeriodDetailOpenDTO",
+        "struct": {
+          "name": "multiPeriodDetailOpenDTO",
+          "type": "MultiPeriodDetailOpenDTO",
+          "isNeed": "true",
+          "desc": "周期购多期发货明细",
+          "defaultValue": null,
+          "example": "",
+          "isStruct": true,
+          "children": [
+            {
+              "name": "tid",
+              "type": "String",
+              "isNeed": null,
+              "desc": "主订单ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "kdt_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "店铺ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "oid",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "子订单ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "total_issue",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总期数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "dist_time_dim",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "配送时间维度",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "dist_time_dim_str",
+              "type": "String",
+              "isNeed": null,
+              "desc": "配送时间维度描述",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "dist_time_mode",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "配送时间模式",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "dist_time_mode_str",
+              "type": "String",
+              "isNeed": null,
+              "desc": "配送时间模式描述",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "delivery_time",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "买家下单时选择的送达时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "extend",
+              "type": "String",
+              "isNeed": null,
+              "desc": "扩展信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "max_postpone_sum",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "最大顺延次数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "lead_time",
+              "type": "LeadTimeDTO",
+              "isNeed": null,
+              "desc": "配送提前期",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "lead_day",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "提前天数",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "lead_hour",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "截止几点之前下单",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanTradeDcQueryMultiperioddetailParams youzanTradeDcQueryMultiperioddetailParams = new YouzanTradeDcQueryMultiperioddetailParams();\n\nyouzanTradeDcQueryMultiperioddetailParams.setTid(\"E20180607180120068700005\");\nyouzanTradeDcQueryMultiperioddetailParams.setOid(\"1453268739775009675\");\n\nYouzanTradeDcQueryMultiperioddetail youzanTradeDcQueryMultiperioddetail = new YouzanTradeDcQueryMultiperioddetail();\nyouzanTradeDcQueryMultiperioddetail.setAPIParams(youzanTradeDcQueryMultiperioddetailParams);\nYouzanTradeDcQueryMultiperioddetailResult result = client.invoke(youzanTradeDcQueryMultiperioddetail);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"tid\", \"E20180607180120068700005\");\ndict.Add(\"oid\", \"1453268739775009675\");\n\n\nvar result = yzClient.Invoke(\"youzan.trade.dc.query.multiperioddetail\", \"2.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.trade.dc.query.multiperioddetail'; //要调用的api名称\n$api_version = '2.0.0'; //要调用的api版本号\n\n$my_params = [\n    'tid' => 'E20180607180120068700005',\n    'oid' => '1453268739775009675',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['tid']=\"E20180607180120068700005\"\nparams['oid']=\"1453268739775009675\"\n\nfiles=[]\n\nprint client.invoke('youzan.trade.dc.query.multiperioddetail', '2.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['tid']=\"E20180607180120068700005\";\nparams['oid']=\"1453268739775009675\";\n\n\nvar promise = YZClient.invoke('youzan.trade.dc.query.multiperioddetail', '2.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "102599996",
+        "errorDesc": "参数错误, 订单号不能为空.",
+        "solution": null
+      },
+      {
+        "errorCode": "102599996",
+        "errorDesc": "参数错误, 子订单id不能为空.",
+        "solution": null
+      }
+    ],
+    "responseDemo": "{\"response\":{\"extend\":\"\",\"dist_time_mode\":2,\"max_postpone_sum\":6,\"total_issue\":5,\"dist_time_mode_str\":\"周末每天送达\",\"lead_time\":{\"lead_day\":1,\"lead_hour\":5},\"dist_time_dim\":0,\"dist_time_dim_str\":\"每日一期\",\"delivery_time\":1539964800000,\"oid\":\"1477406685635558043\",\"tid\":\"E20181015201627045100017\"}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"oid cannot be empty\",\"code\":53001}}"
+  },
+  "name": "multiperioddetail",
+  "ids": [
+    10712,
+    10499
+  ],
+  "scenarios": "根据订单号和订单明细查询周期购相关的配置信息 2.0版本 \n",
+  "1.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.trade.dc.query/1.0.0/multiperioddetail"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.trade.dc.query/1.0.0/multiperioddetail"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "item_id",
+        "type": "Number",
+        "example": "1471237727532359491",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "交易商品id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tid",
+        "type": "String",
+        "example": "E20180912141902056700012",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "tid",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "tid",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "订单号",
+          "defaultValue": null,
+          "example": "E20180830173310040300001",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "kdt_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "店铺id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "kdt_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "店铺id",
+          "defaultValue": null,
+          "example": "461340",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "item_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "商品id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "item_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "商品id",
+          "defaultValue": null,
+          "example": "1468850687702466563",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "total_issue",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "总期数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "total_issue",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "总期数",
+          "defaultValue": null,
+          "example": "10",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "dist_time_dim",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "配送时间维度\n  DAY(0, \"每日一期\"),\n  WEEK(1, \"每周一期\"),\n  MONTH(2, \"每月一期\");",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "dist_time_dim",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "配送时间维度\n  DAY(0, \"每日一期\"),\n  WEEK(1, \"每周一期\"),\n  MONTH(2, \"每月一期\");",
+          "defaultValue": null,
+          "example": "0",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "dist_time_dim_str",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "配送时间维度desc",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "dist_time_dim_str",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "配送时间维度desc",
+          "defaultValue": null,
+          "example": "每日一期",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "dist_time_mode",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "配送时间模式:\nWeekDeliverTimeEnum:\nMONDAY(1, \"每周一\"),\n  TUESDAY(2, \"每周二\"),\n  WEDNESDAY(3, \"每周三\"),\n  THURSDAY(4, \"每周四\"),\n  FRIDAY(5, \"每周五\"),\n  SATURDAY(6, \"每周六\"),\n  SUNDAY(7, \"每周日\");\n\nDayDeliveryTimeEnum:\nEVERY_DAY(0, \"每天送达\"),\n  WEEK_DAY(1, \"工作日送达\"),\n  WEEK_END(2, \"周末每天送达\"),\n  EVERY_ANOTHER_DAY(3, \"隔天送达\");\n",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "dist_time_mode",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "配送时间模式:\nWeekDeliverTimeEnum:\nMONDAY(1, \"每周一\"),\n  TUESDAY(2, \"每周二\"),\n  WEDNESDAY(3, \"每周三\"),\n  THURSDAY(4, \"每周四\"),\n  FRIDAY(5, \"每周五\"),\n  SATURDAY(6, \"每周六\"),\n  SUNDAY(7, \"每周日\");\n\nDayDeliveryTimeEnum:\nEVERY_DAY(0, \"每天送达\"),\n  WEEK_DAY(1, \"工作日送达\"),\n  WEEK_END(2, \"周末每天送达\"),\n  EVERY_ANOTHER_DAY(3, \"隔天送达\");\n",
+          "defaultValue": null,
+          "example": "1",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "dist_time_mode_str",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "配送时间模式描述",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "dist_time_mode_str",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "配送时间模式描述",
+          "defaultValue": null,
+          "example": "每周一",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "delivery_time",
+        "type": "Date",
+        "isRequired": "否",
+        "desc": "买家下单时选择的送达时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "delivery_time",
+          "type": "Date",
+          "isNeed": "true",
+          "desc": "买家下单时选择的送达时间",
+          "defaultValue": null,
+          "example": "2018-09-11",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "extend",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "扩展信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "extend",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "扩展信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "max_postpone_sum",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "最大顺延次数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "max_postpone_sum",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "最大顺延次数",
+          "defaultValue": null,
+          "example": "5",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "lead_time_dto",
+        "type": "LeadTimeDTO",
+        "isRequired": "否",
+        "desc": "配送提前期",
+        "isStruct": true,
+        "structUrl": "/web/meta/LeadTimeDTO",
+        "struct": {
+          "name": "lead_time_dto",
+          "type": "LeadTimeDTO",
+          "isNeed": "true",
+          "desc": "配送提前期",
+          "defaultValue": null,
+          "example": "{\"leadDay\":5,\"leadHour\":10}",
+          "isStruct": true,
+          "children": [
+            {
+              "name": "lead_day",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "提前天数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "lead_hour",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "截止几点之前下单",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanTradeDcQueryMultiperioddetailParams youzanTradeDcQueryMultiperioddetailParams = new YouzanTradeDcQueryMultiperioddetailParams();\n\nyouzanTradeDcQueryMultiperioddetailParams.setItemId(1477406685635558043L);\nyouzanTradeDcQueryMultiperioddetailParams.setTid(\"E20181015201627045100017\");\n\nYouzanTradeDcQueryMultiperioddetail youzanTradeDcQueryMultiperioddetail = new YouzanTradeDcQueryMultiperioddetail();\nyouzanTradeDcQueryMultiperioddetail.setAPIParams(youzanTradeDcQueryMultiperioddetailParams);\nYouzanTradeDcQueryMultiperioddetailResult result = client.invoke(youzanTradeDcQueryMultiperioddetail);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"item_id\", 1477406685635558043);\ndict.Add(\"tid\", \"E20181015201627045100017\");\n\n\nvar result = yzClient.Invoke(\"youzan.trade.dc.query.multiperioddetail\", \"1.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['item_id']=1477406685635558043\nparams['tid']=\"E20181015201627045100017\"\n\nfiles=[]\n\nprint client.invoke('youzan.trade.dc.query.multiperioddetail', '1.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['item_id']=1477406685635558043;\nparams['tid']=\"E20181015201627045100017\";\n\n\nvar promise = YZClient.invoke('youzan.trade.dc.query.multiperioddetail', '1.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.trade.dc.query.multiperioddetail'; //要调用的api名称\n$api_version = '1.0.0'; //要调用的api版本号\n\n$my_params = [\n    'item_id' => '1477406685635558043',\n    'tid' => 'E20181015201627045100017',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": null,
+    "errorResponseDemo": null
+  },
+  "version": [
+    "2.0.0",
+    "1.0.0"
+  ],
+  "desc": "根据订单号和订单明细查询周期购相关的配置信息"
+}

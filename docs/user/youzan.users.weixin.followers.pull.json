@@ -1,0 +1,301 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.users.weixin.followers/3.0.0/pull"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.users.weixin.followers/3.0.0/pull"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "after_fans_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "用于拉取该粉丝编码之后的查询条件。第一次查询可传入0，之后每次查询可传入上次查询里返回的last_fans_id，直到返回结果里的has_next为false",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fields",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "需要返回的微信粉丝对象字段，如nick,avatar等。可选值：CrmWeixinFans微信粉丝结构体中所有字段均可返回；多个字段用“,”分隔。如果为空则返回所有",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "每页条数，最大值：50",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "users",
+        "type": "CrmWeixinFans[]",
+        "isRequired": "否",
+        "desc": "搜索到的微信粉丝用户列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/CrmWeixinFans",
+        "struct": {
+          "name": "users",
+          "type": "CrmWeixinFans[]",
+          "isNeed": "true",
+          "desc": "搜索到的微信粉丝用户列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "user_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "微信粉丝用户ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "weixin_openid",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微信粉丝用户的openid，可用于微信Api",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "nick",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微信粉丝用户的昵称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "avatar",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微信粉丝用户的头像Url",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "follow_time",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "关注时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sex",
+              "type": "String",
+              "isNeed": null,
+              "desc": "性别。可选值：m(男)，f(女)。未知则为空",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "city",
+              "type": "String",
+              "isNeed": null,
+              "desc": "所在城市",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "points",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "当前积分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "traded_num",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "成交订单笔数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "traded_money",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "成交订单总额。单位：元",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "tags",
+              "type": "CrmUserTag[]",
+              "isNeed": null,
+              "desc": "用户标签",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "标签ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "标签名",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "level_info",
+              "type": "CrmFansLevel",
+              "isNeed": null,
+              "desc": "粉丝会员等级的数据结构",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "level_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "会员等级编码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "level_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "会员等级名",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "is_follow",
+              "type": "Boolean",
+              "isNeed": null,
+              "desc": "是否关注",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "union_id",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微信粉丝用户的unionid，可用于微信Api",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "has_next",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "是否有下一页数据",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "has_next",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "是否有下一页数据",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "last_fans_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "当前列表中最后一个粉丝编码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "last_fans_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "当前列表中最后一个粉丝编码",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": null,
+    "errorResponseDemo": null
+  },
+  "name": "pull",
+  "ids": [
+    7966
+  ],
+  "scenarios": "不受关注时间限制，按照粉丝编码正序查询\n该接口即将废弃，请使用youzan.users.weixin.followers.info.pull.3.0.0",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "拉取微信粉丝用户信息列表（即将废弃）"
+}

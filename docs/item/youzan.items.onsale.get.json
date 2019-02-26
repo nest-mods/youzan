@@ -1,0 +1,488 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.items.onsale/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.items.onsale/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "order_by",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "排序方式。格式为column:asc/desc，目前排序字段：1.创建时间：created_time，2.更新时间：update_time，3.价格：price，4.销量：sold_num",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_no",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "页码，不传或为0时默认设置为1",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "每页条数，最大300个，不传或为0时默认设置为40",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "q",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "搜索字段。搜索商品的title",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tag_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品标签的ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "update_time_end",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品终止更新时间，单位为ms",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "update_time_start",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品初始更新时间，单位为ms",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "items",
+        "type": "ItemListOpenModel[]",
+        "isRequired": "否",
+        "desc": "商品列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/ItemListOpenModel",
+        "struct": {
+          "name": "items",
+          "type": "ItemListOpenModel[]",
+          "isNeed": "true",
+          "desc": "商品列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "item_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品的数字id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "alias",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品别名，是一串字符",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "title",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品标题",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "price",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "价格，单位分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "item_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品类型",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "item_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商家编码，商家给商品设置的商家编码。",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "quantity",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总库存",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "post_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "运费类型，1 是统一运费，2是运费模板",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "post_fee",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "运费，单位分。当post_type为1时的运费",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created_time",
+              "type": "String",
+              "isNeed": null,
+              "desc": "创建时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "update_time",
+              "type": "String",
+              "isNeed": null,
+              "desc": "更新时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "detail_url",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品详情链接",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "delivery_template",
+              "type": "DeliveryTemplateOpenModel",
+              "isNeed": null,
+              "desc": "运费模板信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "delivery_template_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "运费模板ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "delivery_template_fee",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "运费的范围",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "delivery_template_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "运费模板名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "delivery_template_valuationType",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "运费模版的计算类型，1 按件 2 按重量 3 按体积",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "num",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商家排序字段",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "item_imgs",
+              "type": "ItemImageOpenModel[]",
+              "isNeed": null,
+              "desc": "图片信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "url",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "图片链接地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "thumbnail",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "图片缩略图链接地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "medium",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "中号大小图片链接地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "combine",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "组合图片链接地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "created",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "图片创建时间，时间格式：yyyy-MM-dd HH:mm:ss",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "图片ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "origin",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品划线价",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "classId",
+              "type": "String",
+              "isNeed": null,
+              "desc": "默认为\"youzan_goods_selling\"",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "image",
+              "type": "String",
+              "isNeed": null,
+              "desc": "图片链接",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "shareIcon",
+              "type": "String",
+              "isNeed": null,
+              "desc": "同image",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "shareTitle",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品标题",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "shareDetail",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "同price",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "pageUrl",
+              "type": "String",
+              "isNeed": null,
+              "desc": "小程序路径",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "count",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "搜索到的商品数量",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "count",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "搜索到的商品数量",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanItemsOnsaleGetParams youzanItemsOnsaleGetParams = new YouzanItemsOnsaleGetParams();\n\nyouzanItemsOnsaleGetParams.setPageNo(1L);\nyouzanItemsOnsaleGetParams.setPageSize(10L);\n\nYouzanItemsOnsaleGet youzanItemsOnsaleGet = new YouzanItemsOnsaleGet();\nyouzanItemsOnsaleGet.setAPIParams(youzanItemsOnsaleGetParams);\nYouzanItemsOnsaleGetResult result = client.invoke(youzanItemsOnsaleGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"page_no\", 1);\ndict.Add(\"page_size\", 10);\n\n\nvar result = yzClient.Invoke(\"youzan.items.onsale.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['page_no']=1\nparams['page_size']=10\n\nfiles=[]\n\nprint client.invoke('youzan.items.onsale.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['page_no']=1;\nparams['page_size']=10;\n\n\nvar promise = YZClient.invoke('youzan.items.onsale.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.items.onsale.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'page_no' => '1',\n    'page_size' => '10',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"count\":191,\"items\":[{\"created_time\":\"2016-07-18 15:18:00\",\"detail_url\":\"https://h5.youzan.com/v2/showcase/goods?alias=27bbv813gfcwf\",\"quantity\":1111,\"post_fee\":0,\"item_id\":87823,\"item_type\":0,\"num\":0,\"item_imgs\":[{\"thumbnail\":\"https://img.yzcdn.cn/upload_files/2016/07/18/da2466f4e47f58ce030c84b3a1bdc99d.jpg?imageView2/2/w/290/h/290/q/75/format/jpg\",\"created\":\"2017-09-15 10:58:34\",\"medium\":\"https://img.yzcdn.cn/upload_files/2016/07/18/da2466f4e47f58ce030c84b3a1bdc99d.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\",\"id\":603290977,\"url\":\"https://img.yzcdn.cn/upload_files/2016/07/18/da2466f4e47f58ce030c84b3a1bdc99d.jpg\",\"combine\":\"https://img.yzcdn.cn/upload_files/2016/07/18/da2466f4e47f58ce030c84b3a1bdc99d.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\"},{\"thumbnail\":\"https://img.yzcdn.cn/upload_files/2016/07/18/8dc87296f76454e5421e9fb02cca3c41.jpg?imageView2/2/w/290/h/290/q/75/format/jpg\",\"created\":\"2017-09-15 10:58:34\",\"medium\":\"https://img.yzcdn.cn/upload_files/2016/07/18/8dc87296f76454e5421e9fb02cca3c41.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\",\"id\":603290980,\"url\":\"https://img.yzcdn.cn/upload_files/2016/07/18/8dc87296f76454e5421e9fb02cca3c41.jpg\",\"combine\":\"https://img.yzcdn.cn/upload_files/2016/07/18/8dc87296f76454e5421e9fb02cca3c41.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\"},{\"thumbnail\":\"https://img.yzcdn.cn/upload_files/2016/07/18/93ce89d9207d638c39e3719c42c0b15e.jpg?imageView2/2/w/290/h/290/q/75/format/jpg\",\"created\":\"2017-09-15 10:58:34\",\"medium\":\"https://img.yzcdn.cn/upload_files/2016/07/18/93ce89d9207d638c39e3719c42c0b15e.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\",\"id\":603290984,\"url\":\"https://img.yzcdn.cn/upload_files/2016/07/18/93ce89d9207d638c39e3719c42c0b15e.jpg\",\"combine\":\"https://img.yzcdn.cn/upload_files/2016/07/18/93ce89d9207d638c39e3719c42c0b15e.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\"},{\"thumbnail\":\"https://img.yzcdn.cn/upload_files/2016/07/18/ebea7b7977f149422215dfd4372477ab.jpg?imageView2/2/w/290/h/290/q/75/format/jpg\",\"created\":\"2017-09-15 10:58:34\",\"medium\":\"https://img.yzcdn.cn/upload_files/2016/07/18/ebea7b7977f149422215dfd4372477ab.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\",\"id\":603290993,\"url\":\"https://img.yzcdn.cn/upload_files/2016/07/18/ebea7b7977f149422215dfd4372477ab.jpg\",\"combine\":\"https://img.yzcdn.cn/upload_files/2016/07/18/ebea7b7977f149422215dfd4372477ab.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\"},{\"thumbnail\":\"https://img.yzcdn.cn/upload_files/2016/07/18/9302d6a983a02b97b7df2539e6a68b58.jpg?imageView2/2/w/290/h/290/q/75/format/jpg\",\"created\":\"2017-09-15 10:58:34\",\"medium\":\"https://img.yzcdn.cn/upload_files/2016/07/18/9302d6a983a02b97b7df2539e6a68b58.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\",\"id\":603290996,\"url\":\"https://img.yzcdn.cn/upload_files/2016/07/18/9302d6a983a02b97b7df2539e6a68b58.jpg\",\"combine\":\"https://img.yzcdn.cn/upload_files/2016/07/18/9302d6a983a02b97b7df2539e6a68b58.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\"}],\"title\":\"Haier/海尔BCD-160TMPQ冰箱小型双门式 家用双开门 两门节能冰箱\",\"item_no\":\"\",\"update_time\":\"2016-07-18 15:18:33\",\"price\":105900,\"alias\":\"27bbv813gfcwf\",\"post_type\":2,\"delivery_template\":{\"delivery_template_fee\":\".00\",\"delivery_template_id\":29,\"delivery_template_valuation_type\":1,\"delivery_template_name\":\"templateZJ\"}},{\"created_time\":\"2016-07-26 14:02:02\",\"detail_url\":\"https://h5.youzan.com/v2/showcase/goods?alias=272of885gb0lr\",\"quantity\":99,\"post_fee\":1,\"item_id\":104270,\"item_type\":0,\"num\":0,\"item_imgs\":[],\"title\":\"Normal2016072614020224397\",\"item_no\":\"\",\"update_time\":\"2016-07-26 14:02:02\",\"price\":100,\"alias\":\"272of885gb0lr\",\"post_type\":1,\"delivery_template\":{}},{\"created_time\":\"2016-07-26 14:02:25\",\"detail_url\":\"https://h5.youzan.com/v2/showcase/goods?alias=1y7mke8ktca33\",\"quantity\":99,\"post_fee\":1,\"item_id\":104272,\"item_type\":0,\"num\":0,\"item_imgs\":[],\"title\":\"Normal2016072614022545260\",\"item_no\":\"\",\"update_time\":\"2016-07-26 14:02:25\",\"price\":100,\"alias\":\"1y7mke8ktca33\",\"post_type\":1,\"delivery_template\":{}},{\"created_time\":\"2016-07-21 16:44:26\",\"detail_url\":\"https://h5.youzan.com/v2/showcase/goods?alias=2odyltuod88tr\",\"quantity\":1905,\"post_fee\":0,\"item_id\":95211,\"item_type\":0,\"num\":0,\"item_imgs\":[{\"thumbnail\":\"https://img.yzcdn.cn/upload_files/2016/07/21/b16c0fe22de196144cfe5b32bd4bf8b1.jpg?imageView2/2/w/290/h/290/q/75/format/jpg\",\"created\":\"2017-09-15 10:58:34\",\"medium\":\"https://img.yzcdn.cn/upload_files/2016/07/21/b16c0fe22de196144cfe5b32bd4bf8b1.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\",\"id\":605033917,\"url\":\"https://img.yzcdn.cn/upload_files/2016/07/21/b16c0fe22de196144cfe5b32bd4bf8b1.jpg\",\"combine\":\"https://img.yzcdn.cn/upload_files/2016/07/21/b16c0fe22de196144cfe5b32bd4bf8b1.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\"},{\"thumbnail\":\"https://img.yzcdn.cn/upload_files/2016/07/21/1078b68a8d4796486fcc0a46c3e30884.jpg?imageView2/2/w/290/h/290/q/75/format/jpg\",\"created\":\"2017-09-15 10:58:34\",\"medium\":\"https://img.yzcdn.cn/upload_files/2016/07/21/1078b68a8d4796486fcc0a46c3e30884.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\",\"id\":605033920,\"url\":\"https://img.yzcdn.cn/upload_files/2016/07/21/1078b68a8d4796486fcc0a46c3e30884.jpg\",\"combine\":\"https://img.yzcdn.cn/upload_files/2016/07/21/1078b68a8d4796486fcc0a46c3e30884.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\"},{\"thumbnail\":\"https://img.yzcdn.cn/upload_files/2016/07/21/9f63596e3de39210ce7818cd941d679a.jpg?imageView2/2/w/290/h/290/q/75/format/jpg\",\"created\":\"2017-09-15 10:58:34\",\"medium\":\"https://img.yzcdn.cn/upload_files/2016/07/21/9f63596e3de39210ce7818cd941d679a.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\",\"id\":605033923,\"url\":\"https://img.yzcdn.cn/upload_files/2016/07/21/9f63596e3de39210ce7818cd941d679a.jpg\",\"combine\":\"https://img.yzcdn.cn/upload_files/2016/07/21/9f63596e3de39210ce7818cd941d679a.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\"},{\"thumbnail\":\"https://img.yzcdn.cn/upload_files/2016/07/21/32ae50a4e777b64ef46bbdc70b66b165.jpg?imageView2/2/w/290/h/290/q/75/format/jpg\",\"created\":\"2017-09-15 10:58:34\",\"medium\":\"https://img.yzcdn.cn/upload_files/2016/07/21/32ae50a4e777b64ef46bbdc70b66b165.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\",\"id\":605033926,\"url\":\"https://img.yzcdn.cn/upload_files/2016/07/21/32ae50a4e777b64ef46bbdc70b66b165.jpg\",\"combine\":\"https://img.yzcdn.cn/upload_files/2016/07/21/32ae50a4e777b64ef46bbdc70b66b165.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\"},{\"thumbnail\":\"https://img.yzcdn.cn/upload_files/2016/07/21/bd35e7369d231153b7bc35dacb3278cb.jpg?imageView2/2/w/290/h/290/q/75/format/jpg\",\"created\":\"2017-09-15 10:58:34\",\"medium\":\"https://img.yzcdn.cn/upload_files/2016/07/21/bd35e7369d231153b7bc35dacb3278cb.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\",\"id\":605033933,\"url\":\"https://img.yzcdn.cn/upload_files/2016/07/21/bd35e7369d231153b7bc35dacb3278cb.jpg\",\"combine\":\"https://img.yzcdn.cn/upload_files/2016/07/21/bd35e7369d231153b7bc35dacb3278cb.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\"}],\"title\":\"【丑羽】狂神耐打羽毛球  12只装耐打王羽毛球 一个顶两ymq羽毛球\",\"item_no\":\"\",\"update_time\":\"2016-09-12 11:04:46\",\"price\":1100,\"alias\":\"2odyltuod88tr\",\"post_type\":1,\"delivery_template\":{}},{\"created_time\":\"2016-04-29 11:55:37\",\"detail_url\":\"https://h5.youzan.com/v2/showcase/goods?alias=3nlghuiefl3bj\",\"quantity\":10000,\"post_fee\":0,\"item_id\":345,\"item_type\":0,\"num\":0,\"item_imgs\":[],\"title\":\"Normal201604291155361\",\"item_no\":\"\",\"update_time\":\"2016-04-29 11:55:37\",\"price\":1,\"alias\":\"3nlghuiefl3bj\",\"post_type\":1,\"delivery_template\":{}},{\"created_time\":\"2016-04-29 11:57:04\",\"detail_url\":\"https://h5.youzan.com/v2/showcase/goods?alias=366hm5dkf8xm7\",\"quantity\":10000,\"post_fee\":0,\"item_id\":347,\"item_type\":0,\"num\":0,\"item_imgs\":[],\"title\":\"Normal201604291157030\",\"item_no\":\"\",\"update_time\":\"2016-04-29 11:57:04\",\"price\":1,\"alias\":\"366hm5dkf8xm7\",\"post_type\":1,\"delivery_template\":{}},{\"created_time\":\"2016-04-29 12:02:04\",\"detail_url\":\"https://h5.youzan.com/v2/showcase/goods?alias=2g3wc88z6h30f\",\"quantity\":100,\"post_fee\":0,\"item_id\":352,\"item_type\":0,\"num\":0,\"item_imgs\":[],\"title\":\"Normal201604291202045\",\"item_no\":\"\",\"update_time\":\"2017-01-09 14:25:35\",\"price\":1,\"alias\":\"2g3wc88z6h30f\",\"post_type\":2,\"delivery_template\":{\"delivery_template_fee\":\".00\",\"delivery_template_id\":32,\"delivery_template_valuation_type\":1,\"delivery_template_name\":\"templateZJ\"}},{\"created_time\":\"2016-04-29 11:57:29\",\"detail_url\":\"https://h5.youzan.com/v2/showcase/goods?alias=272pz6ig1nxr3\",\"quantity\":10000,\"post_fee\":0,\"item_id\":349,\"item_type\":0,\"num\":0,\"item_imgs\":[],\"title\":\"Normal201604291157284\",\"item_no\":\"\",\"update_time\":\"2016-04-29 11:57:29\",\"price\":1,\"alias\":\"272pz6ig1nxr3\",\"post_type\":1,\"delivery_template\":{}},{\"created_time\":\"2016-04-29 11:57:29\",\"detail_url\":\"https://h5.youzan.com/v2/showcase/goods?alias=1ydujozuyzh3z\",\"quantity\":1000,\"post_fee\":0,\"item_id\":350,\"item_type\":0,\"num\":0,\"item_imgs\":[],\"title\":\"Normal201604291157297\",\"item_no\":\"\",\"update_time\":\"2016-04-29 11:57:29\",\"price\":1,\"alias\":\"1ydujozuyzh3z\",\"post_type\":2,\"delivery_template\":{\"delivery_template_fee\":\".00\",\"delivery_template_id\":31,\"delivery_template_valuation_type\":1,\"delivery_template_name\":\"templateZJ\"}},{\"created_time\":\"2016-06-01 17:55:55\",\"detail_url\":\"https://h5.youzan.com/v2/showcase/goods?alias=2x5blpxeqf5fz\",\"quantity\":234,\"post_fee\":0,\"item_id\":15657,\"item_type\":0,\"num\":0,\"item_imgs\":[{\"thumbnail\":\"https://img.yzcdn.cn/upload_files/2016/06/01/91498b357109fb7adacaba086e4fc3f1.jpg?imageView2/2/w/290/h/290/q/75/format/jpg\",\"created\":\"2017-09-15 10:58:34\",\"medium\":\"https://img.yzcdn.cn/upload_files/2016/06/01/91498b357109fb7adacaba086e4fc3f1.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\",\"id\":577503943,\"url\":\"https://img.yzcdn.cn/upload_files/2016/06/01/91498b357109fb7adacaba086e4fc3f1.jpg\",\"combine\":\"https://img.yzcdn.cn/upload_files/2016/06/01/91498b357109fb7adacaba086e4fc3f1.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\"},{\"thumbnail\":\"https://img.yzcdn.cn/upload_files/2016/06/01/c28c6bab0c8dc99094d3d00c54530611.jpg?imageView2/2/w/290/h/290/q/75/format/jpg\",\"created\":\"2017-09-15 10:58:34\",\"medium\":\"https://img.yzcdn.cn/upload_files/2016/06/01/c28c6bab0c8dc99094d3d00c54530611.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\",\"id\":577503945,\"url\":\"https://img.yzcdn.cn/upload_files/2016/06/01/c28c6bab0c8dc99094d3d00c54530611.jpg\",\"combine\":\"https://img.yzcdn.cn/upload_files/2016/06/01/c28c6bab0c8dc99094d3d00c54530611.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\"},{\"thumbnail\":\"https://img.yzcdn.cn/upload_files/2016/06/01/185933d7c9fbe47e22dcd0c88bbd073d.jpg?imageView2/2/w/290/h/290/q/75/format/jpg\",\"created\":\"2017-09-15 10:58:34\",\"medium\":\"https://img.yzcdn.cn/upload_files/2016/06/01/185933d7c9fbe47e22dcd0c88bbd073d.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\",\"id\":577503948,\"url\":\"https://img.yzcdn.cn/upload_files/2016/06/01/185933d7c9fbe47e22dcd0c88bbd073d.jpg\",\"combine\":\"https://img.yzcdn.cn/upload_files/2016/06/01/185933d7c9fbe47e22dcd0c88bbd073d.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\"},{\"thumbnail\":\"https://img.yzcdn.cn/upload_files/2016/06/01/1579dd69bf253f9597ce68808ae9f16f.jpg?imageView2/2/w/290/h/290/q/75/format/jpg\",\"created\":\"2017-09-15 10:58:34\",\"medium\":\"https://img.yzcdn.cn/upload_files/2016/06/01/1579dd69bf253f9597ce68808ae9f16f.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\",\"id\":577503951,\"url\":\"https://img.yzcdn.cn/upload_files/2016/06/01/1579dd69bf253f9597ce68808ae9f16f.jpg\",\"combine\":\"https://img.yzcdn.cn/upload_files/2016/06/01/1579dd69bf253f9597ce68808ae9f16f.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\"},{\"thumbnail\":\"https://img.yzcdn.cn/upload_files/2016/06/01/71203d8c899b2bd9a8f2ec6163d77d9f.jpg?imageView2/2/w/290/h/290/q/75/format/jpg\",\"created\":\"2017-09-15 10:58:34\",\"medium\":\"https://img.yzcdn.cn/upload_files/2016/06/01/71203d8c899b2bd9a8f2ec6163d77d9f.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\",\"id\":577503954,\"url\":\"https://img.yzcdn.cn/upload_files/2016/06/01/71203d8c899b2bd9a8f2ec6163d77d9f.jpg\",\"combine\":\"https://img.yzcdn.cn/upload_files/2016/06/01/71203d8c899b2bd9a8f2ec6163d77d9f.jpg?imageView2/2/w/600/h/0/q/75/format/jpg\"}],\"title\":\"suguangrong普通商品3\",\"item_no\":\"\",\"update_time\":\"2016-06-30 19:49:13\",\"price\":1200,\"alias\":\"2x5blpxeqf5fz\",\"post_type\":1,\"delivery_template\":{}}]}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"内部服务错误\",\"code\":121000100}}"
+  },
+  "name": "get",
+  "ids": [
+    8241
+  ],
+  "scenarios": "获取出售中的商品列表",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "获取出售中的商品列表"
+}

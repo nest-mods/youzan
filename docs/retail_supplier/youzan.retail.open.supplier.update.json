@@ -1,0 +1,223 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.open.supplier/3.0.0/update"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.open.supplier/3.0.0/update"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "address",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "地址\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "contacts",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "联系人",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "contacts_phone",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "联系人电话\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "email",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "邮箱\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fax",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "传真\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "phone",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "公司电话\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "qq",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "qq号\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "备注\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "零售调用来源(调用方和有赞约定的值)",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "supplier_code",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "供应商编码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "supplier_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "供应商名称\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "wei_xin",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "微信号\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "更新结果",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "response",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "更新结果",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailOpenSupplierUpdateParams youzanRetailOpenSupplierUpdateParams = new YouzanRetailOpenSupplierUpdateParams();\n\nyouzanRetailOpenSupplierUpdateParams.setSupplierCode(\"SGYS181024142242847980\");\nyouzanRetailOpenSupplierUpdateParams.setSupplierName(\"测试新增\");\nyouzanRetailOpenSupplierUpdateParams.setRetailSource(\"RENWOXING\");\n\nYouzanRetailOpenSupplierUpdate youzanRetailOpenSupplierUpdate = new YouzanRetailOpenSupplierUpdate();\nyouzanRetailOpenSupplierUpdate.setAPIParams(youzanRetailOpenSupplierUpdateParams);\nYouzanRetailOpenSupplierUpdateResult result = client.invoke(youzanRetailOpenSupplierUpdate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"supplier_code\", \"SGYS181024142242847980\");\ndict.Add(\"supplier_name\", \"测试新增\");\ndict.Add(\"retail_source\", \"RENWOXING\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.open.supplier.update\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['supplier_code']=\"SGYS181024142242847980\"\nparams['supplier_name']=\"测试新增\"\nparams['retail_source']=\"RENWOXING\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.open.supplier.update', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['supplier_code']=\"SGYS181024142242847980\";\nparams['supplier_name']=\"测试新增\";\nparams['retail_source']=\"RENWOXING\";\n\n\nvar promise = YZClient.invoke('youzan.retail.open.supplier.update', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.open.supplier.update'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'supplier_code' => 'SGYS181024142242847980',\n    'supplier_name' => '测试新增',\n    'retail_source' => 'RENWOXING',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "234003021",
+        "errorDesc": "修改供应商失败",
+        "solution": null
+      },
+      {
+        "errorCode": "223001002",
+        "errorDesc": "无相关数据",
+        "solution": null
+      },
+      {
+        "errorCode": "223008001",
+        "errorDesc": "供应商编码已存在",
+        "solution": null
+      },
+      {
+        "errorCode": "223008002",
+        "errorDesc": "供应商名称已存在",
+        "solution": null
+      }
+    ],
+    "responseDemo": "{\"response\":true}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"供应商名称已存在\",\"code\":223008002}}"
+  },
+  "name": "update",
+  "ids": [
+    10765
+  ],
+  "scenarios": "供应商信息更新",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "供应商信息更新"
+}

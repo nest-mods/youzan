@@ -1,0 +1,174 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.product.category/3.0.0/search"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.product.category/3.0.0/search"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "category_ids",
+        "type": "Number[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品分类id列表（根据分类id查询时要传）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "level",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品分类层级(0代表所有子分类，1表示不需求子分类，2表示获取单层子分类)",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "source",
+        "type": "String",
+        "example": "OPEN_BACK_END",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "请求来源（需调用方自定义标识：OPEN_XXXX）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "category_vo",
+        "type": "CategoryVO[]",
+        "isRequired": "否",
+        "desc": "分类详情列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/CategoryVO",
+        "struct": {
+          "name": "category_vo",
+          "type": "CategoryVO[]",
+          "isNeed": "false",
+          "desc": "分类详情列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "唯一性序列号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "kdt_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "关联的商户id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "parent_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "父级节点的id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "类目名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "类型：1 根节点 ，2树枝节点 3叶子节点",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created_at",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "创建时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "updated_at",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "更新时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailProductCategorySearchParams youzanRetailProductCategorySearchParams = new YouzanRetailProductCategorySearchParams();\n\nyouzanRetailProductCategorySearchParams.setCategoryIds(\"[302982]\");\nyouzanRetailProductCategorySearchParams.setLevel(0L);\nyouzanRetailProductCategorySearchParams.setSource(\"OPEN_XXX\");\n\nYouzanRetailProductCategorySearch youzanRetailProductCategorySearch = new YouzanRetailProductCategorySearch();\nyouzanRetailProductCategorySearch.setAPIParams(youzanRetailProductCategorySearchParams);\nYouzanRetailProductCategorySearchResult result = client.invoke(youzanRetailProductCategorySearch);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"category_ids\", \"[302982]\");\ndict.Add(\"level\", 0);\ndict.Add(\"source\", \"OPEN_XXX\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.product.category.search\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.product.category.search'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'category_ids' => '[302982]',\n    'level' => '0',\n    'source' => 'OPEN_XXX',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['category_ids']=\"[302982]\"\nparams['level']=0\nparams['source']=\"OPEN_XXX\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.product.category.search', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['category_ids']=\"[302982]\";\nparams['level']=0;\nparams['source']=\"OPEN_XXX\";\n\n\nvar promise = YZClient.invoke('youzan.retail.product.category.search', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":[{\"score\":302981,\"kdt_id\":18938611,\"relate_code\":\"\",\"updated_at\":1532504583000,\"level\":1,\"parent_id\":0,\"origin\":0,\"name\":\"蔬菜瓜果1\",\"created_at\":1520341212000,\"id\":302982,\"type\":1,\"version\":4},{\"score\":303012,\"kdt_id\":18938611,\"relate_code\":\"\",\"updated_at\":1524209974000,\"level\":4,\"parent_id\":303317,\"origin\":0,\"name\":\"A2\",\"created_at\":1520341212000,\"id\":303012,\"type\":3,\"version\":1},{\"score\":303026,\"kdt_id\":18938611,\"relate_code\":\"\",\"updated_at\":1524209974000,\"level\":4,\"parent_id\":303027,\"origin\":0,\"name\":\"B1\",\"created_at\":1520341212000,\"id\":303026,\"type\":3,\"version\":1},{\"score\":303027,\"kdt_id\":18938611,\"relate_code\":\"\",\"updated_at\":1524209974000,\"level\":3,\"parent_id\":303041,\"origin\":0,\"name\":\"B\",\"created_at\":1520341212000,\"id\":303027,\"type\":2,\"version\":1},{\"score\":303031,\"kdt_id\":18938611,\"relate_code\":\"\",\"updated_at\":1524209974000,\"level\":3,\"parent_id\":303324,\"origin\":0,\"name\":\"叶菜\",\"created_at\":1520341212000,\"id\":303031,\"type\":3,\"version\":1},{\"score\":303032,\"kdt_id\":18938611,\"relate_code\":\"\",\"updated_at\":1524209974000,\"level\":3,\"parent_id\":303324,\"origin\":0,\"name\":\"根茎\",\"created_at\":1520341212000,\"id\":303032,\"type\":3,\"version\":1},{\"score\":303036,\"kdt_id\":18938611,\"relate_code\":\"\",\"updated_at\":1524209974000,\"level\":3,\"parent_id\":303325,\"origin\":0,\"name\":\"测试\",\"created_at\":1520341212000,\"id\":303036,\"type\":3,\"version\":1},{\"score\":303041,\"kdt_id\":18938611,\"relate_code\":\"\",\"updated_at\":1524209974000,\"level\":2,\"parent_id\":302982,\"origin\":0,\"name\":\"zhc2\",\"created_at\":1520341212000,\"id\":303041,\"type\":2,\"version\":1},{\"score\":303308,\"kdt_id\":18938611,\"relate_code\":\"\",\"updated_at\":1524209974000,\"level\":4,\"parent_id\":303317,\"origin\":0,\"name\":\"A1\",\"created_at\":1520341212000,\"id\":303308,\"type\":3,\"version\":1},{\"score\":303317,\"kdt_id\":18938611,\"relate_code\":\"\",\"updated_at\":1524209974000,\"level\":3,\"parent_id\":303041,\"origin\":0,\"name\":\"A\",\"created_at\":1520341212000,\"id\":303317,\"type\":2,\"version\":1},{\"score\":303324,\"kdt_id\":18938611,\"relate_code\":\"\",\"updated_at\":1524209974000,\"level\":2,\"parent_id\":302982,\"origin\":0,\"name\":\"蔬菜\",\"created_at\":1520341212000,\"id\":303324,\"type\":2,\"version\":1},{\"score\":303325,\"kdt_id\":18938611,\"relate_code\":\"\",\"updated_at\":1524209974000,\"level\":2,\"parent_id\":302982,\"origin\":0,\"name\":\"瓜果\",\"created_at\":1520341212000,\"id\":303325,\"type\":2,\"version\":1},{\"score\":303326,\"kdt_id\":18938611,\"relate_code\":\"\",\"updated_at\":1524209974000,\"level\":2,\"parent_id\":302982,\"origin\":0,\"name\":\"干果\",\"created_at\":1520341212000,\"id\":303326,\"type\":3,\"version\":1},{\"score\":512417,\"kdt_id\":18938611,\"relate_code\":\"18938611_512417\",\"updated_at\":1528523092000,\"level\":2,\"parent_id\":302982,\"origin\":0,\"name\":\"服个软\",\"created_at\":1528523092000,\"id\":512417,\"type\":3,\"version\":0}]}",
+    "errorResponseDemo": "{\"error_response\": {\"code\": 53002,\"msg\": \"level type error\"}}"
+  },
+  "name": "search",
+  "ids": [
+    10223
+  ],
+  "scenarios": "查询分类列表",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "查询分类列表"
+}

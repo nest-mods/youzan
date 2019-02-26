@@ -1,0 +1,180 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.scrm.customer/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.scrm.customer/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "customer_create",
+        "type": "CustomerCreate",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "创建客户所需信息",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/CustomerCreate",
+        "struct": {
+          "name": "CustomerCreate",
+          "type": "CustomerCreate",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "birthday",
+              "type": "String",
+              "isStruct": false,
+              "desc": "生日",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "contact_address",
+              "type": "ContactAddressCreate",
+              "isStruct": true,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": [
+                {
+                  "name": "address",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "详细地址",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "area_code",
+                  "type": "Number",
+                  "isStruct": false,
+                  "desc": "地域编码",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "gender",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "性别，0：未知；1：男；2：女",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "isStruct": false,
+              "desc": "姓名",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "注册手机号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "account_id",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "帐号ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "account_id",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "帐号ID",
+          "defaultValue": null,
+          "example": "888888",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "account_type",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "帐号类型。目前支持以下选项（只支持传一种）： FansID：自有粉丝ID， Mobile：手机号， YouZanAccount：有赞账号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "account_type",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "帐号类型。目前支持以下选项（只支持传一种）： FansID：自有粉丝ID， Mobile：手机号， YouZanAccount：有赞账号",
+          "defaultValue": null,
+          "example": "YouZanAccount",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanScrmCustomerCreateParams youzanScrmCustomerCreateParams = new YouzanScrmCustomerCreateParams();\n\nyouzanScrmCustomerCreateParams.setMobile(\"18810900503\");\nyouzanScrmCustomerCreateParams.setCustomerCreate(\"{\"birthday\":\"1988-02-29\",\"gender\":1,\"name\":\"李沛伦\",\"remark\":\"没有啥\",\"contact_address\":{\"address\":\"新风南里\",\"area_code\":518001}}\");\n\nYouzanScrmCustomerCreate youzanScrmCustomerCreate = new YouzanScrmCustomerCreate();\nyouzanScrmCustomerCreate.setAPIParams(youzanScrmCustomerCreateParams);\nYouzanScrmCustomerCreateResult result = client.invoke(youzanScrmCustomerCreate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"mobile\", \"18810900503\");\ndict.Add(\"customer_create\", \"{\"birthday\":\"1988-02-29\",\"gender\":1,\"name\":\"李沛伦\",\"remark\":\"没有啥\",\"contact_address\":{\"address\":\"新风南里\",\"area_code\":518001}}\");\n\n\nvar result = yzClient.Invoke(\"youzan.scrm.customer.create\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.scrm.customer.create'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'mobile' => '18810900503',\n    'customer_create' => '{\"birthday\":\"1988-02-29\",\"gender\":1,\"name\":\"李沛伦\",\"remark\":\"没有啥\",\"contact_address\":{\"address\":\"新风南里\",\"area_code\":518001}}',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['mobile']=\"18810900503\"\nparams['customer_create']=\"{\"birthday\":\"1988-02-29\",\"gender\":1,\"name\":\"李沛伦\",\"remark\":\"没有啥\",\"contact_address\":{\"address\":\"新风南里\",\"area_code\":518001}}\"\n\nfiles=[]\n\nprint client.invoke('youzan.scrm.customer.create', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['mobile']=\"18810900503\";\nparams['customer_create']=\"{\"birthday\":\"1988-02-29\",\"gender\":1,\"name\":\"李沛伦\",\"remark\":\"没有啥\",\"contact_address\":{\"address\":\"新风南里\",\"area_code\":518001}}\";\n\n\nvar promise = YZClient.invoke('youzan.scrm.customer.create', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "141502109",
+        "errorDesc": "创建客户已存在",
+        "solution": "已创建，无需重复调用"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"account_type\":\"YouZanAccount\",\"account_id\":\"1028070540\"}}",
+    "errorResponseDemo": "{\"error_response\":{\"code\":141502109,\"message\":\"customer already exist\"}}"
+  },
+  "name": "create",
+  "ids": [
+    9081
+  ],
+  "scenarios": "客户创建接口",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "客户创建接口"
+}

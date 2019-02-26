@@ -1,0 +1,379 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.open.spu/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.open.spu/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "category_id",
+        "type": "Long",
+        "example": "1",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "类目ID",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/Long",
+        "struct": {
+          "name": "Long",
+          "type": "Long",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": []
+        }
+      },
+      {
+        "name": "input_tax_rate",
+        "type": "String",
+        "example": "0.1300",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "进项税率",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "example": "test",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "output_tax_rate",
+        "type": "String",
+        "example": "0.1300",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "销项税率",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "photo_url",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "图片地址",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_price",
+        "type": "String",
+        "example": "1.01",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "建议零售价（单位：元）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "零售调用来源(调用方和有赞约定的值)",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "skus",
+        "type": "OpenSkuCreate[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品规格列表",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/OpenSkuCreate",
+        "struct": {
+          "name": "OpenSkuCreate[]",
+          "type": "OpenSkuCreate[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "retail_price",
+              "type": "String",
+              "isStruct": false,
+              "desc": "建议零售价（单位：元）",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_code",
+              "type": "String",
+              "isStruct": false,
+              "desc": "sku编码",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_id",
+              "type": "Long",
+              "isStruct": true,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_no",
+              "type": "String",
+              "isStruct": false,
+              "desc": "sku条码",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "specs",
+              "type": "OpenSpec[]",
+              "isStruct": true,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": [
+                {
+                  "name": "name",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "规格名称",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "value",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "规格值",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "spec_define_tuple",
+        "type": "SpecDefineTuple[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "规格定义",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/SpecDefineTuple",
+        "struct": {
+          "name": "SpecDefineTuple[]",
+          "type": "SpecDefineTuple[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "key",
+              "type": "Keys",
+              "isStruct": true,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": [
+                {
+                  "name": "k",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "规格名称",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "kId",
+                  "type": "Number",
+                  "isStruct": false,
+                  "desc": "规格ID",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "values",
+              "type": "Values[]",
+              "isStruct": true,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": [
+                {
+                  "name": "v",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "规格值",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "vId",
+                  "type": "Number",
+                  "isStruct": false,
+                  "desc": "规格值对应ID",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "spu_code",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品编码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "spu_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品条码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "unit",
+        "type": "String",
+        "example": "件",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "单位",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "spu编码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "response",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "spu编码",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailOpenSpuCreateParams youzanRetailOpenSpuCreateParams = new YouzanRetailOpenSpuCreateParams();\n\nyouzanRetailOpenSpuCreateParams.setName(\"test20181228\");\nyouzanRetailOpenSpuCreateParams.setRetailPrice(\"1.11\");\nyouzanRetailOpenSpuCreateParams.setRetailSource(\"GUANYIYUN\");\nyouzanRetailOpenSpuCreateParams.setUnit(\"件\");\nyouzanRetailOpenSpuCreateParams.setCategoryId(530600L);\n\nYouzanRetailOpenSpuCreate youzanRetailOpenSpuCreate = new YouzanRetailOpenSpuCreate();\nyouzanRetailOpenSpuCreate.setAPIParams(youzanRetailOpenSpuCreateParams);\nYouzanRetailOpenSpuCreateResult result = client.invoke(youzanRetailOpenSpuCreate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"name\", \"test20181228\");\ndict.Add(\"retail_price\", \"1.11\");\ndict.Add(\"retail_source\", \"GUANYIYUN\");\ndict.Add(\"unit\", \"件\");\ndict.Add(\"category_id\", 530600);\n\n\nvar result = yzClient.Invoke(\"youzan.retail.open.spu.create\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.open.spu.create'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'name' => 'test20181228',\n    'retail_price' => '1.11',\n    'retail_source' => 'GUANYIYUN',\n    'unit' => '件',\n    'category_id' => '530600',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['name']=\"test20181228\"\nparams['retail_price']=\"1.11\"\nparams['retail_source']=\"GUANYIYUN\"\nparams['unit']=\"件\"\nparams['category_id']=530600\n\nfiles=[]\n\nprint client.invoke('youzan.retail.open.spu.create', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['name']=\"test20181228\";\nparams['retail_price']=\"1.11\";\nparams['retail_source']=\"GUANYIYUN\";\nparams['unit']=\"件\";\nparams['category_id']=530600;\n\n\nvar promise = YZClient.invoke('youzan.retail.open.spu.create', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "234000003",
+        "errorDesc": "参数错误",
+        "solution": "确认参数是否正常"
+      },
+      {
+        "errorCode": "234008007",
+        "errorDesc": "创建SPU失败",
+        "solution": "确认参数是否正常，重试之后如果失败，联系有赞技术支持"
+      },
+      {
+        "errorCode": "234000006",
+        "errorDesc": "数据异常",
+        "solution": "确认参数是否正常，重试之后如果失败，联系有赞技术支持"
+      },
+      {
+        "errorCode": "221000106",
+        "errorDesc": "图片地址不规范",
+        "solution": null
+      },
+      {
+        "errorCode": "221100002",
+        "errorDesc": "商品条码重复",
+        "solution": null
+      },
+      {
+        "errorCode": "221100014",
+        "errorDesc": "商品条码不能为空",
+        "solution": null
+      }
+    ],
+    "responseDemo": "{\"response\":\"BM9617673541\"}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"图片地址不规范\",\"code\":221000106}}"
+  },
+  "name": "create",
+  "ids": [
+    10774
+  ],
+  "scenarios": "创建商品信息",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "商品创建"
+}

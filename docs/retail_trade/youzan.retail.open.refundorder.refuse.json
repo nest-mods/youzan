@@ -1,0 +1,114 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.open.refundorder/3.0.0/refuse"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.open.refundorder/3.0.0/refuse"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "refund_order_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "退款单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "拒绝理由",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "零售调用来源（调用方和有赞约定的值）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "version",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "退款单版本",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "是否成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "是否成功",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailOpenRefundorderRefuseParams youzanRetailOpenRefundorderRefuseParams = new YouzanRetailOpenRefundorderRefuseParams();\n\nyouzanRetailOpenRefundorderRefuseParams.setVersion(1540887487219L);\nyouzanRetailOpenRefundorderRefuseParams.setRetailSource(\"GUANJIAPO\");\nyouzanRetailOpenRefundorderRefuseParams.setRemark(\"123\");\nyouzanRetailOpenRefundorderRefuseParams.setRefundOrderNo(\"201810301618070000010531\");\n\nYouzanRetailOpenRefundorderRefuse youzanRetailOpenRefundorderRefuse = new YouzanRetailOpenRefundorderRefuse();\nyouzanRetailOpenRefundorderRefuse.setAPIParams(youzanRetailOpenRefundorderRefuseParams);\nYouzanRetailOpenRefundorderRefuseResult result = client.invoke(youzanRetailOpenRefundorderRefuse);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"version\", 1540887487219);\ndict.Add(\"retail_source\", \"GUANJIAPO\");\ndict.Add(\"remark\", \"123\");\ndict.Add(\"refund_order_no\", \"201810301618070000010531\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.open.refundorder.refuse\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['version']=1540887487219\nparams['retail_source']=\"GUANJIAPO\"\nparams['remark']=\"123\"\nparams['refund_order_no']=\"201810301618070000010531\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.open.refundorder.refuse', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['version']=1540887487219;\nparams['retail_source']=\"GUANJIAPO\";\nparams['remark']=\"123\";\nparams['refund_order_no']=\"201810301618070000010531\";\n\n\nvar promise = YZClient.invoke('youzan.retail.open.refundorder.refuse', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.open.refundorder.refuse'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'version' => '1540887487219',\n    'retail_source' => 'GUANJIAPO',\n    'remark' => '123',\n    'refund_order_no' => '201810301618070000010531',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":true}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"参数错误 : retailSource不合法\",\"code\":234000003}}"
+  },
+  "name": "refuse",
+  "ids": [
+    10798
+  ],
+  "scenarios": "拒绝退款",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "拒绝退款（仅适用于有赞连锁）"
+}

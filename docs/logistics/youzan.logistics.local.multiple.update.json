@@ -1,0 +1,183 @@
+{
+  "name": "update",
+  "ids": [
+    9959
+  ],
+  "scenarios": "设置商家同城配送多区域和定时达的信息",
+  "1.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.logistics.local.multiple/1.0.0/update"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.logistics.local.multiple/1.0.0/update"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "ahead_max",
+        "type": "Integer",
+        "example": "2",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商家最长预约时间，和ahead_max_type配对使用，默认0",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "ahead_max_type",
+        "type": "String",
+        "example": "day",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商家最长预约时间类型   目前默认单位：day 日，目前只支持day",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "ahead_min",
+        "type": "Integer",
+        "example": "3",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商家预约下单提前时间，和ahead_min_type配对使用，默认0",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "ahead_min_type",
+        "type": "String",
+        "example": "minute",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商家预约下单提前时间类型   目前默认单位：day 日；hour 小时；minute分钟",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "area_param_list",
+        "type": "String",
+        "example": "[{\"area_type\":2,\"calc_type\":1,\"start_fee\":114,\"fix",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "多区域对象信息，参数为list对象的json字符串",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "is_open",
+        "type": "Boolean",
+        "example": "true",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "是否开启定时达功能，true:开启，false:关闭",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "offline_id",
+        "type": "Long",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "多网点id，单门店不填，该值默认就是0",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/Long",
+        "struct": {
+          "name": "Long",
+          "type": "Long",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": []
+        }
+      },
+      {
+        "name": "time_bucket",
+        "type": "String",
+        "example": "[{\"start_time\":\"10:00\",\"end_time\":\"21:00\",\"switchs",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "买家配送时段，定时达不开启可以不传，参数为list对象的json字符串",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "time_span",
+        "type": "String",
+        "example": "hour",
+        "defaultValue": "HOUR",
+        "isRequired": "是",
+        "desc": "买家可选的送达时间细分 day 天；meal 上午下午晚上； hour 小时；halfhour 半小时",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "isSucess",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "返回成功或失败",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "isSucess",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "返回成功或失败",
+          "defaultValue": "",
+          "example": "false",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanLogisticsLocalMultipleUpdateParams youzanLogisticsLocalMultipleUpdateParams = new YouzanLogisticsLocalMultipleUpdateParams();\n\nyouzanLogisticsLocalMultipleUpdateParams.setAheadMax(4L);\nyouzanLogisticsLocalMultipleUpdateParams.setAheadMaxType(\"day\");\nyouzanLogisticsLocalMultipleUpdateParams.setAheadMin(20L);\nyouzanLogisticsLocalMultipleUpdateParams.setAheadMinType(\"hour\");\n// 自定义区域，不同区域不同配送费\nyouzanLogisticsLocalMultipleUpdateParams.setAreaParamList(\"[{\"area_type\":2,\"calc_type\":1,\"areaName\":\"自定义区域1\",\"start_fee\":114,\"fixed_fee\":211,\"polygon_area_param\":{\"point_param_list\":[{\"lng\":120.10109103052879,\"lat\":30.294242999256547},{\"lng\":120.1010910325,\"lat\":30.294242999257},{\"lng\":120.10119105,\"lat\":30.2942433}]}}]\");\n// 按半径，不同距离不同配送费, id 字段修改时必填，添加不用填, operatorType，操作类型(添加：INSERT，修改UPDATE，删除：DELETE)\nyouzanLogisticsLocalMultipleUpdateParams.setAreaParamList(\"[{\"area_type\":1,\"calc_type\":2,\"areaName\":\"自定义区域2\",\"id\":1,\"operatorType\":\"UPDATE\",\"start_fee\":2000,\"firstDistance\":1000,\"firstFee\":0,\"additionalDistance\":500,\"additionalFee\":100,\"circleAreaParam\":{\"scope\":2000}}]\");\n// 简易版，下单时不对区域进行校验\nyouzanLogisticsLocalMultipleUpdateParams.setAreaParamList(\"[{\"area_type\":3,\"start_fee\":2000,\"fixed_fee\":211,\"areaName\":\"简易版\",\"desc\":\"配送范围说明，西湖区免费\",\"attachPic\":\"填配送范围图片链接\"}]\");\n\nyouzanLogisticsLocalMultipleUpdateParams.setIsOpen(\"false\");\nyouzanLogisticsLocalMultipleUpdateParams.setOfflineId(633248L);\nyouzanLogisticsLocalMultipleUpdateParams.setTimeBucket(\"[{\"start_time\":\"10:00\",\"end_time\":\"21:00\",\"switchs\":\"0000011\"},{\"start_time\":\"11:00\",\"end_time\":\"19:00\",\"switchs\":\"1111100\"}]\");\nyouzanLogisticsLocalMultipleUpdateParams.setTimeSpan(\"hour\");\n\nYouzanLogisticsLocalMultipleUpdate youzanLogisticsLocalMultipleUpdate = new YouzanLogisticsLocalMultipleUpdate();\nyouzanLogisticsLocalMultipleUpdate.setAPIParams(youzanLogisticsLocalMultipleUpdateParams);\nYouzanLogisticsLocalMultipleUpdateResult result = client.invoke(youzanLogisticsLocalMultipleUpdate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"ahead_max\", 4);\ndict.Add(\"ahead_max_type\", \"day\");\ndict.Add(\"ahead_min\", 20);\ndict.Add(\"ahead_min_type\", \"hour\");\ndict.Add(\"area_param_list\", \"[{\"area_type\":2,\"calc_type\":1,\"start_fee\":114,\"fixed_fee\":211,\"polygon_area_param\":{\"point_param_list\":[{\"lng\":120.10109103052879,\"lat\":30.294242999256547},{\"lng\":120.1010910325,\"lat\":30.294242999257},{\"lng\":120.10119105,\"lat\":30.2942433}]}}]\");\ndict.Add(\"is_open\", \"false\");\ndict.Add(\"offline_id\", 633248);\ndict.Add(\"time_bucket\", \"[{\"start_time\":\"10:00\",\"end_time\":\"21:00\",\"switchs\":\"0000011\"},{\"start_time\":\"11:00\",\"end_time\":\"19:00\",\"switchs\":\"1111100\"}]\");\ndict.Add(\"time_span\", \"hour\");\n\n\nvar result = yzClient.Invoke(\"youzan.logistics.local.multiple.update\", \"1.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.logistics.local.multiple.update'; //要调用的api名称\n$api_version = '1.0.0'; //要调用的api版本号\n\n$my_params = [\n    'ahead_max' => '4',\n    'ahead_max_type' => 'day',\n    'ahead_min' => '20',\n    'ahead_min_type' => 'hour',\n    'area_param_list' => '[{\"area_type\":2,\"calc_type\":1,\"start_fee\":114,\"fixed_fee\":211,\"polygon_area_param\":{\"point_param_list\":[{\"lng\":120.10109103052879,\"lat\":30.294242999256547},{\"lng\":120.1010910325,\"lat\":30.294242999257},{\"lng\":120.10119105,\"lat\":30.2942433}]}}]',\n    'is_open' => 'false',\n    'offline_id' => '633248',\n    'time_bucket' => '[{\"start_time\":\"10:00\",\"end_time\":\"21:00\",\"switchs\":\"0000011\"},{\"start_time\":\"11:00\",\"end_time\":\"19:00\",\"switchs\":\"1111100\"}]',\n    'time_span' => 'hour',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['ahead_max']=4\nparams['ahead_max_type']=\"day\"\nparams['ahead_min']=20\nparams['ahead_min_type']=\"hour\"\nparams['area_param_list']=\"[{\"area_type\":2,\"calc_type\":1,\"start_fee\":114,\"fixed_fee\":211,\"polygon_area_param\":{\"point_param_list\":[{\"lng\":120.10109103052879,\"lat\":30.294242999256547},{\"lng\":120.1010910325,\"lat\":30.294242999257},{\"lng\":120.10119105,\"lat\":30.2942433}]}}]\"\nparams['is_open']=\"false\"\nparams['offline_id']=633248\nparams['time_bucket']=\"[{\"start_time\":\"10:00\",\"end_time\":\"21:00\",\"switchs\":\"0000011\"},{\"start_time\":\"11:00\",\"end_time\":\"19:00\",\"switchs\":\"1111100\"}]\"\nparams['time_span']=\"hour\"\n\nfiles=[]\n\nprint client.invoke('youzan.logistics.local.multiple.update', '1.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['ahead_max']=4;\nparams['ahead_max_type']=\"day\";\nparams['ahead_min']=20;\nparams['ahead_min_type']=\"hour\";\nparams['area_param_list']=\"[{\"area_type\":2,\"calc_type\":1,\"start_fee\":114,\"fixed_fee\":211,\"polygon_area_param\":{\"point_param_list\":[{\"lng\":120.10109103052879,\"lat\":30.294242999256547},{\"lng\":120.1010910325,\"lat\":30.294242999257},{\"lng\":120.10119105,\"lat\":30.2942433}]}}]\";\nparams['is_open']=\"false\";\nparams['offline_id']=633248;\nparams['time_bucket']=\"[{\"start_time\":\"10:00\",\"end_time\":\"21:00\",\"switchs\":\"0000011\"},{\"start_time\":\"11:00\",\"end_time\":\"19:00\",\"switchs\":\"1111100\"}]\";\nparams['time_span']=\"hour\";\n\n\nvar promise = YZClient.invoke('youzan.logistics.local.multiple.update', '1.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "120000103",
+        "errorDesc": "请求参数错误",
+        "solution": "根据提示重新设置参数"
+      }
+    ],
+    "responseDemo": "{\"response\":null}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"圆形区块详情参数(circleAreaParam)参数错误\",\"code\":120000103}}"
+  },
+  "version": [
+    "1.0.0"
+  ],
+  "desc": "设置商家同城配送多区域和定时达的信息"
+}

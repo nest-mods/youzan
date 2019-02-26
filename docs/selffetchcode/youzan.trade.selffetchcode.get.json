@@ -1,0 +1,2760 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.trade.selffetchcode/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.trade.selffetchcode/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "code",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "提货码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fields",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "需要返回的交易对象字段，如tid,title,receiver_city等。可选值：TradeDetail交易结构体中所有字段均可返回；多个字段用“,”分隔。如果为空则返回所有",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "code",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "提货码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "code",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "提货码",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "status",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "核销状态 0 未核销 1 已核销",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "status",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "核销状态 0 未核销 1 已核销",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "tid",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "订单编号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "tid",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "订单编号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "trade",
+        "type": "TradeDetail",
+        "isRequired": "否",
+        "desc": "订单详情",
+        "isStruct": true,
+        "structUrl": "/web/meta/TradeDetail",
+        "struct": {
+          "name": "trade",
+          "type": "TradeDetail",
+          "isNeed": "true",
+          "desc": "订单详情",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "sign_time",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "买家签收时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "consign_time",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "卖家发货时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sub_trades",
+              "type": "TradeDetail[]",
+              "isNeed": null,
+              "desc": "交易数据结构",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "sign_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "买家签收时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "consign_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "卖家发货时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "coupon_details",
+                  "type": "UmpTradeCoupon[]",
+                  "isNeed": null,
+                  "desc": "订单中使用到的卡券的数据结构",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "coupon_id",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "该组卡券的ID",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "coupon_name",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "该组卡券的名称",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "coupon_type",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "卡券的类型。可选值：PROMOCARD（优惠券）、PROMOCODE（优惠码）",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "coupon_content",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "卡券内容。当卡券类型为优惠码时，值为优惠码字符串",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "coupon_description",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "卡券的说明",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "coupon_condition",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "卡券使用条件说明",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "used_at",
+                      "type": "Date",
+                      "isNeed": null,
+                      "desc": "使用时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "discount_fee",
+                      "type": "Price",
+                      "isNeed": null,
+                      "desc": "优惠的金额，单位：元，精确到小数点后两位",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "trade_memo",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "卖家对该交易的备注",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "delivery_time_display",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "同城送订单送达时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "promotion_details",
+                  "type": "TradePromotion[]",
+                  "isNeed": null,
+                  "desc": "订单中使用到的优惠活动的数据结构",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "promotion_id",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "该优惠活动的ID",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "promotion_name",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "该优惠活动的名称",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "promotion_type",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "优惠的类型。可选值：<br> FULLREDUCE（满减满送）<br> ORDERCASHBACK（订单返现）<br> GROUPBUYING（商品团购）<br> GROUPON（多人拼团）<br> SECKILL（秒杀）<br> AUCTION（降价拍）",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "promotion_condition",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "优惠使用条件说明",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "used_at",
+                      "type": "Date",
+                      "isNeed": null,
+                      "desc": "使用时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "discount_fee",
+                      "type": "Price",
+                      "isNeed": null,
+                      "desc": "优惠的金额，单位：元，精确到小数点后两位",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "weixin_user_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "(即将废弃,请参考fans_info中的说明) 微信粉丝ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "num",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品购买数量。当一个trade对应多个order的时候，值为所有商品购买数量之和",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "handled",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "结算状态（分销订单特有）。1：已结算，0：未结算",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "transaction_tid",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "支付流水号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "outer_tid",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "外部交易编号。比如，如果支付方式是微信支付，就是财付通的交易单号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "shipping_type",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "创建交易时的物流方式。取值范围：express（快递），fetch（到店自提），local（同城配送）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "receiver_address",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "收货人的详细地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "orders",
+                  "type": "TradeOrder[]",
+                  "isNeed": null,
+                  "desc": "交易明细数据结构",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "sku_id",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "Sku的ID，sku_id 在系统里<span style=\"color: #ff0000;\">并不是唯一的</span>，结合商品ID一起使用才是唯一的。",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "fenxiao_payment",
+                      "type": "Price",
+                      "isNeed": null,
+                      "desc": "商品在分销商那边的实付金额。精确到2位小数；单位：元。如果是采购单才有值，否则值为 0",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "num",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "商品购买数量",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "outer_sku_id",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "商家编码（商家为Sku设置的外部编号）",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "order_promotion_details",
+                      "type": "TradeOrderPromotion[]",
+                      "isNeed": null,
+                      "desc": "交易明细中的优惠信息的数据结构",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": true,
+                      "children": [
+                        {
+                          "name": "promotion_name",
+                          "type": "String",
+                          "isNeed": null,
+                          "desc": "优惠的名称",
+                          "defaultValue": null,
+                          "example": null,
+                          "isStruct": false,
+                          "children": []
+                        },
+                        {
+                          "name": "promotion_type",
+                          "type": "String",
+                          "isNeed": null,
+                          "desc": "优惠的类型。可选值：<br>MEMBER_CARD_DISCOUNT（会员卡折扣）\n\t\t\t\t\t\t<br>SCAN_DISCOUNT（扫码折扣）\n\t\t\t\t\t\t<br>SCAN_DECREASE（扫码减额优惠）\n\t\t\t\t\t\t<br>TIMELIMITED_DISCOUNT（限时折扣）",
+                          "defaultValue": null,
+                          "example": null,
+                          "isStruct": false,
+                          "children": []
+                        },
+                        {
+                          "name": "apply_at",
+                          "type": "Date",
+                          "isNeed": null,
+                          "desc": "应用优惠的时间",
+                          "defaultValue": null,
+                          "example": null,
+                          "isStruct": false,
+                          "children": []
+                        },
+                        {
+                          "name": "discount_fee",
+                          "type": "Price",
+                          "isNeed": null,
+                          "desc": "优惠的金额，单位：元，精确到小数点后两位",
+                          "defaultValue": null,
+                          "example": null,
+                          "isStruct": false,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "sku_properties_name",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "SKU的值，即：商品的规格。如：机身颜色:黑色;手机套餐:官方标配",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "title",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "商品标题",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "fenxiao_price",
+                      "type": "Price",
+                      "isNeed": null,
+                      "desc": "商品在分销商那边的出售价格。精确到2位小数；单位：元。如果是采购单才有值，否则值为 0",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_virtual",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "1 虚拟商品 0 非虚拟商品",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "refunded_fee",
+                      "type": "Price",
+                      "isNeed": null,
+                      "desc": "退款金额",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "outer_item_id",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "商品货号（商家为商品设置的外部编号）",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "price",
+                      "type": "Price",
+                      "isNeed": null,
+                      "desc": "商品价格。精确到2位小数；单位：元",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "oid",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "交易明细编号。该编号并不唯一，只用于区分交易内的多条明细记录",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "buyer_messages",
+                      "type": "TradeBuyerMessage[]",
+                      "isNeed": null,
+                      "desc": "交易明细中买家留言的数据结构",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": true,
+                      "children": [
+                        {
+                          "name": "title",
+                          "type": "String",
+                          "isNeed": null,
+                          "desc": "留言的标题",
+                          "defaultValue": null,
+                          "example": null,
+                          "isStruct": false,
+                          "children": []
+                        },
+                        {
+                          "name": "content",
+                          "type": "String",
+                          "isNeed": null,
+                          "desc": "留言的内容",
+                          "defaultValue": null,
+                          "example": null,
+                          "isStruct": false,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "sku_unique_code",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "Sku在系统中的唯一编号，可以在开发者的系统中用作 Sku 的唯一ID，但不能用于调用接口",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "allow_send",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "是否允许发货  1 可以发货 0 不能发货",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "payment",
+                      "type": "Price",
+                      "isNeed": null,
+                      "desc": "实付金额。精确到2位小数，单位：元",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "discount_fee",
+                      "type": "Price",
+                      "isNeed": null,
+                      "desc": "交易明细内的优惠金额。精确到2位小数，单位：元",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "item_refund_state",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "商品退款状态",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "seller_nick",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "卖家昵称",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "num_iid",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "商品数字编号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "state_str",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "商品状态",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "is_present",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "1 赠品商品 0 普通商品",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "pic_thumb_path",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "商品主图片缩略图地址",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "item_type",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "商品类型。<br>0：普通商品；<br>10：分销商品;",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "total_fee",
+                      "type": "Price",
+                      "isNeed": null,
+                      "desc": "应付金额（商品价格乘以数量的总金额）",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "pic_path",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "商品主图片地址",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "feedback",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "交易维权状态。<br>\n\t\t\t\t0 无维权，1 顾客发起维权，2 顾客拒绝商家的处理结果，3 顾客接受商家的处理结果，9 商家正在处理,101 维权处理中,110 维权结束。<br>\n\t\t        备注：1到10的状态码是微信维权状态码，100以上的状态码是有赞维权状态码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pay_type",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "支付类型。取值范围：<br>\nWEIXIN (微信自有支付)<br>\nWEIXIN_DAIXIAO (微信代销支付)<br>\nALIPAY (支付宝支付)<br>\nBANKCARDPAY (银行卡支付)<br>\nPEERPAY (代付)<br>\nCODPAY (货到付款)<br>\nBAIDUPAY (百度钱包支付)<br>\nPRESENTTAKE (直接领取赠品)<br>\nCOUPONPAY（优惠券/码全额抵扣）<br>\nBULKPURCHASE（来自分销商的采购）<br>\nMERGEDPAY (合并付货款) <br>\nECARD（有赞E卡支付）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "receiver_district",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "收货人的所在地区",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "receiver_city",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "收货人的所在城市。<br>\nPS：如果订单类型是送礼订单，收货地址在sub_trades字段中；如果物流方式是到店自提，收货地址在fetch_detail字段中",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "title",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "交易标题，以首个商品标题作为此标题的值",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "buyer_message",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "买家购买附言",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "points_price",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "积分兑换订单，数值代表消耗的积分 非积分兑换订单默认为0",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pay_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "买家付款时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "payment",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "实付金额。单位：元，精确到分",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "refunded_fee",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "交易完成后退款的金额。单位：元，精确到分",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "out_trade_no",
+                  "type": "String[]",
+                  "isNeed": null,
+                  "desc": "代付订单外部交易号列表,非代付订单类型返回空",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "refund_state",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "退款状态。取值范围：<br>\nNO_REFUND（无退款）<br>\nPARTIAL_REFUNDING（部分退款中）<br>\nPARTIAL_REFUNDED（已部分退款）<br>\nPARTIAL_REFUND_FAILED（部分退款失败）<br>\nFULL_REFUNDING（全额退款中）<br>\nFULL_REFUNDED（已全额退款）<br>\nFULL_REFUND_FAILED（全额退款失败）<br>",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "qr_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "收银台订单的二维码id号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "post_fee",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "运费。单位：元，精确到分",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "tid",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "交易编号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "is_tuan_head",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "是否为团长订单",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "buyer_type",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "(即将废弃,请参考fans_info中的说明) 买家类型，取值范围：0 为未知，1 为微信粉丝，2 为微博粉丝",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "type",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "交易类型。取值范围：<br>\nFIXED （一口价）<br>\nGIFT （送礼）<br>\nBULK_PURCHASE（来自分销商的采购）<br>\nPRESENT （赠品领取）<br>\nGROUP （拼团订单）<br>\nPIFA （批发订单）<br>\nCOD （货到付款）<br>\nPEER （代付）<br>\nQRCODE（扫码商家二维码直接支付的交易）<br>\nQRCODE_3RD（线下收银台二维码交易)",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "outer_user_id",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "三方APP用户id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "status",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "交易状态。取值范围：<br>\nTRADE_NO_CREATE_PAY (没有创建支付交易) <br>\nWAIT_BUYER_PAY (等待买家付款) <br>\nWAIT_PAY_RETURN (等待支付确认) <br>\nWAIT_GROUP（等待成团，即：买家已付款，等待成团）<br>\nWAIT_SELLER_SEND_GOODS (等待卖家发货，即：买家已付款) <br>\nWAIT_BUYER_CONFIRM_GOODS (等待买家确认收货，即：卖家已发货) <br>\nTRADE_BUYER_SIGNED (买家已签收) <br>\nTRADE_CLOSED (付款以后用户退款成功，交易自动关",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "update_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "交易更新时间。当交易的：状态改变、备注更改、星标更改 等情况下都会刷新更新时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "relations",
+                  "type": "String[]",
+                  "isNeed": null,
+                  "desc": "relation_type返回source时,为分销订单号列表<br>\n返回fenxiao时,为供应商订单号列表<br>\n返回空时,列表返回空",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "fans_info",
+                  "type": "FansInfo",
+                  "isNeed": null,
+                  "desc": "用户信息",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "fans_nickname",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "粉丝昵称 订单信息中存在三方(例如微信)粉丝昵称则取粉丝昵称;取不到粉丝昵称时则使用买家手机号;以上两点未满足时取买家收货人信息;无收货人信息时返回[匿名]",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "fans_id",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "粉丝id",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "buyer_id",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "有赞买家ID",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "fans_type",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "0:未知、1:微信自有粉丝",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "fans_weixin_openid",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "微信openid",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "seller_flag",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "卖家备注星标，取值范围 1、2、3、4、5；<br>如果为0，表示没有备注星标",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "price",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "商品价格。精确到2位小数；单位：元。当一个trade对应多个order的时候，值为第一个交易明细中的商品的价格",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "receiver_zip",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "收货人的邮编",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "relation_type",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "分销/采购单:source:采购单;fenxiao:分销单 空串则为非分销/采购单",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "tuan_no",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "拼团订单对应的团编号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "offline_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "表示线下网点id，包含自提点和门店",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "receiver_mobile",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "收货人的手机号码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "receiver_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "收货人的姓名",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "fetch_detail",
+                  "type": "TradeFetch",
+                  "isNeed": null,
+                  "desc": "到店自提详情",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "fetcher_name",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "领取人（即：预约人）的姓名",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "fetcher_mobile",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "领取人的手机号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "fetch_time",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "预约的领取时间。新版到店自提的数据格式:<br>\n1: 2016-04-18 17:00-17:15<br>\n2: 尽快到店提货",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "shop_id",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "自提点id",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "shop_name",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "自提点名称",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "shop_mobile",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "自提点联系方式",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "shop_state",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "自提点所在省份",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "shop_city",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "自提点所在城市",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "shop_district",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "自提点所在地区",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "shop_address",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "自提点详细地址",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "buyer_area",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "买家下单的地区",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "hotel_info",
+                  "type": "HotelInfo",
+                  "isNeed": null,
+                  "desc": "酒店入住信息",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "check_in_time",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "入住时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "check_out_time",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "退房时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "accommodates",
+                      "type": "String[]",
+                      "isNeed": null,
+                      "desc": "入住人信息",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "buyer_nick",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "(即将废弃,请参考fans_info中的说明) 买家昵称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "discount_fee",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "交易优惠金额（不包含交易明细中的优惠金额）。单位：元，精确到分",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "adjust_fee",
+                  "type": "AdjustFee",
+                  "isNeed": null,
+                  "desc": "改价信息",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "change",
+                      "type": "Price",
+                      "isNeed": null,
+                      "desc": "总改价金额",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "pay_change",
+                      "type": "Price",
+                      "isNeed": null,
+                      "desc": "订单改价",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "post_change",
+                      "type": "Price",
+                      "isNeed": null,
+                      "desc": "邮费改价",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "created",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "交易创建时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "num_iid",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品数字编号。当一个trade对应多个order的时候，值为第一个交易明细中的商品的编号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pic_thumb_path",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品主图片缩略图地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "profit",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "利润（分销订单特有）。格式：5.20；单位：元；精确到：分",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "shop_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "多门店订单的门店id 非多门店订单则默认为0",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "total_fee",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "商品总价（商品价格乘以数量的总金额）。单位：元，精确到分",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "receiver_state",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "收货人的所在省份",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pic_path",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品主图片地址。当一个trade对应多个order的时候，值为第一个交易明细中的商品的图片地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "buyer_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "(即将废弃,请参考fans_info中的说明) 买家ID，当 buyer_type 为 1 时，buyer_id 的值等于 weixin_user_id 的值",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "coupon_details",
+              "type": "UmpTradeCoupon[]",
+              "isNeed": null,
+              "desc": "订单中使用到的卡券的数据结构",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "coupon_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "该组卡券的ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "coupon_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "该组卡券的名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "coupon_type",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "卡券的类型。可选值：PROMOCARD（优惠券）、PROMOCODE（优惠码）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "coupon_content",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "卡券内容。当卡券类型为优惠码时，值为优惠码字符串",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "coupon_description",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "卡券的说明",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "coupon_condition",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "卡券使用条件说明",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "used_at",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "使用时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "discount_fee",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "优惠的金额，单位：元，精确到小数点后两位",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "trade_memo",
+              "type": "String",
+              "isNeed": null,
+              "desc": "卖家对该交易的备注",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "delivery_time_display",
+              "type": "String",
+              "isNeed": null,
+              "desc": "同城送订单送达时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "promotion_details",
+              "type": "TradePromotion[]",
+              "isNeed": null,
+              "desc": "订单中使用到的优惠活动的数据结构",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "promotion_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "该优惠活动的ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "promotion_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "该优惠活动的名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "promotion_type",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "优惠的类型。可选值：<br> FULLREDUCE（满减满送）<br> ORDERCASHBACK（订单返现）<br> GROUPBUYING（商品团购）<br> GROUPON（多人拼团）<br> SECKILL（秒杀）<br> AUCTION（降价拍）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "promotion_condition",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "优惠使用条件说明",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "used_at",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "使用时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "discount_fee",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "优惠的金额，单位：元，精确到小数点后两位",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "weixin_user_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "(即将废弃,请参考fans_info中的说明) 微信粉丝ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "num",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品购买数量。当一个trade对应多个order的时候，值为所有商品购买数量之和",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "handled",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "结算状态（分销订单特有）。1：已结算，0：未结算",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "transaction_tid",
+              "type": "String",
+              "isNeed": null,
+              "desc": "支付流水号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "outer_tid",
+              "type": "String",
+              "isNeed": null,
+              "desc": "外部交易编号。比如，如果支付方式是微信支付，就是财付通的交易单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "shipping_type",
+              "type": "String",
+              "isNeed": null,
+              "desc": "创建交易时的物流方式。取值范围：express（快递），fetch（到店自提），local（同城配送）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "receiver_address",
+              "type": "String",
+              "isNeed": null,
+              "desc": "收货人的详细地址",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "orders",
+              "type": "TradeOrder[]",
+              "isNeed": null,
+              "desc": "交易明细数据结构",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "sku_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "Sku的ID，sku_id 在系统里<span style=\"color: #ff0000;\">并不是唯一的</span>，结合商品ID一起使用才是唯一的。",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "fenxiao_payment",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "商品在分销商那边的实付金额。精确到2位小数；单位：元。如果是采购单才有值，否则值为 0",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "num",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品购买数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "outer_sku_id",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商家编码（商家为Sku设置的外部编号）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "order_promotion_details",
+                  "type": "TradeOrderPromotion[]",
+                  "isNeed": null,
+                  "desc": "交易明细中的优惠信息的数据结构",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "promotion_name",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "优惠的名称",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "promotion_type",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "优惠的类型。可选值：<br>MEMBER_CARD_DISCOUNT（会员卡折扣）\n\t\t\t\t\t\t<br>SCAN_DISCOUNT（扫码折扣）\n\t\t\t\t\t\t<br>SCAN_DECREASE（扫码减额优惠）\n\t\t\t\t\t\t<br>TIMELIMITED_DISCOUNT（限时折扣）",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "apply_at",
+                      "type": "Date",
+                      "isNeed": null,
+                      "desc": "应用优惠的时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "discount_fee",
+                      "type": "Price",
+                      "isNeed": null,
+                      "desc": "优惠的金额，单位：元，精确到小数点后两位",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "sku_properties_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "SKU的值，即：商品的规格。如：机身颜色:黑色;手机套餐:官方标配",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "title",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品标题",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "fenxiao_price",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "商品在分销商那边的出售价格。精确到2位小数；单位：元。如果是采购单才有值，否则值为 0",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "is_virtual",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "1 虚拟商品 0 非虚拟商品",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "refunded_fee",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "退款金额",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "outer_item_id",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品货号（商家为商品设置的外部编号）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "price",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "商品价格。精确到2位小数；单位：元",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "oid",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "交易明细编号。该编号并不唯一，只用于区分交易内的多条明细记录",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "buyer_messages",
+                  "type": "TradeBuyerMessage[]",
+                  "isNeed": null,
+                  "desc": "交易明细中买家留言的数据结构",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "title",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "留言的标题",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "content",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "留言的内容",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "sku_unique_code",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "Sku在系统中的唯一编号，可以在开发者的系统中用作 Sku 的唯一ID，但不能用于调用接口",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "allow_send",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "是否允许发货  1 可以发货 0 不能发货",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "payment",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "实付金额。精确到2位小数，单位：元",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "discount_fee",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "交易明细内的优惠金额。精确到2位小数，单位：元",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "item_refund_state",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品退款状态",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "seller_nick",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "卖家昵称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "num_iid",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品数字编号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "state_str",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品状态",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "is_present",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "1 赠品商品 0 普通商品",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pic_thumb_path",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品主图片缩略图地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "item_type",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品类型。<br>0：普通商品；<br>10：分销商品;",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "total_fee",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "应付金额（商品价格乘以数量的总金额）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pic_path",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品主图片地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "feedback",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "交易维权状态。<br>\n\t\t\t\t0 无维权，1 顾客发起维权，2 顾客拒绝商家的处理结果，3 顾客接受商家的处理结果，9 商家正在处理,101 维权处理中,110 维权结束。<br>\n\t\t        备注：1到10的状态码是微信维权状态码，100以上的状态码是有赞维权状态码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "pay_type",
+              "type": "String",
+              "isNeed": null,
+              "desc": "支付类型。取值范围：<br>\nWEIXIN (微信自有支付)<br>\nWEIXIN_DAIXIAO (微信代销支付)<br>\nALIPAY (支付宝支付)<br>\nBANKCARDPAY (银行卡支付)<br>\nPEERPAY (代付)<br>\nCODPAY (货到付款)<br>\nBAIDUPAY (百度钱包支付)<br>\nPRESENTTAKE (直接领取赠品)<br>\nCOUPONPAY（优惠券/码全额抵扣）<br>\nBULKPURCHASE（来自分销商的采购）<br>\nMERGEDPAY (合并付货款) <br>\nECARD（有赞E卡支付）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "receiver_district",
+              "type": "String",
+              "isNeed": null,
+              "desc": "收货人的所在地区",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "receiver_city",
+              "type": "String",
+              "isNeed": null,
+              "desc": "收货人的所在城市。<br>\nPS：如果订单类型是送礼订单，收货地址在sub_trades字段中；如果物流方式是到店自提，收货地址在fetch_detail字段中",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "title",
+              "type": "String",
+              "isNeed": null,
+              "desc": "交易标题，以首个商品标题作为此标题的值",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "buyer_message",
+              "type": "String",
+              "isNeed": null,
+              "desc": "买家购买附言",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "points_price",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "积分兑换订单，数值代表消耗的积分 非积分兑换订单默认为0",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "pay_time",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "买家付款时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "payment",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "实付金额。单位：元，精确到分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "refunded_fee",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "交易完成后退款的金额。单位：元，精确到分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "out_trade_no",
+              "type": "String[]",
+              "isNeed": null,
+              "desc": "代付订单外部交易号列表,非代付订单类型返回空",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "refund_state",
+              "type": "String",
+              "isNeed": null,
+              "desc": "退款状态。取值范围：<br>\nNO_REFUND（无退款）<br>\nPARTIAL_REFUNDING（部分退款中）<br>\nPARTIAL_REFUNDED（已部分退款）<br>\nPARTIAL_REFUND_FAILED（部分退款失败）<br>\nFULL_REFUNDING（全额退款中）<br>\nFULL_REFUNDED（已全额退款）<br>\nFULL_REFUND_FAILED（全额退款失败）<br>",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "qr_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "收银台订单的二维码id号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "post_fee",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "运费。单位：元，精确到分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "tid",
+              "type": "String",
+              "isNeed": null,
+              "desc": "交易编号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_tuan_head",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否为团长订单",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "buyer_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "(即将废弃,请参考fans_info中的说明) 买家类型，取值范围：0 为未知，1 为微信粉丝，2 为微博粉丝",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "type",
+              "type": "String",
+              "isNeed": null,
+              "desc": "交易类型。取值范围：<br>\nFIXED （一口价）<br>\nGIFT （送礼）<br>\nBULK_PURCHASE（来自分销商的采购）<br>\nPRESENT （赠品领取）<br>\nGROUP （拼团订单）<br>\nPIFA （批发订单）<br>\nCOD （货到付款）<br>\nPEER （代付）<br>\nQRCODE（扫码商家二维码直接支付的交易）<br>\nQRCODE_3RD（线下收银台二维码交易)",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "outer_user_id",
+              "type": "String",
+              "isNeed": null,
+              "desc": "三方APP用户id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "status",
+              "type": "String",
+              "isNeed": null,
+              "desc": "交易状态。取值范围：<br>\nTRADE_NO_CREATE_PAY (没有创建支付交易) <br>\nWAIT_BUYER_PAY (等待买家付款) <br>\nWAIT_PAY_RETURN (等待支付确认) <br>\nWAIT_GROUP（等待成团，即：买家已付款，等待成团）<br>\nWAIT_SELLER_SEND_GOODS (等待卖家发货，即：买家已付款) <br>\nWAIT_BUYER_CONFIRM_GOODS (等待买家确认收货，即：卖家已发货) <br>\nTRADE_BUYER_SIGNED (买家已签收) <br>\nTRADE_CLOSED (付款以后用户退款成功，交易自动关",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "update_time",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "交易更新时间。当交易的：状态改变、备注更改、星标更改 等情况下都会刷新更新时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "relations",
+              "type": "String[]",
+              "isNeed": null,
+              "desc": "relation_type返回source时,为分销订单号列表<br>\n返回fenxiao时,为供应商订单号列表<br>\n返回空时,列表返回空",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "fans_info",
+              "type": "FansInfo",
+              "isNeed": null,
+              "desc": "用户信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "fans_nickname",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "粉丝昵称 订单信息中存在三方(例如微信)粉丝昵称则取粉丝昵称;取不到粉丝昵称时则使用买家手机号;以上两点未满足时取买家收货人信息;无收货人信息时返回[匿名]",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "fans_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "粉丝id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "buyer_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "有赞买家ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "fans_type",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "0:未知、1:微信自有粉丝",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "fans_weixin_openid",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "微信openid",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "seller_flag",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "卖家备注星标，取值范围 1、2、3、4、5；<br>如果为0，表示没有备注星标",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "price",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "商品价格。精确到2位小数；单位：元。当一个trade对应多个order的时候，值为第一个交易明细中的商品的价格",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "receiver_zip",
+              "type": "String",
+              "isNeed": null,
+              "desc": "收货人的邮编",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "relation_type",
+              "type": "String",
+              "isNeed": null,
+              "desc": "分销/采购单:source:采购单;fenxiao:分销单 空串则为非分销/采购单",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "tuan_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "拼团订单对应的团编号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "offline_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "表示线下网点id，包含自提点和门店",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "receiver_mobile",
+              "type": "String",
+              "isNeed": null,
+              "desc": "收货人的手机号码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "receiver_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "收货人的姓名",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "fetch_detail",
+              "type": "TradeFetch",
+              "isNeed": null,
+              "desc": "到店自提详情",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "fetcher_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "领取人（即：预约人）的姓名",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "fetcher_mobile",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "领取人的手机号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "fetch_time",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "预约的领取时间。新版到店自提的数据格式:<br>\n1: 2016-04-18 17:00-17:15<br>\n2: 尽快到店提货",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "shop_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "自提点id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "shop_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "自提点名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "shop_mobile",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "自提点联系方式",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "shop_state",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "自提点所在省份",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "shop_city",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "自提点所在城市",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "shop_district",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "自提点所在地区",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "shop_address",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "自提点详细地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "buyer_area",
+              "type": "String",
+              "isNeed": null,
+              "desc": "买家下单的地区",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "hotel_info",
+              "type": "HotelInfo",
+              "isNeed": null,
+              "desc": "酒店入住信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "check_in_time",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "入住时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "check_out_time",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "退房时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "accommodates",
+                  "type": "String[]",
+                  "isNeed": null,
+                  "desc": "入住人信息",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "buyer_nick",
+              "type": "String",
+              "isNeed": null,
+              "desc": "(即将废弃,请参考fans_info中的说明) 买家昵称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "discount_fee",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "交易优惠金额（不包含交易明细中的优惠金额）。单位：元，精确到分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "adjust_fee",
+              "type": "AdjustFee",
+              "isNeed": null,
+              "desc": "改价信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "change",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "总改价金额",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pay_change",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "订单改价",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "post_change",
+                  "type": "Price",
+                  "isNeed": null,
+                  "desc": "邮费改价",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "created",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "交易创建时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "num_iid",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品数字编号。当一个trade对应多个order的时候，值为第一个交易明细中的商品的编号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "pic_thumb_path",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品主图片缩略图地址",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "profit",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "利润（分销订单特有）。格式：5.20；单位：元；精确到：分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "shop_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "多门店订单的门店id 非多门店订单则默认为0",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "total_fee",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "商品总价（商品价格乘以数量的总金额）。单位：元，精确到分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "receiver_state",
+              "type": "String",
+              "isNeed": null,
+              "desc": "收货人的所在省份",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "pic_path",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品主图片地址。当一个trade对应多个order的时候，值为第一个交易明细中的商品的图片地址",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "buyer_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "(即将废弃,请参考fans_info中的说明) 买家ID，当 buyer_type 为 1 时，buyer_id 的值等于 weixin_user_id 的值",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "extra_info",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "扩展信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "extra_info",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "扩展信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanTradeSelffetchcodeGetParams youzanTradeSelffetchcodeGetParams = new YouzanTradeSelffetchcodeGetParams();\n\nyouzanTradeSelffetchcodeGetParams.setCode(\"17136242222\");\n\nYouzanTradeSelffetchcodeGet youzanTradeSelffetchcodeGet = new YouzanTradeSelffetchcodeGet();\nyouzanTradeSelffetchcodeGet.setAPIParams(youzanTradeSelffetchcodeGetParams);\nYouzanTradeSelffetchcodeGetResult result = client.invoke(youzanTradeSelffetchcodeGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"code\", \"17136242222\");\n\n\nvar result = yzClient.Invoke(\"youzan.trade.selffetchcode.get\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.trade.selffetchcode.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'code' => '17136242222',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['code']=\"17136242222\"\n\nfiles=[]\n\nprint client.invoke('youzan.trade.selffetchcode.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['code']=\"17136242222\";\n\n\nvar promise = YZClient.invoke('youzan.trade.selffetchcode.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "50000",
+        "errorDesc": "内部业务异常",
+        "solution": "请联系技术支持答疑"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"code\":\"39376699756\",\"status\":0,\"current_count\":8,\"total_count\":10,\"tid\":\"E20170906113749069700001\",\"extra_info\":\"18757555242\",\"trade\":{\"buyer_message\":\"\",\"orders\":[{\"alias\":\"3ez233v1a4cit\",\"oid\":17999750,\"outer_sku_id\":\"\",\"outer_item_id\":\"\",\"title\":\"0809rxj\\u52ff\\u52a8-\\u591a\\u89c4\\u683c\\u5468\\u671f\\u8d2d\",\"seller_nick\":\"Qi\\u7801\\u662f\\u5bb6\\u9986\\u5b50\",\"fenxiao_price\":\"0.00\",\"fenxiao_payment\":\"0.00\",\"price\":\"0.01\",\"total_fee\":\"0.01\",\"payment\":\"0.01\",\"discount_fee\":\"0.00\",\"sku_id\":\"36157508\",\"sku_unique_code\":\"34554522836157508\",\"sku_properties_name\":\"\\u989c\\u8272:\\u7ea2\\u8272\",\"pic_path\":\"https:\\/\\/img.yzcdn.cn\\/upload_files\\/2017\\/08\\/09\\/FsVJELC0xHzpAW7Hh66-uKYfPP3J.jpeg\",\"pic_thumb_path\":\"https:\\/\\/img.yzcdn.cn\\/upload_files\\/2017\\/08\\/09\\/FsVJELC0xHzpAW7Hh66-uKYfPP3J.jpeg?imageView2\\/2\\/w\\/200\\/h\\/0\\/q\\/75\\/format\\/jpeg\",\"item_type\":0,\"buyer_messages\":[],\"order_promotion_details\":[],\"state_str\":\"\\u5468\\u671f\\u8d2d\\u5f85\\u914d\\u9001\",\"allow_send\":1,\"is_send\":0,\"item_refund_state\":\"NO_REFUND\",\"is_virtual\":0,\"is_present\":0,\"refunded_fee\":\"0.00\",\"unit\":\"\\u4ef6\",\"num_iid\":\"345545228\",\"num\":\"1\"}],\"tid\":\"E20170906113749069700001\"}}}",
+    "errorResponseDemo": "{\"error_response\":{\"code\":50000,\"msg\":\"\\u63d0\\u8d27\\u7801\\uff08code\\uff09\\u683c\\u5f0f\\u4e0d\\u6b63\\u786e\"}}"
+  },
+  "name": "get",
+  "ids": [
+    8027
+  ],
+  "scenarios": "获取到店自提订单信息",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "获取到店自提订单信息"
+}

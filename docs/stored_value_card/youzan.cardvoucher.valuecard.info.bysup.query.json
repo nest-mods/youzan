@@ -1,0 +1,236 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.cardvoucher.valuecard.info.bysup/3.0.0/query"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.cardvoucher.valuecard.info.bysup/3.0.0/query"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "buyer_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "用户Id，和mobile二选一",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "用户手机号码，和buyerId 二选一",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "mobile",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "手机号码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "mobile",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "手机号码",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "buyer_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "buyerId",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "buyer_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "buyerId",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "kdt_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "店铺号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "kdt_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "店铺号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "card_no",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "卡号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "card_no",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "卡号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "denomination",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "余额",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "denomination",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "余额",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "principal_denomination",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "本金余额",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "principal_denomination",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "本金余额",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "bonus_denomination",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "赠送金余额",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "bonus_denomination",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "赠送金余额",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanCardvoucherValuecardInfoBysupQueryParams youzanCardvoucherValuecardInfoBysupQueryParams = new YouzanCardvoucherValuecardInfoBysupQueryParams();\n\nyouzanCardvoucherValuecardInfoBysupQueryParams.setMobile(\"13186972613\");\n\nYouzanCardvoucherValuecardInfoBysupQuery youzanCardvoucherValuecardInfoBysupQuery = new YouzanCardvoucherValuecardInfoBysupQuery();\nyouzanCardvoucherValuecardInfoBysupQuery.setAPIParams(youzanCardvoucherValuecardInfoBysupQueryParams);\nYouzanCardvoucherValuecardInfoBysupQueryResult result = client.invoke(youzanCardvoucherValuecardInfoBysupQuery);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"mobile\", \"13186972613\");\n\n\nvar result = yzClient.Invoke(\"youzan.cardvoucher.valuecard.info.bysup.query\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['mobile']=\"13186972613\"\n\nfiles=[]\n\nprint client.invoke('youzan.cardvoucher.valuecard.info.bysup.query', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['mobile']=\"13186972613\";\n\n\nvar promise = YZClient.invoke('youzan.cardvoucher.valuecard.info.bysup.query', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.cardvoucher.valuecard.info.bysup.query'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'mobile' => '13186972613',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "118701001",
+        "errorDesc": "mobile与buyer_id不能同时为空",
+        "solution": null
+      },
+      {
+        "errorCode": "118701002",
+        "errorDesc": "mobile与buyer_id不是同一个用户",
+        "solution": null
+      },
+      {
+        "errorCode": "118702001",
+        "errorDesc": "value card not found",
+        "solution": null
+      },
+      {
+        "errorCode": "118703002",
+        "errorDesc": "客户信息不存在",
+        "solution": null
+      },
+      {
+        "errorCode": "118701000",
+        "errorDesc": "参数错误",
+        "solution": null
+      },
+      {
+        "errorCode": "118799999",
+        "errorDesc": "系统异常",
+        "solution": null
+      },
+      {
+        "errorCode": "118702998",
+        "errorDesc": "系统繁忙，请稍后再试",
+        "solution": null
+      }
+    ],
+    "responseDemo": "{\"response\":[{\"kdt_id\":63077,\"card_no\":\"3102003513216\",\"bonus_denomination\":127686,\"mobile\":\"13186972613\",\"buyer_id\":786735649,\"principal_denomination\":15006,\"denomination\":142692}]}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"客户信息不存在\",\"code\":118703002}}"
+  },
+  "name": "query",
+  "ids": [
+    10936
+  ],
+  "scenarios": "查询可在该店铺内使用的储值卡（包含卡内余额）",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "查询可在该店铺内使用的储值卡"
+}

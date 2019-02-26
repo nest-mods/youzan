@@ -1,0 +1,182 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.cardvoucher.valuecard.fund.recharge/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.cardvoucher.valuecard.fund.recharge/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "recharge_order_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "充值订单号,和recharge_request_no二选一",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "recharge_request_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "充值请求号,和recharge_order_no二选一",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "recharge_request_no",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "充值请求号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "recharge_request_no",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "充值请求号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "recharge_order_no",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "充值订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "recharge_order_no",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "充值订单号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "status",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "充值结果状态\nSUCCESS:充值成功,\nFAIL:充值失败,\nING:充值中",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "status",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "充值结果状态\nSUCCESS:充值成功,\nFAIL:充值失败,\nING:充值中",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "amount",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "储值充值金额",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "amount",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "储值充值金额",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "code",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "结果码\n200：充值成功、充值中\n1001：充值失败\n1002：充值失败，店铺未签约或签约已过期\n1003：充值失败，储值卡状态异常",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "code",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "结果码\n200：充值成功、充值中\n1001：充值失败\n1002：充值失败，店铺未签约或签约已过期\n1003：充值失败，储值卡状态异常",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "msg",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "状态描述",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "msg",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "状态描述",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanCardvoucherValuecardFundRechargeGetParams youzanCardvoucherValuecardFundRechargeGetParams = new YouzanCardvoucherValuecardFundRechargeGetParams();\n\nyouzanCardvoucherValuecardFundRechargeGetParams.setRechargeOrderNo(\"CDRG190214115117000009\");\n\nYouzanCardvoucherValuecardFundRechargeGet youzanCardvoucherValuecardFundRechargeGet = new YouzanCardvoucherValuecardFundRechargeGet();\nyouzanCardvoucherValuecardFundRechargeGet.setAPIParams(youzanCardvoucherValuecardFundRechargeGetParams);\nYouzanCardvoucherValuecardFundRechargeGetResult result = client.invoke(youzanCardvoucherValuecardFundRechargeGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"recharge_order_no\", \"CDRG190214115117000009\");\n\n\nvar result = yzClient.Invoke(\"youzan.cardvoucher.valuecard.fund.recharge.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['recharge_order_no']=\"CDRG190214115117000009\"\n\nfiles=[]\n\nprint client.invoke('youzan.cardvoucher.valuecard.fund.recharge.get', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['recharge_order_no']=\"CDRG190214115117000009\";\n\n\nvar promise = YZClient.invoke('youzan.cardvoucher.valuecard.fund.recharge.get', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.cardvoucher.valuecard.fund.recharge.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'recharge_order_no' => 'CDRG190214115117000009',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"msg\":\"充值成功\",\"recharge_order_no\":\"CDRG190213143531000074\",\"amount\":1,\"code\":\"200\",\"recharge_request_no\":\"2019021308\",\"status\":\"SUCCESS\"}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"充值订单不存在\",\"code\":118701009}}"
+  },
+  "name": "get",
+  "ids": [
+    11372
+  ],
+  "scenarios": "充值结果查询，充值受理成功后（youzan.cardvoucher.valuecard.fund.recharge.1.0.0），通过此接口获取最后充值结果。也可以通过监听充值结果消息来确认充值结果，两种方式结果完全一致",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "查询充值结果信息"
+}

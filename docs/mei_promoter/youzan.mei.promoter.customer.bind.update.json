@@ -1,0 +1,103 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.promoter.customer.bind/3.0.0/update"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.promoter.customer.bind/3.0.0/update"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "customer_mobiles",
+        "type": "String[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "要绑定的顾客手机号列表",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "pid",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "被绑定的推广员id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "true",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "true",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanMeiPromoterCustomerBindUpdateParams youzanMeiPromoterCustomerBindUpdateParams = new YouzanMeiPromoterCustomerBindUpdateParams();\n\nyouzanMeiPromoterCustomerBindUpdateParams.setPid(\"527875067\");\nyouzanMeiPromoterCustomerBindUpdateParams.setMToken(\"EeGuxYOrXlnwymekzn37PzSfmB_iQq55PXx3q6N2HC4ukz7oBDSEckIduqL8ozE9iv9za3DXiVv2buGcJgBV5Xcs0KWTn8Mr7qIiSa1A6z4\");\nyouzanMeiPromoterCustomerBindUpdateParams.setCustomerMobiles(\"[\"12345678909\"]\");\n\nYouzanMeiPromoterCustomerBindUpdate youzanMeiPromoterCustomerBindUpdate = new YouzanMeiPromoterCustomerBindUpdate();\nyouzanMeiPromoterCustomerBindUpdate.setAPIParams(youzanMeiPromoterCustomerBindUpdateParams);\nYouzanMeiPromoterCustomerBindUpdateResult result = client.invoke(youzanMeiPromoterCustomerBindUpdate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"pid\", \"527875067\");\ndict.Add(\"m_token\", \"EeGuxYOrXlnwymekzn37PzSfmB_iQq55PXx3q6N2HC4ukz7oBDSEckIduqL8ozE9iv9za3DXiVv2buGcJgBV5Xcs0KWTn8Mr7qIiSa1A6z4\");\ndict.Add(\"customer_mobiles\", \"[\"12345678909\"]\");\n\n\nvar result = yzClient.Invoke(\"youzan.mei.promoter.customer.bind.update\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['pid']=\"527875067\"\nparams['m_token']=\"EeGuxYOrXlnwymekzn37PzSfmB_iQq55PXx3q6N2HC4ukz7oBDSEckIduqL8ozE9iv9za3DXiVv2buGcJgBV5Xcs0KWTn8Mr7qIiSa1A6z4\"\nparams['customer_mobiles']=\"[\"12345678909\"]\"\n\nfiles=[]\n\nprint client.invoke('youzan.mei.promoter.customer.bind.update', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['pid']=\"527875067\";\nparams['m_token']=\"EeGuxYOrXlnwymekzn37PzSfmB_iQq55PXx3q6N2HC4ukz7oBDSEckIduqL8ozE9iv9za3DXiVv2buGcJgBV5Xcs0KWTn8Mr7qIiSa1A6z4\";\nparams['customer_mobiles']=\"[\"12345678909\"]\";\n\n\nvar promise = YZClient.invoke('youzan.mei.promoter.customer.bind.update', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.mei.promoter.customer.bind.update'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'pid' => '527875067',\n    'm_token' => 'EeGuxYOrXlnwymekzn37PzSfmB_iQq55PXx3q6N2HC4ukz7oBDSEckIduqL8ozE9iv9za3DXiVv2buGcJgBV5Xcs0KWTn8Mr7qIiSa1A6z4',\n    'customer_mobiles' => '[\"12345678909\"]',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":true}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"店铺已经打烊，无法操作\",\"code\":121010000}}"
+  },
+  "name": "update",
+  "ids": [
+    10562
+  ],
+  "scenarios": "将一批顾客更新绑定到某个推广员下面",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "将一批顾客更新绑定到某个推广员下面"
+}

@@ -1,0 +1,125 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.item.sku/3.0.0/update"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.item.sku/3.0.0/update"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "item_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品数字编号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "item_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品编码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "price",
+        "type": "Price",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "sku销售价格，精确到小数点2位；单位:元",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "quantity",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "sku库存数量",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "sku id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "是否成功; 成功:true",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "是否成功; 成功:true",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanItemSkuUpdateParams youzanItemSkuUpdateParams = new YouzanItemSkuUpdateParams();\n\nyouzanItemSkuUpdateParams.setItemId(436167681L);\nyouzanItemSkuUpdateParams.setItemNo(\"Z180917164423609\");\nyouzanItemSkuUpdateParams.setPrice(\"51\");\nyouzanItemSkuUpdateParams.setQuantity(\"3\");\nyouzanItemSkuUpdateParams.setSkuId(36234429L);\n\nYouzanItemSkuUpdate youzanItemSkuUpdate = new YouzanItemSkuUpdate();\nyouzanItemSkuUpdate.setAPIParams(youzanItemSkuUpdateParams);\nYouzanItemSkuUpdateResult result = client.invoke(youzanItemSkuUpdate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"item_id\", 436167681);\ndict.Add(\"item_no\", \"Z180917164423609\");\ndict.Add(\"price\", \"51\");\ndict.Add(\"quantity\", \"3\");\ndict.Add(\"sku_id\", 36234429);\n\n\nvar result = yzClient.Invoke(\"youzan.item.sku.update\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.item.sku.update'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'item_id' => '436167681',\n    'item_no' => 'Z180917164423609',\n    'price' => '51',\n    'quantity' => '3',\n    'sku_id' => '36234429',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['item_id']=436167681\nparams['item_no']=\"Z180917164423609\"\nparams['price']=\"51\"\nparams['quantity']=\"3\"\nparams['sku_id']=36234429\n\nfiles=[]\n\nprint client.invoke('youzan.item.sku.update', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['item_id']=436167681;\nparams['item_no']=\"Z180917164423609\";\nparams['price']=\"51\";\nparams['quantity']=\"3\";\nparams['sku_id']=36234429;\n\n\nvar promise = YZClient.invoke('youzan.item.sku.update', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"is_success\":true}}",
+    "errorResponseDemo": "{\n\t\"error_response\": {\n\t\t\"code\": 40010,\n\t\t\"msg\": \"非法访问码\"\n\t}\n}"
+  },
+  "name": "update",
+  "ids": [
+    7938
+  ],
+  "scenarios": "更新SKU",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "更新SKU"
+}

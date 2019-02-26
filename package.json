@@ -1,0 +1,75 @@
+{
+  "name": "@nest-mods/youzan",
+  "version": "0.0.1",
+  "description": "Youzan API client wrapped with kue for nest.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rimraf dist",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "prepare": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nest-mods/youzan.git"
+  },
+  "author": "Diluka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nest-mods/youzan/issues"
+  },
+  "homepage": "https://github.com/nest-mods/youzan#readme",
+  "peerDependencies": {
+    "@nest-mods/log": "*",
+    "@nestjs/common": ">=5",
+    "@nestjs/core": ">=5",
+    "ioredis": ">=4",
+    "lodash": ">=4",
+    "kue": ">=0.11",
+    "reflect-metadata": "^0.1.12"
+  },
+  "devDependencies": {
+    "@nest-mods/log": "0.0.2",
+    "@nestjs/common": "^5.7.3",
+    "@nestjs/core": "^5.7.3",
+    "@nestjs/testing": "^5.7.3",
+    "@types/async-retry": "^1.2.1",
+    "@types/dotenv": "^6.1.0",
+    "@types/jest": "^24.0.9",
+    "@types/kue": "^0.11.10",
+    "@types/lodash": "^4.14.121",
+    "@types/node": "^10.12.27",
+    "@types/request": "^2.48.1",
+    "@types/request-promise": "^4.1.42",
+    "@types/rimraf": "^2.0.2",
+    "dotenv": "^6.2.0",
+    "ioredis": "^4.6.2",
+    "jest": "^24.1.0",
+    "kue": "^0.11.6",
+    "loadsh": "0.0.3",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^2.6.3",
+    "rxjs": "^6.4.0",
+    "ts-jest": "^24.0.0",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^8.0.2",
+    "tslint": "^5.13.0",
+    "typescript": "^3.3.3333",
+    "winston": "^3.2.1"
+  },
+  "dependencies": {
+    "async-retry": "^1.2.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "tslib": "^1.9.3",
+    "yz-open-sdk-nodejs": "^1.0.2"
+  },
+  "engines": {
+    "node": ">=10"
+  }
+}

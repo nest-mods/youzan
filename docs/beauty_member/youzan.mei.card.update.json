@@ -1,0 +1,201 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.card/3.0.0/update"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.card/3.0.0/update"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "background_img",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "卡片背景图",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "card_alias",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "要更新的会员卡标识",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "card_price",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "会员卡售价，单位是分",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "card_rights",
+        "type": "MeiCardRight[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "会员卡权益列表",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/MeiCardRight",
+        "struct": {
+          "name": "MeiCardRight[]",
+          "type": "MeiCardRight[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "gift",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "是否是赠送。0 不是赠送；1 是赠送",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "goods_id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "商品的id",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "rights_id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "权益id,更新的时候才需要，创建时不需要",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "rights_type",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "权益类型：1，折扣；2，次数",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "value",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "权益值，例如次卡中某项服务10次",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "description",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "卡片描述信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "wap_show",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否显示在网店\n0 不显示 \n1 显示",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "更新结果",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "更新结果",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanMeiCardUpdateParams youzanMeiCardUpdateParams = new YouzanMeiCardUpdateParams();\n\nyouzanMeiCardUpdateParams.setWapShow(1L);\nyouzanMeiCardUpdateParams.setMToken(\"jUTdTWZSTg1g7HrfxfbYDVOXeNss341kZE_hEmn7FUuEjRl7As0yt5zKqEKHrCE4-zHgqU-akNAF5nhNV3LkW3cs0KWTn8Mr7qIiSa1A6z4\");\nyouzanMeiCardUpdateParams.setDescription(\"ttt\");\nyouzanMeiCardUpdateParams.setCardRights(\"[{\"gift\":0,\"goods_id\":356770862,\"right_id\":590012,\"value\":10,\"rights_type\":1}]\");\nyouzanMeiCardUpdateParams.setCardPrice(10000L);\nyouzanMeiCardUpdateParams.setCardAlias(\"278unyi20xsouy\");\nyouzanMeiCardUpdateParams.setBackgroundImg(\"test\");\n\nYouzanMeiCardUpdate youzanMeiCardUpdate = new YouzanMeiCardUpdate();\nyouzanMeiCardUpdate.setAPIParams(youzanMeiCardUpdateParams);\nYouzanMeiCardUpdateResult result = client.invoke(youzanMeiCardUpdate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"wap_show\", 1);\ndict.Add(\"m_token\", \"jUTdTWZSTg1g7HrfxfbYDVOXeNss341kZE_hEmn7FUuEjRl7As0yt5zKqEKHrCE4-zHgqU-akNAF5nhNV3LkW3cs0KWTn8Mr7qIiSa1A6z4\");\ndict.Add(\"description\", \"ttt\");\ndict.Add(\"card_rights\", \"[{\"gift\":0,\"goods_id\":356770862,\"right_id\":590012,\"value\":10,\"rights_type\":1}]\");\ndict.Add(\"card_price\", 10000);\ndict.Add(\"card_alias\", \"278unyi20xsouy\");\ndict.Add(\"background_img\", \"test\");\n\n\nvar result = yzClient.Invoke(\"youzan.mei.card.update\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.mei.card.update'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'wap_show' => '1',\n    'm_token' => 'jUTdTWZSTg1g7HrfxfbYDVOXeNss341kZE_hEmn7FUuEjRl7As0yt5zKqEKHrCE4-zHgqU-akNAF5nhNV3LkW3cs0KWTn8Mr7qIiSa1A6z4',\n    'description' => 'ttt',\n    'card_rights' => '[{\"gift\":0,\"goods_id\":356770862,\"right_id\":590012,\"value\":10,\"rights_type\":1}]',\n    'card_price' => '10000',\n    'card_alias' => '278unyi20xsouy',\n    'background_img' => 'test',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['wap_show']=1\nparams['m_token']=\"jUTdTWZSTg1g7HrfxfbYDVOXeNss341kZE_hEmn7FUuEjRl7As0yt5zKqEKHrCE4-zHgqU-akNAF5nhNV3LkW3cs0KWTn8Mr7qIiSa1A6z4\"\nparams['description']=\"ttt\"\nparams['card_rights']=\"[{\"gift\":0,\"goods_id\":356770862,\"right_id\":590012,\"value\":10,\"rights_type\":1}]\"\nparams['card_price']=10000\nparams['card_alias']=\"278unyi20xsouy\"\nparams['background_img']=\"test\"\n\nfiles=[]\n\nprint client.invoke('youzan.mei.card.update', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['wap_show']=1;\nparams['m_token']=\"jUTdTWZSTg1g7HrfxfbYDVOXeNss341kZE_hEmn7FUuEjRl7As0yt5zKqEKHrCE4-zHgqU-akNAF5nhNV3LkW3cs0KWTn8Mr7qIiSa1A6z4\";\nparams['description']=\"ttt\";\nparams['card_rights']=\"[{\"gift\":0,\"goods_id\":356770862,\"right_id\":590012,\"value\":10,\"rights_type\":1}]\";\nparams['card_price']=10000;\nparams['card_alias']=\"278unyi20xsouy\";\nparams['background_img']=\"test\";\n\n\nvar promise = YZClient.invoke('youzan.mei.card.update', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":true}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"会员信息不存在\",\"code\":230100003}}"
+  },
+  "name": "update",
+  "ids": [
+    10335
+  ],
+  "scenarios": "更新会员卡",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "更新会员卡"
+}

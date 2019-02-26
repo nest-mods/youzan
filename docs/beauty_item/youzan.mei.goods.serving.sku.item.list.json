@@ -1,0 +1,92 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.goods.serving.sku.item/3.0.0/list"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.goods.serving.sku.item/3.0.0/list"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "parent_dict_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "规格ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "sku_items",
+        "type": "MeiGoodsSkuItem[]",
+        "isRequired": "否",
+        "desc": "规格项列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiGoodsSkuItem",
+        "struct": {
+          "name": "sku_items",
+          "type": "MeiGoodsSkuItem[]",
+          "isNeed": "true",
+          "desc": "规格项列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "dict_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "订单项ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "text",
+              "type": "String",
+              "isNeed": null,
+              "desc": "订单项名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\n  \"response\": [\n    {\n      \"dict_id\": 4154878,\n      \"text\": \"3kg\"\n    },\n    {\n      \"dict_id\": 4154877,\n      \"text\": \"1kg\"\n    }\n  ]\n}",
+    "errorResponseDemo": null
+  },
+  "name": "list",
+  "ids": [
+    10394
+  ],
+  "scenarios": "服务规格查询",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "服务规格查询"
+}

@@ -1,0 +1,402 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.ump.coupon.detail/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.ump.coupon.detail/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "id",
+        "type": "Number",
+        "example": "1",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "优惠活动ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "group",
+        "type": "CouponGroup",
+        "isRequired": "否",
+        "desc": "优惠活动",
+        "isStruct": true,
+        "structUrl": "/web/meta/CouponGroup",
+        "struct": {
+          "name": "group",
+          "type": "CouponGroup",
+          "isNeed": "true",
+          "desc": "优惠活动",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "活动ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "kdt_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "店铺ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "group_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "优惠券类型 7：优惠券 9：优惠码 - 一卡一码 10：优惠码 - 通用码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "title",
+              "type": "String",
+              "isNeed": null,
+              "desc": "优惠券名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "preferential_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "优惠属性，1表示优惠，2表示折扣",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "denominations",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "面额（单位分）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "value_random_to",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "面值随机上限。不随机为0",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "condition",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "满额条件",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "discount",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "折扣（88，8.8折）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_limit",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否限制 1：一人一次 0：不限制",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_forbid_preference",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否仅原价购买商品时可用（1:是，0:否）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "user_level",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "会员等级",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "date_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "优惠使用时间类型，1表示固定活动时间，2表示延迟类型，几天后几天内有效",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "fixed_term",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "固定时长",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "fixed_begin_term",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "延迟开始的时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "valid_start_time",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "有效开始时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "valid_end_time",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "有效结束时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "total_qty",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总发放量",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "stock_qty",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "库存数量",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "range_type",
+              "type": "String",
+              "isNeed": null,
+              "desc": "使用范围类型",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "range_value",
+              "type": "String",
+              "isNeed": null,
+              "desc": "使用范围值",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "expire_notice",
+              "type": "String",
+              "isNeed": null,
+              "desc": "到期是否提醒 1是 0否",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "description",
+              "type": "String",
+              "isNeed": null,
+              "desc": "使用说明",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "meta_data",
+              "type": "String",
+              "isNeed": null,
+              "desc": "一些额外配置信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_share",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "到期是否可分享 1是 0否",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_sync_weixin",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否同步微信卡券 1是 0否",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_invalid",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否失效，默认0为没失效",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "total_fans_taked",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "粉丝领取总人数(去重)",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "total_used",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "已使用总数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "total_take",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "领取次数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created_at",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "创建于",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "updated_at",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "更新时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanUmpCouponDetailGetParams youzanUmpCouponDetailGetParams = new YouzanUmpCouponDetailGetParams();\n\nyouzanUmpCouponDetailGetParams.setId(2182618L);\n\nYouzanUmpCouponDetailGet youzanUmpCouponDetailGet = new YouzanUmpCouponDetailGet();\nyouzanUmpCouponDetailGet.setAPIParams(youzanUmpCouponDetailGetParams);\nYouzanUmpCouponDetailGetResult result = client.invoke(youzanUmpCouponDetailGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"id\", 2182618);\n\n\nvar result = yzClient.Invoke(\"youzan.ump.coupon.detail.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.ump.coupon.detail.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'id' => '2182618',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['id']=2182618\n\nfiles=[]\n\nprint client.invoke('youzan.ump.coupon.detail.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['id']=2182618;\n\n\nvar promise = YZClient.invoke('youzan.ump.coupon.detail.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"date_type\":\"1\",\"valid_start_time\":\"2017-12-07 16:13:36\",\"is_sync_weixin\":\"0\",\"preferential_type\":\"1\",\"is_forbid_preference\":\"0\",\"denominations\":\"1\",\"discount\":\"0\",\"description\":\"\",\"created_at\":\"2017-12-07 16:13:48\",\"group_type\":\"7\",\"title\":\"7FM券-1\",\"kdt_id\":\"16719442\",\"expire_notice\":\"0\",\"updated_at\":null,\"total_take\":\"5\",\"stock_qty\":\"17\",\"valid_end_time\":\"2017-12-09 16:13:22\",\"id\":\"2182618\",\"fixed_term\":\"0\",\"is_invalid\":\"0\",\"is_limit\":\"0\",\"value_random_to\":\"0\",\"is_share\":\"1\",\"range_value\":\"[{\\\"goods_type\\\":1,\\\"goods_id\\\":\\\"400249027\\\"}]\",\"total_fans_taked\":\"5\",\"total_qty\":\"22\",\"range_type\":\"part\",\"total_used\":\"0\",\"condition\":\"2\",\"user_level\":\"0\",\"fixed_begin_term\":\"0\"}}",
+    "errorResponseDemo": null
+  },
+  "name": "get",
+  "ids": [
+    9014
+  ],
+  "scenarios": "获取优惠活动详情",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "获取优惠活动详情"
+}

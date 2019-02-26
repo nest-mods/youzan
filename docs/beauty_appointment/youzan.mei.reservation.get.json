@@ -1,0 +1,444 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.reservation/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.reservation/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业的token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "order_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "要查询的预约单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "items",
+        "type": "MeiReservationDetail[]",
+        "isRequired": "否",
+        "desc": "预约单详情",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiReservationDetail",
+        "struct": {
+          "name": "items",
+          "type": "MeiReservationDetail[]",
+          "isNeed": "true",
+          "desc": "预约单详情",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "order_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "预约单单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "need_pay",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "预约单是否需哟啊支付\n0 不需要支付\n1 需要支付",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "customer_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "顾客姓名",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "cancel_source",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "取消来源\n1 商家主动取消\n2 买家主动取消\n3 开单后取消",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "real_pay",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "实际支付金额，单位：分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "mobile",
+              "type": "String",
+              "isNeed": null,
+              "desc": "预约人电话",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created_at",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "预约单创建时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "remark",
+              "type": "String",
+              "isNeed": null,
+              "desc": "备注",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "out_biz_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "外部业务单号，比如预约是由其他业务创建，那么这里就会放置该业务的单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "yz_uid",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "买家的有赞账号id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "from_source",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "预约来源\n1 商家发起的预约\n2 买家发起的预约",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "kdt_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "店铺id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "cancel_reason",
+              "type": "String",
+              "isNeed": null,
+              "desc": "预约取消原因",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "pay_status",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "支付状态\n10 待支付\n20 无需支付\n30 已支付",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "reservation_status",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "预约单状态\n5 已创建\n10 待服务\n20 已开单\n30 已完成\n97 已取消（由外部业务取消）\n98 已取消",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "billed_at",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "开单时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "arrange_at",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "到店时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "out_biz_state",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "外部业务状态",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "dept_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "分店id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "cancel_at",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "取消时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "reservation_items",
+              "type": "mei_reservation_item[]",
+              "isNeed": null,
+              "desc": "预约项",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "item_sku_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "预约项名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "item_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "预约项id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "image_url",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "预约项的图片链接",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "real_pay",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "如果已经支付，那么预约项的支付金额，单位：分",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "num",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "预约的数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "resource_type",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "预约的资源类型：\n0 没有占用资源\n1占用了技师资源",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "goods_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "预约项的服务id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "reservation_item_id",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "预约项目id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "item_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "预约项目名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sku_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "预约的服务的规格id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "resource_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "预约项的资源id\n0 表示没有使用预约资源",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "origin_price",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "预约的项目的原价，单位：分",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "resource_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "预约的资源名称，例如资源类型是技师，则这个为技师名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "trade_order_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "订单单号。当预约单支付过才会有该字段，通过该字段可以查询支付的订单信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanMeiReservationGetParams youzanMeiReservationGetParams = new YouzanMeiReservationGetParams();\n\nyouzanMeiReservationGetParams.setOrderNo(\"R20190110112527044249436\");\nyouzanMeiReservationGetParams.setMToken(\"RPuolgerKuo-P14ZWXXfjzSfmB_iQq55PXx3q6N2HC6-PRKhWv2FBK55J3xiFkCCWta_EDnvA0T6b86aKXQ8VHcs0KWTn8Mr7qIiSa1A6z4\");\n\nYouzanMeiReservationGet youzanMeiReservationGet = new YouzanMeiReservationGet();\nyouzanMeiReservationGet.setAPIParams(youzanMeiReservationGetParams);\nYouzanMeiReservationGetResult result = client.invoke(youzanMeiReservationGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"order_no\", \"R20190110112527044249436\");\ndict.Add(\"m_token\", \"RPuolgerKuo-P14ZWXXfjzSfmB_iQq55PXx3q6N2HC6-PRKhWv2FBK55J3xiFkCCWta_EDnvA0T6b86aKXQ8VHcs0KWTn8Mr7qIiSa1A6z4\");\n\n\nvar result = yzClient.Invoke(\"youzan.mei.reservation.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['order_no']=\"R20190110112527044249436\"\nparams['m_token']=\"RPuolgerKuo-P14ZWXXfjzSfmB_iQq55PXx3q6N2HC6-PRKhWv2FBK55J3xiFkCCWta_EDnvA0T6b86aKXQ8VHcs0KWTn8Mr7qIiSa1A6z4\"\n\nfiles=[]\n\nprint client.invoke('youzan.mei.reservation.get', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['order_no']=\"R20190110112527044249436\";\nparams['m_token']=\"RPuolgerKuo-P14ZWXXfjzSfmB_iQq55PXx3q6N2HC6-PRKhWv2FBK55J3xiFkCCWta_EDnvA0T6b86aKXQ8VHcs0KWTn8Mr7qIiSa1A6z4\";\n\n\nvar promise = YZClient.invoke('youzan.mei.reservation.get', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.mei.reservation.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'order_no' => 'R20190110112527044249436',\n    'm_token' => 'RPuolgerKuo-P14ZWXXfjzSfmB_iQq55PXx3q6N2HC6-PRKhWv2FBK55J3xiFkCCWta_EDnvA0T6b86aKXQ8VHcs0KWTn8Mr7qIiSa1A6z4',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"order_no\":\"R20190110112527044249436\",\"need_pay\":0,\"trade_order_no\":\"\",\"reservation_items\":[{\"item_sku_name\":\"局部经络疏通消除疲劳\",\"item_id\":400308910,\"image_url\":\"\",\"real_pay\":10,\"num\":1,\"resource_type\":1,\"goods_id\":400308910,\"reservation_item_id\":\"RT190110112527078433367\",\"item_name\":\"局部经络疏通消除疲劳\",\"sku_id\":36180796,\"resource_id\":1193015949,\"origin_price\":10,\"resource_name\":\"杜斌\"}],\"cancel_source\":0,\"real_pay\":10,\"mobile\":\"13425130472\",\"created_at\":1547090727000,\"remark\":\"预约预约\",\"out_biz_no\":\"\",\"yz_uid\":51471836,\"from_source\":1,\"kdt_id\":18884150,\"cancel_reason\":\"\",\"pay_status\":10,\"reservation_status\":30,\"billed_at\":1547190469000,\"arrange_at\":1547188200000,\"out_biz_state\":0,\"customer_name\":\"杜风涛(東杜风涛東)\",\"dept_id\":84196062,\"cancel_at\":0}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"抱歉, 服务器开了个小差, 请重试\",\"code\":233099301}}"
+  },
+  "name": "get",
+  "ids": [
+    10326
+  ],
+  "scenarios": "根据预约单号，查询一个预约单的详细信息",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "查询预约详细信息"
+}

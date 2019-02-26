@@ -1,0 +1,256 @@
+{
+  "name": "get",
+  "ids": [
+    10950
+  ],
+  "scenarios": "查询限时折扣活动基本信息，不含参与商品信息",
+  "1.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.ump.limitdiscount/1.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.ump.limitdiscount/1.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "activity_id",
+        "type": "Number",
+        "example": "123",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "活动id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "限时折扣活动id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "限时折扣活动id",
+          "defaultValue": null,
+          "example": "",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "限时折扣活动名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "限时折扣活动名称",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "start_at",
+        "type": "Date",
+        "isRequired": "否",
+        "desc": "活动开始时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "start_at",
+          "type": "Date",
+          "isNeed": "true",
+          "desc": "活动开始时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "end_at",
+        "type": "Date",
+        "isRequired": "否",
+        "desc": "活动结束时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "end_at",
+          "type": "Date",
+          "isNeed": "true",
+          "desc": "活动结束时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "valid",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "活动是否有效，true：有效；false：已失效",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "valid",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "活动是否有效，true：有效；false：已失效",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "desc",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "活动标签",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "desc",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "活动标签",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "create_at",
+        "type": "Date",
+        "isRequired": "否",
+        "desc": "活动创建时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "create_at",
+          "type": "Date",
+          "isNeed": "true",
+          "desc": "活动创建时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "update_at",
+        "type": "Date",
+        "isRequired": "否",
+        "desc": "活动最新更新时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "update_at",
+          "type": "Date",
+          "isNeed": "true",
+          "desc": "活动最新更新时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "period",
+        "type": "PeriodDTO",
+        "isRequired": "否",
+        "desc": "活动周期重复参数",
+        "isStruct": true,
+        "structUrl": "/web/meta/PeriodDTO",
+        "struct": {
+          "name": "period",
+          "type": "PeriodDTO",
+          "isNeed": "true",
+          "desc": "活动周期重复参数",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "type",
+              "type": "String",
+              "isNeed": null,
+              "desc": "重复类型；每天:daily; 每周:weekly; 每月:monthly；",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "days",
+              "type": "Number[]",
+              "isNeed": null,
+              "desc": "按周、月重复时有值，按月时1-31，按周时0-6，周日是0",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "start_at",
+              "type": "String",
+              "isNeed": null,
+              "desc": "开始时间，格式：HH:mm",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "end_at",
+              "type": "String",
+              "isNeed": null,
+              "desc": "结束时间，格式：HH:mm",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": [
+      {
+        "errorCode": "160700001",
+        "errorDesc": "参数校验异常",
+        "solution": "请根据错误信息传入正确参数"
+      },
+      {
+        "errorCode": "-100",
+        "errorDesc": "内部服务错误",
+        "solution": "直接联系卡门技术支持"
+      }
+    ],
+    "responseDemo": "{\n  \"code\": 200,\n  \"data\": {\n    \"valid\": true,\n    \"createdAt\": 1541581028000,\n    \"period\": {\n      \"days\": [\n        2,\n        3,\n        4,\n        5\n      ],\n      \"endAt\": \"23:59\",\n      \"type\": \"weekly\",\n      \"startAt\": \"00:00\"\n    },\n    \"name\": \"测试活动\",\n    \"id\": 177121,\n    \"endAt\": 1546246560000,\n    \"startAt\": 1541990340000,\n    \"desc\": \"限时折扣\",\n    \"updatedAt\": 1542094288000\n  },\n  \"message\": \"successful\",\n  \"success\": true\n}",
+    "errorResponseDemo": null
+  },
+  "version": [
+    "1.0.0"
+  ],
+  "desc": "查询限时折扣活动基本信息，不含参与商品信息"
+}

@@ -1,0 +1,171 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.scrm.customer.info/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.scrm.customer.info/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "card_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "用户会员卡卡号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "card_name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "会员卡名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "card_name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "会员卡名称",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "姓名",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "姓名",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "手机号码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "mobile",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "手机号码",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "fans_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "粉丝id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "fans_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "粉丝id",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "fans_type",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "粉丝类型",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "fans_type",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "粉丝类型",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "card_alias",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "会员卡别名",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "card_alias",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "会员卡别名",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanScrmCustomerInfoGetParams youzanScrmCustomerInfoGetParams = new YouzanScrmCustomerInfoGetParams();\n\nyouzanScrmCustomerInfoGetParams.setCardNo(\"305812218727787134\");\n\nYouzanScrmCustomerInfoGet youzanScrmCustomerInfoGet = new YouzanScrmCustomerInfoGet();\nyouzanScrmCustomerInfoGet.setAPIParams(youzanScrmCustomerInfoGetParams);\nYouzanScrmCustomerInfoGetResult result = client.invoke(youzanScrmCustomerInfoGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"card_no\", \"305812218727787134\");\n\n\nvar result = yzClient.Invoke(\"youzan.scrm.customer.info.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['card_no']=\"305812218727787134\"\n\nfiles=[]\n\nprint client.invoke('youzan.scrm.customer.info.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['card_no']=\"305812218727787134\";\n\n\nvar promise = YZClient.invoke('youzan.scrm.customer.info.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.scrm.customer.info.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'card_no' => '305812218727787134',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"card_name\":\"续费卡的展示\",\"name\":\"江南\",\"mobile\":15700156766,\"fans_type\":1,\"card_alias\":\"Y1y6g522zp4kq4\",\"fans_id\":6100571159}}",
+    "errorResponseDemo": "{\"error_response\":{\"code\":141502107,\"message\":\"card number not exist\"}}"
+  },
+  "name": "get",
+  "ids": [
+    8141
+  ],
+  "scenarios": "开放接口－通过用户会员卡号获取会员信息",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "通过用户会员卡号获取会员信息"
+}

@@ -1,0 +1,96 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.dept.status/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.dept.status/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "expire_time",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "过期时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "expire_time",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "过期时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "remain_time",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "剩余时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "remain_time",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "剩余时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "valid_status",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "店铺状态\n10, \"试用期\"\n20, \"保护期\"\n20, \"保护期\"\n40, \"试用期打烊\"\n50, \"服务期打烊\"",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "valid_status",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "店铺状态\n10, \"试用期\"\n20, \"保护期\"\n20, \"保护期\"\n40, \"试用期打烊\"\n50, \"服务期打烊\"",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"expire_time\":1548833516000,\"remain_time\":14937269968,\"valid_status\":30}}",
+    "errorResponseDemo": null
+  },
+  "name": "get",
+  "ids": [
+    10357
+  ],
+  "scenarios": "获取店铺状态，包括是否在有效期，以及过期时间等",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "获取店铺状态"
+}

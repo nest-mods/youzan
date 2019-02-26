@@ -1,0 +1,141 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.itemcategories.tag/3.0.0/add"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.itemcategories.tag/3.0.0/add"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品分组的名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "tag",
+        "type": "GoodsTag",
+        "isRequired": "否",
+        "desc": "商品标签的描述",
+        "isStruct": true,
+        "structUrl": "/web/meta/GoodsTag",
+        "struct": {
+          "name": "tag",
+          "type": "GoodsTag",
+          "isNeed": "true",
+          "desc": "商品标签的描述",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品标签的ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品标签的名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品标签类型，0 自定义，1 未分类，2 最新，3 最热，4 隐藏",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品标签创建时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "item_num",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品标签内的商品数量",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "tag_url",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品标签的展示的URL地址",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "share_url",
+              "type": "String",
+              "isNeed": null,
+              "desc": "分享出去的商品标签展示地址",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "desc",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品标签描述",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"tag\":{\"id\":95461009,\"item_num\":0,\"tag_url\":\"https:\\/\\/shop255245.youzan.com\\/v2\\/showcase\\/tag?alias=fvhfucvh\",\"share_url\":\"https:\\/\\/shop255245.youzan.com\\/v2\\/showcase\\/tag?alias=fvhfucvh\",\"type\":\"0\",\"created\":\"2017-04-24 20:15:07\",\"desc\":\"\",\"alias\":\"fvhfucvh\",\"name\":\"\\u5361\\u95e8\\u6d4b\\u8bd51\"}}}",
+    "errorResponseDemo": "{\"error_response\":{\"code\":50000,\"msg\":\"\\u5206\\u7ec4\\u540d\\u79f0\\u5df2\\u5b58\\u5728\"}}"
+  },
+  "name": "add",
+  "ids": [
+    8067
+  ],
+  "scenarios": "新增一个商品分组",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "新增一个商品分组"
+}

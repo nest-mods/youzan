@@ -1,0 +1,149 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.reservation/3.0.0/update"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.reservation/3.0.0/update"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "arrive_at",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "预约时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "dept_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "预约的分店id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "reservation_items",
+        "type": "mei_reservation_item_update_entity[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "预约的服务项目",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/mei_reservation_item_update_entity",
+        "struct": {
+          "name": "mei_reservation_item_update_entity[]",
+          "type": "mei_reservation_item_update_entity[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "goods_id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "预约的服务id",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "reserve_item_id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "预约项id",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "sku_id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "预约的服务的skuid",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "technician_id",
+              "type": "String",
+              "isStruct": false,
+              "desc": "预约的技师id",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "reservation_order_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "预约单单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "更新结果",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "更新结果",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\"response\":true}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"RESERVE_ITEM_ID无效\",\"code\":233001028}}"
+  },
+  "name": "update",
+  "ids": [
+    10231
+  ],
+  "scenarios": "更新一个预约单",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "更新一个预约单"
+}

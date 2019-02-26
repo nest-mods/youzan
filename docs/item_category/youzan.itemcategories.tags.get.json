@@ -1,0 +1,151 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.itemcategories.tags/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.itemcategories.tags/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "is_sort",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否排序",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "tags",
+        "type": "ItemGroupOpenModel[]",
+        "isRequired": "否",
+        "desc": "分组返回信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/ItemGroupOpenModel",
+        "struct": {
+          "name": "tags",
+          "type": "ItemGroupOpenModel[]",
+          "isNeed": "true",
+          "desc": "分组返回信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "分组类型",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "alias",
+              "type": "String",
+              "isNeed": null,
+              "desc": "别名",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "tag_url",
+              "type": "String",
+              "isNeed": null,
+              "desc": "分组链接",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "share_url",
+              "type": "String",
+              "isNeed": null,
+              "desc": "分享链接",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "item_num",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品数量",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created",
+              "type": "String",
+              "isNeed": null,
+              "desc": "创建时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "desc",
+              "type": "String",
+              "isNeed": null,
+              "desc": "描述",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "分组名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\n    \"response\":{\n        \"tags\":[\n            {\n                \"created\":\"2017-04-11 19:48:07\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=1z7o0iha\",\n                \"name\":\"李进分组测试\",\n                \"alias\":\"1z7o0iha\",\n                \"id\":1113436,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=1z7o0iha\",\n                \"type\":0,\n                \"item_num\":5,\n                \"desc\":\"\"\n            },\n            {\n                \"created\":\"2017-03-21 15:25:58\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=39ebhfrq\",\n                \"name\":\"李进分组\",\n                \"alias\":\"39ebhfrq\",\n                \"id\":1100982,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=39ebhfrq\",\n                \"type\":0,\n                \"item_num\":23,\n                \"desc\":\"\"\n            },\n            {\n                \"created\":\"2017-01-19 16:54:31\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=1h7i277ba\",\n                \"name\":\"阿迪是法师打发\",\n                \"alias\":\"1h7i277ba\",\n                \"id\":228276,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=1h7i277ba\",\n                \"type\":0,\n                \"item_num\":1,\n                \"desc\":\"\"\n            },\n            {\n                \"created\":\"2017-01-13 10:29:27\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=i2z9rc3d\",\n                \"name\":\"tagtest\",\n                \"alias\":\"i2z9rc3d\",\n                \"id\":227499,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=i2z9rc3d\",\n                \"type\":0,\n                \"item_num\":7,\n                \"desc\":\"\"\n            },\n            {\n                \"created\":\"2016-12-23 11:52:40\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=1477kh4sk\",\n                \"name\":\"石璞测试分组\",\n                \"alias\":\"1477kh4sk\",\n                \"id\":219313,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=1477kh4sk\",\n                \"type\":0,\n                \"item_num\":20,\n                \"desc\":\"\"\n            },\n            {\n                \"created\":\"2016-11-16 10:49:43\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=ink7z3nx\",\n                \"name\":\"abcd\",\n                \"alias\":\"ink7z3nx\",\n                \"id\":208480,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=ink7z3nx\",\n                \"type\":0,\n                \"item_num\":20,\n                \"desc\":\"\"\n            },\n            {\n                \"created\":\"2016-11-03 14:43:03\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=iqofjgcn\",\n                \"name\":\"国庆测试\",\n                \"alias\":\"iqofjgcn\",\n                \"id\":201641,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=iqofjgcn\",\n                \"type\":0,\n                \"item_num\":22,\n                \"desc\":\"\"\n            },\n            {\n                \"created\":\"2016-11-03 14:16:36\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=134bl8rja\",\n                \"name\":\"hello123\",\n                \"alias\":\"134bl8rja\",\n                \"id\":200974,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=134bl8rja\",\n                \"type\":0,\n                \"item_num\":1,\n                \"desc\":\"\"\n            },\n            {\n                \"created\":\"2016-07-27 14:35:25\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=6o5p76ih\",\n                \"name\":\"bcd\",\n                \"alias\":\"6o5p76ih\",\n                \"id\":42913,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=6o5p76ih\",\n                \"type\":0,\n                \"item_num\":14,\n                \"desc\":\"\"\n            },\n            {\n                \"created\":\"2016-07-27 14:33:22\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=osrzajvw\",\n                \"name\":\"abc\",\n                \"alias\":\"osrzajvw\",\n                \"id\":42912,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=osrzajvw\",\n                \"type\":0,\n                \"item_num\":4,\n                \"desc\":\"\"\n            },\n            {\n                \"created\":\"2016-07-15 16:02:13\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=6yqjngy2\",\n                \"name\":\"大上师\",\n                \"alias\":\"6yqjngy2\",\n                \"id\":41677,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=6yqjngy2\",\n                \"type\":0,\n                \"item_num\":16,\n                \"desc\":\"\"\n            },\n            {\n                \"created\":\"2016-07-15 16:01:43\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=jwutkkh0\",\n                \"name\":\"魔法师\",\n                \"alias\":\"jwutkkh0\",\n                \"id\":41676,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=jwutkkh0\",\n                \"type\":0,\n                \"item_num\":11,\n                \"desc\":\"\"\n            },\n            {\n                \"created\":\"2016-07-15 14:38:00\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=17dcjzg9h\",\n                \"name\":\"sgrtest3\",\n                \"alias\":\"17dcjzg9h\",\n                \"id\":41658,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=17dcjzg9h\",\n                \"type\":0,\n                \"item_num\":2,\n                \"desc\":\"\"\n            },\n            {\n                \"created\":\"2016-07-15 11:47:35\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=1c5zm7cc8\",\n                \"name\":\"sgr132\",\n                \"alias\":\"1c5zm7cc8\",\n                \"id\":41567,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=1c5zm7cc8\",\n                \"type\":0,\n                \"item_num\":5,\n                \"desc\":\"\"\n            },\n            {\n                \"created\":\"2016-07-15 11:35:50\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=18cxtumgi\",\n                \"name\":\"sgr232\",\n                \"alias\":\"18cxtumgi\",\n                \"id\":41565,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=18cxtumgi\",\n                \"type\":0,\n                \"item_num\":1,\n                \"desc\":\"\"\n            },\n            {\n                \"created\":\"2016-07-15 11:27:17\",\n                \"share_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=1a1mzm4uf\",\n                \"name\":\"sgrtest2\",\n                \"alias\":\"1a1mzm4uf\",\n                \"id\":41561,\n                \"tag_url\":\"https://shop192359.youzan.com/v2/showcase/tag?alias=1a1mzm4uf\",\n                \"type\":0,\n                \"item_num\":2,\n                \"desc\":\"\"\n            }\n        ]\n    }\n}",
+    "errorResponseDemo": null
+  },
+  "name": "get",
+  "ids": [
+    8214
+  ],
+  "scenarios": "根据是否排序查询商品分组列表",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "查询商品分组"
+}

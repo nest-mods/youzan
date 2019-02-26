@@ -1,0 +1,314 @@
+{
+  "name": "search",
+  "ids": [
+    10947
+  ],
+  "scenarios": "查询某一限时折扣活动下商品折扣列表，带分页",
+  "1.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.ump.limitdiscount.detail/1.0.0/search"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.ump.limitdiscount.detail/1.0.0/search"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "activity_id",
+        "type": "Number",
+        "example": "123",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "活动id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_no",
+        "type": "Number",
+        "example": "1",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "页码，最大翻页限制:4000",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "10",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "每页条数,最大支持:200",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "total",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "总条数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "total",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "总条数",
+          "defaultValue": null,
+          "example": "1",
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "items",
+        "type": "BriefTimeLimitedDiscountGoodsJoin[]",
+        "isRequired": "否",
+        "desc": "限时折扣参与商品信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/BriefTimeLimitedDiscountGoodsJoin",
+        "struct": {
+          "name": "items",
+          "type": "BriefTimeLimitedDiscountGoodsJoin[]",
+          "isNeed": "true",
+          "desc": "限时折扣参与商品信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "activityId",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "活动id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "goodsId",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "discountType",
+              "type": "String",
+              "isNeed": null,
+              "desc": "优惠类型；discount:打折；decrease:减价",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "discountValue",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "优惠值;如果是打折:70=7折; 如果是减价:100=1元",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "quota",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "限购数；0为不限购",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "quotaType",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "限购类型；0:不限购，1：超过限购数后允许原价购买；2:限购X件",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "valid",
+              "type": "Boolean",
+              "isNeed": null,
+              "desc": "是否有效；",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "eraseType",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "抹去金额类型。1表示抹去角、分，2表示抹去分，0表示不抹去",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "createdAt",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "创建时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "updatedAt",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "编辑时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "startAt",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "开始时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "endAt",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "结束时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "discountPrice",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "折扣价；单位分。目前不支持抹分抹角，需要开发者自行根据eraseType进行抹角抹分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "period",
+              "type": "PeriodDTO",
+              "isNeed": null,
+              "desc": "限时折扣周期类型",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "type",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "重复类型；每天:daily; 每周:weekly; 每月:monthly；",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "days",
+                  "type": "Number[]",
+                  "isNeed": null,
+                  "desc": "按周、月重复时有值，按月时1-31，按周时0-6，周日是0",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "start_at",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "开始时间，格式：HH:mm",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "end_at",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "结束时间，格式：HH:mm",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanUmpLimitdiscountDetailSearchParams youzanUmpLimitdiscountDetailSearchParams = new YouzanUmpLimitdiscountDetailSearchParams();\n\nyouzanUmpLimitdiscountDetailSearchParams.setPageSize(3L);\nyouzanUmpLimitdiscountDetailSearchParams.setPageNo(1L);\nyouzanUmpLimitdiscountDetailSearchParams.setActivityId(2065149L);\n\nYouzanUmpLimitdiscountDetailSearch youzanUmpLimitdiscountDetailSearch = new YouzanUmpLimitdiscountDetailSearch();\nyouzanUmpLimitdiscountDetailSearch.setAPIParams(youzanUmpLimitdiscountDetailSearchParams);\nYouzanUmpLimitdiscountDetailSearchResult result = client.invoke(youzanUmpLimitdiscountDetailSearch);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"page_size\", 3);\ndict.Add(\"page_no\", 1);\ndict.Add(\"activity_id\", 2065149);\n\n\nvar result = yzClient.Invoke(\"youzan.ump.limitdiscount.detail.search\", \"1.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['page_size']=3\nparams['page_no']=1\nparams['activity_id']=2065149\n\nfiles=[]\n\nprint client.invoke('youzan.ump.limitdiscount.detail.search', '1.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['page_size']=3;\nparams['page_no']=1;\nparams['activity_id']=2065149;\n\n\nvar promise = YZClient.invoke('youzan.ump.limitdiscount.detail.search', '1.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.ump.limitdiscount.detail.search'; //要调用的api名称\n$api_version = '1.0.0'; //要调用的api版本号\n\n$my_params = [\n    'page_size' => '3',\n    'page_no' => '1',\n    'activity_id' => '2065149',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "160700001",
+        "errorDesc": "参数校验异常",
+        "solution": "按照错误信息填写正确的参数值"
+      },
+      {
+        "errorCode": "-100",
+        "errorDesc": "内部服务错误",
+        "solution": "需要联系carmen技术支持"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"total\":9,\"items\":[{\"end_at\":1548917220000,\"period\":{\"end_at\":\"23:59\",\"days\":[1,2,4,5],\"type\":\"weekly\",\"start_at\":\"00:00\"},\"discount_price\":1,\"goods_id\":417540810,\"created_at\":0,\"discount_value\":99,\"discount_type\":\"decrease\",\"start_at\":1536930300000,\"erase_type\":0,\"valid\":true,\"updated_at\":1543479183000,\"quota\":1,\"activity_id\":2065149,\"id\":12009055,\"quota_type\":2},{\"end_at\":1548917220000,\"period\":{\"end_at\":\"23:59\",\"days\":[1,2,4,5],\"type\":\"weekly\",\"start_at\":\"00:00\"},\"discount_price\":10,\"goods_id\":421521118,\"created_at\":0,\"discount_value\":90,\"discount_type\":\"decrease\",\"start_at\":1536930300000,\"erase_type\":0,\"valid\":true,\"updated_at\":1543479183000,\"quota\":1,\"activity_id\":2065149,\"id\":12075403,\"quota_type\":2},{\"end_at\":1548917220000,\"period\":{\"end_at\":\"23:59\",\"days\":[1,2,4,5],\"type\":\"weekly\",\"start_at\":\"00:00\"},\"discount_price\":1280,\"goods_id\":429663210,\"created_at\":0,\"discount_value\":1710,\"discount_type\":\"decrease\",\"start_at\":1536930300000,\"erase_type\":0,\"valid\":true,\"updated_at\":1543479183000,\"quota\":1,\"activity_id\":2065149,\"id\":12267957,\"quota_type\":2}]}}",
+    "errorResponseDemo": null
+  },
+  "version": [
+    "1.0.0"
+  ],
+  "desc": "查询某一限时折扣活动下商品折扣列表"
+}

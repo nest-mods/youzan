@@ -1,0 +1,297 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.users.weixin.follower.tags/3.0.0/add"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.users.weixin.follower.tags/3.0.0/add"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "fans_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "微信粉丝用户ID。调用时，参数 weixin_openid 和 fans_id 选其一即可",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fields",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "需要返回的微信粉丝对象字段，如nick,avatar等。可选值：CrmWeixinFans微信粉丝结构体中所有字段均可返回；多个字段用“,”分隔。如果为空则返回所有",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tags",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "标签名，多个标签名用“,”分隔",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "weixin_openid",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "微信粉丝用户的openid",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "user",
+        "type": "CrmWeixinFans",
+        "isRequired": "否",
+        "desc": "微信粉丝用户信息列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/CrmWeixinFans",
+        "struct": {
+          "name": "user",
+          "type": "CrmWeixinFans",
+          "isNeed": "true",
+          "desc": "微信粉丝用户信息列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "user_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "微信粉丝用户ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "weixin_openid",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微信粉丝用户的openid，可用于微信Api",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "nick",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微信粉丝用户的昵称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "avatar",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微信粉丝用户的头像Url",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "follow_time",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "关注时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sex",
+              "type": "String",
+              "isNeed": null,
+              "desc": "性别。可选值：m(男)，f(女)。未知则为空",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "city",
+              "type": "String",
+              "isNeed": null,
+              "desc": "所在城市",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "points",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "当前积分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "traded_num",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "成交订单笔数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "traded_money",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "成交订单总额。单位：元",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "tags",
+              "type": "CrmUserTag[]",
+              "isNeed": null,
+              "desc": "用户标签",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "标签ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "标签名",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "level_info",
+              "type": "CrmFansLevel",
+              "isNeed": null,
+              "desc": "粉丝会员等级的数据结构",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "level_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "会员等级编码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "level_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "会员等级名",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "is_follow",
+              "type": "Boolean",
+              "isNeed": null,
+              "desc": "是否关注",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "union_id",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微信粉丝用户的unionid，可用于微信Api",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanUsersWeixinFollowerTagsAddParams youzanUsersWeixinFollowerTagsAddParams = new YouzanUsersWeixinFollowerTagsAddParams();\n\nyouzanUsersWeixinFollowerTagsAddParams.setFansId(1243449546L);\nyouzanUsersWeixinFollowerTagsAddParams.setTags(\"3882426\");\n\nYouzanUsersWeixinFollowerTagsAdd youzanUsersWeixinFollowerTagsAdd = new YouzanUsersWeixinFollowerTagsAdd();\nyouzanUsersWeixinFollowerTagsAdd.setAPIParams(youzanUsersWeixinFollowerTagsAddParams);\nYouzanUsersWeixinFollowerTagsAddResult result = client.invoke(youzanUsersWeixinFollowerTagsAdd);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"fans_id\", 1243449546);\ndict.Add(\"tags\", \"3882426\");\n\n\nvar result = yzClient.Invoke(\"youzan.users.weixin.follower.tags.add\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['fans_id']=1243449546\nparams['tags']=\"3882426\"\n\nfiles=[]\n\nprint client.invoke('youzan.users.weixin.follower.tags.add', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['fans_id']=1243449546;\nparams['tags']=\"3882426\";\n\n\nvar promise = YZClient.invoke('youzan.users.weixin.follower.tags.add', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.users.weixin.follower.tags.add'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'fans_id' => '1243449546',\n    'tags' => '3882426',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": null,
+    "errorResponseDemo": null
+  },
+  "name": "add",
+  "ids": [
+    7965
+  ],
+  "scenarios": "根据微信粉丝用户的 weixin_openid 或 fans_id 绑定对应的标签",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "根据微信粉丝用户的 weixin_openid 或 fans_id 绑定对应的标签"
+}

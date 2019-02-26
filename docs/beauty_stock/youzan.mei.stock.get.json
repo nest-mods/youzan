@@ -1,0 +1,265 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.stock/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.stock/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "item_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_no",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "页码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "每页数量",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "规格ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "paginator",
+        "type": "MeiPaginator",
+        "isRequired": "否",
+        "desc": "分页信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiPaginator",
+        "struct": {
+          "name": "paginator",
+          "type": "MeiPaginator",
+          "isNeed": "true",
+          "desc": "分页信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "total_count",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总记录数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "第几页",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page_size",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "每页显示的记录数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "items",
+        "type": "MeiInventoryInfoDTO[]",
+        "isRequired": "否",
+        "desc": "库存信息列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiInventoryInfoDTO",
+        "struct": {
+          "name": "items",
+          "type": "MeiInventoryInfoDTO[]",
+          "isNeed": "true",
+          "desc": "库存信息列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "available_delivery_quantity",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "可用库存",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "item_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "physical_quantity",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "物理库存",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "ware_house_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "仓库名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "ware_house_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "仓库ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sku_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "规格ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "dept_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "店铺ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "to_delivery_quantity",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "锁定库存",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "negative_quantity",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "负库存",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanMeiStockGetParams youzanMeiStockGetParams = new YouzanMeiStockGetParams();\n\nyouzanMeiStockGetParams.setItemId(356052588L);\nyouzanMeiStockGetParams.setMToken(\"plLrpT7izAlj4KNleDpWlEfMqcVH_jkNByAMEJkZi7fv-djQcx9wMNNBpkhNGabS1s8jyMBEiZeW7iNJ4eXgYg\");\n\nYouzanMeiStockGet youzanMeiStockGet = new YouzanMeiStockGet();\nyouzanMeiStockGet.setAPIParams(youzanMeiStockGetParams);\nYouzanMeiStockGetResult result = client.invoke(youzanMeiStockGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"item_id\", 356052588);\ndict.Add(\"m_token\", \"plLrpT7izAlj4KNleDpWlEfMqcVH_jkNByAMEJkZi7fv-djQcx9wMNNBpkhNGabS1s8jyMBEiZeW7iNJ4eXgYg\");\n\n\nvar result = yzClient.Invoke(\"youzan.mei.stock.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.mei.stock.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'item_id' => '356052588',\n    'm_token' => 'plLrpT7izAlj4KNleDpWlEfMqcVH_jkNByAMEJkZi7fv-djQcx9wMNNBpkhNGabS1s8jyMBEiZeW7iNJ4eXgYg',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['item_id']=356052588\nparams['m_token']=\"plLrpT7izAlj4KNleDpWlEfMqcVH_jkNByAMEJkZi7fv-djQcx9wMNNBpkhNGabS1s8jyMBEiZeW7iNJ4eXgYg\"\n\nfiles=[]\n\nprint client.invoke('youzan.mei.stock.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['item_id']=356052588;\nparams['m_token']=\"plLrpT7izAlj4KNleDpWlEfMqcVH_jkNByAMEJkZi7fv-djQcx9wMNNBpkhNGabS1s8jyMBEiZeW7iNJ4eXgYg\";\n\n\nvar promise = YZClient.invoke('youzan.mei.stock.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\n  \"response\": {\n    \"paginator\": {\n      \"total_count\": 1,\n      \"page\": 1,\n      \"page_size\": 10\n    },\n    \"items\": [\n      {\n        \"available_delivery_quantity\": 41,\n        \"item_id\": 356052588,\n        \"physical_quantity\": 41,\n        \"ware_house_name\": \"柳树の店\",\n        \"ware_house_id\": 1853,\n        \"sku_id\": 1056106,\n        \"dept_id\": 31911490,\n        \"to_delivery_quantity\": 0,\n        \"negative_quantity\": 0\n      }\n    ]\n  }\n}",
+    "errorResponseDemo": null
+  },
+  "name": "get",
+  "ids": [
+    10415
+  ],
+  "scenarios": "查询库存详情",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "查询库存详情"
+}

@@ -1,0 +1,887 @@
+{
+  "name": "querybyorderno",
+  "ids": [
+    9574
+  ],
+  "scenarios": "发货单查询\n",
+  "1.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.trade.dc.query/1.0.0/querybyorderno"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.trade.dc.query/1.0.0/querybyorderno"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "include_dist_order",
+        "type": "Boolean",
+        "example": "true",
+        "defaultValue": "false",
+        "isRequired": "否",
+        "desc": "是否包含配送单信息 不包含具体的物流信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "include_dist_order_and_detail",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "false",
+        "isRequired": "否",
+        "desc": "是否包含物流详情 ",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "include_item_delivery_status",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "false",
+        "isRequired": "否",
+        "desc": "是否包含商品发货状态",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "include_operation_log",
+        "type": "Boolean",
+        "example": "true",
+        "defaultValue": "false",
+        "isRequired": "否",
+        "desc": "是否包含操作记录",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "kdt_id",
+        "type": "Long",
+        "example": "372875",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "店铺号",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/Long",
+        "struct": {
+          "name": "Long",
+          "type": "Long",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": []
+        }
+      },
+      {
+        "name": "order_no",
+        "type": "String",
+        "example": "E20180416092144040300001",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "deliveryOrders",
+        "type": "DeliveryOrderDTO[]",
+        "isRequired": "否",
+        "desc": "发货单",
+        "isStruct": true,
+        "structUrl": "/web/meta/DeliveryOrderDTO",
+        "struct": {
+          "name": "deliveryOrders",
+          "type": "DeliveryOrderDTO[]",
+          "isNeed": "true",
+          "desc": "发货单",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "deliveryNo",
+              "type": "String",
+              "isNeed": null,
+              "desc": "货单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "orderNo",
+              "type": "String",
+              "isNeed": null,
+              "desc": "订单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "kdtId",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "店铺Id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "deliveryPointId",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "出货点Id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "status",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "货单状态\n0 待发货\n1 已发货\n2 无需发货",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "distType",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "配送方式\n1 快递\n2 同城送\n3 自提",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "extend",
+              "type": "String",
+              "isNeed": null,
+              "desc": "扩展信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "createTime",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "发货时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "updateTime",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "货单更新时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "deliveryFee",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "应付运费",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "realDeliveryFee",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "实付运费",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "remark",
+              "type": "String",
+              "isNeed": null,
+              "desc": "货单备注",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "distOrderDTOs",
+              "type": "DistOrderDTO[]",
+              "isNeed": null,
+              "desc": "配送单",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "orderNo",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "主订单ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "distId",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "配送单id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "kdtId",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "店铺id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "deliveryType",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "发货类型",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "deliveryNo",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "发货单号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "deliveryPointId",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "出货点id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "extend",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "扩展字段",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "version",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "配送单版本号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "status",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "配送单状态\n0 未发货\n1 发货中\n2 已发货\n3 已取消",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "distType",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "配送方式\n1 快递\n2 同城送\n3 自提",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "expressInfo",
+                  "type": "ExpressInfo",
+                  "isNeed": null,
+                  "desc": "物流快递信息",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "state",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "物流状态 0：在途 1：揽件 2：疑难 3：签收 4：退签 5：派件 6：退回",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "data",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "物流信息json",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "expressNo",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "物流单号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "expressId",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "物流公司id",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "expressDetail",
+                      "type": "ExpressDetail",
+                      "isNeed": null,
+                      "desc": "快递发货->物流详情",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": true,
+                      "children": [
+                        {
+                          "name": "expressCompanyName",
+                          "type": "String",
+                          "isNeed": null,
+                          "desc": "物流公司名称",
+                          "defaultValue": null,
+                          "example": null,
+                          "isStruct": false,
+                          "children": []
+                        },
+                        {
+                          "name": "expressProgressInfo",
+                          "type": "String",
+                          "isNeed": null,
+                          "desc": "物流进度详情",
+                          "defaultValue": null,
+                          "example": null,
+                          "isStruct": false,
+                          "children": []
+                        },
+                        {
+                          "name": "expressStatus",
+                          "type": "String",
+                          "isNeed": null,
+                          "desc": "物流状态 \n0 待发货\n1 已发货\n2 已签收\n6 待取货\n7 已取消\n8 已过期",
+                          "defaultValue": null,
+                          "example": null,
+                          "isStruct": false,
+                          "children": []
+                        },
+                        {
+                          "name": "com",
+                          "type": "String",
+                          "isNeed": null,
+                          "desc": "物流公司编码",
+                          "defaultValue": null,
+                          "example": null,
+                          "isStruct": false,
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "localDeliveryDetail",
+                  "type": "LocalDeliveryDetail",
+                  "isNeed": null,
+                  "desc": "同城送配送信息详情",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "deliveryNo",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "货单号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "deductFee",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "违约金",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "distStatus",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "同城送状态描述\n  STATUS_NONE(Integer.valueOf(-1), \"初始状态\", false),\n  STATUS_NORMAL(Integer.valueOf(0), \"初始状态\", false),\n  STATUS_ORDERING(Integer.valueOf(1), \"待接单\", false),\n  STATUS_TAKING(Integer.valueOf(2), \"待取货\", false),\n  STATUS_SENDING(Integer.valueOf(3), \"配送中\", false),\n  STATUS_DONE(Integer.valueOf(4), \"已完成\", true),\n  STATUS_CANCEL(Integer.valueOf(5), \"已取消\", true),\n  STATUS_CANCEL_EXCEPTION(Integer.valueOf(6), \"取消异常\", false),\n  STATUS_OVERDUE(Integer.valueOf(7), \"已过期\", true);",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "distStatusCode",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "同城送状态码\n  STATUS_NONE(Integer.valueOf(-1), \"初始状态\", false),\n  STATUS_NORMAL(Integer.valueOf(0), \"初始状态\", false),\n  STATUS_ORDERING(Integer.valueOf(1), \"待接单\", false),\n  STATUS_TAKING(Integer.valueOf(2), \"待取货\", false),\n  STATUS_SENDING(Integer.valueOf(3), \"配送中\", false),\n  STATUS_DONE(Integer.valueOf(4), \"已完成\", true),\n  STATUS_CANCEL(Integer.valueOf(5), \"已取消\", true),\n  STATUS_CANCEL_EXCEPTION(Integer.valueOf(6), \"取消异常\", false),\n  STATUS_OVERDUE(Integer.valueOf(7), \"已过期\", true);",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "distLng",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "配送员经度",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "distLat",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "配送员纬度",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "tip",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "配送员小费",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "deliveryFee",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "配送费",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "distance",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "配送员距离",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "createTime",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "发单时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "acceptTime",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "接单时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "fetchTime",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "取货时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "finishTime",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "送达时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "cancelTime",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "取消时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "cancelReason",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "取消原因",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "expireTime",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "过期时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "deliveryOrderItems",
+              "type": "DeliveryOrderItemDTO[]",
+              "isNeed": null,
+              "desc": "发货单明细",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "deliveryNo",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "货单号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "orderNo",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "订单号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "kdtId",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "店铺Id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "itemId",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "订单商品id，即子订单号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "num",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "weight",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "发货商品数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "deliveryStatus",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品发货状态\n0 待发货\n1 已发货\n2 无需发货",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "deliveryStatusDesc",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品发货状态描述",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "noNeedDeliveryReason",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品无需发货的原因",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "operationLogs",
+              "type": "OperationLogDTO[]",
+              "isNeed": null,
+              "desc": "操作记录",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "deliveryNo",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "发货单号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "distId",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "配送单号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "orderNo",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "订单号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "kdtId",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "店铺Id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "operatorId",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "操作人Id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "operatorName",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "操作人姓名",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "operatorPhone",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "操作人手机号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "action",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "操作的动作",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "note",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "备注信息",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "role",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "操作人角色",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "roleDesc",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "操作人角色描述",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "createTime",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "日志创建时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanTradeDcQueryQuerybyordernoParams youzanTradeDcQueryQuerybyordernoParams = new YouzanTradeDcQueryQuerybyordernoParams();\n\nyouzanTradeDcQueryQuerybyordernoParams.setKdtId(22803502L);\nyouzanTradeDcQueryQuerybyordernoParams.setOrderNo(\"E20180413203737004300001\");\nyouzanTradeDcQueryQuerybyordernoParams.setIncludeOperationLog(\"true\");\nyouzanTradeDcQueryQuerybyordernoParams.setIncludeDistOrder(\"true\");\nyouzanTradeDcQueryQuerybyordernoParams.setIncludeDistOrderAndDetail(\"true\");\n\nYouzanTradeDcQueryQuerybyorderno youzanTradeDcQueryQuerybyorderno = new YouzanTradeDcQueryQuerybyorderno();\nyouzanTradeDcQueryQuerybyorderno.setAPIParams(youzanTradeDcQueryQuerybyordernoParams);\nYouzanTradeDcQueryQuerybyordernoResult result = client.invoke(youzanTradeDcQueryQuerybyorderno);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"kdt_id\", 22803502);\ndict.Add(\"order_no\", \"E20180413203737004300001\");\ndict.Add(\"include_operation_log\", \"true\");\ndict.Add(\"include_dist_order\", \"true\");\ndict.Add(\"include_dist_order_and_detail\", \"true\");\n\n\nvar result = yzClient.Invoke(\"youzan.trade.dc.query.querybyorderno\", \"1.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.trade.dc.query.querybyorderno'; //要调用的api名称\n$api_version = '1.0.0'; //要调用的api版本号\n\n$my_params = [\n    'kdt_id' => '22803502',\n    'order_no' => 'E20180413203737004300001',\n    'include_operation_log' => 'true',\n    'include_dist_order' => 'true',\n    'include_dist_order_and_detail' => 'true',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['kdt_id']=22803502\nparams['order_no']=\"E20180413203737004300001\"\nparams['include_operation_log']=\"true\"\nparams['include_dist_order']=\"true\"\nparams['include_dist_order_and_detail']=\"true\"\n\nfiles=[]\n\nprint client.invoke('youzan.trade.dc.query.querybyorderno', '1.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['kdt_id']=22803502;\nparams['order_no']=\"E20180413203737004300001\";\nparams['include_operation_log']=\"true\";\nparams['include_dist_order']=\"true\";\nparams['include_dist_order_and_detail']=\"true\";\n\n\nvar promise = YZClient.invoke('youzan.trade.dc.query.querybyorderno', '1.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "102599996",
+        "errorDesc": "参数错误",
+        "solution": null
+      }
+    ],
+    "responseDemo": "{\"response\":[{\"orderNo\":\"E20180413203737004300001\",\"realDeliveryFee\":0,\"kdtId\":22803502,\"deliveryNo\":\"201804132037410000010043\",\"deliveryPointId\":22803505,\"updateTime\":1523865410000,\"remark\":\"瓜\",\"distType\":2,\"version\":1523623061450,\"extend\":\"{\\\"fulfillNo\\\":\\\"201804132037370000010000\\\"}\",\"deliveryFee\":1,\"deliveryMode\":0,\"createTime\":1523623061000,\"deliveryPointType\":0,\"id\":1443084044833652700,\"deliveryOrderItems\":[{\"itemId\":1443084034096234500,\"orderNo\":\"E20180413203737004300001\",\"kdtId\":22803502,\"createTime\":1523623061000,\"num\":1,\"deliveryNo\":\"201804132037410000010043\",\"weight\":0,\"deliveryStatusDesc\":\"待发货\",\"deliveryStatus\":0}],\"distOrderDTOs\":[{\"orderNo\":\"E20180413203737004300001\",\"distId\":\"201804132144300000010043\",\"kdtId\":22803502,\"deliveryType\":21,\"deliveryNo\":\"201804132037410000010043\",\"deliveryPointId\":22803505,\"updateTime\":1523627072000,\"distType\":2,\"version\":1523627070585,\"extend\":\"\",\"localDeliveryInfo\":{\"distCompanyName\":\"达达\",\"distMobile\":\"\",\"distCompanyId\":1,\"distName\":\"\"},\"createTime\":1523623061000,\"distOrderItems\":[{\"itemId\":1443084034096234500,\"orderNo\":\"E20180413203737004300001\",\"distId\":\"201804132144300000010043\",\"kdtId\":22803502,\"createTime\":1523623061000,\"num\":1000,\"deliveryNo\":\"201804132037410000010043\",\"weight\":1}],\"status\":1}],\"status\":0,\"flowType\":1}]}",
+    "errorResponseDemo": null
+  },
+  "version": [
+    "1.0.0"
+  ],
+  "desc": "发货单查询"
+}

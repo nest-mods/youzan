@@ -1,0 +1,223 @@
+{
+  "name": "deliver",
+  "ids": [
+    10843
+  ],
+  "scenarios": "分销供货订单发货",
+  "1.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.fenxiao.support.order/1.0.0/deliver"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.fenxiao.support.order/1.0.0/deliver"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "admin_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "操作人id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "express_id",
+        "type": "Number",
+        "example": "1",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "物流公司id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "express_name",
+        "type": "String",
+        "example": "申通快递",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "物流公司名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "express_no",
+        "type": "String",
+        "example": "E93827382",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "物流单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "kdt_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "店铺kdtid",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "operator_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "操作人姓名",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "operator_role",
+        "type": "String",
+        "example": "",
+        "defaultValue": "seller",
+        "isRequired": "否",
+        "desc": "操作人角色(seller| buyer | admin)",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "order_item_ids",
+        "type": "Number[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "订单发货商品id列表（不填则订单所有商品发货）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "order_no",
+        "type": "String",
+        "example": "S3232354466666666",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "精选订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "request_ip",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "请求来源ip",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "source_from",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "请求来源",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "source_remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "请求来源说明",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "发货包裹id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "response",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "发货包裹id",
+          "defaultValue": null,
+          "example": "343434",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanFenxiaoSupportOrderDeliverParams youzanFenxiaoSupportOrderDeliverParams = new YouzanFenxiaoSupportOrderDeliverParams();\n\nyouzanFenxiaoSupportOrderDeliverParams.setExpressId(2L);\nyouzanFenxiaoSupportOrderDeliverParams.setExpressNo(\"dfjdkfj\");\nyouzanFenxiaoSupportOrderDeliverParams.setOperatorRole(\"seller\");\nyouzanFenxiaoSupportOrderDeliverParams.setOrderNo(\"S20181030162116000205227\");\n\nYouzanFenxiaoSupportOrderDeliver youzanFenxiaoSupportOrderDeliver = new YouzanFenxiaoSupportOrderDeliver();\nyouzanFenxiaoSupportOrderDeliver.setAPIParams(youzanFenxiaoSupportOrderDeliverParams);\nYouzanFenxiaoSupportOrderDeliverResult result = client.invoke(youzanFenxiaoSupportOrderDeliver);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"express_id\", 2);\ndict.Add(\"express_no\", \"dfjdkfj\");\ndict.Add(\"operator_role\", \"seller\");\ndict.Add(\"order_no\", \"S20181030162116000205227\");\n\n\nvar result = yzClient.Invoke(\"youzan.fenxiao.support.order.deliver\", \"1.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.fenxiao.support.order.deliver'; //要调用的api名称\n$api_version = '1.0.0'; //要调用的api版本号\n\n$my_params = [\n    'express_id' => '2',\n    'express_no' => 'dfjdkfj',\n    'operator_role' => 'seller',\n    'order_no' => 'S20181030162116000205227',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['express_id']=2\nparams['express_no']=\"dfjdkfj\"\nparams['operator_role']=\"seller\"\nparams['order_no']=\"S20181030162116000205227\"\n\nfiles=[]\n\nprint client.invoke('youzan.fenxiao.support.order.deliver', '1.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['express_id']=2;\nparams['express_no']=\"dfjdkfj\";\nparams['operator_role']=\"seller\";\nparams['order_no']=\"S20181030162116000205227\";\n\n\nvar promise = YZClient.invoke('youzan.fenxiao.support.order.deliver', '1.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "606000002",
+        "errorDesc": "找不到订单",
+        "solution": "确认订单号是否正确"
+      },
+      {
+        "errorCode": "606000003",
+        "errorDesc": "订单的商品找不到",
+        "solution": "确认order_item_id字段是否正确"
+      },
+      {
+        "errorCode": "606000004",
+        "errorDesc": "订单维权中，不能发货",
+        "solution": "等维权处理结束后再进行发货"
+      },
+      {
+        "errorCode": "606000005",
+        "errorDesc": "商品已发货",
+        "solution": "确认商品是否已经发货"
+      }
+    ],
+    "responseDemo": "{\"response\":664316923}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"查不到精选发货单对应关系\",\"code\":606000002}}"
+  },
+  "version": [
+    "1.0.0"
+  ],
+  "desc": "分销供货订单发货"
+}

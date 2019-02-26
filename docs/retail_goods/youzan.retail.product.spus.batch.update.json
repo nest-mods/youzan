@@ -1,0 +1,124 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.product.spus.batch/3.0.0/update"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.product.spus.batch/3.0.0/update"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "category_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "待更新的分类",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "请求来源\n如：OPEN—XXX",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "spu_ids",
+        "type": "Number[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品id列表",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "result",
+        "type": "Map",
+        "isRequired": "否",
+        "desc": "批量操作结果",
+        "isStruct": true,
+        "structUrl": "/web/meta/Map",
+        "struct": {
+          "name": "result",
+          "type": "Map",
+          "isNeed": "true",
+          "desc": "批量操作结果",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "skuId",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "待更新商品id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "result",
+              "type": "Boolean",
+              "isNeed": null,
+              "desc": "是否更新成功",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailProductSpusBatchUpdateParams youzanRetailProductSpusBatchUpdateParams = new YouzanRetailProductSpusBatchUpdateParams();\n\nyouzanRetailProductSpusBatchUpdateParams.setCategoryId(44444L);\nyouzanRetailProductSpusBatchUpdateParams.setRetailSource(\"OPEN_XXX\");\nyouzanRetailProductSpusBatchUpdateParams.setSpuIds(\"[426130304]\");\n\nYouzanRetailProductSpusBatchUpdate youzanRetailProductSpusBatchUpdate = new YouzanRetailProductSpusBatchUpdate();\nyouzanRetailProductSpusBatchUpdate.setAPIParams(youzanRetailProductSpusBatchUpdateParams);\nYouzanRetailProductSpusBatchUpdateResult result = client.invoke(youzanRetailProductSpusBatchUpdate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"category_id\", 44444);\ndict.Add(\"retail_source\", \"OPEN_XXX\");\ndict.Add(\"spu_ids\", \"[426130304]\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.product.spus.batch.update\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.product.spus.batch.update'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'category_id' => '44444',\n    'retail_source' => 'OPEN_XXX',\n    'spu_ids' => '[426130304]',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['category_id']=44444\nparams['retail_source']=\"OPEN_XXX\"\nparams['spu_ids']=\"[426130304]\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.product.spus.batch.update', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['category_id']=44444;\nparams['retail_source']=\"OPEN_XXX\";\nparams['spu_ids']=\"[426130304]\";\n\n\nvar promise = YZClient.invoke('youzan.retail.product.spus.batch.update', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"426130304\":true}}",
+    "errorResponseDemo": null
+  },
+  "name": "update",
+  "ids": [
+    10218
+  ],
+  "scenarios": "批量更新商品分类",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "批量更新商品分类"
+}

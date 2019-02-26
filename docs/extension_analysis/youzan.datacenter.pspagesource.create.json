@@ -1,0 +1,194 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.datacenter.pspagesource/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.datacenter.pspagesource/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "ps_cost",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "推广花费，只能是正整数 单位为分",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "ps_location",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "推广位置",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "ps_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "推广分析名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "source_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "渠道名称，系统中名称不存在的自动创建 ，存在的使用已有的",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tag_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "该推广监控的标签。使用推广标签，商家可以便捷查找、导出及对比同一标签下的不同推广监控的数据。名称不存在的自动创建 ，存在的使用已有的",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "url",
+        "type": "String",
+        "example": "微页面 https://h5.youzan.com/wscshop/feature/0loSrETv",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "推广链接，目前支持 微页面，商品页面，商品分组页 ，店铺主页，优惠券，拼团，付费会员卡",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "visit_fans_tag_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "访问客户打标签，给通过该推广链接访问页面的客户打上标签，可持续跟进该类客户与区分运营。该标签有上限1000，名称不存在的自动创建 ，存在的使用已有的",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "YunCreatePsResultModel",
+        "isRequired": "否",
+        "desc": "推广分析响应结果",
+        "isStruct": true,
+        "structUrl": "/web/meta/YunCreatePsResultModel",
+        "struct": {
+          "name": "response",
+          "type": "YunCreatePsResultModel",
+          "isNeed": "true",
+          "desc": "推广分析响应结果",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "推广分析生成链接的主键Id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "dcps",
+              "type": "String",
+              "isNeed": null,
+              "desc": "推广分析生成链接的追踪号,如示例的ps_code",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "psName",
+              "type": "String",
+              "isNeed": null,
+              "desc": "推广分析的名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanDatacenterPspagesourceCreateParams youzanDatacenterPspagesourceCreateParams = new YouzanDatacenterPspagesourceCreateParams();\n\nyouzanDatacenterPspagesourceCreateParams.setUrl(\"https://h5.youzan.com/v2/goods/2oivt9g4qw44l\");\nyouzanDatacenterPspagesourceCreateParams.setTagName(\"a\");\nyouzanDatacenterPspagesourceCreateParams.setSourceName(\"erer\");\nyouzanDatacenterPspagesourceCreateParams.setPsName(\"a1\");\nyouzanDatacenterPspagesourceCreateParams.setPsLocation(\"a\");\nyouzanDatacenterPspagesourceCreateParams.setPsCost(12L);\nyouzanDatacenterPspagesourceCreateParams.setVisitFansTagName(\"test22\");\n\nYouzanDatacenterPspagesourceCreate youzanDatacenterPspagesourceCreate = new YouzanDatacenterPspagesourceCreate();\nyouzanDatacenterPspagesourceCreate.setAPIParams(youzanDatacenterPspagesourceCreateParams);\nYouzanDatacenterPspagesourceCreateResult result = client.invoke(youzanDatacenterPspagesourceCreate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"url\", \"https://h5.youzan.com/v2/goods/2oivt9g4qw44l\");\ndict.Add(\"tag_name\", \"a\");\ndict.Add(\"source_name\", \"erer\");\ndict.Add(\"ps_name\", \"a1\");\ndict.Add(\"ps_location\", \"a\");\ndict.Add(\"ps_cost\", 12);\ndict.Add(\"visit_fans_tag_name\", \"test22\");\n\n\nvar result = yzClient.Invoke(\"youzan.datacenter.pspagesource.create\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['url']=\"https://h5.youzan.com/v2/goods/2oivt9g4qw44l\"\nparams['tag_name']=\"a\"\nparams['source_name']=\"erer\"\nparams['ps_name']=\"a1\"\nparams['ps_location']=\"a\"\nparams['ps_cost']=12\nparams['visit_fans_tag_name']=\"test22\"\n\nfiles=[]\n\nprint client.invoke('youzan.datacenter.pspagesource.create', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['url']=\"https://h5.youzan.com/v2/goods/2oivt9g4qw44l\";\nparams['tag_name']=\"a\";\nparams['source_name']=\"erer\";\nparams['ps_name']=\"a1\";\nparams['ps_location']=\"a\";\nparams['ps_cost']=12;\nparams['visit_fans_tag_name']=\"test22\";\n\n\nvar promise = YZClient.invoke('youzan.datacenter.pspagesource.create', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.datacenter.pspagesource.create'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'url' => 'https://h5.youzan.com/v2/goods/2oivt9g4qw44l',\n    'tag_name' => 'a',\n    'source_name' => 'erer',\n    'ps_name' => 'a1',\n    'ps_location' => 'a',\n    'ps_cost' => '12',\n    'visit_fans_tag_name' => 'test22',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "53002",
+        "errorDesc": "推广花费填写错误",
+        "solution": "推广花费填写正整数"
+      },
+      {
+        "errorCode": "2120101",
+        "errorDesc": "URL，渠道， 推广名称不能为空",
+        "solution": "填写必填字段"
+      },
+      {
+        "errorCode": "2120103",
+        "errorDesc": "URL链接有误",
+        "solution": "填写微页面，商品页面，商品分组页 ，店铺主页，优惠券，拼团，付费会员卡 正确的URL路径，可以在有赞后台查询"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"ps_name\":\"a\",\"id\":1082643,\"dcps\":\"2139064356208596996.200001\"}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"从未订购\",\"code\":2120403}}"
+  },
+  "name": "create",
+  "ids": [
+    10426
+  ],
+  "scenarios": "创建推广分析, 生成可跟踪数据的推广链接",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "创建推广分析"
+}

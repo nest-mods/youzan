@@ -1,0 +1,218 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.trade.dc.delivery/3.0.0/ordersingleitemsend"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.trade.dc.delivery/3.0.0/ordersingleitemsend"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "ex_packages",
+        "type": "ExPackage[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "包裹信息",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/ExPackage",
+        "struct": {
+          "name": "ExPackage[]",
+          "type": "ExPackage[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "express",
+              "type": "Express",
+              "isStruct": true,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": [
+                {
+                  "name": "express_id",
+                  "type": "Number",
+                  "isStruct": false,
+                  "desc": "快递公司id",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "express_name",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "快递公司名称",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                },
+                {
+                  "name": "express_no",
+                  "type": "String",
+                  "isStruct": false,
+                  "desc": "快递单号",
+                  "example": null,
+                  "creator": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "num",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "该包裹内商品数量",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "weight",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "该包裹内商品重量",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "oid",
+        "type": "Long",
+        "example": "1469848979893125124",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "待发货的商品交易明细编号",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/Long",
+        "struct": {
+          "name": "Long",
+          "type": "Long",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": []
+        }
+      },
+      {
+        "name": "request_id",
+        "type": "String",
+        "example": "20180905024056051200001",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "请求唯一标识",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tid",
+        "type": "String",
+        "example": "E20180905024056051200001",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "total_num",
+        "type": "Integer",
+        "example": "3",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品总数量",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "单品多运单发货是否成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "单品多运单发货是否成功",
+          "defaultValue": "false",
+          "example": "true",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanTradeDcDeliveryOrdersingleitemsendParams youzanTradeDcDeliveryOrdersingleitemsendParams = new YouzanTradeDcDeliveryOrdersingleitemsendParams();\n\nyouzanTradeDcDeliveryOrdersingleitemsendParams.setExPackages(\"[{\"express\":{\"expressNo\":\"11111\",\"expressId\":1},\"num\":\"1\",\"weight\":null},{\"express\":{\"expressNo\":\"11112\",\"expressId\":2},\"num\":\"1\",\"weight\":null}]\");\nyouzanTradeDcDeliveryOrdersingleitemsendParams.setOid(1501090164178949003L);\nyouzanTradeDcDeliveryOrdersingleitemsendParams.setRequestId(\"1496300283166195715\");\nyouzanTradeDcDeliveryOrdersingleitemsendParams.setTid(\"E20190220114426088700008\");\nyouzanTradeDcDeliveryOrdersingleitemsendParams.setTotalNum(2L);\n\nYouzanTradeDcDeliveryOrdersingleitemsend youzanTradeDcDeliveryOrdersingleitemsend = new YouzanTradeDcDeliveryOrdersingleitemsend();\nyouzanTradeDcDeliveryOrdersingleitemsend.setAPIParams(youzanTradeDcDeliveryOrdersingleitemsendParams);\nYouzanTradeDcDeliveryOrdersingleitemsendResult result = client.invoke(youzanTradeDcDeliveryOrdersingleitemsend);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"ex_packages\", \"[{\"express\":{\"expressNo\":\"11111\",\"expressId\":1},\"num\":\"1\",\"weight\":null},{\"express\":{\"expressNo\":\"11112\",\"expressId\":2},\"num\":\"1\",\"weight\":null}]\");\ndict.Add(\"oid\", 1501090164178949003);\ndict.Add(\"request_id\", \"1496300283166195715\");\ndict.Add(\"tid\", \"E20190220114426088700008\");\ndict.Add(\"total_num\", 2);\n\n\nvar result = yzClient.Invoke(\"youzan.trade.dc.delivery.ordersingleitemsend\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['ex_packages']=\"[{\"express\":{\"expressNo\":\"11111\",\"expressId\":1},\"num\":\"1\",\"weight\":null},{\"express\":{\"expressNo\":\"11112\",\"expressId\":2},\"num\":\"1\",\"weight\":null}]\"\nparams['oid']=1501090164178949003\nparams['request_id']=\"1496300283166195715\"\nparams['tid']=\"E20190220114426088700008\"\nparams['total_num']=2\n\nfiles=[]\n\nprint client.invoke('youzan.trade.dc.delivery.ordersingleitemsend', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['ex_packages']=\"[{\"express\":{\"expressNo\":\"11111\",\"expressId\":1},\"num\":\"1\",\"weight\":null},{\"express\":{\"expressNo\":\"11112\",\"expressId\":2},\"num\":\"1\",\"weight\":null}]\";\nparams['oid']=1501090164178949003;\nparams['request_id']=\"1496300283166195715\";\nparams['tid']=\"E20190220114426088700008\";\nparams['total_num']=2;\n\n\nvar promise = YZClient.invoke('youzan.trade.dc.delivery.ordersingleitemsend', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.trade.dc.delivery.ordersingleitemsend'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'ex_packages' => '[{\"express\":{\"expressNo\":\"11111\",\"expressId\":1},\"num\":\"1\",\"weight\":null},{\"express\":{\"expressNo\":\"11112\",\"expressId\":2},\"num\":\"1\",\"weight\":null}]',\n    'oid' => '1501090164178949003',\n    'request_id' => '1496300283166195715',\n    'tid' => 'E20190220114426088700008',\n    'total_num' => '2',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "102570002",
+        "errorDesc": "发货商品不合法, 无法发货",
+        "solution": null
+      },
+      {
+        "errorCode": "102570019",
+        "errorDesc": "订单已经发过货了",
+        "solution": null
+      },
+      {
+        "errorCode": "102570059",
+        "errorDesc": "所发包裹的商品总数必须等于该商品的购买总数",
+        "solution": null
+      },
+      {
+        "errorCode": "102570003",
+        "errorDesc": "订单只有在待发货的状态下才允许发货",
+        "solution": null
+      }
+    ],
+    "responseDemo": "{\"response\":{\"is_success\":true}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"订单已经发过货了\",\"code\":102570019}}"
+  },
+  "name": "ordersingleitemsend",
+  "ids": [
+    11390
+  ],
+  "scenarios": "单商品分为多个运单发货",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "单品多运单"
+}

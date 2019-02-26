@@ -1,0 +1,103 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.product.category/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.product.category/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "类目名称（分类名称字符数在1-20之间）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "parent_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "父级节点id（默认0，表示第一层分类）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "请求来源（需调用方自定义标识：OPEN_XXXX）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "create_result",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "创建成功分类id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "create_result",
+          "type": "Number",
+          "isNeed": "false",
+          "desc": "创建成功分类id",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailProductCategoryCreateParams youzanRetailProductCategoryCreateParams = new YouzanRetailProductCategoryCreateParams();\n\nyouzanRetailProductCategoryCreateParams.setName(\"测试分类添加\");\nyouzanRetailProductCategoryCreateParams.setParentId(0L);\nyouzanRetailProductCategoryCreateParams.setSource(\"third-partner\");\n\nYouzanRetailProductCategoryCreate youzanRetailProductCategoryCreate = new YouzanRetailProductCategoryCreate();\nyouzanRetailProductCategoryCreate.setAPIParams(youzanRetailProductCategoryCreateParams);\nYouzanRetailProductCategoryCreateResult result = client.invoke(youzanRetailProductCategoryCreate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"name\", \"测试分类添加\");\ndict.Add(\"parent_id\", 0);\ndict.Add(\"source\", \"third-partner\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.product.category.create\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.product.category.create'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'name' => '测试分类添加',\n    'parent_id' => '0',\n    'source' => 'third-partner',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['name']=\"测试分类添加\"\nparams['parent_id']=0\nparams['source']=\"third-partner\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.product.category.create', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['name']=\"测试分类添加\";\nparams['parent_id']=0;\nparams['source']=\"third-partner\";\n\n\nvar promise = YZClient.invoke('youzan.retail.product.category.create', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":636571}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"类目父类不存在\",\"code\":221200004}}"
+  },
+  "name": "create",
+  "ids": [
+    8957
+  ],
+  "scenarios": "新增商品分类  ",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "新增商品分类"
+}

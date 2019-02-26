@@ -1,0 +1,304 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.open.purchaseorder/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.open.purchaseorder/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "purchase_order_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "采购单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "零售调用来源(调用方和有赞约定的值)",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "OpenPurchaseOrderDTO",
+        "isRequired": "否",
+        "desc": "采购单",
+        "isStruct": true,
+        "structUrl": "/web/meta/OpenPurchaseOrderDTO",
+        "struct": {
+          "name": "response",
+          "type": "OpenPurchaseOrderDTO",
+          "isNeed": "true",
+          "desc": "采购单",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "purchase_order_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "采购单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "warehouse_code",
+              "type": "String",
+              "isNeed": null,
+              "desc": "仓库编码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "warehouse_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "仓库名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "supplier_code",
+              "type": "String",
+              "isNeed": null,
+              "desc": "供应商编码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "supplier_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "供应商名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "remark",
+              "type": "String",
+              "isNeed": null,
+              "desc": "备注",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "with_tax_total_cost",
+              "type": "String",
+              "isNeed": null,
+              "desc": "含税成本价总价",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "without_tax_total_cost",
+              "type": "String",
+              "isNeed": null,
+              "desc": "不含税成本价总价",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "order_items",
+              "type": "OpenPurchaseOrderItemDTO[]",
+              "isNeed": null,
+              "desc": "采购申请单明细",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "sku_code",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "sku编码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sku_no",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "sku条码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "product_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "unit",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "单位",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "apply_num",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "申请数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "actual_in_num",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "实际入库数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "with_tax_unit_cost",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "含税成本价",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "with_tax_total_cost",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "含税成本价总价",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "without_tax_unit_cost",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "不含税成本价",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "without_tax_total_cost",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "不含税成本价总价",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "output_tax_rate",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "销项税率",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "input_tax_rate",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "进项税率",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailOpenPurchaseorderGetParams youzanRetailOpenPurchaseorderGetParams = new YouzanRetailOpenPurchaseorderGetParams();\n\nyouzanRetailOpenPurchaseorderGetParams.setRetailSource(\"111\");\nyouzanRetailOpenPurchaseorderGetParams.setPurchaseOrderNo(\"SCG180927223049808790\");\n\nYouzanRetailOpenPurchaseorderGet youzanRetailOpenPurchaseorderGet = new YouzanRetailOpenPurchaseorderGet();\nyouzanRetailOpenPurchaseorderGet.setAPIParams(youzanRetailOpenPurchaseorderGetParams);\nYouzanRetailOpenPurchaseorderGetResult result = client.invoke(youzanRetailOpenPurchaseorderGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"retail_source\", \"111\");\ndict.Add(\"purchase_order_no\", \"SCG180927223049808790\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.open.purchaseorder.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.open.purchaseorder.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'retail_source' => '111',\n    'purchase_order_no' => 'SCG180927223049808790',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['retail_source']=\"111\"\nparams['purchase_order_no']=\"SCG180927223049808790\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.open.purchaseorder.get', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['retail_source']=\"111\";\nparams['purchase_order_no']=\"SCG180927223049808790\";\n\n\nvar promise = YZClient.invoke('youzan.retail.open.purchaseorder.get', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"with_tax_total_cost\":\"4132\",\"without_tax_total_cost\":\"4132\",\"warehouse_name\":\"独立仓1\",\"warehouse_code\":\"28169835\",\"remark\":\"\",\"supplier_name\":\"测试店\",\"purchase_order_no\":\"SCG180927223049808790\",\"order_items\":[{\"input_tax_rate\":\"0\",\"with_tax_total_cost\":\"4132\",\"with_tax_unit_cost\":\"1033\",\"unit\":\"件\",\"without_tax_total_cost\":\"4132\",\"actual_in_num\":\"0\",\"sku_no\":\"P180920871426048\",\"output_tax_rate\":\"0\",\"without_tax_unit_cost\":\"1033\",\"apply_num\":\"4\",\"product_name\":\"啊啊啊啊\",\"sku_code\":\"BM35749174628\"}]}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"数据异常\",\"code\":0}}"
+  },
+  "name": "get",
+  "ids": [
+    10778
+  ],
+  "scenarios": "采购单查询",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "采购单查询"
+}

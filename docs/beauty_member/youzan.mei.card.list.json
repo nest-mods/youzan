@@ -1,0 +1,340 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.card/3.0.0/list"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.card/3.0.0/list"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "card_aliases",
+        "type": "String[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "查询的卡列表",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "card_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "卡名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "card_type",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "卡类型",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "delete",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否删除",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "dept_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "分店信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "display",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否上架销售",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "keyword",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "关键字",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "查询的页数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业显示的条目数量，最多200",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "wap_show",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "是否在网店展示",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "paginator",
+        "type": "MeiPaginator",
+        "isRequired": "否",
+        "desc": "分页信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiPaginator",
+        "struct": {
+          "name": "paginator",
+          "type": "MeiPaginator",
+          "isNeed": "true",
+          "desc": "分页信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "total_count",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总记录数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "第几页",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page_size",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "每页显示的记录数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "items",
+        "type": "MeiCardListInfo[]",
+        "isRequired": "否",
+        "desc": "卡列表项",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiCardListInfo",
+        "struct": {
+          "name": "items",
+          "type": "MeiCardListInfo[]",
+          "isNeed": "true",
+          "desc": "卡列表项",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "wap_show",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否在网店展示\n0 否\n1 是",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "backgroud_img",
+              "type": "String",
+              "isNeed": null,
+              "desc": "背景图片url",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "on_shelve",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "上否上架销售\n0 否\n1 是",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created_at",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "创建时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "card_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "卡类型\n1 折扣卡\n2 次卡\n3 储值卡",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "card_alias",
+              "type": "String",
+              "isNeed": null,
+              "desc": "卡标识",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "kdt_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "店铺id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "deleted",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否删除\n0 删除\n1 未删除",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "updated_at",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "更新时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "card_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "卡名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "prepaid_gift_price",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "赠送储值金额",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "card_price",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "卡售价",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\n    \"response\": {\n        \"paginator\": {\n            \"total_count\": 5, \n            \"page\": 1, \n            \"page_size\": 1\n        }, \n        \"items\": [\n            {\n                \"wap_show\": 1, \n                \"backgroud_img\": \"\", \n                \"on_shelve\": 1, \n                \"created_at\": 1517841183, \n                \"card_type\": 3, \n                \"card_alias\": \"27com6h2o4pjlB\", \n                \"kdt_id\": 40328097, \n                \"deleted\": 0, \n                \"updated_at\": 1517841189, \n                \"card_name\": \"测试\", \n                \"prepaid_gift_price\": 0, \n                \"card_price\": 10, \n                \"free\": 0\n            }\n        ]\n    }\n}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"票据无效,请重新登录\",\"code\":230101003}}"
+  },
+  "name": "list",
+  "ids": [
+    10339
+  ],
+  "scenarios": "获取会员卡列表",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "获取会员卡列表"
+}

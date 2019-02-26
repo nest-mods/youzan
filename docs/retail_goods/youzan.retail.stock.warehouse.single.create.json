@@ -1,0 +1,213 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.stock.warehouse.single/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.stock.warehouse.single/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "address",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "详细地址",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "city",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "城市",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "contact_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "联系人姓名",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "contact_phone_code",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "联系电话区号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "contact_phone_num",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "联系电话号码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "county",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "区域",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "county_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "区域变慢",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "lat",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "经度",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "lng",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "纬度",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "example": "a仓库",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "仓库名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "province",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "省份",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "备注",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "来源",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "创建仓库的kdtid",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "response",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "创建仓库的kdtid",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailStockWarehouseSingleCreateParams youzanRetailStockWarehouseSingleCreateParams = new YouzanRetailStockWarehouseSingleCreateParams();\n\nyouzanRetailStockWarehouseSingleCreateParams.setAddress(\"浙江省杭州市西湖区翠苑街道学院路77号黄龙万科中心\");\nyouzanRetailStockWarehouseSingleCreateParams.setCity(\"杭州\");\nyouzanRetailStockWarehouseSingleCreateParams.setContactName(\"王博文\");\nyouzanRetailStockWarehouseSingleCreateParams.setContactPhoneCode(\"+86\");\nyouzanRetailStockWarehouseSingleCreateParams.setContactPhoneNum(\"18410438903\");\nyouzanRetailStockWarehouseSingleCreateParams.setCounty(\"西湖区\");\nyouzanRetailStockWarehouseSingleCreateParams.setCountyId(330106L);\nyouzanRetailStockWarehouseSingleCreateParams.setLat(\"30.275489\");\nyouzanRetailStockWarehouseSingleCreateParams.setLng(\"120.125981\");\nyouzanRetailStockWarehouseSingleCreateParams.setName(\"测试开放仓库2\");\nyouzanRetailStockWarehouseSingleCreateParams.setProvince(\"浙江省\");\nyouzanRetailStockWarehouseSingleCreateParams.setRemark(\"测试开发接口\");\nyouzanRetailStockWarehouseSingleCreateParams.setRetailSource(\"test\");\n\nYouzanRetailStockWarehouseSingleCreate youzanRetailStockWarehouseSingleCreate = new YouzanRetailStockWarehouseSingleCreate();\nyouzanRetailStockWarehouseSingleCreate.setAPIParams(youzanRetailStockWarehouseSingleCreateParams);\nYouzanRetailStockWarehouseSingleCreateResult result = client.invoke(youzanRetailStockWarehouseSingleCreate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"address\", \"浙江省杭州市西湖区翠苑街道学院路77号黄龙万科中心\");\ndict.Add(\"city\", \"杭州\");\ndict.Add(\"contact_name\", \"王博文\");\ndict.Add(\"contact_phone_code\", \"+86\");\ndict.Add(\"contact_phone_num\", \"18410438903\");\ndict.Add(\"county\", \"西湖区\");\ndict.Add(\"county_id\", 330106);\ndict.Add(\"lat\", \"30.275489\");\ndict.Add(\"lng\", \"120.125981\");\ndict.Add(\"name\", \"测试开放仓库2\");\ndict.Add(\"province\", \"浙江省\");\ndict.Add(\"remark\", \"测试开发接口\");\ndict.Add(\"retail_source\", \"test\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.stock.warehouse.single.create\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.stock.warehouse.single.create'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'address' => '浙江省杭州市西湖区翠苑街道学院路77号黄龙万科中心',\n    'city' => '杭州',\n    'contact_name' => '王博文',\n    'contact_phone_code' => '+86',\n    'contact_phone_num' => '18410438903',\n    'county' => '西湖区',\n    'county_id' => '330106',\n    'lat' => '30.275489',\n    'lng' => '120.125981',\n    'name' => '测试开放仓库2',\n    'province' => '浙江省',\n    'remark' => '测试开发接口',\n    'retail_source' => 'test',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['address']=\"浙江省杭州市西湖区翠苑街道学院路77号黄龙万科中心\"\nparams['city']=\"杭州\"\nparams['contact_name']=\"王博文\"\nparams['contact_phone_code']=\"+86\"\nparams['contact_phone_num']=\"18410438903\"\nparams['county']=\"西湖区\"\nparams['county_id']=330106\nparams['lat']=\"30.275489\"\nparams['lng']=\"120.125981\"\nparams['name']=\"测试开放仓库2\"\nparams['province']=\"浙江省\"\nparams['remark']=\"测试开发接口\"\nparams['retail_source']=\"test\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.stock.warehouse.single.create', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['address']=\"浙江省杭州市西湖区翠苑街道学院路77号黄龙万科中心\";\nparams['city']=\"杭州\";\nparams['contact_name']=\"王博文\";\nparams['contact_phone_code']=\"+86\";\nparams['contact_phone_num']=\"18410438903\";\nparams['county']=\"西湖区\";\nparams['county_id']=330106;\nparams['lat']=\"30.275489\";\nparams['lng']=\"120.125981\";\nparams['name']=\"测试开放仓库2\";\nparams['province']=\"浙江省\";\nparams['remark']=\"测试开发接口\";\nparams['retail_source']=\"test\";\n\n\nvar promise = YZClient.invoke('youzan.retail.stock.warehouse.single.create', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":23602002}",
+    "errorResponseDemo": null
+  },
+  "name": "create",
+  "ids": [
+    10222
+  ],
+  "scenarios": "仓库中心创建独立仓接口",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "创建独立仓"
+}

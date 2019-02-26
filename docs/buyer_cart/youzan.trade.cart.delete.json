@@ -1,0 +1,98 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.trade.cart/3.0.0/delete"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.trade.cart/3.0.0/delete"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "item_list",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品列表信息，goods_id(商品id)、sku_id(sku id)、kdt_id(店铺id)。\n例如\n[{\"kdt_id\":55,\"goods_id\":1103945,\"sku_id\":2722}]",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "nobody",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "会话key,如果没有该值，填",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "操作是否成功，true为成功，false为失败",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "操作是否成功，true为成功，false为失败",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanTradeCartDeleteParams youzanTradeCartDeleteParams = new YouzanTradeCartDeleteParams();\n\nyouzanTradeCartDeleteParams.setItemList(\"[{\"kdt_id\":63077,\"goods_id\": 321211656,\"sku_id\": 36217407}]\");\n\nYouzanTradeCartDelete youzanTradeCartDelete = new YouzanTradeCartDelete();\nyouzanTradeCartDelete.setAPIParams(youzanTradeCartDeleteParams);\nYouzanTradeCartDeleteResult result = client.invoke(youzanTradeCartDelete);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"item_list\", \"[{\"kdt_id\":63077,\"goods_id\": 321211656,\"sku_id\": 36217407}]\");\n\n\nvar result = yzClient.Invoke(\"youzan.trade.cart.delete\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.trade.cart.delete'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'item_list' => '[{\"kdt_id\":63077,\"goods_id\": 321211656,\"sku_id\": 36217407}]',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['item_list']=\"[{\"kdt_id\":63077,\"goods_id\": 321211656,\"sku_id\": 36217407}]\"\n\nfiles=[]\n\nprint client.invoke('youzan.trade.cart.delete', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['item_list']=\"[{\"kdt_id\":63077,\"goods_id\": 321211656,\"sku_id\": 36217407}]\";\n\n\nvar promise = YZClient.invoke('youzan.trade.cart.delete', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "50000",
+        "errorDesc": "内部业务异常",
+        "solution": "请联系技术支持答疑"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"is_success\":true}}",
+    "errorResponseDemo": "{\"error_response\":{\"code\":50000,\"msg\":\"删除失败\"}}"
+  },
+  "name": "delete",
+  "ids": [
+    7945
+  ],
+  "scenarios": "购物车删除商品",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "购物车删除商品"
+}

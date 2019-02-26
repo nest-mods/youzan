@@ -1,0 +1,280 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.open.supplier/3.0.0/query"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.open.supplier/3.0.0/query"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "page_no",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "页码\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "每页条数\t",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "对接时与相关人员确认",
+        "isRequired": "是",
+        "desc": "零售来源",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "supplier_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "供应商名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "suppliers",
+        "type": "OpenVendorDTO[]",
+        "isRequired": "否",
+        "desc": "供应商信息列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/OpenVendorDTO",
+        "struct": {
+          "name": "suppliers",
+          "type": "OpenVendorDTO[]",
+          "isNeed": "true",
+          "desc": "供应商信息列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "supplier_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "供应商名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "supplier_code",
+              "type": "String",
+              "isNeed": null,
+              "desc": "供应商编码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "phone",
+              "type": "String",
+              "isNeed": null,
+              "desc": "公司电话",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "contacts",
+              "type": "String",
+              "isNeed": null,
+              "desc": "联系人",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "contacts_phone",
+              "type": "String",
+              "isNeed": null,
+              "desc": "联系人电话",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "address",
+              "type": "String",
+              "isNeed": null,
+              "desc": "地址",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "remark",
+              "type": "String",
+              "isNeed": null,
+              "desc": "备注",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "qq",
+              "type": "String",
+              "isNeed": null,
+              "desc": "qq号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "wei_xin",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微信号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "fax",
+              "type": "String",
+              "isNeed": null,
+              "desc": "传真",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "email",
+              "type": "String",
+              "isNeed": null,
+              "desc": "邮箱",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "paginator",
+        "type": "OpenPaginatorDTO",
+        "isRequired": "否",
+        "desc": "分页信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/OpenPaginatorDTO",
+        "struct": {
+          "name": "paginator",
+          "type": "OpenPaginatorDTO",
+          "isNeed": "true",
+          "desc": "分页信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "page",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "页码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page_size",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "分页大小",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "total_count",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailOpenSupplierQueryParams youzanRetailOpenSupplierQueryParams = new YouzanRetailOpenSupplierQueryParams();\n\nyouzanRetailOpenSupplierQueryParams.setSupplierName(\"测试新增\");\nyouzanRetailOpenSupplierQueryParams.setPageSize(20L);\nyouzanRetailOpenSupplierQueryParams.setPageNo(1L);\nyouzanRetailOpenSupplierQueryParams.setRetailSource(\"RENWOXING\");\n\nYouzanRetailOpenSupplierQuery youzanRetailOpenSupplierQuery = new YouzanRetailOpenSupplierQuery();\nyouzanRetailOpenSupplierQuery.setAPIParams(youzanRetailOpenSupplierQueryParams);\nYouzanRetailOpenSupplierQueryResult result = client.invoke(youzanRetailOpenSupplierQuery);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"supplier_name\", \"测试新增\");\ndict.Add(\"page_size\", 20);\ndict.Add(\"page_no\", 1);\ndict.Add(\"retail_source\", \"RENWOXING\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.open.supplier.query\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.open.supplier.query'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'supplier_name' => '测试新增',\n    'page_size' => '20',\n    'page_no' => '1',\n    'retail_source' => 'RENWOXING',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['supplier_name']=\"测试新增\"\nparams['page_size']=20\nparams['page_no']=1\nparams['retail_source']=\"RENWOXING\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.open.supplier.query', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['supplier_name']=\"测试新增\";\nparams['page_size']=20;\nparams['page_no']=1;\nparams['retail_source']=\"RENWOXING\";\n\n\nvar promise = YZClient.invoke('youzan.retail.open.supplier.query', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "234003023",
+        "errorDesc": "查询供应商失败",
+        "solution": null
+      }
+    ],
+    "responseDemo": "{\"response\":{\"suppliers\":[{\"qq\":\"\",\"contacts_phone\":\"\",\"address\":\"\",\"phone\":\"15666666666\",\"wei_xin\":\"\",\"remark\":\"\",\"supplier_name\":\"测试新增/修改\",\"fax\":\"\",\"supplier_code\":\"SGYS181122201322275800\",\"contacts\":\"\",\"email\":\"\"},{\"qq\":\"\",\"contacts_phone\":\"\",\"address\":\"\",\"phone\":\"15666666666\",\"wei_xin\":\"\",\"remark\":\"\",\"supplier_name\":\"测试新增7\",\"fax\":\"\",\"supplier_code\":\"SGYS181024102708771912\",\"contacts\":\"\",\"email\":\"\"},{\"qq\":\"\",\"contacts_phone\":\"\",\"address\":\"\",\"phone\":\"15666666666\",\"wei_xin\":\"\",\"remark\":\"\",\"supplier_name\":\"测试新增6\",\"fax\":\"\",\"supplier_code\":\"SGYS181024102703098638\",\"contacts\":\"\",\"email\":\"\"},{\"qq\":\"\",\"contacts_phone\":\"\",\"address\":\"\",\"phone\":\"15666666666\",\"wei_xin\":\"\",\"remark\":\"\",\"supplier_name\":\"测试新增5!\",\"fax\":\"\",\"supplier_code\":\"SGYS181023180421733762\",\"contacts\":\"\",\"email\":\"\"},{\"qq\":\"\",\"contacts_phone\":\"\",\"address\":\"\",\"phone\":\"15666666666\",\"wei_xin\":\"\",\"remark\":\"\",\"supplier_name\":\"测试新增4\",\"fax\":\"\",\"supplier_code\":\"SGYS181023180417625963\",\"contacts\":\"\",\"email\":\"\"}],\"paginator\":{\"total_count\":5,\"page\":1,\"page_size\":20}}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"参数 token 无效\",\"code\":40010,\"sub_msg\":\"token无效，该token不存在或已过期\",\"sub_code\":10000,\"sub_data\":\"\"}}"
+  },
+  "name": "query",
+  "ids": [
+    10766
+  ],
+  "scenarios": "供应商信息查询",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "供应商信息查询"
+}

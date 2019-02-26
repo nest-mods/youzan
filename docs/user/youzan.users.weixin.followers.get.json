@@ -1,0 +1,117 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.users.weixin.followers/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.users.weixin.followers/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "end_follow",
+        "type": "Date",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "关注的结束时间。查询在该时间之前关注的粉丝，不能为空，查询时间间隔不能超过一天，格式同start_follow",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fields",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "需要返回的微信粉丝对象字段，如nick,avatar等。可选值：CrmWeixinFans微信粉丝结构体中所有字段均可返回；多个字段用“,”分隔。如果为空则返回所有",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "only_follow",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "1",
+        "isRequired": "否",
+        "desc": "是否仅拉取关注的粉丝。1:仅拉取已关注的粉丝 0:拉取已关注和已跑路粉丝",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_no",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "页码，page_no * page_size参数不超过10000。若备选数据多于10000条，请通过调整start_follow/end_follow来缩小时间范围。",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "每页条数，最大值：50",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "start_follow",
+        "type": "Date",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "关注的起始时间。查询在该时间之后（包含该时间）关注的粉丝，不能为空。格式可为“20170101”或“2017-01-01 12:00:00\"",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": null,
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanUsersWeixinFollowersGetParams youzanUsersWeixinFollowersGetParams = new YouzanUsersWeixinFollowersGetParams();\n\nyouzanUsersWeixinFollowersGetParams.setStartFollow(\"2018-03-21 00:00:00\");\nyouzanUsersWeixinFollowersGetParams.setPageSize(10L);\nyouzanUsersWeixinFollowersGetParams.setPageNo(1L);\nyouzanUsersWeixinFollowersGetParams.setOnlyFollow(0L);\nyouzanUsersWeixinFollowersGetParams.setEndFollow(\"2018-03-22 00:00:00\");\n\nYouzanUsersWeixinFollowersGet youzanUsersWeixinFollowersGet = new YouzanUsersWeixinFollowersGet();\nyouzanUsersWeixinFollowersGet.setAPIParams(youzanUsersWeixinFollowersGetParams);\nYouzanUsersWeixinFollowersGetResult result = client.invoke(youzanUsersWeixinFollowersGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"start_follow\", \"2018-03-21 00:00:00\");\ndict.Add(\"page_size\", 10);\ndict.Add(\"page_no\", 1);\ndict.Add(\"only_follow\", 0);\ndict.Add(\"end_follow\", \"2018-03-22 00:00:00\");\n\n\nvar result = yzClient.Invoke(\"youzan.users.weixin.followers.get\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['start_follow']=\"2018-03-21 00:00:00\"\nparams['page_size']=10\nparams['page_no']=1\nparams['only_follow']=0\nparams['end_follow']=\"2018-03-22 00:00:00\"\n\nfiles=[]\n\nprint client.invoke('youzan.users.weixin.followers.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['start_follow']=\"2018-03-21 00:00:00\";\nparams['page_size']=10;\nparams['page_no']=1;\nparams['only_follow']=0;\nparams['end_follow']=\"2018-03-22 00:00:00\";\n\n\nvar promise = YZClient.invoke('youzan.users.weixin.followers.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.users.weixin.followers.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'start_follow' => '2018-03-21 00:00:00',\n    'page_size' => '10',\n    'page_no' => '1',\n    'only_follow' => '0',\n    'end_follow' => '2018-03-22 00:00:00',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": null,
+    "errorResponseDemo": null
+  },
+  "name": "get",
+  "ids": [
+    7964
+  ],
+  "scenarios": "查询微信粉丝用户信息\n注意：该接口即将废弃，请使用youzan.users.weixin.followers.info.search.3.0.0",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "查询微信粉丝用户信息（即将废弃）"
+}

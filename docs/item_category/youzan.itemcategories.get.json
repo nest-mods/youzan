@@ -1,0 +1,161 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.itemcategories/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.itemcategories/3.0.0/get"
+      }
+    ],
+    "requestParams": [],
+    "responseParams": [
+      {
+        "name": "categories",
+        "type": "Categories[]",
+        "isRequired": "否",
+        "desc": "商品自定义标签列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/Categories",
+        "struct": {
+          "name": "categories",
+          "type": "Categories[]",
+          "isNeed": "true",
+          "desc": "商品自定义标签列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "cid",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "节点",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "parent_cid",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "父节点",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_parent",
+              "type": "Boolean",
+              "isNeed": null,
+              "desc": "是否为父节点",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sub_categories",
+              "type": "SubCategories[]",
+              "isNeed": null,
+              "desc": "分类",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "cid",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "节点id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "parent_cid",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "父节点id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "is_parent",
+                  "type": "Boolean",
+                  "isNeed": null,
+                  "desc": "是否为父节点",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanItemcategoriesGetParams youzanItemcategoriesGetParams = new YouzanItemcategoriesGetParams();\n\n\nYouzanItemcategoriesGet youzanItemcategoriesGet = new YouzanItemcategoriesGet();\nyouzanItemcategoriesGet.setAPIParams(youzanItemcategoriesGetParams);\nYouzanItemcategoriesGetResult result = client.invoke(youzanItemcategoriesGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\n\n\nvar result = yzClient.Invoke(\"youzan.itemcategories.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\n\nfiles=[]\n\nprint client.invoke('youzan.itemcategories.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\n\n\nvar promise = YZClient.invoke('youzan.itemcategories.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.itemcategories.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"categories\":[{\"cid\":1000000,\"parent_cid\":0,\"name\":\"\\u5973\\u4eba\",\"is_parent\":true,\"sub_categories\":[{\"cid\":1000000,\"parent_cid\":1000000,\"name\":\"\\u5973\\u4eba\",\"is_parent\":false,\"sub_categories\":null}]},{\"cid\":2000000,\"parent_cid\":0,\"name\":\"\\u7537\\u4eba\",\"is_parent\":true,\"sub_categories\":[{\"cid\":2000000,\"parent_cid\":2000000,\"name\":\"\\u7537\\u4eba\",\"is_parent\":false,\"sub_categories\":null}]},{\"cid\":3000000,\"parent_cid\":0,\"name\":\"\\u98df\\u54c1\",\"is_parent\":true,\"sub_categories\":[{\"cid\":3000000,\"parent_cid\":3000000,\"name\":\"\\u98df\\u54c1\",\"is_parent\":false,\"sub_categories\":null}]},{\"cid\":4000000,\"parent_cid\":0,\"name\":\"\\u7f8e\\u5986\",\"is_parent\":true,\"sub_categories\":[{\"cid\":4000000,\"parent_cid\":4000000,\"name\":\"\\u7f8e\\u5986\",\"is_parent\":false,\"sub_categories\":null}]},{\"cid\":5000000,\"parent_cid\":0,\"name\":\"\\u4eb2\\u5b50\",\"is_parent\":true,\"sub_categories\":[{\"cid\":5000000,\"parent_cid\":5000000,\"name\":\"\\u4eb2\\u5b50\",\"is_parent\":false,\"sub_categories\":null}]},{\"cid\":6000000,\"parent_cid\":0,\"name\":\"\\u5c45\\u5bb6\",\"is_parent\":true,\"sub_categories\":[{\"cid\":6000000,\"parent_cid\":6000000,\"name\":\"\\u5c45\\u5bb6\",\"is_parent\":false,\"sub_categories\":null}]},{\"cid\":7000000,\"parent_cid\":0,\"name\":\"\\u6570\\u7801\\u5bb6\\u7535\",\"is_parent\":true,\"sub_categories\":[{\"cid\":7000000,\"parent_cid\":7000000,\"name\":\"\\u6570\\u7801\\u5bb6\\u7535\",\"is_parent\":false,\"sub_categories\":null}]},{\"cid\":8000000,\"parent_cid\":0,\"name\":\"\\u5176\\u4ed6\",\"is_parent\":true,\"sub_categories\":[{\"cid\":8000001,\"parent_cid\":8000000,\"name\":\"\\u793c\\u54c1\\u9c9c\\u82b1\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000002,\"parent_cid\":8000000,\"name\":\"\\u9910\\u996e\\u5916\\u5356\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000003,\"parent_cid\":8000000,\"name\":\"\\u4e3d\\u4eba\\u5065\\u8eab\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000004,\"parent_cid\":8000000,\"name\":\"\\u4f11\\u95f2\\u5a31\\u4e50\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000005,\"parent_cid\":8000000,\"name\":\"\\u9152\\u5e97\\u5ba2\\u6808\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000006,\"parent_cid\":8000000,\"name\":\"\\u5a5a\\u5e86\\u6444\\u5f71\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000007,\"parent_cid\":8000000,\"name\":\"\\u6c7d\\u8f66\\u517b\\u62a4\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000008,\"parent_cid\":8000000,\"name\":\"\\u5bb6\\u653f\\u670d\\u52a1\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000009,\"parent_cid\":8000000,\"name\":\"\\u95e8\\u7968\\u5361\\u5238\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000010,\"parent_cid\":8000000,\"name\":\"\\u5bb6\\u88c5\\u5efa\\u6750\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000011,\"parent_cid\":8000000,\"name\":\"\\u949f\\u8868\\u773c\\u955c\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000012,\"parent_cid\":8000000,\"name\":\"\\u5ba0\\u7269\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000013,\"parent_cid\":8000000,\"name\":\"\\u6587\\u5316\\u6536\\u85cf\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000014,\"parent_cid\":8000000,\"name\":\"\\u65e5\\u7528\\u767e\\u8d27\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000015,\"parent_cid\":8000000,\"name\":\"\\u6559\\u80b2\\u57f9\\u8bad\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000016,\"parent_cid\":8000000,\"name\":\"\\u5a92\\u4f53\\u670d\\u52a1\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000018,\"parent_cid\":8000000,\"name\":\"\\u5145\\u503c\\u7f34\\u8d39\",\"is_parent\":false,\"sub_categories\":null},{\"cid\":8000017,\"parent_cid\":8000000,\"name\":\"\\u5176\\u4ed6\",\"is_parent\":false,\"sub_categories\":null}]}]}}",
+    "errorResponseDemo": "{\n\t\"error_response\": {\n\t\t\"code\": 40010,\n\t\t\"msg\": \"非法访问码\"\n\t}\n}"
+  },
+  "name": "get",
+  "ids": [
+    8065
+  ],
+  "scenarios": "获取商品类目二维列表",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "获取商品类目二维列表"
+}

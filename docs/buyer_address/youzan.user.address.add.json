@@ -1,0 +1,191 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.user.address/3.0.0/add"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.user.address/3.0.0/add"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "address_detail",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "详细地址",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "area_code",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "区号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "city",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "市",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "community",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "社区",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "county",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "县",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "lat",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "纬度",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "lon",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "经度",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "postal_code",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "邮政编码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "province",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "省",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tel",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "手机号码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "user_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "用户名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "地址id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "response",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "地址id",
+          "defaultValue": null,
+          "example": "100286928",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanUserAddressAddParams youzanUserAddressAddParams = new YouzanUserAddressAddParams();\n\nyouzanUserAddressAddParams.setUserName(\"张三\");\nyouzanUserAddressAddParams.setTel(\"18858823477\");\nyouzanUserAddressAddParams.setProvince(\"浙江\");\nyouzanUserAddressAddParams.setCounty(\"西湖区\");\nyouzanUserAddressAddParams.setCity(\"杭州\");\nyouzanUserAddressAddParams.setAreaCode(\"330106\");\nyouzanUserAddressAddParams.setAddressDetail(\"黄龙万科中心\");\n\nYouzanUserAddressAdd youzanUserAddressAdd = new YouzanUserAddressAdd();\nyouzanUserAddressAdd.setAPIParams(youzanUserAddressAddParams);\nYouzanUserAddressAddResult result = client.invoke(youzanUserAddressAdd);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"user_name\", \"张三\");\ndict.Add(\"tel\", \"18858823477\");\ndict.Add(\"province\", \"浙江\");\ndict.Add(\"county\", \"西湖区\");\ndict.Add(\"city\", \"杭州\");\ndict.Add(\"area_code\", \"330106\");\ndict.Add(\"address_detail\", \"黄龙万科中心\");\n\n\nvar result = yzClient.Invoke(\"youzan.user.address.add\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['user_name']=\"张三\"\nparams['tel']=\"18858823477\"\nparams['province']=\"浙江\"\nparams['county']=\"西湖区\"\nparams['city']=\"杭州\"\nparams['area_code']=\"330106\"\nparams['address_detail']=\"黄龙万科中心\"\n\nfiles=[]\n\nprint client.invoke('youzan.user.address.add', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['user_name']=\"张三\";\nparams['tel']=\"18858823477\";\nparams['province']=\"浙江\";\nparams['county']=\"西湖区\";\nparams['city']=\"杭州\";\nparams['area_code']=\"330106\";\nparams['address_detail']=\"黄龙万科中心\";\n\n\nvar promise = YZClient.invoke('youzan.user.address.add', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.user.address.add'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'user_name' => '张三',\n    'tel' => '18858823477',\n    'province' => '浙江',\n    'county' => '西湖区',\n    'city' => '杭州',\n    'area_code' => '330106',\n    'address_detail' => '黄龙万科中心',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":100288621}",
+    "errorResponseDemo": null
+  },
+  "name": "add",
+  "ids": [
+    9416
+  ],
+  "scenarios": "买家新增收货地址",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "买家新增收货地址"
+}

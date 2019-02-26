@@ -1,0 +1,103 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.users.weixin.follower.tags/3.0.0/delete"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.users.weixin.follower.tags/3.0.0/delete"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "fans_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "微信粉丝用户ID。调用时，参数 weixin_openid 和 fans_id 选其一即可",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tags",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "标签名，多个标签名用“,”分隔",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "weixin_openid",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "微信粉丝用户的openid",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "删除是否成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "删除是否成功",
+          "defaultValue": null,
+          "example": "true",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanUsersWeixinFollowerTagsDeleteParams youzanUsersWeixinFollowerTagsDeleteParams = new YouzanUsersWeixinFollowerTagsDeleteParams();\n\nyouzanUsersWeixinFollowerTagsDeleteParams.setFansId(1243449718L);\nyouzanUsersWeixinFollowerTagsDeleteParams.setTags(\"测试标签\");\n\nYouzanUsersWeixinFollowerTagsDelete youzanUsersWeixinFollowerTagsDelete = new YouzanUsersWeixinFollowerTagsDelete();\nyouzanUsersWeixinFollowerTagsDelete.setAPIParams(youzanUsersWeixinFollowerTagsDeleteParams);\nYouzanUsersWeixinFollowerTagsDeleteResult result = client.invoke(youzanUsersWeixinFollowerTagsDelete);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"fans_id\", 1243449718);\ndict.Add(\"tags\", \"测试标签\");\n\n\nvar result = yzClient.Invoke(\"youzan.users.weixin.follower.tags.delete\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.users.weixin.follower.tags.delete'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'fans_id' => '1243449718',\n    'tags' => '测试标签',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['fans_id']=1243449718\nparams['tags']=\"测试标签\"\n\nfiles=[]\n\nprint client.invoke('youzan.users.weixin.follower.tags.delete', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['fans_id']=1243449718;\nparams['tags']=\"测试标签\";\n\n\nvar promise = YZClient.invoke('youzan.users.weixin.follower.tags.delete', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\n  \"response\": {\n    \"is_success\": true\n  }\n}",
+    "errorResponseDemo": "{\n  \"error_response\": {\n    \"code\": 40010,\n    \"msg\": \"非法访问码\"\n  }\n}"
+  },
+  "name": "delete",
+  "ids": [
+    8795
+  ],
+  "scenarios": "根据微信粉丝用户的 weixin_openid 或 fans_id 删除对应的标签\n一次删除的标签数量不能大于20",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "根据微信粉丝用户的 weixin_openid 或 fans_id 删除对应的标签"
+}

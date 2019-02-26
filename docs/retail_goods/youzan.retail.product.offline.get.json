@@ -1,0 +1,515 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.product.offline/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.product.offline/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "item_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "门店商品id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "source",
+        "type": "String",
+        "example": "OPEN_BACK_END",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "请求来源（需调用方自定义标识：OPEN_XXXX）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "offline_vo",
+        "type": "OfflineProductVO",
+        "isRequired": "否",
+        "desc": "门店商品详情",
+        "isStruct": true,
+        "structUrl": "/web/meta/OfflineProductVO",
+        "struct": {
+          "name": "offline_vo",
+          "type": "OfflineProductVO",
+          "isNeed": "false",
+          "desc": "门店商品详情",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "ic中的商品id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sku_center_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品库中的商品id（废弃）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "kdt_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "关联商户id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "category_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "分类id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "specifications",
+              "type": "String",
+              "isNeed": null,
+              "desc": "规格",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "photo_url",
+              "type": "String",
+              "isNeed": null,
+              "desc": "图片地址",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sku_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "编码（废弃）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "unit",
+              "type": "String",
+              "isNeed": null,
+              "desc": "单位",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "measurement",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "计量方式",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "last_cost_price",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "最后一次入库成本价(保留两位小数，实际传参*100后传入，如实际最后一次入库成本价2.22，实际传参为222)",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "avg_cost_price",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "平均成本价零售价(保留两位小数，实际传参*100后传入，如实际平均成本价2.22，实际传参为222)",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "retail_price",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "零售价(保留两位小数，实际传参*100后传入，如实际零售价2.22，实际传参为222)",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sell_stock_count",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "可售库存(保留三位小数，实际传参*1000后传入，如实际库存1.111，实际传参为1111)",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created_at",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "创建时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "updated_at",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "更新时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "spu_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品库商品id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "goods_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品编码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "on_sale_kdt_ids",
+              "type": "Number[]",
+              "isNeed": null,
+              "desc": "在售门店列表",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_display",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否上架 1：上架状态 0:未上架",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "combine_models",
+              "type": "OfflineCombineVO[]",
+              "isNeed": null,
+              "desc": "组合商品关联关系详情",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "related_combine_sku_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "组合商品关联的商品库商品skuId",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "related_combine_item_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "组合商品关联的商品库商品spuId",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "related_combine_num",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "组合数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sku_no",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "组合商品关联的商品库商品编码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "组合商品名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "related_combine_price",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "分摊价格",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "item_sku_models",
+              "type": "OfflineSkuModel[]",
+              "isNeed": null,
+              "desc": "门店商品规格明细",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "sku_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品规格id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "kdt_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "店铺id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "item_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "price",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "售价",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "s1",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "第一个规格值id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "s2",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "第二个规格值id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "s3",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "第三个规格值id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "s4",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "第四个规格值id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "s5",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "第五个规格值id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "规格名称（组合商品有效）",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "related_sku_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "关联的商品库商品skuid",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "related_item_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "关联的商品库商品spuid",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "last_cost_price",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "关联的商品库商品最后一次入库价",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "avg_cost_price",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "关联的商品库商品平均成本价",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailProductOfflineGetParams youzanRetailProductOfflineGetParams = new YouzanRetailProductOfflineGetParams();\n\nyouzanRetailProductOfflineGetParams.setItemId(426393566L);\nyouzanRetailProductOfflineGetParams.setSource(\"source\");\n\nYouzanRetailProductOfflineGet youzanRetailProductOfflineGet = new YouzanRetailProductOfflineGet();\nyouzanRetailProductOfflineGet.setAPIParams(youzanRetailProductOfflineGetParams);\nYouzanRetailProductOfflineGetResult result = client.invoke(youzanRetailProductOfflineGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"item_id\", 426393566);\ndict.Add(\"source\", \"source\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.product.offline.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.product.offline.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'item_id' => '426393566',\n    'source' => 'source',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['item_id']=426393566\nparams['source']=\"source\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.product.offline.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['item_id']=426393566;\nparams['source']=\"source\";\n\n\nvar promise = YZClient.invoke('youzan.retail.product.offline.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"sell_stock_count\":100000,\"avg_cost_price\":1,\"specifications\":\"红\",\"measurement\":0,\"retail_price\":1000,\"kdt_id\":311833,\"unit\":\"件\",\"sku_no\":\"P170925019574404\",\"category_id\":43601,\"sku_center_id\":2043730,\"name\":\"商品库商品613\",\"photo_url\":\"[{\\\"url\\\":\\\"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg\\\"}]\",\"id\":2055996,\"last_cost_price\":1}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"商品不存在!\",\"code\":122001001}}"
+  },
+  "name": "get",
+  "ids": [
+    8943
+  ],
+  "scenarios": "根据id查询门店商品详情",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "根据id查询门店商品详情"
+}

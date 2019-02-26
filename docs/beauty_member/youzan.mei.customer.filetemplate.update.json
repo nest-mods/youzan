@@ -1,0 +1,154 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.customer.filetemplate/3.0.0/update"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.customer.filetemplate/3.0.0/update"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "base_file_template",
+        "type": "MeiMemberFileTemplateItem[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "基础档案信息，不传入的条目将会被删除",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/MeiMemberFileTemplateItem",
+        "struct": {
+          "name": "MeiMemberFileTemplateItem[]",
+          "type": "MeiMemberFileTemplateItem[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "条目id，更新时必须填写，新建条目不用填写",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "isStruct": false,
+              "desc": "条目名称",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "type",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "条目类型。1 文本类型；2 日期类型；3 图片类型",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "secret_file_template",
+        "type": "MeiMemberFileTemplateItem[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "私密档案信息，不传入的条目将会被删除",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/MeiMemberFileTemplateItem",
+        "struct": {
+          "name": "MeiMemberFileTemplateItem[]",
+          "type": "MeiMemberFileTemplateItem[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "id",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "条目id，更新时必须填写，新建条目不用填写",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "isStruct": false,
+              "desc": "条目名称",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "type",
+              "type": "Number",
+              "isStruct": false,
+              "desc": "条目类型。1 文本类型；2 日期类型；3 图片类型",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "更新结果",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "更新结果",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\"response\":true}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"模板中的名字不能重复\",\"code\":10001}}"
+  },
+  "name": "update",
+  "ids": [
+    10291
+  ],
+  "scenarios": "更新会员档案模板，包括基础档案模板和私密档案模板",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "更新会员档案模板"
+}

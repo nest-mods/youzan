@@ -1,0 +1,143 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.customer.fileinfo/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.customer.fileinfo/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "yz_uid",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "要获取档案的会员id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "file_infos",
+        "type": "MeiCustomerFileInfo[]",
+        "isRequired": "否",
+        "desc": "会员档案值",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiCustomerFileInfo",
+        "struct": {
+          "name": "file_infos",
+          "type": "MeiCustomerFileInfo[]",
+          "isNeed": "true",
+          "desc": "会员档案值",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "档案名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "档案id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "档案类型。\n1 文本 \n2 日期\n3 图片",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "value",
+              "type": "String",
+              "isNeed": null,
+              "desc": "档案值，单值档案有此条目",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "value_list",
+              "type": "MeiCustomerFileInfoItem[]",
+              "isNeed": null,
+              "desc": "会员档案条目",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "key",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "条目的key值",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "value",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "条目的具体值",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\n    \"response\": {\n        \"file_infos\": [\n            {\n                \"name\": \"qqqqqq\", \n                \"id\": 2, \n                \"type\": 1, \n                \"value\": \"232323232323\"\n            }\n        ]\n    }\n}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"票据无效,请重新登录\",\"code\":230101003}}"
+  },
+  "name": "get",
+  "ids": [
+    10313
+  ],
+  "scenarios": "获取会员基础档案信息",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "获取会员基础档案信息"
+}

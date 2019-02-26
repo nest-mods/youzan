@@ -1,0 +1,203 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.logistics.online/3.0.0/confirm"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.logistics.online/3.0.0/confirm"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "is_no_express",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "0",
+        "isRequired": "否",
+        "desc": "发货是否无需物流  如果为 0 则必须传递物流参数，如果为 1 则无需传递物流参数（out_stype和out_sid），默认为 0",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "issue",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "1",
+        "isRequired": "否",
+        "desc": "配送期次，周期购订单专用，例如：1，表示配送第1期",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "oids",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "如果需要拆单发货，使用该字段指定要发货的商品交易明细编号，多个明细编号用半角逗号“,”分隔；  不需要拆单发货，则该字段不传或值为空；",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "out_sid",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "快递单号（具体一个物流公司的真实快递单号）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "out_stype",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "物流公司编号，可以通过请求 youzan.logistics.express.get 该接口获得",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "outer_tid",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "外部交易编号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tid",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "交易订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "发货是否成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "发货是否成功",
+          "defaultValue": "false",
+          "example": "true",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanLogisticsOnlineConfirmParams youzanLogisticsOnlineConfirmParams = new YouzanLogisticsOnlineConfirmParams();\n\nyouzanLogisticsOnlineConfirmParams.setTid(\"E20180528150631060400009\");\nyouzanLogisticsOnlineConfirmParams.setIsNoExpress(1L);\n\nYouzanLogisticsOnlineConfirm youzanLogisticsOnlineConfirm = new YouzanLogisticsOnlineConfirm();\nyouzanLogisticsOnlineConfirm.setAPIParams(youzanLogisticsOnlineConfirmParams);\nYouzanLogisticsOnlineConfirmResult result = client.invoke(youzanLogisticsOnlineConfirm);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"tid\", \"E20180528150631060400009\");\ndict.Add(\"is_no_express\", 1);\n\n\nvar result = yzClient.Invoke(\"youzan.logistics.online.confirm\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.logistics.online.confirm'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'tid' => 'E20180528150631060400009',\n    'is_no_express' => '1',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['tid']=\"E20180528150631060400009\"\nparams['is_no_express']=1\n\nfiles=[]\n\nprint client.invoke('youzan.logistics.online.confirm', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['tid']=\"E20180528150631060400009\";\nparams['is_no_express']=1;\n\n\nvar promise = YZClient.invoke('youzan.logistics.online.confirm', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "105000016",
+        "errorDesc": "该订单不存在!",
+        "solution": "请检查订单的有效性"
+      },
+      {
+        "errorCode": "105000003",
+        "errorDesc": "快递单号只能包含字母、数字或中划线!",
+        "solution": "请检查订单的有效性"
+      },
+      {
+        "errorCode": "102570020",
+        "errorDesc": "订单没有可发货的商品",
+        "solution": "请检查订单下的商品是否全部发货"
+      },
+      {
+        "errorCode": "102570007\t",
+        "errorDesc": "不能重复提交已发过货的商品",
+        "solution": "请检查提交的商品里面是否存在已经发货的商品"
+      },
+      {
+        "errorCode": "102599996",
+        "errorDesc": "快递单号（out_sid）不能为空.",
+        "solution": "请检查快递单号的有效性"
+      },
+      {
+        "errorCode": "102570039",
+        "errorDesc": "退款中商品不支持发货",
+        "solution": "请检查发货的商品是否存在未处理的退款"
+      },
+      {
+        "errorCode": "102570076",
+        "errorDesc": "订单号非法",
+        "solution": "请检查订单的有效性"
+      },
+      {
+        "errorCode": "102570008",
+        "errorDesc": "已经全额退款的商品不允许发货",
+        "solution": "检查要发货的商品是否已经全额退款"
+      },
+      {
+        "errorCode": "102570003",
+        "errorDesc": "订单只有在待发货的状态下才允许发货",
+        "solution": "检查订单状态的合法性"
+      },
+      {
+        "errorCode": "102560002",
+        "errorDesc": "该订单不存在",
+        "solution": "检查订单是否存在"
+      },
+      {
+        "errorCode": "102510001",
+        "errorDesc": "不能同时发起两笔相同的发货请求",
+        "solution": "不要在2s内发起相同的发货请求"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"is_success\":true}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"订单没有可发货的商品\",\"code\":102570020}}"
+  },
+  "name": "confirm",
+  "ids": [
+    7951
+  ],
+  "scenarios": "确认发货的目的是让交易流程继续走下去，确认发货后交易状态会由【买家已付款】变为【卖家已发货】\n\n支持订单类型：\n普通订单发货\n周期购订单发货\n采购单发货\n\n不支持订单类型：\n送礼订单发货\n单品多运单订单发货\n采购单发货\n含非实物商品（虚拟商品，卡券，等）的订单发货\n分销单发货\n零售连锁版订单发货\n\n支持发货方式：\n快递\n无需物流\n\n不支持发货方式：\n同城送",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "支持订单类型：普通订单发货，周期购订单发货，采购单发货；不支持订单类型：送礼订单发货，单品多运单订单发货，采购单发货，含非实物商品（虚拟商品，卡券，等）的订单发货，分销单发货，零售连锁版订单发货；支持"
+}

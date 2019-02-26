@@ -1,0 +1,195 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.item.hotel.room/3.0.0/query"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.item.hotel.room/3.0.0/query"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "begin_date",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "房态开始时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "end_date",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "房态结束时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "item_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品Id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_ids",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "skuIds, 多个id用,隔开",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "hotel_skus",
+        "type": "HotelSkuModel[]",
+        "isRequired": "否",
+        "desc": "房态列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/HotelSkuModel",
+        "struct": {
+          "name": "hotel_skus",
+          "type": "HotelSkuModel[]",
+          "isNeed": "true",
+          "desc": "房态列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "hotelSkuId",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "酒店库存ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "itemId",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "kdtId",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "店铺ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "stockDate",
+              "type": "String",
+              "isNeed": null,
+              "desc": "酒店库存日期",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "itemSkuId",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "goods_sku 表的id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "status",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "房间状态: 0 关闭, 1 开启",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "stockNum",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "库存数量",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "price",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "房间价格（分）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanItemHotelRoomQueryParams youzanItemHotelRoomQueryParams = new YouzanItemHotelRoomQueryParams();\n\nyouzanItemHotelRoomQueryParams.setSkuIds(\"36144305\");\nyouzanItemHotelRoomQueryParams.setItemId(332589771L);\nyouzanItemHotelRoomQueryParams.setEndDate(\"2018-10-03\");\nyouzanItemHotelRoomQueryParams.setBeginDate(\"2018-08-27\");\n\nYouzanItemHotelRoomQuery youzanItemHotelRoomQuery = new YouzanItemHotelRoomQuery();\nyouzanItemHotelRoomQuery.setAPIParams(youzanItemHotelRoomQueryParams);\nYouzanItemHotelRoomQueryResult result = client.invoke(youzanItemHotelRoomQuery);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"sku_ids\", \"36144305\");\ndict.Add(\"item_id\", 332589771);\ndict.Add(\"end_date\", \"2018-10-03\");\ndict.Add(\"begin_date\", \"2018-08-27\");\n\n\nvar result = yzClient.Invoke(\"youzan.item.hotel.room.query\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['sku_ids']=\"36144305\"\nparams['item_id']=332589771\nparams['end_date']=\"2018-10-03\"\nparams['begin_date']=\"2018-08-27\"\n\nfiles=[]\n\nprint client.invoke('youzan.item.hotel.room.query', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['sku_ids']=\"36144305\";\nparams['item_id']=332589771;\nparams['end_date']=\"2018-10-03\";\nparams['begin_date']=\"2018-08-27\";\n\n\nvar promise = YZClient.invoke('youzan.item.hotel.room.query', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.item.hotel.room.query'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'sku_ids' => '36144305',\n    'item_id' => '332589771',\n    'end_date' => '2018-10-03',\n    'begin_date' => '2018-08-27',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":[{\"kdt_id\":16394119,\"item_id\":332589771,\"item_sku_id\":36144305,\"price\":23500,\"stock_num\":12,\"hotel_sku_id\":2978,\"stock_date\":\"2018-08-28\",\"status\":1},{\"kdt_id\":16394119,\"item_id\":332589771,\"item_sku_id\":36144305,\"price\":23500,\"stock_num\":12,\"hotel_sku_id\":2979,\"stock_date\":\"2018-08-29\",\"status\":1}]}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"参数 token 无效\",\"code\":40010,\"sub_msg\":\"token无效，该token不存在或已过期\",\"sub_code\":10000,\"sub_data\":\"\"}}"
+  },
+  "name": "query",
+  "ids": [
+    8054
+  ],
+  "scenarios": "查询酒店商品的房态信息",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "获取房态信息"
+}

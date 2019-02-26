@@ -1,0 +1,596 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.item.reviews/3.0.0/query"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.item.reviews/3.0.0/query"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "alias",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "alias，短url，唯一字符串",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "avatar",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "是否获取头像的信息，（注：1是；0否）,必填项",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "buyer_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "买家id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fans_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "粉丝id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fans_type",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "粉丝类型",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "item_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "商品id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "last_review_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "最新的评价id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "页数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "每页大小",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "picture",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "图片",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "rate",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "评价的数值",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "review",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "评价内容",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "seller_tid",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "供货商采购订单编号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "skuId",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "supplier_item_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "供应商的店铺goodsId，必填，如果是分销商品，则supplierGoodsId为供应商的goodsId，如是普通商品则supplierGoodsId为当前的goodsId",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "supplier_kdt_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "供应商的店铺kdtId，必填，如果是分销商品，则supplierKdtId为供应商的kdtId，如是普通商品则supplierKdtId为自己店铺kdtId",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "supplier_sku_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "供应商skuId",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tid",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "item_reviews_models",
+        "type": "ItemReviewsOpenVOPaginatorResult",
+        "isRequired": "否",
+        "desc": "data里包含的是list对象，即多条商品评价记录，可以参考正确结果里面的例子，里面有评价模型的各个字段",
+        "isStruct": true,
+        "structUrl": "/web/meta/ItemReviewsOpenVOPaginatorResult",
+        "struct": {
+          "name": "item_reviews_models",
+          "type": "ItemReviewsOpenVOPaginatorResult",
+          "isNeed": "true",
+          "desc": "data里包含的是list对象，即多条商品评价记录，可以参考正确结果里面的例子，里面有评价模型的各个字段",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "code",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "code",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "success",
+              "type": "Boolean",
+              "isNeed": null,
+              "desc": "是否成功",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "message",
+              "type": "String",
+              "isNeed": null,
+              "desc": "错误msg",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "data",
+              "type": "ItemReviewsModelExtListWithPaginatorVOPaginator",
+              "isNeed": null,
+              "desc": "",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "page",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "页数",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "success",
+                  "type": "Boolean",
+                  "isNeed": null,
+                  "desc": "是否成功",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "totalCount",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "总数",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "items",
+                  "type": "ItemReviewsModel[]",
+                  "isNeed": null,
+                  "desc": "",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "order_no",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "订单号",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "fans_type",
+                      "type": "Integer",
+                      "isNeed": null,
+                      "desc": "粉丝类型",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "rate",
+                      "type": "Integer",
+                      "isNeed": null,
+                      "desc": "商品评价等级 30 好评 20 中评 10 差评",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "review",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "评论",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "picture",
+                      "type": "String[]",
+                      "isNeed": null,
+                      "desc": "评价图片",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "desc_rate",
+                      "type": "Integer",
+                      "isNeed": null,
+                      "desc": "商品描述相符等级 1~5",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "serv_rate",
+                      "type": "Integer",
+                      "isNeed": null,
+                      "desc": "卖家服务态度等级 1~5",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "logi_rate",
+                      "type": "Integer",
+                      "isNeed": null,
+                      "desc": "物流发货速度等级 1~5",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "seller_comment",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "卖家回复",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "seller_picture",
+                      "type": "String[]",
+                      "isNeed": null,
+                      "desc": "卖家回复图片",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "like_num",
+                      "type": "Integer",
+                      "isNeed": null,
+                      "desc": "点赞数量",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "created_time",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "创建时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "update_time",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "更新时间",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "alias",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "评价别名",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "fans_picture",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "粉丝头像",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "fans_nickname",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "粉丝昵称",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "user_name",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "用户姓名",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "other_shop",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否其他店铺",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "ilike",
+                      "type": "Boolean",
+                      "isNeed": null,
+                      "desc": "是否点赞",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "with_avatar_list",
+        "type": "withAvatarList",
+        "isRequired": "否",
+        "desc": "评价用户头像url",
+        "isStruct": true,
+        "structUrl": "/web/meta/withAvatarList",
+        "struct": {
+          "name": "with_avatar_list",
+          "type": "withAvatarList",
+          "isNeed": "true",
+          "desc": "评价用户头像url",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "fans_picture",
+              "type": "String",
+              "isNeed": null,
+              "desc": "评价用户的头像url",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanItemReviewsQueryParams youzanItemReviewsQueryParams = new YouzanItemReviewsQueryParams();\n\nyouzanItemReviewsQueryParams.setSupplierItemId(355618055L);\nyouzanItemReviewsQueryParams.setSupplierKdtId(18163424L);\nyouzanItemReviewsQueryParams.setAvatar(30L);\n\nYouzanItemReviewsQuery youzanItemReviewsQuery = new YouzanItemReviewsQuery();\nyouzanItemReviewsQuery.setAPIParams(youzanItemReviewsQueryParams);\nYouzanItemReviewsQueryResult result = client.invoke(youzanItemReviewsQuery);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"supplier_item_id\", 355618055);\ndict.Add(\"supplier_kdt_id\", 18163424);\ndict.Add(\"avatar\", 30);\n\n\nvar result = yzClient.Invoke(\"youzan.item.reviews.query\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['supplier_item_id']=355618055\nparams['supplier_kdt_id']=18163424\nparams['avatar']=30\n\nfiles=[]\n\nprint client.invoke('youzan.item.reviews.query', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['supplier_item_id']=355618055;\nparams['supplier_kdt_id']=18163424;\nparams['avatar']=30;\n\n\nvar promise = YZClient.invoke('youzan.item.reviews.query', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.item.reviews.query'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'supplier_item_id' => '355618055',\n    'supplier_kdt_id' => '18163424',\n    'avatar' => '30',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "121003007",
+        "errorDesc": "系统内部错误",
+        "solution": "联系管理员"
+      },
+      {
+        "errorCode": "121003009",
+        "errorDesc": "请求记录数过多",
+        "solution": "入参pageSize不大于20且avatar不大于33"
+      },
+      {
+        "errorCode": "121003021",
+        "errorDesc": "avatar不能为空",
+        "solution": "入参avatar不能为空"
+      },
+      {
+        "errorCode": "121003022",
+        "errorDesc": "supplierKdtId不能为空",
+        "solution": "入参supplierKdtId不能为空"
+      },
+      {
+        "errorCode": "121003023",
+        "errorDesc": "supplierGoodsId不能为空",
+        "solution": "入参supplierGoodsId不能为空"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"item_reviews_models\":{\"code\":200,\"data\":{\"paginator\":{\"total_count\":3,\"page\":1,\"page_size\":20},\"items\":[{\"order_no\":\"E20180127171602026200006\",\"logi_rate\":3,\"buyer_id\":0,\"serv_rate\":4,\"desc_rate\":5,\"kdt_id\":18163424,\"update_time\":\"2018-01-27 17:16:50\",\"rate\":30,\"review\":\"测试接口情况\",\"alias\":\"42yocb6n\",\"id\":2291023,\"platform_user_id\":\"abc347930\",\"like_num\":0,\"created_time\":\"2018-01-27 17:16:50\",\"fans_picture\":\"https://img.yzcdn.cn/public_files/2017/12/11/ec432809189ce097a4d69501855c9ee4.png\",\"supplier_kdt_id\":18163424,\"other_shop\":false,\"goods_id\":355618055,\"sku_id\":36176072,\"fans_type\":255,\"picture\":[\"https://img.yzcdn.cn/upload_files/2018/01/27/FokgB_27RSoX6b1sYn8g8491a4Wf.jpg\"],\"fans_nickname\":\"h*****i\",\"supplier_goods_id\":355618055,\"seller_comment\":\"\",\"ilike\":false,\"fans_id\":4790542872},{\"order_no\":\"E20180105181343088900005\",\"logi_rate\":5,\"buyer_id\":501803897,\"serv_rate\":5,\"desc_rate\":5,\"kdt_id\":18163424,\"update_time\":\"2018-01-05 18:14:43\",\"rate\":30,\"review\":\"微信测试\",\"alias\":\"14yd2na1q\",\"id\":2214319,\"platform_user_id\":\"oHIuujkhmfIXdZ8UNmrKL9iQoJMg\",\"like_num\":0,\"created_time\":\"2018-01-05 18:14:43\",\"fans_picture\":\"http://wx.qlogo.cn/mmopen/Q3auHgzwzM4oIKcIXGQmpJibqUicDXWtiaG1ibQBBKZPu96bxp0xnhYzbErTTZrYE5CPsuyqHQ2zB4RvqtlIhXexSQ/0\",\"supplier_kdt_id\":18163424,\"other_shop\":false,\"goods_id\":355618055,\"sku_id\":36176072,\"fans_type\":9,\"fans_nickname\":\"阿*\",\"supplier_goods_id\":355618055,\"seller_comment\":\"\",\"ilike\":false,\"fans_id\":821093389},{\"order_no\":\"E20180105170740011900002\",\"logi_rate\":5,\"buyer_id\":0,\"serv_rate\":5,\"desc_rate\":5,\"kdt_id\":18163424,\"update_time\":\"2018-01-05 17:11:50\",\"rate\":30,\"review\":\"测试\",\"alias\":\"1fm8odhwl\",\"id\":2214136,\"platform_user_id\":\"515151\",\"like_num\":0,\"created_time\":\"2018-01-05 17:11:50\",\"fans_picture\":\"https://img.yzcdn.cn/public_files/2017/12/11/ec432809189ce097a4d69501855c9ee4.png\",\"supplier_kdt_id\":18163424,\"other_shop\":false,\"goods_id\":355618055,\"sku_id\":36176072,\"fans_type\":255,\"fans_nickname\":\"a****2\",\"supplier_goods_id\":355618055,\"seller_comment\":\"\",\"ilike\":false,\"fans_id\":4715200870}]},\"success\":true,\"message\":\"successful\"},\"with_avatar_list\":[]}}",
+    "errorResponseDemo": null
+  },
+  "name": "query",
+  "ids": [
+    7745
+  ],
+  "scenarios": "商品评价和评论，复合条件查询接口",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "商品评价和评论，复合条件查询接口"
+}

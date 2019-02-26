@@ -1,0 +1,158 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.item.hotel.room/3.0.0/set"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.item.hotel.room/3.0.0/set"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "begin_date",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "开始日期,格式 yyyy-mm-dd",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "end_date",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "结束日期,格式 yyyy-mm-dd",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "item_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品Id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "price",
+        "type": "Price",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "价格;单位元,精确到小数后2位",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "规格ID,无规格商品不用填写",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "special_weeks",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "一段时间内指定某几天设置,不填写默认全设置，多个逗号分隔；周一:1,周二:2,周三:3,周四:4,周五:5,周六:6,周日:7",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "status",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "开关房: 1开启 0关闭",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "stock_num",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "库存数量",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "是否成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "是否成功",
+          "defaultValue": null,
+          "example": "成功:true, 失败:false",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanItemHotelRoomSetParams youzanItemHotelRoomSetParams = new YouzanItemHotelRoomSetParams();\n\nyouzanItemHotelRoomSetParams.setStockNum(12L);\nyouzanItemHotelRoomSetParams.setStatus(1L);\nyouzanItemHotelRoomSetParams.setSpecialWeeks(\"1,2,3,4,5,6,7\");\nyouzanItemHotelRoomSetParams.setSkuId(36144305L);\nyouzanItemHotelRoomSetParams.setPrice(\"235\");\nyouzanItemHotelRoomSetParams.setItemId(332589771L);\nyouzanItemHotelRoomSetParams.setEndDate(\"2018-08-29\");\nyouzanItemHotelRoomSetParams.setBeginDate(\"2018-08-28\");\n\nYouzanItemHotelRoomSet youzanItemHotelRoomSet = new YouzanItemHotelRoomSet();\nyouzanItemHotelRoomSet.setAPIParams(youzanItemHotelRoomSetParams);\nYouzanItemHotelRoomSetResult result = client.invoke(youzanItemHotelRoomSet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"stock_num\", 12);\ndict.Add(\"status\", 1);\ndict.Add(\"special_weeks\", \"1,2,3,4,5,6,7\");\ndict.Add(\"sku_id\", 36144305);\ndict.Add(\"price\", \"235\");\ndict.Add(\"item_id\", 332589771);\ndict.Add(\"end_date\", \"2018-08-29\");\ndict.Add(\"begin_date\", \"2018-08-28\");\n\n\nvar result = yzClient.Invoke(\"youzan.item.hotel.room.set\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['stock_num']=12\nparams['status']=1\nparams['special_weeks']=\"1,2,3,4,5,6,7\"\nparams['sku_id']=36144305\nparams['price']=\"235\"\nparams['item_id']=332589771\nparams['end_date']=\"2018-08-29\"\nparams['begin_date']=\"2018-08-28\"\n\nfiles=[]\n\nprint client.invoke('youzan.item.hotel.room.set', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['stock_num']=12;\nparams['status']=1;\nparams['special_weeks']=\"1,2,3,4,5,6,7\";\nparams['sku_id']=36144305;\nparams['price']=\"235\";\nparams['item_id']=332589771;\nparams['end_date']=\"2018-08-29\";\nparams['begin_date']=\"2018-08-28\";\n\n\nvar promise = YZClient.invoke('youzan.item.hotel.room.set', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.item.hotel.room.set'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'stock_num' => '12',\n    'status' => '1',\n    'special_weeks' => '1,2,3,4,5,6,7',\n    'sku_id' => '36144305',\n    'price' => '235',\n    'item_id' => '332589771',\n    'end_date' => '2018-08-29',\n    'begin_date' => '2018-08-28',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"is_success\":true}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"设置日期已过期\",\"code\":123002007}}"
+  },
+  "name": "set",
+  "ids": [
+    8145
+  ],
+  "scenarios": "设置酒店商品房态",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "设置房态"
+}

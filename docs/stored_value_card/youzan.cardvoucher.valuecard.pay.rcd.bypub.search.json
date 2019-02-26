@@ -1,0 +1,348 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.cardvoucher.valuecard.pay.rcd.bypub/3.0.0/search"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.cardvoucher.valuecard.pay.rcd.bypub/3.0.0/search"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "begin_time",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "充值时间范围 ，查询beginTime之后发生的记录，格式yyyy-MM-dd HH:mm:ss",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "buyer_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "客户Id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "card_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "卡号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "end_time",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "充值时间范围 ，查询endTime之前发生的记录，格式yyyy-MM-dd HH:mm:ss",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "手机号码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "1",
+        "isRequired": "是",
+        "desc": "查询第几页",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "20",
+        "isRequired": "是",
+        "desc": "分页大小，目前最大支持50",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "paginator",
+        "type": "LongPaginator",
+        "isRequired": "否",
+        "desc": "分页信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/LongPaginator",
+        "struct": {
+          "name": "paginator",
+          "type": "LongPaginator",
+          "isNeed": "true",
+          "desc": "分页信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "page",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "查询第几页",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page_size",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "分页大小",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "total_count",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "查询获得数据总条数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "items",
+        "type": "PageQueryPayLogByPublishKdtIdDTO[]",
+        "isRequired": "否",
+        "desc": "实体信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/PageQueryPayLogByPublishKdtIdDTO",
+        "struct": {
+          "name": "items",
+          "type": "PageQueryPayLogByPublishKdtIdDTO[]",
+          "isNeed": "false",
+          "desc": "实体信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "kdt_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "发卡机构的店铺Id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "buyer_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "客户Id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "card_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "卡号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "pay_time",
+              "type": "String",
+              "isNeed": null,
+              "desc": "支付时间，格式yyyy-MM-dd HH:mm:ss",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "pay_amount",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "支付总金额",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "principal_pay_amount",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "支付本金金额",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "bonus_pay_amount",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "支付赠送金金额",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "remark",
+              "type": "String",
+              "isNeed": null,
+              "desc": "备注",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "mobile",
+              "type": "String",
+              "isNeed": null,
+              "desc": "手机号码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "trade_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "交易单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "pay_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "储值支付流水号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanCardvoucherValuecardPayRcdBypubSearchParams youzanCardvoucherValuecardPayRcdBypubSearchParams = new YouzanCardvoucherValuecardPayRcdBypubSearchParams();\n\nyouzanCardvoucherValuecardPayRcdBypubSearchParams.setPage(1L);\nyouzanCardvoucherValuecardPayRcdBypubSearchParams.setPageSize(2L);\nyouzanCardvoucherValuecardPayRcdBypubSearchParams.setMobile(\"13186972613\");\n\nYouzanCardvoucherValuecardPayRcdBypubSearch youzanCardvoucherValuecardPayRcdBypubSearch = new YouzanCardvoucherValuecardPayRcdBypubSearch();\nyouzanCardvoucherValuecardPayRcdBypubSearch.setAPIParams(youzanCardvoucherValuecardPayRcdBypubSearchParams);\nYouzanCardvoucherValuecardPayRcdBypubSearchResult result = client.invoke(youzanCardvoucherValuecardPayRcdBypubSearch);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"page\", 1);\ndict.Add(\"page_size\", 2);\ndict.Add(\"mobile\", \"13186972613\");\n\n\nvar result = yzClient.Invoke(\"youzan.cardvoucher.valuecard.pay.rcd.bypub.search\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['page']=1\nparams['page_size']=2\nparams['mobile']=\"13186972613\"\n\nfiles=[]\n\nprint client.invoke('youzan.cardvoucher.valuecard.pay.rcd.bypub.search', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['page']=1;\nparams['page_size']=2;\nparams['mobile']=\"13186972613\";\n\n\nvar promise = YZClient.invoke('youzan.cardvoucher.valuecard.pay.rcd.bypub.search', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.cardvoucher.valuecard.pay.rcd.bypub.search'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'page' => '1',\n    'page_size' => '2',\n    'mobile' => '13186972613',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "118701002",
+        "errorDesc": "mobile与buyer_id不是同一个用户",
+        "solution": null
+      },
+      {
+        "errorCode": "118701003",
+        "errorDesc": "page必须大于0",
+        "solution": null
+      },
+      {
+        "errorCode": "118701004",
+        "errorDesc": "page_size必须在1-50之间",
+        "solution": null
+      },
+      {
+        "errorCode": "118701005",
+        "errorDesc": "时间格式异常,请检查格式",
+        "solution": null
+      },
+      {
+        "errorCode": "118703002",
+        "errorDesc": "客户信息不存在",
+        "solution": null
+      },
+      {
+        "errorCode": "118701000",
+        "errorDesc": "参数错误",
+        "solution": null
+      },
+      {
+        "errorCode": "118799999",
+        "errorDesc": "系统异常",
+        "solution": null
+      },
+      {
+        "errorCode": "118702998",
+        "errorDesc": "系统繁忙，请稍后再试",
+        "solution": null
+      }
+    ],
+    "responseDemo": "{\"response\":{\"paginator\":{\"total_count\":108,\"page\":1,\"page_size\":2},\"items\":[{\"kdt_id\":63077,\"bonus_pay_amount\":0,\"card_no\":\"3102003513216\",\"pay_no\":\"190118160851000000\",\"pay_amount\":1,\"mobile\":\"13186972613\",\"trade_no\":\"CDP190118142045000001\",\"remark\":\"4\",\"buyer_id\":786735649,\"principal_pay_amount\":1,\"pay_time\":\"2019-01-18 16:08:51\"},{\"kdt_id\":63077,\"bonus_pay_amount\":0,\"card_no\":\"3102003513216\",\"pay_no\":\"190118154153000000\",\"pay_amount\":1,\"mobile\":\"13186972613\",\"trade_no\":\"CDP190118151400000001\",\"remark\":\"商品1\",\"buyer_id\":786735649,\"principal_pay_amount\":1,\"pay_time\":\"2019-01-18 15:41:53\"}]}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"客户信息不存在\",\"code\":118703002}}"
+  },
+  "name": "search",
+  "ids": [
+    10751
+  ],
+  "scenarios": "查询该店铺发行的储值卡的支付记录",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "查询该店铺发行的储值卡的支付记录"
+}

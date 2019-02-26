@@ -1,0 +1,158 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.trade.refund/3.0.0/apply"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.trade.refund/3.0.0/apply"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "desc",
+        "type": "String",
+        "example": "",
+        "defaultValue": "我要退款\t",
+        "isRequired": "是",
+        "desc": "退款说明，备注",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "example": "",
+        "defaultValue": "17099999999",
+        "isRequired": "是",
+        "desc": "手机号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "oid",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "123",
+        "isRequired": "是",
+        "desc": "交易的商品明细编号。",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "reason",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "11",
+        "isRequired": "是",
+        "desc": "退款原因，原因列表地址：https://www.youzanyun.com/docs/guide/faq/699",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "refund_fee",
+        "type": "Price",
+        "example": "",
+        "defaultValue": "1.00",
+        "isRequired": "是",
+        "desc": "退款金额",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "return_goods",
+        "type": "Boolean",
+        "example": "",
+        "defaultValue": "true",
+        "isRequired": "是",
+        "desc": "是否退货 false(仅退款) true(退货退款)",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tid",
+        "type": "String",
+        "example": "",
+        "defaultValue": "E123456",
+        "isRequired": "是",
+        "desc": "订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "操作是否成功，成功为true",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "操作是否成功，成功为true",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanTradeRefundApplyParams youzanTradeRefundApplyParams = new YouzanTradeRefundApplyParams();\n\nyouzanTradeRefundApplyParams.setTid(\"E20180524155540048500005\");\nyouzanTradeRefundApplyParams.setReturnGoods(\"true\");\nyouzanTradeRefundApplyParams.setRefundFee(\"0.13\");\nyouzanTradeRefundApplyParams.setReason(15L);\nyouzanTradeRefundApplyParams.setOid(18073964L);\nyouzanTradeRefundApplyParams.setMobile(\"13516829173\");\nyouzanTradeRefundApplyParams.setDesc(\"test\");\n\nYouzanTradeRefundApply youzanTradeRefundApply = new YouzanTradeRefundApply();\nyouzanTradeRefundApply.setAPIParams(youzanTradeRefundApplyParams);\nYouzanTradeRefundApplyResult result = client.invoke(youzanTradeRefundApply);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"tid\", \"E20180524155540048500005\");\ndict.Add(\"return_goods\", \"true\");\ndict.Add(\"refund_fee\", \"0.13\");\ndict.Add(\"reason\", 15);\ndict.Add(\"oid\", 18073964);\ndict.Add(\"mobile\", \"13516829173\");\ndict.Add(\"desc\", \"test\");\n\n\nvar result = yzClient.Invoke(\"youzan.trade.refund.apply\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.trade.refund.apply'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'tid' => 'E20180524155540048500005',\n    'return_goods' => 'true',\n    'refund_fee' => '0.13',\n    'reason' => '15',\n    'oid' => '18073964',\n    'mobile' => '13516829173',\n    'desc' => 'test',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['tid']=\"E20180524155540048500005\"\nparams['return_goods']=\"true\"\nparams['refund_fee']=\"0.13\"\nparams['reason']=15\nparams['oid']=18073964\nparams['mobile']=\"13516829173\"\nparams['desc']=\"test\"\n\nfiles=[]\n\nprint client.invoke('youzan.trade.refund.apply', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['tid']=\"E20180524155540048500005\";\nparams['return_goods']=\"true\";\nparams['refund_fee']=\"0.13\";\nparams['reason']=15;\nparams['oid']=18073964;\nparams['mobile']=\"13516829173\";\nparams['desc']=\"test\";\n\n\nvar promise = YZClient.invoke('youzan.trade.refund.apply', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "103010035",
+        "errorDesc": "您无权限操作，非法用户",
+        "solution": "检查操作权限"
+      },
+      {
+        "errorCode": "103010030",
+        "errorDesc": "退款金额错误，该商品目前状态只能全额退款",
+        "solution": ""
+      }
+    ],
+    "responseDemo": "{\n  \"response\": {\n    \"is_success\": true\n  }\n}",
+    "errorResponseDemo": "{\n  \"error_response\": {\n    \"code\": 103010030,\n    \"message\": \"退款金额错误，该商品目前状态只能全额退款\"\n  }\n}"
+  },
+  "name": "apply",
+  "ids": [
+    8173
+  ],
+  "scenarios": "买家申请退款",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "买家申请退款"
+}

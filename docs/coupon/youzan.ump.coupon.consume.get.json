@@ -1,0 +1,566 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.ump.coupon.consume/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.ump.coupon.consume/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "code",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "买家端的优惠券/优惠码核销码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "code",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "核销码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "code",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "核销码",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "status",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "核销状态，0表示未核销，1表示已核销",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "status",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "核销状态，0表示未核销，1表示已核销",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "consume_at",
+        "type": "Date",
+        "isRequired": "否",
+        "desc": "核销时间，格式，如果未核销，则为空 ",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "consume_at",
+          "type": "Date",
+          "isNeed": "true",
+          "desc": "核销时间，格式，如果未核销，则为空 ",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "consume_id",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "核销编号。如果卡券已被独立核销，值为核销编号；如果卡券在商城的交易中被核销、或者未核销，值为空 ",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "consume_id",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "核销编号。如果卡券已被独立核销，值为核销编号；如果卡券在商城的交易中被核销、或者未核销，值为空 ",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "coupon",
+        "type": "UmpCoupon",
+        "isRequired": "否",
+        "desc": "优惠券/优惠码信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/UmpCoupon",
+        "struct": {
+          "name": "coupon",
+          "type": "UmpCoupon",
+          "isNeed": "true",
+          "desc": "优惠券/优惠码信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "group_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "优惠的ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "coupon_type",
+              "type": "String",
+              "isNeed": null,
+              "desc": "优惠的类型。可选值：PROMOCARD（优惠券）、PROMOCODE（优惠码）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "range_type",
+              "type": "String",
+              "isNeed": null,
+              "desc": "可用范围的类型，可选值：\n\t\t\t\t\t\t<br>PART（部分商品可用，或指定商品可用）\n\t\t\t\t\t\t<br>ALL（全部商品可用）",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "title",
+              "type": "String",
+              "isNeed": null,
+              "desc": "优惠标题",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "value",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "优惠面额。如果 is_random 为 1，则该字段表示随机金额的下限。单位：元，精确到分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_random",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否是随机优惠，0 表示不随机，1 表示随机",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "value_random_to",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "如果 is_random 为 1，则该字段表示随机金额的上限。单位：元，精确到分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "need_user_level",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否限制领用者的等级，0 表示不限制，大于 0 表示领用者必须是这个等级ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "user_level_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "限制领用者等级的名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "quota",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "每人限领个数，为 0 则表示不限制",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_at_least",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否设置满多少元可用，0 表示不限制，1 表示限制",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "at_least",
+              "type": "Price",
+              "isNeed": null,
+              "desc": "如果 is_at_least 为 1，该字段表示订单必须满这个价格，优惠才可用。单位：元，精确到分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "total",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总库存",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "stock",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "剩余可用库存",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "start_at",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "优惠生效时间，时间格式：yyyy-MM-dd HH:mm:ss",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "end_at",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "优惠结束时间，时间格式：yyyy-MM-dd HH:mm:ss",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "expire_notice",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否到期前4天发送提醒，0 表示不发送，1 表示发送",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "description",
+              "type": "String",
+              "isNeed": null,
+              "desc": "使用说明",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_forbid_preference",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否仅原价购买商品时可用，0 表示否，1 表示是",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_sync_weixin",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否同步微信卡券，0 表示否，1 表示是",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "weixin_card_id",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微信卡券ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "status",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "优惠状态，0 表示有效，1 表示失效，2 表示微信卡券审核中",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_share",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否可分享领取链接，0 表示否，1 表示是",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "fetch_url",
+              "type": "String",
+              "isNeed": null,
+              "desc": "优惠领取链接",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "stat_fetch_user_num",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "领取优惠的人数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "stat_fetch_num",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "领取优惠的次数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "stat_use_num",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "使用优惠的次数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "优惠创建时间，时间格式：yyyy-MM-dd HH:mm:ss",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "updated",
+              "type": "Date",
+              "isNeed": null,
+              "desc": "优惠券更新时间，时间格式：yyyy-MM-dd HH:mm:ss",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "preferential_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "1表示优惠,2表示折扣",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "discount",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "领取到的折扣值",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "date_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "优惠使用时间类型, 1表示固定活动时间，2表示动态类型,几天后几天内有效",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "fixed_term",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "优惠有效固定时长",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "fixed_begin_term",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "延迟开始的时间, 延迟几天生效",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "promocode_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "优惠码ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "promocode_id",
+          "type": "Number",
+          "isNeed": "false",
+          "desc": "优惠码ID",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "promocode",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "优惠码。如果卡券是优惠码类型展示优惠码。",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "promocode",
+          "type": "String",
+          "isNeed": "false",
+          "desc": "优惠码。如果卡券是优惠码类型展示优惠码。",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "promocard_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "优惠券ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "promocard_id",
+          "type": "Number",
+          "isNeed": "false",
+          "desc": "优惠券ID",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "used_value",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "实际核销金额,单位为分",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "used_value",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "实际核销金额,单位为分",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanUmpCouponConsumeGetParams youzanUmpCouponConsumeGetParams = new YouzanUmpCouponConsumeGetParams();\n\nyouzanUmpCouponConsumeGetParams.setCode(\"493205818731\");\n\nYouzanUmpCouponConsumeGet youzanUmpCouponConsumeGet = new YouzanUmpCouponConsumeGet();\nyouzanUmpCouponConsumeGet.setAPIParams(youzanUmpCouponConsumeGetParams);\nYouzanUmpCouponConsumeGetResult result = client.invoke(youzanUmpCouponConsumeGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"code\", \"493205818731\");\n\n\nvar result = yzClient.Invoke(\"youzan.ump.coupon.consume.get\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['code']=\"493205818731\"\n\nfiles=[]\n\nprint client.invoke('youzan.ump.coupon.consume.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['code']=\"493205818731\";\n\n\nvar promise = YZClient.invoke('youzan.ump.coupon.consume.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.ump.coupon.consume.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'code' => '493205818731',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"consume_at\":\"2018-10-24 14:52:58\",\"used_value\":\"100\",\"code\":\"493205818731\",\"coupon\":{\"is_at_least\":1,\"date_type\":1,\"end_at\":\"2018-10-24 23:59:59\",\"is_sync_weixin\":0,\"preferential_type\":1,\"is_random\":0,\"is_forbid_preference\":0,\"description\":\"111\",\"discount\":0,\"title\":\"000\",\"start_at\":\"2018-10-22 12:05:38\",\"total\":0,\"expire_notice\":0,\"quota\":0,\"fixed_term\":0,\"stock\":8,\"value\":\"1.00\",\"stat_fetch_num\":0,\"value_random_to\":\"0.00\",\"is_share\":1,\"stat_use_num\":0,\"stat_fetch_user_num\":0,\"created\":\"2018-10-22 12:05:52\",\"range_type\":\"PART\",\"fetch_url\":\"https://h5.youzan.com/v2/ump/promocard/fetch?alias=12osls3u7\",\"user_level_name\":\"\",\"group_id\":2897232,\"weixin_card_id\":\"\",\"coupon_type\":\"PROMOCARD\",\"need_user_level\":0,\"at_least\":\"2.00\",\"fixed_begin_term\":0,\"status\":0},\"consume_id\":\"M2018102414525866634\",\"promocard_id\":10678867,\"status\":1}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"无该卡券核销码记录\",\"code\":50000}}"
+  },
+  "name": "get",
+  "ids": [
+    7961
+  ],
+  "scenarios": "根据核销码获取优惠券/优惠码",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "根据核销码获取优惠券/优惠码"
+}

@@ -1,0 +1,128 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.customer.setting/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.customer.setting/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "type",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "要查询的配置类型，目前只有 1",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "kdt_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "店铺id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "kdt_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "店铺id",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "type",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "配置类型。\n1 会员可见范围",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "type",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "配置类型。\n1 会员可见范围",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "settings",
+        "type": "Map",
+        "isRequired": "否",
+        "desc": "具体设置内容。\n当type=1时，key值为dept，value：\n0 可以查看店铺中所有会员\n1 可以不能查看其它分店会员\n2 仅可以查看本店铺创建的会员",
+        "isStruct": true,
+        "structUrl": "/web/meta/Map",
+        "struct": {
+          "name": "settings",
+          "type": "Map",
+          "isNeed": "true",
+          "desc": "具体设置内容。\n当type=1时，key值为dept，value：\n0 可以查看店铺中所有会员\n1 可以不能查看其它分店会员\n2 仅可以查看本店铺创建的会员",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "skuId",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "待更新商品id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "result",
+              "type": "Boolean",
+              "isNeed": null,
+              "desc": "是否更新成功",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\n    \"response\": {\n        \"settings\": {\n            \"dept\": 0\n        }, \n        \"kdt_id\": 40328097, \n        \"type\": 1\n    }\n}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"type type error\",\"code\":53002}}"
+  },
+  "name": "get",
+  "ids": [
+    10290
+  ],
+  "scenarios": "查询指定配置类型的的配置信息",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "查询某个配置类型的配置信息"
+}

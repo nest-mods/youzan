@@ -1,0 +1,284 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.cardvoucher.valuecard.fund/3.0.0/pay"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.cardvoucher.valuecard.fund/3.0.0/pay"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "amount",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "支付金额（单位：分）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "buyer_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "用户buyerId，与手机号码二选一",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "card_nos",
+        "type": "List<String>",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "用于支付的卡号列表，目前仅支持一张卡。\n可通过以下接口获取用户可用储值卡列表，以及卡内余额\nyouzan.cardvoucher.valuecard.info.bysup.query",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/List<String>",
+        "struct": {
+          "name": "List<String>",
+          "type": "List<String>",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": []
+        }
+      },
+      {
+        "name": "goods_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品名称（长度必须小于24）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "用户手机号码，与buyerId 二选一",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "operator",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "操作人姓名。如果是商家发起支付，请填写商家操作人姓名。如果是用户发起，请填写用户姓名（长度必须小于24）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "pay_request_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "支付请求号，唯一标识一次支付请求，调用方自定义，请确保唯一（长度必须小于24）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "支付描述（长度必须小于100）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "pay_request_no",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "支付请求号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "pay_request_no",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "支付请求号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "status",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "支付状态(SUCCESS:成功，FAIL:失败，ING:支付中）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "status",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "支付状态(SUCCESS:成功，FAIL:失败，ING:支付中）",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "msg",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "状态描述",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "msg",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "状态描述",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "code",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "结果码\n200：成功、支付中\n1001：支付失败\n1002：支付失败，未订阅储值插件\n1003：支付失败，卡号不存在\n1004：支付失败，余额不足",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "code",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "结果码\n200：成功、支付中\n1001：支付失败\n1002：支付失败，未订阅储值插件\n1003：支付失败，卡号不存在\n1004：支付失败，余额不足",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "pay_order_no",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "支付订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "pay_order_no",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "支付订单号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanCardvoucherValuecardFundPayParams youzanCardvoucherValuecardFundPayParams = new YouzanCardvoucherValuecardFundPayParams();\n\nyouzanCardvoucherValuecardFundPayParams.setAmount(1L);\nyouzanCardvoucherValuecardFundPayParams.setCardNos(\"[\"3102003513216\"]\");\nyouzanCardvoucherValuecardFundPayParams.setGoodsName(\"4\");\nyouzanCardvoucherValuecardFundPayParams.setMobile(\"13186972613\");\nyouzanCardvoucherValuecardFundPayParams.setPayRequestNo(\"3151\");\nyouzanCardvoucherValuecardFundPayParams.setRemark(\"7\");\nyouzanCardvoucherValuecardFundPayParams.setOperator(\"1\");\n\nYouzanCardvoucherValuecardFundPay youzanCardvoucherValuecardFundPay = new YouzanCardvoucherValuecardFundPay();\nyouzanCardvoucherValuecardFundPay.setAPIParams(youzanCardvoucherValuecardFundPayParams);\nYouzanCardvoucherValuecardFundPayResult result = client.invoke(youzanCardvoucherValuecardFundPay);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"amount\", 1);\ndict.Add(\"card_nos\", \"[\"3102003513216\"]\");\ndict.Add(\"goods_name\", \"4\");\ndict.Add(\"mobile\", \"13186972613\");\ndict.Add(\"pay_request_no\", \"3151\");\ndict.Add(\"remark\", \"7\");\ndict.Add(\"operator\", \"1\");\n\n\nvar result = yzClient.Invoke(\"youzan.cardvoucher.valuecard.fund.pay\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['amount']=1\nparams['card_nos']=\"[\"3102003513216\"]\"\nparams['goods_name']=\"4\"\nparams['mobile']=\"13186972613\"\nparams['pay_request_no']=\"3151\"\nparams['remark']=\"7\"\nparams['operator']=\"1\"\n\nfiles=[]\n\nprint client.invoke('youzan.cardvoucher.valuecard.fund.pay', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['amount']=1;\nparams['card_nos']=\"[\"3102003513216\"]\";\nparams['goods_name']=\"4\";\nparams['mobile']=\"13186972613\";\nparams['pay_request_no']=\"3151\";\nparams['remark']=\"7\";\nparams['operator']=\"1\";\n\n\nvar promise = YZClient.invoke('youzan.cardvoucher.valuecard.fund.pay', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.cardvoucher.valuecard.fund.pay'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'amount' => '1',\n    'card_nos' => '[\"3102003513216\"]',\n    'goods_name' => '4',\n    'mobile' => '13186972613',\n    'pay_request_no' => '3151',\n    'remark' => '7',\n    'operator' => '1',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "118701001",
+        "errorDesc": "mobile与buyer_id不能同时为空",
+        "solution": null
+      },
+      {
+        "errorCode": "118701002",
+        "errorDesc": "mobile与buyer_id不是同一个用户",
+        "solution": null
+      },
+      {
+        "errorCode": "118703002",
+        "errorDesc": "客户信息不存在",
+        "solution": null
+      },
+      {
+        "errorCode": "118703063",
+        "errorDesc": "支付订单已经存在，但请求金额不一致",
+        "solution": null
+      },
+      {
+        "errorCode": "118703064",
+        "errorDesc": "支付订单已经存在，但卡号不一致",
+        "solution": null
+      },
+      {
+        "errorCode": "118703065",
+        "errorDesc": "支付订单已经存在，但请求用户信息不一致",
+        "solution": null
+      },
+      {
+        "errorCode": "118701000",
+        "errorDesc": "参数错误",
+        "solution": null
+      },
+      {
+        "errorCode": "118799999",
+        "errorDesc": "系统异常",
+        "solution": null
+      },
+      {
+        "errorCode": "118702998",
+        "errorDesc": " 系统繁忙，请稍后再试",
+        "solution": null
+      }
+    ],
+    "responseDemo": "{\"response\":{\"msg\":\"支付成功\",\"pay_request_no\":\"3151\",\"code\":\"200\",\"pay_order_no\":\"CDP190118142045000001\",\"status\":\"SUCCESS\"}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"客户信息不存在\",\"code\":118703002}}"
+  },
+  "name": "pay",
+  "ids": [
+    10934
+  ],
+  "scenarios": "连锁门店网店模式的总部，没有经营权限的，不能使用该接口。\n如发生下述任一情况而导致服务中断及开发者损失的，有赞不承担责任：\n（1）发生不可抗力情形的；\n（2）黑客攻击、计算机病毒侵入或发作的；\n（3）计算机系统遭到破坏、瘫痪或无法正常使用的；\n（4）电信部门技术调整的；\n（5）因政府管制而造成暂时性关闭的；\n（6）其它非因有赞的过错而引起的。",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "储值卡支付"
+}

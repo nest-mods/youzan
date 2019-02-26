@@ -1,0 +1,210 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.user.address/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.user.address/3.0.0/get"
+      }
+    ],
+    "requestParams": [],
+    "responseParams": [
+      {
+        "name": "userAddressModels",
+        "type": "UserAddressModel[]",
+        "isRequired": "否",
+        "desc": "地址",
+        "isStruct": true,
+        "structUrl": "/web/meta/UserAddressModel",
+        "struct": {
+          "name": "userAddressModels",
+          "type": "UserAddressModel[]",
+          "isNeed": "true",
+          "desc": "地址",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "country",
+              "type": "String",
+              "isNeed": null,
+              "desc": "国家",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "city",
+              "type": "String",
+              "isNeed": null,
+              "desc": "城市",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "user_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "收货人",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "area_code",
+              "type": "String",
+              "isNeed": null,
+              "desc": "区域码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "county",
+              "type": "String",
+              "isNeed": null,
+              "desc": "区",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "lon",
+              "type": "String",
+              "isNeed": null,
+              "desc": "经度",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "lat",
+              "type": "String",
+              "isNeed": null,
+              "desc": "维度",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "community",
+              "type": "String",
+              "isNeed": null,
+              "desc": "社区",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "is_default",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否默认地址",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "address_detail",
+              "type": "String",
+              "isNeed": null,
+              "desc": "地址详情",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "province",
+              "type": "String",
+              "isNeed": null,
+              "desc": "省",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "userId",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "帐号id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "tel",
+              "type": "String",
+              "isNeed": null,
+              "desc": "联系人电话",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "postal_code",
+              "type": "String",
+              "isNeed": null,
+              "desc": "邮政编码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanUserAddressGetParams youzanUserAddressGetParams = new YouzanUserAddressGetParams();\n\n\nYouzanUserAddressGet youzanUserAddressGet = new YouzanUserAddressGet();\nyouzanUserAddressGet.setAPIParams(youzanUserAddressGetParams);\nYouzanUserAddressGetResult result = client.invoke(youzanUserAddressGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\n\n\nvar result = yzClient.Invoke(\"youzan.user.address.get\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\n\nfiles=[]\n\nprint client.invoke('youzan.user.address.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\n\n\nvar promise = YZClient.invoke('youzan.user.address.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.user.address.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":[{\"country\":\"中国\",\"city\":\"23\",\"user_name\":\"23\",\"area_code\":\"0\",\"county\":\"23\",\"lon\":\"\",\"source\":1,\"community\":\"\",\"is_default\":0,\"country_type\":1,\"buyer_id\":5161667,\"address_detail\":\"''12\",\"province\":\"23\",\"user_id\":5161667,\"is_del\":null,\"tel\":\"23\",\"id\":2051,\"postal_code\":\"23\",\"lat\":\"\"},{\"country\":\"中国\",\"city\":\"23\",\"user_name\":\"23\",\"area_code\":\"0\",\"county\":\"23\",\"lon\":\"\",\"source\":1,\"community\":\"\",\"is_default\":0,\"country_type\":1,\"buyer_id\":5161667,\"address_detail\":\"''12\",\"province\":\"23\",\"user_id\":5161667,\"is_del\":null,\"tel\":\"23\",\"id\":2050,\"postal_code\":\"23\",\"lat\":\"\"},{\"country\":\"中国\",\"city\":\"23\",\"user_name\":\"23\",\"area_code\":\"0\",\"county\":\"23\",\"lon\":\"\",\"source\":1,\"community\":\"\",\"is_default\":0,\"country_type\":1,\"buyer_id\":5161667,\"address_detail\":\"''12\",\"province\":\"23\",\"user_id\":5161667,\"is_del\":null,\"tel\":\"23\",\"id\":2049,\"postal_code\":\"23\",\"lat\":\"\"},{\"country\":\"中国\",\"city\":\"23\",\"user_name\":\"23\",\"area_code\":\"0\",\"county\":\"23\",\"lon\":\"\",\"source\":1,\"community\":\"\",\"is_default\":0,\"country_type\":1,\"buyer_id\":5161667,\"address_detail\":\"''12\",\"province\":\"23\",\"user_id\":5161667,\"is_del\":null,\"tel\":\"23\",\"id\":2047,\"postal_code\":\"23\",\"lat\":\"\"},{\"country\":\"中国\",\"city\":\"23\",\"user_name\":\"23\",\"area_code\":\"0\",\"county\":\"23\",\"lon\":\"\",\"source\":1,\"community\":\"\",\"is_default\":0,\"country_type\":1,\"buyer_id\":5161667,\"address_detail\":\"''12\",\"province\":\"23\",\"user_id\":5161667,\"is_del\":null,\"tel\":\"23\",\"id\":2045,\"postal_code\":\"23\",\"lat\":\"\"},{\"country\":\"中国\",\"city\":\"23\",\"user_name\":\"23\",\"area_code\":\"0\",\"county\":\"23\",\"lon\":\"\",\"source\":1,\"community\":\"\",\"is_default\":0,\"country_type\":1,\"buyer_id\":5161667,\"address_detail\":\"''12\",\"province\":\"23\",\"user_id\":5161667,\"is_del\":null,\"tel\":\"23\",\"id\":2044,\"postal_code\":\"23\",\"lat\":\"\"}]}",
+    "errorResponseDemo": null
+  },
+  "name": "get",
+  "ids": [
+    9417
+  ],
+  "scenarios": "买家读取收货地址",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "买家读取收货地址"
+}

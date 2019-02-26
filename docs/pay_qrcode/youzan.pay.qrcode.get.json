@@ -1,0 +1,204 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.pay.qrcode/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.pay.qrcode/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "qr_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "二维码标识",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "qr_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "二维码图片id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "qr_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "二维码图片id",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "qr_name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "二维码名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "qr_name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "二维码名称",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "qr_price",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "二维码金额，以分为单位",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "qr_price",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "二维码金额，以分为单位",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "qr_code",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "图片源信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "qr_code",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "图片源信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "qr_url",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "二维码关联URL",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "qr_url",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "二维码关联URL",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "qr_type",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "二维码类型",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "qr_type",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "二维码类型",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "qr_source",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "二维码生成来源",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "qr_source",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "二维码生成来源",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "activityInfo",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "优惠信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "activityInfo",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "优惠信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "qr_created_time",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "生成时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "qr_created_time",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "生成时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": null,
+    "errorResponseDemo": null
+  },
+  "name": "get",
+  "ids": [
+    8105
+  ],
+  "scenarios": "二维码详情查询接口",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "二维码详情查询接口"
+}

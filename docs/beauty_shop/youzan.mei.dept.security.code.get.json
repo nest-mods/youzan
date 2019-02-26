@@ -1,0 +1,132 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.dept.security.code/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.dept.security.code/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "kdt_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "店铺id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "kdt_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "店铺id",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "code",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "安全码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "code",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "安全码",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "rules",
+        "type": "Number[]",
+        "isRequired": "否",
+        "desc": "规则列表\n1 顾客的私密档案\n2 顾客的手机号\n3 顾客的微信号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "rules",
+          "type": "Number[]",
+          "isNeed": "true",
+          "desc": "规则列表\n1 顾客的私密档案\n2 顾客的手机号\n3 顾客的微信号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "code_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "安全码id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "code_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "安全码id",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "status",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "状态\n1 开启\n2 关闭",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "status",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "状态\n1 开启\n2 关闭",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\n    \"response\": {\n        \"kdt_id\": 40328097, \n        \"code\": \"123456\", \n        \"rule_list\": [\n            1\n        ], \n        \"code_id\": 10032937134, \n        \"status\": 1\n    }\n}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"参数 token 无效\",\"code\":40010,\"sub_msg\":\"token无效，该token不存在或已过期\",\"sub_code\":10000,\"sub_data\":\"\"}}"
+  },
+  "name": "get",
+  "ids": [
+    10296
+  ],
+  "scenarios": "查询安全码",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "查询安全码"
+}

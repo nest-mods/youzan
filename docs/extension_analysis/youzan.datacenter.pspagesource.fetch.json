@@ -1,0 +1,388 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.datacenter.pspagesource/3.0.0/fetch"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.datacenter.pspagesource/3.0.0/fetch"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "dcps_list",
+        "type": "String[]",
+        "example": "[\"2119437107905910786.200001\"]",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "推广分析监控追踪ID集合最多200个， 可以查询指定dcps的推广基本信息，为空是查询所有。dcps即是监控链接url后面的dc_ps 参数 ",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "end_day",
+        "type": "String",
+        "example": "2018-09-06",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "查询一段时间内的推广分析列表的查询结束时间 格式yyyy-MM-dd",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "1",
+        "isRequired": "否",
+        "desc": "当前页 默认 1",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "20",
+        "isRequired": "否",
+        "desc": "页面条数 默认20 最大200",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "ps_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "推广分析名称，可以模糊匹配",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "ps_status",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "推广分析状态1:推广中;2:推广结束",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "start_day",
+        "type": "String",
+        "example": "2018-09-02",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "查询一段时间内的推广分析列表 的查询开始时间 格式yyyy-MM-dd",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "paginator",
+        "type": "DataCenterPsPaginator",
+        "isRequired": "否",
+        "desc": "推广链接数据分页信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/DataCenterPsPaginator",
+        "struct": {
+          "name": "paginator",
+          "type": "DataCenterPsPaginator",
+          "isNeed": "true",
+          "desc": "推广链接数据分页信息",
+          "defaultValue": null,
+          "example": "参考正确响应例子",
+          "isStruct": true,
+          "children": [
+            {
+              "name": "total_count",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总条数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page_size",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "一页多少条",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "第几页",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "items",
+        "type": "YunPsPageSourceModel[]",
+        "isRequired": "否",
+        "desc": "推广链接数据详细信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/YunPsPageSourceModel",
+        "struct": {
+          "name": "items",
+          "type": "YunPsPageSourceModel[]",
+          "isNeed": "true",
+          "desc": "推广链接数据详细信息",
+          "defaultValue": null,
+          "example": "参考正确响应例子",
+          "isStruct": true,
+          "children": [
+            {
+              "name": "id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "监控链接ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "kdt_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "店铺ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "dcps",
+              "type": "String",
+              "isNeed": null,
+              "desc": "追踪ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "ps_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "监控链接名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "source_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "渠道ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "微页面ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微页面名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page_type",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微页面类型",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page_alias",
+              "type": "String",
+              "isNeed": null,
+              "desc": "微页面别名",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "ps_location",
+              "type": "String",
+              "isNeed": null,
+              "desc": "推广位置",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "ps_cost",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "推广花费",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "tag_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "标签ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "start_date",
+              "type": "String",
+              "isNeed": null,
+              "desc": "推广开始时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "end_date",
+              "type": "String",
+              "isNeed": null,
+              "desc": "推广结束时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "ps_note",
+              "type": "String",
+              "isNeed": null,
+              "desc": "备注",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "ps_status",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "推广状态1:推广中;2:推广结束",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "fans_tag_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "粉丝标签名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "create_at",
+              "type": "String",
+              "isNeed": null,
+              "desc": "创建时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanDatacenterPspagesourceFetchParams youzanDatacenterPspagesourceFetchParams = new YouzanDatacenterPspagesourceFetchParams();\n\n\nYouzanDatacenterPspagesourceFetch youzanDatacenterPspagesourceFetch = new YouzanDatacenterPspagesourceFetch();\nyouzanDatacenterPspagesourceFetch.setAPIParams(youzanDatacenterPspagesourceFetchParams);\nYouzanDatacenterPspagesourceFetchResult result = client.invoke(youzanDatacenterPspagesourceFetch);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\n\n\nvar result = yzClient.Invoke(\"youzan.datacenter.pspagesource.fetch\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.datacenter.pspagesource.fetch'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\n\nfiles=[]\n\nprint client.invoke('youzan.datacenter.pspagesource.fetch', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\n\n\nvar promise = YZClient.invoke('youzan.datacenter.pspagesource.fetch', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "2120199",
+        "errorDesc": "dcps 过长",
+        "solution": "指定dcps 最多200个"
+      },
+      {
+        "errorCode": "2120103",
+        "errorDesc": "参数格式有错误",
+        "solution": "根据提示修正"
+      }
+    ],
+    "responseDemo": "{\n    \"response\":{\n        \"paginator\":{\n            \"total_count\":14,\n            \"page\":1,\n            \"page_size\":2\n        },\n        \"items\":[\n            {\n                \"end_date\":\"\",\n                \"ps_name\":\"哈哈哈哈测试下\",\n                \"page_alias\":\"16k6gawy3\",\n                \"page_type\":\"at\",\n                \"ps_cost\":1222,\n                \"created_at\":\"2018-11-02 10:43:09\",\n                \"ps_note\":\"\",\n                \"dcps\":\"2116375454981249025.200001\",\n                \"fans_tag_name\":\"访问客户打标签1\",\n                \"page_id\":5007165,\n                \"ps_location\":\"推文顶部\",\n                \"kdt_id\":63077,\n                \"page_name\":\"哈哈哈哈测试下\",\n                \"tag_id\":5137,\n                \"source_id\":1010376,\n                \"ps_status\":1,\n                \"id\":1065059,\n                \"start_date\":\"\"\n            },\n            {\n                \"end_date\":\"\",\n                \"ps_name\":\"泉测试隐藏\",\n                \"page_alias\":\"2oivt9g4qw44l\",\n                \"page_type\":\"g\",\n                \"ps_cost\":1222,\n                \"created_at\":\"2018-11-02 10:43:09\",\n                \"ps_note\":\"\",\n                \"dcps\":\"2116375455903995910.200001\",\n                \"fans_tag_name\":\"访问客户打标签1\",\n                \"page_id\":406961639,\n                \"ps_location\":\"推文顶部\",\n                \"kdt_id\":63077,\n                \"page_name\":\"泉测试隐藏\",\n                \"tag_id\":5136,\n                \"source_id\":1010376,\n                \"ps_status\":1,\n                \"id\":1065060,\n                \"start_date\":\"\"\n            }\n        ]\n    }\n}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"单次查询不能超过200条\",\"code\":2120199}}"
+  },
+  "name": "fetch",
+  "ids": [
+    10448
+  ],
+  "scenarios": "获取推广监控列表基本数据,不包含效果数据",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "获取推广监控列表"
+}

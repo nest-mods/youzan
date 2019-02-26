@@ -1,0 +1,664 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.goods.product/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.goods.product/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "goods_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "MeiGoodsInfoResp",
+        "isRequired": "否",
+        "desc": "商品详细信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiGoodsInfoResp",
+        "struct": {
+          "name": "response",
+          "type": "MeiGoodsInfoResp",
+          "isNeed": "true",
+          "desc": "商品详细信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "item_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "服务/产品 ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "goods_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sn",
+              "type": "String",
+              "isNeed": null,
+              "desc": "条形码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "title",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "create_time",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "创建时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "update_time",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "更新时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "promotion_link",
+              "type": "String",
+              "isNeed": null,
+              "desc": "推广链接",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "short_memo",
+              "type": "String",
+              "isNeed": null,
+              "desc": "服务简介",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "memo",
+              "type": "String",
+              "isNeed": null,
+              "desc": "服务详情",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "price",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "最低价格",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "original_text",
+              "type": "String",
+              "isNeed": null,
+              "desc": "价格标签",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "goods_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品类型  1 服务 2 产品",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sku_tree_list",
+              "type": "MeiGoodsSkuTreeResponse[]",
+              "isNeed": null,
+              "desc": "商品规格信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "规格ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "规格名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "leaf_list",
+                  "type": "MeiGoodsSkuLeafResponse[]",
+                  "isNeed": null,
+                  "desc": "商品规格项信息",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "id",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "规格项ID",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "name",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "规格项名称",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "imageUrl",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "规格项图片",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "goods_picture_list",
+              "type": "MeiGoodsPictureResponseDTO[]",
+              "isNeed": null,
+              "desc": "商品图片信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "image_url",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "图片URL",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "width",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "图片宽度",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "height",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "图片高度",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "sku_info_list",
+              "type": "MeiSkuInfoResponseDTO[]",
+              "isNeed": null,
+              "desc": "商品规格信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "price",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "价格",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sku_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "规格ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sku_code",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "条形码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "name_list",
+                  "type": "MeiSkuNameResponseDTO[]",
+                  "isNeed": null,
+                  "desc": "商品规格项信息",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "kid",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "规格项目Id",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "kname",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "规格项目名称",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "vid",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "规格Id",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "vname",
+                      "type": "String",
+                      "isNeed": null,
+                      "desc": "规格名称",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "cost_price",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "成本价",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "sale_info",
+              "type": "MeiGoodsSaleInfoResp",
+              "isNeed": null,
+              "desc": "售卖属性",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "shelve_num",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "上架店铺数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sold_num",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "销量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "on_shelve",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "下架状态",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sold_out",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "是否售罄 1否 2部分 3全部售罄",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "stock",
+              "type": "MeiGoodsStockResponseDTO",
+              "isNeed": null,
+              "desc": "商品库存信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "goods_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "stock_num",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "库存数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "goods_sku_stock_list",
+                  "type": "MeiGoodsSkuStockResponseDTO[]",
+                  "isNeed": null,
+                  "desc": "商品库存信息",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "sku_id",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "规格ID",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "stock_num",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "库存数量",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "total_sold_num",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "总销量",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "category",
+              "type": "MeiCategoryResponseDTO",
+              "isNeed": null,
+              "desc": "商品分类信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "分类ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "分类名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "tag_list",
+              "type": "MeiTagResponseDTO[]",
+              "isNeed": null,
+              "desc": "商品标签信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "tag_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "标签ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "标签名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "product",
+              "type": "MeiGoodsProductInfo",
+              "isNeed": null,
+              "desc": "美业商品产品信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "postage",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "邮费",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "quantityUnitId",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "单位ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "quantityUnitName",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "单位名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "cost_price",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "成本价",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanMeiGoodsProductGetParams youzanMeiGoodsProductGetParams = new YouzanMeiGoodsProductGetParams();\n\nyouzanMeiGoodsProductGetParams.setGoodsId(426377017L);\nyouzanMeiGoodsProductGetParams.setMToken(\"tPEFHHem67xnV0RoeKwB475Qcu-YsRqS8So-1Bo5rVron34cHkFLMU6CH3EjddVSwSrM4ef0NwYrTN0iiF9FgHcs0KWTn8Mr7qIiSa1A6z4\");\n\nYouzanMeiGoodsProductGet youzanMeiGoodsProductGet = new YouzanMeiGoodsProductGet();\nyouzanMeiGoodsProductGet.setAPIParams(youzanMeiGoodsProductGetParams);\nYouzanMeiGoodsProductGetResult result = client.invoke(youzanMeiGoodsProductGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"goods_id\", 426377017);\ndict.Add(\"m_token\", \"tPEFHHem67xnV0RoeKwB475Qcu-YsRqS8So-1Bo5rVron34cHkFLMU6CH3EjddVSwSrM4ef0NwYrTN0iiF9FgHcs0KWTn8Mr7qIiSa1A6z4\");\n\n\nvar result = yzClient.Invoke(\"youzan.mei.goods.product.get\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['goods_id']=426377017\nparams['m_token']=\"tPEFHHem67xnV0RoeKwB475Qcu-YsRqS8So-1Bo5rVron34cHkFLMU6CH3EjddVSwSrM4ef0NwYrTN0iiF9FgHcs0KWTn8Mr7qIiSa1A6z4\"\n\nfiles=[]\n\nprint client.invoke('youzan.mei.goods.product.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['goods_id']=426377017;\nparams['m_token']=\"tPEFHHem67xnV0RoeKwB475Qcu-YsRqS8So-1Bo5rVron34cHkFLMU6CH3EjddVSwSrM4ef0NwYrTN0iiF9FgHcs0KWTn8Mr7qIiSa1A6z4\";\n\n\nvar promise = YZClient.invoke('youzan.mei.goods.product.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.mei.goods.product.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'goods_id' => '426377017',\n    'm_token' => 'tPEFHHem67xnV0RoeKwB475Qcu-YsRqS8So-1Bo5rVron34cHkFLMU6CH3EjddVSwSrM4ef0NwYrTN0iiF9FgHcs0KWTn8Mr7qIiSa1A6z4',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\n  \"response\": {\n    \"product\": {\n      \"postage\": 11100\n    },\n    \"create_time\": 1534575268000,\n    \"promotion_link\": \"https://mei.youzan.com/h5/goods/product?keyword=3f0dbw82zi5qi&kdtId=30110346\",\n    \"sku_info_list\": [\n      {\n        \"price\": 11100,\n        \"sku_id\": 1056106,\n        \"sn\": \"fala111\",\n        \"cost_price\": 10000\n      }\n    ],\n    \"item_id\": 3266,\n    \"goods_id\": 356052588,\n    \"memo\": \"\",\n    \"original_text\": \"666\",\n    \"title\": \"发蜡1\",\n    \"price_min\": 11100,\n    \"short_memo\": \"\",\n    \"update_time\": 1534575268000,\n    \"tag_list\": [\n      {\n        \"name\": \"发蜡\",\n        \"tag_id\": 5856459\n      }\n    ],\n    \"price\": 11100,\n    \"goods_alias\": \"3f0dbw82zi5qi\",\n    \"sku_tree_list\": [],\n    \"goods_type\": 2,\n    \"sn\": \"fala111\",\n    \"goods_picture_list\": [\n      {\n        \"image_url\": \"http://img.yzcdn.cn/upload_files/2018/08/16/FofS08agSPl6Bph7QH7ldOoUySPR.png\",\n        \"width\": 936,\n        \"height\": 638\n      }\n    ],\n    \"stock\": {\n      \"goods_sku_stock_list\": [\n        {\n          \"stock_num\": 0,\n          \"sku_id\": 1056106,\n          \"total_sold_num\": 0\n        }\n      ],\n      \"stock_num\": 0\n    },\n    \"category\": {\n      \"name\": \"发蜡\",\n      \"id\": 889\n    },\n    \"price_max\": 11100,\n    \"seq\": 0,\n    \"cost_price\": 10000\n  }\n}",
+    "errorResponseDemo": null
+  },
+  "name": "get",
+  "ids": [
+    10400
+  ],
+  "scenarios": "产品详情查询",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "产品详情查询"
+}

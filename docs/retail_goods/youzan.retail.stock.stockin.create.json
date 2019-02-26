@@ -1,0 +1,248 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.stock.stockin/3.0.0/create"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.stock.stockin/3.0.0/create"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "business_time",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "采购入库时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "idempotent_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "幂等单号（请求唯一标示）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "入库备注",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "source",
+        "type": "String",
+        "example": "WEB_BACK_END",
+        "defaultValue": "WEB_BACK_END",
+        "isRequired": "是",
+        "desc": "请求来源（需调用方自定义标识：OPEN_XXXX）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "stock_in_order_items",
+        "type": "StockInOrderItemCreate[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "入库明细",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/StockInOrderItemCreate",
+        "struct": {
+          "name": "StockInOrderItemCreate[]",
+          "type": "StockInOrderItemCreate[]",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": [
+            {
+              "name": "amount",
+              "type": "Number",
+              "isStruct": false,
+              "desc": " 数量（千倍）",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "productName",
+              "type": "String",
+              "isStruct": false,
+              "desc": "商品名称",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "skuNo",
+              "type": "String",
+              "isStruct": false,
+              "desc": "sku编码",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "specifications",
+              "type": "String",
+              "isStruct": false,
+              "desc": "规格描述",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "totalCost",
+              "type": "Long",
+              "isStruct": true,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "unit",
+              "type": "String",
+              "isStruct": false,
+              "desc": "单位",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "unitCost",
+              "type": "Long",
+              "isStruct": true,
+              "desc": "",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "withTaxAmountStr",
+              "type": "String",
+              "isStruct": false,
+              "desc": "含税成本总金额(单位元) 可不传",
+              "example": null,
+              "creator": null,
+              "children": []
+            },
+            {
+              "name": "withTaxCostStr",
+              "type": "String",
+              "isStruct": false,
+              "desc": "含税成本单价 (单位元), unitCost和withTaxCostStr必须传一个",
+              "example": null,
+              "creator": null,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "vendor_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "供应商id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "vendor_name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "供应商名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "warehouse_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "门店或独立仓id   注意：连锁版必填",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "business_order_no",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "入库单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "business_order_no",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "入库单号",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailStockStockinCreateParams youzanRetailStockStockinCreateParams = new YouzanRetailStockStockinCreateParams();\n\nyouzanRetailStockStockinCreateParams.setBusinessTime(\"2017-10-12 00:00:00\");\nyouzanRetailStockStockinCreateParams.setIdempotentNo(\"atest_stockin_201710d12\");\nyouzanRetailStockStockinCreateParams.setRemark(\"备注\");\nyouzanRetailStockStockinCreateParams.setSource(\"test\");\nyouzanRetailStockStockinCreateParams.setStockInOrderItems(\"[{\"sku_no\":\"P171204586445973\",\"specifications\":\"\",\"unit\":\"件\",\"sku_id\":2313802,\"amount\":12000,\"unit_cost\":1200,\"total_cost\":14400000,\"product_name\":\"测试网店商品渠道\"},{\"sku_no\":\"P171130133003843\",\"specifications\":\"\",\"unit\":\"件\",\"sku_id\":2310536,\"amount\":12000,\"unit_cost\":1200,\"total_cost\":14400000,\"product_name\":\"退货入库11.30-2\"}]\");\nyouzanRetailStockStockinCreateParams.setVendorId(12L);\nyouzanRetailStockStockinCreateParams.setVendorName(\"测试\");\n\nYouzanRetailStockStockinCreate youzanRetailStockStockinCreate = new YouzanRetailStockStockinCreate();\nyouzanRetailStockStockinCreate.setAPIParams(youzanRetailStockStockinCreateParams);\nYouzanRetailStockStockinCreateResult result = client.invoke(youzanRetailStockStockinCreate);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"business_time\", \"2017-10-12 00:00:00\");\ndict.Add(\"idempotent_no\", \"atest_stockin_201710d12\");\ndict.Add(\"remark\", \"备注\");\ndict.Add(\"source\", \"test\");\ndict.Add(\"stock_in_order_items\", \"[{\"sku_no\":\"P171204586445973\",\"specifications\":\"\",\"unit\":\"件\",\"sku_id\":2313802,\"amount\":12000,\"unit_cost\":1200,\"total_cost\":14400000,\"product_name\":\"测试网店商品渠道\"},{\"sku_no\":\"P171130133003843\",\"specifications\":\"\",\"unit\":\"件\",\"sku_id\":2310536,\"amount\":12000,\"unit_cost\":1200,\"total_cost\":14400000,\"product_name\":\"退货入库11.30-2\"}]\");\ndict.Add(\"vendor_id\", 12);\ndict.Add(\"vendor_name\", \"测试\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.stock.stockin.create\", \"1.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.stock.stockin.create'; //要调用的api名称\n$api_version = '1.0.0'; //要调用的api版本号\n\n$my_params = [\n    'business_time' => '2017-10-12 00:00:00',\n    'idempotent_no' => 'atest_stockin_201710d12',\n    'remark' => '备注',\n    'source' => 'test',\n    'stock_in_order_items' => '[{\"sku_no\":\"P171204586445973\",\"specifications\":\"\",\"unit\":\"件\",\"sku_id\":2313802,\"amount\":12000,\"unit_cost\":1200,\"total_cost\":14400000,\"product_name\":\"测试网店商品渠道\"},{\"sku_no\":\"P171130133003843\",\"specifications\":\"\",\"unit\":\"件\",\"sku_id\":2310536,\"amount\":12000,\"unit_cost\":1200,\"total_cost\":14400000,\"product_name\":\"退货入库11.30-2\"}]',\n    'vendor_id' => '12',\n    'vendor_name' => '测试',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['business_time']=\"2017-10-12 00:00:00\"\nparams['idempotent_no']=\"atest_stockin_201710d12\"\nparams['remark']=\"备注\"\nparams['source']=\"test\"\nparams['stock_in_order_items']=\"[{\"sku_no\":\"P171204586445973\",\"specifications\":\"\",\"unit\":\"件\",\"sku_id\":2313802,\"amount\":12000,\"unit_cost\":1200,\"total_cost\":14400000,\"product_name\":\"测试网店商品渠道\"},{\"sku_no\":\"P171130133003843\",\"specifications\":\"\",\"unit\":\"件\",\"sku_id\":2310536,\"amount\":12000,\"unit_cost\":1200,\"total_cost\":14400000,\"product_name\":\"退货入库11.30-2\"}]\"\nparams['vendor_id']=12\nparams['vendor_name']=\"测试\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.stock.stockin.create', '1.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['business_time']=\"2017-10-12 00:00:00\";\nparams['idempotent_no']=\"atest_stockin_201710d12\";\nparams['remark']=\"备注\";\nparams['source']=\"test\";\nparams['stock_in_order_items']=\"[{\"sku_no\":\"P171204586445973\",\"specifications\":\"\",\"unit\":\"件\",\"sku_id\":2313802,\"amount\":12000,\"unit_cost\":1200,\"total_cost\":14400000,\"product_name\":\"测试网店商品渠道\"},{\"sku_no\":\"P171130133003843\",\"specifications\":\"\",\"unit\":\"件\",\"sku_id\":2310536,\"amount\":12000,\"unit_cost\":1200,\"total_cost\":14400000,\"product_name\":\"退货入库11.30-2\"}]\";\nparams['vendor_id']=12;\nparams['vendor_name']=\"测试\";\n\n\nvar promise = YZClient.invoke('youzan.retail.stock.stockin.create', '1.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":\"SRK171204162204176315\"}",
+    "errorResponseDemo": ""
+  },
+  "name": "create",
+  "ids": [
+    9022
+  ],
+  "scenarios": "采购入库创建接口",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "采购入库创建接口"
+}

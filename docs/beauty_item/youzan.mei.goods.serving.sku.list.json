@@ -1,0 +1,81 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.goods.serving.sku/3.0.0/list"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.goods.serving.sku/3.0.0/list"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "skus",
+        "type": "MeiGoodsSkuInfo[]",
+        "isRequired": "否",
+        "desc": "sku列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiGoodsSkuInfo",
+        "struct": {
+          "name": "skus",
+          "type": "MeiGoodsSkuInfo[]",
+          "isNeed": "true",
+          "desc": "sku列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "dict_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "规格ID",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "text",
+              "type": "String",
+              "isNeed": null,
+              "desc": "规格名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\n  \"response\": [\n    {\n      \"dict_id\": 4399368,\n      \"text\": \"重量2\"\n    },\n    {\n      \"dict_id\": 308415,\n      \"text\": \"重量\"\n    },\n    {\n      \"dict_id\": 1,\n      \"text\": \"颜色\"\n    }\n  ]\n}",
+    "errorResponseDemo": null
+  },
+  "name": "list",
+  "ids": [
+    10393
+  ],
+  "scenarios": "服务规格查询",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "服务规格查询"
+}

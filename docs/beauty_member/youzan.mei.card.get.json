@@ -1,0 +1,514 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.card/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.card/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "card_alias",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "要查询的会员卡标识",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "dept_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "分店信息",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "wap_show",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "是否在网店销售",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "wap_show",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "是否在网店销售",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "backgroud_img",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "背景图片url",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "backgroud_img",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "背景图片url",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "card_rights",
+        "type": "MeiCardRight[]",
+        "isRequired": "否",
+        "desc": "权益列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiCardRight",
+        "struct": {
+          "name": "card_rights",
+          "type": "MeiCardRight[]",
+          "isNeed": "true",
+          "desc": "权益列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "gift",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否是赠送的权益",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "rights_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "权益Id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "rights_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "权益类型：\n1 折扣；\n2 次数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "goods_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "value",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "权益值",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "term_days",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "有效期",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "term_days",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "有效期",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "select_dept_ids",
+        "type": "Number[]",
+        "isRequired": "否",
+        "desc": "上架门店列表",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "select_dept_ids",
+          "type": "Number[]",
+          "isNeed": "true",
+          "desc": "上架门店列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "sync_wx",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "是否同步微信",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "sync_wx",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "是否同步微信",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "on_shelve",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "是否上架销售",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "on_shelve",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "是否上架销售",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "description",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "描述",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "description",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "描述",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "all_discount",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "是否开启了全店折扣",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "all_discount",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "是否开启了全店折扣",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "card_type",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "卡类型",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "card_type",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "卡类型",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "card_alias",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "卡标识",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "card_alias",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "卡标识",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "all_discount_value",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "全店折扣的折扣值",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "all_discount_value",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "全店折扣的折扣值",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "kdt_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "店铺id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "kdt_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "店铺id",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "deleted",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "是否删除",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "deleted",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "是否删除",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "card_name",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "卡名称",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "card_name",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "卡名称",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "prepaid_gift_price",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "赠送金额",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "prepaid_gift_price",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "赠送金额",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "card_price",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "卡售价",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "card_price",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "卡售价",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "sync_wx_status",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "同步微信状态",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "sync_wx_status",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "同步微信状态",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "created_at",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "创建时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "created_at",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "创建时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "updated_at",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "更新时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "updated_at",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "更新时间",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "dept_id",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "分店id",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "dept_id",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "分店id",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanMeiCardGetParams youzanMeiCardGetParams = new YouzanMeiCardGetParams();\n\nyouzanMeiCardGetParams.setMToken(\"17M2zwaGqEEPf1wcVbMQj8uoDJONEONEXyxiSBU8o-oQRGGGF1zp_bmi5YJV_ZXx-s5utv2PI8GOa9QFB9e-t3cs0KWTn8Mr7qIiSa1A6z4\");\nyouzanMeiCardGetParams.setDeptId(1L);\nyouzanMeiCardGetParams.setCardAlias(\"Y2xhp57sese8gc\");\n\nYouzanMeiCardGet youzanMeiCardGet = new YouzanMeiCardGet();\nyouzanMeiCardGet.setAPIParams(youzanMeiCardGetParams);\nYouzanMeiCardGetResult result = client.invoke(youzanMeiCardGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"m_token\", \"17M2zwaGqEEPf1wcVbMQj8uoDJONEONEXyxiSBU8o-oQRGGGF1zp_bmi5YJV_ZXx-s5utv2PI8GOa9QFB9e-t3cs0KWTn8Mr7qIiSa1A6z4\");\ndict.Add(\"dept_id\", 1);\ndict.Add(\"card_alias\", \"Y2xhp57sese8gc\");\n\n\nvar result = yzClient.Invoke(\"youzan.mei.card.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['m_token']=\"17M2zwaGqEEPf1wcVbMQj8uoDJONEONEXyxiSBU8o-oQRGGGF1zp_bmi5YJV_ZXx-s5utv2PI8GOa9QFB9e-t3cs0KWTn8Mr7qIiSa1A6z4\"\nparams['dept_id']=1\nparams['card_alias']=\"Y2xhp57sese8gc\"\n\nfiles=[]\n\nprint client.invoke('youzan.mei.card.get', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['m_token']=\"17M2zwaGqEEPf1wcVbMQj8uoDJONEONEXyxiSBU8o-oQRGGGF1zp_bmi5YJV_ZXx-s5utv2PI8GOa9QFB9e-t3cs0KWTn8Mr7qIiSa1A6z4\";\nparams['dept_id']=1;\nparams['card_alias']=\"Y2xhp57sese8gc\";\n\n\nvar promise = YZClient.invoke('youzan.mei.card.get', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.mei.card.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'm_token' => '17M2zwaGqEEPf1wcVbMQj8uoDJONEONEXyxiSBU8o-oQRGGGF1zp_bmi5YJV_ZXx-s5utv2PI8GOa9QFB9e-t3cs0KWTn8Mr7qIiSa1A6z4',\n    'dept_id' => '1',\n    'card_alias' => 'Y2xhp57sese8gc',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\n    \"response\": {\n        \"wap_show\": 1, \n        \"backgroud_img\": \"\", \n        \"card_rights\": [\n            {\n                \"gift\": 0, \n                \"rights_type\": 2, \n                \"goods_id\": 410950548, \n                \"right_id\": 4795357, \n                \"value\": 3\n            }\n        ], \n        \"term_days\": 5, \n        \"select_dept_ids\": [ ], \n        \"sync_wx\": 0, \n        \"on_shelve\": 0, \n        \"description\": \"\", \n        \"all_discount\": 0, \n        \"card_type\": 1, \n        \"card_alias\": \"2fu5zks10w94xB\", \n        \"all_discount_value\": 0, \n        \"kdt_id\": 40328097, \n        \"deleted\": 0, \n        \"card_name\": \"555\", \n        \"prepaid_gift_price\": 0, \n        \"card_price\": 4400,\n        \"sync_wx_status\": 0\n    }\n}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"票据无效,请重新登录\",\"code\":230101003}}"
+  },
+  "name": "get",
+  "ids": [
+    10338
+  ],
+  "scenarios": "获取会员卡详情",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "获取会员卡详情"
+}

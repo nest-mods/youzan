@@ -1,0 +1,152 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.goods.product.tag/3.0.0/list"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.goods.product.tag/3.0.0/list"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_no",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "页码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "每页数目",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "paginator",
+        "type": "MeiPaginator",
+        "isRequired": "否",
+        "desc": "分页信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiPaginator",
+        "struct": {
+          "name": "paginator",
+          "type": "MeiPaginator",
+          "isNeed": "true",
+          "desc": "分页信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "total_count",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总记录数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "第几页",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page_size",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "每页显示的记录数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "items",
+        "type": "MeiGoodsTagResp[]",
+        "isRequired": "否",
+        "desc": "标签列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiGoodsTagResp",
+        "struct": {
+          "name": "items",
+          "type": "MeiGoodsTagResp[]",
+          "isNeed": "true",
+          "desc": "标签列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "标签名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "tag_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "标签id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": null,
+    "errorCodes": null,
+    "responseDemo": "{\n  \"response\": {\n    \"paginator\": {\n      \"total_count\": 1,\n      \"page\": 0,\n      \"page_size\": 0\n    },\n    \"items\": [\n      {\n        \"name\": \"标签1\",\n        \"tag_id\": 5836378\n      }\n    ]\n  }\n}",
+    "errorResponseDemo": null
+  },
+  "name": "list",
+  "ids": [
+    10382
+  ],
+  "scenarios": "产品标签查询",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "产品标签查询"
+}

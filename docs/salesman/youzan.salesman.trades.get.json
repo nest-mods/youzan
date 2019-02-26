@@ -1,0 +1,753 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.salesman.trades/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.salesman.trades/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "end_time",
+        "type": "Number",
+        "example": "1509506676",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "结束时间（时间戳）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fans_id",
+        "type": "Number",
+        "example": "12345",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "粉丝id（mobile或fans_id选其一，另者置为0，都填以mobile为准）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fans_type",
+        "type": "Number",
+        "example": "1",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "粉丝类型（自有粉丝: fans_type = 1；当传mobile时，和fans_id一样传0）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "example": "0",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "手机号（mobile或fans_id选其一，另者置为0，都填以mobile为准）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_no",
+        "type": "Number",
+        "example": "1",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "页码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "20",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "每页记录数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "start_time",
+        "type": "Number",
+        "example": "1509506676",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "开始时间 （时间戳）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "total_results",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "记录总数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "total_results",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "记录总数",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "trades",
+        "type": "SalesmanTradeDetail[]",
+        "isRequired": "否",
+        "desc": "推广订单列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/SalesmanTradeDetail",
+        "struct": {
+          "name": "trades",
+          "type": "SalesmanTradeDetail[]",
+          "isNeed": "true",
+          "desc": "推广订单列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "seller",
+              "type": "String",
+              "isNeed": null,
+              "desc": "销售员标记",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "order_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "推广订单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "money",
+              "type": "String",
+              "isNeed": null,
+              "desc": "订单总额(元),扣除运费",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created_at",
+              "type": "String",
+              "isNeed": null,
+              "desc": "下单时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "cps_money",
+              "type": "String",
+              "isNeed": null,
+              "desc": "提成金额(元)",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "state",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "订单状态:3:待付款，5:已付款，6:已发货，100:交易完成",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "phone",
+              "type": "String",
+              "isNeed": null,
+              "desc": "销售员手机号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "items",
+              "type": "SalesmanTradeItem[]",
+              "isNeed": null,
+              "desc": "销售员推广订单详细商品提成信息数据结构",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "price",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品价格(元)",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "num",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "title",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "is_join",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品是否参与推广0:不参与1参与",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "num_iid",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "i_rate",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品提成比例(%)",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "ii_rate",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品邀请奖励提成比例(%)",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "i_cps_money",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品提成奖励(元)",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "ii_cps_money",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品邀请奖励提成奖励(元)",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "settle_state",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "结算状态1:待结算 2:已结算 3:余额不足 4:结算异常，等待重试 5:货到付款",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "auto_settle",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否自动结算0:人工结算1:自动结算",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "settled_at",
+              "type": "String",
+              "isNeed": null,
+              "desc": "结算时间:如果未结算、人工结算返回空",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanSalesmanTradesGetParams youzanSalesmanTradesGetParams = new YouzanSalesmanTradesGetParams();\n\nyouzanSalesmanTradesGetParams.setStartTime(0L);\nyouzanSalesmanTradesGetParams.setPageSize(10L);\nyouzanSalesmanTradesGetParams.setPageNo(1L);\nyouzanSalesmanTradesGetParams.setMobile(\"0\");\nyouzanSalesmanTradesGetParams.setFansType(1L);\nyouzanSalesmanTradesGetParams.setFansId(5837957803L);\nyouzanSalesmanTradesGetParams.setEndTime(0L);\n\nYouzanSalesmanTradesGet youzanSalesmanTradesGet = new YouzanSalesmanTradesGet();\nyouzanSalesmanTradesGet.setAPIParams(youzanSalesmanTradesGetParams);\nYouzanSalesmanTradesGetResult result = client.invoke(youzanSalesmanTradesGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"start_time\", 0);\ndict.Add(\"page_size\", 10);\ndict.Add(\"page_no\", 1);\ndict.Add(\"mobile\", \"0\");\ndict.Add(\"fans_type\", 1);\ndict.Add(\"fans_id\", 5837957803);\ndict.Add(\"end_time\", 0);\n\n\nvar result = yzClient.Invoke(\"youzan.salesman.trades.get\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.salesman.trades.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'start_time' => '0',\n    'page_size' => '10',\n    'page_no' => '1',\n    'mobile' => '0',\n    'fans_type' => '1',\n    'fans_id' => '5837957803',\n    'end_time' => '0',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['start_time']=0\nparams['page_size']=10\nparams['page_no']=1\nparams['mobile']=\"0\"\nparams['fans_type']=1\nparams['fans_id']=5837957803\nparams['end_time']=0\n\nfiles=[]\n\nprint client.invoke('youzan.salesman.trades.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['start_time']=0;\nparams['page_size']=10;\nparams['page_no']=1;\nparams['mobile']=\"0\";\nparams['fans_type']=1;\nparams['fans_id']=5837957803;\nparams['end_time']=0;\n\n\nvar promise = YZClient.invoke('youzan.salesman.trades.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "140400100",
+        "errorDesc": "粉丝绑定信息不存在",
+        "solution": "传参fans_id不正确"
+      },
+      {
+        "errorCode": "140400200",
+        "errorDesc": "user not exist",
+        "solution": "手机注册有赞"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"trades\":[{\"seller\":\"2t2yTC\",\"order_no\":\"E20180925180044045900003\",\"cps_money\":\"0.00\",\"settle_state\":2,\"money\":\"0.00\",\"phone\":\"15860817746\",\"created_at\":\"2018-09-25 18:00:44\",\"auto_settle\":1,\"state\":5,\"items\":[{\"ii_rate\":\"0.00\",\"i_cps_money\":\"0.00\",\"price\":\"0.10\",\"is_join\":1,\"num\":1,\"ii_cps_money\":\"0.00\",\"num_iid\":\"436625962\",\"i_rate\":\"0.00\",\"title\":\"【商品2】豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。雄州雾列，俊采星驰。台隍枕夷夏之交，宾主尽东南之美。\"}]},{\"seller\":\"2t2yTC\",\"order_no\":\"E20180925171817045900014\",\"cps_money\":\"0.00\",\"settle_state\":2,\"money\":\"0.00\",\"phone\":\"15860817746\",\"created_at\":\"2018-09-25 17:18:18\",\"auto_settle\":1,\"state\":5,\"items\":[{\"ii_rate\":\"0.00\",\"i_cps_money\":\"0.00\",\"price\":\"0.10\",\"is_join\":1,\"num\":1,\"ii_cps_money\":\"0.00\",\"num_iid\":\"436625962\",\"i_rate\":\"0.00\",\"title\":\"【商品2】豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。雄州雾列，俊采星驰。台隍枕夷夏之交，宾主尽东南之美。\"}]},{\"seller\":\"2t2yTC\",\"order_no\":\"E20180830204023045900001\",\"cps_money\":\"0.00\",\"settle_state\":2,\"money\":\"0.00\",\"phone\":\"15860817746\",\"created_at\":\"2018-08-30 20:40:23\",\"auto_settle\":1,\"state\":100,\"items\":[{\"ii_rate\":\"0.00\",\"i_cps_money\":\"0.00\",\"price\":\"0.00\",\"is_join\":1,\"num\":1,\"ii_cps_money\":\"0.00\",\"num_iid\":\"432507654\",\"i_rate\":\"0.00\",\"title\":\"直url修改直播001\"}]},{\"seller\":\"2t2yTC\",\"order_no\":\"E20180824152833045900007\",\"cps_money\":\"0.00\",\"settle_state\":0,\"money\":\"0.02\",\"phone\":\"15860817746\",\"created_at\":\"2018-08-24 15:28:33\",\"auto_settle\":0,\"state\":3,\"items\":[{\"ii_rate\":\"0.00\",\"i_cps_money\":\"0.00\",\"price\":\"0.02\",\"is_join\":1,\"num\":1,\"ii_cps_money\":\"0.00\",\"num_iid\":\"431934506\",\"i_rate\":\"0.00\",\"title\":\"多网点商品001\"}]},{\"seller\":\"2t2yTC\",\"order_no\":\"E20180824144621045900004\",\"cps_money\":\"0.02\",\"settle_state\":2,\"money\":\"0.02\",\"phone\":\"15860817746\",\"created_at\":\"2018-08-24 14:46:21\",\"auto_settle\":1,\"state\":100,\"items\":[{\"ii_rate\":\"0.00\",\"i_cps_money\":\"0.00\",\"price\":\"0.02\",\"is_join\":1,\"num\":1,\"ii_cps_money\":\"0.00\",\"num_iid\":\"431934506\",\"i_rate\":\"0.00\",\"title\":\"多网点商品001\"}]},{\"seller\":\"2t2yTC\",\"order_no\":\"E20180824141710045900011\",\"cps_money\":\"0.01\",\"settle_state\":2,\"money\":\"0.01\",\"phone\":\"15860817746\",\"created_at\":\"2018-08-24 14:17:10\",\"auto_settle\":1,\"state\":100,\"items\":[{\"ii_rate\":\"0.00\",\"i_cps_money\":\"0.00\",\"price\":\"0.01\",\"is_join\":1,\"num\":1,\"ii_cps_money\":\"0.00\",\"num_iid\":\"431819260\",\"i_rate\":\"0.00\",\"title\":\"直播标题\"}]},{\"seller\":\"2t2yTC\",\"order_no\":\"E20180824115826045900002\",\"cps_money\":\"0.00\",\"settle_state\":1,\"money\":\"0.00\",\"phone\":\"15860817746\",\"created_at\":\"2018-08-24 11:58:26\",\"auto_settle\":1,\"state\":5,\"items\":[{\"ii_rate\":\"0.00\",\"i_cps_money\":\"0.00\",\"price\":\"0.02\",\"is_join\":1,\"num\":2,\"ii_cps_money\":\"0.00\",\"num_iid\":\"431934506\",\"i_rate\":\"0.00\",\"title\":\"多网点商品001\"}]},{\"seller\":\"2t2yTC\",\"order_no\":\"E20180824101332045900002\",\"cps_money\":\"0.06\",\"settle_state\":2,\"money\":\"0.06\",\"phone\":\"15860817746\",\"created_at\":\"2018-08-24 10:13:32\",\"auto_settle\":1,\"state\":100,\"items\":[{\"ii_rate\":\"0.00\",\"i_cps_money\":\"0.00\",\"price\":\"0.02\",\"is_join\":1,\"num\":3,\"ii_cps_money\":\"0.00\",\"num_iid\":\"431934506\",\"i_rate\":\"0.00\",\"title\":\"多网点商品001\"}]},{\"seller\":\"2t2yTC\",\"order_no\":\"E20180823214519045900009\",\"cps_money\":\"0.00\",\"settle_state\":0,\"money\":\"0.09\",\"phone\":\"15860817746\",\"created_at\":\"2018-08-23 21:45:19\",\"auto_settle\":0,\"state\":3,\"items\":[{\"ii_rate\":\"0.00\",\"i_cps_money\":\"0.00\",\"price\":\"0.04\",\"is_join\":1,\"num\":1,\"ii_cps_money\":\"0.00\",\"num_iid\":\"431805203\",\"i_rate\":\"0.00\",\"title\":\"商品003\"},{\"ii_rate\":\"0.00\",\"i_cps_money\":\"0.00\",\"price\":\"0.02\",\"is_join\":1,\"num\":1,\"ii_cps_money\":\"0.00\",\"num_iid\":\"431805202\",\"i_rate\":\"0.00\",\"title\":\"001商品\"},{\"ii_rate\":\"0.00\",\"i_cps_money\":\"0.00\",\"price\":\"0.03\",\"is_join\":1,\"num\":1,\"ii_cps_money\":\"0.00\",\"num_iid\":\"431804405\",\"i_rate\":\"0.00\",\"title\":\"002商品\"}]},{\"seller\":\"2t2yTC\",\"order_no\":\"E20180823201740045900001\",\"cps_money\":\"0.04\",\"settle_state\":2,\"money\":\"0.04\",\"phone\":\"15860817746\",\"created_at\":\"2018-08-23 20:17:40\",\"auto_settle\":1,\"state\":100,\"items\":[{\"ii_rate\":\"0.00\",\"i_cps_money\":\"0.00\",\"price\":\"0.04\",\"is_join\":1,\"num\":1,\"ii_cps_money\":\"0.00\",\"num_iid\":\"431882227\",\"i_rate\":\"0.00\",\"title\":\"003\"}]}],\"total_results\":21}}",
+    "errorResponseDemo": "{\"error_response\":{\"code\":140400200,\"message\":\"user not exist\"}}"
+  },
+  "name": "get",
+  "ids": [
+    10514,
+    8058
+  ],
+  "scenarios": "获取分销员推广订单列表,支持订单号查询",
+  "3.0.1": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.salesman.trades/3.0.1/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.salesman.trades/3.0.1/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "end_time",
+        "type": "Number",
+        "example": "1509506676",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "结束时间（时间戳）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fans_id",
+        "type": "Number",
+        "example": "12345",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "粉丝id（mobile或fans_id选其一，另者置为0，都填以mobile为准）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fans_type",
+        "type": "Number",
+        "example": "1",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "粉丝类型（自有粉丝: fans_type = 1；当传mobile时，和fans_id一样传0）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "example": "0",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "手机号（mobile或fans_id选其一，另者置为0，都填以mobile为准）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "order_no",
+        "type": "String",
+        "example": "E20180910*****",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_no",
+        "type": "Number",
+        "example": "1",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "页码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "20",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "每页记录数（最大100）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "start_time",
+        "type": "Number",
+        "example": "1509506676",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "开始时间 （时间戳）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "total",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "记录总数",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "total",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "记录总数",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      },
+      {
+        "name": "list",
+        "type": "SalesmanTradeDetail[]",
+        "isRequired": "否",
+        "desc": "推广订单列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/SalesmanTradeDetail",
+        "struct": {
+          "name": "list",
+          "type": "SalesmanTradeDetail[]",
+          "isNeed": "true",
+          "desc": "推广订单列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "seller",
+              "type": "String",
+              "isNeed": null,
+              "desc": "销售员标记",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "order_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "推广订单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "money",
+              "type": "String",
+              "isNeed": null,
+              "desc": "订单总额(元),扣除运费",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created_at",
+              "type": "String",
+              "isNeed": null,
+              "desc": "下单时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "cps_money",
+              "type": "String",
+              "isNeed": null,
+              "desc": "提成金额(元)",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "state",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "订单状态:3:待付款，5:已付款，6:已发货，100:交易完成",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "phone",
+              "type": "String",
+              "isNeed": null,
+              "desc": "销售员手机号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "items",
+              "type": "SalesmanTradeItem[]",
+              "isNeed": null,
+              "desc": "销售员推广订单详细商品提成信息数据结构",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "price",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品价格(元)",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "num",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "title",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "is_join",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品是否参与推广0:不参与1参与",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "num_iid",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "i_rate",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品提成比例(%)",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "ii_rate",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品邀请奖励提成比例(%)",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "i_cps_money",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品提成奖励(元)",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "ii_cps_money",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品邀请奖励提成奖励(元)",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "settle_state",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "结算状态1:待结算 2:已结算 3:余额不足 4:结算异常，等待重试 5:货到付款",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "auto_settle",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "是否自动结算0:人工结算1:自动结算",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "settled_at",
+              "type": "String",
+              "isNeed": null,
+              "desc": "结算时间:如果未结算、人工结算返回空",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanSalesmanTradesGetParams youzanSalesmanTradesGetParams = new YouzanSalesmanTradesGetParams();\n\nyouzanSalesmanTradesGetParams.setEndTime(0L);\nyouzanSalesmanTradesGetParams.setFansId(0L);\nyouzanSalesmanTradesGetParams.setFansType(0L);\nyouzanSalesmanTradesGetParams.setMobile(\" 15624558486\");\nyouzanSalesmanTradesGetParams.setOrderNo(\"\");\nyouzanSalesmanTradesGetParams.setPageNo(1L);\nyouzanSalesmanTradesGetParams.setPageSize(20L);\nyouzanSalesmanTradesGetParams.setStartTime(0L);\n\nYouzanSalesmanTradesGet youzanSalesmanTradesGet = new YouzanSalesmanTradesGet();\nyouzanSalesmanTradesGet.setAPIParams(youzanSalesmanTradesGetParams);\nYouzanSalesmanTradesGetResult result = client.invoke(youzanSalesmanTradesGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"end_time\", 0);\ndict.Add(\"fans_id\", 0);\ndict.Add(\"fans_type\", 0);\ndict.Add(\"mobile\", \" 15624558486\");\ndict.Add(\"order_no\", \"\");\ndict.Add(\"page_no\", 1);\ndict.Add(\"page_size\", 20);\ndict.Add(\"start_time\", 0);\n\n\nvar result = yzClient.Invoke(\"youzan.salesman.trades.get\", \"3.0.1\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['end_time']=0\nparams['fans_id']=0\nparams['fans_type']=0\nparams['mobile']=\" 15624558486\"\nparams['order_no']=\"\"\nparams['page_no']=1\nparams['page_size']=20\nparams['start_time']=0\n\nfiles=[]\n\nprint client.invoke('youzan.salesman.trades.get', '3.0.1', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['end_time']=0;\nparams['fans_id']=0;\nparams['fans_type']=0;\nparams['mobile']=\" 15624558486\";\nparams['order_no']=\"\";\nparams['page_no']=1;\nparams['page_size']=20;\nparams['start_time']=0;\n\n\nvar promise = YZClient.invoke('youzan.salesman.trades.get', '3.0.1', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.salesman.trades.get'; //要调用的api名称\n$api_version = '3.0.1'; //要调用的api版本号\n\n$my_params = [\n    'end_time' => '0',\n    'fans_id' => '0',\n    'fans_type' => '0',\n    'mobile' => ' 15624558486',\n    'order_no' => '',\n    'page_no' => '1',\n    'page_size' => '20',\n    'start_time' => '0',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "300000000",
+        "errorDesc": "user not exist",
+        "solution": "检测用户是否注册有赞账号"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"total\":6,\"list\":[{\"seller\":\"2L8z3L\",\"order_no\":\"E20181129153118095600033\",\"cps_money\":\"0.00\",\"settle_state\":0,\"money\":\"19.00\",\"phone\":\"13486373190\",\"created_at\":\"2018-11-29 15:31:19\",\"auto_settle\":0,\"state\":3,\"buyer_id\":538312636,\"items\":[{\"price\":\"19.00\",\"num\":1,\"item_key\":\"E20181129153118095600033,1485719361026015851\",\"num_iid\":\"444989736\",\"title\":\"毛巾\"}]},{\"seller\":\"2L8z3L\",\"order_no\":\"E20181019105033020600013\",\"cps_money\":\"0.02\",\"settle_state\":1,\"money\":\"0.20\",\"phone\":\"13486373190\",\"created_at\":\"2018-10-19 10:50:34\",\"auto_settle\":1,\"state\":5,\"buyer_id\":538312636,\"items\":[{\"ii_rate\":\"11.00\",\"i_cps_money\":\"0.02\",\"price\":\"0.20\",\"is_join\":1,\"num\":1,\"item_key\":\"E20181019105033020600013,1478075940196065097\",\"ii_cps_money\":\"0.02\",\"num_iid\":\"426749388\",\"i_rate\":\"10.00\",\"title\":\"尼欧测试\"}]},{\"seller\":\"2L8z3L\",\"order_no\":\"E20181019104902079000004\",\"cps_money\":\"0.02\",\"settle_state\":1,\"money\":\"0.20\",\"phone\":\"13486373190\",\"created_at\":\"2018-10-19 10:49:02\",\"auto_settle\":1,\"state\":5,\"buyer_id\":538312636,\"items\":[{\"ii_rate\":\"11.00\",\"i_cps_money\":\"0.02\",\"price\":\"0.20\",\"is_join\":1,\"num\":1,\"item_key\":\"E20181019104902079000004,1478075745081234315\",\"ii_cps_money\":\"0.02\",\"num_iid\":\"426749388\",\"i_rate\":\"10.00\",\"title\":\"尼欧测试\"}]},{\"seller\":\"2L8z3L\",\"order_no\":\"E20181019104709054100006\",\"cps_money\":\"0.00\",\"settle_state\":0,\"money\":\"0.14\",\"phone\":\"13486373190\",\"created_at\":\"2018-10-19 10:47:09\",\"auto_settle\":0,\"state\":3,\"buyer_id\":538312636,\"items\":[{\"price\":\"0.14\",\"num\":1,\"item_key\":\"E20181019104709054100006,1478075502285030382\",\"num_iid\":\"426749388\",\"title\":\"尼欧测试\"}]},{\"seller\":\"2L8z3L\",\"order_no\":\"E20181019103756010300011\",\"cps_money\":\"0.02\",\"settle_state\":1,\"money\":\"0.20\",\"phone\":\"13486373190\",\"created_at\":\"2018-10-19 10:37:56\",\"auto_settle\":1,\"state\":5,\"buyer_id\":538312636,\"items\":[{\"ii_rate\":\"11.00\",\"i_cps_money\":\"0.02\",\"price\":\"0.20\",\"is_join\":1,\"num\":1,\"item_key\":\"E20181019103756010300011,1478074314496945891\",\"ii_cps_money\":\"0.02\",\"num_iid\":\"426749388\",\"i_rate\":\"10.00\",\"title\":\"尼欧测试\"}]},{\"seller\":\"2L8z3L\",\"order_no\":\"E20181019103418090800020\",\"cps_money\":\"0.02\",\"settle_state\":1,\"money\":\"0.20\",\"phone\":\"13486373190\",\"created_at\":\"2018-10-19 10:34:18\",\"auto_settle\":1,\"state\":5,\"buyer_id\":538312636,\"items\":[{\"ii_rate\":\"11.00\",\"i_cps_money\":\"0.02\",\"price\":\"0.20\",\"is_join\":1,\"num\":1,\"item_key\":\"E20181019103418090800020,1478073846767557470\",\"ii_cps_money\":\"0.02\",\"num_iid\":\"426749388\",\"i_rate\":\"10.00\",\"title\":\"尼欧测试\"}]}]}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"user not exist\",\"code\":300000000}}"
+  },
+  "version": [
+    "3.0.1",
+    "3.0.0"
+  ],
+  "desc": "获取分销员推广订单列表"
+}

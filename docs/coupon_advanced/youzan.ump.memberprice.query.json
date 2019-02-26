@@ -1,0 +1,164 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.ump.memberprice/3.0.0/query"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.ump.memberprice/3.0.0/query"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "item_ids",
+        "type": "Number[]",
+        "example": "[1]",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品id数组，一次最多50个",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "ItemMemberPrice[]",
+        "isRequired": "否",
+        "desc": "自定义会员价",
+        "isStruct": true,
+        "structUrl": "/web/meta/ItemMemberPrice",
+        "struct": {
+          "name": "response",
+          "type": "ItemMemberPrice[]",
+          "isNeed": "true",
+          "desc": "自定义会员价",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "itemId",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "skus",
+              "type": "SkuMemberPrice[]",
+              "isNeed": null,
+              "desc": "sku自定义会员价信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "skuId",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "skuId",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "price",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "原价，单位分",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "cards",
+                  "type": "MemberPrice[]",
+                  "isNeed": null,
+                  "desc": "自定义会员价信息",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": true,
+                  "children": [
+                    {
+                      "name": "cardId",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "会员卡id",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "discountType",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "优惠类型 1：减钱 2：指定价格",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    },
+                    {
+                      "name": "discountValue",
+                      "type": "Number",
+                      "isNeed": null,
+                      "desc": "优惠值",
+                      "defaultValue": null,
+                      "example": null,
+                      "isStruct": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanUmpMemberpriceQueryParams youzanUmpMemberpriceQueryParams = new YouzanUmpMemberpriceQueryParams();\n\nyouzanUmpMemberpriceQueryParams.setItemIds(\"[436088699,184135551]\");\n\nYouzanUmpMemberpriceQuery youzanUmpMemberpriceQuery = new YouzanUmpMemberpriceQuery();\nyouzanUmpMemberpriceQuery.setAPIParams(youzanUmpMemberpriceQueryParams);\nYouzanUmpMemberpriceQueryResult result = client.invoke(youzanUmpMemberpriceQuery);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"item_ids\", \"[436088699,184135551]\");\n\n\nvar result = yzClient.Invoke(\"youzan.ump.memberprice.query\", \"3.0.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['item_ids']=\"[436088699,184135551]\"\n\nfiles=[]\n\nprint client.invoke('youzan.ump.memberprice.query', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['item_ids']=\"[436088699,184135551]\";\n\n\nvar promise = YZClient.invoke('youzan.ump.memberprice.query', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.ump.memberprice.query'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'item_ids' => '[436088699,184135551]',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":[{\"skus\":[{\"cards\":[{\"discount_value\":80,\"discount_type\":2,\"card_id\":110436341},{\"discount_value\":80,\"discount_type\":2,\"card_id\":110433202}],\"price\":100,\"sku_id\":36238027},{\"cards\":[{\"discount_value\":80,\"discount_type\":2,\"card_id\":110436341},{\"discount_value\":80,\"discount_type\":2,\"card_id\":110433202}],\"price\":200,\"sku_id\":36238028}],\"item_id\":436088699},{\"skus\":[{\"cards\":[{\"discount_value\":1200,\"discount_type\":1,\"card_id\":110436341}],\"price\":121200}],\"item_id\":184135551}]}",
+    "errorResponseDemo": null
+  },
+  "name": "query",
+  "ids": [
+    9230
+  ],
+  "scenarios": "根据商品id批量获取商品的自定义会员价",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "根据商品id批量获取商品的自定义会员价"
+}

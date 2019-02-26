@@ -1,0 +1,184 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.trade.returngoods/3.0.0/agree"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.trade.returngoods/3.0.0/agree"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "address",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "收货地址",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "收货手机号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "收货人",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "post",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "邮编",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "refund_id",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "退款ID，退款查询接口可查询到，如https://open.youzan.com/v3/apicenter/doc-api-main/1/2/trade_advanced/youzan.trade.refund.search",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "remark",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "说明",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "tel",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "收货电话",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "version",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "退款版本号，退款查询接口可查询到，如https://open.youzan.com/v3/apicenter/doc-api-main/1/2/trade_advanced/youzan.trade.refund.get",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "Boolean",
+        "isRequired": "否",
+        "desc": "同意退货是否成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "Boolean",
+          "isNeed": "true",
+          "desc": "同意退货是否成功",
+          "defaultValue": null,
+          "example": "true",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanTradeReturngoodsAgreeParams youzanTradeReturngoodsAgreeParams = new YouzanTradeReturngoodsAgreeParams();\n\nyouzanTradeReturngoodsAgreeParams.setTel(\"051786457894\");\nyouzanTradeReturngoodsAgreeParams.setRemark(\"test\");\nyouzanTradeReturngoodsAgreeParams.setRefundId(\"201806201524210000010610\");\nyouzanTradeReturngoodsAgreeParams.setPost(310000L);\nyouzanTradeReturngoodsAgreeParams.setName(\"simon\");\nyouzanTradeReturngoodsAgreeParams.setMobile(\"13516829173\");\nyouzanTradeReturngoodsAgreeParams.setAddress(\"杭州市\");\nyouzanTradeReturngoodsAgreeParams.setVersion(1529479461149L);\n\nYouzanTradeReturngoodsAgree youzanTradeReturngoodsAgree = new YouzanTradeReturngoodsAgree();\nyouzanTradeReturngoodsAgree.setAPIParams(youzanTradeReturngoodsAgreeParams);\nYouzanTradeReturngoodsAgreeResult result = client.invoke(youzanTradeReturngoodsAgree);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"tel\", \"051786457894\");\ndict.Add(\"remark\", \"test\");\ndict.Add(\"refund_id\", \"201806201524210000010610\");\ndict.Add(\"post\", 310000);\ndict.Add(\"name\", \"simon\");\ndict.Add(\"mobile\", \"13516829173\");\ndict.Add(\"address\", \"杭州市\");\ndict.Add(\"version\", 1529479461149);\n\n\nvar result = yzClient.Invoke(\"youzan.trade.returngoods.agree\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.trade.returngoods.agree'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'tel' => '051786457894',\n    'remark' => 'test',\n    'refund_id' => '201806201524210000010610',\n    'post' => '310000',\n    'name' => 'simon',\n    'mobile' => '13516829173',\n    'address' => '杭州市',\n    'version' => '1529479461149',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['tel']=\"051786457894\"\nparams['remark']=\"test\"\nparams['refund_id']=\"201806201524210000010610\"\nparams['post']=310000\nparams['name']=\"simon\"\nparams['mobile']=\"13516829173\"\nparams['address']=\"杭州市\"\nparams['version']=1529479461149\n\nfiles=[]\n\nprint client.invoke('youzan.trade.returngoods.agree', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['tel']=\"051786457894\";\nparams['remark']=\"test\";\nparams['refund_id']=\"201806201524210000010610\";\nparams['post']=310000;\nparams['name']=\"simon\";\nparams['mobile']=\"13516829173\";\nparams['address']=\"杭州市\";\nparams['version']=1529479461149;\n\n\nvar promise = YZClient.invoke('youzan.trade.returngoods.agree', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "103010039",
+        "errorDesc": "退款版本号错误",
+        "solution": "version错误，使用trade.refund.get获取最新的version"
+      },
+      {
+        "errorCode": "103011024",
+        "errorDesc": "退款记录不存在",
+        "solution": "检查退款单是否正确"
+      },
+      {
+        "errorCode": "102090108",
+        "errorDesc": "店铺余额不足",
+        "solution": "店铺余额不足"
+      },
+      {
+        "errorCode": "102010003",
+        "errorDesc": "退款操作请求太快了，请慢点～",
+        "solution": "操作过于频繁"
+      },
+      {
+        "errorCode": "102010002",
+        "errorDesc": "操作过期, 请刷新后确认最新退款状态",
+        "solution": "退款状态在操作前已经变更，需要重新确认状态"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"is_success\":true}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"退款记录不存在\",\"code\":103011024}}"
+  },
+  "name": "agree",
+  "ids": [
+    8169
+  ],
+  "scenarios": "卖家同意退货",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "卖家同意退货"
+}

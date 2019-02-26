@@ -1,0 +1,264 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.stock.warehouse/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.stock.warehouse/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "query_type",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "2",
+        "isRequired": "否",
+        "desc": "查询类型，1:只查询内部简单信息，不包含仓库名称地址等。2:包含仓库名称地址信息。",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "来源",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "warehouse_id",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "仓库kdtId",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "response",
+        "type": "WarehouseDetailVO",
+        "isRequired": "否",
+        "desc": "仓库信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/WarehouseDetailVO",
+        "struct": {
+          "name": "response",
+          "type": "WarehouseDetailVO",
+          "isNeed": "true",
+          "desc": "仓库信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "warehouse_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "仓库kdtId",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "group_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总部kdtId",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "status",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "仓库状态  0:启用   1:停用",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "仓库类型  1:独立仓  2:门店仓  3:虚拟仓",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "remark",
+              "type": "String",
+              "isNeed": null,
+              "desc": "仓库备注",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "仓库名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "province",
+              "type": "String",
+              "isNeed": null,
+              "desc": "省份",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "city",
+              "type": "String",
+              "isNeed": null,
+              "desc": "城市",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "county",
+              "type": "String",
+              "isNeed": null,
+              "desc": "区域",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "county_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "区域id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "address",
+              "type": "String",
+              "isNeed": null,
+              "desc": "详细地址",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "contact_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "联系人姓名",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "contact_phone_num",
+              "type": "String",
+              "isNeed": null,
+              "desc": "手机号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "contact_phone_code",
+              "type": "String",
+              "isNeed": null,
+              "desc": "手机区号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "lng",
+              "type": "String",
+              "isNeed": null,
+              "desc": "经度",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "lat",
+              "type": "String",
+              "isNeed": null,
+              "desc": "纬度",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailStockWarehouseGetParams youzanRetailStockWarehouseGetParams = new YouzanRetailStockWarehouseGetParams();\n\nyouzanRetailStockWarehouseGetParams.setWarehouseId(23602002L);\nyouzanRetailStockWarehouseGetParams.setRetailSource(\"test\");\nyouzanRetailStockWarehouseGetParams.setQueryType(2L);\n\nYouzanRetailStockWarehouseGet youzanRetailStockWarehouseGet = new YouzanRetailStockWarehouseGet();\nyouzanRetailStockWarehouseGet.setAPIParams(youzanRetailStockWarehouseGetParams);\nYouzanRetailStockWarehouseGetResult result = client.invoke(youzanRetailStockWarehouseGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"warehouse_id\", 23602002);\ndict.Add(\"retail_source\", \"test\");\ndict.Add(\"query_type\", 2);\n\n\nvar result = yzClient.Invoke(\"youzan.retail.stock.warehouse.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.stock.warehouse.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'warehouse_id' => '23602002',\n    'retail_source' => 'test',\n    'query_type' => '2',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['warehouse_id']=23602002\nparams['retail_source']=\"test\"\nparams['query_type']=2\n\nfiles=[]\n\nprint client.invoke('youzan.retail.stock.warehouse.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['warehouse_id']=23602002;\nparams['retail_source']=\"test\";\nparams['query_type']=2;\n\n\nvar promise = YZClient.invoke('youzan.retail.stock.warehouse.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\"response\":{\"contact_name\":\"王博文\",\"address\":\"浙江省杭州市西湖区翠苑街道华星科技大厦\",\"contact_phone_code\":\"18410438903\",\"lng\":\"120.124972\",\"city\":\"杭州市\",\"county\":\"西湖区\",\"remark\":\"测试修改仓库信息\",\"type\":1,\"county_id\":330106,\"province\":\"浙江省\",\"group_id\":23502017,\"contact_phone_num\":\"+86\",\"name\":\"测试开放仓库3\",\"lat\":\"30.276212\",\"warehouse_id\":23602002,\"status\":0}}",
+    "errorResponseDemo": null
+  },
+  "name": "get",
+  "ids": [
+    10214
+  ],
+  "scenarios": "通过warehouseId查询单个仓库信息",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "查询单个仓库信息"
+}

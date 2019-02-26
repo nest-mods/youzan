@@ -1,0 +1,289 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.crm.customer.points/3.0.0/sync"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.crm.customer.points/3.0.0/sync"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "fans_id",
+        "type": "Number",
+        "example": "420",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "粉丝Id mobile/fans_id/open_user_id 三选一传入",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "fans_type",
+        "type": "Number",
+        "example": "1",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "粉丝类型(自有粉丝: fans_type = 1)",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "mobile",
+        "type": "String",
+        "example": "13800138000",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "手机号 mobile/fans_id/open_user_id 三选一传入",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "open_user_id",
+        "type": "String",
+        "example": "119420",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "三方用户ID mobile/fans_id/open_user_id 三选一传入",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "points",
+        "type": "Number",
+        "example": "119",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "积分值",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "reason",
+        "type": "String",
+        "example": "同步积分",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "设置原因描述",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "true表示操作成功，false表示操作失败",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "true表示操作成功，false表示操作失败",
+          "defaultValue": null,
+          "example": "true",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanCrmCustomerPointsSyncParams youzanCrmCustomerPointsSyncParams = new YouzanCrmCustomerPointsSyncParams();\n\nyouzanCrmCustomerPointsSyncParams.setPoints(119L);\nyouzanCrmCustomerPointsSyncParams.setReason(\"同步积分\");\nyouzanCrmCustomerPointsSyncParams.setFansId(2321505678L);\n\nYouzanCrmCustomerPointsSync youzanCrmCustomerPointsSync = new YouzanCrmCustomerPointsSync();\nyouzanCrmCustomerPointsSync.setAPIParams(youzanCrmCustomerPointsSyncParams);\nYouzanCrmCustomerPointsSyncResult result = client.invoke(youzanCrmCustomerPointsSync);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"points\", 119);\ndict.Add(\"reason\", \"同步积分\");\ndict.Add(\"fans_id\", 2321505678);\n\n\nvar result = yzClient.Invoke(\"youzan.crm.customer.points.sync\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.crm.customer.points.sync'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'points' => '119',\n    'reason' => '同步积分',\n    'fans_id' => '2321505678',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['points']=119\nparams['reason']=\"同步积分\"\nparams['fans_id']=2321505678\n\nfiles=[]\n\nprint client.invoke('youzan.crm.customer.points.sync', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['points']=119;\nparams['reason']=\"同步积分\";\nparams['fans_id']=2321505678;\n\n\nvar promise = YZClient.invoke('youzan.crm.customer.points.sync', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "141503101",
+        "errorDesc": "不存在该手机号会员",
+        "solution": "根据message提示信息进行修改"
+      },
+      {
+        "errorCode": "141500203",
+        "errorDesc": "api rate limiting",
+        "solution": "针对同一用户同步积分场景降低并发数"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"is_success\":\"true\"}}",
+    "errorResponseDemo": "{\"error_response\":{\"code\":141503102,\"message\":\"不存在该fansId\"}}"
+  },
+  "name": "sync",
+  "ids": [
+    11175,
+    8923
+  ],
+  "scenarios": "给客户同步积分",
+  "3.1.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.crm.customer.points/3.1.0/sync"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.crm.customer.points/3.1.0/sync"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "account_id",
+        "type": "String",
+        "example": "13800138000",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "帐号ID",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "account_type",
+        "type": "Number",
+        "example": "3",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "帐号类型（与帐户ID配合使用: 2=粉丝(原fansId),3:手机号,4:三方帐号(原open_user_id);6:微信open_id）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "biz_value",
+        "type": "String",
+        "example": "T20181109XU42",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "用于幂等支持（幂等时效三个月, 超过三个月的相同值调用不保证幂等）",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "points",
+        "type": "Number",
+        "example": "1",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "积分值",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "reason",
+        "type": "String",
+        "example": "删帖扣除积分",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "积分变动原因",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "is_success",
+        "type": "String",
+        "isRequired": "否",
+        "desc": "操作是否成功",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "is_success",
+          "type": "String",
+          "isNeed": "true",
+          "desc": "操作是否成功",
+          "defaultValue": "",
+          "example": "true",
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanCrmCustomerPointsSyncParams youzanCrmCustomerPointsSyncParams = new YouzanCrmCustomerPointsSyncParams();\n\nyouzanCrmCustomerPointsSyncParams.setAccountId(\"13800138000\");\nyouzanCrmCustomerPointsSyncParams.setAccountType(3L);\nyouzanCrmCustomerPointsSyncParams.setBizValue(\"T18djn546q\");\nyouzanCrmCustomerPointsSyncParams.setPoints(121L);\nyouzanCrmCustomerPointsSyncParams.setReason(\"新版测试\");\n\nYouzanCrmCustomerPointsSync youzanCrmCustomerPointsSync = new YouzanCrmCustomerPointsSync();\nyouzanCrmCustomerPointsSync.setAPIParams(youzanCrmCustomerPointsSyncParams);\nYouzanCrmCustomerPointsSyncResult result = client.invoke(youzanCrmCustomerPointsSync);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"account_id\", \"13800138000\");\ndict.Add(\"account_type\", 3);\ndict.Add(\"biz_value\", \"T18djn546q\");\ndict.Add(\"points\", 121);\ndict.Add(\"reason\", \"新版测试\");\n\n\nvar result = yzClient.Invoke(\"youzan.crm.customer.points.sync\", \"3.1.0\", \"GET\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.crm.customer.points.sync'; //要调用的api名称\n$api_version = '3.1.0'; //要调用的api版本号\n\n$my_params = [\n    'account_id' => '13800138000',\n    'account_type' => '3',\n    'biz_value' => 'T18djn546q',\n    'points' => '121',\n    'reason' => '新版测试',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->get($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['account_id']=\"13800138000\"\nparams['account_type']=3\nparams['biz_value']=\"T18djn546q\"\nparams['points']=121\nparams['reason']=\"新版测试\"\n\nfiles=[]\n\nprint client.invoke('youzan.crm.customer.points.sync', '3.1.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['account_id']=\"13800138000\";\nparams['account_type']=3;\nparams['biz_value']=\"T18djn546q\";\nparams['points']=121;\nparams['reason']=\"新版测试\";\n\n\nvar promise = YZClient.invoke('youzan.crm.customer.points.sync', '3.1.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "141503112",
+        "errorDesc": "reason should not be empty",
+        "solution": "传入不为空的reason"
+      },
+      {
+        "errorCode": "141500203",
+        "errorDesc": "api rate limiting",
+        "solution": "对同一个客户的调用减少并发数"
+      },
+      {
+        "errorCode": "141500101",
+        "errorDesc": "invalid params",
+        "solution": "检查参数是否漏传或类型错误或为空"
+      },
+      {
+        "errorCode": "141503101",
+        "errorDesc": "user not exists",
+        "solution": "检查帐号ID是否有误"
+      },
+      {
+        "errorCode": "142100106",
+        "errorDesc": "重复操作",
+        "solution": "触发幂等异常"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"is_success\":\"true\"}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"reason should not be empty\",\"code\":141503112}}"
+  },
+  "version": [
+    "3.1.0",
+    "3.0.0"
+  ],
+  "desc": "给客户同步积分"
+}

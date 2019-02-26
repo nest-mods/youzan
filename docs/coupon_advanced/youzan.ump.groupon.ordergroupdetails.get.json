@@ -1,0 +1,428 @@
+{
+  "name": "get",
+  "ids": [
+    9743
+  ],
+  "scenarios": "根据拼团的订单查询到团信息。最多一次传入30个订单号。",
+  "1.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.ump.groupon.ordergroupdetails/1.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.ump.groupon.ordergroupdetails/1.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "tids",
+        "type": "List<String>",
+        "example": "[\"E20171228152026059200001\", \"E2017122817181405920",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "订单号List",
+        "isStruct": true,
+        "structUrl": "/web/apiParamStruct/List<String>",
+        "struct": {
+          "name": "List<String>",
+          "type": "List<String>",
+          "isStruct": true,
+          "desc": "",
+          "example": null,
+          "creator": null,
+          "children": []
+        }
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "order_group_detail",
+        "type": "OrderGroupDetail[]",
+        "isRequired": "否",
+        "desc": "订单拼团详情",
+        "isStruct": true,
+        "structUrl": "/web/meta/OrderGroupDetail",
+        "struct": {
+          "name": "order_group_detail",
+          "type": "OrderGroupDetail[]",
+          "isNeed": "true",
+          "desc": "订单拼团详情",
+          "defaultValue": null,
+          "example": "[{\"group_join\":{\"pay_state\":1,\"created_time\":1514445626000,\"is_head\":false,\"item_id\":5160313,\"sku_id\":278922,\"buyer_id\":690010704,\"head_extra_discount_fee\":0,\"discount_fee\":1,\"tid\":\"E20171228152026059200001\",\"pay_time\":1514445676000,\"sid\":21600453,\"is_agency_receive\":false,\"refund_fail_msg\":\"\",\"group_id\":772,\"activity_id\":2179,\"refund_reason\":\"\",\"id\":793,\"refund_state\":0,\"fans_id\":0},\"group\":{\"created_time\":1514539352000,\"start_time\":1514539352000,\"receive_state\":0,\"activity_id\":2179,\"join_num\":1,\"alias\":\"4xqrgocx\",\"id\":772,\"state\":0,\"remain_join_num\":1,\"tid\":\"E20171228152026059200001\",\"group_no\":\"2815653935200096902\",\"sid\":21600453}},{\"group_join\":{\"pay_state\":1,\"created_time\":1514452695000,\"is_head\":false,\"item_id\":5160313,\"sku_id\":278922,\"buyer_id\":690010704,\"head_extra_discount_fee\":0,\"discount_fee\":1,\"tid\":\"E20171228171814059200001\",\"pay_time\":1514452777000,\"sid\":21600453,\"is_agency_receive\":false,\"refund_fail_msg\":\"\",\"group_id\":768,\"activity_id\":2179,\"refund_reason\":\"\",\"id\":794,\"refund_state\":0,\"fans_id\":0},\"group\":{\"created_time\":1514539350000,\"start_time\":1514539350000,\"receive_state\":0,\"activity_id\":2179,\"join_num\":1,\"alias\":\"1el0fs4l8\",\"id\":768,\"state\":0,\"remain_join_num\":1,\"tid\":\"E20171228171814059200001\",\"group_no\":\"8745653935000021490\",\"sid\":21600453}}]",
+          "isStruct": true,
+          "children": [
+            {
+              "name": "group",
+              "type": "GroupOnGroup",
+              "isNeed": null,
+              "desc": "拼团团信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "团ID，唯一标示",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "group_no",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "团编号，唯一",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "tid",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "成团订单编号，即团长订单号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sid",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "店铺ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "activity_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商家创建的拼团活动ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "state",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "拼团状态：0-进行中、1-满员成团、2-拼团失败、3-模拟成团",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "alias",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "成团别名，即邀请码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "join_num",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "已参团的人数",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "start_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "成团开始时间戳",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "receive_state",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "团代收状态。0：不代收；1：可选代收；2：强制代收",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "remain_join_num",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "拼团成功剩余的人数",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "created_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "创建时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "group_join",
+              "type": "GroupOnGroupJoin",
+              "isNeed": null,
+              "desc": "参团订单信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "唯一标示",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "tid",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "订单号",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sid",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "店铺ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "activity_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "拼团活动ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "group_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "成团活动ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "fans_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "粉丝ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "buyer_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "买家ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "refund_state",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "退款状态；0：没有退款、1：退款成功、2：退款失败",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "refund_reason",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "退款原因",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "refund_fail_msg",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "退款失败原因",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pay_state",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "支付状态；0：未支付；1：支付成功",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pay_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "支付成功时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "item_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品编码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "sku_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "SKU编码",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "discount_fee",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "拼团优惠金额，单位：分",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "head_extra_discount_fee",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "团长额外优惠金额，单位：分",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "is_agency_receive",
+                  "type": "Boolean",
+                  "isNeed": null,
+                  "desc": "是否代收",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "created_time",
+                  "type": "Date",
+                  "isNeed": null,
+                  "desc": "创建时间",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "is_head",
+                  "type": "Boolean",
+                  "isNeed": null,
+                  "desc": "是否团长",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanUmpGrouponOrdergroupdetailsGetParams youzanUmpGrouponOrdergroupdetailsGetParams = new YouzanUmpGrouponOrdergroupdetailsGetParams();\n\nyouzanUmpGrouponOrdergroupdetailsGetParams.setTids(\"[\"E20180928145944047300005\"]\");\n\nYouzanUmpGrouponOrdergroupdetailsGet youzanUmpGrouponOrdergroupdetailsGet = new YouzanUmpGrouponOrdergroupdetailsGet();\nyouzanUmpGrouponOrdergroupdetailsGet.setAPIParams(youzanUmpGrouponOrdergroupdetailsGetParams);\nYouzanUmpGrouponOrdergroupdetailsGetResult result = client.invoke(youzanUmpGrouponOrdergroupdetailsGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"tids\", \"[\"E20180928145944047300005\"]\");\n\n\nvar result = yzClient.Invoke(\"youzan.ump.groupon.ordergroupdetails.get\", \"1.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.ump.groupon.ordergroupdetails.get'; //要调用的api名称\n$api_version = '1.0.0'; //要调用的api版本号\n\n$my_params = [\n    'tids' => '[\"E20180928145944047300005\"]',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['tids']=\"[\"E20180928145944047300005\"]\"\n\nfiles=[]\n\nprint client.invoke('youzan.ump.groupon.ordergroupdetails.get', '1.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['tids']=\"[\"E20180928145944047300005\"]\";\n\n\nvar promise = YZClient.invoke('youzan.ump.groupon.ordergroupdetails.get', '1.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "160701101",
+        "errorDesc": "一次传入的订单数量大于30",
+        "solution": "一次传入的订单数量必须小于或等于30"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"order_group_detail\":[{\"group_join\":{\"pay_state\":1,\"created_time\":1514445626000,\"is_head\":false,\"item_id\":5160313,\"sku_id\":278922,\"buyer_id\":690010704,\"head_extra_discount_fee\":0,\"discount_fee\":1,\"tid\":\"E20171228152026059200001\",\"pay_time\":1514445676000,\"sid\":21600453,\"is_agency_receive\":false,\"refund_fail_msg\":\"\",\"group_id\":772,\"activity_id\":2179,\"refund_reason\":\"\",\"id\":793,\"refund_state\":0,\"fans_id\":0},\"group\":{\"created_time\":1514539352000,\"start_time\":1514539352000,\"receive_state\":0,\"activity_id\":2179,\"join_num\":1,\"alias\":\"4xqrgocx\",\"id\":772,\"state\":0,\"remain_join_num\":1,\"tid\":\"E20171228152026059200001\",\"group_no\":\"2815653935200096902\",\"sid\":21600453}},{\"group_join\":{\"pay_state\":1,\"created_time\":1514452695000,\"is_head\":false,\"item_id\":5160313,\"sku_id\":278922,\"buyer_id\":690010704,\"head_extra_discount_fee\":0,\"discount_fee\":1,\"tid\":\"E20171228171814059200001\",\"pay_time\":1514452777000,\"sid\":21600453,\"is_agency_receive\":false,\"refund_fail_msg\":\"\",\"group_id\":768,\"activity_id\":2179,\"refund_reason\":\"\",\"id\":794,\"refund_state\":0,\"fans_id\":0},\"group\":{\"created_time\":1514539350000,\"start_time\":1514539350000,\"receive_state\":0,\"activity_id\":2179,\"join_num\":1,\"alias\":\"1el0fs4l8\",\"id\":768,\"state\":0,\"remain_join_num\":1,\"tid\":\"E20171228171814059200001\",\"group_no\":\"8745653935000021490\",\"sid\":21600453}}]}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"参数 token 无效\",\"code\":40010,\"sub_msg\":\"token无效，该token不存在或已过期\",\"sub_code\":10000,\"sub_data\":\"\"}}"
+  },
+  "version": [
+    "1.0.0"
+  ],
+  "desc": "拼团活动-订单号获取团信息"
+}

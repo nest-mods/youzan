@@ -1,0 +1,510 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.mei.promoter.order/3.0.0/list"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.mei.promoter.order/3.0.0/list"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "end_time",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "订单完成时间的搜索终止时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "keyword",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "搜索的关键词，可以是手机号或者是订单号",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "m_token",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "美业token",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "要查询的页码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "每页显示的条目数量，最大200条",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "settle_status",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "订单状态",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "start_time",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "订单完成时间的搜索起始时间",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "paginator",
+        "type": "MeiPaginator",
+        "isRequired": "否",
+        "desc": "分页信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiPaginator",
+        "struct": {
+          "name": "paginator",
+          "type": "MeiPaginator",
+          "isNeed": "true",
+          "desc": "分页信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "total_count",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总记录数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "第几页",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "page_size",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "每页显示的记录数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "items",
+        "type": "MeiPromoterOrder[]",
+        "isRequired": "否",
+        "desc": "推广原产的订单列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/MeiPromoterOrder",
+        "struct": {
+          "name": "items",
+          "type": "MeiPromoterOrder[]",
+          "isNeed": "false",
+          "desc": "推广原产的订单列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "order_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "交易订单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "settle_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "分润支付单号",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "total_pay",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "订单总付款金额",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "order_finished_at",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "订单完成时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "guest_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "顾客名",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "err_msg",
+              "type": "String",
+              "isNeed": null,
+              "desc": "错误信息，当分润支付失败的时候会出现，例如“余额不足无法分润”",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "dept_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "订单所处的部门的名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "promoter",
+              "type": "MeiPromoter",
+              "isNeed": null,
+              "desc": "推广员简要信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "phone",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "联系电话",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "nickname",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "昵称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pid",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "推广员id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "profit",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "获得的利润",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "parent_promoter",
+              "type": "MeiPromoter",
+              "isNeed": null,
+              "desc": "推广员简要信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "phone",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "联系电话",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "nickname",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "昵称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "pid",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "推广员id",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "profit",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "获得的利润",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "settle_status",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "分润状态\n5  人工结算\n10 待结算\n40 已结算\n95 结算失败",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "items",
+              "type": "MeiPromoterOrderItem",
+              "isNeed": null,
+              "desc": "推广员订单条目信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "goods_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品名称，例如剪发服务",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "promoter_profit",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "推广收益",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "parent_profit",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "上线获得的收益",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "goods_pic",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "商品图片",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "num",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "购买的商品数量",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "effective_pay",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "实际支付的金额",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "promotion_ratio",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "推广提成比例",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "origin_price",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品价格",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "goods_type",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "商品类型。（当商品不是卡时存在）\n1  服务\n2  实物商品",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "parent_ratio",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "上线的推广提成比例",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "card_type",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "卡类型（当商品是卡时存在）\n1 次卡\n2 折扣卡\n3 充值卡",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "settlement_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "结算类型\n1 人工结算\n2 自动结算",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanMeiPromoterOrderListParams youzanMeiPromoterOrderListParams = new YouzanMeiPromoterOrderListParams();\n\nyouzanMeiPromoterOrderListParams.setPageSize(111L);\nyouzanMeiPromoterOrderListParams.setPage(1L);\nyouzanMeiPromoterOrderListParams.setMToken(\"EeGuxYOrXlnwymekzn37PzSfmB_iQq55PXx3q6N2HC4ukz7oBDSEckIduqL8ozE9iv9za3DXiVv2buGcJgBV5Xcs0KWTn8Mr7qIiSa1A6z4\");\n\nYouzanMeiPromoterOrderList youzanMeiPromoterOrderList = new YouzanMeiPromoterOrderList();\nyouzanMeiPromoterOrderList.setAPIParams(youzanMeiPromoterOrderListParams);\nYouzanMeiPromoterOrderListResult result = client.invoke(youzanMeiPromoterOrderList);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"page_size\", 111);\ndict.Add(\"page\", 1);\ndict.Add(\"m_token\", \"EeGuxYOrXlnwymekzn37PzSfmB_iQq55PXx3q6N2HC4ukz7oBDSEckIduqL8ozE9iv9za3DXiVv2buGcJgBV5Xcs0KWTn8Mr7qIiSa1A6z4\");\n\n\nvar result = yzClient.Invoke(\"youzan.mei.promoter.order.list\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['page_size']=111\nparams['page']=1\nparams['m_token']=\"EeGuxYOrXlnwymekzn37PzSfmB_iQq55PXx3q6N2HC4ukz7oBDSEckIduqL8ozE9iv9za3DXiVv2buGcJgBV5Xcs0KWTn8Mr7qIiSa1A6z4\"\n\nfiles=[]\n\nprint client.invoke('youzan.mei.promoter.order.list', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['page_size']=111;\nparams['page']=1;\nparams['m_token']=\"EeGuxYOrXlnwymekzn37PzSfmB_iQq55PXx3q6N2HC4ukz7oBDSEckIduqL8ozE9iv9za3DXiVv2buGcJgBV5Xcs0KWTn8Mr7qIiSa1A6z4\";\n\n\nvar promise = YZClient.invoke('youzan.mei.promoter.order.list', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.mei.promoter.order.list'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'page_size' => '111',\n    'page' => '1',\n    'm_token' => 'EeGuxYOrXlnwymekzn37PzSfmB_iQq55PXx3q6N2HC4ukz7oBDSEckIduqL8ozE9iv9za3DXiVv2buGcJgBV5Xcs0KWTn8Mr7qIiSa1A6z4',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "{\n    \"response\": {\n        \"paginator\": {\n            \"total_count\": 7, \n            \"page\": 1, \n            \"page_size\": 1\n        }, \n        \"items\": [\n            {\n                \"order_no\": \"M2018090621585474178288\", \n                \"total_pay\": 100, \n                \"order_finished_at\": 1536242337000, \n                \"guest_name\": \"付吉飞\", \n                \"err_msg\": \"\", \n                \"dept_name\": \"YZ测试_枯荣无所畏惧\", \n                \"promoter\": {\n                    \"phone\": \"18565697115\", \n                    \"nickname\": \"枯荣\", \n                    \"pid\": \"527875067\", \n                    \"profit\": 40\n                }, \n                \"settle_status\": 5, \n                \"items\": [\n                    {\n                        \"goods_name\": \"贵一点儿的服务\", \n                        \"promoter_profit\": 40, \n                        \"parent_profit\": 0, \n                        \"goods_pic\": \"http://img.yzcdn.cn/upload_files/2018/04/28/ccd5a4334dbbbef2e0d69d3cb2958140.jpg\", \n                        \"num\": 1, \n                        \"effective_pay\": 100, \n                        \"promotion_ratio\": 4000, \n                        \"origin_price\": 5000, \n                        \"goods_type\": 1, \n                        \"parent_ratio\": 1000\n                    }\n                ], \n                \"settlement_type\": 1, \n                \"settle_no\": \"S20180906215902085468212\"\n            }\n        ]\n    }\n}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"抱歉, 服务器开了个小差: \",\"code\":230100000}}"
+  },
+  "name": "list",
+  "ids": [
+    10561
+  ],
+  "scenarios": "查询推广员推广产生的订单列表",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "查询推广员推广产生的订单列表"
+}

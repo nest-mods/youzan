@@ -1,0 +1,422 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.items.custom/3.0.0/get"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.items.custom/3.0.0/get"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "item_no",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "商品编码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "items",
+        "type": "ItemListOpenModel[]",
+        "isRequired": "否",
+        "desc": "搜索到的商品列表",
+        "isStruct": true,
+        "structUrl": "/web/meta/ItemListOpenModel",
+        "struct": {
+          "name": "items",
+          "type": "ItemListOpenModel[]",
+          "isNeed": "true",
+          "desc": "搜索到的商品列表",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "item_id",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品的数字id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "alias",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品别名，是一串字符",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "title",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品标题",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "price",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "价格，单位分",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "item_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商品类型",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "item_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商家编码，商家给商品设置的商家编码。",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "quantity",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总库存",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "post_type",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "运费类型，1 是统一运费，2是运费模板",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "post_fee",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "运费，单位分。当post_type为1时的运费",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "created_time",
+              "type": "String",
+              "isNeed": null,
+              "desc": "创建时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "update_time",
+              "type": "String",
+              "isNeed": null,
+              "desc": "更新时间",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "detail_url",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品详情链接",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "delivery_template",
+              "type": "DeliveryTemplateOpenModel",
+              "isNeed": null,
+              "desc": "运费模板信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "delivery_template_id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "运费模板ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "delivery_template_fee",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "运费的范围",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "delivery_template_name",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "运费模板名称",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "delivery_template_valuationType",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "运费模版的计算类型，1 按件 2 按重量 3 按体积",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "num",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "商家排序字段",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "item_imgs",
+              "type": "ItemImageOpenModel[]",
+              "isNeed": null,
+              "desc": "图片信息",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": true,
+              "children": [
+                {
+                  "name": "url",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "图片链接地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "thumbnail",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "图片缩略图链接地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "medium",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "中号大小图片链接地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "combine",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "组合图片链接地址",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "created",
+                  "type": "String",
+                  "isNeed": null,
+                  "desc": "图片创建时间，时间格式：yyyy-MM-dd HH:mm:ss",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                },
+                {
+                  "name": "id",
+                  "type": "Number",
+                  "isNeed": null,
+                  "desc": "图片ID",
+                  "defaultValue": null,
+                  "example": null,
+                  "isStruct": false,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "origin",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品划线价",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "classId",
+              "type": "String",
+              "isNeed": null,
+              "desc": "默认为\"youzan_goods_selling\"",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "image",
+              "type": "String",
+              "isNeed": null,
+              "desc": "图片链接",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "shareIcon",
+              "type": "String",
+              "isNeed": null,
+              "desc": "同image",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "shareTitle",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品标题",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "shareDetail",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "同price",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "pageUrl",
+              "type": "String",
+              "isNeed": null,
+              "desc": "小程序路径",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "count",
+        "type": "Number",
+        "isRequired": "否",
+        "desc": "商品总数量",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": {
+          "name": "count",
+          "type": "Number",
+          "isNeed": "true",
+          "desc": "商品总数量",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": false,
+          "children": null
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanItemsCustomGetParams youzanItemsCustomGetParams = new YouzanItemsCustomGetParams();\n\nyouzanItemsCustomGetParams.setItemNo(\"ssss\");\n\nYouzanItemsCustomGet youzanItemsCustomGet = new YouzanItemsCustomGet();\nyouzanItemsCustomGet.setAPIParams(youzanItemsCustomGetParams);\nYouzanItemsCustomGetResult result = client.invoke(youzanItemsCustomGet);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"item_no\", \"ssss\");\n\n\nvar result = yzClient.Invoke(\"youzan.items.custom.get\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.items.custom.get'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'item_no' => 'ssss',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['item_no']=\"ssss\"\n\nfiles=[]\n\nprint client.invoke('youzan.items.custom.get', '3.0.0', 'GET', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['item_no']=\"ssss\";\n\n\nvar promise = YZClient.invoke('youzan.items.custom.get', '3.0.0', 'GET', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": null,
+    "responseDemo": "",
+    "errorResponseDemo": ""
+  },
+  "name": "get",
+  "ids": [
+    8278
+  ],
+  "scenarios": "根据商品编码查询商品",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "根据商品编码查询商品"
+}

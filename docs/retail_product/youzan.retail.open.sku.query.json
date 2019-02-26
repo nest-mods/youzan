@@ -1,0 +1,376 @@
+{
+  "3.0.0": {
+    "requestUrls": [
+      {
+        "type": "服务商接入",
+        "url": "https://open.youzan.com/api/oauthentry/youzan.retail.open.sku/3.0.0/query"
+      },
+      {
+        "type": "商家自有接入",
+        "url": "https://open.youzan.com/api/entry/youzan.retail.open.sku/3.0.0/query"
+      }
+    ],
+    "requestParams": [
+      {
+        "name": "page_no",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "页码，page_no从1开始",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "page_size",
+        "type": "Number",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "每页记录数，page_size默认20，最大也是20",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "retail_source",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "是",
+        "desc": "零售调用来源(调用方和有赞约定的值)",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "sku_codes",
+        "type": "String[]",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "sku_code列表",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      },
+      {
+        "name": "warehouse_code",
+        "type": "String",
+        "example": "",
+        "defaultValue": "",
+        "isRequired": "否",
+        "desc": "仓库编码",
+        "isStruct": false,
+        "structUrl": null,
+        "struct": null
+      }
+    ],
+    "responseParams": [
+      {
+        "name": "skus",
+        "type": "OpenSkuDTO[]",
+        "isRequired": "否",
+        "desc": "分页商品信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/OpenSkuDTO",
+        "struct": {
+          "name": "skus",
+          "type": "OpenSkuDTO[]",
+          "isNeed": "true",
+          "desc": "分页商品信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "warehouse_code",
+              "type": "String",
+              "isNeed": null,
+              "desc": "仓库编码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "category_id",
+              "type": "String",
+              "isNeed": null,
+              "desc": "类目id",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "product_name",
+              "type": "String",
+              "isNeed": null,
+              "desc": "商品名称",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "specifications",
+              "type": "String",
+              "isNeed": null,
+              "desc": "规格",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "unit",
+              "type": "String",
+              "isNeed": null,
+              "desc": "单位",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sku_no",
+              "type": "String",
+              "isNeed": null,
+              "desc": "sku条码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sku_code",
+              "type": "String",
+              "isNeed": null,
+              "desc": "sku编码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "bar_codes",
+              "type": "String[]",
+              "isNeed": null,
+              "desc": "一品多码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "retail_price",
+              "type": "String",
+              "isNeed": null,
+              "desc": "建议零售价",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "output_tax_rate",
+              "type": "String",
+              "isNeed": null,
+              "desc": "销项税率",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "input_tax_tate",
+              "type": "String",
+              "isNeed": null,
+              "desc": "进项税率",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "stock_num",
+              "type": "String",
+              "isNeed": null,
+              "desc": "库存",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "order_num",
+              "type": "String",
+              "isNeed": null,
+              "desc": "占用库存",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "create_time",
+              "type": "String",
+              "isNeed": null,
+              "desc": "创建日期",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "update_time",
+              "type": "String",
+              "isNeed": null,
+              "desc": "更新日期",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "sell_stock_num",
+              "type": "String",
+              "isNeed": null,
+              "desc": "销售库存",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "last_stock_in_cost",
+              "type": "String",
+              "isNeed": null,
+              "desc": "最后一次入库成本价",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "avg_stock_in_cost",
+              "type": "String",
+              "isNeed": null,
+              "desc": "平均入库成本",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "photo_url",
+              "type": "String",
+              "isNeed": null,
+              "desc": "图片地址",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "paginator",
+        "type": "Paginator",
+        "isRequired": "否",
+        "desc": "分页信息",
+        "isStruct": true,
+        "structUrl": "/web/meta/Paginator",
+        "struct": {
+          "name": "paginator",
+          "type": "Paginator",
+          "isNeed": "true",
+          "desc": "分页信息",
+          "defaultValue": null,
+          "example": null,
+          "isStruct": true,
+          "children": [
+            {
+              "name": "page",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "页码",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "size",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "数量",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            },
+            {
+              "name": "totalCount",
+              "type": "Number",
+              "isNeed": null,
+              "desc": "总条数",
+              "defaultValue": null,
+              "example": null,
+              "isStruct": false,
+              "children": []
+            }
+          ]
+        }
+      }
+    ],
+    "requestDemos": [
+      {
+        "lang": "java",
+        "code": "YZClient client = new DefaultYZClient(new Token(\"token\")); //new Sign(appKey, appSecret)\nYouzanRetailOpenSkuQueryParams youzanRetailOpenSkuQueryParams = new YouzanRetailOpenSkuQueryParams();\n\nyouzanRetailOpenSkuQueryParams.setPageNo(1L);\nyouzanRetailOpenSkuQueryParams.setPageSize(12L);\nyouzanRetailOpenSkuQueryParams.setSkuCodes(\"[\"testcode201812281\"]\");\nyouzanRetailOpenSkuQueryParams.setRetailSource(\"GUANMAI\");\n\nYouzanRetailOpenSkuQuery youzanRetailOpenSkuQuery = new YouzanRetailOpenSkuQuery();\nyouzanRetailOpenSkuQuery.setAPIParams(youzanRetailOpenSkuQueryParams);\nYouzanRetailOpenSkuQueryResult result = client.invoke(youzanRetailOpenSkuQuery);"
+      },
+      {
+        "lang": "csharp",
+        "code": "Auth auth = new Token(\"xxx\"); // Auth auth = new Sign(\"app_id\", \"app_secret\");\n\nYZClient yzClient = new DefaultYZClient(auth);\nDictionary<string, object> dict = new System.Collections.Generic.Dictionary<string, object>();\ndict.Add(\"page_no\", 1);\ndict.Add(\"page_size\", 12);\ndict.Add(\"sku_codes\", \"[\"testcode201812281\"]\");\ndict.Add(\"retail_source\", \"GUANMAI\");\n\n\nvar result = yzClient.Invoke(\"youzan.retail.open.sku.query\", \"3.0.0\", \"POST\", dict, null);\nConsole.WriteLine(result);\n"
+      },
+      {
+        "lang": "php",
+        "code": "<?php\nrequire_once __DIR__ . '/lib/YZTokenClient.php';\n\n$token = 'fill your token';//请填入商家授权后获取的access_token\n$client = new YZTokenClient($token);\n\n$method = 'youzan.retail.open.sku.query'; //要调用的api名称\n$api_version = '3.0.0'; //要调用的api版本号\n\n$my_params = [\n    'page_no' => '1',\n    'page_size' => '12',\n    'sku_codes' => '[\"testcode201812281\"]',\n    'retail_source' => 'GUANMAI',\n];\n\n$my_files = [\n];\n\necho '<pre>';\nvar_dump(\n    $client->post($method, $api_version, $my_params, $my_files)\n);\necho '</pre>';\n"
+      },
+      {
+        "lang": "python",
+        "code": "token = auth.Token(token='token') #auth.Sign(app_id='app_id', app_secret='app_secret')\n\nclient = YZClient(token)\n\nparams={}\n\nparams['page_no']=1\nparams['page_size']=12\nparams['sku_codes']=\"[\"testcode201812281\"]\"\nparams['retail_source']=\"GUANMAI\"\n\nfiles=[]\n\nprint client.invoke('youzan.retail.open.sku.query', '3.0.0', 'POST', params=params, files=files)\n"
+      },
+      {
+        "lang": "nodejs",
+        "code": "var YZClient = require('yz-open-sdk-nodejs');\nvar Token = require('./node_modules/yz-open-sdk-nodejs/Token');\n\nvar YZClient = new YZClient(new Token('xxxx')); // var YZClient = new YZClient(new Sign('app_id', 'app_secret'));\n\nparams={};\n\nparams['page_no']=1;\nparams['page_size']=12;\nparams['sku_codes']=\"[\"testcode201812281\"]\";\nparams['retail_source']=\"GUANMAI\";\n\n\nvar promise = YZClient.invoke('youzan.retail.open.sku.query', '3.0.0', 'POST', params, undefined);\n\npromise.then(function(resp) {\n    console.log('resp: ' + resp.body);\n    var data = JSON.parse(resp.body);\n    console.log(data);\n}, function(err) {\n    console.log('err: ' + err);\n}, function(prog) {\n    console.log('prog: ' + prog);\n});\n"
+      }
+    ],
+    "errorCodes": [
+      {
+        "errorCode": "234000006",
+        "errorDesc": "数据异常",
+        "solution": "确认入参正确且商品信息完善"
+      },
+      {
+        "errorCode": "234008001",
+        "errorDesc": "查询商品失败",
+        "solution": "重试，如果失败，联系有赞技术支持"
+      }
+    ],
+    "responseDemo": "{\"response\":{\"skus\":[],\"paginator\":{\"page\":1,\"pageSize\":20,\"totalCount\":200}}}",
+    "errorResponseDemo": "{\"error_response\":{\"msg\":\"retail_source cannot be empty\",\"code\":53001}}"
+  },
+  "name": "query",
+  "ids": [
+    10627
+  ],
+  "scenarios": "商品查询",
+  "version": [
+    "3.0.0"
+  ],
+  "desc": "商品查询"
+}
