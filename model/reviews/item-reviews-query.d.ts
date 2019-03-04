@@ -132,7 +132,7 @@ export namespace ReviewsItemReviewsQuery {
     /**
      * 
      */
-    items?: ItemReviewsModel;
+    items?: ItemReviewsModel[];
   }
 
   /**

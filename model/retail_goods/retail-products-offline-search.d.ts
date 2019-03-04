@@ -59,7 +59,7 @@ export namespace RetailGoodsRetailProductsOfflineSearch {
     /**
      * 门店商品搜索结果实体信息
      */
-    items?: OfflineProductSearchVO;
+    items?: OfflineProductSearchVO[];
   }
 
   /**
@@ -155,7 +155,7 @@ export namespace RetailGoodsRetailProductsOfflineSearch {
     /**
      * 门店、网店规格信息
      */
-    item_sku_models?: ItemSkuModelVO;
+    item_sku_models?: ItemSkuModelVO[];
   }
 
   /**

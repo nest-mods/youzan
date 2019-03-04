@@ -6,7 +6,7 @@ export namespace RetailGoodsRetailStockGoodsapplyCreate {
     /**
      * 单据明细
      */
-    business_order_items?: OutStockAllotItem;
+    business_order_items?: OutStockAllotItem[];
     /**
      * 幂等单号
      */

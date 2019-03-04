@@ -36,7 +36,7 @@ export namespace RetailGoodsRetailProductSpuUpdate {
     /**
      * 规格sku
      */
-    skus?: SkuSaveRequest;
+    skus?: SkuSaveRequest[];
     /**
      * 规格定义组
   * [{"key":{"k":"颜色","kId":1},"values":[{"v":"蓝色 ","vId":3},{"v":"红色 ","vId":10}]}]
@@ -91,7 +91,7 @@ export namespace RetailGoodsRetailProductSpuUpdate {
     /**
      * 
      */
-    specs?: SpecKeyValue;
+    specs?: SpecKeyValue[];
     /**
      * 初始库存（单店版生效）
      */

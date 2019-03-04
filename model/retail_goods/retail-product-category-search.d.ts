@@ -24,7 +24,7 @@ export namespace RetailGoodsRetailProductCategorySearch {
     /**
      * 分类详情列表
      */
-    category_vo?: CategoryVO;
+    category_vo?: CategoryVO[];
   }
 
   /**

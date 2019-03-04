@@ -10,7 +10,7 @@ export namespace RetailGoodsRetailStockDeliveryOut {
     /**
      * 商品列表
      */
-    items?: DeliveryOutItemRequest;
+    items?: DeliveryOutItemRequest[];
     /**
      * 备注
      */

@@ -29,7 +29,7 @@ export namespace BeautyMemberMeiCardCreate {
     /**
      * 会员卡权益列表
      */
-    card_rights?: MeiCardRight;
+    card_rights?: MeiCardRight[];
     /**
      * 会员卡类型。
   * 1 次卡

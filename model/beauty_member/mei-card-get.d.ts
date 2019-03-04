@@ -32,7 +32,7 @@ export namespace BeautyMemberMeiCardGet {
     /**
      * 权益列表
      */
-    card_rights?: MeiCardRight;
+    card_rights?: MeiCardRight[];
     /**
      * 有效期
      */

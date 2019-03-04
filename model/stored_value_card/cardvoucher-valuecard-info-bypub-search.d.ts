@@ -36,7 +36,7 @@ export namespace StoredValueCardCardvoucherValuecardInfoBypubSearch {
     /**
      * 实体信息
      */
-    items?: PageQueryValueCardInfoByPublishKdtIdDTO;
+    items?: PageQueryValueCardInfoByPublishKdtIdDTO[];
   }
 
   /**

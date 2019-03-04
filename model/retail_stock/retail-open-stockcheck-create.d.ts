@@ -18,7 +18,7 @@ export namespace RetailStockRetailOpenStockcheckCreate {
     /**
      * 盘点单明细
      */
-    order_items?: OpenStockCheckOrderItem;
+    order_items?: OpenStockCheckOrderItem[];
     /**
      * 页码（从第一页开始）
      */

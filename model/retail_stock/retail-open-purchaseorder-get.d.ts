@@ -62,7 +62,7 @@ export namespace RetailStockRetailOpenPurchaseorderGet {
     /**
      * 采购申请单明细
      */
-    order_items?: OpenPurchaseOrderItemDTO;
+    order_items?: OpenPurchaseOrderItemDTO[];
   }
 
   /**

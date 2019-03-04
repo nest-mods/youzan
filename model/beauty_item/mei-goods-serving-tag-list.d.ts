@@ -28,7 +28,7 @@ export namespace BeautyItemMeiGoodsServingTagList {
     /**
      * 标签列表
      */
-    items?: MeiGoodsTagResp;
+    items?: MeiGoodsTagResp[];
   }
 
   /**

@@ -30,7 +30,7 @@ export namespace RetailGoodsRetailStockStockcheckCreate {
     /**
      * 盘点明细
      */
-    stock_check_create_items?: StockCheckItemCreateRequest;
+    stock_check_create_items?: StockCheckItemCreateRequest[];
     /**
      * 门店或独立仓id   注意：连锁版必填
      */

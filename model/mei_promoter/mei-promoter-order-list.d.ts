@@ -44,7 +44,7 @@ export namespace MeiPromoterMeiPromoterOrderList {
     /**
      * 推广原产的订单列表
      */
-    items?: MeiPromoterOrder;
+    items?: MeiPromoterOrder[];
   }
 
   /**

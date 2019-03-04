@@ -14,7 +14,7 @@ export namespace RetailStockRetailOpenApplyorderCheck {
     /**
      * 要货商品明细
      */
-    items?: OpenApplyOrderItem;
+    items?: OpenApplyOrderItem[];
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */

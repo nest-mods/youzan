@@ -118,7 +118,7 @@ export namespace SupplierFenxiaoSupportOrderDetailGet {
     /**
      * 订单商品信息
      */
-    item_list?: ItemDTO;
+    item_list?: ItemDTO[];
     /**
      * 收货人信息
      */
@@ -126,7 +126,7 @@ export namespace SupplierFenxiaoSupportOrderDetailGet {
     /**
      * 物流包裹信息
      */
-    package_list?: PackageInfo;
+    package_list?: PackageInfo[];
   }
 
   /**
@@ -280,7 +280,7 @@ export namespace SupplierFenxiaoSupportOrderDetailGet {
     /**
      * 包裹商品信息
      */
-    package_item_list?: PackageItem;
+    package_item_list?: PackageItem[];
     /**
      * 物流信息
      */

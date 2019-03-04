@@ -28,7 +28,7 @@ export namespace RetailGoodsRetailStockStockallotCheck {
     /**
      * 审核结果
      */
-    response?: InterCheckRes;
+    response?: InterCheckRes[];
   }
 
   /**

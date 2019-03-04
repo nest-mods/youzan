@@ -71,7 +71,7 @@ export namespace RetailProductRetailOpenSpuGet {
     /**
      * 商品SKU基础数据
      */
-    skus?: OpenBaseSkuDTO;
+    skus?: OpenBaseSkuDTO[];
     /**
      * spu编码
      */

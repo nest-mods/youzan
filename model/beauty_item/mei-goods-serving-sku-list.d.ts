@@ -16,7 +16,7 @@ export namespace BeautyItemMeiGoodsServingSkuList {
     /**
      * sku列表
      */
-    skus?: MeiGoodsSkuInfo;
+    skus?: MeiGoodsSkuInfo[];
   }
 
   /**

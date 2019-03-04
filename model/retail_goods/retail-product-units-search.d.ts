@@ -36,7 +36,7 @@ export namespace RetailGoodsRetailProductUnitsSearch {
     /**
      * 单位实体信息
      */
-    items?: UnitDictVO;
+    items?: UnitDictVO[];
   }
 
   /**

@@ -38,7 +38,7 @@ export namespace ExtensionAnalysisDatacenterPspagesourceDataFetch {
     /**
      * 推广效果数据详细信息列表
      */
-    items?: YunPsMonitorDataModel;
+    items?: YunPsMonitorDataModel[];
   }
 
   /**

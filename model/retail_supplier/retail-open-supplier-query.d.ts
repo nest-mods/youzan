@@ -28,7 +28,7 @@ export namespace RetailSupplierRetailOpenSupplierQuery {
     /**
      * 供应商信息列表
      */
-    suppliers?: OpenVendorDTO;
+    suppliers?: OpenVendorDTO[];
     /**
      * 分页信息
      */

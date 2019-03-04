@@ -10,7 +10,7 @@ export namespace RetailProductRetailOpenOfflineSpuRelease {
     /**
      * 组合商品关联关系
      */
-    combine_params?: OpenOnlineCombineParam;
+    combine_params?: OpenOnlineCombineParam[];
     /**
      * 是否上架
      */
@@ -46,7 +46,7 @@ export namespace RetailProductRetailOpenOfflineSpuRelease {
     /**
      * 不多于五个
      */
-    prop_params?: OpenPropParam;
+    prop_params?: OpenPropParam[];
     /**
      * 零售价
      */
@@ -90,7 +90,7 @@ export namespace RetailProductRetailOpenOfflineSpuRelease {
     /**
      * 库存规格定义
      */
-    stocks?: OfflineStock;
+    stocks?: OfflineStock[];
   }
 
   /**
@@ -164,7 +164,7 @@ export namespace RetailProductRetailOpenOfflineSpuRelease {
     /**
      * 
      */
-    specs?: SpecKeyValue;
+    specs?: SpecKeyValue[];
   }
 
   /**

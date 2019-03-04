@@ -16,7 +16,7 @@ export namespace BeautyMemberMeiMemberlevelList {
     /**
      * 等级列表
      */
-    item?: MeiMemberLevelSetting;
+    item?: MeiMemberLevelSetting[];
   }
 
   /**
@@ -42,7 +42,7 @@ export namespace BeautyMemberMeiMemberlevelList {
     /**
      * 等级权限配置
      */
-    level_right_settings?: MeiLevelRightSetting;
+    level_right_settings?: MeiLevelRightSetting[];
   }
 
   /**

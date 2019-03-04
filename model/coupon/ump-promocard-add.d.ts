@@ -240,11 +240,11 @@ export namespace CouponUmpPromocardAdd {
     /**
      * 用户标签
      */
-    mark_tags?: CrmUserTag;
+    mark_tags?: CrmUserTag[];
     /**
      * 商品数据结构
      */
-    specify_items?: GoodsDetail;
+    specify_items?: GoodsDetail[];
     /**
      * 领取优惠券的人数
      */
@@ -452,19 +452,19 @@ export namespace CouponUmpPromocardAdd {
     /**
      * Sku数据结构
      */
-    skus?: GoodsSku;
+    skus?: GoodsSku[];
     /**
      * 商品图片数据结构
      */
-    item_imgs?: GoodsImage;
+    item_imgs?: GoodsImage[];
     /**
      * 商品二维码数据结构
      */
-    item_qrcodes?: GoodsQrcode;
+    item_qrcodes?: GoodsQrcode[];
     /**
      * 商品标签数据结构
      */
-    item_tags?: GoodsTag;
+    item_tags?: GoodsTag[];
     /**
      * 商品类型。<br>0：普通商品；<br>10：分销商品;
      */

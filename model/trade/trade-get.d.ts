@@ -20,11 +20,11 @@ export namespace TradeTradeGet {
     /**
      * 订单退款信息结构体
      */
-    refund_order?: StructurizationTradeRefundInfoDetail;
+    refund_order?: StructurizationTradeRefundInfoDetail[];
     /**
      * 订单发货详情结构体
      */
-    delivery_order?: StructurizationTradeDeliveryDetail;
+    delivery_order?: StructurizationTradeDeliveryDetail[];
     /**
      * 订单优惠详情结构体
      */
@@ -62,7 +62,7 @@ export namespace TradeTradeGet {
     /**
      * 订单明细结构体
      */
-    orders?: StructurizationTradeItemDetail;
+    orders?: StructurizationTradeItemDetail[];
     /**
      * 交易送礼子单
      */
@@ -442,7 +442,7 @@ export namespace TradeTradeGet {
     /**
      * 多阶段信息结构体
      */
-    phase_payments?: StructurizationTradePhasePaymentsDetail;
+    phase_payments?: StructurizationTradePhasePaymentsDetail[];
   }
 
   /**
@@ -681,7 +681,7 @@ export namespace TradeTradeGet {
     /**
      * 送礼子单详情
      */
-    child_orders?: StructurizationTradeChildOrderDetail;
+    child_orders?: StructurizationTradeChildOrderDetail[];
   }
 
   /**
@@ -747,7 +747,7 @@ export namespace TradeTradeGet {
     /**
      * 退款交易明细信息
      */
-    oids?: StructurizationTradeRefundItemDetail;
+    oids?: StructurizationTradeRefundItemDetail[];
   }
 
   /**
@@ -782,11 +782,11 @@ export namespace TradeTradeGet {
     /**
      * 交易明细发货信息
      */
-    oids?: StructurizationTradeDeliveryItemDetail;
+    oids?: StructurizationTradeDeliveryItemDetail[];
     /**
      * 物流包裹详情
      */
-    dists?: StructurizationTradeDeliveryDist;
+    dists?: StructurizationTradeDeliveryDist[];
   }
 
   /**
@@ -834,11 +834,11 @@ export namespace TradeTradeGet {
     /**
      * 订单商品级优惠结构结构体
      */
-    item?: StructurizationTradePromotionItemDetail;
+    item?: StructurizationTradePromotionItemDetail[];
     /**
      * 优惠明细结构体
      */
-    order?: StructurizationTradePromotionDetail;
+    order?: StructurizationTradePromotionDetail[];
     /**
      * 商品优惠总金额
      */
@@ -876,7 +876,7 @@ export namespace TradeTradeGet {
     /**
      * 优惠明细结构体
      */
-    promotions?: StructurizationTradePromotionDetail;
+    promotions?: StructurizationTradePromotionDetail[];
   }
 
   /**

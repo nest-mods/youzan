@@ -24,7 +24,7 @@ export namespace RetailProductRetailOpenCategoryQuery {
     /**
      * 类目信息
      */
-    categorys?: Category;
+    categorys?: Category[];
     /**
      * 分页信息
      */

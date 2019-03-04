@@ -55,7 +55,7 @@ export namespace RetailGoodsRetailStockWarehouseSearch {
     /**
      * 仓库信息列表
      */
-    items?: WarehouseDetailVO;
+    items?: WarehouseDetailVO[];
   }
 
   /**

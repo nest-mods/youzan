@@ -53,7 +53,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
     /**
      * 组合商品关联关系
      */
-    combine_params?: OpenOnlineCombineParam;
+    combine_params?: OpenOnlineCombineParam[];
     /**
      * 自定义组件信息
      */
@@ -146,12 +146,12 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
     /**
      * 多规格时的标记属性
      */
-    item_sku_mark_aggregates?: OpenProductSkuMarkAggregateParam;
+    item_sku_mark_aggregates?: OpenProductSkuMarkAggregateParam[];
     /**
      * 有sku规格情况下，
   * 商品的计量属性
      */
-    item_sku_meas_props?: OpenProductSkuMeasProp;
+    item_sku_meas_props?: OpenProductSkuMeasProp[];
     /**
      * 电子卡券扩展信息
      */
@@ -279,7 +279,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
     /**
      * sku图片地址
      */
-    sku_img_urls?: ImgUrlParam;
+    sku_img_urls?: ImgUrlParam[];
     /**
      * 开卖时间: 0 立即开售, 1 定时开售
      */
@@ -315,7 +315,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
     /**
      * 网店商品规格信息，规格商品必传
      */
-    stocks?: OpenOnlineStock;
+    stocks?: OpenOnlineStock[];
     /**
      * 子标题
      */
@@ -473,7 +473,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
     /**
      * 
      */
-    combineParams?: OpenOnlineCombineParam;
+    combineParams?: OpenOnlineCombineParam[];
     /**
      * 成本价
      */
@@ -517,7 +517,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
     /**
      * 
      */
-    skus?: SkuParam;
+    skus?: SkuParam[];
     /**
      * 条码
      */

@@ -36,7 +36,7 @@ export namespace BeautyMemberMeiMemberlevelGet {
     /**
      * 权益列表
      */
-    level_right_settings?: MeiLevelRightSetting;
+    level_right_settings?: MeiLevelRightSetting[];
   }
 
   /**

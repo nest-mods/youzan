@@ -48,7 +48,7 @@ export namespace CrmAdvancedScrmCardUpdate {
     /**
      * 
      */
-    rights?: CardRights;
+    rights?: CardRights[];
     /**
      * 客服电话最大字符：20
      */
@@ -104,7 +104,7 @@ export namespace CrmAdvancedScrmCardUpdate {
     /**
      * 
      */
-    coupon?: Coupon;
+    coupon?: Coupon[];
     /**
      * 折扣权益字段，折数 ，1表示0.01折范围选择：1-100（type为2时必传）
      */

@@ -32,7 +32,7 @@ export namespace CrmAdvancedScrmCustomerSearch {
     /**
      * 客户信息项
      */
-    items?: CardCustomerListItemDTO;
+    items?: CardCustomerListItemDTO[];
   }
 
   /**

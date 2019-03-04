@@ -12,7 +12,7 @@ export namespace LogisticsLogisticsExpressGet {
     /**
      * 所有物流公司地址
      */
-    allExpress?: LogisticsExpressOpenApiModel;
+    allExpress?: LogisticsExpressOpenApiModel[];
   }
 
   /**

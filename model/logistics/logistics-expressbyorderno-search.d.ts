@@ -16,7 +16,7 @@ export namespace LogisticsLogisticsExpressbyordernoSearch {
     /**
      * 物流详情列表
      */
-    orderExpressList?: LogisticsGoodsOrderExpressModel;
+    orderExpressList?: LogisticsGoodsOrderExpressModel[];
   }
 
   /**

@@ -28,7 +28,7 @@ export namespace BeautyItemMeiGoodsProductCategoryList {
     /**
      * 分组信息
      */
-    items?: MeiGoodsCategoryInfo;
+    items?: MeiGoodsCategoryInfo[];
   }
 
   /**

@@ -14,7 +14,7 @@ export namespace BeautyMemberMeiCustomerSecretfileinfoUpdate {
     /**
      * 更新的档案信息
      */
-    secret_file_infos?: MeiMemberFileInfo;
+    secret_file_infos?: MeiMemberFileInfo[];
     /**
      * 会员的id
      */
@@ -36,7 +36,7 @@ export namespace BeautyMemberMeiCustomerSecretfileinfoUpdate {
     /**
      * 
      */
-    value_list?: MeiMemberFileInfoItem;
+    value_list?: MeiMemberFileInfoItem[];
   }
 
   /**

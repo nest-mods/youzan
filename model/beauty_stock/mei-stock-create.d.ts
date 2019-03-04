@@ -10,7 +10,7 @@ export namespace BeautyStockMeiStockCreate {
     /**
      * 入库商品信息
      */
-    items?: MeiCreateInventoryIoBillDetailDTO;
+    items?: MeiCreateInventoryIoBillDetailDTO[];
     /**
      * 美业token
      */

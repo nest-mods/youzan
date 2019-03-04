@@ -36,7 +36,7 @@ export namespace BeautyMemberMeiCustomerRightsList {
     /**
      * 权益列表
      */
-    items?: MeiMemberRightsResp;
+    items?: MeiMemberRightsResp[];
   }
 
   /**

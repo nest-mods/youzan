@@ -67,7 +67,7 @@ export namespace RetailStockRetailOpenStockcheckorderGet {
     /**
      * 盘点单明细
      */
-    order_items?: OpenStockCheckOrderItemDTO;
+    order_items?: OpenStockCheckOrderItemDTO[];
   }
 
   /**

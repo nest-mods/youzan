@@ -66,7 +66,7 @@ export namespace RetailProductRetailOpenOnlineSpuQuery {
     /**
      * 零售网店商品分页查询返回对象
      */
-    online_spus?: OpenOnlineSpuSearchDTO;
+    online_spus?: OpenOnlineSpuSearchDTO[];
     /**
      * 分页信息
      */

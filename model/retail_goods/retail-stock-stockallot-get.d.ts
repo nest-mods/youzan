@@ -105,7 +105,7 @@ export namespace RetailGoodsRetailStockStockallotGet {
     /**
      * 库间单明细信息
      */
-    business_order_items?: InterBusinessOrderItemVO;
+    business_order_items?: InterBusinessOrderItemVO[];
     /**
      * 记录乐观锁
      */

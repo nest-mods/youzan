@@ -42,7 +42,7 @@ export namespace TradeDeliveryTradeDcQueryQuerybyorderno {
     /**
      * 发货单
      */
-    deliveryOrders?: DeliveryOrderDTO;
+    deliveryOrders?: DeliveryOrderDTO[];
   }
 
   /**
@@ -106,15 +106,15 @@ export namespace TradeDeliveryTradeDcQueryQuerybyorderno {
     /**
      * 配送单
      */
-    distOrderDTOs?: DistOrderDTO;
+    distOrderDTOs?: DistOrderDTO[];
     /**
      * 发货单明细
      */
-    deliveryOrderItems?: DeliveryOrderItemDTO;
+    deliveryOrderItems?: DeliveryOrderItemDTO[];
     /**
      * 操作记录
      */
-    operationLogs?: OperationLogDTO;
+    operationLogs?: OperationLogDTO[];
   }
 
   /**
@@ -135,6 +135,16 @@ export namespace TradeDeliveryTradeDcQueryQuerybyorderno {
     kdtId?: number;
     /**
      * 发货类型
+  * 11 快递-系统呼叫快递
+  * 12 快递-商家呼叫快递
+  * 13 快递-无需物流
+  * 14 快递-电子面单
+  * 21 同城送-商家呼叫三方配送
+  * 22 同城送-商家自主配送
+  * 23 同城送-系统呼叫三方配送
+  * 24 自提-核销提货
+  * 92 自提-无码提货
+  * 91 自提-有码提货
      */
     deliveryType?: number;
     /**

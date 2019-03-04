@@ -42,11 +42,11 @@ export namespace BeautyOrderMeiOrderQuery {
     /**
      * 订单项详情
      */
-    order_items?: OrderItemDetailEntity;
+    order_items?: OrderItemDetailEntity[];
     /**
      * 订单赠送项
      */
-    order_gift_items?: OrderGiftItem;
+    order_gift_items?: OrderGiftItem[];
     /**
      * 门店ID
      */
@@ -106,7 +106,7 @@ export namespace BeautyOrderMeiOrderQuery {
     /**
      * 订单支付信息
      */
-    payments?: MeiOrderDetailPaymentInfo;
+    payments?: MeiOrderDetailPaymentInfo[];
     /**
      * 美业买家信息
      */
@@ -180,7 +180,7 @@ export namespace BeautyOrderMeiOrderQuery {
     /**
      * 销售人员
      */
-    salesmen?: Salesman;
+    salesmen?: Salesman[];
     /**
      * sku id
      */
@@ -192,7 +192,7 @@ export namespace BeautyOrderMeiOrderQuery {
     /**
      * 技师信息
      */
-    technicians?: Technician;
+    technicians?: Technician[];
   }
 
   /**

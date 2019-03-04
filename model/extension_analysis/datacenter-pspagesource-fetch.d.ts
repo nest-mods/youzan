@@ -44,7 +44,7 @@ export namespace ExtensionAnalysisDatacenterPspagesourceFetch {
     /**
      * 推广链接数据详细信息
      */
-    items?: YunPsPageSourceModel;
+    items?: YunPsPageSourceModel[];
   }
 
   /**

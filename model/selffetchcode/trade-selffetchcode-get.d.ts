@@ -54,11 +54,11 @@ export namespace SelffetchcodeTradeSelffetchcodeGet {
     /**
      * 交易数据结构
      */
-    sub_trades?: TradeDetail;
+    sub_trades?: TradeDetail[];
     /**
      * 订单中使用到的卡券的数据结构
      */
-    coupon_details?: UmpTradeCoupon;
+    coupon_details?: UmpTradeCoupon[];
     /**
      * 卖家对该交易的备注
      */
@@ -70,7 +70,7 @@ export namespace SelffetchcodeTradeSelffetchcodeGet {
     /**
      * 订单中使用到的优惠活动的数据结构
      */
-    promotion_details?: TradePromotion;
+    promotion_details?: TradePromotion[];
     /**
      * (即将废弃,请参考fans_info中的说明) 微信粉丝ID
      */
@@ -102,7 +102,7 @@ export namespace SelffetchcodeTradeSelffetchcodeGet {
     /**
      * 交易明细数据结构
      */
-    orders?: TradeOrder;
+    orders?: TradeOrder[];
     /**
      * 交易维权状态。<br>
   *         0 无维权，1 顾客发起维权，2 顾客拒绝商家的处理结果，3 顾客接受商家的处理结果，9 商家正在处理,101 维权处理中,110 维权结束。<br>
@@ -346,7 +346,7 @@ export namespace SelffetchcodeTradeSelffetchcodeGet {
     /**
      * 订单中使用到的卡券的数据结构
      */
-    coupon_details?: UmpTradeCoupon;
+    coupon_details?: UmpTradeCoupon[];
     /**
      * 卖家对该交易的备注
      */
@@ -358,7 +358,7 @@ export namespace SelffetchcodeTradeSelffetchcodeGet {
     /**
      * 订单中使用到的优惠活动的数据结构
      */
-    promotion_details?: TradePromotion;
+    promotion_details?: TradePromotion[];
     /**
      * (即将废弃,请参考fans_info中的说明) 微信粉丝ID
      */
@@ -390,7 +390,7 @@ export namespace SelffetchcodeTradeSelffetchcodeGet {
     /**
      * 交易明细数据结构
      */
-    orders?: TradeOrder;
+    orders?: TradeOrder[];
     /**
      * 交易维权状态。<br>
   *         0 无维权，1 顾客发起维权，2 顾客拒绝商家的处理结果，3 顾客接受商家的处理结果，9 商家正在处理,101 维权处理中,110 维权结束。<br>
@@ -710,7 +710,7 @@ export namespace SelffetchcodeTradeSelffetchcodeGet {
     /**
      * 交易明细中的优惠信息的数据结构
      */
-    order_promotion_details?: TradeOrderPromotion;
+    order_promotion_details?: TradeOrderPromotion[];
     /**
      * SKU的值，即：商品的规格。如：机身颜色:黑色;手机套餐:官方标配
      */
@@ -746,7 +746,7 @@ export namespace SelffetchcodeTradeSelffetchcodeGet {
     /**
      * 交易明细中买家留言的数据结构
      */
-    buyer_messages?: TradeBuyerMessage;
+    buyer_messages?: TradeBuyerMessage[];
     /**
      * Sku在系统中的唯一编号，可以在开发者的系统中用作 Sku 的唯一ID，但不能用于调用接口
      */
@@ -1041,7 +1041,7 @@ export namespace SelffetchcodeTradeSelffetchcodeGet {
     /**
      * 交易明细中的优惠信息的数据结构
      */
-    order_promotion_details?: TradeOrderPromotion;
+    order_promotion_details?: TradeOrderPromotion[];
     /**
      * SKU的值，即：商品的规格。如：机身颜色:黑色;手机套餐:官方标配
      */
@@ -1077,7 +1077,7 @@ export namespace SelffetchcodeTradeSelffetchcodeGet {
     /**
      * 交易明细中买家留言的数据结构
      */
-    buyer_messages?: TradeBuyerMessage;
+    buyer_messages?: TradeBuyerMessage[];
     /**
      * Sku在系统中的唯一编号，可以在开发者的系统中用作 Sku 的唯一ID，但不能用于调用接口
      */

@@ -24,7 +24,7 @@ export namespace ItemStandardItemStandardSearch {
     /**
      * 查询到的商品标准列表
      */
-    item_standards?: ItemStandardOpenModel;
+    item_standards?: ItemStandardOpenModel[];
   }
 
   /**
@@ -55,7 +55,7 @@ export namespace ItemStandardItemStandardSearch {
     /**
      * 商品标准扩展信息模型
      */
-    extra_info?: ItemStandardExtraOpenModel;
+    extra_info?: ItemStandardExtraOpenModel[];
   }
 
   /**

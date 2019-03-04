@@ -64,7 +64,7 @@ export namespace RetailGoodsRetailProductSkusSearch {
     /**
      * 实体对象
      */
-    items?: SkuCenterSearchVO;
+    items?: SkuCenterSearchVO[];
   }
 
   /**

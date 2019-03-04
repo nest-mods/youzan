@@ -82,7 +82,7 @@ export namespace TradeAdvancedTradeRefundSearch {
     /**
      * 退款列表
      */
-    refunds?: OpenSafeEsDTO;
+    refunds?: OpenSafeEsDTO[];
   }
 
   /**

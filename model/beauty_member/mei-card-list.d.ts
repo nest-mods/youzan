@@ -60,7 +60,7 @@ export namespace BeautyMemberMeiCardList {
     /**
      * 卡列表项
      */
-    items?: MeiCardListInfo;
+    items?: MeiCardListInfo[];
   }
 
   /**

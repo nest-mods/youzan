@@ -14,11 +14,11 @@ export namespace BeautyItemMeiGoodsServingCreate {
     /**
      * 商品图片列表
      */
-    goods_pictures?: MeiGoodsPictureInfo;
+    goods_pictures?: MeiGoodsPictureInfo[];
     /**
      * 服务规格信息列表
      */
-    goods_skus?: MeiGoodsSkuInfo;
+    goods_skus?: MeiGoodsSkuInfo[];
     /**
      * 美业token
      */
@@ -54,7 +54,7 @@ export namespace BeautyItemMeiGoodsServingCreate {
     /**
      * 商品Sku图片信息列表，当规格需要设置图片时 需要传此参数
      */
-    sku_images?: MeiSkuTreeImageInfo;
+    sku_images?: MeiSkuTreeImageInfo[];
     /**
      * 服务标签ID列表
      */
@@ -82,7 +82,7 @@ export namespace BeautyItemMeiGoodsServingCreate {
     /**
      * 
      */
-    goods_stock_sku_param_list?: MeiGoodsCreateSkuLeafReq;
+    goods_stock_sku_param_list?: MeiGoodsCreateSkuLeafReq[];
     /**
      * 价格
      */
@@ -130,7 +130,7 @@ export namespace BeautyItemMeiGoodsServingCreate {
     /**
      * 
      */
-    skuLeafList?: MeiSkuLeafImage;
+    skuLeafList?: MeiSkuLeafImage[];
   }
 
   /**

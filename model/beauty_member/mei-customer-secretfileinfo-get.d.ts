@@ -24,7 +24,7 @@ export namespace BeautyMemberMeiCustomerSecretfileinfoGet {
     /**
      * 会员档案信息
      */
-    file_infos?: MeiCustomerFileInfo;
+    file_infos?: MeiCustomerFileInfo[];
   }
 
   /**
@@ -53,7 +53,7 @@ export namespace BeautyMemberMeiCustomerSecretfileinfoGet {
     /**
      * 会员档案条目
      */
-    value_list?: MeiCustomerFileInfoItem;
+    value_list?: MeiCustomerFileInfoItem[];
   }
 
   /**

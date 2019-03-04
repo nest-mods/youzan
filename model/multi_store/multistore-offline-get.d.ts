@@ -96,7 +96,7 @@ export namespace MultiStoreMultistoreOfflineGet {
     /**
      * 网点标签集合
      */
-    tag_ids?: OfflineTagIdAndNameDTO;
+    tag_ids?: OfflineTagIdAndNameDTO[];
   }
 
   /**

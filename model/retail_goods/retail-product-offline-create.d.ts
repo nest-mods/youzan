@@ -18,7 +18,7 @@ export namespace RetailGoodsRetailProductOfflineCreate {
      * 组合商品关联关系
   * 例如：[{"related_combine_num":2000,"related_combine_price":1200,"related_combine_sku_id":7046628},{"related_combine_num":23000,"related_combine_price":1000,"related_combine_sku_id":7049994}]
      */
-    combine_params?: OfflineCombineParam;
+    combine_params?: OfflineCombineParam[];
     /**
      * 是否上架（0下架1上架）
      */
@@ -83,7 +83,7 @@ export namespace RetailGoodsRetailProductOfflineCreate {
     /**
      * 门店商品sku定义
      */
-    stocks?: OfflineStock;
+    stocks?: OfflineStock[];
     /**
      * 商品单位
   * 组合商品生效  单个销售商品使用关联的商品库商品的单位
@@ -144,7 +144,7 @@ export namespace RetailGoodsRetailProductOfflineCreate {
     /**
      * 
      */
-    specs?: SpecKeyValue;
+    specs?: SpecKeyValue[];
   }
 
   /**

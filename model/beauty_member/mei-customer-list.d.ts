@@ -110,7 +110,7 @@ export namespace BeautyMemberMeiCustomerList {
     /**
      * 列表条目信息
      */
-    items?: MeiCustomerInfoListSummary;
+    items?: MeiCustomerInfoListSummary[];
   }
 
   /**

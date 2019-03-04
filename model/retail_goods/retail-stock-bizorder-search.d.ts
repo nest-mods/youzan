@@ -106,7 +106,7 @@ export namespace RetailGoodsRetailStockBizorderSearch {
     /**
      * 实体信息
      */
-    items?: StockBizOrderSearchVO;
+    items?: StockBizOrderSearchVO[];
   }
 
   /**

@@ -28,7 +28,7 @@ export namespace ItemHotelItemHotelRoomQuery {
     /**
      * 房态列表
      */
-    hotel_skus?: HotelSkuModel;
+    hotel_skus?: HotelSkuModel[];
   }
 
   /**

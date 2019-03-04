@@ -174,11 +174,11 @@ export namespace RetailGoodsRetailProductOnlineGet {
     /**
      * 规格图片信息
      */
-    item_sku_image_model?: ItemSkuImageModel;
+    item_sku_image_model?: ItemSkuImageModel[];
     /**
      * 商品规格信息
      */
-    stocks?: ItemSkuModel;
+    stocks?: ItemSkuModel[];
   }
 
   /**

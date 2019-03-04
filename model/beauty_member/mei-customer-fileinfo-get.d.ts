@@ -20,7 +20,7 @@ export namespace BeautyMemberMeiCustomerFileinfoGet {
     /**
      * 会员档案值
      */
-    file_infos?: MeiCustomerFileInfo;
+    file_infos?: MeiCustomerFileInfo[];
   }
 
   /**
@@ -49,7 +49,7 @@ export namespace BeautyMemberMeiCustomerFileinfoGet {
     /**
      * 会员档案条目
      */
-    value_list?: MeiCustomerFileInfoItem;
+    value_list?: MeiCustomerFileInfoItem[];
   }
 
   /**

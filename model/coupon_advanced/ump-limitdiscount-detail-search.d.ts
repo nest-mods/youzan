@@ -28,7 +28,7 @@ export namespace CouponAdvancedUmpLimitdiscountDetailSearch {
     /**
      * 限时折扣参与商品信息
      */
-    items?: BriefTimeLimitedDiscountGoodsJoin;
+    items?: BriefTimeLimitedDiscountGoodsJoin[];
   }
 
   /**

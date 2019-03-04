@@ -20,7 +20,7 @@ export namespace ItemSkusCustomGet {
     /**
      * sku列表
      */
-    skus?: ItemSku;
+    skus?: ItemSku[];
   }
 
   /**

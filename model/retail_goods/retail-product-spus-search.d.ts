@@ -73,7 +73,7 @@ export namespace RetailGoodsRetailProductSpusSearch {
     /**
      * 商品库搜索结果对象
      */
-    items?: SpuSearchVO;
+    items?: SpuSearchVO[];
   }
 
   /**
@@ -157,7 +157,7 @@ export namespace RetailGoodsRetailProductSpusSearch {
     /**
      * sku详情
      */
-    skus?: SkuVO;
+    skus?: SkuVO[];
   }
 
   /**
@@ -215,7 +215,7 @@ export namespace RetailGoodsRetailProductSpusSearch {
     /**
      * 规格定义
      */
-    specs?: SpecKeyValue;
+    specs?: SpecKeyValue[];
   }
 
   /**

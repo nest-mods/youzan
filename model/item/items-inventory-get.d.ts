@@ -44,7 +44,7 @@ export namespace ItemItemsInventoryGet {
     /**
      * 搜索到的商品列表
      */
-    items?: ItemListOpenModel;
+    items?: ItemListOpenModel[];
     /**
      * 搜索到的商品数量
      */
@@ -114,7 +114,7 @@ export namespace ItemItemsInventoryGet {
     /**
      * 图片信息
      */
-    item_imgs?: ItemImageOpenModel;
+    item_imgs?: ItemImageOpenModel[];
     /**
      * 商品划线价
      */

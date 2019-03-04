@@ -40,7 +40,7 @@ export namespace MeiPromoterMeiPromoterList {
     /**
      * 推广员列表
      */
-    items?: MeiPromoterDetail;
+    items?: MeiPromoterDetail[];
   }
 
   /**

@@ -36,7 +36,7 @@ export namespace BeautyMemberMeiCustomerTagList {
     /**
      * 标签信息列表
      */
-    items?: MeiMemberTagResp;
+    items?: MeiMemberTagResp[];
   }
 
   /**

@@ -64,7 +64,7 @@ export namespace BeautyStaffMeiStaffPageQuery {
     /**
      * 角色信息
      */
-    roles?: MeiRole;
+    roles?: MeiRole[];
     /**
      * 联系电话
      */

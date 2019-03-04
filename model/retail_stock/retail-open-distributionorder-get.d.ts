@@ -74,7 +74,7 @@ export namespace RetailStockRetailOpenDistributionorderGet {
     /**
      * 配送单明细
      */
-    order_items?: OpenDistributionOrderItemDTO;
+    order_items?: OpenDistributionOrderItemDTO[];
     /**
      * 关联出库单据号
      */
@@ -87,6 +87,14 @@ export namespace RetailStockRetailOpenDistributionorderGet {
      * 配送出库时间
      */
     distributed_out_time?: string;
+    /**
+     * 物流单号
+     */
+    logistics_order_no?: string;
+    /**
+     * 物流公司
+     */
+    logistics_company_name?: string;
   }
 
   /**

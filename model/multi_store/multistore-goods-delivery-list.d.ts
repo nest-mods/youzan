@@ -16,7 +16,7 @@ export namespace MultiStoreMultistoreGoodsDeliveryList {
     /**
      * 网点下所有商品的配送方式
      */
-    list?: MultistoreDeliverySetting;
+    list?: MultistoreDeliverySetting[];
   }
 
   /**

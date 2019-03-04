@@ -73,11 +73,11 @@ export namespace RetailTradeRetailOpenDeliveryorderGet {
     /**
      * 退款信息
      */
-    refund_infos?: OpenRefundInfoDTO;
+    refund_infos?: OpenRefundInfoDTO[];
     /**
      * 商品明细
      */
-    order_items?: OpenOrderItemDTO;
+    order_items?: OpenOrderItemDTO[];
     /**
      * 订单号
      */

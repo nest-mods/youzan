@@ -51,7 +51,7 @@ export namespace ItemStandardItemStandardGet {
     /**
      * 商品标准扩展信息模型
      */
-    extra_info?: ItemStandardExtraOpenModel;
+    extra_info?: ItemStandardExtraOpenModel[];
   }
 
   /**

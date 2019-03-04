@@ -58,7 +58,7 @@ export namespace RetailGoodsRetailStockStockinGet {
     /**
      * 入库单明细
      */
-    stock_in_order_items?: StockInOrderItemVO;
+    stock_in_order_items?: StockInOrderItemVO[];
     /**
      * 商家id
      */

@@ -62,7 +62,7 @@ export namespace RetailTradeRetailOpenReturnorderGet {
     /**
      * 商品信息
      */
-    return_items?: OpenOrderItemDTO;
+    return_items?: OpenOrderItemDTO[];
     /**
      * 物流信息
      */

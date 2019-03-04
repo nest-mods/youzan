@@ -368,15 +368,15 @@ export namespace ItemItemCreate {
     /**
      * 商品规格库存信息
      */
-    skus?: ItemSkuOpenModel;
+    skus?: ItemSkuOpenModel[];
     /**
      * 图片信息
      */
-    item_imgs?: ItemImageOpenModel;
+    item_imgs?: ItemImageOpenModel[];
     /**
      * 分组信息
      */
-    item_tags?: ItemGroupOpenModel;
+    item_tags?: ItemGroupOpenModel[];
     /**
      * 商品留言
      */
@@ -392,7 +392,7 @@ export namespace ItemItemCreate {
     /**
      * open api商品SKU图片模型
      */
-    sku_images?: SkuImageOpenModel;
+    sku_images?: SkuImageOpenModel[];
     /**
      * 商家排序字段
      */

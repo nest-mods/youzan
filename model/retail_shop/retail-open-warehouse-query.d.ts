@@ -36,11 +36,11 @@ export namespace RetailShopRetailOpenWarehouseQuery {
     /**
      * 仓库列表
      */
-    warehouses?: Warehouses;
+    warehouses?: Warehouses[];
     /**
      * 分页信息
      */
-    paginator?: Paginator;
+    paginator?: Paginator[];
   }
 
   /**

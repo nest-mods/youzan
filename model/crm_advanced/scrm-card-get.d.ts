@@ -45,7 +45,7 @@ export namespace CrmAdvancedScrmCardGet {
     /**
      * 会员卡权益
      */
-    rights?: CardRightsV2DTO;
+    rights?: CardRightsV2DTO[];
     /**
      * 生效开始时间，如："2017-03-07 00:00:00"
      */
@@ -124,7 +124,7 @@ export namespace CrmAdvancedScrmCardGet {
     /**
      * 优惠券内容
      */
-    coupon?: CouponRightsValueDTO;
+    coupon?: CouponRightsValueDTO[];
   }
 
   /**

@@ -79,7 +79,7 @@ export namespace BeautyAppointmentMeiReservationList {
     /**
      * 预约单列表
      */
-    items?: MeiReservationDetail;
+    items?: MeiReservationDetail[];
   }
 
   /**
@@ -203,7 +203,7 @@ export namespace BeautyAppointmentMeiReservationList {
     /**
      * 预约项
      */
-    reservation_items?: MeiReservationItem;
+    reservation_items?: MeiReservationItem[];
     /**
      * 订单单号。当预约单支付过才会有该字段，通过该字段可以查询支付的订单信息
      */

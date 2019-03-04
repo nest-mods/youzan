@@ -14,7 +14,7 @@ export namespace TagScrmTagRelationAdd {
     /**
      * 标签集合
      */
-    tags?: UserTagCreate;
+    tags?: UserTagCreate[];
   }
 
   /**

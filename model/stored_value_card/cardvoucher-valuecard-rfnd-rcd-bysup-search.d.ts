@@ -44,7 +44,7 @@ export namespace StoredValueCardCardvoucherValuecardRfndRcdBysupSearch {
     /**
      * 实体信息
      */
-    items?: PageQueryRefundLogBySupportKdtIdDTO;
+    items?: PageQueryRefundLogBySupportKdtIdDTO[];
   }
 
   /**

@@ -20,7 +20,7 @@ export namespace ShopShopAddressList {
     /**
      * 地址列表
      */
-    list?: ShopAddress;
+    list?: ShopAddress[];
   }
 
   /**

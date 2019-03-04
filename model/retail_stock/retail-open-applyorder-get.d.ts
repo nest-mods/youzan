@@ -78,7 +78,7 @@ export namespace RetailStockRetailOpenApplyorderGet {
     /**
      * 要货申请单-商品详情
      */
-    order_items?: OpenApplyOrderItemDTO;
+    order_items?: OpenApplyOrderItemDTO[];
     /**
      * 关联配送单号
      */

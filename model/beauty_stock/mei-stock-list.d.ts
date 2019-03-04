@@ -40,7 +40,7 @@ export namespace BeautyStockMeiStockList {
     /**
      * 商品库存信息列表
      */
-    items?: MeiItemSkuStockResponseDTOV2;
+    items?: MeiItemSkuStockResponseDTOV2[];
   }
 
   /**

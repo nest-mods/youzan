@@ -57,7 +57,7 @@ export namespace RetailStockRetailOpenStockinorderGet {
     /**
      * 单据明细
      */
-    order_items?: OpenStockOrderItemDTO;
+    order_items?: OpenStockOrderItemDTO[];
     /**
      * 供应商编码
      */

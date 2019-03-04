@@ -12,7 +12,7 @@ export namespace BuyerAddressUserAddressGet {
     /**
      * 地址
      */
-    userAddressModels?: UserAddressModel;
+    user_address_models?: UserAddressModel[];
   }
 
   /**

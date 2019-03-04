@@ -59,7 +59,7 @@ export namespace PointsCrmCustomerPointsChangelogGet {
     /**
      * 积分变动记录
      */
-    details?: UserPointsChangeLogDTO;
+    details?: UserPointsChangeLogDTO[];
   }
 
   /**

@@ -46,7 +46,7 @@ export namespace RetailStockRetailOpenStockoutorderQuery {
     /**
      * 单据信息
      */
-    orders?: OpenStockOutOrderDTO;
+    orders?: OpenStockOutOrderDTO[];
     /**
      * 分页信息
      */
@@ -89,7 +89,7 @@ export namespace RetailStockRetailOpenStockoutorderQuery {
     /**
      * 订单明细
      */
-    order_items?: OpenStockOrderItemDTO;
+    order_items?: OpenStockOrderItemDTO[];
   }
 
   /**

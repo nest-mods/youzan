@@ -51,7 +51,7 @@ export namespace RetailTradeRetailOpenRefundorderQuery {
     /**
      * 退款单列表
      */
-    refund_orders?: OpenRefundOrderDTO;
+    refund_orders?: OpenRefundOrderDTO[];
     /**
      * 记录总数
      */
@@ -107,7 +107,7 @@ export namespace RetailTradeRetailOpenRefundorderQuery {
     /**
      * 订单明细数据结构
      */
-    refund_items?: OpenOrderItemDTO;
+    refund_items?: OpenOrderItemDTO[];
     /**
      * 退款单版本号
      */

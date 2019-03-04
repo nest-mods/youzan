@@ -90,7 +90,7 @@ export namespace RetailGoodsRetailStockGoodsapplySearch {
     /**
      * 库间单据信息
      */
-    items?: InterBusinessOrderVO;
+    items?: InterBusinessOrderVO[];
     /**
      * 
      */
@@ -188,7 +188,7 @@ export namespace RetailGoodsRetailStockGoodsapplySearch {
     /**
      * 调拨单明细返回信息
      */
-    business_order_items?: InterBusinessOrderItemOfProdVO;
+    business_order_items?: InterBusinessOrderItemOfProdVO[];
     /**
      * 拓展信息
      */

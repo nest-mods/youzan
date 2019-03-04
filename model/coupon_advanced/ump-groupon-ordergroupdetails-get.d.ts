@@ -22,7 +22,7 @@ export namespace CouponAdvancedUmpGrouponOrdergroupdetailsGet {
     /**
      * 订单拼团详情
      */
-    order_group_detail?: OrderGroupDetail;
+    order_group_detail?: OrderGroupDetail[];
   }
 
   /**

@@ -51,7 +51,7 @@ export namespace RetailTradeRetailOpenDeliveryorderQuery {
     /**
      * 发货单列表
      */
-    delivery_orders?: OpenDeliveryOrderDTO;
+    delivery_orders?: OpenDeliveryOrderDTO[];
     /**
      * 分页参数
      */
@@ -106,11 +106,11 @@ export namespace RetailTradeRetailOpenDeliveryorderQuery {
     /**
      * 退款单信息
      */
-    refund_infos?: OpenRefundInfoDTO;
+    refund_infos?: OpenRefundInfoDTO[];
     /**
      * 订单明细数据结构
      */
-    order_items?: OpenOrderItemDTO;
+    order_items?: OpenOrderItemDTO[];
     /**
      * 发货单整单金额，未计任何优惠，未计邮费
      */

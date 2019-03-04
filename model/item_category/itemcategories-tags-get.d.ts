@@ -16,7 +16,7 @@ export namespace ItemCategoryItemcategoriesTagsGet {
     /**
      * 分组返回信息
      */
-    tags?: ItemGroupOpenModel;
+    tags?: ItemGroupOpenModel[];
   }
 
   /**

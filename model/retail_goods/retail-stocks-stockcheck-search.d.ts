@@ -48,7 +48,7 @@ export namespace RetailGoodsRetailStocksStockcheckSearch {
     /**
      * 实体信息
      */
-    items?: StockCheckVO;
+    items?: StockCheckVO[];
   }
 
   /**
@@ -129,7 +129,7 @@ export namespace RetailGoodsRetailStocksStockcheckSearch {
     /**
      * 盘点单明细
      */
-    stock_take_order_items?: StockCheckItemVO;
+    stock_take_order_items?: StockCheckItemVO[];
     /**
      * 仓库名称
      */

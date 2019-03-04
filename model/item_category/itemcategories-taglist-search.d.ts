@@ -24,7 +24,7 @@ export namespace ItemCategoryItemcategoriesTaglistSearch {
     /**
      * 商品自定义标签列表
      */
-    tags?: GoodsTag;
+    tags?: GoodsTag[];
     /**
      * 结果总数
      */

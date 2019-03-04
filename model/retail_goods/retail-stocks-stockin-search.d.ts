@@ -58,7 +58,7 @@ export namespace RetailGoodsRetailStocksStockinSearch {
     /**
      * 入库单详细信息
      */
-    items?: StockInOrderVO;
+    items?: StockInOrderVO[];
   }
 
   /**
@@ -106,7 +106,7 @@ export namespace RetailGoodsRetailStocksStockinSearch {
     /**
      * 入库单明细
      */
-    stock_in_order_items?: StockInOrderItemVO;
+    stock_in_order_items?: StockInOrderItemVO[];
     /**
      * 商家id
      */

@@ -10,7 +10,7 @@ export namespace RetailGoodsRetailStockGoodsapplyCheck {
     /**
      * 审核明细
      */
-    business_order_items?: OutGoodsApplyCheckItem;
+    business_order_items?: OutGoodsApplyCheckItem[];
     /**
      * 出库仓库
      */

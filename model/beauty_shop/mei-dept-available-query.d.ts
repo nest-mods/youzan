@@ -12,7 +12,7 @@ export namespace BeautyShopMeiDeptAvailableQuery {
     /**
      * 门店列表
      */
-    depts?: MeiDeptInfo;
+    depts?: MeiDeptInfo[];
   }
 
   /**

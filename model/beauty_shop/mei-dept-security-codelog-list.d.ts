@@ -32,7 +32,7 @@ export namespace BeautyShopMeiDeptSecurityCodelogList {
     /**
      * 操作记录列表
      */
-    items?: MeiSecurityCodeLogItem;
+    items?: MeiSecurityCodeLogItem[];
   }
 
   /**

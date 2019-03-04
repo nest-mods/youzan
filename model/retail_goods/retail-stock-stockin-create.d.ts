@@ -22,7 +22,7 @@ export namespace RetailGoodsRetailStockStockinCreate {
     /**
      * 入库明细
      */
-    stock_in_order_items?: StockInOrderItemCreate;
+    stock_in_order_items?: StockInOrderItemCreate[];
     /**
      * 供应商id
      */

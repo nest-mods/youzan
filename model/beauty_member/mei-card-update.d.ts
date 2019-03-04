@@ -18,7 +18,7 @@ export namespace BeautyMemberMeiCardUpdate {
     /**
      * 会员卡权益列表
      */
-    card_rights?: MeiCardRight;
+    card_rights?: MeiCardRight[];
     /**
      * 卡片描述信息
      */

@@ -60,7 +60,7 @@ export namespace LogisticsLogisticsTemplateSearch {
     /**
      * 
      */
-    items?: LogisticsDeliveryTemplateModel;
+    items?: LogisticsDeliveryTemplateModel[];
   }
 
   /**
@@ -120,11 +120,11 @@ export namespace LogisticsLogisticsTemplateSearch {
     /**
      * 运费规则
      */
-    valuationRules?: ValuationRuleModel;
+    valuationRules?: ValuationRuleModel[];
     /**
      * 地区规则
      */
-    openRegionRules?: RegionRuleOpenApiModel;
+    openRegionRules?: RegionRuleOpenApiModel[];
     /**
      * 创建时间
      */
@@ -172,15 +172,15 @@ export namespace LogisticsLogisticsTemplateSearch {
     /**
      * 市
      */
-    city?: CityOpenApiModel;
+    city?: CityOpenApiModel[];
     /**
      * 区
      */
-    country?: CountryOpenApiModel;
+    country?: CountryOpenApiModel[];
     /**
      * 省
      */
-    province?: ProvinceOpenApiModel;
+    province?: ProvinceOpenApiModel[];
   }
 
   /**

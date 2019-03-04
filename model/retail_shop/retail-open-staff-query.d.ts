@@ -24,7 +24,7 @@ export namespace RetailShopRetailOpenStaffQuery {
     /**
      * 员工信息列表
      */
-    response?: OpenStaffDTO;
+    response?: OpenStaffDTO[];
   }
 
   /**

@@ -48,7 +48,7 @@ export namespace RetailTradeRetailOpenReturnorderQuery {
     /**
      * 退货单列表
      */
-    return_orders?: OpenReturnOrderDTO;
+    return_orders?: OpenReturnOrderDTO[];
     /**
      * 记录总数
      */
@@ -104,7 +104,7 @@ export namespace RetailTradeRetailOpenReturnorderQuery {
     /**
      * 订单明细数据结构
      */
-    return_items?: OpenOrderItemDTO;
+    return_items?: OpenOrderItemDTO[];
     /**
      * 物流信息数据结构
      */

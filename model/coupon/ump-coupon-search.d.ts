@@ -28,7 +28,7 @@ export namespace CouponUmpCouponSearch {
     /**
      * 优惠活动组信息
      */
-    groups?: CouponGroup;
+    groups?: CouponGroup[];
     /**
      * 活动数量
      */

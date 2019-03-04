@@ -36,7 +36,7 @@ export namespace CustomerScrmCustomerSearch {
     /**
      * 客户列表返回对象列表
      */
-    record_list?: CustomerResultDTO;
+    record_list?: CustomerResultDTO[];
   }
 
   /**

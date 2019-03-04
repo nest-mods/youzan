@@ -20,11 +20,11 @@ export namespace BeautyMemberMeiCustomerFiletemplateGet {
     /**
      * 私密档案模板
      */
-    secret_file_template?: MeiMemberFileTemplateItem;
+    secret_file_template?: MeiMemberFileTemplateItem[];
     /**
      * 基础档案模板
      */
-    base_file_template?: MeiMemberFileTemplateItem;
+    base_file_template?: MeiMemberFileTemplateItem[];
   }
 
   /**

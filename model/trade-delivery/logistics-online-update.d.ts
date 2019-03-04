@@ -10,7 +10,7 @@ export namespace TradeDeliveryLogisticsOnlineUpdate {
     /**
      * 修改物流信息
      */
-    trade_express_modify?: TradeExpressModify;
+    trade_express_modify?: TradeExpressModify[];
   }
 
   /**

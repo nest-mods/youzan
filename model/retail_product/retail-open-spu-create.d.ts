@@ -34,11 +34,11 @@ export namespace RetailProductRetailOpenSpuCreate {
     /**
      * 商品规格列表
      */
-    skus?: OpenSkuCreate;
+    skus?: OpenSkuCreate[];
     /**
      * 规格定义
      */
-    spec_define_tuple?: SpecDefineTuple;
+    spec_define_tuple?: SpecDefineTuple[];
     /**
      * 商品编码
      */
@@ -82,7 +82,7 @@ export namespace RetailProductRetailOpenSpuCreate {
     /**
      * 
      */
-    specs?: OpenSpec;
+    specs?: OpenSpec[];
   }
 
   /**
@@ -116,7 +116,7 @@ export namespace RetailProductRetailOpenSpuCreate {
     /**
      * 
      */
-    values?: Values;
+    values?: Values[];
   }
 
   /**

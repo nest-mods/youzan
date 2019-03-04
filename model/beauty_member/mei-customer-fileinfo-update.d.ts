@@ -6,7 +6,7 @@ export namespace BeautyMemberMeiCustomerFileinfoUpdate {
     /**
      * 基础档案信息
      */
-    file_infos?: MeiMemberFileInfo;
+    file_infos?: MeiMemberFileInfo[];
     /**
      * 没有token
      */
@@ -32,7 +32,7 @@ export namespace BeautyMemberMeiCustomerFileinfoUpdate {
     /**
      * 
      */
-    value_list?: MeiMemberFileInfoItem;
+    value_list?: MeiMemberFileInfoItem[];
   }
 
   /**

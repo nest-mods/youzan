@@ -30,15 +30,15 @@ export namespace BeautyOrderMeiOrderCreate {
     /**
      * 赠送列表
      */
-    order_gift_items?: OrderGiftItem;
+    order_gift_items?: OrderGiftItem[];
     /**
      * 订单项列表
      */
-    order_items?: OrderItemRequest;
+    order_items?: OrderItemRequest[];
     /**
      * 优惠列表
      */
-    promotions?: Promotion;
+    promotions?: Promotion[];
     /**
      * 备注
      */
@@ -146,7 +146,7 @@ export namespace BeautyOrderMeiOrderCreate {
     /**
      * 
      */
-    salesmen?: Salesman;
+    salesmen?: Salesman[];
     /**
      * sku id
      */
@@ -158,7 +158,7 @@ export namespace BeautyOrderMeiOrderCreate {
     /**
      * 
      */
-    technicians?: Technician;
+    technicians?: Technician[];
   }
 
   /**

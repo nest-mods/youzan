@@ -124,7 +124,7 @@ export namespace RetailGoodsRetailStockGoodsapplyGet {
     /**
      * 库间单明细信息
      */
-    business_order_items?: InterBusinessOrderItemVO;
+    business_order_items?: InterBusinessOrderItemVO[];
   }
 
   /**

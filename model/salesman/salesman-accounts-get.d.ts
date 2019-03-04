@@ -24,7 +24,7 @@ export namespace SalesmanSalesmanAccountsGet {
     /**
      * 分销员列表
      */
-    accounts?: SalesmanAccountDetail;
+    accounts?: SalesmanAccountDetail[];
   }
 
   /**

@@ -32,7 +32,7 @@ export namespace MeiPromoterMeiPromoterInviteeList {
     /**
      * 邀请的推广员列表信息
      */
-    items?: MeiPromoterInvitee;
+    items?: MeiPromoterInvitee[];
   }
 
   /**

@@ -20,7 +20,7 @@ export namespace VirtualticketTradeVirtualticketGet {
     /**
      * 电子卡券列表
      */
-    tickets?: Tickets;
+    tickets?: Tickets[];
     /**
      * 创建时间
      */

@@ -32,7 +32,7 @@ export namespace CouponUmpPromocardBuyerSearch {
     /**
      * 买家券信息
      */
-    cards?: CouponCardDetail;
+    cards?: CouponCardDetail[];
   }
 
   /**

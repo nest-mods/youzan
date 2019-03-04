@@ -43,7 +43,7 @@ export namespace ItemItemSearch {
     /**
      * 返回的商品列表
      */
-    items?: ItemListOpenModel;
+    items?: ItemListOpenModel[];
   }
 
   /**
@@ -109,7 +109,7 @@ export namespace ItemItemSearch {
     /**
      * 图片信息
      */
-    item_imgs?: ItemImageOpenModel;
+    item_imgs?: ItemImageOpenModel[];
     /**
      * 商品划线价
      */

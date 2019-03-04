@@ -14,7 +14,7 @@ export namespace BeautyMemberMeiMemberlevelUpdate {
     /**
      * 权益列表
      */
-    level_right_settings?: MeiLevelRightSetting;
+    level_right_settings?: MeiLevelRightSetting[];
     /**
      * 成长值
      */

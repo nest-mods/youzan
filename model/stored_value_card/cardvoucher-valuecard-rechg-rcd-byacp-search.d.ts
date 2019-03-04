@@ -40,7 +40,7 @@ export namespace StoredValueCardCardvoucherValuecardRechgRcdByacpSearch {
     /**
      * 实体信息
      */
-    items?: PageQueryRechargeLogByAcceptKdtIdDTO;
+    items?: PageQueryRechargeLogByAcceptKdtIdDTO[];
     /**
      * 分页信息
      */

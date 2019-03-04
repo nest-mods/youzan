@@ -20,7 +20,7 @@ export namespace TagScrmTagRelationGet {
     /**
      * 客户标签集合
      */
-    tags?: CrmUserTag;
+    tags?: CrmUserTag[];
   }
 
   /**

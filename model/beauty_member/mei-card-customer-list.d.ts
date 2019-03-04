@@ -32,7 +32,7 @@ export namespace BeautyMemberMeiCardCustomerList {
     /**
      * 会员卡列表信息
      */
-    items?: MeiPersonCardInfo;
+    items?: MeiPersonCardInfo[];
   }
 
   /**
@@ -110,7 +110,7 @@ export namespace BeautyMemberMeiCardCustomerList {
     /**
      * 卡权限--分配到会员后的权限信息
      */
-    card_rights?: MeiPersonCardRight;
+    card_rights?: MeiPersonCardRight[];
     /**
      * 等级信息
      */

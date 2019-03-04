@@ -18,7 +18,7 @@ export namespace RetailStockRetailOpenStockinorderCreate {
     /**
      * 入库商品明细
      */
-    order_items?: StockOrderItem;
+    order_items?: StockOrderItem[];
     /**
      * 入库单类型(PYRK=盘盈入库;CGRK=采购入库;THRK=退货入库;DBRK=调拨入库; PSRK=配送入库;YHTHRK=要货退货入库)
      */

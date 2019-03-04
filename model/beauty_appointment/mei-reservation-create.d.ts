@@ -30,7 +30,7 @@ export namespace BeautyAppointmentMeiReservationCreate {
     /**
      * 预约的服务项目
      */
-    reservation_items?: MeiReservationItemEntity;
+    reservation_items?: MeiReservationItemEntity[];
   }
 
   /**

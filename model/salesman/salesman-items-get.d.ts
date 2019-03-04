@@ -16,7 +16,7 @@ export namespace SalesmanSalesmanItemsGet {
     /**
      * 商品设置信息
      */
-    items?: SalesmanTradeGoods;
+    items?: SalesmanTradeGoods[];
   }
 
   /**

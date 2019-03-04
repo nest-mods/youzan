@@ -40,7 +40,7 @@ export namespace UserUsersWeixinFollowersInfoSearch {
     /**
      * 搜索到的微信粉丝用户详细信息列表
      */
-    users?: WeixinFansCustomerInfo;
+    users?: WeixinFansCustomerInfo[];
   }
 
   /**

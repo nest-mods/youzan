@@ -47,7 +47,7 @@ export namespace CrmAdvancedScrmCustomerCardList {
     /**
      * 会员卡列表
      */
-    items?: CustomerCardListItemDTO;
+    items?: CustomerCardListItemDTO[];
   }
 
   /**

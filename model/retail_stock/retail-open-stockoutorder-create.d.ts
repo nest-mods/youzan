@@ -16,9 +16,17 @@ export namespace RetailStockRetailOpenStockoutorderCreate {
      */
     creator?: string;
     /**
+     * 物流公司（配送出库选填）
+     */
+    logistics_company_name?: string;
+    /**
+     * 物流单号（配送出库选填）
+     */
+    logistics_order_no?: string;
+    /**
      * 出库商品明细
      */
-    order_items?: StockOrderItem;
+    order_items?: StockOrderItem[];
     /**
      * 出库单类型(PSCK=配送出库; BSCK=报损出库;PKCK=盘亏出库;DBCK=调拨出库; YHTHCK=要货退货出库)
      */

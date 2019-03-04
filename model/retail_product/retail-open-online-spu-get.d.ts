@@ -214,11 +214,11 @@ export namespace RetailProductRetailOpenOnlineSpuGet {
     /**
      * 零售网店商品规格信息
      */
-    skus?: OpenOnlineSkuDTO;
+    skus?: OpenOnlineSkuDTO[];
     /**
      * 组合商品信息
      */
-    combine_models?: OpenOnlineCombineDTO;
+    combine_models?: OpenOnlineCombineDTO[];
     /**
      * 虚拟商品扩展信息
      */
@@ -242,7 +242,7 @@ export namespace RetailProductRetailOpenOnlineSpuGet {
     /**
      * 商品能力标聚合_sku维度
      */
-    sku_mark_aggregate_list?: OpenSkuMarkAggregateDTO;
+    sku_mark_aggregate_list?: OpenSkuMarkAggregateDTO[];
     /**
      * 可购买该商品的用户标签id列表
      */
@@ -254,11 +254,11 @@ export namespace RetailProductRetailOpenOnlineSpuGet {
     /**
      * 会员标签
      */
-    ump_tag_infos?: OpenUmpTagDTO;
+    ump_tag_infos?: OpenUmpTagDTO[];
     /**
      * 商品SKU图片模型
      */
-    item_sku_images?: OpenItemSkuImageDTO;
+    item_sku_images?: OpenItemSkuImageDTO[];
     /**
      * 运费模板信息
      */
@@ -336,7 +336,7 @@ export namespace RetailProductRetailOpenOnlineSpuGet {
     /**
      * 组合商品信息
      */
-    combine_models?: OpenOnlineCombineDTO;
+    combine_models?: OpenOnlineCombineDTO[];
   }
 
   /**

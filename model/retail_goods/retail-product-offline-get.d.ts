@@ -110,11 +110,11 @@ export namespace RetailGoodsRetailProductOfflineGet {
     /**
      * 组合商品关联关系详情
      */
-    combine_models?: OfflineCombineVO;
+    combine_models?: OfflineCombineVO[];
     /**
      * 门店商品规格明细
      */
-    item_sku_models?: OfflineSkuModel;
+    item_sku_models?: OfflineSkuModel[];
   }
 
   /**

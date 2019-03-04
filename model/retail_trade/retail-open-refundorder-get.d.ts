@@ -62,7 +62,7 @@ export namespace RetailTradeRetailOpenRefundorderGet {
     /**
      * 退款明细
      */
-    refund_items?: OpenOrderItemDTO;
+    refund_items?: OpenOrderItemDTO[];
     /**
      * 退款单版本号
      */

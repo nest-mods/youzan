@@ -36,7 +36,7 @@ export namespace CouponAdvancedUmpPromotionGet {
     /**
      * 订单级优惠信息，没有优惠则为空数组
      */
-    order_promotions?: UmpPromotionOrder;
+    order_promotions?: UmpPromotionOrder[];
     /**
      * 商品参与积分抵扣活动优惠信息，没有参与则为null
      */
@@ -200,7 +200,7 @@ export namespace CouponAdvancedUmpPromotionGet {
     /**
      * 优惠套餐商品数据结构
      */
-    goods_list?: UmpPromotionPackagebuyGoods;
+    goods_list?: UmpPromotionPackagebuyGoods[];
   }
 
   /**

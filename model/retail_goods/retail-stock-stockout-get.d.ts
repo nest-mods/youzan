@@ -90,7 +90,7 @@ export namespace RetailGoodsRetailStockStockoutGet {
     /**
      * 出库单详情
      */
-    stock_out_order_items?: StockOutOrderItemVO;
+    stock_out_order_items?: StockOutOrderItemVO[];
     /**
      * 仓库名称
      */

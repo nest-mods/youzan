@@ -6,7 +6,7 @@ export namespace TradeDeliveryTradeDcDeliveryOrdersingleitemsend {
     /**
      * 包裹信息
      */
-    ex_packages?: ExPackage;
+    ex_packages?: ExPackage[];
     /**
      * 待发货的商品交易明细编号
      */

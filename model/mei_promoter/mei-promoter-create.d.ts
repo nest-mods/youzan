@@ -10,7 +10,7 @@ export namespace MeiPromoterMeiPromoterCreate {
     /**
      * 要创建的推广员列表
      */
-    promoters?: MeiPromoter;
+    promoters?: MeiPromoter[];
   }
 
   /**

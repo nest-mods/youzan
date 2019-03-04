@@ -16,7 +16,7 @@ export namespace TradeAdvancedTradeRefundMessagesGet {
     /**
      * 退款记录
      */
-    refund_messages?: RefundMessages;
+    refund_messages?: RefundMessages[];
   }
 
   /**

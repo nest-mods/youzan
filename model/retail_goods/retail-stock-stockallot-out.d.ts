@@ -18,7 +18,7 @@ export namespace RetailGoodsRetailStockStockallotOut {
     /**
      * 具体出库商品信息
      */
-    stock_allot_out_items?: OutAllotOutItem;
+    stock_allot_out_items?: OutAllotOutItem[];
   }
 
   /**

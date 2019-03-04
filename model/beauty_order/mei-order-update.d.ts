@@ -26,11 +26,11 @@ export namespace BeautyOrderMeiOrderUpdate {
     /**
      * 赠送列表
      */
-    order_gift_items?: OrderGiftItem;
+    order_gift_items?: OrderGiftItem[];
     /**
      * 订单项列表
      */
-    order_items?: OrderItemRequest;
+    order_items?: OrderItemRequest[];
     /**
      * 订单编号，修改订单时填写
      */
@@ -38,7 +38,7 @@ export namespace BeautyOrderMeiOrderUpdate {
     /**
      * 优惠列表
      */
-    promotions?: Promotion;
+    promotions?: Promotion[];
     /**
      * 备注
      */
@@ -142,7 +142,7 @@ export namespace BeautyOrderMeiOrderUpdate {
     /**
      * 
      */
-    salesmen?: Salesman;
+    salesmen?: Salesman[];
     /**
      * sku id
      */
@@ -154,7 +154,7 @@ export namespace BeautyOrderMeiOrderUpdate {
     /**
      * 
      */
-    technicians?: Technician;
+    technicians?: Technician[];
   }
 
   /**

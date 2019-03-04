@@ -24,7 +24,7 @@ export namespace UserUsersWeixinFollowersPull {
     /**
      * 搜索到的微信粉丝用户列表
      */
-    users?: CrmWeixinFans;
+    users?: CrmWeixinFans[];
     /**
      * 是否有下一页数据
      */
@@ -82,7 +82,7 @@ export namespace UserUsersWeixinFollowersPull {
     /**
      * 用户标签
      */
-    tags?: CrmUserTag;
+    tags?: CrmUserTag[];
     /**
      * 粉丝会员等级的数据结构
      */

@@ -16,7 +16,7 @@ export namespace BeautyStockMeiStockWarehouseList {
     /**
      * 仓库列表
      */
-    response?: MeiWareHouseInfo;
+    response?: MeiWareHouseInfo[];
   }
 
   /**

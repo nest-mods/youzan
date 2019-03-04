@@ -92,7 +92,7 @@ export namespace RetailStockRetailOpenAllotorderGet {
     /**
      * 调拨单明细
      */
-    order_items?: OpenAllotOrderItemDTO;
+    order_items?: OpenAllotOrderItemDTO[];
   }
 
   /**

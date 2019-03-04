@@ -187,28 +187,34 @@ function getType(o: ApiInfoResponse.Struct): string {
         return `${t1}[]`;
     }
 
-    switch (o.type) {
-        case 'String':
-        case 'Boolean':
-        case 'Number':
-        case 'String[]':
-        case 'Boolean[]':
-        case 'Number[]':
-            return o.type.toLowerCase();
-        case 'Price':
-            return 'string';
-        case 'Long':
-        case 'Integer':
-            return 'number';
-        case 'Price[]':
-            return 'string[]';
-        case 'Long[]':
-            return 'number[]';
-        case 'byte[]':
-            return 'Buffer';
-        default:
-            return o.isStruct ? getTypeName(o.type) : o.type;
+    if (o.type === 'byte[]') {
+        return 'Buffer';
     }
+
+    const re3 = /\[]$/;
+    const isArray = re3.test(o.type);
+
+    function f(type: string, isStruct?: boolean) {
+        switch (type) {
+            case 'String':
+            case 'Boolean':
+            case 'Number':
+                return type.toLowerCase();
+            case 'Price':
+                return 'string';
+            case 'Long':
+            case 'Integer':
+                return 'number';
+            default:
+                return isStruct ? getTypeName(type) : type;
+        }
+    }
+
+    const type = f(o.type.replace(re3, ''), o.isStruct);
+    if (isArray) {
+        return `${type}[]`;
+    }
+    return type;
 }
 
 function getTypeName(name: string) {

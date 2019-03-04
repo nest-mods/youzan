@@ -44,7 +44,7 @@ export namespace PayQrcodePayQrcodesGet {
     /**
      * 二维码生成记录,包含is_discount(是否有折扣)、activityInfo(折扣详情)，如果没有折扣则is_discount、activityInfo两个字段不返回
      */
-    qrcodes?: TradeCashierQrcode;
+    qrcodes?: TradeCashierQrcode[];
   }
 
   /**

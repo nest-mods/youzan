@@ -48,7 +48,7 @@ export namespace SalesmanSalesmanTradesGet {
     /**
      * 推广订单列表
      */
-    list?: SalesmanTradeDetail;
+    list?: SalesmanTradeDetail[];
   }
 
   /**
@@ -86,7 +86,7 @@ export namespace SalesmanSalesmanTradesGet {
     /**
      * 销售员推广订单详细商品提成信息数据结构
      */
-    items?: SalesmanTradeItem;
+    items?: SalesmanTradeItem[];
     /**
      * 结算状态1:待结算 2:已结算 3:余额不足 4:结算异常，等待重试 5:货到付款
      */

@@ -40,7 +40,7 @@ export namespace SalesmanSalesmanAccountScoreSearch {
     /**
      * 业绩统计列表
      */
-    accumulations?: AccumulationsItemDTO;
+    accumulations?: AccumulationsItemDTO[];
     /**
      * 记录总数
      */

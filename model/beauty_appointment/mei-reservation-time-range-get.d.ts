@@ -32,7 +32,7 @@ export namespace BeautyAppointmentMeiReservationTimeRangeGet {
     /**
      * 不可预约时间段列表
      */
-    unreservable_time?: MeiUnreservableTime;
+    unreservable_time?: MeiUnreservableTime[];
   }
 
   /**

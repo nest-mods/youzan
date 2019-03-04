@@ -6,7 +6,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     /**
      * 无规格组合商品组合明细，如：[{"related_combine_num":1000,"related_combine_price":12300,"related_combine_sku_id":7568911}]
      */
-    combine_params?: OnlineCombineParam;
+    combine_params?: OnlineCombineParam[];
     /**
      * 商品详情额外组件(固定值：-1)
      */
@@ -79,12 +79,12 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     /**
      * 商品重量信息
      */
-    item_sku_extend_param_list?: ItemSkuExtendParam;
+    item_sku_extend_param_list?: ItemSkuExtendParam[];
     /**
      * 有sku规格情况下，
   * 商品的计量属性
      */
-    item_sku_meas_props?: ItemSkuMeasProp;
+    item_sku_meas_props?: ItemSkuMeasProp[];
     /**
      * 虚拟商品有效期结束时间,1970-01-01 开始的秒数,留空表示长期有效
      */
@@ -177,7 +177,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     /**
      * sku图片信息
      */
-    sku_img_urls?: ImgUrlParam;
+    sku_img_urls?: ImgUrlParam[];
     /**
      * 当前商品镜像的key
      */
@@ -205,7 +205,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
   * 当实物商品存在部分规格不关联的情况时，sku售价传0.01元，库存值传0。
   * 例如：[{"sku_id":0,"related_sku_id":2250523,"price":100,"sell_stock_count":0,"sold_num":0,"cost_price":null,"sku_no":"P171011010602432","name":"测绘0333","skus":[{"k":"颜色","v":"粉色","kid":1,"vid":40172}],"k1":"颜色","v1":"粉色"},{"sku_id":0,"related_sku_id":2250523,"price":100,"sell_stock_count":12,"sold_num":0,"cost_price":null,"sku_no":"P171010025662807","name":"测试删除2","skus":[{"k":"颜色","v":"红色","kid":1,"vid":1215}],"k1":"颜色","v1":"红色"}]
      */
-    stocks?: OnlineStock;
+    stocks?: OnlineStock[];
     /**
      * 子标题
      */
@@ -343,7 +343,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     /**
      * 
      */
-    combine_params?: OnlineCombineParam;
+    combine_params?: OnlineCombineParam[];
     /**
      * 成本价
      */

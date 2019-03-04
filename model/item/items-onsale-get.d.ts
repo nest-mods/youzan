@@ -40,7 +40,7 @@ export namespace ItemItemsOnsaleGet {
     /**
      * 商品列表
      */
-    items?: ItemListOpenModel;
+    items?: ItemListOpenModel[];
     /**
      * 搜索到的商品数量
      */
@@ -110,7 +110,7 @@ export namespace ItemItemsOnsaleGet {
     /**
      * 图片信息
      */
-    item_imgs?: ItemImageOpenModel;
+    item_imgs?: ItemImageOpenModel[];
     /**
      * 商品划线价
      */

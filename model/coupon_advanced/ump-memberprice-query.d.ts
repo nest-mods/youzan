@@ -16,7 +16,7 @@ export namespace CouponAdvancedUmpMemberpriceQuery {
     /**
      * 自定义会员价
      */
-    response?: ItemMemberPrice;
+    response?: ItemMemberPrice[];
   }
 
   /**
@@ -30,7 +30,7 @@ export namespace CouponAdvancedUmpMemberpriceQuery {
     /**
      * sku自定义会员价信息
      */
-    skus?: SkuMemberPrice;
+    skus?: SkuMemberPrice[];
   }
 
   /**
@@ -48,7 +48,7 @@ export namespace CouponAdvancedUmpMemberpriceQuery {
     /**
      * 自定义会员价信息
      */
-    cards?: MemberPrice;
+    cards?: MemberPrice[];
   }
 
   /**

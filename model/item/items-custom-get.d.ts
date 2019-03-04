@@ -16,7 +16,7 @@ export namespace ItemItemsCustomGet {
     /**
      * 搜索到的商品列表
      */
-    items?: ItemListOpenModel;
+    items?: ItemListOpenModel[];
     /**
      * 商品总数量
      */
@@ -86,7 +86,7 @@ export namespace ItemItemsCustomGet {
     /**
      * 图片信息
      */
-    item_imgs?: ItemImageOpenModel;
+    item_imgs?: ItemImageOpenModel[];
     /**
      * 商品划线价
      */

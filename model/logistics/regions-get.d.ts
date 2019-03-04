@@ -28,7 +28,7 @@ export namespace LogisticsRegionsGet {
     /**
      * 区域地名列表信息
      */
-    regions?: CommonRegion;
+    regions?: CommonRegion[];
   }
 
   /**

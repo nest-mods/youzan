@@ -133,7 +133,7 @@ export namespace TradeTradesSoldGet {
     /**
      * 交易基础信息结构体
      */
-    full_order_info_list?: StructurizationTrade;
+    full_order_info_list?: StructurizationTrade[];
     /**
      * 搜索订单总条数
      */
@@ -181,7 +181,7 @@ export namespace TradeTradesSoldGet {
     /**
      * 订单明细结构体
      */
-    orders?: StructurizationTradeItemDetail;
+    orders?: StructurizationTradeItemDetail[];
     /**
      * 交易送礼子单
      */
@@ -561,7 +561,7 @@ export namespace TradeTradesSoldGet {
     /**
      * 多阶段信息结构体
      */
-    phase_payments?: StructurizationTradePhasePaymentsDetail;
+    phase_payments?: StructurizationTradePhasePaymentsDetail[];
   }
 
   /**
@@ -800,7 +800,7 @@ export namespace TradeTradesSoldGet {
     /**
      * 送礼子单详情
      */
-    child_orders?: StructurizationTradeChildOrderDetail;
+    child_orders?: StructurizationTradeChildOrderDetail[];
   }
 
   /**

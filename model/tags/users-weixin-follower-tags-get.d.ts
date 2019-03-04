@@ -20,7 +20,7 @@ export namespace TagsUsersWeixinFollowerTagsGet {
     /**
      * 该粉丝的标签集合
      */
-    tags?: CrmFansTag;
+    tags?: CrmFansTag[];
   }
 
   /**

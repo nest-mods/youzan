@@ -32,7 +32,7 @@ export namespace PayQrcodeTradeQrlabelSearch {
     /**
      * 二维码标签列表
      */
-    qrlabels?: TradeCashierQrLabel;
+    qrlabels?: TradeCashierQrLabel[];
   }
 
   /**

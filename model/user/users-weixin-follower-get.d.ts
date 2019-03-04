@@ -74,7 +74,7 @@ export namespace UserUsersWeixinFollowerGet {
     /**
      * 用户标签
      */
-    tags?: CrmUserTag;
+    tags?: CrmUserTag[];
     /**
      * 粉丝会员等级的数据结构
      */

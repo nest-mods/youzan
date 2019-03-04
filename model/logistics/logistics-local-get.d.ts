@@ -68,7 +68,7 @@ export namespace LogisticsLogisticsLocalGet {
     /**
      * 营业时间周期，2进制表示7天的开关，第一位是周一
      */
-    timeBucket?: LogisticsLocalDeliveryTimeBucketParam;
+    timeBucket?: LogisticsLocalDeliveryTimeBucketParam[];
     /**
      * 纬度
      */

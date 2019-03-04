@@ -36,7 +36,7 @@ export namespace SalesmanSalesmanCustomersGet {
     /**
      * 客户列表
      */
-    customers?: SalesmanCustomerDetail;
+    customers?: SalesmanCustomerDetail[];
   }
 
   /**

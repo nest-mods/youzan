@@ -24,7 +24,7 @@ export namespace CouponUmpCouponConsumeVerifylogsGet {
     /**
      * 验证列表
      */
-    verifylogs?: UmpPromotionVerifylog;
+    verifylogs?: UmpPromotionVerifylog[];
   }
 
   /**

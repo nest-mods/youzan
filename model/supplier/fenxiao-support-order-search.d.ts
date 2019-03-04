@@ -102,7 +102,7 @@ export namespace SupplierFenxiaoSupportOrderSearch {
     /**
      * 订单列表
      */
-    data_list?: OrderSimpleResponseDTO;
+    data_list?: OrderSimpleResponseDTO[];
   }
 
   /**
@@ -152,7 +152,7 @@ export namespace SupplierFenxiaoSupportOrderSearch {
     /**
      * 商品基本信息
      */
-    itemList?: ItemSimpleDTO;
+    itemList?: ItemSimpleDTO[];
   }
 
   /**

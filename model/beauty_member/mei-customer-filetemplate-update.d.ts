@@ -6,7 +6,7 @@ export namespace BeautyMemberMeiCustomerFiletemplateUpdate {
     /**
      * 基础档案信息，不传入的条目将会被删除
      */
-    base_file_template?: MeiMemberFileTemplateItem;
+    base_file_template?: MeiMemberFileTemplateItem[];
     /**
      * 美业token
      */
@@ -14,7 +14,7 @@ export namespace BeautyMemberMeiCustomerFiletemplateUpdate {
     /**
      * 私密档案信息，不传入的条目将会被删除
      */
-    secret_file_template?: MeiMemberFileTemplateItem;
+    secret_file_template?: MeiMemberFileTemplateItem[];
   }
 
   /**

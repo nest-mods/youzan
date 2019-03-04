@@ -40,7 +40,7 @@ export namespace RetailGoodsRetailStockVendorsSearch {
     /**
      * 供应商详情
      */
-    items?: VendorVO;
+    items?: VendorVO[];
   }
 
   /**

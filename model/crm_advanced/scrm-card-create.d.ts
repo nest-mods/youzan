@@ -48,7 +48,7 @@ export namespace CrmAdvancedScrmCardCreate {
     /**
      * 
      */
-    rights?: CardRights;
+    rights?: CardRights[];
     /**
      * 客服电话
      */
@@ -104,7 +104,7 @@ export namespace CrmAdvancedScrmCardCreate {
     /**
      * 
      */
-    coupon?: Coupon;
+    coupon?: Coupon[];
     /**
      * 折扣权益字段，折数 ，1表示0.01折范围选择：1-100（type为2时必传）
      */
@@ -177,7 +177,7 @@ export namespace CrmAdvancedScrmCardCreate {
     /**
      * 会员卡权益
      */
-    rights?: CardRightsV2DTO;
+    rights?: CardRightsV2DTO[];
     /**
      * 生效开始时间，如："2017-03-07 00:00:00"
      */
@@ -256,7 +256,7 @@ export namespace CrmAdvancedScrmCardCreate {
     /**
      * 优惠券内容
      */
-    coupon?: CouponRightsValueDTO;
+    coupon?: CouponRightsValueDTO[];
   }
 
   /**

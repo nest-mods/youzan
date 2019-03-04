@@ -40,7 +40,7 @@ export namespace ExtensionAnalysisDatacenterPssourceFetch {
     /**
      * 渠道详细信息
      */
-    items?: YunPsSourceModel;
+    items?: YunPsSourceModel[];
   }
 
   /**

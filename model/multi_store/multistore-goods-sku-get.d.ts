@@ -174,19 +174,19 @@ export namespace MultiStoreMultistoreGoodsSkuGet {
     /**
      * Sku数据结构
      */
-    skus?: GoodsSku;
+    skus?: GoodsSku[];
     /**
      * 商品图片数据结构
      */
-    item_imgs?: GoodsImage;
+    item_imgs?: GoodsImage[];
     /**
      * 商品二维码数据结构
      */
-    item_qrcodes?: GoodsQrcode;
+    item_qrcodes?: GoodsQrcode[];
     /**
      * 商品标签数据结构
      */
-    item_tags?: GoodsTag;
+    item_tags?: GoodsTag[];
     /**
      * 商品类型。<br>0：普通商品；<br>10：分销商品;
      */

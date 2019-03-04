@@ -28,7 +28,7 @@ export namespace BuyerCartTradeCartList {
     /**
      * 购物车中商品列表信息
      */
-    data?: CartFormat;
+    data?: CartFormat[];
   }
 
   /**
@@ -42,11 +42,11 @@ export namespace BuyerCartTradeCartList {
     /**
      * 购物车显示商品信息列表中的goodsList
      */
-    unavailable_goods_list?: CartGoodsListFormat;
+    unavailable_goods_list?: CartGoodsListFormat[];
     /**
      * 购物车显示商品信息列表中的goodsList
      */
-    goods_list?: CartGoodsListFormat;
+    goods_list?: CartGoodsListFormat[];
   }
 
   /**

@@ -28,7 +28,7 @@ export namespace MultiStoreMultistoreOfflineSearch {
     /**
      * 网点信息列表
      */
-    list?: AccountShopOffline;
+    list?: AccountShopOffline[];
     /**
      * 总数
      */

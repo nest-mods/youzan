@@ -32,7 +32,7 @@ export namespace CouponUmpCouponConsumeFetchlogsGet {
     /**
      * 领取记录
      */
-    fetchlogs?: UmpPromotionFetchlog;
+    fetchlogs?: UmpPromotionFetchlog[];
     /**
      * 领取总数
      */

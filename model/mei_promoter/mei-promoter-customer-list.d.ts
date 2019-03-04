@@ -32,7 +32,7 @@ export namespace MeiPromoterMeiPromoterCustomerList {
     /**
      * 绑定的顾客列表
      */
-    items?: MeiPromoterCustomer;
+    items?: MeiPromoterCustomer[];
   }
 
   /**

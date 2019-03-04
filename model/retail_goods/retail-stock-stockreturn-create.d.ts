@@ -22,7 +22,7 @@ export namespace RetailGoodsRetailStockStockreturnCreate {
     /**
      * 退货单明细
      */
-    stock_return_order_items?: StockReturnInOrderItemCreateRequest;
+    stock_return_order_items?: StockReturnInOrderItemCreateRequest[];
   }
 
   /**

@@ -44,7 +44,7 @@ export namespace PointsCrmCustomerPointsChangelogSearch {
     /**
      * 明细
      */
-    details?: UserPointsChangeLogDTO;
+    details?: UserPointsChangeLogDTO[];
   }
 
   /**

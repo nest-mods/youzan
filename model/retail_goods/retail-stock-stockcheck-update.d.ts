@@ -22,7 +22,7 @@ export namespace RetailGoodsRetailStockStockcheckUpdate {
     /**
      * 列表
      */
-    update_items?: StockCheckItemCreateRequest;
+    update_items?: StockCheckItemCreateRequest[];
     /**
      * 门店或独立仓id   注意：连锁版必填
      */

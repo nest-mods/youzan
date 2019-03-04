@@ -26,7 +26,7 @@ export namespace RetailGoodsRetailStockStockreturnChainCreate {
     /**
      * 退货单明细
      */
-    stock_return_order_items?: HqStockReturnOrderItemCreateRequest;
+    stock_return_order_items?: HqStockReturnOrderItemCreateRequest[];
     /**
      * 入库的仓库或门店id
      */

@@ -46,7 +46,7 @@ export namespace SupplierFenxiaoSupportOrderDeliveritemGet {
     /**
      * 发货商品信息
      */
-    item_list?: SptItemDTO;
+    item_list?: SptItemDTO[];
   }
 
   /**

@@ -6,7 +6,7 @@ export namespace RetailGoodsRetailStockStockallotCreate {
     /**
      * 调拨单商品明细
      */
-    business_order_items?: OutStockAllotItem;
+    business_order_items?: OutStockAllotItem[];
     /**
      * 调拨类型（11.店间调拨; 12.店内调拨）
      */

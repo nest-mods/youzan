@@ -32,7 +32,7 @@ export namespace RetailProductRetailOpenSkuQuery {
     /**
      * 分页商品信息
      */
-    skus?: OpenSkuDTO;
+    skus?: OpenSkuDTO[];
     /**
      * 分页信息
      */

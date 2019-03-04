@@ -239,7 +239,7 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     /**
      * 交易明细数据结构
      */
-    orders?: TradeOrderV2;
+    orders?: TradeOrderV2[];
     /**
      * 到店自提详情
      */
@@ -247,7 +247,7 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     /**
      * 订单中使用到的卡券的数据结构
      */
-    coupon_details?: UmpTradeCoupon;
+    coupon_details?: UmpTradeCoupon[];
     /**
      * 用户信息
      */
@@ -259,7 +259,7 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     /**
      * 订单中使用到的优惠活动的数据结构
      */
-    promotion_details?: TradePromotion;
+    promotion_details?: TradePromotion[];
     /**
      * 改价信息
      */
@@ -267,7 +267,7 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     /**
      * 交易数据结构
      */
-    sub_trades?: TradeDetailV2;
+    sub_trades?: TradeDetailV2[];
     /**
      * 分销/采购单:source:采购单;fenxiao:分销单 空串则为非分销/采购单
      */
@@ -436,11 +436,11 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     /**
      * 交易明细中买家留言的数据结构
      */
-    buyer_messages?: TradeBuyerMessage;
+    buyer_messages?: TradeBuyerMessage[];
     /**
      * 交易明细中的优惠信息的数据结构
      */
-    order_promotion_details?: TradeOrderPromotion;
+    order_promotion_details?: TradeOrderPromotion[];
     /**
      * 商品状态
      */
@@ -883,7 +883,7 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     /**
      * 交易明细数据结构
      */
-    orders?: TradeOrderV2;
+    orders?: TradeOrderV2[];
     /**
      * 到店自提详情
      */
@@ -891,7 +891,7 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     /**
      * 订单中使用到的卡券的数据结构
      */
-    coupon_details?: UmpTradeCoupon;
+    coupon_details?: UmpTradeCoupon[];
     /**
      * 用户信息
      */
@@ -903,7 +903,7 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     /**
      * 订单中使用到的优惠活动的数据结构
      */
-    promotion_details?: TradePromotion;
+    promotion_details?: TradePromotion[];
     /**
      * 改价信息
      */
@@ -1076,11 +1076,11 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     /**
      * 交易明细中买家留言的数据结构
      */
-    buyer_messages?: TradeBuyerMessage;
+    buyer_messages?: TradeBuyerMessage[];
     /**
      * 交易明细中的优惠信息的数据结构
      */
-    order_promotion_details?: TradeOrderPromotion;
+    order_promotion_details?: TradeOrderPromotion[];
     /**
      * 商品状态
      */

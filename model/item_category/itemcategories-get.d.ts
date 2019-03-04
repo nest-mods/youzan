@@ -12,7 +12,7 @@ export namespace ItemCategoryItemcategoriesGet {
     /**
      * 商品自定义标签列表
      */
-    categories?: Categories;
+    categories?: Categories[];
   }
 
   /**
@@ -38,7 +38,7 @@ export namespace ItemCategoryItemcategoriesGet {
     /**
      * 分类
      */
-    sub_categories?: SubCategories;
+    sub_categories?: SubCategories[];
   }
 
   /**

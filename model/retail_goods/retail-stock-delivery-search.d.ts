@@ -94,7 +94,7 @@ export namespace RetailGoodsRetailStockDeliverySearch {
     /**
      * 配送单列表查询单个response
      */
-    items?: DeliverySearchVO;
+    items?: DeliverySearchVO[];
     /**
      * 
      */
@@ -190,7 +190,7 @@ export namespace RetailGoodsRetailStockDeliverySearch {
     /**
      * 调拨单明细返回信息
      */
-    business_order_items?: InterBusinessOrderItemOfProdVO;
+    business_order_items?: InterBusinessOrderItemOfProdVO[];
     /**
      * 数据乐观锁
      */

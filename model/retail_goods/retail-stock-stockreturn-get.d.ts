@@ -58,7 +58,7 @@ export namespace RetailGoodsRetailStockStockreturnGet {
     /**
      * 退货入库单明细
      */
-    stock_return_order_items?: StockReturnOrderItemVO;
+    stock_return_order_items?: StockReturnOrderItemVO[];
     /**
      * 业务类型（STOCK_CHECK(1, "库存盘点单"),
   *   STOCK_IN(2, "采购入库单"),

@@ -40,7 +40,7 @@ export namespace StoredValueCardCardvoucherValuecardPayRcdBysupSearch {
     /**
      * 实体信息
      */
-    items?: PageQueryPayLogBySupportKdtIdDTO;
+    items?: PageQueryPayLogBySupportKdtIdDTO[];
     /**
      * 分页信息
      */

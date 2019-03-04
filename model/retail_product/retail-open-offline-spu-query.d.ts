@@ -36,7 +36,7 @@ export namespace RetailProductRetailOpenOfflineSpuQuery {
     /**
      * 门店商品信息
      */
-    offlineSpus?: OfflineSpuDTO;
+    offlineSpus?: OfflineSpuDTO[];
   }
 
   /**
@@ -140,7 +140,7 @@ export namespace RetailProductRetailOpenOfflineSpuQuery {
     /**
      * 门店商品sku信息
      */
-    sku_models?: SkuModelDTO;
+    sku_models?: SkuModelDTO[];
   }
 
   /**

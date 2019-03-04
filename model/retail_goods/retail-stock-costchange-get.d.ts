@@ -96,7 +96,7 @@ export namespace RetailGoodsRetailStockCostchangeGet {
     /**
      * 成本变更明细
      */
-    cost_change_order_items?: CostChangeOrderItemVO;
+    cost_change_order_items?: CostChangeOrderItemVO[];
   }
 
   /**

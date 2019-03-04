@@ -36,7 +36,7 @@ export namespace BeautyStockMeiStockGet {
     /**
      * 库存信息列表
      */
-    items?: MeiInventoryInfoDTO;
+    items?: MeiInventoryInfoDTO[];
   }
 
   /**

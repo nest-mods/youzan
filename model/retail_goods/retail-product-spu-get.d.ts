@@ -120,7 +120,7 @@ export namespace RetailGoodsRetailProductSpuGet {
     /**
      * sku详情
      */
-    skus?: SkuVO;
+    skus?: SkuVO[];
   }
 
   /**
@@ -178,7 +178,7 @@ export namespace RetailGoodsRetailProductSpuGet {
     /**
      * 规格定义
      */
-    specs?: SpecKeyValue;
+    specs?: SpecKeyValue[];
   }
 
   /**

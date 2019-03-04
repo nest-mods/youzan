@@ -32,7 +32,7 @@ export namespace BeautyAppointmentMeiReservationTechnicianList {
     /**
      * 技师信息
      */
-    resources?: MeiResource;
+    resources?: MeiResource[];
   }
 
   /**

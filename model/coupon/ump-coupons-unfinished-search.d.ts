@@ -16,7 +16,7 @@ export namespace CouponUmpCouponsUnfinishedSearch {
     /**
      * 未结束的优惠券组列表
      */
-    coupons?: UmpCoupon;
+    coupons?: UmpCoupon[];
   }
 
   /**

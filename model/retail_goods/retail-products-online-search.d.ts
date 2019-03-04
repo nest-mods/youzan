@@ -52,7 +52,7 @@ export namespace RetailGoodsRetailProductsOnlineSearch {
     /**
      * 网店商品搜索结果实体信息
      */
-    items?: OnlineProductSearchVO;
+    items?: OnlineProductSearchVO[];
   }
 
   /**

@@ -6,7 +6,7 @@ export namespace RetailGoodsRetailStockCostchangeCreate {
     /**
      * 成本调价明细
      */
-    cost_change_order_items?: CostChangeOrderItemCreate;
+    cost_change_order_items?: CostChangeOrderItemCreate[];
     /**
      * 幂等单号（请求唯一标识）
      */

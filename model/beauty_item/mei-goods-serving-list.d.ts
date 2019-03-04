@@ -72,7 +72,7 @@ export namespace BeautyItemMeiGoodsServingList {
     /**
      * 商品列表
      */
-    items?: MeiGoodsInfoResp;
+    items?: MeiGoodsInfoResp[];
   }
 
   /**
@@ -148,15 +148,15 @@ export namespace BeautyItemMeiGoodsServingList {
     /**
      * 商品规格信息
      */
-    sku_tree_list?: MeiGoodsSkuTreeResponse;
+    sku_tree_list?: MeiGoodsSkuTreeResponse[];
     /**
      * 商品图片信息
      */
-    goods_picture_list?: MeiGoodsPictureResponseDTO;
+    goods_picture_list?: MeiGoodsPictureResponseDTO[];
     /**
      * 商品规格信息
      */
-    sku_info_list?: MeiSkuInfoResponseDTO;
+    sku_info_list?: MeiSkuInfoResponseDTO[];
     /**
      * 售卖属性
      */
@@ -172,7 +172,7 @@ export namespace BeautyItemMeiGoodsServingList {
     /**
      * 商品标签信息
      */
-    tag_list?: MeiTagResponseDTO;
+    tag_list?: MeiTagResponseDTO[];
     /**
      * 美业商品产品信息
      */
@@ -198,7 +198,7 @@ export namespace BeautyItemMeiGoodsServingList {
     /**
      * 商品规格项信息
      */
-    leaf_list?: MeiGoodsSkuLeafResponse;
+    leaf_list?: MeiGoodsSkuLeafResponse[];
   }
 
   /**
@@ -256,7 +256,7 @@ export namespace BeautyItemMeiGoodsServingList {
     /**
      * 商品规格项信息
      */
-    name_list?: MeiSkuNameResponseDTO;
+    name_list?: MeiSkuNameResponseDTO[];
     /**
      * 成本价
      */
@@ -322,7 +322,7 @@ export namespace BeautyItemMeiGoodsServingList {
     /**
      * 商品库存信息
      */
-    goods_sku_stock_list?: MeiGoodsSkuStockResponseDTO;
+    goods_sku_stock_list?: MeiGoodsSkuStockResponseDTO[];
   }
 
   /**

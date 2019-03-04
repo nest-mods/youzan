@@ -71,7 +71,7 @@ describe('有赞接口类型生成器', function() {
     });
 
     it('生成接口', async function() {
-        await service.generate({group: 'coupon_advanced', api: 'youzan.ump.groupon.ordergroupdetails.get'});
+        await service.generate({group: 'trade', api: 'youzan.trade.get'});
     });
 
     it.skip('生成index.ts', async function() {

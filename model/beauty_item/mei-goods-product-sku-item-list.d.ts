@@ -20,7 +20,7 @@ export namespace BeautyItemMeiGoodsProductSkuItemList {
     /**
      * 规格项列表
      */
-    sku_items?: MeiGoodsSkuItem;
+    sku_items?: MeiGoodsSkuItem[];
   }
 
   /**

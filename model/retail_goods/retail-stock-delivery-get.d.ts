@@ -129,7 +129,7 @@ export namespace RetailGoodsRetailStockDeliveryGet {
     /**
      * 库间单明细信息
      */
-    business_order_items?: InterBusinessOrderItemVO;
+    business_order_items?: InterBusinessOrderItemVO[];
     /**
      * 配送出库时间
      */

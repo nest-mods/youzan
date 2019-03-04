@@ -18,7 +18,7 @@ export namespace RetailStockRetailOpenStockAdjust {
     /**
      * 商品明细
      */
-    order_items?: StockOrderItem;
+    order_items?: StockOrderItem[];
     /**
      * 备注
      */

@@ -38,7 +38,7 @@ export namespace BeautyStaffMeiStaffUpdate {
     /**
      * 角色ID列表
      */
-    roles?: MeiBeautyStoreRoleDTO;
+    roles?: MeiBeautyStoreRoleDTO[];
     /**
      * 员工ID
      */
@@ -86,7 +86,7 @@ export namespace BeautyStaffMeiStaffUpdate {
     /**
      * 员工角色信息
      */
-    roles?: MeiRole;
+    roles?: MeiRole[];
     /**
      * 职位ID
      */

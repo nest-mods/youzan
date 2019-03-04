@@ -48,7 +48,7 @@ export namespace PayQrcodeTradesQrGet {
     /**
      * 搜索到的交易列表
      */
-    qr_trades?: TradePayQrcode;
+    qr_trades?: TradePayQrcode[];
     /**
      * 搜索到的交易总数
      */

@@ -42,7 +42,7 @@ export namespace RetailProductRetailOpenSpuQuery {
     /**
      * 商品spu信息列表
      */
-    spus?: OpenSpuDTO;
+    spus?: OpenSpuDTO[];
     /**
      * 分页结果信息
      */
@@ -93,7 +93,7 @@ export namespace RetailProductRetailOpenSpuQuery {
     /**
      * 商品SKU基础数据
      */
-    skus?: OpenBaseSkuDTO;
+    skus?: OpenBaseSkuDTO[];
     /**
      * spu编码
      */
