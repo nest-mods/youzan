@@ -1,6 +1,6 @@
 {
   "name": "@nest-mods/youzan",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Youzan API client wrapped with kue for nest.js",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -52,6 +52,7 @@
     "jest": "^24.1.0",
     "kue": "^0.11.6",
     "loadsh": "0.0.3",
+    "prettier": "^1.16.4",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^2.6.3",
     "rxjs": "^6.4.0",

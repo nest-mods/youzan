@@ -22,54 +22,53 @@
  * SOFTWARE.
  */
 
-import {DynamicModule, Global, Module} from '@nestjs/common';
-import {LogModule} from '@nest-mods/log';
+import { DynamicModule, Global, Module } from '@nestjs/common';
+import { LogModule } from '@nest-mods/log';
 import * as _ from 'lodash';
-import {YouzanModuleAsyncOptions, YouzanModuleOptions} from './interfaces';
-import {YOUZAN_MODULE_OPTIONS} from './constants';
-import {YouzanService} from './service/youzan.service';
-import {RequestService} from './service/request.service';
-import {TokenStoreService} from './service/token-store.service';
-import {RequestTask} from './task/request.task';
-import {FactoryService} from './service/factory.service';
+import { YouzanModuleAsyncOptions, YouzanModuleOptions } from './interfaces';
+import { YOUZAN_MODULE_OPTIONS } from './constants';
+import { YouzanService } from './service/youzan.service';
+import { RequestService } from './service/request.service';
+import { TokenStoreService } from './service/token-store.service';
+import { RequestTask } from './task/request.task';
+import { FactoryService } from './service/factory.service';
 
 const defaultOptions: Partial<YouzanModuleOptions> = {
-    apiTimeout: 60 * 1000,
+  apiTimeout: 60 * 1000,
 };
 
 @Global()
 @Module({
-    imports: [LogModule],
-    providers: [YouzanService, RequestService, TokenStoreService, FactoryService, RequestTask],
-    exports: [YouzanService],
+  providers: [YouzanService, RequestService, TokenStoreService, FactoryService, RequestTask],
+  exports: [YouzanService],
 })
 export class YouzanModule {
-    static forRootAsync(options: YouzanModuleAsyncOptions): DynamicModule {
-        return {
-            module: YouzanModule,
-            imports: options.imports,
-            providers: [{
-                provide: YOUZAN_MODULE_OPTIONS,
-                useFactory: async (...args) => {
-                    const opts = await options.useFactory(...args);
-                    if (!_.isArray(opts.apiConfigs)) {
-                        opts.apiConfigs = [opts.apiConfigs];
-                    }
-                    const apiConfigs = _.reduce(opts.apiConfigs, (result, value) => {
-                        result[value.client_id] = value;
-                        return result;
-                    }, {});
-                    const defaultClientId = opts.apiConfigs[0].client_id;
-                    return _.defaultsDeep({
-                        apiConfigs,
-                        defaultClientId: opts.defaultClientId,
-                        apiTimeout: opts.apiTimeout,
-                        redis: opts.redis,
-                        kue: opts.kue,
-                    }, {defaultClientId}, defaultOptions);
-                },
-                inject: options.inject,
-            }],
-        };
-    }
+  static forRootAsync(options: YouzanModuleAsyncOptions): DynamicModule {
+    return {
+      module: YouzanModule,
+      imports: options.imports,
+      providers: [{
+        provide: YOUZAN_MODULE_OPTIONS,
+        useFactory: async (...args) => {
+          const opts = await options.useFactory(...args);
+          if (!_.isArray(opts.apiConfigs)) {
+            opts.apiConfigs = [opts.apiConfigs];
+          }
+          const apiConfigs = _.reduce(opts.apiConfigs, (result, value) => {
+            result[value.client_id] = value;
+            return result;
+          }, {});
+          const defaultClientId = opts.apiConfigs[0].client_id;
+          return _.defaultsDeep({
+            apiConfigs,
+            defaultClientId: opts.defaultClientId,
+            apiTimeout: opts.apiTimeout,
+            redis: opts.redis,
+            kue: opts.kue,
+          }, { defaultClientId }, defaultOptions);
+        },
+        inject: options.inject,
+      }],
+    };
+  }
 }
