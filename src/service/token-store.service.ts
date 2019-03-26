@@ -51,7 +51,7 @@
  * ----------- 永 无 BUG ------------
  */
 import {Inject, Injectable, LoggerService} from '@nestjs/common';
-import * as rp from 'request-promise';
+import * as rp from 'request-promise-native';
 import {YouzanOptions, YouzanTokenResponse} from '../interfaces';
 import {YOUZAN_MODULE_OPTIONS} from '../constants';
 import {YouzanApiConfigNotFoundException} from '../error';

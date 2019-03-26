@@ -53,7 +53,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import {Injectable, LoggerService} from '@nestjs/common';
-import * as rp from 'request-promise';
+import * as rp from 'request-promise-native';
 import * as _ from 'lodash';
 import {Log} from '@nest-mods/log';
 
