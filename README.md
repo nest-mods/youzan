@@ -3,4 +3,4 @@
 
 Youzan API client wrapped with kue for nest.js
 
-install via npm `npm i @nest-mods/youzan`
+install via npm `npm i @nest-mods/youzan @nest-mods/log ioredis lodash kue`
