@@ -23,15 +23,13 @@
  */
 
 import { DynamicModule, Global, Module } from '@nestjs/common';
-import { LogModule } from '@nest-mods/log';
-import * as _ from 'lodash';
 import { YouzanModuleAsyncOptions, YouzanModuleOptions } from './interfaces';
-import { YOUZAN_MODULE_OPTIONS } from './constants';
 import { YouzanService } from './service/youzan.service';
 import { RequestService } from './service/request.service';
 import { TokenStoreService } from './service/token-store.service';
-import { RequestTask } from './task/request.task';
 import { FactoryService } from './service/factory.service';
+import { YOUZAN_MODULE_OPTIONS } from './constants';
+import * as _ from 'lodash';
 
 const defaultOptions: Partial<YouzanModuleOptions> = {
   apiTimeout: 60 * 1000,
@@ -39,7 +37,7 @@ const defaultOptions: Partial<YouzanModuleOptions> = {
 
 @Global()
 @Module({
-  providers: [YouzanService, RequestService, TokenStoreService, FactoryService, RequestTask],
+  providers: [YouzanService, RequestService, TokenStoreService, FactoryService],
   exports: [YouzanService],
 })
 export class YouzanModule {
@@ -64,11 +62,11 @@ export class YouzanModule {
             defaultClientId: opts.defaultClientId,
             apiTimeout: opts.apiTimeout,
             redis: opts.redis,
-            kue: opts.kue,
           }, { defaultClientId }, defaultOptions);
         },
         inject: options.inject,
       }],
+      exports: [YOUZAN_MODULE_OPTIONS],
     };
   }
 }

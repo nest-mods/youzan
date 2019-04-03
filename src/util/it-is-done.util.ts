@@ -50,7 +50,7 @@
  *          ┗┻┛    ┗┻┛+ + + +
  * ----------- 永 无 BUG ------------
  */
-import {DoneCallback} from 'kue';
+import { DoneCallback } from 'bull';
 
 export async function itsDone<T = any>(p: Promise<T>, done: DoneCallback) {
     try {

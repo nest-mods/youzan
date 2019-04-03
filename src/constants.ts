@@ -53,3 +53,4 @@
 export const YOUZAN_MODULE_ID = 'B9A2098F-49AF-b72d-fEf7-2931b7292948';
 export const YOUZAN_MODULE_OPTIONS = `${YOUZAN_MODULE_ID}:options`;
 export const YOUZAN_MODULE_TASK_INVOKE = `${YOUZAN_MODULE_ID}:invoke`;
+export const YOUZAN_QUEUE_NAME = `${YOUZAN_MODULE_ID}:queue`;

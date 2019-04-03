@@ -50,65 +50,52 @@
  *          ┗┻┛    ┗┻┛+ + + +
  * ----------- 永 无 BUG ------------
  */
-import {ModuleMetadata} from '@nestjs/common/interfaces';
-import {Redis} from 'ioredis';
-import {Queue} from 'kue';
+import { ModuleMetadata } from '@nestjs/common/interfaces';
+import * as IORedis from 'ioredis';
 
 export interface YouzanOptions {
-    apiConfigs: { [cid: string]: YouzanApiConfig };
-    apiTimeout: number;
-    defaultClientId: string;
-    redis: YouzanModuleRedisOptions;
-    kue: YouzanModuleKueOptions;
+  apiConfigs: { [cid: string]: YouzanApiConfig };
+  apiTimeout: number;
+  defaultClientId: string;
+  redis: IORedis.RedisOptions;
 }
 
 export interface YouzanApiConfig {
-    client_id: string;
-    client_secret: string;
-    kdt_id: string;
-    grant_type: string;
-}
-
-export interface YouzanModuleRedisOptions {
-    client?: Redis;
-    factory?: () => Redis;
-}
-
-export interface YouzanModuleKueOptions {
-    queue?: Queue;
-    factory?: () => Queue;
+  client_id: string;
+  client_secret: string;
+  kdt_id: string;
+  grant_type: string;
 }
 
 export interface YouzanModuleOptions {
-    apiConfigs: YouzanApiConfig | YouzanApiConfig[];
-    apiTimeout?: number;
-    defaultClientId?: string;
-    redis: YouzanModuleRedisOptions;
-    kue: YouzanModuleKueOptions;
+  apiConfigs: YouzanApiConfig | YouzanApiConfig[];
+  apiTimeout?: number;
+  defaultClientId?: string;
+  redis: IORedis.RedisOptions;
 }
 
 export interface YouzanModuleAsyncOptions extends Pick<ModuleMetadata, 'imports'> {
-    useFactory?: (...args: any[]) => Promise<YouzanModuleOptions> | YouzanModuleOptions;
-    inject?: any[];
+  useFactory?: (...args: any[]) => Promise<YouzanModuleOptions> | YouzanModuleOptions;
+  inject?: any[];
 }
 
 export interface YouzanTokenResponse {
-    access_token: string;
-    expires_in: number;
-    scope: string;
+  access_token: string;
+  expires_in: number;
+  scope: string;
 }
 
 export namespace Youzan {
-    export interface APIOptions {
-        api: string;
-        params?: any;
-        method?: 'GET' | 'POST';
-        files?: any;
-        version?: string;
-    }
+  export interface APIOptions {
+    api: string;
+    params?: any;
+    method?: 'GET' | 'POST';
+    files?: any;
+    version?: string;
+  }
 
-    export interface APIResponse<T = any> {
-        response: T;
-        error_response: { msg: string, code: number, [key: string]: any };
-    }
+  export interface APIResponse<T = any> {
+    response: T;
+    error_response: { msg: string, code: number, [key: string]: any };
+  }
 }

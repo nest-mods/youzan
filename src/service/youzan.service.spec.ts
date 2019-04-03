@@ -22,47 +22,44 @@
  * SOFTWARE.
  */
 
-import {Test, TestingModule} from '@nestjs/testing';
-import {YouzanService} from './youzan.service';
-import {YouzanModule} from '../youzan.module';
-import * as IORedis from 'ioredis';
-import {createQueue} from 'kue';
+import { Test, TestingModule } from '@nestjs/testing';
+import { YouzanService } from './youzan.service';
+import { YouzanModule } from '../youzan.module';
 
 describe('YouzanService', () => {
-    let service: YouzanService;
+  let service: YouzanService;
 
-    beforeEach(async () => {
-        const module: TestingModule = await Test.createTestingModule({
-            imports: [
-                YouzanModule.forRootAsync({
-                    useFactory: () => {
-                        return {
-                            apiConfigs: {
-                                client_id: process.env.TEST_YOUZAN_CLIENT_ID,
-                                client_secret: process.env.TEST_YOUZAN_CLIENT_SECRET,
-                                kdt_id: process.env.TEST_YOUZAN_KDT_ID,
-                                grant_type: 'silent',
-                            },
-                            redis: {client: new IORedis()},
-                            kue: {queue: createQueue()},
-                        };
-                    },
-                }),
-            ],
-        }).compile();
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      imports: [
+        YouzanModule.forRootAsync({
+          useFactory: () => {
+            return {
+              apiConfigs: {
+                client_id: process.env.TEST_YOUZAN_CLIENT_ID,
+                client_secret: process.env.TEST_YOUZAN_CLIENT_SECRET,
+                kdt_id: process.env.TEST_YOUZAN_KDT_ID,
+                grant_type: 'silent',
+              },
+              redis: {},
+            };
+          },
+        }),
+      ],
+    }).compile();
 
-        service = module.get<YouzanService>(YouzanService);
+    service = module.get<YouzanService>(YouzanService);
+  });
+
+  it('should be defined', () => {
+    expect(service).toBeDefined();
+  });
+
+  it('测试接口调用', async function() {
+    const res = await service.pointsCrmFansPointsGet({
+      mobile: process.env.TEST_MOBILE,
     });
 
-    it('should be defined', () => {
-        expect(service).toBeDefined();
-    });
-
-    it('测试接口调用', async function() {
-        const res = await service.pointsCrmFansPointsGet({
-            mobile: process.env.TEST_MOBILE,
-        });
-
-        expect(res.point).toBeDefined();
-    });
+    expect(res.point).toBeDefined();
+  });
 });

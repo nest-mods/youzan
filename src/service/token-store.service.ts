@@ -93,11 +93,10 @@ export class TokenStoreService {
 
         const token: YouzanTokenResponse = await rp('https://open.youzan.com/oauth/token', {qs: apiConfig, json: true});
 
-        this.logger.log({
+        this.logger.verbose({
             message: '有赞API Token',
             client_id,
             token,
-            level: 'debug',
         });
 
         return token;

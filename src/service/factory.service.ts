@@ -50,44 +50,22 @@
  *          ┗┻┛    ┗┻┛+ + + +
  * ----------- 永 无 BUG ------------
  */
-import {Inject, Injectable, InternalServerErrorException} from '@nestjs/common';
-import {YOUZAN_MODULE_OPTIONS} from '../constants';
-import {YouzanOptions} from '../interfaces';
-import {Redis} from 'ioredis';
-import {Queue} from 'kue';
+import { Inject, Injectable } from '@nestjs/common';
+import { YOUZAN_MODULE_OPTIONS } from '../constants';
+import { YouzanOptions } from '../interfaces';
+import * as IORedis from 'ioredis';
 
 @Injectable()
 export class FactoryService {
-    private client: Redis;
-    private queue: Queue;
-    private clientFactory: () => Redis;
-    private queueFactory: () => Queue;
+  private client: IORedis.Redis;
 
-    constructor(@Inject(YOUZAN_MODULE_OPTIONS) private options: YouzanOptions) {
-        this.client = options.redis.client;
-        this.queue = options.kue.queue;
-        this.clientFactory = options.redis.factory;
-        this.queueFactory = options.kue.factory;
+  constructor(@Inject(YOUZAN_MODULE_OPTIONS) private options: YouzanOptions) {
+  }
 
-        if (!this.client && !this.clientFactory) {
-            throw new InternalServerErrorException('One of client or factory in redis option must be provided.', 'YouzanModuleConfigException');
-        }
-        if (!this.queue && !this.queueFactory) {
-            throw new InternalServerErrorException('One of queue or factory in kue option must be provided.', 'YouzanModuleConfigException');
-        }
+  getClient() {
+    if (!this.client || this.client.status === 'end') {
+      this.client = new IORedis(this.options.redis);
     }
-
-    getClient() {
-        if (!this.client) {
-            this.client = this.clientFactory();
-        }
-        return this.client;
-    }
-
-    getQueue() {
-        if (!this.queue) {
-            this.queue = this.queueFactory();
-        }
-        return this.queue;
-    }
+    return this.client;
+  }
 }
