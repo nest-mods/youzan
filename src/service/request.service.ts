@@ -124,7 +124,6 @@ export class RequestService implements OnModuleInit {
   private createQueue() {
     const queue = new Bull(YOUZAN_QUEUE_NAME, {
       redis: this.options.redis,
-      prefix: 'b:YOUZAN:',
       defaultJobOptions: {
         timeout: this.options.apiTimeout,
         removeOnFail: true,
