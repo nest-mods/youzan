@@ -10,11 +10,11 @@ export namespace CircleLogisticsOnlineDelay {
     /**
      * 待配送期次
      */
-    issue?: number;
+    issue: number;
     /**
      * 交易编号
      */
-    tid?: string;
+    tid: string;
   }
 
   /**

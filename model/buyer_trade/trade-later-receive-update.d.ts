@@ -6,7 +6,7 @@ export namespace BuyerTradeTradeLaterReceiveUpdate {
     /**
      * 交易编号
      */
-    tid?: string;
+    tid: string;
   }
 
   /**

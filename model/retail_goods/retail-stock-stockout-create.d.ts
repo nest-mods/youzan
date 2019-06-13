@@ -18,7 +18,7 @@ export namespace RetailGoodsRetailStockStockoutCreate {
     /**
      * 来源
      */
-    source?: string;
+    source: string;
     /**
      * 出库单明细
      */

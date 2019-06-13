@@ -61,7 +61,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
     /**
      * 商品详情额外组件
      */
-    components_extra_id?: number;
+    components_extra_id: number;
     /**
      * 详情内容
      */
@@ -69,7 +69,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
     /**
      * 运费模板id
      */
-    delivery_template_id?: number;
+    delivery_template_id: number;
     /**
      * 电子卡券扩展信息
      */
@@ -199,7 +199,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
     /**
      * 图片地址
      */
-    picture?: string;
+    picture: string;
     /**
      * 照片高度
      */
@@ -211,7 +211,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
     /**
      * 是否预售
      */
-    pre_sale?: boolean;
+    pre_sale: boolean;
     /**
      * 价格（元）
      */
@@ -283,7 +283,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
     /**
      * 开卖时间: 0 立即开售, 1 定时开售
      */
-    sold_time?: string;
+    sold_time: string;
     /**
      * 来源
      */

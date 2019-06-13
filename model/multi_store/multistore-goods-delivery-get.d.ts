@@ -6,11 +6,11 @@ export namespace MultiStoreMultistoreGoodsDeliveryGet {
     /**
      * 商品id
      */
-    num_iid?: number;
+    num_iid: number;
     /**
      * 网点id
      */
-    offline_id?: number;
+    offline_id: number;
   }
 
   /**

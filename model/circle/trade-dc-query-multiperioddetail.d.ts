@@ -6,11 +6,11 @@ export namespace CircleTradeDcQueryMultiperioddetail {
     /**
      * 子订单ID
      */
-    oid?: string;
+    oid: string;
     /**
      * 主订单ID
      */
-    tid?: string;
+    tid: string;
   }
 
   /**

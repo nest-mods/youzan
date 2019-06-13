@@ -65,7 +65,7 @@ export namespace BeautyMemberMeiCustomerList {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 排序字段
   * 0 对创建时间排序
@@ -78,11 +78,11 @@ export namespace BeautyMemberMeiCustomerList {
     /**
      * 第几页
      */
-    page?: number;
+    page: number;
     /**
      * 每页的显示条目，最大200
      */
-    page_size?: number;
+    page_size: number;
     /**
      * 按照来源过滤。
   * 需要先拉取来源列表后，在使用里面的来源id

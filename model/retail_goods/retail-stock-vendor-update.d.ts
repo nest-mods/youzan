@@ -46,7 +46,7 @@ export namespace RetailGoodsRetailStockVendorUpdate {
     /**
      * 调用来源
      */
-    source?: string;
+    source: string;
     /**
      * 启用or停用
      */

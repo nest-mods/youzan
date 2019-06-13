@@ -6,7 +6,7 @@ export namespace BuyerCartTradeCartEmpty {
     /**
      * 有赞店铺id
      */
-    kdt_id?: number;
+    kdt_id: number;
   }
 
   /**

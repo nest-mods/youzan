@@ -6,11 +6,11 @@ export namespace BeautyMemberMeiMemberlevelGet {
     /**
      * 要获取的等级的等级id
      */
-    level_id?: number;
+    level_id: number;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
   }
 
   /**

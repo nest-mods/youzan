@@ -16,15 +16,15 @@ export namespace RetailGoodsRetailProductsOfflineDisplay {
     /**
      * 更新商品状态上架或下架（1下架，0上架）
      */
-    display?: number;
+    display: number;
     /**
      * 批量更新门店商品列表
      */
-    item_ids?: number[];
+    item_ids: number[];
     /**
      * 请求来源
      */
-    source?: string;
+    source: string;
     /**
      * 待处理分店kdtId列表（未全量上下架生效）
      */

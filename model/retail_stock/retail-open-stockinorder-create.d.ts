@@ -6,15 +6,15 @@ export namespace RetailStockRetailOpenStockinorderCreate {
     /**
      * 单据编号
      */
-    biz_bill_no?: string;
+    biz_bill_no: string;
     /**
      * 单据创建日期(YYYY-MM-DD HH:MM:SS)
      */
-    create_time?: string;
+    create_time: string;
     /**
      * 制单人
      */
-    creator?: string;
+    creator: string;
     /**
      * 入库商品明细
      */
@@ -22,7 +22,7 @@ export namespace RetailStockRetailOpenStockinorderCreate {
     /**
      * 入库单类型(PYRK=盘盈入库;CGRK=采购入库;THRK=退货入库;DBRK=调拨入库; PSRK=配送入库;YHTHRK=要货退货入库)
      */
-    order_type?: string;
+    order_type: string;
     /**
      * 备注
      */
@@ -30,7 +30,7 @@ export namespace RetailStockRetailOpenStockinorderCreate {
     /**
      * 零售调用来源（调用方和有赞约定的值）
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 关联单据号，如交易出库关联的订单号
      */

@@ -34,15 +34,15 @@ export namespace BeautyMemberMeiCardList {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 查询的页数
      */
-    page?: number;
+    page: number;
     /**
      * 美业显示的条目数量，最多200
      */
-    page_size?: number;
+    page_size: number;
     /**
      * 是否在网店展示
      */

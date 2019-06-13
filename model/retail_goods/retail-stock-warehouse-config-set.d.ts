@@ -6,11 +6,11 @@ export namespace RetailGoodsRetailStockWarehouseConfigSet {
     /**
      * 配置项
      */
-    is_need_check?: boolean;
+    is_need_check: boolean;
     /**
      * 系统来源
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

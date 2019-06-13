@@ -6,11 +6,11 @@ export namespace LogisticsLogisticsTemplateSearch {
     /**
      * 页码
      */
-    page_no?: number;
+    page_no: number;
     /**
      * 分页值，默认20
      */
-    page_size?: number;
+    page_size: number;
   }
 
   /**

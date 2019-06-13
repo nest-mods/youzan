@@ -17,26 +17,26 @@ export namespace BeautyMemberMeiCardCreate {
     /**
      * 卡片背景图
      */
-    background_img?: string;
+    background_img: string;
     /**
      * 会员卡名称
      */
-    card_name?: string;
+    card_name: string;
     /**
      * 会员卡售价，单位是分
      */
-    card_price?: number;
+    card_price: number;
     /**
      * 会员卡权益列表
      */
-    card_rights?: MeiCardRight[];
+    card_rights: MeiCardRight[];
     /**
      * 会员卡类型。
   * 1 次卡
   * 2 折扣卡
   * 3 充值卡
      */
-    card_type?: number;
+    card_type: number;
     /**
      * 卡片描述信息
      */
@@ -44,7 +44,7 @@ export namespace BeautyMemberMeiCardCreate {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 充值赠送金额，单位是分。只有充值卡的时候才有效。
      */

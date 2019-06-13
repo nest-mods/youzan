@@ -6,19 +6,19 @@ export namespace ItemHotelItemHotelRoomSet {
     /**
      * 开始日期,格式 yyyy-mm-dd
      */
-    begin_date?: string;
+    begin_date: string;
     /**
      * 结束日期,格式 yyyy-mm-dd
      */
-    end_date?: string;
+    end_date: string;
     /**
      * 商品Id
      */
-    item_id?: number;
+    item_id: number;
     /**
      * 价格;单位元,精确到小数后2位
      */
-    price?: string;
+    price: string;
     /**
      * 规格ID,无规格商品不用填写
      */
@@ -30,11 +30,11 @@ export namespace ItemHotelItemHotelRoomSet {
     /**
      * 开关房: 1开启 0关闭
      */
-    status?: number;
+    status: number;
     /**
      * 库存数量
      */
-    stock_num?: number;
+    stock_num: number;
   }
 
   /**

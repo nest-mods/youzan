@@ -6,19 +6,19 @@ export namespace RetailTradeRetailOpenReturnorderConfirm {
     /**
      * 零售调用来源（调用方和有赞约定的值）
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 退货单号
      */
-    return_order_no?: string;
+    return_order_no: string;
     /**
      * 退货单版本
      */
-    version?: number;
+    version: number;
     /**
      * 仓库编码
      */
-    warehouse_code?: string;
+    warehouse_code: string;
   }
 
   /**

@@ -10,15 +10,15 @@ export namespace BeautyMemberMeiCustomerSecretfileinfoUpdate {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 更新的档案信息
      */
-    secret_file_infos?: MeiMemberFileInfo[];
+    secret_file_infos: MeiMemberFileInfo[];
     /**
      * 会员的id
      */
-    yz_uid?: number;
+    yz_uid: number;
   }
 
   /**

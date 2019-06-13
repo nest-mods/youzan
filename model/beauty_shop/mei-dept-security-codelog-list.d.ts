@@ -6,11 +6,11 @@ export namespace BeautyShopMeiDeptSecurityCodelogList {
     /**
      * 安全码id
      */
-    code_id?: number;
+    code_id: number;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 页码，要查询的页数
      */

@@ -6,7 +6,7 @@ export namespace VirtualticketTradeVirtualticketGet {
     /**
      * 电子卡券二维码的码号(扫用户核销的二维码)
      */
-    code?: string;
+    code: string;
   }
 
   /**

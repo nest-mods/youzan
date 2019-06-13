@@ -6,11 +6,11 @@ export namespace CustomerScrmCustomerUpdate {
     /**
      * 用户帐号信息
      */
-    account?: Account;
+    account: Account;
     /**
      * 更新客户所需信息
      */
-    customer_update?: CustomerUpdate;
+    customer_update: CustomerUpdate;
   }
 
   /**

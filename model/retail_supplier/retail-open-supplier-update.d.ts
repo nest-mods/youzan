@@ -38,15 +38,15 @@ export namespace RetailSupplierRetailOpenSupplierUpdate {
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 供应商编码
      */
-    supplier_code?: string;
+    supplier_code: string;
     /**
      * 供应商名称
      */
-    supplier_name?: string;
+    supplier_name: string;
     /**
      * 微信号
      */

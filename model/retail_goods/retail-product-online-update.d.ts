@@ -10,11 +10,11 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     /**
      * 商品详情额外组件(固定值：-1)
      */
-    components_extra_id?: number;
+    components_extra_id: number;
     /**
      * 运费模板id（统一运费传0）
      */
-    delivery_template_id?: number;
+    delivery_template_id: number;
     /**
      * 电子卡券-电子凭证自定义推迟时间
      */
@@ -46,11 +46,11 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     /**
      * 商品参与平台 0：普通商品。仅支持普通商品
      */
-    goods_platform?: number;
+    goods_platform: number;
     /**
      * 商品类型：0：普通商品，1: 拍卖商品, 3：ump降价拍，10:分销商品；20：会员卡商品；25：批发商品；30：收银台商品；35：酒店商品。仅支持普通商品
      */
-    goods_type?: number;
+    goods_type: number;
     /**
      * 页面不显示商品库存: 0, 显示; 1, 不显示
      */
@@ -75,7 +75,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     /**
      * 网店商品id
      */
-    item_id?: number;
+    item_id: number;
     /**
      * 商品重量信息
      */
@@ -129,7 +129,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     /**
      * 运费，单位：分（运费模版不为0的情况下、使用该字段计算运费）
      */
-    postage?: number;
+    postage: number;
     /**
      * 是否预售
      */
@@ -137,7 +137,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     /**
      * 价格（多规格商品，商品价格不得小于各个规格价格），单位：分
      */
-    price?: number;
+    price: number;
     /**
      * 是否限购
      */
@@ -157,7 +157,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     /**
      * 销售类型：1单个销售，2组合销售
      */
-    sell_type?: number;
+    sell_type: number;
     /**
      * 规格图片所属规格项id
      */
@@ -185,11 +185,11 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     /**
      * 开卖时间: 0 立即开售, 1 定时开售
      */
-    sold_time?: number;
+    sold_time: number;
     /**
      * 请求来源（例：OPEN_XXXXX）
      */
-    source?: string;
+    source: string;
     /**
      * 加星
      */
@@ -217,7 +217,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     /**
      * 商品名称
      */
-    title?: string;
+    title: string;
     /**
      * 总库存
      */
@@ -396,6 +396,10 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
      * 商品编码
      */
     sku_no?: string;
+    /**
+     * 组合商品spuId
+     */
+    spu_combine_id?: number;
     /**
      * 多规格-供货价格（分）
      */

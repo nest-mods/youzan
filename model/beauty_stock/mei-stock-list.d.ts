@@ -14,7 +14,7 @@ export namespace BeautyStockMeiStockList {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 页码
      */

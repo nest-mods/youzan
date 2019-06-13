@@ -10,7 +10,7 @@ export namespace ItemSkusCustomGet {
     /**
      * 商品规格编码
      */
-    item_no?: string;
+    item_no: string;
   }
 
   /**

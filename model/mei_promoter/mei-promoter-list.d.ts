@@ -10,7 +10,7 @@ export namespace MeiPromoterMeiPromoterList {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 推广员手机号
      */
@@ -18,11 +18,11 @@ export namespace MeiPromoterMeiPromoterList {
     /**
      * 要查询的页码
      */
-    page?: number;
+    page: number;
     /**
      * 每页显示的条目数量，最大200条
      */
-    page_size?: number;
+    page_size: number;
     /**
      * 加入的开始时间，时间的毫秒值
      */

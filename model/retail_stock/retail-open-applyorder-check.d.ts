@@ -6,19 +6,19 @@ export namespace RetailStockRetailOpenApplyorderCheck {
     /**
      * 要货申请单号
      */
-    apply_order_no?: string;
+    apply_order_no: string;
     /**
      * 调出仓仓库编码
      */
-    from_warehouse_code?: string;
+    from_warehouse_code: string;
     /**
      * 要货商品明细
      */
-    items?: OpenApplyOrderItem[];
+    items: OpenApplyOrderItem[];
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

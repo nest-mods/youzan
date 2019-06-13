@@ -6,7 +6,7 @@ export namespace RetailGoodsRetailStockGoodsapplyCheck {
     /**
      * 单据号
      */
-    biz_bill_nos?: string[];
+    biz_bill_nos: string[];
     /**
      * 审核明细
      */
@@ -14,11 +14,11 @@ export namespace RetailGoodsRetailStockGoodsapplyCheck {
     /**
      * 出库仓库
      */
-    from_kdt_id?: number;
+    from_kdt_id: number;
     /**
      * 是否通过
      */
-    is_ok?: boolean;
+    is_ok: boolean;
     /**
      * 驳回理由
      */
@@ -26,7 +26,7 @@ export namespace RetailGoodsRetailStockGoodsapplyCheck {
     /**
      * 系统来源
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

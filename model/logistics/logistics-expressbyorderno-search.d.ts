@@ -6,7 +6,7 @@ export namespace LogisticsLogisticsExpressbyordernoSearch {
     /**
      * 订单号
      */
-    tid?: string;
+    tid: string;
   }
 
   /**

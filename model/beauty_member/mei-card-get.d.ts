@@ -6,7 +6,7 @@ export namespace BeautyMemberMeiCardGet {
     /**
      * 要查询的会员卡标识
      */
-    card_alias?: string;
+    card_alias: string;
     /**
      * 分店信息
      */
@@ -14,7 +14,7 @@ export namespace BeautyMemberMeiCardGet {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
   }
 
   /**

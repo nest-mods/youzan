@@ -6,7 +6,7 @@ export namespace ItemItemSkuGet {
     /**
      * 商品ID
      */
-    item_id?: number;
+    item_id: number;
     /**
      * skuID； 无规格skuID不传，有规格必传，可通过详情接口 youzan.item.get获得
      */

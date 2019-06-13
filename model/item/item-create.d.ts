@@ -22,7 +22,7 @@ export namespace ItemItemCreate {
     /**
      * 商品描述。字数要大于5个字符，小于25000个字符 ，受违禁词控制
      */
-    desc?: string;
+    desc: string;
     /**
      * 付款成功 后发货天数, 默认0
      */
@@ -54,7 +54,7 @@ export namespace ItemItemCreate {
     /**
      * 图片id列表，用逗号分隔。可以通过 youzan.materials.storage.platform.img.upload 上传图片接口去上传图片后获取图片id 。
      */
-    image_ids?: string;
+    image_ids: string;
     /**
      * 是否上架商品。默认1 上架商品，设置为0 不上架商品，放入仓库
      */
@@ -144,7 +144,7 @@ export namespace ItemItemCreate {
     /**
      * 价格，单位分
      */
-    price?: number;
+    price: number;
     /**
      * 是否设置商品购买权限
      */
@@ -191,7 +191,7 @@ export namespace ItemItemCreate {
     /**
      * 商品标题。不能超过100字，受违禁词控制
      */
-    title?: string;
+    title: string;
     /**
      * 允许购买的粉丝等级，用逗号分隔
      */

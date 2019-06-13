@@ -6,15 +6,15 @@ export namespace RetailGoodsRetailStockWarehouseSingleCreate {
     /**
      * 详细地址
      */
-    address?: string;
+    address: string;
     /**
      * 城市
      */
-    city?: string;
+    city: string;
     /**
      * 联系人姓名
      */
-    contact_name?: string;
+    contact_name: string;
     /**
      * 联系电话区号
      */
@@ -22,31 +22,31 @@ export namespace RetailGoodsRetailStockWarehouseSingleCreate {
     /**
      * 联系电话号码
      */
-    contact_phone_num?: string;
+    contact_phone_num: string;
     /**
      * 区域
      */
-    county?: string;
+    county: string;
     /**
      * 区域变慢
      */
-    county_id?: number;
+    county_id: number;
     /**
      * 经度
      */
-    lat?: string;
+    lat: string;
     /**
      * 纬度
      */
-    lng?: string;
+    lng: string;
     /**
      * 仓库名称
      */
-    name?: string;
+    name: string;
     /**
      * 省份
      */
-    province?: string;
+    province: string;
     /**
      * 备注
      */
@@ -54,7 +54,7 @@ export namespace RetailGoodsRetailStockWarehouseSingleCreate {
     /**
      * 来源
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

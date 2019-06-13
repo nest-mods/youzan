@@ -6,11 +6,11 @@ export namespace BeautyItemMeiGoodsProductCategoryCreate {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 分组名称
      */
-    name?: string;
+    name: string;
   }
 
   /**

@@ -6,7 +6,7 @@ export namespace BeautyMemberMeiCustomerSettingUpdate {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 具体设置内容。
   * 当type=1时，key值为dept，value：
@@ -14,12 +14,12 @@ export namespace BeautyMemberMeiCustomerSettingUpdate {
   * 1 可以不能查看其它分店会员
   * 2 仅可以查看本店铺创建的会员
      */
-    settings?: Map<string, Object>;
+    settings: Map<string, Object>;
     /**
      * 配置类型。
   * 1 会员查看权限配置
      */
-    type?: number;
+    type: number;
   }
 
   /**

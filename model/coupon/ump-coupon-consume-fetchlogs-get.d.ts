@@ -6,7 +6,7 @@ export namespace CouponUmpCouponConsumeFetchlogsGet {
     /**
      * 优惠券/优惠码id
      */
-    coupon_group_id?: number;
+    coupon_group_id: number;
     /**
      * 按照领取时间筛选（结束时间）格式：'2017-09-09 17:12:41'
      */

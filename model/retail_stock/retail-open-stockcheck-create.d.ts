@@ -6,7 +6,7 @@ export namespace RetailStockRetailOpenStockcheckCreate {
     /**
      * 单据编码
      */
-    biz_bill_no?: string;
+    biz_bill_no: string;
     /**
      * 单据日期
      */
@@ -14,19 +14,19 @@ export namespace RetailStockRetailOpenStockcheckCreate {
     /**
      * 创建人
      */
-    creator?: string;
+    creator: string;
     /**
      * 盘点单明细
      */
-    order_items?: OpenStockCheckOrderItem[];
+    order_items: OpenStockCheckOrderItem[];
     /**
      * 页码（从第一页开始）
      */
-    page_no?: number;
+    page_no: number;
     /**
      * 每页记录数（最大值为500）
      */
-    page_size?: number;
+    page_size: number;
     /**
      * 备注
      */
@@ -34,11 +34,11 @@ export namespace RetailStockRetailOpenStockcheckCreate {
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 总记录数
      */
-    total_count?: number;
+    total_count: number;
     /**
      * 仓库编码（连锁版必须）
      */

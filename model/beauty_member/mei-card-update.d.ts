@@ -10,7 +10,7 @@ export namespace BeautyMemberMeiCardUpdate {
     /**
      * 要更新的会员卡标识
      */
-    card_alias?: string;
+    card_alias: string;
     /**
      * 会员卡售价，单位是分
      */
@@ -26,7 +26,7 @@ export namespace BeautyMemberMeiCardUpdate {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 是否显示在网店
   * 0 不显示 

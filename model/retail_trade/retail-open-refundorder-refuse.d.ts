@@ -6,19 +6,19 @@ export namespace RetailTradeRetailOpenRefundorderRefuse {
     /**
      * 退款单号
      */
-    refund_order_no?: string;
+    refund_order_no: string;
     /**
      * 拒绝理由
      */
-    remark?: string;
+    remark: string;
     /**
      * 零售调用来源（调用方和有赞约定的值）
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 退款单版本
      */
-    version?: number;
+    version: number;
   }
 
   /**

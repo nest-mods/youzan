@@ -6,15 +6,15 @@ export namespace BuyerRefundTradeRefundIntervene {
     /**
      * 退款ID
      */
-    refund_id?: string;
+    refund_id: string;
     /**
      * 申请理由
      */
-    remark?: string;
+    remark: string;
     /**
      * 退款版本
      */
-    version?: number;
+    version: number;
   }
 
   /**

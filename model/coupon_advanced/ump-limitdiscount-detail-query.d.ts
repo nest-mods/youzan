@@ -6,7 +6,7 @@ export namespace CouponAdvancedUmpLimitdiscountDetailQuery {
     /**
      * 商品id，支持多个批量查询
      */
-    goods_ids?: number[];
+    goods_ids: number[];
   }
 
   /**

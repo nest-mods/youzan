@@ -6,19 +6,19 @@ export namespace RetailGoodsRetailStockRelationChange {
     /**
      * 来源
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 欲修改的状态，1:绑定 0:解绑
      */
-    status?: number;
+    status: number;
     /**
      * 对应关系的店铺kdtId
      */
-    store_id?: number;
+    store_id: number;
     /**
      * 仓库id
      */
-    warehouse_id?: number;
+    warehouse_id: number;
   }
 
   /**

@@ -6,23 +6,23 @@ export namespace LogisticsLogisticsFeeGet {
     /**
      * 城市名称
      */
-    city_name?: string;
+    city_name: string;
     /**
      * 区县名称
      */
-    county_name?: string;
+    county_name: string;
     /**
      * 交易商品列表
      */
-    item_param_list?: string;
+    item_param_list: string;
     /**
      * 订单号
      */
-    order_no?: string;
+    order_no: string;
     /**
      * 省份名称
      */
-    province_name?: string;
+    province_name: string;
   }
 
   /**

@@ -6,7 +6,7 @@ export namespace CrmAdvancedScrmCustomerCardGrant {
     /**
      * 商家会员卡的唯一标识
      */
-    card_alias?: string;
+    card_alias: string;
     /**
      * 粉丝ID，与 fans_type 同时出现，如果没有写0
   * mobile/fans_id/open_user_id 三选一传入

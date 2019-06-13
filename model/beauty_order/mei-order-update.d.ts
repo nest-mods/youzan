@@ -22,7 +22,7 @@ export namespace BeautyOrderMeiOrderUpdate {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 赠送列表
      */
@@ -30,11 +30,11 @@ export namespace BeautyOrderMeiOrderUpdate {
     /**
      * 订单项列表
      */
-    order_items?: OrderItemRequest[];
+    order_items: OrderItemRequest[];
     /**
      * 订单编号，修改订单时填写
      */
-    order_no?: string;
+    order_no: string;
     /**
      * 优惠列表
      */

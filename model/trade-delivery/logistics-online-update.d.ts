@@ -6,11 +6,11 @@ export namespace TradeDeliveryLogisticsOnlineUpdate {
     /**
      * 订单号
      */
-    tid?: string;
+    tid: string;
     /**
      * 修改物流信息
      */
-    trade_express_modify?: TradeExpressModify[];
+    trade_express_modify: TradeExpressModify[];
   }
 
   /**

@@ -6,7 +6,7 @@ export namespace CouponAdvancedUmpGrouponOrdergroupdetailsGet {
     /**
      * 订单号List
      */
-    tids?: string[];
+    tids: string[];
   }
 
   /**

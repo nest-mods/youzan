@@ -6,7 +6,7 @@ export namespace CouponUmpCouponConsumeVerify {
     /**
      * 买家端的优惠券/优惠码核销码
      */
-    code?: string;
+    code: string;
   }
 
   /**

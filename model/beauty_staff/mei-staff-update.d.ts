@@ -6,31 +6,31 @@ export namespace BeautyStaffMeiStaffUpdate {
     /**
      * 账号
      */
-    account?: string;
+    account: string;
     /**
      * 部门ID
      */
-    dept_id?: number;
+    dept_id: number;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 手机
      */
-    mobile?: string;
+    mobile: string;
     /**
      * 旧部门ID
      */
-    old_dept_id?: number;
+    old_dept_id: number;
     /**
      * 职位ID 2 高级管理员 3 店长 4 普通职员 5 手艺人 7 总部财务 8 驻店财务 9 营销顾问  总店的员工只能选择2 分店员工除了2其他都可以选
      */
-    position_id?: number;
+    position_id: number;
     /**
      * 真实姓名
      */
-    real_name?: string;
+    real_name: string;
     /**
      * 备注
      */
@@ -38,11 +38,11 @@ export namespace BeautyStaffMeiStaffUpdate {
     /**
      * 角色ID列表
      */
-    roles?: MeiBeautyStoreRoleDTO[];
+    roles: MeiBeautyStoreRoleDTO[];
     /**
      * 员工ID
      */
-    yz_uid?: number;
+    yz_uid: number;
   }
 
   /**

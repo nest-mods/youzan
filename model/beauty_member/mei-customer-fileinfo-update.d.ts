@@ -6,15 +6,15 @@ export namespace BeautyMemberMeiCustomerFileinfoUpdate {
     /**
      * 基础档案信息
      */
-    file_infos?: MeiMemberFileInfo[];
+    file_infos: MeiMemberFileInfo[];
     /**
      * 没有token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 会员id
      */
-    yz_uid?: number;
+    yz_uid: number;
   }
 
   /**

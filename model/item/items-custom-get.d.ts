@@ -6,7 +6,7 @@ export namespace ItemItemsCustomGet {
     /**
      * 商品编码
      */
-    item_no?: string;
+    item_no: string;
   }
 
   /**

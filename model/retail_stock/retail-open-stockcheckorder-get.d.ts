@@ -6,7 +6,7 @@ export namespace RetailStockRetailOpenStockcheckorderGet {
     /**
      * 盘点单编号
      */
-    biz_bill_no?: string;
+    biz_bill_no: string;
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */

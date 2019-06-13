@@ -6,11 +6,11 @@ export namespace BeautyMemberMeiCustomerRightsList {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 权益状态 1:可使用 2过期 3用完 -2已退款
      */
-    right_status?: number;
+    right_status: number;
     /**
      * 权益类型 1折扣 2次数
      */

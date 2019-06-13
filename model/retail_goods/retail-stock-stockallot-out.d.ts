@@ -6,7 +6,7 @@ export namespace RetailGoodsRetailStockStockallotOut {
     /**
      * 单据编号
      */
-    biz_bill_no?: string;
+    biz_bill_no: string;
     /**
      * 出库仓库kdtId
      */
@@ -14,11 +14,11 @@ export namespace RetailGoodsRetailStockStockallotOut {
     /**
      * 具体来源
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 具体出库商品信息
      */
-    stock_allot_out_items?: OutAllotOutItem[];
+    stock_allot_out_items: OutAllotOutItem[];
   }
 
   /**

@@ -6,7 +6,7 @@ export namespace CircleTradeDcQueryMultiperiodQuerydeliveryrecords {
     /**
      * 主订单ID
      */
-    tid?: string;
+    tid: string;
   }
 
   /**

@@ -50,7 +50,7 @@ export namespace RetailGoodsRetailStockDeliverySearch {
     /**
      * 来源
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 是否展示其他状态的单据数量
      */

@@ -6,7 +6,7 @@ export namespace UserUsersWeixinFollowersPull {
     /**
      * 用于拉取该粉丝编码之后的查询条件。第一次查询可传入0，之后每次查询可传入上次查询里返回的last_fans_id，直到返回结果里的has_next为false
      */
-    after_fans_id?: number;
+    after_fans_id: number;
     /**
      * 需要返回的微信粉丝对象字段，如nick,avatar等。可选值：CrmWeixinFans微信粉丝结构体中所有字段均可返回；多个字段用“,”分隔。如果为空则返回所有
      */

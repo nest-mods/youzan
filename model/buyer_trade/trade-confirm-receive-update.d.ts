@@ -6,11 +6,11 @@ export namespace BuyerTradeTradeConfirmReceiveUpdate {
     /**
      * 店铺id
      */
-    kdt_id?: number;
+    kdt_id: number;
     /**
      * 交易编号
      */
-    tid?: string;
+    tid: string;
   }
 
   /**

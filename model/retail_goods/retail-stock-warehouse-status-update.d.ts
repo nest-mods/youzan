@@ -6,15 +6,15 @@ export namespace RetailGoodsRetailStockWarehouseStatusUpdate {
     /**
      * 来源
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 仓库欲变更的状态 0:启用 1:停用
      */
-    status?: number;
+    status: number;
     /**
      * 仓库id
      */
-    warehouse_id?: number;
+    warehouse_id: number;
   }
 
   /**

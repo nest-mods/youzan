@@ -6,11 +6,11 @@ export namespace RetailGoodsRetailStockDeliveryIn {
     /**
      * 单据号
      */
-    biz_bill_no?: string;
+    biz_bill_no: string;
     /**
      * 业务时间
      */
-    business_time?: string;
+    business_time: string;
     /**
      * 备注
      */
@@ -18,7 +18,7 @@ export namespace RetailGoodsRetailStockDeliveryIn {
     /**
      * 来源
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

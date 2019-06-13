@@ -14,7 +14,7 @@ export namespace RetailGoodsRetailStockStockreturnGet {
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    source?: string;
+    source: string;
     /**
      * 门店或独立仓id   注意：连锁版必填
      */

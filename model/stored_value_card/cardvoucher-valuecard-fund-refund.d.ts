@@ -6,19 +6,19 @@ export namespace StoredValueCardCardvoucherValuecardFundRefund {
     /**
      * 退款金额（单位：分）
      */
-    amount?: number;
+    amount: number;
     /**
      * 操作人姓名。如果是商家发起退款，请填写商家操作人姓名。如果是用户发起，请填写用户姓名（长度必须小于24）
      */
-    operator?: string;
+    operator: string;
     /**
      * 需退款的支付请求号（长度必须小于24）
      */
-    pay_request_no?: string;
+    pay_request_no: string;
     /**
      * 退款请求号,唯一标识一次退款请求，调用方自定义，请确保唯一（长度必须小于24）
      */
-    refund_request_no?: string;
+    refund_request_no: string;
     /**
      * 退款描述（长度必须小于100）
      */

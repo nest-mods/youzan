@@ -14,15 +14,15 @@ export namespace RetailProductRetailOpenSpuQuery {
     /**
      * 页码信息
      */
-    page_no?: number;
+    page_no: number;
     /**
      * 每页数量
      */
-    page_size?: number;
+    page_size: number;
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 销售渠道
   * 2=门店

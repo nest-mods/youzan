@@ -6,11 +6,11 @@ export namespace SalesmanSalesmanAccountsGet {
     /**
      * 页码
      */
-    page_no?: number;
+    page_no: number;
     /**
      * 每页记录数，最大不超过100，建议使用默认值20
      */
-    page_size?: number;
+    page_size: number;
   }
 
   /**

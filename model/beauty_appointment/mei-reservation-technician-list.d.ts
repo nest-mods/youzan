@@ -6,7 +6,7 @@ export namespace BeautyAppointmentMeiReservationTechnicianList {
     /**
      * 分店id
      */
-    dept_id?: number;
+    dept_id: number;
     /**
      * 要查询的服务id
      */
@@ -14,7 +14,7 @@ export namespace BeautyAppointmentMeiReservationTechnicianList {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 要查询的服务的skuid
      */
@@ -22,7 +22,7 @@ export namespace BeautyAppointmentMeiReservationTechnicianList {
     /**
      * 要查询的日期
      */
-    time?: number;
+    time: number;
   }
 
   /**

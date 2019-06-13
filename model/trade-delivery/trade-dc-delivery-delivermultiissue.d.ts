@@ -28,24 +28,24 @@ export namespace TradeDeliveryTradeDcDeliveryDelivermultiissue {
   * expressId:物流公司id
   * （当发货方式为13和22时expressNo和expressId可为空)
      */
-    delivery_infos?: string;
+    delivery_infos: string;
     /**
      * 要发多少期。
   * 该期次要与发货信息里面的list长度一致
      */
-    delivery_issue?: number;
+    delivery_issue: number;
     /**
      * 商品id
      */
-    item_id?: number;
+    item_id: number;
     /**
      * 请求的唯一标识
      */
-    request_id?: string;
+    request_id: string;
     /**
      * 订单号
      */
-    tid?: string;
+    tid: string;
   }
 
   /**

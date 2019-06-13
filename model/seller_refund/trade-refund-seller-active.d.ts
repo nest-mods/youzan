@@ -6,19 +6,19 @@ export namespace SellerRefundTradeRefundSellerActive {
     /**
      * 退款原因
      */
-    desc?: string;
+    desc: string;
     /**
      * 交易明细id
      */
-    oid?: number;
+    oid: number;
     /**
      * 退款金额
      */
-    refund_fee?: string;
+    refund_fee: string;
     /**
      * 订单号
      */
-    tid?: string;
+    tid: string;
   }
 
   /**

@@ -10,7 +10,7 @@ export namespace ReviewsItemReviewsQuery {
     /**
      * 是否获取头像的信息，（注：1是；0否）,必填项
      */
-    avatar?: number;
+    avatar: number;
     /**
      * 买家id
      */
@@ -62,11 +62,11 @@ export namespace ReviewsItemReviewsQuery {
     /**
      * 供应商的店铺goodsId，必填，如果是分销商品，则supplierGoodsId为供应商的goodsId，如是普通商品则supplierGoodsId为当前的goodsId
      */
-    supplier_item_id?: number;
+    supplier_item_id: number;
     /**
      * 供应商的店铺kdtId，必填，如果是分销商品，则supplierKdtId为供应商的kdtId，如是普通商品则supplierKdtId为自己店铺kdtId
      */
-    supplier_kdt_id?: number;
+    supplier_kdt_id: number;
     /**
      * 供应商skuId
      */

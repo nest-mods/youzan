@@ -10,11 +10,11 @@ export namespace BeautyAppointmentMeiReservationUpdate {
     /**
      * 预约的分店id
      */
-    dept_id?: number;
+    dept_id: number;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 预约的服务项目
      */
@@ -22,7 +22,7 @@ export namespace BeautyAppointmentMeiReservationUpdate {
     /**
      * 预约单单号
      */
-    reservation_order_no?: string;
+    reservation_order_no: string;
   }
 
   /**

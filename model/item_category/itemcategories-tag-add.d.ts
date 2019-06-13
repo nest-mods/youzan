@@ -6,7 +6,7 @@ export namespace ItemCategoryItemcategoriesTagAdd {
     /**
      * 商品分组的名称
      */
-    name?: string;
+    name: string;
   }
 
   /**

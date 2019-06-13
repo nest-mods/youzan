@@ -6,23 +6,23 @@ export namespace PointsCrmCustomerPointsSync {
     /**
      * 帐号ID
      */
-    account_id?: string;
+    account_id: string;
     /**
      * 帐号类型（与帐户ID配合使用: 2=粉丝(原fansId),3:手机号,4:三方帐号(原open_user_id);6:微信open_id）
      */
-    account_type?: number;
+    account_type: number;
     /**
-     * 用于幂等支持（幂等时效三个月, 超过三个月的相同值调用不保证幂等）
+     * 外部业务标识, 相同帐号、业务标识字段的重复调用在三个月内不会重复发放积分
      */
     biz_value?: string;
     /**
      * 积分值
      */
-    points?: number;
+    points: number;
     /**
      * 积分变动原因
      */
-    reason?: string;
+    reason: string;
   }
 
   /**

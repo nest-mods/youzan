@@ -6,7 +6,7 @@ export namespace ItemStandardItemStandardCreate {
     /**
      * 商品条码，通用的条形编码，不是商家编码
      */
-    code?: string;
+    code: string;
     /**
      * 商品类型
      */

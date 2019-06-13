@@ -6,7 +6,7 @@ export namespace ShopShopAddressGet {
     /**
      * 地址id
      */
-    id?: number;
+    id: number;
   }
 
   /**

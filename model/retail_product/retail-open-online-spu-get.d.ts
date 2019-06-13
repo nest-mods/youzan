@@ -6,11 +6,11 @@ export namespace RetailProductRetailOpenOnlineSpuGet {
     /**
      * 网店商品id
      */
-    item_id?: number;
+    item_id: number;
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 连锁多网店下查指定网店网店商品用
      */

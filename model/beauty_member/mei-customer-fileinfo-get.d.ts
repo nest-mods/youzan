@@ -6,11 +6,11 @@ export namespace BeautyMemberMeiCustomerFileinfoGet {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 要获取档案的会员id
      */
-    yz_uid?: number;
+    yz_uid: number;
   }
 
   /**

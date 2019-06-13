@@ -6,7 +6,7 @@ export namespace ShopShopAddressList {
     /**
      * 地址类型 return(退货地址) | invoice(发票地址)
      */
-    type?: string;
+    type: string;
   }
 
   /**

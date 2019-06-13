@@ -14,7 +14,7 @@ export namespace RetailProductRetailOpenSkuQuery {
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * sku_code列表
      */

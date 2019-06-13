@@ -6,7 +6,7 @@ export namespace TradeAdvancedTradeRefundGet {
     /**
      * 退款ID
      */
-    refund_id?: string;
+    refund_id: string;
   }
 
   /**
@@ -90,6 +90,10 @@ export namespace TradeAdvancedTradeRefundGet {
      * 订单明细id
      */
     oid?: string;
+    /**
+     * 退款货数
+     */
+    item_num?: number;
   }
 
   /**

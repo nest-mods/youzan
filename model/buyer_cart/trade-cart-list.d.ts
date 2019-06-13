@@ -6,7 +6,7 @@ export namespace BuyerCartTradeCartList {
     /**
      * 店铺id
      */
-    kdt_id?: number;
+    kdt_id: number;
     /**
      * 会话key,如果没有该值填
      */

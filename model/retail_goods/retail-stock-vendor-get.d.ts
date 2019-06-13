@@ -6,7 +6,7 @@ export namespace RetailGoodsRetailStockVendorGet {
     /**
      * 调用来源
      */
-    source?: string;
+    source: string;
     /**
      * 供应商ID
      */

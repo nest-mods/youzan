@@ -6,7 +6,7 @@ export namespace CrmAdvancedScrmCardUpdate {
     /**
      * 编辑会员卡所需的会员卡信息
      */
-    card_update?: CardUpdate;
+    card_update: CardUpdate;
   }
 
   /**

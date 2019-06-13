@@ -6,11 +6,11 @@ export namespace CircleLogisticsOnlineCanceldelay {
     /**
      * 待取消顺延期次
      */
-    issue?: number;
+    issue: number;
     /**
      * 交易编号
      */
-    tid?: string;
+    tid: string;
   }
 
   /**

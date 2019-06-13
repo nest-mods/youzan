@@ -6,15 +6,15 @@ export namespace BeautyMemberMeiCardOnsale {
     /**
      * 要查询的会员卡标识
      */
-    card_alias?: string;
+    card_alias: string;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 要上架的门店列表
      */
-    select_dept_ids?: number[];
+    select_dept_ids: number[];
   }
 
   /**

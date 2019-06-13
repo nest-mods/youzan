@@ -14,7 +14,7 @@ export namespace RetailProductRetailOpenSpuCreate {
     /**
      * 商品名称
      */
-    name?: string;
+    name: string;
     /**
      * 销项税率
      */
@@ -30,7 +30,7 @@ export namespace RetailProductRetailOpenSpuCreate {
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 商品规格列表
      */
@@ -50,7 +50,7 @@ export namespace RetailProductRetailOpenSpuCreate {
     /**
      * 单位
      */
-    unit?: string;
+    unit: string;
   }
 
   /**

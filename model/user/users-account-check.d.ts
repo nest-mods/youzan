@@ -6,13 +6,21 @@ export namespace UserUsersAccountCheck {
     /**
      * 帐号ID
      */
-    account_id?: string;
+    account_id: string;
     /**
-     * 帐号类型，支持Mobile和UnionId
+     * 帐号类型
      */
-    account_type?: string;
+    account_type: string;
   }
 
-  export type Response = void;
+  /**
+   * 响应参数
+   */
+  export interface Response {
+    /**
+     * 是否存在帐号
+     */
+    data?: boolean;
+  }
 
 }

@@ -10,11 +10,11 @@ export namespace PayQrcodePayQrcodeCreate {
     /**
      * 收款理由
      */
-    qr_name?: string;
+    qr_name: string;
     /**
      * 价格（单位 分）。qr_type 为 QR_TYPE_FIXED 时，价格可为空。
      */
-    qr_price?: string;
+    qr_price: string;
     /**
      * 二维码创建类型标记
      */
@@ -25,7 +25,7 @@ export namespace PayQrcodePayQrcodeCreate {
   * QR_TYPE_NOLIMIT ： 确定金额二维码，可以重复支付;
   * QR_TYPE_DYNAMIC：确定金额二维码，只能被支付一次
      */
-    qr_type?: string;
+    qr_type: string;
   }
 
   /**

@@ -6,7 +6,7 @@ export namespace BeautyItemMeiGoodsProductUpdate {
     /**
      * 分组ID
      */
-    category?: number;
+    category: number;
     /**
      * 成本价，单位：分
      */
@@ -14,11 +14,11 @@ export namespace BeautyItemMeiGoodsProductUpdate {
     /**
      * 商品ID
      */
-    goods_id?: number;
+    goods_id: number;
     /**
      * 商品编号/条形码
      */
-    goods_no?: string;
+    goods_no: string;
     /**
      * 商品图片列表
      */
@@ -30,11 +30,11 @@ export namespace BeautyItemMeiGoodsProductUpdate {
     /**
      * 产品ID
      */
-    item_id?: number;
+    item_id: number;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 服务详情 支持富文本
      */
@@ -42,7 +42,7 @@ export namespace BeautyItemMeiGoodsProductUpdate {
     /**
      * 服务名称
      */
-    name?: string;
+    name: string;
     /**
      * 是否上架 1 是 0 否
      */

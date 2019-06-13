@@ -6,11 +6,11 @@ export namespace RetailGoodsRetailStockGoodsapplyUpdate {
     /**
      * 单据号
      */
-    biz_bill_no?: string;
+    biz_bill_no: string;
     /**
      * 单据明细
      */
-    business_order_items?: OutStockAllotItem[];
+    business_order_items: OutStockAllotItem[];
     /**
      * 备注
      */
@@ -18,7 +18,7 @@ export namespace RetailGoodsRetailStockGoodsapplyUpdate {
     /**
      * 系统来源
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

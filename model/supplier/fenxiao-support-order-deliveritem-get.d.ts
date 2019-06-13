@@ -10,7 +10,7 @@ export namespace SupplierFenxiaoSupportOrderDeliveritemGet {
     /**
      * 精选供货订单号
      */
-    order_no?: string;
+    order_no: string;
   }
 
   /**

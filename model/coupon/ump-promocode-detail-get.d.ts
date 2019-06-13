@@ -6,7 +6,7 @@ export namespace CouponUmpPromocodeDetailGet {
     /**
      * id
      */
-    id?: number;
+    id: number;
   }
 
   /**

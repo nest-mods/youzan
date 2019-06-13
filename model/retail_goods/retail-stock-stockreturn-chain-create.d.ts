@@ -10,7 +10,7 @@ export namespace RetailGoodsRetailStockStockreturnChainCreate {
     /**
      * 幂等单号(请求唯一标识)
      */
-    idempotent_no?: string;
+    idempotent_no: string;
     /**
      * 是否将库存盘点成0，默认false不盘点
      */
@@ -22,15 +22,15 @@ export namespace RetailGoodsRetailStockStockreturnChainCreate {
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 退货单明细
      */
-    stock_return_order_items?: HqStockReturnOrderItemCreateRequest[];
+    stock_return_order_items: HqStockReturnOrderItemCreateRequest[];
     /**
      * 入库的仓库或门店id
      */
-    warehouse_id?: number;
+    warehouse_id: number;
   }
 
   /**

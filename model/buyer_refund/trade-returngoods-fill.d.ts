@@ -6,19 +6,19 @@ export namespace BuyerRefundTradeReturngoodsFill {
     /**
      * 物流公司编号: 查询youzan.logistics.express.get接口获取
      */
-    logistics_company_code?: number;
+    logistics_company_code: number;
     /**
      * 物流公司运单号
      */
-    logistics_waybill_no?: string;
+    logistics_waybill_no: string;
     /**
      * 退款ID
      */
-    refund_id?: string;
+    refund_id: string;
     /**
      * 退款版本号
      */
-    version?: number;
+    version: number;
   }
 
   /**

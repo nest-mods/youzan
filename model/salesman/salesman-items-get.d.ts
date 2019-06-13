@@ -6,7 +6,7 @@ export namespace SalesmanSalesmanItemsGet {
     /**
      * 商品id列表，逗号分隔
      */
-    item_ids?: string;
+    item_ids: string;
   }
 
   /**
@@ -24,21 +24,21 @@ export namespace SalesmanSalesmanItemsGet {
    */
   export interface SalesmanTradeGoods {
     /**
-     * 商品是否参与推广0:不参与1参与
-     */
-    is_join?: number;
-    /**
      * 商品ID
      */
     num_iid?: string;
     /**
-     * 商品邀请奖励提成比例(%)
+     * 商品是否参与推广0:不参与1参与
      */
-    ii_rate?: string;
+    is_join?: number;
     /**
      * 商品提成比例(%)
      */
     i_rate?: string;
+    /**
+     * 商品邀请奖励提成比例(%)
+     */
+    ii_rate?: string;
   }
 
 }

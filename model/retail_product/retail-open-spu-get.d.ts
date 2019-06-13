@@ -6,11 +6,11 @@ export namespace RetailProductRetailOpenSpuGet {
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 商品编码
      */
-    spu_code?: string;
+    spu_code: string;
     /**
      * 仓库编码
      */

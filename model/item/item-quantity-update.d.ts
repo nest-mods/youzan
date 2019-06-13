@@ -6,11 +6,11 @@ export namespace ItemItemQuantityUpdate {
     /**
      * 商品数字编号
      */
-    item_id?: number;
+    item_id: number;
     /**
      * sku库存数量
      */
-    quantity?: number;
+    quantity: number;
     /**
      * sku id如果商品为无规格商品是可以不传，否则必传
      */

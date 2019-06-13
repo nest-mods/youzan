@@ -6,11 +6,11 @@ export namespace MultiStoreMultistoreOfflineUpdate {
     /**
      * 详细地址
      */
-    address?: string;
+    address: string;
     /**
      * 区
      */
-    area?: string;
+    area: string;
     /**
      * 营业时间,按天设置。示例[{"open_time":"00:10","close_time":"16:00","weekdays":["周一","周二","周三","周四","周五"]},{"open_time":"00:10","close_time":"20:00","weekdays":["周六","周日"]}]
      */
@@ -18,23 +18,23 @@ export namespace MultiStoreMultistoreOfflineUpdate {
     /**
      * 市
      */
-    city?: string;
+    city: string;
     /**
      * 行政区划代码。参考高德城市编码表 http://lbs.amap.com/api/webservice/download
      */
-    county_id?: string;
+    county_id: string;
     /**
      * 描述
      */
-    description?: string;
+    description: string;
     /**
      * id
      */
-    id?: number;
+    id: number;
     /**
      * 图片地址，逗号分隔
      */
-    image?: string;
+    image: string;
     /**
      * 是否需要买家选择自提时间。1表示需要，0表示不需要
      */
@@ -42,19 +42,19 @@ export namespace MultiStoreMultistoreOfflineUpdate {
     /**
      * 是否是自提点。1表示是，0表示否
      */
-    is_self_fetch?: number;
+    is_self_fetch: number;
     /**
      * 是否是门店。1表示是，0表示否
      */
-    is_store?: number;
+    is_store: number;
     /**
      * 纬度（百度坐标系）
      */
-    lat?: string;
+    lat: string;
     /**
      * 经度（百度坐标系）
      */
-    lng?: string;
+    lng: string;
     /**
      * 配送费，单位分
      */
@@ -78,7 +78,7 @@ export namespace MultiStoreMultistoreOfflineUpdate {
     /**
      * 网点名称
      */
-    name?: string;
+    name: string;
     /**
      * 线下自提时间。格式同business_hours_advanced
      */
@@ -86,15 +86,15 @@ export namespace MultiStoreMultistoreOfflineUpdate {
     /**
      * 区号
      */
-    phone1?: string;
+    phone1: string;
     /**
      * 电话号码
      */
-    phone2?: string;
+    phone2: string;
     /**
      * 省
      */
-    province?: string;
+    province: string;
     /**
      * 是否支持本地配送。1表示支持，0表示不支持
      */

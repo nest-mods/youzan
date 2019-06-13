@@ -6,7 +6,7 @@ export namespace LogisticsLogisticsOrderBatchQuery {
     /**
      * 请求参数list
      */
-    order_detail_params?: QueryOrderDetailParam[];
+    order_detail_params: QueryOrderDetailParam[];
   }
 
   /**

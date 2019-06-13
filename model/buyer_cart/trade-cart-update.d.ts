@@ -6,11 +6,11 @@ export namespace BuyerCartTradeCartUpdate {
     /**
      * 商品id
      */
-    item_id?: number;
+    item_id: number;
     /**
      * 店铺id
      */
-    kdt_id?: number;
+    kdt_id: number;
     /**
      * 会话key,如果没有该值填
      */
@@ -18,11 +18,11 @@ export namespace BuyerCartTradeCartUpdate {
     /**
      * 数量
      */
-    num?: number;
+    num: number;
     /**
      * 商品sku id
      */
-    sku_id?: number;
+    sku_id: number;
     /**
      * 门店id,多门店时才会涉及到，不是多门店的情况填0
      */

@@ -6,11 +6,11 @@ export namespace BeautyItemMeiGoodsProductGet {
     /**
      * 商品ID
      */
-    goods_id?: number;
+    goods_id: number;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
   }
 
   /**

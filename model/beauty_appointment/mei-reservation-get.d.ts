@@ -6,27 +6,17 @@ export namespace BeautyAppointmentMeiReservationGet {
     /**
      * 美业的token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 要查询的预约单号
      */
-    order_no?: string;
+    order_no: string;
   }
 
   /**
    * 响应参数
    */
   export interface Response {
-    /**
-     * 预约单详情
-     */
-    items?: MeiReservationDetail[];
-  }
-
-  /**
-   * 预约单详情
-   */
-  export interface MeiReservationDetail {
     /**
      * 预约单单号
      */
@@ -79,10 +69,6 @@ export namespace BeautyAppointmentMeiReservationGet {
      */
     from_source?: number;
     /**
-     * 店铺id
-     */
-    kdt_id?: number;
-    /**
      * 预约取消原因
      */
     cancel_reason?: string;
@@ -116,15 +102,11 @@ export namespace BeautyAppointmentMeiReservationGet {
      */
     out_biz_state?: number;
     /**
-     * 分店id
-     */
-    dept_id?: number;
-    /**
      * 取消时间
      */
     cancel_at?: number;
     /**
-     * 预约项
+     * 预约的项目列表
      */
     reservation_items?: MeiReservationItem[];
     /**
@@ -134,7 +116,7 @@ export namespace BeautyAppointmentMeiReservationGet {
   }
 
   /**
-   * 预约项
+   * 预约的项目列表
    */
   export interface MeiReservationItem {
     /**

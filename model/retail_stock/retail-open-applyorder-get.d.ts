@@ -6,11 +6,11 @@ export namespace RetailStockRetailOpenApplyorderGet {
     /**
      * 要货单编号
      */
-    apply_order_no?: string;
+    apply_order_no: string;
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

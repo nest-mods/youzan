@@ -6,7 +6,7 @@ export namespace SelffetchcodeTradeSelffetchcodeApply {
     /**
      * 消费者端的到店自提订单提货码
      */
-    code?: string;
+    code: string;
     /**
      * 核销人（开发者根据自己业务规则传，一般为网点号或手机号）
      */

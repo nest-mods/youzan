@@ -6,7 +6,7 @@ export namespace StoredValueCardCardvoucherValuecardFundPay {
     /**
      * 支付金额（单位：分）
      */
-    amount?: number;
+    amount: number;
     /**
      * 用户buyerId，与手机号码二选一
      */
@@ -16,11 +16,11 @@ export namespace StoredValueCardCardvoucherValuecardFundPay {
   * 可通过以下接口获取用户可用储值卡列表，以及卡内余额
   * youzan.cardvoucher.valuecard.info.bysup.query
      */
-    card_nos?: string[];
+    card_nos: string[];
     /**
      * 商品名称（长度必须小于24）
      */
-    goods_name?: string;
+    goods_name: string;
     /**
      * 用户手机号码，与buyerId 二选一
      */
@@ -28,11 +28,11 @@ export namespace StoredValueCardCardvoucherValuecardFundPay {
     /**
      * 操作人姓名。如果是商家发起支付，请填写商家操作人姓名。如果是用户发起，请填写用户姓名（长度必须小于24）
      */
-    operator?: string;
+    operator: string;
     /**
      * 支付请求号，唯一标识一次支付请求，调用方自定义，请确保唯一（长度必须小于24）
      */
-    pay_request_no?: string;
+    pay_request_no: string;
     /**
      * 支付描述（长度必须小于100）
      */

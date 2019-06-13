@@ -6,7 +6,7 @@ export namespace StoredValueCardCardvoucherValuecardFundRecharge {
     /**
      * 充值金额（单位：分）
      */
-    amount?: number;
+    amount: number;
     /**
      * 用户buyerId，与手机号码二选一
      */
@@ -18,15 +18,15 @@ export namespace StoredValueCardCardvoucherValuecardFundRecharge {
     /**
      * 操作人手机号码
      */
-    operator_mobile?: string;
+    operator_mobile: string;
     /**
      * 操作人姓名。如果是商家发起充值，请填写商家操作人姓名。如果是用户发起，请填写用户姓名（长度必须小于24）
      */
-    operator_name?: string;
+    operator_name: string;
     /**
      * 充值请求号，唯一标识一次充值请求，调用方自定义，请确保唯一（长度必须小于24）
      */
-    recharge_request_no?: string;
+    recharge_request_no: string;
     /**
      * 描述（长度必须小于100）
      */

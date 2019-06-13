@@ -6,11 +6,11 @@ export namespace PayQrcodeTradeQrlabelSearch {
     /**
      * 页码
      */
-    page_no?: number;
+    page_no: number;
     /**
      * 每页数量
      */
-    page_size?: number;
+    page_size: number;
     /**
      * 网点编号
      */

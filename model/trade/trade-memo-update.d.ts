@@ -14,7 +14,7 @@ export namespace TradeTradeMemoUpdate {
     /**
      * 订单号
      */
-    tid?: string;
+    tid: string;
   }
 
   /**

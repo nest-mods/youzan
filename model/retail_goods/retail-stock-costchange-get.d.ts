@@ -6,11 +6,11 @@ export namespace RetailGoodsRetailStockCostchangeGet {
     /**
      * 调价单单号
      */
-    business_order_no?: string;
+    business_order_no: string;
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 是否显示明细
      */

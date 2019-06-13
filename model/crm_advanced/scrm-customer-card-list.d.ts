@@ -25,7 +25,7 @@ export namespace CrmAdvancedScrmCustomerCardList {
     /**
      * 页码
      */
-    page?: number;
+    page: number;
   }
 
   /**

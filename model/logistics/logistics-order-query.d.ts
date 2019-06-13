@@ -6,15 +6,15 @@ export namespace LogisticsLogisticsOrderQuery {
     /**
      * 店铺id
      */
-    kdt_id?: number;
+    kdt_id: number;
     /**
      * 接入来源 餐饮：1001 其他：1002
      */
-    source_id?: number;
+    source_id: number;
     /**
      * 订单id
      */
-    tid?: string;
+    tid: string;
   }
 
   /**

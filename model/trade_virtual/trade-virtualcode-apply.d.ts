@@ -6,7 +6,7 @@ export namespace TradeVirtualTradeVirtualcodeApply {
     /**
      * 使用购买虚拟商品获得的码
      */
-    code?: string;
+    code: string;
   }
 
   /**

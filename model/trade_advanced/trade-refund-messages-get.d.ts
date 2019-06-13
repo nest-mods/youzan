@@ -6,7 +6,7 @@ export namespace TradeAdvancedTradeRefundMessagesGet {
     /**
      * 退款ID
      */
-    refund_id?: string;
+    refund_id: string;
   }
 
   /**

@@ -6,7 +6,7 @@ export namespace CrmAdvancedScrmCardGet {
     /**
      * 商家会员卡的唯一标识
      */
-    card_alias?: string;
+    card_alias: string;
   }
 
   /**

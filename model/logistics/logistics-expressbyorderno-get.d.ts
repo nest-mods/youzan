@@ -6,7 +6,7 @@ export namespace LogisticsLogisticsExpressbyordernoGet {
     /**
      * 订单号
      */
-    tid?: string;
+    tid: string;
   }
 
   /**
@@ -46,7 +46,11 @@ export namespace LogisticsLogisticsExpressbyordernoGet {
      */
     id?: number;
     /**
-     * 0：在途 1：揽件 2：疑难 3：签收 4：退签 5：派件 6：退回
+     * 0,未签收
+  * 2,疑难件
+  * 3,已签收
+  * 5,派送中
+  * 7,运输中
      */
     state?: number;
     /**

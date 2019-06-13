@@ -6,19 +6,19 @@ export namespace ShopShopAddressCreate {
     /**
      * 详细地址
      */
-    address?: string;
+    address: string;
     /**
      * 区
      */
-    area?: string;
+    area: string;
     /**
      * 市
      */
-    city?: string;
+    city: string;
     /**
      * 联系人
      */
-    contact_name?: string;
+    contact_name: string;
     /**
      * 是否发票地址
      */
@@ -38,15 +38,15 @@ export namespace ShopShopAddressCreate {
     /**
      * 手机号
      */
-    mobile?: string;
+    mobile: string;
     /**
      * 省
      */
-    province?: string;
+    province: string;
     /**
      * 地区id
      */
-    region_id?: number;
+    region_id: number;
   }
 
   /**

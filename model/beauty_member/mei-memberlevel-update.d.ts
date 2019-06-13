@@ -6,23 +6,23 @@ export namespace BeautyMemberMeiMemberlevelUpdate {
     /**
      * 要更新的等级的等级id
      */
-    level_id?: number;
+    level_id: number;
     /**
      * 等级名称
      */
-    level_name?: string;
+    level_name: string;
     /**
      * 权益列表
      */
-    level_right_settings?: MeiLevelRightSetting[];
+    level_right_settings: MeiLevelRightSetting[];
     /**
      * 成长值
      */
-    level_value?: number;
+    level_value: number;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
   }
 
   /**

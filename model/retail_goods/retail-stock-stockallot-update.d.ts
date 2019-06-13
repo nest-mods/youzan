@@ -6,19 +6,19 @@ export namespace RetailGoodsRetailStockStockallotUpdate {
     /**
      * 业务单号
      */
-    biz_bill_no?: string;
+    biz_bill_no: string;
     /**
      * 调拨单商品明细
      */
-    business_order_items?: OutStockAllotItem[];
+    business_order_items: OutStockAllotItem[];
     /**
      * 调拨类型（11.店间调拨; 12.店内调拨）
      */
-    business_type?: number;
+    business_type: number;
     /**
      * 调出仓库
      */
-    from_kdt_id?: number;
+    from_kdt_id: number;
     /**
      * 备注
      */
@@ -26,11 +26,11 @@ export namespace RetailGoodsRetailStockStockallotUpdate {
     /**
      * 系统来源
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 调入仓库
      */
-    to_kdt_id?: number;
+    to_kdt_id: number;
   }
 
   /**

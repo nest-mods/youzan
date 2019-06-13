@@ -6,11 +6,11 @@ export namespace CustomerScrmCustomerCreate {
     /**
      * 创建客户所需信息
      */
-    customer_create?: CustomerCreate;
+    customer_create: CustomerCreate;
     /**
      * 注册手机号
      */
-    mobile?: string;
+    mobile: string;
   }
 
   /**

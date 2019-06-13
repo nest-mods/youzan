@@ -6,11 +6,11 @@ export namespace RetailGoodsRetailProductSkusConfirmationDelete {
     /**
      * 待删除商品库商品Id列表
      */
-    sku_ids?: number[];
+    sku_ids: number[];
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    source?: string;
+    source: string;
   }
 
   /**

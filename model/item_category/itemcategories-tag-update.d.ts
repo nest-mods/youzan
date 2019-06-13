@@ -6,11 +6,11 @@ export namespace ItemCategoryItemcategoriesTagUpdate {
     /**
      * 商品分组的名称
      */
-    name?: string;
+    name: string;
     /**
      * 商品分组ID
      */
-    tag_id?: number;
+    tag_id: number;
   }
 
   /**

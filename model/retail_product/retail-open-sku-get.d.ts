@@ -6,11 +6,11 @@ export namespace RetailProductRetailOpenSkuGet {
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 商品SKU编码
      */
-    sku_code?: string;
+    sku_code: string;
     /**
      * 仓库编码
      */

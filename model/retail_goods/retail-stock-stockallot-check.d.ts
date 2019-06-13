@@ -6,11 +6,11 @@ export namespace RetailGoodsRetailStockStockallotCheck {
     /**
      * 单据号列表
      */
-    biz_bill_nos?: string[];
+    biz_bill_nos: string[];
     /**
      * 是否通过
      */
-    is_ok?: boolean;
+    is_ok: boolean;
     /**
      * 驳回理由
      */
@@ -18,7 +18,7 @@ export namespace RetailGoodsRetailStockStockallotCheck {
     /**
      * 来源
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

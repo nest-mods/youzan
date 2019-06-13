@@ -14,7 +14,7 @@ export namespace RetailProductRetailOpenOfflineSpuRelease {
     /**
      * 是否上架
      */
-    display?: number;
+    display: number;
     /**
      * 组合商品可选填商品编码
      */
@@ -30,7 +30,7 @@ export namespace RetailProductRetailOpenOfflineSpuRelease {
     /**
      * 称重非称重
      */
-    measurement?: string;
+    measurement: string;
     /**
      * 建议指导价下限
      */
@@ -38,11 +38,11 @@ export namespace RetailProductRetailOpenOfflineSpuRelease {
     /**
      * 商品名称
      */
-    name?: string;
+    name: string;
     /**
      * 图片地址
      */
-    photo_url?: string;
+    photo_url: string;
     /**
      * 不多于五个
      */
@@ -50,11 +50,11 @@ export namespace RetailProductRetailOpenOfflineSpuRelease {
     /**
      * 零售价
      */
-    retail_price?: string;
+    retail_price: string;
     /**
      * 来源
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 下架分店店铺id列表
      */
@@ -165,6 +165,10 @@ export namespace RetailProductRetailOpenOfflineSpuRelease {
      * 
      */
     specs?: SpecKeyValue[];
+    /**
+     * 组合商品Id
+     */
+    spu_combine_id?: number;
   }
 
   /**

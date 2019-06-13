@@ -6,7 +6,7 @@ export namespace SalesmanSalesmanTradesAccountGet {
     /**
      * 订单号
      */
-    order_no?: string;
+    order_no: string;
   }
 
   /**

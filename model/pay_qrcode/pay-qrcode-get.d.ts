@@ -6,7 +6,7 @@ export namespace PayQrcodePayQrcodeGet {
     /**
      * 二维码标识
      */
-    qr_id?: number;
+    qr_id: number;
   }
 
   /**

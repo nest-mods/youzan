@@ -141,6 +141,10 @@ export namespace ExtensionAnalysisDatacenterPspagesourceFetch {
      * 创建时间
      */
     create_at?: string;
+    /**
+     * 推广分析内创建的标签
+     */
+    tag_name?: string;
   }
 
 }

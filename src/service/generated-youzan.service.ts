@@ -1,9 +1,9 @@
 import { YouzanOptions } from '../interfaces';
 import { RequestService } from './request.service';
-import { ShopShopGet, ShopShopBasicGet, ShopShopStatusGet, ShopShopAddressList, ShopShopAddressGet, ShopShopAddressCreate, ShopShopAddressDelete, ShopShopAddressUpdate, ItemItemDelete, ItemItemGet, ItemItemsCustomGet, ItemItemsInventoryGet, ItemItemUpdateListing, ItemItemUpdateDelisting, ItemSkusCustomGet, ItemItemSkuGet, ItemItemSkuUpdate, ItemItemQuantityUpdate, ItemItemTemplateListSearch, ItemItemCreate, ItemItemUpdate, ItemItemSearch, ItemItemsOnsaleGet, ItemItemPicUpdate, ItemCategoryItemcategoriesTagAdd, ItemCategoryItemcategoriesTagDelete, ItemCategoryItemcategoriesTagUpdate, ItemCategoryItemcategoriesTagsGet, ItemCategoryItemcategoriesTaglistSearch, ItemCategoryItemcategoriesGet, ReviewsItemReviewsQuery, ReviewsItemReviewsCount, TradeTradesSoldOuterGet, TradeTradeStarUpdate, TradeTradeMemoUpdate, TradeTradePriceUpdate, TradeTradesSoldGet, TradeTradeGet, TradeAdvancedTradeRefundGet, TradeAdvancedTradeRefundSearch, TradeAdvancedTradeRefundMessagesGet, LogisticsLogisticsTemplateCreate, LogisticsLogisticsTemplateSearch, LogisticsRegionsGet, LogisticsLogisticsExpressGet, LogisticsLogisticsFeeGet, LogisticsLogisticsExpressbyordernoGet, LogisticsLogisticsExpressbyordernoSearch, LogisticsLogisticsGoodsexpressGet, LogisticsLogisticsSettingUpdate, LogisticsLogisticsLocalGet, LogisticsLogisticsSettingGet, LogisticsLogisticsOnlineMarksign, LogisticsLogisticsOrderBatchQuery, LogisticsLogisticsOrderQuery, LogisticsLogisticsLocalMultipleUpdate, TradeVirtualTradeVirtualcodeApply, TradeVirtualTradeVirtualcodeGet, PayQrcodePayQrcodeCreate, PayQrcodePayQrcodesGet, PayQrcodePayQrcodeGet, PayQrcodeTradeQrcodeHasoutidGet, PayQrcodeTradeQrcodeExtCreate, PayQrcodeTradeQrlabelSearch, PayQrcodeTradesQrGet, CouponAdvancedUmpPresentGive, CouponAdvancedUmpPresentsOngoingAll, CouponAdvancedUmpPromotionGet, CouponAdvancedUmpMemberpriceQuery, CouponAdvancedUmpGrouponOrdergroupdetailsGet, CouponAdvancedUmpLimitdiscountGet, CouponAdvancedUmpLimitdiscountDetailSearch, CouponAdvancedUmpMemberpriceUpdate, CouponAdvancedUmpLimitdiscountDetailQuery, CouponAdvancedUmpLimitdiscountSearch, CouponUmpPromocodeAdd, CouponUmpPromocodeDetailGet, CouponUmpPromocodeBuyerSearch, CouponUmpPromocardAdd, CouponUmpCouponConsumeVerify, CouponUmpCouponConsumeVerifylogsGet, CouponUmpCouponConsumeGet, CouponUmpCouponTake, CouponUmpCouponConsumeFetchlogsGet, CouponUmpCouponSearch, CouponUmpCouponDetailGet, CouponUmpCouponsUnfinishedSearch, CouponUmpPromocardDetailGet, CouponUmpPromocardBuyerSearch, SalesmanSalesmanCustomersGet, SalesmanSalesmanAccountScoreSearch, SalesmanSalesmanAccountsGet, SalesmanSalesmanTradesAccountGet, SalesmanSalesmanItemShareGet, SalesmanSalesmanItemsGet, SalesmanSalesmanAccountUpdate, SalesmanSalesmanAccountAdd, SalesmanSalesmanAccountGet, SalesmanSalesmanTradesGet, MultiStoreMultistoreOfflineCreate, MultiStoreMultistoreOfflineDelete, MultiStoreMultistoreOfflineUpdate, MultiStoreMultistoreOfflineSearch, MultiStoreMultistoreSettingGet, MultiStoreMultistoreGoodsDeliveryUpdate, MultiStoreMultistoreGoodsSingleskuUpdate, MultiStoreMultistoreGoodsDeliveryList, MultiStoreMultistoreGoodsDeliveryGet, MultiStoreMultistoreGoodsSkuGet, MultiStoreMultistoreGoodsSkuUpdate, MultiStoreMultistoreOfflineGet, UserUserBasicGet, UserUsersWeixinFollowersInfoPull, UserUsersWeixinFollowerGet, UserUsersWeixinFollowerGets, UserUsersWeixinFollowersInfoSearch, UserUsersWeixinFollowersPull, UserUsersWeixinFollowersGet, UserUserWeixinOpenidGet, UserUsersAccountCheck, CrmAdvancedScrmCardCreate, CrmAdvancedScrmCardEnable, CrmAdvancedScrmCardDelete, CrmAdvancedScrmCardDisable, CrmAdvancedScrmCardUpdate, CrmAdvancedScrmCardList, CrmAdvancedScrmCustomerSearch, CrmAdvancedScrmCustomerGet, CrmAdvancedScrmCardGet, CrmAdvancedScrmCustomerCardDelete, CrmAdvancedScrmCustomerInfoGet, CrmAdvancedScrmCardUrlGet, CrmAdvancedScrmCustomerCardList, CrmAdvancedScrmCustomerCardGrant, PointsCrmFansPointsGet, PointsCrmCustomerPointsChangelogSearch, PointsCrmCustomerPointsChangelogGet, PointsCrmCustomerPointsIncrease, PointsCrmCustomerPointsDecrease, PointsCrmCustomerPointsSync, BuyerCartTradeCartCount, BuyerCartTradeCartUpdate, BuyerCartTradeCartEmpty, BuyerCartTradeCartList, BuyerCartTradeCartDelete, BuyerCartTradeCartAdd, BuyerBillTradeBillGoodUrlGet, BuyerBillTradeBillGoodsUrlGet, BuyerTradeTradeLaterReceiveUpdate, BuyerTradeTradeConfirmReceiveUpdate, BuyerTradeTradeBillCancelGet, BuyerRefundTradeRefundModify, BuyerRefundTradeRefundIntervene, BuyerRefundTradeRefundApply, BuyerRefundTradeRefundClose, BuyerRefundTradeReturngoodsFill, BuyerRefundTradeRefundConditionGet, ItemHotelItemHotelRoomSet, ItemHotelItemHotelRoomUpdate, ItemHotelItemHotelRoomQuery, RetailProductRetailOpenSpuGet, RetailProductRetailOpenSkuQuery, RetailProductRetailOpenCategoryUpdate, RetailProductRetailOpenOnlineSpuRelease, RetailProductRetailOpenOfflineSpuRelease, RetailProductRetailOpenOnlineSpuGet, RetailProductRetailOpenOfflineSpuQuery, RetailProductRetailOpenCategoryCreate, RetailProductRetailOpenSpuDelete, RetailProductRetailOpenCategoryQuery, RetailProductRetailOpenSpuQuery, RetailProductRetailOpenOnlineSpuQuery, RetailProductRetailOpenCategoryDelete, RetailProductRetailOpenSpuCreate, RetailProductRetailOpenSpuUpdate, RetailProductRetailOpenSkuGet, BeautyAppointmentMeiReservationTimeRangeGet, BeautyAppointmentMeiReservationCancel, BeautyAppointmentMeiReservationTechnicianList, BeautyAppointmentMeiReservationGet, BeautyAppointmentMeiReservationList, BeautyAppointmentMeiReservationUpdate, BeautyAppointmentMeiReservationCreate, LevelMembershipCrmCustomerGrowthIncrease, LevelMembershipCrmCustomerGrowthDecrease, BeautyStaffMeiStaffDelete, BeautyStaffMeiStaffRecover, BeautyStaffMeiStaffDetailQuery, BeautyStaffMeiStaffCreate, BeautyStaffMeiStaffPageQuery, BeautyStaffMeiStaffUpdate, AccountImportUserPlatformImport, RetailTradeRetailOpenRefundorderRefuse, RetailTradeRetailOpenReturnorderGet, RetailTradeRetailOpenRefundorderGoodsreturnAgree, RetailTradeRetailOpenRefundorderQuery, RetailTradeRetailOpenRefundorderGet, RetailTradeRetailOpenReturnorderConfirm, RetailTradeRetailOpenDeliveryorderGet, RetailTradeRetailOpenReturnorderRefuse, RetailTradeRetailOpenReturnorderQuery, RetailTradeRetailOpenRefundorderConfirm, RetailTradeRetailOpenDeliveryorderConfirm, RetailTradeRetailOpenDeliveryorderQuery, SupplierFenxiaoSupportOrderDeliveritemGet, SupplierFenxiaoSupportOrderSearch, SupplierFenxiaoSupportOrderDeliver, SupplierFenxiaoSupportOrderDetailGet, RetailGoodsRetailProductUnitsDelete, RetailGoodsRetailProductUnitUpdate, RetailGoodsRetailProductUnitCreate, RetailGoodsRetailProductUnitsSearch, RetailGoodsRetailProductCategorySearch, RetailGoodsRetailProductCategoryDelete, RetailGoodsRetailProductCategoryUpdate, RetailGoodsRetailProductCategoryCreate, RetailGoodsRetailProductSkuGet, RetailGoodsRetailProductSkusSearch, RetailGoodsRetailProductSkuUpdate, RetailGoodsRetailProductSkusDelete, RetailGoodsRetailProductSkucategoriesUpdate, RetailGoodsRetailProductSkuCreate, RetailGoodsRetailProductSpusSearch, RetailGoodsRetailProductSpuCreate, RetailGoodsRetailProductSpuUpdate, RetailGoodsRetailProductSpuGet, RetailGoodsRetailProductSpusBatchUpdate, RetailGoodsRetailProductSpusBatchDelete, RetailGoodsRetailProductOfflineCreate, RetailGoodsRetailProductOfflineUpdate, RetailGoodsRetailProductOfflineGet, RetailGoodsRetailProductsOfflineDisplay, RetailGoodsRetailProductsOfflineDelete, RetailGoodsRetailProductsOfflineSearch, RetailGoodsRetailStockBizorderSearch, RetailGoodsRetailStocksStockinSearch, RetailGoodsRetailStockStockinGet, RetailGoodsRetailStockStockinCreate, RetailGoodsRetailStocksStockcheckSearch, RetailGoodsRetailStockStockcheckGet, RetailGoodsRetailStockStockcheckUpdate, RetailGoodsRetailStockStockcheckCreate, RetailGoodsRetailStocksStockoutSearch, RetailGoodsRetailStockStockoutGet, RetailGoodsRetailStockStockoutCreate, RetailGoodsRetailStockStockreturnChainCreate, RetailGoodsRetailStockStockreturnCreate, RetailGoodsRetailStockStockreturnGet, RetailGoodsRetailStockCostchangeGet, RetailGoodsRetailStockCostchangeCreate, RetailGoodsRetailStockVendorsSearch, RetailGoodsRetailStockVendorGet, RetailGoodsRetailStockVendorUpdate, RetailGoodsRetailStockVendorCreate, RetailGoodsRetailProductCategoriesSearch, RetailGoodsRetailProductSkusConfirmationDelete, RetailGoodsRetailProductSellSkuUpdate, RetailGoodsRetailProductOnlineUpdate, RetailGoodsRetailProductsOnlineDelete, RetailGoodsRetailProductsOnlineDisplay, RetailGoodsRetailProductOnlineGet, RetailGoodsRetailStockWarehouseSingleCreate, RetailGoodsRetailStockRelationChange, RetailGoodsRetailStockStockallotCreate, RetailGoodsRetailStockStockallotCheck, RetailGoodsRetailStockStockallotUpdate, RetailGoodsRetailStockStockallotOut, RetailGoodsRetailStockStockallotIn, RetailGoodsRetailStockStockallotGet, RetailGoodsRetailStockStockallotSearch, RetailGoodsRetailStockWarehouseConfigGet, RetailGoodsRetailStockWarehouseConfigSet, RetailGoodsRetailStockGoodsapplyUpdate, RetailGoodsRetailStockDeliveryOut, RetailGoodsRetailStockDeliveryIn, RetailGoodsRetailStockGoodsapplyClose, RetailGoodsRetailStockGoodsapplySearch, RetailGoodsRetailStockDeliverySearch, RetailGoodsRetailStockDeliveryGet, RetailGoodsRetailProductsOnlineSearch, RetailGoodsRetailStockWarehouseUpdate, RetailGoodsRetailStockGoodsapplyGet, RetailGoodsRetailStockWarehouseSearch, RetailGoodsRetailStockWarehouseGet, RetailGoodsRetailStockStockallotClose, RetailGoodsRetailStockGoodsapplyCheck, RetailGoodsRetailStockWarehouseStatusUpdate, RetailGoodsRetailStockGoodsapplyCreate, RetailGoodsRetailProductOnlineCreate, TagScrmTagRelationDelete, TagScrmTagRelationGet, TagScrmTagRelationAdd, BeautyMemberMeiCustomerPointsDecrease, BeautyMemberMeiCustomerRightsList, BeautyMemberMeiCustomerSecretfileinfoUpdate, BeautyMemberMeiCustomerSettingGet, BeautyMemberMeiCustomerSecretfileinfoGet, BeautyMemberMeiCardOffsale, BeautyMemberMeiCustomerFileinfoUpdate, BeautyMemberMeiCustomerGet, BeautyMemberMeiCustomerFiletemplateUpdate, BeautyMemberMeiCardCreate, BeautyMemberMeiMemberlevelCreate, BeautyMemberMeiMemberlevelList, BeautyMemberMeiCardUpdate, BeautyMemberMeiCustomerPointsIncrease, BeautyMemberMeiCardDelete, BeautyMemberMeiCustomerTradeinfoGet, BeautyMemberMeiCardGet, BeautyMemberMeiCardOnsale, BeautyMemberMeiCustomerFileinfoGet, BeautyMemberMeiCustomerCreate, BeautyMemberMeiCustomerAssetsinfoGet, BeautyMemberMeiCustomerUpdate, BeautyMemberMeiCardList, BeautyMemberMeiCardCustomerList, BeautyMemberMeiCustomerFiletemplateGet, BeautyMemberMeiCustomerList, BeautyMemberMeiMemberlevelUpdate, BeautyMemberMeiCustomerSettingUpdate, BeautyMemberMeiCustomerTagList, BeautyMemberMeiMemberlevelGet, BeautyMemberMeiMemberlevelDelete, SelffetchcodeTradeSelffetchcodeGet, SelffetchcodeTradeSelffetchcodeApply, TradeDeliveryLogisticsOnlineUpdate, TradeDeliveryTradeDcDeliveryDelivermultiissue, TradeDeliveryTradeDcDeliveryOrdersingleitemsend, TradeDeliveryLogisticsOnlineConfirm, TradeDeliveryTradeDcQueryQuerybyorderno, TagsUsersWeixinFollowerTagsAdd, TagsUsersWeixinFollowerTagsDelete, TagsUsersWeixinFollowerTagsGet, BeautyCashierMeiCashierRechargeGet, BeautyCashierMeiCashierPay, BeautyCashierMeiCashierPayGet, BeautyCashierMeiCashierRecharge, ExtensionAnalysisDatacenterPspagesourceDataFetch, ExtensionAnalysisDatacenterPspagesourceCreate, ExtensionAnalysisDatacenterPsstockFetch, ExtensionAnalysisDatacenterPspagesourceFetch, ExtensionAnalysisDatacenterPspagesourceOrderFetch, ExtensionAnalysisDatacenterPssourceFetch, ItemStandardItemStandardGet, ItemStandardItemStandardGetbycode, ItemStandardItemStandardCreate, ItemStandardItemStandardSearch, CircleLogisticsOnlineDelay, CircleLogisticsOnlineCanceldelay, CircleTradeDcQueryMultiperiodQuerydeliveryrecords, CircleTradeDcQueryMultiperiodQuerylatestplan, CircleTradeDcQueryMultiperioddetail, StoredValueCardCardvoucherValuecardRechgRcdByacpSearch, StoredValueCardCardvoucherValuecardFundPay, StoredValueCardCardvoucherValuecardRfndRcdBypubSearch, StoredValueCardCardvoucherValuecardFundRecharge, StoredValueCardCardvoucherValuecardRechgRcdBypubSearch, StoredValueCardCardvoucherValuecardRfndRcdBysupSearch, StoredValueCardCardvoucherValuecardPayRcdBysupSearch, StoredValueCardCardvoucherValuecardFundRefund, StoredValueCardCardvoucherValuecardPayRcdBypubSearch, StoredValueCardCardvoucherValuecardInfoBypubSearch, StoredValueCardCardvoucherValuecardFundRechargeGet, StoredValueCardCardvoucherValuecardInfoQuery, StoredValueCardCardvoucherValuecardInfoBysupQuery, BeautyShopMeiDeptSecurityCodeSwitch, BeautyShopMeiDeptBrandinfoGet, BeautyShopMeiDeptSecurityCodeUpdate, BeautyShopMeiDeptSecurityCodeGet, BeautyShopMeiDeptSecurityCodelogList, BeautyShopMeiDeptGet, BeautyShopMeiDeptAvailableQuery, BeautyShopMeiDeptBind, BeautyShopMeiDeptStatusGet, BeautyStockMeiStockGet, BeautyStockMeiStockWarehouseList, BeautyStockMeiStockCreate, BeautyStockMeiStockList, RetailPermissionSamPermsCheckGet, BeautyOrderMeiOrderUpdate, BeautyOrderMeiOrderQuery, BeautyOrderMeiOrderList, BeautyOrderMeiOrderCancel, BeautyOrderMeiOrderCreate, VirtualticketTradeVirtualticketVerifycode, VirtualticketTradeVirtualticketGet, VirtualticketTradeVirtualticketVerifyticket, SellerRefundTradeRefundAgree, SellerRefundTradeRefundRefuse, SellerRefundTradeReturngoodsRefuse, SellerRefundTradeReturngoodsAgree, SellerRefundTradeRefundSellerActive, BeautyItemMeiGoodsProductCategoryList, BeautyItemMeiGoodsServingCategoryCreate, BeautyItemMeiGoodsServingUpdate, BeautyItemMeiGoodsProductCreate, BeautyItemMeiGoodsProductCategoryDelete, BeautyItemMeiGoodsServingSkuList, BeautyItemMeiGoodsServingCreate, BeautyItemMeiGoodsProductTagUpdate, BeautyItemMeiGoodsProductTagDelete, BeautyItemMeiGoodsProductSkuList, BeautyItemMeiGoodsServingTagCreate, BeautyItemMeiGoodsProductUpdate, BeautyItemMeiGoodsProductSkuItemList, BeautyItemMeiGoodsProductCategoryCreate, BeautyItemMeiGoodsProductTagCreate, BeautyItemMeiGoodsServingCategoryList, BeautyItemMeiGoodsServingTagDelete, BeautyItemMeiGoodsServingSkuCreate, BeautyItemMeiGoodsShelveUpdate, BeautyItemMeiGoodsServingGet, BeautyItemMeiGoodsProductGet, BeautyItemMeiGoodsServingList, BeautyItemMeiGoodsServingTagList, BeautyItemMeiGoodsServingTagUpdate, BeautyItemMeiGoodsProductTagList, BeautyItemMeiGoodsProductList, BeautyItemMeiGoodsServingCategoryDelete, BeautyItemMeiGoodsProductSkuItemCreate, BeautyItemMeiGoodsProductCategoryUpdate, BeautyItemMeiGoodsProductSkuCreate, BeautyItemMeiGoodsServingCategoryUpdate, BeautyItemMeiGoodsServingSkuItemList, BeautyItemMeiGoodsServingSkuItemCreate, BuyerAddressUserAddressAdd, BuyerAddressUserAddressUpdate, BuyerAddressUserAddressGet, RetailSupplierRetailOpenSupplierUpdate, RetailSupplierRetailOpenSupplierDelete, RetailSupplierRetailOpenSupplierQuery, RetailSupplierRetailOpenSupplierCreate, MeiPromoterMeiPromoterList, MeiPromoterMeiPromoterCustomerBindUpdate, MeiPromoterMeiPromoterCustomerList, MeiPromoterMeiPromoterCustomerBind, MeiPromoterMeiPromoterGet, MeiPromoterMeiPromoterOrderList, MeiPromoterMeiPromoterCreate, MeiPromoterMeiPromoterInviteeList, RetailStockRetailOpenStockcheckorderGet, RetailStockRetailOpenStockinorderQuery, RetailStockRetailOpenApplyorderCheck, RetailStockRetailOpenDistributionorderGet, RetailStockRetailOpenStockAdjust, RetailStockRetailOpenStockoutorderGet, RetailStockRetailOpenStockcheckCreate, RetailStockRetailOpenStockoutorderQuery, RetailStockRetailOpenAllotorderGet, RetailStockRetailOpenStockinorderGet, RetailStockRetailOpenPurchaseorderGet, RetailStockRetailOpenApplyorderGet, RetailStockRetailOpenStockinorderCreate, RetailStockRetailOpenStockoutorderCreate, RetailShopRetailOpenWarehouseQuery, RetailShopRetailOpenStaffQuery, CustomerScrmCustomerCreate, CustomerScrmCustomerUpdate, CustomerScrmCustomerRemarkUpdate, CustomerScrmCustomerGet, CustomerScrmCustomerSearch } from '../../model';
+import { ShopShopGet, ShopShopBasicGet, ShopShopStatusGet, ShopShopAddressList, ShopShopAddressGet, ShopShopAddressCreate, ShopShopAddressDelete, ShopShopAddressUpdate, ItemItemDelete, ItemItemGet, ItemItemsCustomGet, ItemItemsInventoryGet, ItemItemUpdateListing, ItemItemUpdateDelisting, ItemSkusCustomGet, ItemItemSkuGet, ItemItemSkuUpdate, ItemItemQuantityUpdate, ItemItemTemplateListSearch, ItemItemCreate, ItemItemUpdate, ItemItemSearch, ItemItemsOnsaleGet, ItemItemPicUpdate, ItemCategoryItemcategoriesTagAdd, ItemCategoryItemcategoriesTagDelete, ItemCategoryItemcategoriesTagUpdate, ItemCategoryItemcategoriesTagsGet, ItemCategoryItemcategoriesTaglistSearch, ItemCategoryItemcategoriesGet, ReviewsItemReviewsQuery, ReviewsItemReviewsCount, TradeTradesSoldOuterGet, TradeTradeStarUpdate, TradeTradeMemoUpdate, TradeTradePriceUpdate, TradeTradesSoldGet, TradeTradeGet, TradeAdvancedTradeRefundGet, TradeAdvancedTradeRefundMessagesGet, TradeAdvancedTradeRefundSearch, LogisticsLogisticsTemplateCreate, LogisticsLogisticsTemplateSearch, LogisticsRegionsGet, LogisticsLogisticsExpressGet, LogisticsLogisticsFeeGet, LogisticsLogisticsExpressbyordernoGet, LogisticsLogisticsExpressbyordernoSearch, LogisticsLogisticsGoodsexpressGet, LogisticsLogisticsSettingUpdate, LogisticsLogisticsLocalGet, LogisticsLogisticsSettingGet, LogisticsLogisticsOnlineMarksign, LogisticsLogisticsOrderBatchQuery, LogisticsLogisticsOrderQuery, LogisticsLogisticsLocalMultipleUpdate, TradeVirtualTradeVirtualcodeApply, TradeVirtualTradeVirtualcodeGet, PayQrcodePayQrcodeCreate, PayQrcodePayQrcodesGet, PayQrcodePayQrcodeGet, PayQrcodeTradeQrcodeHasoutidGet, PayQrcodeTradeQrlabelSearch, PayQrcodeTradesQrGet, CouponAdvancedUmpPresentGive, CouponAdvancedUmpPresentsOngoingAll, CouponAdvancedUmpPromotionGet, CouponAdvancedUmpMemberpriceQuery, CouponAdvancedUmpGrouponOrdergroupdetailsGet, CouponAdvancedUmpLimitdiscountGet, CouponAdvancedUmpLimitdiscountDetailSearch, CouponAdvancedUmpMemberpriceUpdate, CouponAdvancedUmpLimitdiscountDetailQuery, CouponAdvancedUmpLimitdiscountSearch, CouponUmpPromocodeAdd, CouponUmpPromocodeDetailGet, CouponUmpPromocodeBuyerSearch, CouponUmpPromocardAdd, CouponUmpCouponConsumeVerify, CouponUmpCouponConsumeVerifylogsGet, CouponUmpCouponConsumeGet, CouponUmpCouponTake, CouponUmpCouponConsumeFetchlogsGet, CouponUmpCouponSearch, CouponUmpCouponDetailGet, CouponUmpCouponsUnfinishedSearch, CouponUmpPromocardDetailGet, CouponUmpPromocardBuyerSearch, SalesmanSalesmanCustomersGet, SalesmanSalesmanAccountScoreSearch, SalesmanSalesmanAccountsGet, SalesmanSalesmanTradesAccountGet, SalesmanSalesmanItemShareGet, SalesmanSalesmanItemsGet, SalesmanSalesmanAccountUpdate, SalesmanSalesmanAccountAdd, SalesmanSalesmanAccountGet, SalesmanSalesmanTradesGet, MultiStoreMultistoreOfflineCreate, MultiStoreMultistoreOfflineDelete, MultiStoreMultistoreOfflineUpdate, MultiStoreMultistoreOfflineSearch, MultiStoreMultistoreSettingGet, MultiStoreMultistoreGoodsDeliveryUpdate, MultiStoreMultistoreGoodsSingleskuUpdate, MultiStoreMultistoreGoodsDeliveryList, MultiStoreMultistoreGoodsDeliveryGet, MultiStoreMultistoreGoodsSkuGet, MultiStoreMultistoreGoodsSkuUpdate, MultiStoreMultistoreOfflineGet, UserUserBasicGet, UserUsersWeixinFollowersInfoPull, UserUsersWeixinFollowerGet, UserUsersWeixinFollowerGets, UserUsersWeixinFollowersInfoSearch, UserUsersWeixinFollowersPull, UserUsersWeixinFollowersGet, UserUserWeixinOpenidGet, UserUsersAccountCheck, CrmAdvancedScrmCardCreate, CrmAdvancedScrmCardEnable, CrmAdvancedScrmCardDelete, CrmAdvancedScrmCardDisable, CrmAdvancedScrmCardUpdate, CrmAdvancedScrmCardList, CrmAdvancedScrmCustomerSearch, CrmAdvancedScrmCustomerGet, CrmAdvancedScrmCardGet, CrmAdvancedScrmCustomerCardDelete, CrmAdvancedScrmCustomerInfoGet, CrmAdvancedScrmCardUrlGet, CrmAdvancedScrmCustomerCardList, CrmAdvancedScrmCustomerCardGrant, PointsCrmFansPointsGet, PointsCrmCustomerPointsChangelogSearch, PointsCrmCustomerPointsChangelogGet, PointsCrmCustomerPointsIncrease, PointsCrmCustomerPointsDecrease, PointsCrmCustomerPointsSync, BuyerCartTradeCartCount, BuyerCartTradeCartUpdate, BuyerCartTradeCartEmpty, BuyerCartTradeCartList, BuyerCartTradeCartDelete, BuyerCartTradeCartAdd, BuyerBillTradeBillGoodUrlGet, BuyerBillTradeBillGoodsUrlGet, BuyerTradeTradeLaterReceiveUpdate, BuyerTradeTradeConfirmReceiveUpdate, BuyerTradeTradeBillCancelGet, BuyerRefundTradeRefundModify, BuyerRefundTradeRefundIntervene, BuyerRefundTradeRefundApply, BuyerRefundTradeRefundClose, BuyerRefundTradeReturngoodsFill, BuyerRefundTradeRefundConditionGet, ItemHotelItemHotelRoomSet, ItemHotelItemHotelRoomUpdate, ItemHotelItemHotelRoomQuery, RetailProductRetailOpenSpuGet, RetailProductRetailOpenSkuQuery, RetailProductRetailOpenCategoryUpdate, RetailProductRetailOpenOnlineSpuRelease, RetailProductRetailOpenOfflineSpuRelease, RetailProductRetailOpenOnlineSpuGet, RetailProductRetailOpenOfflineSpuQuery, RetailProductRetailOpenCategoryCreate, RetailProductRetailOpenSpuDelete, RetailProductRetailOpenCategoryQuery, RetailProductRetailOpenSpuQuery, RetailProductRetailOpenOnlineSpuQuery, RetailProductRetailOpenCategoryDelete, RetailProductRetailOpenSpuCreate, RetailProductRetailOpenSpuUpdate, RetailProductRetailOpenSkuGet, BeautyAppointmentMeiReservationTimeRangeGet, BeautyAppointmentMeiReservationCancel, BeautyAppointmentMeiReservationTechnicianList, BeautyAppointmentMeiReservationGet, BeautyAppointmentMeiReservationList, BeautyAppointmentMeiReservationUpdate, BeautyAppointmentMeiReservationCreate, LevelMembershipCrmCustomerGrowthIncrease, LevelMembershipCrmCustomerGrowthGet, LevelMembershipCrmCustomerGrowthDecrease, LevelMembershipCrmCustomerGrowthList, BeautyStaffMeiStaffDelete, BeautyStaffMeiStaffRecover, BeautyStaffMeiStaffDetailQuery, BeautyStaffMeiStaffCreate, BeautyStaffMeiStaffPageQuery, BeautyStaffMeiStaffUpdate, AccountImportUserPlatformImport, RetailTradeRetailOpenRefundorderRefuse, RetailTradeRetailOpenReturnorderGet, RetailTradeRetailOpenRefundorderGoodsreturnAgree, RetailTradeRetailOpenRefundorderQuery, RetailTradeRetailOpenRefundorderGet, RetailTradeRetailOpenReturnorderConfirm, RetailTradeRetailOpenDeliveryorderGet, RetailTradeRetailOpenReturnorderRefuse, RetailTradeRetailOpenReturnorderQuery, RetailTradeRetailOpenRefundorderConfirm, RetailTradeRetailOpenDeliveryorderConfirm, RetailTradeRetailOpenDeliveryorderQuery, SupplierFenxiaoSupportOrderDeliveritemGet, SupplierFenxiaoSupportOrderSearch, SupplierFenxiaoSupportOrderDeliver, SupplierFenxiaoSupportOrderDetailGet, RetailGoodsRetailProductUnitsDelete, RetailGoodsRetailProductUnitUpdate, RetailGoodsRetailProductUnitCreate, RetailGoodsRetailProductUnitsSearch, RetailGoodsRetailProductCategorySearch, RetailGoodsRetailProductCategoryDelete, RetailGoodsRetailProductCategoryUpdate, RetailGoodsRetailProductCategoryCreate, RetailGoodsRetailProductSkuGet, RetailGoodsRetailProductSkusSearch, RetailGoodsRetailProductSkuUpdate, RetailGoodsRetailProductSkusDelete, RetailGoodsRetailProductSkucategoriesUpdate, RetailGoodsRetailProductSkuCreate, RetailGoodsRetailProductSpusSearch, RetailGoodsRetailProductSpuCreate, RetailGoodsRetailProductSpuUpdate, RetailGoodsRetailProductSpuGet, RetailGoodsRetailProductSpusBatchUpdate, RetailGoodsRetailProductSpusBatchDelete, RetailGoodsRetailProductOfflineCreate, RetailGoodsRetailProductOfflineUpdate, RetailGoodsRetailProductOfflineGet, RetailGoodsRetailProductsOfflineDisplay, RetailGoodsRetailProductsOfflineDelete, RetailGoodsRetailProductsOfflineSearch, RetailGoodsRetailStockBizorderSearch, RetailGoodsRetailStocksStockinSearch, RetailGoodsRetailStockStockinGet, RetailGoodsRetailStockStockinCreate, RetailGoodsRetailStocksStockcheckSearch, RetailGoodsRetailStockStockcheckGet, RetailGoodsRetailStockStockcheckUpdate, RetailGoodsRetailStockStockcheckCreate, RetailGoodsRetailStocksStockoutSearch, RetailGoodsRetailStockStockoutGet, RetailGoodsRetailStockStockoutCreate, RetailGoodsRetailStockStockreturnChainCreate, RetailGoodsRetailStockStockreturnCreate, RetailGoodsRetailStockStockreturnGet, RetailGoodsRetailStockCostchangeGet, RetailGoodsRetailStockCostchangeCreate, RetailGoodsRetailStockVendorsSearch, RetailGoodsRetailStockVendorGet, RetailGoodsRetailStockVendorUpdate, RetailGoodsRetailStockVendorCreate, RetailGoodsRetailProductCategoriesSearch, RetailGoodsRetailProductSkusConfirmationDelete, RetailGoodsRetailProductSellSkuUpdate, RetailGoodsRetailProductOnlineUpdate, RetailGoodsRetailProductsOnlineDelete, RetailGoodsRetailProductsOnlineDisplay, RetailGoodsRetailProductOnlineGet, RetailGoodsRetailStockWarehouseSingleCreate, RetailGoodsRetailStockRelationChange, RetailGoodsRetailStockStockallotCreate, RetailGoodsRetailStockStockallotCheck, RetailGoodsRetailStockStockallotUpdate, RetailGoodsRetailStockStockallotOut, RetailGoodsRetailStockStockallotIn, RetailGoodsRetailStockStockallotGet, RetailGoodsRetailStockStockallotSearch, RetailGoodsRetailStockWarehouseConfigGet, RetailGoodsRetailStockWarehouseConfigSet, RetailGoodsRetailStockGoodsapplyUpdate, RetailGoodsRetailStockDeliveryOut, RetailGoodsRetailStockDeliveryIn, RetailGoodsRetailStockGoodsapplyClose, RetailGoodsRetailStockGoodsapplySearch, RetailGoodsRetailStockDeliverySearch, RetailGoodsRetailStockDeliveryGet, RetailGoodsRetailProductsOnlineSearch, RetailGoodsRetailStockWarehouseUpdate, RetailGoodsRetailStockGoodsapplyGet, RetailGoodsRetailStockWarehouseSearch, RetailGoodsRetailStockWarehouseGet, RetailGoodsRetailStockStockallotClose, RetailGoodsRetailStockGoodsapplyCheck, RetailGoodsRetailStockWarehouseStatusUpdate, RetailGoodsRetailStockGoodsapplyCreate, RetailGoodsRetailProductOnlineCreate, TagScrmTagRelationDelete, TagScrmTagRelationGet, TagScrmTagRelationAdd, BeautyServiceLogMeiServicelogGet, BeautyServiceLogMeiServicelogList, BeautyServiceLogMeiServicelogCreate, BeautyServiceLogMeiServicelogDelete, RetailUmpRetailSalesShoprelationSave, BeautyMemberMeiCustomerPointsDecrease, BeautyMemberMeiCustomerRightsList, BeautyMemberMeiCustomerSecretfileinfoUpdate, BeautyMemberMeiCustomerSettingGet, BeautyMemberMeiCustomerSecretfileinfoGet, BeautyMemberMeiCardOffsale, BeautyMemberMeiCustomerFileinfoUpdate, BeautyMemberMeiCustomerGet, BeautyMemberMeiCustomerFiletemplateUpdate, BeautyMemberMeiCardCreate, BeautyMemberMeiMemberlevelCreate, BeautyMemberMeiMemberlevelList, BeautyMemberMeiCardUpdate, BeautyMemberMeiCustomerPointsIncrease, BeautyMemberMeiCardDelete, BeautyMemberMeiCustomerTradeinfoGet, BeautyMemberMeiCardGet, BeautyMemberMeiCardOnsale, BeautyMemberMeiCustomerFileinfoGet, BeautyMemberMeiCustomerCreate, BeautyMemberMeiCustomerAssetsinfoGet, BeautyMemberMeiCustomerUpdate, BeautyMemberMeiCardList, BeautyMemberMeiCardCustomerList, BeautyMemberMeiCustomerFiletemplateGet, BeautyMemberMeiCustomerList, BeautyMemberMeiMemberlevelUpdate, BeautyMemberMeiCustomerSettingUpdate, BeautyMemberMeiCustomerTagList, BeautyMemberMeiMemberlevelGet, BeautyMemberMeiMemberlevelDelete, SelffetchcodeTradeSelffetchcodeGet, SelffetchcodeTradeSelffetchcodeApply, TradeDeliveryLogisticsOnlineUpdate, TradeDeliveryTradeDcDeliveryDelivermultiissue, TradeDeliveryTradeDcDeliveryOrdersingleitemsend, TradeDeliveryLogisticsOnlineConfirm, TradeDeliveryTradeDcQueryQuerybyorderno, TagsUsersWeixinFollowerTagsAdd, TagsUsersWeixinFollowerTagsDelete, TagsUsersWeixinFollowerTagsGet, BeautyCashierMeiCashierRechargeGet, BeautyCashierMeiCashierPay, BeautyCashierMeiCashierPayGet, BeautyCashierMeiCashierRecharge, ExtensionAnalysisDatacenterPspagesourceDataFetch, ExtensionAnalysisDatacenterPspagesourceCreate, ExtensionAnalysisDatacenterPsstockFetch, ExtensionAnalysisDatacenterPspagesourceFetch, ExtensionAnalysisDatacenterPspagesourceOrderFetch, ExtensionAnalysisDatacenterPssourceFetch, ItemStandardItemStandardGet, ItemStandardItemStandardGetbycode, ItemStandardItemStandardCreate, ItemStandardItemStandardSearch, CircleLogisticsOnlineDelay, CircleLogisticsOnlineCanceldelay, CircleTradeDcQueryMultiperiodQuerydeliveryrecords, CircleTradeDcQueryMultiperiodQuerylatestplan, CircleTradeDcQueryMultiperioddetail, StoredValueCardCardvoucherValuecardFundPay, StoredValueCardCardvoucherValuecardRfndRcdBypubSearch, StoredValueCardCardvoucherValuecardRfndRcdBysupSearch, StoredValueCardCardvoucherValuecardFundRefund, StoredValueCardCardvoucherValuecardInfoBypubSearch, StoredValueCardCardvoucherValuecardFundRechargeGet, StoredValueCardCardvoucherValuecardInfoBysupQuery, StoredValueCardCardvoucherValuecardRechgRcdByacpSearch, StoredValueCardCardvoucherValuecardFundRecharge, StoredValueCardCardvoucherValuecardRechgRcdBypubSearch, StoredValueCardCardvoucherValuecardPayRcdBysupSearch, StoredValueCardCardvoucherValuecardPayRcdBypubSearch, StoredValueCardCardvoucherValuecardFundAdjust, StoredValueCardCardvoucherValuecardAdjRcdByacpSearch, StoredValueCardCardvoucherValuecardInfoQuery, BeautyShopMeiDeptSecurityCodeSwitch, BeautyShopMeiDeptBrandinfoGet, BeautyShopMeiDeptSecurityCodeUpdate, BeautyShopMeiDeptSecurityCodeGet, BeautyShopMeiDeptSecurityCodelogList, BeautyShopMeiDeptGet, BeautyShopMeiDeptAvailableQuery, BeautyShopMeiDeptBind, BeautyShopMeiDeptStatusGet, BeautyWorkOrderMeiWorkorderList, BeautyWorkOrderMeiWorkorderOrdergroup, BeautyWorkOrderMeiWorkorderGet, BeautyWorkOrderMeiWorkorderUpdate, BeautyStockMeiStockGet, BeautyStockMeiStockWarehouseList, BeautyStockMeiStockCreate, BeautyStockMeiStockList, RetailRetailConsoleLogAdd, RetailPermissionSamPermsCheckGet, BeautyOrderMeiOrderUpdate, BeautyOrderMeiOrderQuery, BeautyOrderMeiOrderRefund, BeautyOrderMeiOrderList, BeautyOrderMeiOrderCancel, BeautyOrderMeiOrderCreate, VirtualticketTradeVirtualticketVerifycode, VirtualticketTradeVirtualticketGet, VirtualticketTradeVirtualticketVerifyticket, SellerRefundTradeRefundAgree, SellerRefundTradeRefundRefuse, SellerRefundTradeReturngoodsRefuse, SellerRefundTradeReturngoodsAgree, SellerRefundTradeRefundSellerActive, BeautyItemMeiGoodsProductCategoryList, BeautyItemMeiGoodsServingCategoryCreate, BeautyItemMeiGoodsServingUpdate, BeautyItemMeiGoodsProductCreate, BeautyItemMeiGoodsProductCategoryDelete, BeautyItemMeiGoodsServingSkuList, BeautyItemMeiGoodsServingCreate, BeautyItemMeiGoodsProductTagUpdate, BeautyItemMeiGoodsProductTagDelete, BeautyItemMeiGoodsProductSkuList, BeautyItemMeiGoodsServingTagCreate, BeautyItemMeiGoodsProductUpdate, BeautyItemMeiGoodsProductSkuItemList, BeautyItemMeiGoodsProductCategoryCreate, BeautyItemMeiGoodsProductTagCreate, BeautyItemMeiGoodsServingCategoryList, BeautyItemMeiGoodsServingTagDelete, BeautyItemMeiGoodsServingSkuCreate, BeautyItemMeiGoodsShelveUpdate, BeautyItemMeiGoodsServingGet, BeautyItemMeiGoodsProductGet, BeautyItemMeiGoodsServingList, BeautyItemMeiGoodsServingTagList, BeautyItemMeiGoodsServingTagUpdate, BeautyItemMeiGoodsProductTagList, BeautyItemMeiGoodsProductList, BeautyItemMeiGoodsServingCategoryDelete, BeautyItemMeiGoodsProductSkuItemCreate, BeautyItemMeiGoodsProductCategoryUpdate, BeautyItemMeiGoodsProductSkuCreate, BeautyItemMeiGoodsServingCategoryUpdate, BeautyItemMeiGoodsServingSkuItemList, BeautyItemMeiGoodsServingSkuItemCreate, BuyerAddressUserAddressAdd, BuyerAddressUserAddressUpdate, BuyerAddressUserAddressGet, RetailSupplierRetailOpenSupplierUpdate, RetailSupplierRetailOpenSupplierDelete, RetailSupplierRetailOpenSupplierQuery, RetailSupplierRetailOpenSupplierCreate, MeiPromoterMeiPromoterList, MeiPromoterMeiPromoterCustomerBindUpdate, MeiPromoterMeiPromoterCustomerList, MeiPromoterMeiPromoterCustomerBind, MeiPromoterMeiPromoterGet, MeiPromoterMeiPromoterOrderList, MeiPromoterMeiPromoterCreate, MeiPromoterMeiPromoterInviteeList, RetailStockRetailOpenStockcheckorderGet, RetailStockRetailOpenStockinorderQuery, RetailStockRetailOpenApplyorderCheck, RetailStockRetailOpenDistributionorderGet, RetailStockRetailOpenStockAdjust, RetailStockRetailOpenStockoutorderGet, RetailStockRetailOpenStockcheckCreate, RetailStockRetailOpenStockoutorderQuery, RetailStockRetailOpenAllotorderGet, RetailStockRetailOpenStockinorderGet, RetailStockRetailOpenPurchaseorderGet, RetailStockRetailOpenApplyorderGet, RetailStockRetailOpenStockinorderCreate, RetailStockRetailOpenStockoutorderCreate, RetailShopRetailOpenWarehouseQuery, RetailShopRetailOpenStaffQuery, PayCustomsDeclarationPayCustomsDeclarationReportpaymentQuery, PayCustomsDeclarationPayCustomsDeclarationReportpaymentReport, CustomerScrmCustomerCreate, CustomerScrmCustomerUpdate, CustomerScrmCustomerRemarkUpdate, CustomerScrmCustomerGet, CustomerScrmCustomerSearch } from '../../model';
 
 /**
- * Generated at 2019-03-04T08:18:31.265Z
+ * Generated at 2019-06-13T02:56:14.134Z
  */
 export class GeneratedYouzanService {
   constructor(protected options: YouzanOptions,
@@ -479,18 +479,6 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 查看退款列表
-   */
-  async tradeAdvancedTradeRefundSearch(params: TradeAdvancedTradeRefundSearch.Request, client_id: string = this.options.defaultClientId): Promise<TradeAdvancedTradeRefundSearch.Response> {
-    return await this.requestService.invoke({
-      api: 'youzan.trade.refund.search',
-      version: '3.0.0',
-      method: 'POST',
-      params,
-    }, client_id);
-  }
-
-  /**
    * 查看退款凭证列表接口
    */
   async tradeAdvancedTradeRefundMessagesGet(params: TradeAdvancedTradeRefundMessagesGet.Request, client_id: string = this.options.defaultClientId): Promise<TradeAdvancedTradeRefundMessagesGet.Response> {
@@ -498,6 +486,18 @@ export class GeneratedYouzanService {
       api: 'youzan.trade.refund.messages.get',
       version: '3.0.0',
       method: 'GET',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 查看退款列表
+   */
+  async tradeAdvancedTradeRefundSearch(params: TradeAdvancedTradeRefundSearch.Request, client_id: string = this.options.defaultClientId): Promise<TradeAdvancedTradeRefundSearch.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.trade.refund.search',
+      version: '3.0.0',
+      method: 'POST',
       params,
     }, client_id);
   }
@@ -750,18 +750,6 @@ export class GeneratedYouzanService {
       api: 'youzan.trade.qrcode.hasoutid.get',
       version: '3.0.0',
       method: 'GET',
-      params,
-    }, client_id);
-  }
-
-  /**
-   * 线下收银台创建二维码
-   */
-  async payQrcodeTradeQrcodeExtCreate(params: PayQrcodeTradeQrcodeExtCreate.Request, client_id: string = this.options.defaultClientId): Promise<PayQrcodeTradeQrcodeExtCreate.Response> {
-    return await this.requestService.invoke({
-      api: 'youzan.trade.qrcode.ext.create',
-      version: '3.0.0',
-      method: 'POST',
       params,
     }, client_id);
   }
@@ -1427,7 +1415,7 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 使用手机号获取用户openId（获取的商家自有粉丝的openId。fans_type =1时）
+   * 使用手机号获取用户openId
    */
   async userUserWeixinOpenidGet(params: UserUserWeixinOpenidGet.Request, client_id: string = this.options.defaultClientId): Promise<UserUserWeixinOpenidGet.Response> {
     return await this.requestService.invoke({
@@ -2220,11 +2208,35 @@ export class GeneratedYouzanService {
   }
 
   /**
+   * 获取客户成长值
+   */
+  async levelMembershipCrmCustomerGrowthGet(params: LevelMembershipCrmCustomerGrowthGet.Request, client_id: string = this.options.defaultClientId): Promise<LevelMembershipCrmCustomerGrowthGet.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.crm.customer.growth.get',
+      version: '1.0.0',
+      method: 'GET',
+      params,
+    }, client_id);
+  }
+
+  /**
    * 给用户减成长值
    */
   async levelMembershipCrmCustomerGrowthDecrease(params: LevelMembershipCrmCustomerGrowthDecrease.Request, client_id: string = this.options.defaultClientId): Promise<LevelMembershipCrmCustomerGrowthDecrease.Response> {
     return await this.requestService.invoke({
       api: 'youzan.crm.customer.growth.decrease',
+      version: '1.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 批量获取客户成长值
+   */
+  async levelMembershipCrmCustomerGrowthList(params: LevelMembershipCrmCustomerGrowthList.Request, client_id: string = this.options.defaultClientId): Promise<LevelMembershipCrmCustomerGrowthList.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.crm.customer.growth.list',
       version: '1.0.0',
       method: 'POST',
       params,
@@ -2316,7 +2328,7 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 拒绝退款（仅适用于有赞连锁）
+   * 拒绝退款
    */
   async retailTradeRetailOpenRefundorderRefuse(params: RetailTradeRetailOpenRefundorderRefuse.Request, client_id: string = this.options.defaultClientId): Promise<RetailTradeRetailOpenRefundorderRefuse.Response> {
     return await this.requestService.invoke({
@@ -2328,7 +2340,7 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 查询退货单（仅适用于有赞连锁）
+   * 查询退货单
    */
   async retailTradeRetailOpenReturnorderGet(params: RetailTradeRetailOpenReturnorderGet.Request, client_id: string = this.options.defaultClientId): Promise<RetailTradeRetailOpenReturnorderGet.Response> {
     return await this.requestService.invoke({
@@ -2352,7 +2364,7 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 批量查询退款单（仅适用于有赞连锁）
+   * 批量查询退款单
    */
   async retailTradeRetailOpenRefundorderQuery(params: RetailTradeRetailOpenRefundorderQuery.Request, client_id: string = this.options.defaultClientId): Promise<RetailTradeRetailOpenRefundorderQuery.Response> {
     return await this.requestService.invoke({
@@ -2364,7 +2376,7 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 查询销售退款单（仅适用于有赞连锁）
+   * 查询销售退款单
    */
   async retailTradeRetailOpenRefundorderGet(params: RetailTradeRetailOpenRefundorderGet.Request, client_id: string = this.options.defaultClientId): Promise<RetailTradeRetailOpenRefundorderGet.Response> {
     return await this.requestService.invoke({
@@ -2376,7 +2388,7 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 退货单确认，同意退款（仅适用于有赞连锁）
+   * 退货单确认，同意退款
    */
   async retailTradeRetailOpenReturnorderConfirm(params: RetailTradeRetailOpenReturnorderConfirm.Request, client_id: string = this.options.defaultClientId): Promise<RetailTradeRetailOpenReturnorderConfirm.Response> {
     return await this.requestService.invoke({
@@ -2388,7 +2400,7 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 查询销售发货单（仅适用于有赞连锁）
+   * 查询销售发货单
    */
   async retailTradeRetailOpenDeliveryorderGet(params: RetailTradeRetailOpenDeliveryorderGet.Request, client_id: string = this.options.defaultClientId): Promise<RetailTradeRetailOpenDeliveryorderGet.Response> {
     return await this.requestService.invoke({
@@ -2400,7 +2412,7 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 拒绝退货（仅适用于有赞连锁）
+   * 卖家未收到货,拒绝退款
    */
   async retailTradeRetailOpenReturnorderRefuse(params: RetailTradeRetailOpenReturnorderRefuse.Request, client_id: string = this.options.defaultClientId): Promise<RetailTradeRetailOpenReturnorderRefuse.Response> {
     return await this.requestService.invoke({
@@ -2412,7 +2424,7 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 批量查询销售退货单（仅适用于有赞连锁）
+   * 批量查询销售退货单
    */
   async retailTradeRetailOpenReturnorderQuery(params: RetailTradeRetailOpenReturnorderQuery.Request, client_id: string = this.options.defaultClientId): Promise<RetailTradeRetailOpenReturnorderQuery.Response> {
     return await this.requestService.invoke({
@@ -2424,7 +2436,7 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 退款单确认，同意退款（仅适用于有赞连锁）
+   * 退款单确认，同意退款
    */
   async retailTradeRetailOpenRefundorderConfirm(params: RetailTradeRetailOpenRefundorderConfirm.Request, client_id: string = this.options.defaultClientId): Promise<RetailTradeRetailOpenRefundorderConfirm.Response> {
     return await this.requestService.invoke({
@@ -2436,7 +2448,7 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 发货单确认（仅适用于有赞连锁）
+   * 发货单确认
    */
   async retailTradeRetailOpenDeliveryorderConfirm(params: RetailTradeRetailOpenDeliveryorderConfirm.Request, client_id: string = this.options.defaultClientId): Promise<RetailTradeRetailOpenDeliveryorderConfirm.Response> {
     return await this.requestService.invoke({
@@ -2448,7 +2460,7 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 批量查询销售发货单（仅适用于有赞连锁）
+   * 批量查询销售发货单
    */
   async retailTradeRetailOpenDeliveryorderQuery(params: RetailTradeRetailOpenDeliveryorderQuery.Request, client_id: string = this.options.defaultClientId): Promise<RetailTradeRetailOpenDeliveryorderQuery.Response> {
     return await this.requestService.invoke({
@@ -3516,6 +3528,66 @@ export class GeneratedYouzanService {
   }
 
   /**
+   * 获取单条服务日志详情
+   */
+  async beautyServiceLogMeiServicelogGet(params: BeautyServiceLogMeiServicelogGet.Request, client_id: string = this.options.defaultClientId): Promise<BeautyServiceLogMeiServicelogGet.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.mei.servicelog.get',
+      version: '1.0.0',
+      method: 'GET',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 查询服务日志列表
+   */
+  async beautyServiceLogMeiServicelogList(params: BeautyServiceLogMeiServicelogList.Request, client_id: string = this.options.defaultClientId): Promise<BeautyServiceLogMeiServicelogList.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.mei.servicelog.list',
+      version: '1.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 服务日志
+   */
+  async beautyServiceLogMeiServicelogCreate(params: BeautyServiceLogMeiServicelogCreate.Request, client_id: string = this.options.defaultClientId): Promise<BeautyServiceLogMeiServicelogCreate.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.mei.servicelog.create',
+      version: '1.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 删除服务日志
+   */
+  async beautyServiceLogMeiServicelogDelete(params: BeautyServiceLogMeiServicelogDelete.Request, client_id: string = this.options.defaultClientId): Promise<BeautyServiceLogMeiServicelogDelete.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.mei.servicelog.delete',
+      version: '1.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 智能导购,创建门店与网店关系
+   */
+  async retailUmpRetailSalesShoprelationSave(params: RetailUmpRetailSalesShoprelationSave.Request, client_id: string = this.options.defaultClientId): Promise<RetailUmpRetailSalesShoprelationSave.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.retail.sales.shoprelation.save',
+      version: '1.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
    * 扣减会员积分
    */
   async beautyMemberMeiCustomerPointsDecrease(params: BeautyMemberMeiCustomerPointsDecrease.Request, client_id: string = this.options.defaultClientId): Promise<BeautyMemberMeiCustomerPointsDecrease.Response> {
@@ -3948,7 +4020,7 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 支持订单类型：普通订单发货，周期购订单发货，采购单发货；不支持订单类型：送礼订单发货，单品多运单订单发货，采购单发货，含非实物商品（虚拟商品，卡券，等）的订单发货，分销单发货，零售连锁版订单发货；支持
+   * 卖家确认发货
    */
   async tradeDeliveryLogisticsOnlineConfirm(params: TradeDeliveryLogisticsOnlineConfirm.Request, client_id: string = this.options.defaultClientId): Promise<TradeDeliveryLogisticsOnlineConfirm.Response> {
     return await this.requestService.invoke({
@@ -4236,18 +4308,6 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 查询在该店铺发生的充值记录
-   */
-  async storedValueCardCardvoucherValuecardRechgRcdByacpSearch(params: StoredValueCardCardvoucherValuecardRechgRcdByacpSearch.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardRechgRcdByacpSearch.Response> {
-    return await this.requestService.invoke({
-      api: 'youzan.cardvoucher.valuecard.rechg.rcd.byacp.search',
-      version: '3.0.0',
-      method: 'POST',
-      params,
-    }, client_id);
-  }
-
-  /**
    * 储值卡支付
    */
   async storedValueCardCardvoucherValuecardFundPay(params: StoredValueCardCardvoucherValuecardFundPay.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardFundPay.Response> {
@@ -4272,30 +4332,6 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 储值卡充值
-   */
-  async storedValueCardCardvoucherValuecardFundRecharge(params: StoredValueCardCardvoucherValuecardFundRecharge.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardFundRecharge.Response> {
-    return await this.requestService.invoke({
-      api: 'youzan.cardvoucher.valuecard.fund.recharge',
-      version: '3.0.0',
-      method: 'POST',
-      params,
-    }, client_id);
-  }
-
-  /**
-   * 查询该店铺发行的储值卡的充值记录
-   */
-  async storedValueCardCardvoucherValuecardRechgRcdBypubSearch(params: StoredValueCardCardvoucherValuecardRechgRcdBypubSearch.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardRechgRcdBypubSearch.Response> {
-    return await this.requestService.invoke({
-      api: 'youzan.cardvoucher.valuecard.rechg.rcd.bypub.search',
-      version: '3.0.0',
-      method: 'POST',
-      params,
-    }, client_id);
-  }
-
-  /**
    * 查询在该店铺发生的退款记录
    */
   async storedValueCardCardvoucherValuecardRfndRcdBysupSearch(params: StoredValueCardCardvoucherValuecardRfndRcdBysupSearch.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardRfndRcdBysupSearch.Response> {
@@ -4308,35 +4344,11 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 查询在该店铺发生的支付记录
-   */
-  async storedValueCardCardvoucherValuecardPayRcdBysupSearch(params: StoredValueCardCardvoucherValuecardPayRcdBysupSearch.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardPayRcdBysupSearch.Response> {
-    return await this.requestService.invoke({
-      api: 'youzan.cardvoucher.valuecard.pay.rcd.bysup.search',
-      version: '3.0.0',
-      method: 'POST',
-      params,
-    }, client_id);
-  }
-
-  /**
    * 储值卡退款
    */
   async storedValueCardCardvoucherValuecardFundRefund(params: StoredValueCardCardvoucherValuecardFundRefund.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardFundRefund.Response> {
     return await this.requestService.invoke({
       api: 'youzan.cardvoucher.valuecard.fund.refund',
-      version: '3.0.0',
-      method: 'POST',
-      params,
-    }, client_id);
-  }
-
-  /**
-   * 查询该店铺发行的储值卡的支付记录
-   */
-  async storedValueCardCardvoucherValuecardPayRcdBypubSearch(params: StoredValueCardCardvoucherValuecardPayRcdBypubSearch.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardPayRcdBypubSearch.Response> {
-    return await this.requestService.invoke({
-      api: 'youzan.cardvoucher.valuecard.pay.rcd.bypub.search',
       version: '3.0.0',
       method: 'POST',
       params,
@@ -4368,11 +4380,11 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 查询单个用户在该店铺发行的储值卡
+   * 查询可在该店铺内使用的储值卡
    */
-  async storedValueCardCardvoucherValuecardInfoQuery(params: StoredValueCardCardvoucherValuecardInfoQuery.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardInfoQuery.Response> {
+  async storedValueCardCardvoucherValuecardInfoBysupQuery(params: StoredValueCardCardvoucherValuecardInfoBysupQuery.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardInfoBysupQuery.Response> {
     return await this.requestService.invoke({
-      api: 'youzan.cardvoucher.valuecard.info.query',
+      api: 'youzan.cardvoucher.valuecard.info.bysup.query',
       version: '3.0.0',
       method: 'POST',
       params,
@@ -4380,11 +4392,95 @@ export class GeneratedYouzanService {
   }
 
   /**
-   * 查询可在该店铺内使用的储值卡
+   * 查询在该店铺发生的充值记录
    */
-  async storedValueCardCardvoucherValuecardInfoBysupQuery(params: StoredValueCardCardvoucherValuecardInfoBysupQuery.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardInfoBysupQuery.Response> {
+  async storedValueCardCardvoucherValuecardRechgRcdByacpSearch(params: StoredValueCardCardvoucherValuecardRechgRcdByacpSearch.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardRechgRcdByacpSearch.Response> {
     return await this.requestService.invoke({
-      api: 'youzan.cardvoucher.valuecard.info.bysup.query',
+      api: 'youzan.cardvoucher.valuecard.rechg.rcd.byacp.search',
+      version: '3.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 储值卡充值
+   */
+  async storedValueCardCardvoucherValuecardFundRecharge(params: StoredValueCardCardvoucherValuecardFundRecharge.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardFundRecharge.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.cardvoucher.valuecard.fund.recharge',
+      version: '3.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 查询该店铺发行的储值卡的充值记录
+   */
+  async storedValueCardCardvoucherValuecardRechgRcdBypubSearch(params: StoredValueCardCardvoucherValuecardRechgRcdBypubSearch.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardRechgRcdBypubSearch.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.cardvoucher.valuecard.rechg.rcd.bypub.search',
+      version: '3.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 查询在该店铺发生的支付记录
+   */
+  async storedValueCardCardvoucherValuecardPayRcdBysupSearch(params: StoredValueCardCardvoucherValuecardPayRcdBysupSearch.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardPayRcdBysupSearch.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.cardvoucher.valuecard.pay.rcd.bysup.search',
+      version: '3.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 查询该店铺发行的储值卡的支付记录
+   */
+  async storedValueCardCardvoucherValuecardPayRcdBypubSearch(params: StoredValueCardCardvoucherValuecardPayRcdBypubSearch.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardPayRcdBypubSearch.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.cardvoucher.valuecard.pay.rcd.bypub.search',
+      version: '3.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 储值卡调账
+   */
+  async storedValueCardCardvoucherValuecardFundAdjust(params: StoredValueCardCardvoucherValuecardFundAdjust.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardFundAdjust.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.cardvoucher.valuecard.fund.adjust',
+      version: '3.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 查询在该店铺发生的单笔调账记录
+   */
+  async storedValueCardCardvoucherValuecardAdjRcdByacpSearch(params: StoredValueCardCardvoucherValuecardAdjRcdByacpSearch.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardAdjRcdByacpSearch.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.cardvoucher.valuecard.adj.rcd.byacp.search',
+      version: '3.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 查询单个用户在该店铺发行的储值卡
+   */
+  async storedValueCardCardvoucherValuecardInfoQuery(params: StoredValueCardCardvoucherValuecardInfoQuery.Request, client_id: string = this.options.defaultClientId): Promise<StoredValueCardCardvoucherValuecardInfoQuery.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.cardvoucher.valuecard.info.query',
       version: '3.0.0',
       method: 'POST',
       params,
@@ -4500,6 +4596,54 @@ export class GeneratedYouzanService {
   }
 
   /**
+   * 获取工单列表
+   */
+  async beautyWorkOrderMeiWorkorderList(params: BeautyWorkOrderMeiWorkorderList.Request, client_id: string = this.options.defaultClientId): Promise<BeautyWorkOrderMeiWorkorderList.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.mei.workorder.list',
+      version: '1.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 查询工单列表，按照订单号分组返回
+   */
+  async beautyWorkOrderMeiWorkorderOrdergroup(params: BeautyWorkOrderMeiWorkorderOrdergroup.Request, client_id: string = this.options.defaultClientId): Promise<BeautyWorkOrderMeiWorkorderOrdergroup.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.mei.workorder.ordergroup',
+      version: '1.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 获取单条工单记录
+   */
+  async beautyWorkOrderMeiWorkorderGet(params: BeautyWorkOrderMeiWorkorderGet.Request, client_id: string = this.options.defaultClientId): Promise<BeautyWorkOrderMeiWorkorderGet.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.mei.workorder.get',
+      version: '1.0.0',
+      method: 'GET',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 更新工单状态
+   */
+  async beautyWorkOrderMeiWorkorderUpdate(params: BeautyWorkOrderMeiWorkorderUpdate.Request, client_id: string = this.options.defaultClientId): Promise<BeautyWorkOrderMeiWorkorderUpdate.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.mei.workorder.update',
+      version: '1.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
    * 查询库存详情
    */
   async beautyStockMeiStockGet(params: BeautyStockMeiStockGet.Request, client_id: string = this.options.defaultClientId): Promise<BeautyStockMeiStockGet.Response> {
@@ -4548,6 +4692,18 @@ export class GeneratedYouzanService {
   }
 
   /**
+   * 离线日志上报记录
+   */
+  async retailRetailConsoleLogAdd(params: RetailRetailConsoleLogAdd.Request, client_id: string = this.options.defaultClientId): Promise<RetailRetailConsoleLogAdd.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.retail.console.log.add',
+      version: '1.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
    * 查询当前用户是否具有某一类型的权限
    */
   async retailPermissionSamPermsCheckGet(params: RetailPermissionSamPermsCheckGet.Request, client_id: string = this.options.defaultClientId): Promise<RetailPermissionSamPermsCheckGet.Response> {
@@ -4578,6 +4734,18 @@ export class GeneratedYouzanService {
     return await this.requestService.invoke({
       api: 'youzan.mei.order.query',
       version: '3.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 订单退款
+   */
+  async beautyOrderMeiOrderRefund(params: BeautyOrderMeiOrderRefund.Request, client_id: string = this.options.defaultClientId): Promise<BeautyOrderMeiOrderRefund.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.mei.order.refund',
+      version: '1.0.0',
       method: 'POST',
       params,
     }, client_id);
@@ -5478,6 +5646,30 @@ export class GeneratedYouzanService {
     return await this.requestService.invoke({
       api: 'youzan.retail.open.staff.query',
       version: '3.0.0',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 报关状态查询
+   */
+  async payCustomsDeclarationPayCustomsDeclarationReportpaymentQuery(params: PayCustomsDeclarationPayCustomsDeclarationReportpaymentQuery.Request, client_id: string = this.options.defaultClientId): Promise<PayCustomsDeclarationPayCustomsDeclarationReportpaymentQuery.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.pay.customs.declaration.reportpayment.query',
+      version: '1.0.1',
+      method: 'POST',
+      params,
+    }, client_id);
+  }
+
+  /**
+   * 支付跨境报关接口
+   */
+  async payCustomsDeclarationPayCustomsDeclarationReportpaymentReport(params: PayCustomsDeclarationPayCustomsDeclarationReportpaymentReport.Request, client_id: string = this.options.defaultClientId): Promise<PayCustomsDeclarationPayCustomsDeclarationReportpaymentReport.Response> {
+    return await this.requestService.invoke({
+      api: 'youzan.pay.customs.declaration.reportpayment.report',
+      version: '1.0.1',
       method: 'POST',
       params,
     }, client_id);

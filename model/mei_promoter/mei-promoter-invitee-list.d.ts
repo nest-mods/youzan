@@ -6,19 +6,19 @@ export namespace MeiPromoterMeiPromoterInviteeList {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 要查询的页码
      */
-    page?: number;
+    page: number;
     /**
      * 每页显示的条目数量，最大200条
      */
-    page_size?: number;
+    page_size: number;
     /**
      * 推广员id
      */
-    parent_pid?: string;
+    parent_pid: string;
   }
 
   /**

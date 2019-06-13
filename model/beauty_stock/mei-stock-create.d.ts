@@ -6,15 +6,15 @@ export namespace BeautyStockMeiStockCreate {
     /**
      * 入库时间
      */
-    io_time?: number;
+    io_time: number;
     /**
      * 入库商品信息
      */
-    items?: MeiCreateInventoryIoBillDetailDTO[];
+    items: MeiCreateInventoryIoBillDetailDTO[];
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 操作人id 可空
      */
@@ -30,7 +30,7 @@ export namespace BeautyStockMeiStockCreate {
     /**
      * 仓库ID
      */
-    ware_house_id?: number;
+    ware_house_id: number;
   }
 
   /**

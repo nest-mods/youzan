@@ -6,7 +6,7 @@ export namespace TradeTradeGet {
     /**
      * 订单号
      */
-    tid?: string;
+    tid: string;
   }
 
   /**
@@ -91,8 +91,7 @@ export namespace TradeTradeGet {
      */
     status_str?: string;
     /**
-     * 支付类型
-  * 0:默认值,未支付; 1:微信自有支付; 2:支付宝wap; 3:支付宝wap; 5:财付通; 7:代付; 8:联动优势; 9:货到付款; 10:大账号代销; 11:受理模式; 12:百付宝; 13:sdk支付; 14:合并付货款; 15:赠品; 16:优惠兑换; 17:自动付货款; 18:爱学贷; 19:微信wap; 20:微信红包支付; 21:返利; 22:ump红包; 24:易宝支付; 25:储值卡; 27:qq支付; 28:有赞E卡支付; 29:微信条码; 30:支付宝条码; 33:礼品卡支付; 35:会员余额; 72:微信扫码二维码支付; 100:代收账户; 300:储值账户; 400:保证金账户; 101:收款码; 102:微信; 103:支付宝; 104:刷卡; 105:二维码台卡; 106:储值卡; 107:有赞E卡; 110:标记收款-自有微信支付; 111:标记收款-自有支付宝; 112:标记收款-自有POS刷卡; 113:通联刷卡支付; 200:记账账户; 201:现金
+     * 支付类型 0:默认值,未支付; 1:微信自有支付; 2:支付宝wap; 3:支付宝wap;5:财付通;7:代付; 8:联动优势; 9:货到付款; 10:大账号代销; 11:受理模式; 12:百付宝; 13:sdk支付; 14:合并付货款; 15:赠品; 16:优惠兑换; 17:自动付货款; 18:爱学贷; 19:微信wap; 20:微信红包支付; 21:返利; 22:ump红包;24:易宝支付; 25:储值卡;27:qq支付; 28:有赞E卡支付; 29:微信条码; 30:支付宝条码; 33:礼品卡支付; 35:会员余额; 36:银行卡支付;37:银行卡支付;72:微信扫码二维码支付;80:店铺余额支付; 90:礼品卡支付;100:代收账户; 300:储值账户; 400:保证金账户; 101:收款码; 102:微信; 103:支付宝; 104:刷卡; 105:二维码台卡; 106:储值卡; 107:有赞E卡; 110:标记收款-自有微信支付; 111:标记收款-自有支付宝; 112:标记收款-自有POS刷卡; 113:通联刷卡支付; 114:标记收款-自定义;200:记账账户; 201:现金; 202:组合支付;203:外部支付;40:分期支付
      */
     pay_type?: number;
     /**
@@ -143,8 +142,7 @@ export namespace TradeTradeGet {
      */
     confirm_time?: Date;
     /**
-     * 退款状态
-  * 0:未退款; 1:部分退款中; 2:部分退款成功; 11:全额退款中; 12:全额退款成功
+     * 退款状态 0:未退款; 1:部分退款中; 2:部分退款成功; 11:全额退款中; 12:全额退款成功
      */
     refund_state?: number;
     /**
@@ -160,9 +158,13 @@ export namespace TradeTradeGet {
      */
     offline_id?: number;
     /**
-     * 支付类型。取值范围： WEIXIN (微信自有支付) WEIXIN_DAIXIAO (微信代销支付) ALIPAY (支付宝支付) BANKCARDPAY (银行卡支付) PEERPAY (代付) CODPAY (货到付款) BAIDUPAY (百度钱包支付) PRESENTTAKE (直接领取赠品) COUPONPAY(优惠券/码全额抵扣) BULKPURCHASE(来自分销商的采购) MERGEDPAY(合并付货款) ECARD(有赞E卡支付) PURCHASE_PAY (采购单支付) MARKPAY (标记收款) OFCASH (现金支付) PREPAIDCARD (储值卡余额支付)
+     * 支付类型。取值范围： WEIXIN (微信自有支付) WEIXIN_DAIXIAO (微信代销支付) ALIPAY (支付宝支付) BANKCARDPAY (银行卡支付) PEERPAY (代付) CODPAY (货到付款) BAIDUPAY (百度钱包支付) PRESENTTAKE (直接领取赠品) COUPONPAY(优惠券/码全额抵扣) BULKPURCHASE(来自分销商的采购) MERGEDPAY(合并付货款) ECARD(有赞E卡支付) PURCHASE_PAY (采购单支付) MARKPAY (标记收款) OFCASH (现金支付) PREPAIDCARD (储值卡余额支付)ENCHASHMENT_GIFT_CARD(礼品卡支付)
      */
     pay_type_str?: string;
+    /**
+     * 活动类型:0: "没有活动",1: "没有活动", 2: "团购返现",3: "降价拍",4: "拼团",5: "积分兑换",6: "秒杀",7: "优惠套餐",8: "赠品",9: "商品扫码",10: "会员折扣",11: "限时折扣",12: "众筹",13:"周期购",14: "送礼",15: "随机点餐",16: "扫码优惠",19: "享立减",20: "F码",21: "助力砍价",22: "推荐有奖",23: "抽奖拼团",24: "加价购",63: "送礼社区版",101: "满减送",102: "订单返现",103: "供货商满包邮",114: "定金膨胀",115: "第二件半价",256:"积分抵现"
+     */
+    activity_type?: number;
   }
 
   /**
@@ -323,6 +325,18 @@ export namespace TradeTradeGet {
      * 使用了同一张优惠券&优惠码的多笔订单对应的虚拟总单号
      */
     promotion_combine_id?: string;
+    /**
+     * 身份证姓名信息  （订购人的身份证号字段可通过订单详情4.0接口“id_card_number ”获取）
+     */
+    id_card_name?: string;
+    /**
+     * 分销单外部支付流水号
+     */
+    fx_outer_transaction_no?: string;
+    /**
+     * 分销单内部支付流水号
+     */
+    fx_inner_transaction_no?: string;
   }
 
   /**
@@ -474,9 +488,9 @@ export namespace TradeTradeGet {
      */
     inner_transaction_no?: string;
     /**
-     * 支付类型。取值范围： WEIXIN (微信自有支付) WEIXIN_DAIXIAO (微信代销支付) ALIPAY (支付宝支付) BANKCARDPAY (银行卡支付) PEERPAY (代付) CODPAY (货到付款) BAIDUPAY (百度钱包支付) PRESENTTAKE (直接领取赠品) COUPONPAY(优惠券/码全额抵扣) BULKPURCHASE(来自分销商的采购) MERGEDPAY(合并付货款) ECARD(有赞E卡支付) PURCHASE_PAY (采购单支付) MARKPAY (标记收款) OFCASH (现金支付) PREPAIDCARD (储值卡余额支付)
+     * 支付类型。取值范围： WEIXIN (微信自有支付) WEIXIN_DAIXIAO (微信代销支付) ALIPAY (支付宝支付) BANKCARDPAY (银行卡支付) PEERPAY (代付) CODPAY (货到付款) BAIDUPAY (百度钱包支付) PRESENTTAKE (直接领取赠品) COUPONPAY(优惠券/码全额抵扣) BULKPURCHASE(来自分销商的采购) MERGEDPAY(合并付货款) ECARD(有赞E卡支付) PURCHASE_PAY (采购单支付) MARKPAY (标记收款) OFCASH (现金支付) PREPAIDCARD (储值卡余额支付)ENCHASHMENT_GIFT_CARD(礼品卡支付)
      */
-    pay_way_str?: string;
+    pay_type_str?: string;
   }
 
   /**
@@ -653,17 +667,25 @@ export namespace TradeTradeGet {
      */
     is_cross_border?: string;
     /**
-     * 海淘口岸编码
+     * 海关编号
      */
-    port_code?: string;
+    customs_code?: string;
     /**
      * 海淘商品贸易模式
      */
     cross_border_trade_mode?: string;
     /**
-     * 报关单号
+     * 子订单号
      */
-    custom_entry_no?: string;
+    sub_order_no?: string;
+    /**
+     * 分销单金额 ，单位元
+     */
+    fenxiao_price?: string;
+    /**
+     * 分销单实付金额，单位元
+     */
+    fenxiao_payment?: string;
   }
 
   /**
@@ -909,6 +931,8 @@ export namespace TradeTradeGet {
   * periodBuyPostageFree:周期购包邮
   * ignoreOddChange:抹零
   * pfGuideMarketing:引导促销
+  * helpCut:助力砍价
+  * sellerDiscount:分销商等级折扣
      */
     promotion_type?: string;
     /**
@@ -981,6 +1005,8 @@ export namespace TradeTradeGet {
   * periodBuyPostageFree:周期购包邮
   * ignoreOddChange:抹零
   * pfGuideMarketing:引导促销
+  * helpCut:助力砍价
+  * sellerDiscount:分销商等级折扣
      */
     promotion_type?: string;
     /**

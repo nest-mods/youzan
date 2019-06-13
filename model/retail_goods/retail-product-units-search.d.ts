@@ -18,7 +18,7 @@ export namespace RetailGoodsRetailProductUnitsSearch {
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    source?: string;
+    source: string;
     /**
      * 根据状态筛选，不传则查询出所有（0表示禁用，1表示启用）
      */

@@ -6,11 +6,11 @@ export namespace PayQrcodeTradeQrcodeHasoutidGet {
     /**
      * 外部订单号
      */
-    out_id?: string;
+    out_id: string;
     /**
      * 外部来源（由有赞分配）
      */
-    out_source?: string;
+    out_source: string;
   }
 
   /**

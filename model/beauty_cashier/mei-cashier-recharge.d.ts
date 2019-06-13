@@ -14,11 +14,11 @@ export namespace BeautyCashierMeiCashierRecharge {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 要支付的订单号
      */
-    order_no?: string;
+    order_no: string;
     /**
      * 如果是微信支付或者支付宝支付，则该字段必须要填写，填写内容为付款吗
      */

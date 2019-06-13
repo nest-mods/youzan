@@ -6,11 +6,11 @@ export namespace BuyerRefundTradeRefundConditionGet {
     /**
      * 交易的商品明细编号
      */
-    oid?: number;
+    oid: number;
     /**
      * 订单号
      */
-    tid?: string;
+    tid: string;
   }
 
   /**

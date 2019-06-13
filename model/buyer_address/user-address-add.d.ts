@@ -6,15 +6,15 @@ export namespace BuyerAddressUserAddressAdd {
     /**
      * 详细地址
      */
-    address_detail?: string;
+    address_detail: string;
     /**
      * 区号
      */
-    area_code?: string;
+    area_code: string;
     /**
      * 市
      */
-    city?: string;
+    city: string;
     /**
      * 社区
      */
@@ -22,7 +22,7 @@ export namespace BuyerAddressUserAddressAdd {
     /**
      * 县
      */
-    county?: string;
+    county: string;
     /**
      * 纬度
      */
@@ -38,15 +38,15 @@ export namespace BuyerAddressUserAddressAdd {
     /**
      * 省
      */
-    province?: string;
+    province: string;
     /**
      * 手机号码
      */
-    tel?: string;
+    tel: string;
     /**
      * 用户名称
      */
-    user_name?: string;
+    user_name: string;
   }
 
   /**

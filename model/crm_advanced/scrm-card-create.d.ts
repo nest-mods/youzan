@@ -6,7 +6,7 @@ export namespace CrmAdvancedScrmCardCreate {
     /**
      * 创建会员卡所需的会员卡信息
      */
-    card_create?: CardCreate;
+    card_create: CardCreate;
   }
 
   /**

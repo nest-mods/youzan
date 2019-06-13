@@ -6,7 +6,7 @@ export namespace BeautyMemberMeiCustomerFiletemplateGet {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
   }
 
   /**

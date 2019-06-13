@@ -6,11 +6,11 @@ export namespace RetailGoodsRetailStockStockallotClose {
     /**
      * 业务单据号
      */
-    biz_bill_no?: string;
+    biz_bill_no: string;
     /**
      * 来源
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

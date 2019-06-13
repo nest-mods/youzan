@@ -6,7 +6,7 @@ export namespace RetailGoodsRetailProductUnitCreate {
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    source?: string;
+    source: string;
     /**
      * 状态（0表示禁用，1表示启用）
      */
@@ -14,7 +14,7 @@ export namespace RetailGoodsRetailProductUnitCreate {
     /**
      * 单位名称
      */
-    unit_name?: string;
+    unit_name: string;
   }
 
   /**

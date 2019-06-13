@@ -22,11 +22,11 @@ export namespace TradeDeliveryTradeDcQueryQuerybyorderno {
     /**
      * 店铺号
      */
-    kdt_id?: number;
+    kdt_id: number;
     /**
      * 订单号
      */
-    order_no?: string;
+    order_no: string;
   }
 
   /**

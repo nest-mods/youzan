@@ -22,11 +22,11 @@ export namespace BuyerCartTradeCartAdd {
     /**
      * 商品id
      */
-    item_id?: number;
+    item_id: number;
     /**
      * 店铺id
      */
-    kdt_id?: number;
+    kdt_id: number;
     /**
      * 商品留言
      */
@@ -34,11 +34,11 @@ export namespace BuyerCartTradeCartAdd {
     /**
      * 商品数量
      */
-    num?: number;
+    num: number;
     /**
      * 商品skuid
      */
-    sku_id?: number;
+    sku_id: number;
     /**
      * 门店id,多门店时才会涉及到，不是多门店的情况填0
      */

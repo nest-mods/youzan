@@ -6,7 +6,7 @@ export namespace RetailGoodsRetailStockDeliveryGet {
     /**
      * 单据号
      */
-    biz_bill_no?: string;
+    biz_bill_no: string;
     /**
      * 总部id
      */
@@ -14,7 +14,7 @@ export namespace RetailGoodsRetailStockDeliveryGet {
     /**
      * 来源
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 是否展示单据明细，默认是
      */

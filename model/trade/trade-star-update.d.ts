@@ -6,11 +6,11 @@ export namespace TradeTradeStarUpdate {
     /**
      * 等级 1-5
      */
-    star?: number;
+    star: number;
     /**
      * 交易编号
      */
-    tid?: string;
+    tid: string;
   }
 
   /**

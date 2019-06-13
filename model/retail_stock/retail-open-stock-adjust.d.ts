@@ -6,19 +6,19 @@ export namespace RetailStockRetailOpenStockAdjust {
     /**
      * 创建日期(YYYY-MM-DD HH:MM:SS)
      */
-    create_time?: string;
+    create_time: string;
     /**
      * 操作人
      */
     creator?: string;
     /**
-     * 操作类型 1 增加 2 减少
+     * 操作类型 1 增加 2 减少（为空时表示以绝对值方式调整库存）
      */
     operate_type?: number;
     /**
      * 商品明细
      */
-    order_items?: StockOrderItem[];
+    order_items: StockOrderItem[];
     /**
      * 备注
      */
@@ -26,11 +26,11 @@ export namespace RetailStockRetailOpenStockAdjust {
     /**
      * 调用来源标识
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 关联单据号，如其它渠道的订单号
      */
-    source_order_no?: string;
+    source_order_no: string;
     /**
      * 仓库编码，连锁版必填
      */

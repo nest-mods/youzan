@@ -6,7 +6,7 @@ export namespace MultiStoreMultistoreOfflineDelete {
     /**
      * 网点id
      */
-    id?: number;
+    id: number;
   }
 
   /**

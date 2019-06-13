@@ -6,15 +6,15 @@ export namespace BeautyItemMeiGoodsServingCategoryUpdate {
     /**
      * 分组ID
      */
-    category_id?: number;
+    category_id: number;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 分组名称
      */
-    name?: string;
+    name: string;
   }
 
   /**

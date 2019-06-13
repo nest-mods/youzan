@@ -10,11 +10,11 @@ export namespace RetailGoodsRetailStockWarehouseGet {
     /**
      * 来源
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 仓库kdtId
      */
-    warehouse_id?: number;
+    warehouse_id: number;
   }
 
   /**

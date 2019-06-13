@@ -30,7 +30,7 @@ export namespace TradeDeliveryLogisticsOnlineConfirm {
     /**
      * 交易订单号
      */
-    tid?: string;
+    tid: string;
   }
 
   /**

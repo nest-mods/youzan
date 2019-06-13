@@ -6,11 +6,11 @@ export namespace RetailShopRetailOpenStaffQuery {
     /**
      * 员工id列表
      */
-    admin_ids?: number[];
+    admin_ids: number[];
     /**
      * 调用来源标识
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 是否包含删除员工
      */

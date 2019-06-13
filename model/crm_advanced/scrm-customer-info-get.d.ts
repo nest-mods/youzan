@@ -6,7 +6,7 @@ export namespace CrmAdvancedScrmCustomerInfoGet {
     /**
      * 用户会员卡卡号
      */
-    card_no?: string;
+    card_no: string;
   }
 
   /**

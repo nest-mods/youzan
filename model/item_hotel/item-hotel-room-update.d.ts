@@ -6,12 +6,12 @@ export namespace ItemHotelItemHotelRoomUpdate {
     /**
      * 商品Id
      */
-    item_id?: number;
+    item_id: number;
     /**
      * 房态详情列表，一次最多30条数据
   * [{stock_date:"2017-10-31",status:1,price:322.01,stock_num:65}]
      */
-    room_stock?: RoomStock[];
+    room_stock: RoomStock[];
     /**
      * 规格Id，无规格商品不用填写
      */

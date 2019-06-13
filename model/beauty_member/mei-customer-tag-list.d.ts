@@ -10,7 +10,7 @@ export namespace BeautyMemberMeiCustomerTagList {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 标签名字
      */

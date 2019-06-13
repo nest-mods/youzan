@@ -10,7 +10,11 @@ export namespace UserUserWeixinOpenidGet {
     /**
      * 手机号
      */
-    mobile?: string;
+    mobile: string;
+    /**
+     * 类型，1表示公众号，2表示小程序
+     */
+    wechat_type?: number;
   }
 
   /**
@@ -18,7 +22,7 @@ export namespace UserUserWeixinOpenidGet {
    */
   export interface Response {
     /**
-     * 获取到的用户open_id
+     * 微信open_id
      */
     open_id?: string;
     /**

@@ -6,15 +6,15 @@ export namespace RetailProductRetailOpenCategoryUpdate {
     /**
      * 分类ID
      */
-    category_id?: number;
+    category_id: number;
     /**
      * 类目名称
      */
-    name?: string;
+    name: string;
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

@@ -6,11 +6,11 @@ export namespace BeautyCashierMeiCashierPayGet {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 要查询的订单号
      */
-    order_no?: string;
+    order_no: string;
   }
 
   /**

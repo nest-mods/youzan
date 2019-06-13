@@ -26,7 +26,7 @@ export namespace RetailTradeRetailOpenDeliveryorderQuery {
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 发货单状态
   * WAIT_DELIVER：待发货或待核销
@@ -42,6 +42,10 @@ export namespace RetailTradeRetailOpenDeliveryorderQuery {
      * 开始更新时间
      */
     update_time_start?: string;
+    /**
+     * 门店或者仓库编码
+     */
+    warehouse_code?: string;
   }
 
   /**
@@ -71,7 +75,7 @@ export namespace RetailTradeRetailOpenDeliveryorderQuery {
      */
     warehouse_code?: string;
     /**
-     * 创建日期
+     * 发货单创建日期
      */
     create_time?: string;
     /**
@@ -160,6 +164,10 @@ export namespace RetailTradeRetailOpenDeliveryorderQuery {
      * 支付方式的描述
      */
     pay_way_desc?: string;
+    /**
+     * 发货单更新时间
+     */
+    update_time?: string;
   }
 
   /**
@@ -266,11 +274,11 @@ export namespace RetailTradeRetailOpenDeliveryorderQuery {
      */
     sku_no?: string;
     /**
-     * 单位
+     * 单位(如果是称重商品,表示称重商品的单位)
      */
     unit?: string;
     /**
-     * 出库数量
+     * 出库数量（如果是称重商品，该字段无需关心）
      */
     quantity?: string;
     /**
@@ -282,7 +290,7 @@ export namespace RetailTradeRetailOpenDeliveryorderQuery {
      */
     sales_price?: string;
     /**
-     * 单个商品实付金额，已减去均摊的订单优惠
+     * 名称有歧义，准备废弃（单个商品类目实付金额，已减去均摊的订单优惠）
      */
     real_sales_price?: string;
     /**
@@ -290,6 +298,18 @@ export namespace RetailTradeRetailOpenDeliveryorderQuery {
   * 0:普通类型商品; 1:拍卖商品; 5:餐饮商品; 10:分销商品; 20:会员卡商品; 21:礼品卡商品; 23:有赞会议商品; 24:周期购; 30:收银台商品; 31:知识付费商品; 35:酒店商品; 40:普通服务类商品; 182:普通虚拟商品; 183:电子卡券商品; 201:外部会员卡商品; 202:外部直接收款商品; 203:外部普通商品; 205:mock不存在商品; 206:小程序二维码
      */
     item_type?: number;
+    /**
+     * 单个商品类目的实付金额, 已减去均摊的订单优惠，值和realSalesPrice一致
+     */
+    real_sales_amount?: string;
+    /**
+     * 计价方式 为空或者为0: 计件  10: 称重
+     */
+    pricing_strategy?: number;
+    /**
+     * 称重商品重量(pricingStrategy=10时有效)
+     */
+    weight?: string;
   }
 
   /**

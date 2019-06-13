@@ -6,11 +6,11 @@ export namespace CouponAdvancedUmpMemberpriceUpdate {
     /**
      * 会员折扣定义
      */
-    discounts?: GoodsCustomerDiscountDefinitionDTO[];
+    discounts: GoodsCustomerDiscountDefinitionDTO[];
     /**
      * 商品 ID
      */
-    item_id?: number;
+    item_id: number;
   }
 
   /**

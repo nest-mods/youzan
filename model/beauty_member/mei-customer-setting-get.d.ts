@@ -6,11 +6,11 @@ export namespace BeautyMemberMeiCustomerSettingGet {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 要查询的配置类型，目前只有 1
      */
-    type?: number;
+    type: number;
   }
 
   /**

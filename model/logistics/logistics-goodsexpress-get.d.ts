@@ -6,11 +6,11 @@ export namespace LogisticsLogisticsGoodsexpressGet {
     /**
      * 快递公司id
      */
-    express_id?: number;
+    express_id: number;
     /**
      * 物流单号
      */
-    express_no?: string;
+    express_no: string;
   }
 
   /**

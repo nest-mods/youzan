@@ -6,11 +6,11 @@ export namespace BeautyItemMeiGoodsProductSkuItemList {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 规格ID
      */
-    parent_dict_id?: number;
+    parent_dict_id: number;
   }
 
   /**

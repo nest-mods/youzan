@@ -26,7 +26,7 @@ export namespace BeautyOrderMeiOrderCreate {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 赠送列表
      */
@@ -34,7 +34,7 @@ export namespace BeautyOrderMeiOrderCreate {
     /**
      * 订单项列表
      */
-    order_items?: OrderItemRequest[];
+    order_items: OrderItemRequest[];
     /**
      * 优惠列表
      */
@@ -50,7 +50,7 @@ export namespace BeautyOrderMeiOrderCreate {
     /**
      * 订单类型。0:"普通",1,:"开卡购卡",2,:"充值",3,:"直接收款",4:"台卡",8:"产品订单"。默认是0.
      */
-    type?: number;
+    type: number;
   }
 
   /**

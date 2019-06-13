@@ -6,7 +6,7 @@ export namespace ShopShopAddressDelete {
     /**
      * 地址id
      */
-    id?: number;
+    id: number;
   }
 
   /**

@@ -23,7 +23,7 @@ export namespace BeautyMemberMeiCustomerCreate {
   * 702 手工录入
   * 703 外部导入
      */
-    customer_source?: number;
+    customer_source: number;
     /**
      * 性别
   * 0 未知
@@ -34,19 +34,19 @@ export namespace BeautyMemberMeiCustomerCreate {
     /**
      * 会员等级的别称，需要从等级列表中获取
      */
-    level_alias?: string;
+    level_alias: string;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 会员名称
      */
-    member_name?: string;
+    member_name: string;
     /**
      * 会员编号
      */
-    member_no?: string;
+    member_no: string;
     /**
      * 会员备注姓名
      */
@@ -54,7 +54,7 @@ export namespace BeautyMemberMeiCustomerCreate {
     /**
      * 手机号码
      */
-    mobile?: string;
+    mobile: string;
     /**
      * 备注
      */

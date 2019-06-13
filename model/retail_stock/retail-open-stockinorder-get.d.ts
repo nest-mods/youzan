@@ -6,11 +6,11 @@ export namespace RetailStockRetailOpenStockinorderGet {
     /**
      * 入库单单据编号
      */
-    biz_bill_no?: string;
+    biz_bill_no: string;
     /**
      * 零售调用来源（调用方和有赞约定的值）
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 仓库编码
      */

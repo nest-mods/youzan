@@ -6,7 +6,7 @@ export namespace RetailGoodsRetailProductSkuUpdate {
     /**
      * 目录id
      */
-    category_id?: number;
+    category_id: number;
     /**
      * 名称
      */
@@ -18,7 +18,7 @@ export namespace RetailGoodsRetailProductSkuUpdate {
     /**
      * 商品Id
      */
-    sku_id?: string;
+    sku_id: string;
     /**
      * 商品编码（最多20个字符，仅限英文字符与数据组合。如果为空，系统自动生成）
      */
@@ -26,7 +26,7 @@ export namespace RetailGoodsRetailProductSkuUpdate {
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    source?: string;
+    source: string;
     /**
      * 商品库商品规格（规格最多100个字）
      */

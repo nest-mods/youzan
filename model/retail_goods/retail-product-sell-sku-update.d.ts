@@ -6,20 +6,20 @@ export namespace RetailGoodsRetailProductSellSkuUpdate {
     /**
      * 网店商品id
      */
-    item_id?: number;
+    item_id: number;
     /**
      * 网店商品规格id
      */
-    item_sku_id?: number;
+    item_sku_id: number;
     /**
      * 规格价格，单位：分
   * （价格最小0.01元，最大值9999999元）
      */
-    price?: number;
+    price: number;
     /**
      * 请求来源（用于标识请求来源）
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

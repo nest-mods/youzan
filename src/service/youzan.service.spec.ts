@@ -25,6 +25,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { YouzanService } from './youzan.service';
 import { YouzanModule } from '../youzan.module';
+import * as moment from 'moment';
 
 describe('YouzanService', () => {
   let service: YouzanService;
@@ -61,5 +62,34 @@ describe('YouzanService', () => {
     });
 
     expect(res.point).toBeDefined();
+  });
+
+  describe('其他测试', function() {
+    it('查询用户积分以及三方积分变更记录', async function() {
+      const start = moment('2019-05-25');
+      const res = await service.pointsCrmCustomerPointsChangelogGet({
+        mobile: process.env.TEST_MOBILE,
+        start_date: start.format('YYYYMMDDHHmmss'),
+        end_date: start.clone().add(7, 'd').format('YYYYMMDDHHmmss'),
+      });
+
+      console.log(res);
+    });
+
+    it('使用手机号获取用户openId', async function() {
+      const res = await service.userUserWeixinOpenidGet({
+        mobile: process.env.TEST_MOBILE,
+      });
+
+      console.log(res);
+    });
+
+    it('根据微信粉丝用户的 weixin_openid 或 fans_id 获取用户信息', async function() {
+      const res = await service.userUsersWeixinFollowerGet({
+        fans_id: +process.env.TEST_FANS_ID,
+      });
+
+      console.log(res);
+    });
   });
 });

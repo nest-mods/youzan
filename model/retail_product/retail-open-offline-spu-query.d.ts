@@ -14,7 +14,7 @@ export namespace RetailProductRetailOpenOfflineSpuQuery {
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 销售状态：0-已售罄，1-销售中，2- 在库中。不传值默认查询销售中状态
      */
@@ -22,7 +22,7 @@ export namespace RetailProductRetailOpenOfflineSpuQuery {
     /**
      * 仓库编码
      */
-    warehouse_code?: string;
+    warehouse_code: string;
   }
 
   /**

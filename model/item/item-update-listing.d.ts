@@ -6,7 +6,7 @@ export namespace ItemItemUpdateListing {
     /**
      * 商品Id
      */
-    item_id?: number;
+    item_id: number;
   }
 
   /**

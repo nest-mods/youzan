@@ -6,7 +6,7 @@ export namespace ItemCategoryItemcategoriesTagDelete {
     /**
      * 商品分组ID
      */
-    tag_id?: number;
+    tag_id: number;
   }
 
   /**

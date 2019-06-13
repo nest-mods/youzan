@@ -14,7 +14,7 @@ export namespace RetailShopRetailOpenWarehouseQuery {
     /**
      * 零售调用来源（调用方和有赞约定的值）
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 1=独立仓, 2=门店
      */

@@ -6,15 +6,15 @@ export namespace CouponAdvancedUmpLimitdiscountSearch {
     /**
      * 页码，最大翻页限制：4000
      */
-    page_no?: number;
+    page_no: number;
     /**
      * 每页条数，最大限制：200
      */
-    page_size?: number;
+    page_size: number;
     /**
      * 活动状态，0: 所有，1: 未开始，2: 进行中，3: 已结束
      */
-    status?: number;
+    status: number;
   }
 
   /**

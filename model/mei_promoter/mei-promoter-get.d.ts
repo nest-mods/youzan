@@ -6,7 +6,7 @@ export namespace MeiPromoterMeiPromoterGet {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 推广员id
      */

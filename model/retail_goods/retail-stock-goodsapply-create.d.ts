@@ -6,11 +6,11 @@ export namespace RetailGoodsRetailStockGoodsapplyCreate {
     /**
      * 单据明细
      */
-    business_order_items?: OutStockAllotItem[];
+    business_order_items: OutStockAllotItem[];
     /**
      * 幂等单号
      */
-    idempotent_no?: string;
+    idempotent_no: string;
     /**
      * 备注
      */
@@ -18,7 +18,7 @@ export namespace RetailGoodsRetailStockGoodsapplyCreate {
     /**
      * 请求来源
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

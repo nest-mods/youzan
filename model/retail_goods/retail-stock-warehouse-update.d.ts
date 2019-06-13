@@ -6,11 +6,11 @@ export namespace RetailGoodsRetailStockWarehouseUpdate {
     /**
      * 详细地址
      */
-    address?: string;
+    address: string;
     /**
      * 城市
      */
-    city?: string;
+    city: string;
     /**
      * 客服联系人姓名
      */
@@ -26,11 +26,11 @@ export namespace RetailGoodsRetailStockWarehouseUpdate {
     /**
      * 区
      */
-    county?: string;
+    county: string;
     /**
      * 区id
      */
-    county_id?: number;
+    county_id: number;
     /**
      * 经度
      */
@@ -42,11 +42,11 @@ export namespace RetailGoodsRetailStockWarehouseUpdate {
     /**
      * 仓库名称
      */
-    name?: string;
+    name: string;
     /**
      * 省份
      */
-    province?: string;
+    province: string;
     /**
      * 备注
      */
@@ -54,11 +54,11 @@ export namespace RetailGoodsRetailStockWarehouseUpdate {
     /**
      * 来源
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 要修改的仓库id
      */
-    warehouse_id?: number;
+    warehouse_id: number;
   }
 
   /**

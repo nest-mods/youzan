@@ -75,6 +75,10 @@ export namespace BuyerAddressUserAddressGet {
      * 邮政编码
      */
     postal_code?: string;
+    /**
+     * 地址id
+     */
+    id?: number;
   }
 
 }

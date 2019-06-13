@@ -6,11 +6,11 @@ export namespace BeautyItemMeiGoodsServingCategoryDelete {
     /**
      * 分组ID
      */
-    category_id?: number;
+    category_id: number;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
   }
 
   /**

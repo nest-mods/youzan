@@ -42,7 +42,7 @@ export namespace RetailGoodsRetailStockStockallotSearch {
     /**
      * 系统来源
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 是否显示明细
      */

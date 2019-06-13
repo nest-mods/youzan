@@ -6,11 +6,11 @@ export namespace BuyerRefundTradeRefundClose {
     /**
      * 退款ID
      */
-    refund_id?: string;
+    refund_id: string;
     /**
      * 退款版本号
      */
-    version?: number;
+    version: number;
   }
 
   /**

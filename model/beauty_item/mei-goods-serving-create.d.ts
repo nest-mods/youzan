@@ -6,11 +6,11 @@ export namespace BeautyItemMeiGoodsServingCreate {
     /**
      * 分组ID
      */
-    category?: number;
+    category: number;
     /**
      * 商品编号/条形码
      */
-    goods_no?: string;
+    goods_no: string;
     /**
      * 商品图片列表
      */
@@ -22,7 +22,7 @@ export namespace BeautyItemMeiGoodsServingCreate {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 服务详情 支持富文本
      */
@@ -30,7 +30,7 @@ export namespace BeautyItemMeiGoodsServingCreate {
     /**
      * 服务名称
      */
-    name?: string;
+    name: string;
     /**
      * 是否需要线上支付
      */

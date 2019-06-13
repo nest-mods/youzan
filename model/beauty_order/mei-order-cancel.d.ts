@@ -6,11 +6,11 @@ export namespace BeautyOrderMeiOrderCancel {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 订单编号
      */
-    order_no?: string;
+    order_no: string;
   }
 
   /**

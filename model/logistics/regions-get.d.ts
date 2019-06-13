@@ -14,7 +14,7 @@ export namespace LogisticsRegionsGet {
     /**
      * 要获取的区域等级
      */
-    level?: number;
+    level: number;
     /**
      * 区域父级ID
      */

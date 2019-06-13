@@ -6,18 +6,18 @@ export namespace BeautyShopMeiDeptSecurityCodeUpdate {
     /**
      * 更新后的安全码
      */
-    code?: string;
+    code: string;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 更新的安全规则。传入值代表开启，不传入代表去掉。比如要开启顾客手机号保护，则传入2；如果要全部开启，则传入 1，2，3
   * 1 顾客的私密档案
   * 2 顾客的手机号
   * 3 顾客的微信号
      */
-    rules?: number[];
+    rules: number[];
   }
 
   /**

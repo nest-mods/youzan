@@ -10,7 +10,7 @@ export namespace BeautyStaffMeiStaffPageQuery {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 页数，默认查询第一页
      */

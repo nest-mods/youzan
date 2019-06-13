@@ -6,11 +6,11 @@ export namespace BeautyItemMeiGoodsProductTagDelete {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 标签ID
      */
-    tag_id?: number;
+    tag_id: number;
   }
 
   /**

@@ -10,11 +10,11 @@ export namespace RetailGoodsRetailProductCategoriesSearch {
     /**
      * 商品分类层级(0代表所有子分类，1表示不需求子分类，2表示获取单层子分类)
      */
-    level?: number;
+    level: number;
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    source?: string;
+    source: string;
   }
 
   /**

@@ -10,11 +10,11 @@ export namespace MultiStoreMultistoreGoodsSingleskuUpdate {
     /**
      * 商品id
      */
-    item_id?: number;
+    item_id: number;
     /**
      * 网点id
      */
-    offline_id?: number;
+    offline_id: number;
     /**
      * 商品价格 单位：元
      */

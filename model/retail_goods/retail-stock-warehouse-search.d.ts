@@ -29,7 +29,7 @@ export namespace RetailGoodsRetailStockWarehouseSearch {
     /**
      * 来源
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 仓库状态 0:启用 1:停用
      */

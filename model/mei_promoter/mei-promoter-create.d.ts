@@ -6,11 +6,11 @@ export namespace MeiPromoterMeiPromoterCreate {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 要创建的推广员列表
      */
-    promoters?: MeiPromoter[];
+    promoters: MeiPromoter[];
   }
 
   /**

@@ -6,19 +6,19 @@ export namespace BeautyItemMeiGoodsShelveUpdate {
     /**
      * 店铺ID列表
      */
-    dept_ids?: number[];
+    dept_ids: number[];
     /**
      * 商品ID列表
      */
-    goods_ids?: number[];
+    goods_ids: number[];
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 1上架 2下架
      */
-    shelve_type?: number;
+    shelve_type: number;
   }
 
   /**

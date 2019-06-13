@@ -32,7 +32,7 @@ export namespace BeautyOrderMeiOrderList {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 订单状态 
   * 30 待付款
@@ -49,11 +49,11 @@ export namespace BeautyOrderMeiOrderList {
     /**
      * 页码
      */
-    page?: number;
+    page: number;
     /**
      * 每页显示的条目数量
      */
-    page_size?: number;
+    page_size: number;
     /**
      * 支付类型 0, "所有" 1, "现金" 2, "微信" 3, "支付宝" 4, "会员余额" 5, "刷卡" 6, "E卡" 7, "标记支付"
      */

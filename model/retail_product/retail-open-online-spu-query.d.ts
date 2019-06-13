@@ -34,7 +34,7 @@ export namespace RetailProductRetailOpenOnlineSpuQuery {
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 销售类型：1单个销售、2组合销售
      */

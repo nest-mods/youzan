@@ -6,11 +6,11 @@ export namespace BeautyMemberMeiCardDelete {
     /**
      * 要查询的会员卡标识
      */
-    card_alias?: string;
+    card_alias: string;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
   }
 
   /**

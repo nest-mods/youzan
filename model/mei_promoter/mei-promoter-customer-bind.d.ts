@@ -6,15 +6,15 @@ export namespace MeiPromoterMeiPromoterCustomerBind {
     /**
      * 要绑定的顾客手机号列表
      */
-    customer_mobiles?: string[];
+    customer_mobiles: string[];
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 被绑定的推广员id
      */
-    pid?: string;
+    pid: string;
   }
 
   /**

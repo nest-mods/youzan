@@ -6,11 +6,11 @@ export namespace BeautyShopMeiDeptGet {
     /**
      * 要查询的分店id
      */
-    dept_id?: number;
+    dept_id: number;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
   }
 
   /**

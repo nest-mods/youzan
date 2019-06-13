@@ -22,11 +22,11 @@ export namespace LogisticsLogisticsLocalMultipleUpdate {
     /**
      * 多区域对象信息，参数为list对象的json字符串
      */
-    area_param_list?: string;
+    area_param_list: string;
     /**
      * 是否开启定时达功能，true:开启，false:关闭
      */
-    is_open?: boolean;
+    is_open: boolean;
     /**
      * 多网点id，单门店不填，该值默认就是0
      */
@@ -38,7 +38,7 @@ export namespace LogisticsLogisticsLocalMultipleUpdate {
     /**
      * 买家可选的送达时间细分 day 天；meal 上午下午晚上； hour 小时；halfhour 半小时
      */
-    time_span?: string;
+    time_span: string;
   }
 
   /**

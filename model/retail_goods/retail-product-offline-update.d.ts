@@ -21,7 +21,7 @@ export namespace RetailGoodsRetailProductOfflineUpdate {
     /**
      * 是否上架（1上架，0下架）
      */
-    display?: number;
+    display: number;
     /**
      * 商品编码
   * 组合商品生效  单个销售商品使用关联的商品库商品 spuNo
@@ -30,11 +30,11 @@ export namespace RetailGoodsRetailProductOfflineUpdate {
     /**
      * 门店商品id
      */
-    item_id?: number;
+    item_id: number;
     /**
      * 计量方式（0表示非称重，10表示称重）
      */
-    measurement?: number;
+    measurement: number;
     /**
      * 门店商品名称
      */
@@ -50,7 +50,7 @@ export namespace RetailGoodsRetailProductOfflineUpdate {
     /**
      * 零售价（最小为1分，最大为999999900分。单位：分）
      */
-    retail_price?: number;
+    retail_price: number;
     /**
      * 下架分店id(连锁版生效)
      */
@@ -71,7 +71,7 @@ export namespace RetailGoodsRetailProductOfflineUpdate {
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    source?: string;
+    source: string;
     /**
      * 规格定义 组合商品需要用户自己填写
      */
@@ -145,6 +145,10 @@ export namespace RetailGoodsRetailProductOfflineUpdate {
      * 
      */
     specs?: SpecKeyValue[];
+    /**
+     * 组合商品Id
+     */
+    spu_combine_id?: number;
   }
 
   /**

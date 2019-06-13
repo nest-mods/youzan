@@ -6,15 +6,15 @@ export namespace RetailGoodsRetailProductsOnlineDisplay {
     /**
      * 上下架状态（0为下架， 1为上架）
      */
-    display?: number;
+    display: number;
     /**
      * 批量更新的网店商品id列表
      */
-    item_ids?: number[];
+    item_ids: number[];
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    source?: string;
+    source: string;
   }
 
   /**

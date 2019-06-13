@@ -6,11 +6,11 @@ export namespace RetailStockRetailOpenStockoutorderQuery {
     /**
      * 创建截止时间
      */
-    create_time_end?: string;
+    create_time_end: string;
     /**
      * 创建开始时间
      */
-    create_time_start?: string;
+    create_time_start: string;
     /**
      * 出库单类型:
   * BSCK=报损出库
@@ -32,7 +32,7 @@ export namespace RetailStockRetailOpenStockoutorderQuery {
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 仓库编码
      */

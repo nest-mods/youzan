@@ -10,7 +10,7 @@ export namespace SupplierFenxiaoSupportOrderDeliver {
     /**
      * 物流公司id
      */
-    express_id?: number;
+    express_id: number;
     /**
      * 物流公司名称
      */
@@ -18,7 +18,7 @@ export namespace SupplierFenxiaoSupportOrderDeliver {
     /**
      * 物流单号
      */
-    express_no?: string;
+    express_no: string;
     /**
      * 店铺kdtid
      */
@@ -38,7 +38,7 @@ export namespace SupplierFenxiaoSupportOrderDeliver {
     /**
      * 精选订单号
      */
-    order_no?: string;
+    order_no: string;
     /**
      * 请求来源ip
      */

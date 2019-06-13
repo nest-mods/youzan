@@ -6,15 +6,15 @@ export namespace RetailTradeRetailOpenDeliveryorderConfirm {
     /**
      * 销售发货单号
      */
-    delivery_order_no?: string;
+    delivery_order_no: string;
     /**
      * 运单号
      */
-    express_code?: string;
+    express_code: string;
     /**
      * 物流公司编号，可以通过请求 youzan.logistics.express.get 该接口获得
      */
-    logistics_id?: string;
+    logistics_id: string;
     /**
      * 操作人
      */
@@ -27,11 +27,11 @@ export namespace RetailTradeRetailOpenDeliveryorderConfirm {
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 仓库编码
      */
-    warehouse_code?: string;
+    warehouse_code: string;
   }
 
   /**

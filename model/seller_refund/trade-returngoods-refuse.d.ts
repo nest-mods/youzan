@@ -6,15 +6,15 @@ export namespace SellerRefundTradeReturngoodsRefuse {
     /**
      * 退款ID，退款查询接口可查询到，如https://open.youzan.com/v3/apicenter/doc-api-main/1/2/trade_advanced/youzan.trade.refund.search
      */
-    refund_id?: string;
+    refund_id: string;
     /**
      * 拒绝理由
      */
-    remark?: string;
+    remark: string;
     /**
      * 退款版本号，退款查询接口可查询到，如https://open.youzan.com/v3/apicenter/doc-api-main/1/2/trade_advanced/youzan.trade.refund.get
      */
-    version?: number;
+    version: number;
   }
 
   /**

@@ -46,7 +46,7 @@ export namespace RetailGoodsRetailStockVendorCreate {
     /**
      * 调用来源
      */
-    source?: string;
+    source: string;
     /**
      * 是否启用  0 启用 1 禁用
      */

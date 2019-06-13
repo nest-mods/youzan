@@ -6,11 +6,11 @@ export namespace ReviewsItemReviewsCount {
     /**
      * 商品id
      */
-    item_id?: number;
+    item_id: number;
     /**
      * 供货商店铺id
      */
-    supplier_kdt_id?: number;
+    supplier_kdt_id: number;
   }
 
   /**

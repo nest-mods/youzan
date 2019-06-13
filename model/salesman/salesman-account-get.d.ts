@@ -6,15 +6,15 @@ export namespace SalesmanSalesmanAccountGet {
     /**
      * 粉丝id（mobile 或 fans_id 选其一，另者置为0，都有值以mobile为准）
      */
-    fans_id?: number;
+    fans_id: number;
     /**
      * 粉丝类型（自有粉丝: fans_type = 1）
      */
-    fans_type?: number;
+    fans_type: number;
     /**
      * 手机号（mobile 或 fans_id 选其一，另者置为0，都有值以mobile为准）
      */
-    mobile?: string;
+    mobile: string;
   }
 
   /**

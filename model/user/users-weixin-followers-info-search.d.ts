@@ -6,7 +6,7 @@ export namespace UserUsersWeixinFollowersInfoSearch {
     /**
      * 关注的结束时间。查询在该时间之前关注的粉丝，不能为空，查询时间间隔不能超过一天，格式同start_follow
      */
-    end_follow?: Date;
+    end_follow: Date;
     /**
      * 需要返回的除微信粉丝基础信息外的资产信息。枚举值：points，trade，level。points可获取“points”字段，trade可获取”traded_num,trade_money”两个字段，level可获取”level_info”字段信息。传多个枚举值需用“,”分隔，如果该字段为空则只返回粉丝基础信息。默认为空。(“fields”字段传入枚举值越多，查询数据耗费时间越长。）
      */
@@ -26,7 +26,7 @@ export namespace UserUsersWeixinFollowersInfoSearch {
     /**
      * 关注的起始时间。查询在该时间之后（包含该时间）关注的粉丝，不能为空。格式可为“20170101”或“2017-01-01 12:00:00"
      */
-    start_follow?: Date;
+    start_follow: Date;
   }
 
   /**

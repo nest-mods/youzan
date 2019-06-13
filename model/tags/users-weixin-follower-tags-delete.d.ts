@@ -10,7 +10,7 @@ export namespace TagsUsersWeixinFollowerTagsDelete {
     /**
      * 标签名，多个标签名用“,”分隔
      */
-    tags?: string;
+    tags: string;
     /**
      * 微信粉丝用户的openid
      */

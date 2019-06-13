@@ -6,7 +6,7 @@ export namespace BuyerCartTradeCartCount {
     /**
      * kdt_id
      */
-    kdt_id?: number;
+    kdt_id: number;
     /**
      * nobody
      */

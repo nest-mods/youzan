@@ -6,23 +6,23 @@ export namespace TradeDeliveryTradeDcDeliveryOrdersingleitemsend {
     /**
      * 包裹信息
      */
-    ex_packages?: ExPackage[];
+    ex_packages: ExPackage[];
     /**
      * 待发货的商品交易明细编号
      */
-    oid?: number;
+    oid: number;
     /**
      * 请求唯一标识
      */
-    request_id?: string;
+    request_id: string;
     /**
      * 订单号
      */
-    tid?: string;
+    tid: string;
     /**
      * 商品总数量
      */
-    total_num?: number;
+    total_num: number;
   }
 
   /**

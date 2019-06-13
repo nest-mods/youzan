@@ -6,15 +6,15 @@ export namespace RetailGoodsRetailProductUnitUpdate {
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    source?: string;
+    source: string;
     /**
      * 待更新的状态(0表示禁用，1表示启用)
      */
-    status?: number;
+    status: number;
     /**
      * 待更新单位id
      */
-    unit_id?: number;
+    unit_id: number;
   }
 
   /**

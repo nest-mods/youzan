@@ -6,7 +6,7 @@ export namespace RetailGoodsRetailProductSkuCreate {
     /**
      * 商品库商品所属分类id
      */
-    category_id?: number;
+    category_id: number;
     /**
      * 成本价（成本价最大为9999999元。单位：分）
      */
@@ -14,7 +14,7 @@ export namespace RetailGoodsRetailProductSkuCreate {
     /**
      * 商品库商品名称（名称最多100个字）
      */
-    name?: string;
+    name: string;
     /**
      * 外部id 用于第三方关联商品库商品（最长64个字符）
      */
@@ -30,7 +30,7 @@ export namespace RetailGoodsRetailProductSkuCreate {
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    source?: string;
+    source: string;
     /**
      * 商品库商品规格（规格最多100个字）
      */
@@ -42,7 +42,7 @@ export namespace RetailGoodsRetailProductSkuCreate {
     /**
      * 单位，如：克、千克
      */
-    unit?: string;
+    unit: string;
   }
 
   /**

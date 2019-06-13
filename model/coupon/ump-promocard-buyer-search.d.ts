@@ -22,7 +22,7 @@ export namespace CouponUmpPromocardBuyerSearch {
     /**
      * VALID 有效（未使用） USED 已使用 INVALID 已失效
      */
-    status?: string;
+    status: string;
   }
 
   /**

@@ -6,11 +6,11 @@ export namespace RetailProductRetailOpenCategoryDelete {
     /**
      * 类目ID
      */
-    category_id?: number;
+    category_id: number;
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

@@ -6,11 +6,11 @@ export namespace RetailGoodsRetailProductUnitsDelete {
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    source?: string;
+    source: string;
     /**
      * 待删除商品单位列表
      */
-    unit_ids?: number[];
+    unit_ids: number[];
   }
 
   /**

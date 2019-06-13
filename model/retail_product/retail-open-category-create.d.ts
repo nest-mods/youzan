@@ -6,7 +6,7 @@ export namespace RetailProductRetailOpenCategoryCreate {
     /**
      * 类目名称
      */
-    name?: string;
+    name: string;
     /**
      * 父级类目ID
      */
@@ -14,7 +14,7 @@ export namespace RetailProductRetailOpenCategoryCreate {
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

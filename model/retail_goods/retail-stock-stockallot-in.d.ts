@@ -6,11 +6,11 @@ export namespace RetailGoodsRetailStockStockallotIn {
     /**
      * 业务单据编号
      */
-    biz_bill_no?: string;
+    biz_bill_no: string;
     /**
      * 来源请求
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 选择的入库仓库
      */

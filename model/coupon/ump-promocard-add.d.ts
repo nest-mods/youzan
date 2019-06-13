@@ -6,7 +6,7 @@ export namespace CouponUmpPromocardAdd {
     /**
      * 如果 is_at_least 为 1，该字段表示订单必须满这个价格，优惠券才可用。单位：元，精确到分
      */
-    at_least?: string;
+    at_least: string;
     /**
      * 同步微信卡券时，设置是否可以转赠，1 为可转赠，0 为不可转赠
      */
@@ -26,7 +26,7 @@ export namespace CouponUmpPromocardAdd {
     /**
      * 优惠券结束时间，时间格式：yyyy-MM-dd HH:mm:ss
      */
-    end_at?: Date;
+    end_at: Date;
     /**
      * 是否到期前4天发送提醒，0 表示不发送，1 表示发送
      */
@@ -42,7 +42,7 @@ export namespace CouponUmpPromocardAdd {
     /**
      * 是否设置满多少元可用，0 表示不限制，1 表示限制
      */
-    is_at_least?: number;
+    is_at_least: number;
     /**
      * 是否仅原价购买商品时可用，0 表示否，1 表示是
      */
@@ -66,7 +66,7 @@ export namespace CouponUmpPromocardAdd {
     /**
      * 是否限制领用者的等级，0 表示不限制，大于 0 表示领用者必须是这个等级ID
      */
-    need_user_level?: number;
+    need_user_level: number;
     /**
      * 优惠属性，1表示优惠，2表示折扣
      */
@@ -74,11 +74,11 @@ export namespace CouponUmpPromocardAdd {
     /**
      * 每人限领个数，为 0 则表示不限制
      */
-    quota?: number;
+    quota: number;
     /**
      * 可用范围的类型，可选值：PART（部分商品可用，或指定商品可用）ALL（全部商品可用）
      */
-    range_type?: string;
+    range_type: string;
     /**
      * 同步微信卡券时，卡券的客服电话
      */
@@ -90,19 +90,19 @@ export namespace CouponUmpPromocardAdd {
     /**
      * 优惠券生效时间，时间格式：yyyy-MM-dd HH:mm:ss
      */
-    start_at?: Date;
+    start_at: Date;
     /**
      * 优惠券标题
      */
-    title?: string;
+    title: string;
     /**
      * 总库存
      */
-    total?: number;
+    total: number;
     /**
      * 优惠券面额。如果 is_random 为 1，则该字段表示随机金额的下限。单位：元，精确到分
      */
-    value?: string;
+    value: string;
     /**
      * 如果 is_random 为 1，则该字段表示随机金额的上限。单位：元，精确到分
      */

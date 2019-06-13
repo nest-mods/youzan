@@ -26,11 +26,11 @@ export namespace StoredValueCardCardvoucherValuecardRechgRcdBypubSearch {
     /**
      * 查询第几页
      */
-    page?: number;
+    page: number;
     /**
      * 分页大小 ，最大支持50
      */
-    page_size?: number;
+    page_size: number;
   }
 
   /**

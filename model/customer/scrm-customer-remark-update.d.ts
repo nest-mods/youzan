@@ -6,11 +6,11 @@ export namespace CustomerScrmCustomerRemarkUpdate {
     /**
      * 用户帐号信息
      */
-    account?: Account;
+    account: Account;
     /**
      * 更新备注信息
      */
-    remark?: string;
+    remark: string;
   }
 
   /**

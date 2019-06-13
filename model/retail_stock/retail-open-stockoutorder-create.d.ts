@@ -6,15 +6,19 @@ export namespace RetailStockRetailOpenStockoutorderCreate {
     /**
      * 单据编号
      */
-    biz_bill_no?: string;
+    biz_bill_no: string;
     /**
      * 单据创建日期(YYYY-MM-DD HH:MM:SS)
      */
-    create_time?: string;
+    create_time: string;
     /**
      * 制单人
      */
-    creator?: string;
+    creator: string;
+    /**
+     * 物流公司id（配送出库用）
+     */
+    logistics_company_id?: number;
     /**
      * 物流公司（配送出库选填）
      */
@@ -26,11 +30,11 @@ export namespace RetailStockRetailOpenStockoutorderCreate {
     /**
      * 出库商品明细
      */
-    order_items?: StockOrderItem[];
+    order_items: StockOrderItem[];
     /**
      * 出库单类型(PSCK=配送出库; BSCK=报损出库;PKCK=盘亏出库;DBCK=调拨出库; YHTHCK=要货退货出库)
      */
-    order_type?: string;
+    order_type: string;
     /**
      * 备注
      */
@@ -38,7 +42,7 @@ export namespace RetailStockRetailOpenStockoutorderCreate {
     /**
      * 零售调用来源（调用方和有赞约定的值）
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 关联单据号，如交易出库关联的订单号
      */

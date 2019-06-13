@@ -6,11 +6,11 @@ export namespace RetailGoodsRetailStockDeliveryOut {
     /**
      * 单据号
      */
-    biz_bill_no?: string;
+    biz_bill_no: string;
     /**
      * 商品列表
      */
-    items?: DeliveryOutItemRequest[];
+    items: DeliveryOutItemRequest[];
     /**
      * 备注
      */
@@ -18,7 +18,7 @@ export namespace RetailGoodsRetailStockDeliveryOut {
     /**
      * 来源参数（需调用方自定义标识：OPEN_XXXX）
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

@@ -38,7 +38,7 @@ export namespace BeautyItemMeiGoodsServingList {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 是否需要支付  0 不需要 1 需要
      */

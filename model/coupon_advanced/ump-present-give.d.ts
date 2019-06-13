@@ -6,7 +6,7 @@ export namespace CouponAdvancedUmpPresentGive {
     /**
      * 赠品活动ID
      */
-    activity_id?: number;
+    activity_id: number;
     /**
      * 有赞手机注册用户ID，fans_id和buyer_id至少要传一个
      */

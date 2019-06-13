@@ -18,11 +18,11 @@ export namespace TradeTradesSoldOuterGet {
     /**
      * 三方用户ua
      */
-    outer_type?: string;
+    outer_type: string;
     /**
      * 三方用户user_id
      */
-    outer_user_id?: string;
+    outer_user_id: string;
     /**
      * 页码
      */

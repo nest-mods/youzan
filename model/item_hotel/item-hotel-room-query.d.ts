@@ -6,19 +6,19 @@ export namespace ItemHotelItemHotelRoomQuery {
     /**
      * 房态开始时间
      */
-    begin_date?: string;
+    begin_date: string;
     /**
      * 房态结束时间
      */
-    end_date?: string;
+    end_date: string;
     /**
      * 商品Id
      */
-    item_id?: number;
+    item_id: number;
     /**
      * skuIds, 多个id用,隔开
      */
-    sku_ids?: string;
+    sku_ids: string;
   }
 
   /**

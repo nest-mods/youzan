@@ -41,7 +41,7 @@ export namespace BeautyMemberMeiCustomerUpdate {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 会员名称
      */
@@ -69,7 +69,7 @@ export namespace BeautyMemberMeiCustomerUpdate {
     /**
      * 会员id
      */
-    yz_uid?: number;
+    yz_uid: number;
   }
 
   /**

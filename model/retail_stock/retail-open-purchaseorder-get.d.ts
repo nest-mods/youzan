@@ -6,11 +6,11 @@ export namespace RetailStockRetailOpenPurchaseorderGet {
     /**
      * 采购单号
      */
-    purchase_order_no?: string;
+    purchase_order_no: string;
     /**
      * 零售调用来源(调用方和有赞约定的值)
      */
-    retail_source?: string;
+    retail_source: string;
   }
 
   /**

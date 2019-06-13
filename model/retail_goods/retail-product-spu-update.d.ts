@@ -10,7 +10,7 @@ export namespace RetailGoodsRetailProductSpuUpdate {
     /**
      * 分类id
      */
-    category_id?: number;
+    category_id: number;
     /**
      * 默认供应商id
      */
@@ -49,7 +49,7 @@ export namespace RetailGoodsRetailProductSpuUpdate {
     /**
      * 商品id
      */
-    spu_id?: number;
+    spu_id: number;
     /**
      * 商品编码（最多20个字符，仅限英文字符与数据组合。如果为空，系统自动生成）
      */
@@ -57,7 +57,7 @@ export namespace RetailGoodsRetailProductSpuUpdate {
     /**
      * 单位，如：克、千克
      */
-    unit?: string;
+    unit: string;
   }
 
   /**

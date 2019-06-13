@@ -6,7 +6,7 @@ export namespace CouponAdvancedUmpMemberpriceQuery {
     /**
      * 商品id数组，一次最多50个
      */
-    item_ids?: number[];
+    item_ids: number[];
   }
 
   /**

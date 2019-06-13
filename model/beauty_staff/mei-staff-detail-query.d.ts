@@ -6,15 +6,15 @@ export namespace BeautyStaffMeiStaffDetailQuery {
     /**
      * 部门ID
      */
-    dept_id?: number;
+    dept_id: number;
     /**
      * 美业Token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 员工ID
      */
-    yz_uid?: number;
+    yz_uid: number;
   }
 
   /**

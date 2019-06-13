@@ -6,7 +6,7 @@ export namespace ExtensionAnalysisDatacenterPspagesourceOrderFetch {
     /**
      * 推广分析dcps信息，该dcps在创建推广链接时会生成一个唯一追踪号，不能为空
      */
-    dcps?: string;
+    dcps: string;
     /**
      * 查询订单结束时间 格式yyyy-MM-dd
      */

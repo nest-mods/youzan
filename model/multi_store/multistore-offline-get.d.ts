@@ -6,7 +6,7 @@ export namespace MultiStoreMultistoreOfflineGet {
     /**
      * 网点id
      */
-    id?: number;
+    id: number;
   }
 
   /**

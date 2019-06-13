@@ -6,7 +6,7 @@ export namespace RetailGoodsRetailProductCategoryUpdate {
     /**
      * 待更新商品分类id
      */
-    category_id?: number;
+    category_id: number;
     /**
      * 商品分类名称
      */
@@ -14,7 +14,7 @@ export namespace RetailGoodsRetailProductCategoryUpdate {
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    source?: string;
+    source: string;
   }
 
   /**

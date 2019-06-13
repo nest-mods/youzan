@@ -8,7 +8,7 @@ export namespace BuyerCartTradeCartDelete {
   * 例如
   * [{"kdt_id":55,"goods_id":1103945,"sku_id":2722}]
      */
-    item_list?: string;
+    item_list: string;
     /**
      * 会话key,如果没有该值，填
      */

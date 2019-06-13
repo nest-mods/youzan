@@ -10,11 +10,11 @@ export namespace RetailGoodsRetailProductOnlineCreate {
     /**
      * 商品详情额外组件(固定值：-1)
      */
-    components_extra_id?: number;
+    components_extra_id: number;
     /**
      * 运费模板id（统一运费传0）
      */
-    delivery_template_id?: number;
+    delivery_template_id: number;
     /**
      * 电子凭证自定义推迟时间
      */
@@ -59,11 +59,11 @@ export namespace RetailGoodsRetailProductOnlineCreate {
      * 是否上架
   * 0：未发布，草稿状态（wap看不到） 1：发布 （正常状态）
      */
-    is_display?: number;
+    is_display: number;
     /**
      * 是否虚拟商品，0否, 2 虚拟商品， 3 电子卡券
      */
-    is_virtual?: number;
+    is_virtual: number;
     /**
      * 网店商品id
      */
@@ -108,7 +108,7 @@ export namespace RetailGoodsRetailProductOnlineCreate {
     /**
      * 图片地址（例如：[{"url":"upload_files/2016/05/16/FjvGju7UwGfol_yAXK3RzxOGelt0.png","id":"642430978","width":"300","height":"299"},{"url":"upload_files/2016/05/20/FgNkCcgqoGd_fMDPPCas1UIX3aCM.jpg","id":"644360875","width":"640","height":"379"}]）
      */
-    picture?: string;
+    picture: string;
     /**
      * 照片高度
      */
@@ -120,15 +120,15 @@ export namespace RetailGoodsRetailProductOnlineCreate {
     /**
      * 是否预售
      */
-    pre_sale?: boolean;
+    pre_sale: boolean;
     /**
      * 价格（多规格商品，商品价格不得小于各个规格价格），单位：分
      */
-    price?: number;
+    price: number;
     /**
      * 会员权限
      */
-    purchase_right?: boolean;
+    purchase_right: boolean;
     /**
      * 用户购买限额
      */
@@ -168,11 +168,11 @@ export namespace RetailGoodsRetailProductOnlineCreate {
     /**
      * 开卖时间: 0 立即开售, 1 定时开售
      */
-    sold_time?: number;
+    sold_time: number;
     /**
      * 请求来源
      */
-    source?: string;
+    source: string;
     /**
      * 定时上架时间
      */
@@ -188,7 +188,7 @@ export namespace RetailGoodsRetailProductOnlineCreate {
     /**
      * 标题
      */
-    title?: string;
+    title: string;
     /**
      * 总库存
      */
@@ -329,6 +329,10 @@ export namespace RetailGoodsRetailProductOnlineCreate {
      * 商品编码
      */
     sku_no?: string;
+    /**
+     * 组合商品spuId
+     */
+    spu_combine_id?: number;
     /**
      * 多规格-供货价格（分）
      */

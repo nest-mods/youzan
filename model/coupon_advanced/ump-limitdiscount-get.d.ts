@@ -6,7 +6,7 @@ export namespace CouponAdvancedUmpLimitdiscountGet {
     /**
      * 活动id
      */
-    activity_id?: number;
+    activity_id: number;
   }
 
   /**

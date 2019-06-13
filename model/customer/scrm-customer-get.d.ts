@@ -6,7 +6,7 @@ export namespace CustomerScrmCustomerGet {
     /**
      * 用户帐号信息（{"account_type":"Mobile", "account_id":"1385716120"}）
      */
-    account?: Account;
+    account: Account;
   }
 
   /**

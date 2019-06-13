@@ -6,19 +6,19 @@ export namespace LogisticsLogisticsSettingUpdate {
     /**
      * 计费类型
      */
-    calc_type?: number;
+    calc_type: number;
     /**
      * 是否支持快递
      */
-    is_express?: boolean;
+    is_express: boolean;
     /**
      * 是否支持同城
      */
-    is_local?: boolean;
+    is_local: boolean;
     /**
      * 是否支持自提
      */
-    is_self?: boolean;
+    is_self: boolean;
     /**
      * 门店id 可不传，预留字段
      */

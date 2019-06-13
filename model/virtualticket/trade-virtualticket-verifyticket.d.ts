@@ -6,7 +6,7 @@ export namespace VirtualticketTradeVirtualticketVerifyticket {
     /**
      * 电子卡券码券号（每个电子卡券下的12位的码券号）
      */
-    ticket_code?: string;
+    ticket_code: string;
   }
 
   /**

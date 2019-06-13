@@ -6,11 +6,11 @@ export namespace RetailTradeRetailOpenRefundorderGoodsreturnAgree {
     /**
      * 退货地址
      */
-    address?: string;
+    address: string;
     /**
      * 收件人手机号
      */
-    mobile?: string;
+    mobile: string;
     /**
      * 邮编
      */
@@ -18,11 +18,11 @@ export namespace RetailTradeRetailOpenRefundorderGoodsreturnAgree {
     /**
      * 收件人
      */
-    receiver?: string;
+    receiver: string;
     /**
      * 退款单号
      */
-    refund_order_no?: string;
+    refund_order_no: string;
     /**
      * 卖家退货留言
      */
@@ -30,7 +30,7 @@ export namespace RetailTradeRetailOpenRefundorderGoodsreturnAgree {
     /**
      * 零售调用来源（调用方和有赞约定的值）
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 座机
      */
@@ -38,7 +38,7 @@ export namespace RetailTradeRetailOpenRefundorderGoodsreturnAgree {
     /**
      * 退款单版本号
      */
-    version?: number;
+    version: number;
   }
 
   /**

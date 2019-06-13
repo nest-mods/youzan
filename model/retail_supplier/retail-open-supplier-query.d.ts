@@ -6,15 +6,15 @@ export namespace RetailSupplierRetailOpenSupplierQuery {
     /**
      * 页码
      */
-    page_no?: number;
+    page_no: number;
     /**
      * 每页条数
      */
-    page_size?: number;
+    page_size: number;
     /**
      * 零售来源
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 供应商名称
      */

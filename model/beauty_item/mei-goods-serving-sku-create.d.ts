@@ -6,11 +6,11 @@ export namespace BeautyItemMeiGoodsServingSkuCreate {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 规格名称
      */
-    name?: string;
+    name: string;
   }
 
   /**

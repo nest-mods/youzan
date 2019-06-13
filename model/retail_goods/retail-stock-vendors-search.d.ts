@@ -26,7 +26,7 @@ export namespace RetailGoodsRetailStockVendorsSearch {
     /**
      * 调用来源
      */
-    source?: string;
+    source: string;
   }
 
   /**

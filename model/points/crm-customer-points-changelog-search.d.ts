@@ -6,11 +6,11 @@ export namespace PointsCrmCustomerPointsChangelogSearch {
     /**
      * 帐户ID
      */
-    account_id?: string;
+    account_id: string;
     /**
      * 与帐户ID配合使用: 2=粉丝(原fansId),3:手机号,4:三方帐号(原open_user_id)
      */
-    account_type?: number;
+    account_type: number;
     /**
      * 结束时间（以start_date开始7天内的某个时刻）例如2015-02-23 02:03:00
      */

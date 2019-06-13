@@ -6,15 +6,15 @@ export namespace BeautyAppointmentMeiReservationCancel {
     /**
      * 预约单所在的分店id
      */
-    dept_id?: number;
+    dept_id: number;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 要取消的预约单单号
      */
-    order_no?: string;
+    order_no: string;
   }
 
   /**

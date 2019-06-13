@@ -6,15 +6,15 @@ export namespace BeautyMemberMeiCustomerPointsIncrease {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 要增加的积分值，最小为1，不支持小数
      */
-    points?: number;
+    points: number;
     /**
      * 会员的id
      */
-    yz_uid?: number;
+    yz_uid: number;
   }
 
   /**

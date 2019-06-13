@@ -10,11 +10,11 @@ export namespace CouponUmpCouponSearch {
     /**
      * 第几页
      */
-    page_no?: number;
+    page_no: number;
     /**
      * 每页数量
      */
-    page_size?: number;
+    page_size: number;
     /**
      * 活动状态 FUTURE 未开始 ,END 已结束,ON 进行中 （默认查所有状态）
      */

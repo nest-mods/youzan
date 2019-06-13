@@ -6,15 +6,15 @@ export namespace AccountImportUserPlatformImport {
     /**
      * 国际码，目前只支持+86
      */
-    country_code?: string;
+    country_code: string;
     /**
      * 手机号
      */
-    mobile?: string;
+    mobile: string;
     /**
      * 三方App帐号唯一性标识
      */
-    open_user_id?: string;
+    open_user_id: string;
   }
 
   /**

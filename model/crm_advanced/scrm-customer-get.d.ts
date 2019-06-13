@@ -6,15 +6,15 @@ export namespace CrmAdvancedScrmCustomerGet {
     /**
      * 粉丝id，如果没有写0
      */
-    fans_id?: number;
+    fans_id: number;
     /**
      * fansType，与fansId成对出现，目前只支持=1
      */
-    fans_type?: number;
+    fans_type: number;
     /**
      * 手机号，与fansId两者二选一，如果没有则写''
      */
-    mobile?: string;
+    mobile: string;
   }
 
   /**

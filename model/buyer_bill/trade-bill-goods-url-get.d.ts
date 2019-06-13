@@ -4,13 +4,13 @@ export namespace BuyerBillTradeBillGoodsUrlGet {
    */
   export interface Request {
     /**
-     * 商品信息,item_id，sku_id,num,price都为必填项 item_message为选填。[{"item_id":"413325328","sku_id":"36203790","num"：“12132414”}]
+     * 商品信息,goods_id，sku_id,num,price都为必填项 item_message为选填
      */
-    item_list?: string;
+    item_list: string;
     /**
      * 店铺id
      */
-    kdt_id?: number;
+    kdt_id: number;
     /**
      * 是否来自购物车
   * 如果是来自购物车 填cart
@@ -23,13 +23,13 @@ export namespace BuyerBillTradeBillGoodsUrlGet {
   * 拼团：10
   * 酒店：35
      */
-    order_type?: number;
+    order_type: number;
     /**
      * 订单来源：购物车，卡门等
   * 购物车：cart
   * 卡门：open
      */
-    source?: string;
+    source: string;
   }
 
   /**

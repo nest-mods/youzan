@@ -6,7 +6,7 @@ export namespace BeautyShopMeiDeptBind {
     /**
      * 店铺ID
      */
-    dept_id?: number;
+    dept_id: number;
   }
 
   /**

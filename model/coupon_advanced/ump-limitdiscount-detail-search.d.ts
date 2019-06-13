@@ -6,15 +6,15 @@ export namespace CouponAdvancedUmpLimitdiscountDetailSearch {
     /**
      * 活动id
      */
-    activity_id?: number;
+    activity_id: number;
     /**
      * 页码，最大翻页限制:4000
      */
-    page_no?: number;
+    page_no: number;
     /**
      * 每页条数,最大支持:200
      */
-    page_size?: number;
+    page_size: number;
   }
 
   /**

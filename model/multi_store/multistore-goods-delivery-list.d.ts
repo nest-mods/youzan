@@ -6,7 +6,7 @@ export namespace MultiStoreMultistoreGoodsDeliveryList {
     /**
      * 网点id
      */
-    offline_id?: number;
+    offline_id: number;
   }
 
   /**

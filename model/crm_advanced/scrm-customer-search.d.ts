@@ -6,11 +6,11 @@ export namespace CrmAdvancedScrmCustomerSearch {
     /**
      * 商家会员卡的唯一标识
      */
-    card_alias?: string;
+    card_alias: string;
     /**
      * 每页默认20条，最大支持500页
      */
-    page?: number;
+    page: number;
   }
 
   /**

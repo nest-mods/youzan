@@ -6,7 +6,7 @@ export namespace RetailGoodsRetailStockStockoutGet {
     /**
      * 入库单单号
      */
-    business_order_no?: string;
+    business_order_no: string;
     /**
      * 是否显示明细
      */
@@ -14,7 +14,7 @@ export namespace RetailGoodsRetailStockStockoutGet {
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    source?: string;
+    source: string;
     /**
      * 门店或独立仓id   注意：连锁版必填
      */

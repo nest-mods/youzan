@@ -6,15 +6,15 @@ export namespace RetailGoodsRetailProductCategoryCreate {
     /**
      * 类目名称（分类名称字符数在1-20之间）
      */
-    name?: string;
+    name: string;
     /**
      * 父级节点id（默认0，表示第一层分类）
      */
-    parent_id?: number;
+    parent_id: number;
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    source?: string;
+    source: string;
   }
 
   /**

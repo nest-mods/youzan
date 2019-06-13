@@ -6,23 +6,23 @@ export namespace BeautyAppointmentMeiReservationCreate {
     /**
      * 预约到店时间
      */
-    arrive_at?: number;
+    arrive_at: number;
     /**
      * 顾客姓名
      */
-    customer_name?: string;
+    customer_name: string;
     /**
      * 预约的分店id
      */
-    dept_id?: number;
+    dept_id: number;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 顾客手机号
      */
-    mobile?: string;
+    mobile: string;
     /**
      * 备注信息
      */
@@ -30,7 +30,7 @@ export namespace BeautyAppointmentMeiReservationCreate {
     /**
      * 预约的服务项目
      */
-    reservation_items?: MeiReservationItemEntity[];
+    reservation_items: MeiReservationItemEntity[];
   }
 
   /**

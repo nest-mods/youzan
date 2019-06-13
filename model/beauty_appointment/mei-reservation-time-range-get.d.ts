@@ -6,15 +6,15 @@ export namespace BeautyAppointmentMeiReservationTimeRangeGet {
     /**
      * 要查询的日期
      */
-    date?: number;
+    date: number;
     /**
      * 分店id
      */
-    dept_id?: number;
+    dept_id: number;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
   }
 
   /**

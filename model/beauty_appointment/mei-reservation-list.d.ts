@@ -14,7 +14,7 @@ export namespace BeautyAppointmentMeiReservationList {
     /**
      * 分店id
      */
-    dept_id?: number;
+    dept_id: number;
     /**
      * 模糊搜索匹配关键字
      */
@@ -22,15 +22,15 @@ export namespace BeautyAppointmentMeiReservationList {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 页码，要查询的页数
      */
-    page?: number;
+    page: number;
     /**
      * 每页数量，最大200
      */
-    page_size?: number;
+    page_size: number;
     /**
      * 要查询的预约状态（该字段不传默认是10）
   * 5 已创建

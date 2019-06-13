@@ -6,13 +6,13 @@ export namespace BeautyShopMeiDeptSecurityCodeSwitch {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 开启关闭状态
   * 1 开启
   * 2 关闭
      */
-    status?: number;
+    status: number;
   }
 
   /**

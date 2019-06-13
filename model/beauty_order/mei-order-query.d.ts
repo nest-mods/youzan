@@ -6,27 +6,17 @@ export namespace BeautyOrderMeiOrderQuery {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 订单号
      */
-    order_no?: string;
+    order_no: string;
   }
 
   /**
    * 响应参数
    */
   export interface Response {
-    /**
-     * 订单详情
-     */
-    response?: OrderDetailResp;
-  }
-
-  /**
-   * 订单详情
-   */
-  export interface OrderDetailResp {
     /**
      * 订单类型。0:"普通",1,:"开卡购卡",2,:"充值",3,:"直接收款",4:"台卡",8:"产品订单"。默认是0.
      */
@@ -40,11 +30,11 @@ export namespace BeautyOrderMeiOrderQuery {
      */
     order_no?: string;
     /**
-     * 订单项详情
+     * 订单项列表
      */
     order_items?: OrderItemDetailEntity[];
     /**
-     * 订单赠送项
+     * 赠送列表
      */
     order_gift_items?: OrderGiftItem[];
     /**
@@ -104,17 +94,21 @@ export namespace BeautyOrderMeiOrderQuery {
      */
     ship_time?: number;
     /**
-     * 订单支付信息
+     * 支付信息
      */
     payments?: MeiOrderDetailPaymentInfo[];
     /**
-     * 美业买家信息
+     * 买家信息
      */
     buyer?: MeiOrderBuyerInfo;
+    /**
+     * 发货信息
+     */
+    shipInfo?: OrderShip;
   }
 
   /**
-   * 订单项详情
+   * 订单项列表
    */
   export interface OrderItemDetailEntity {
     /**
@@ -232,7 +226,7 @@ export namespace BeautyOrderMeiOrderQuery {
   }
 
   /**
-   * 订单赠送项
+   * 赠送列表
    */
   export interface OrderGiftItem {
     /**
@@ -254,7 +248,7 @@ export namespace BeautyOrderMeiOrderQuery {
   }
 
   /**
-   * 订单支付信息
+   * 支付信息
    */
   export interface MeiOrderDetailPaymentInfo {
     /**
@@ -296,7 +290,7 @@ export namespace BeautyOrderMeiOrderQuery {
   }
 
   /**
-   * 美业买家信息
+   * 买家信息
    */
   export interface MeiOrderBuyerInfo {
     /**
@@ -363,6 +357,60 @@ export namespace BeautyOrderMeiOrderQuery {
      * 主余额
      */
     capital_balance?: number;
+  }
+
+  /**
+   * 发货信息
+   */
+  export interface OrderShip {
+    /**
+     * 物流单号
+     */
+    express_no?: string;
+    /**
+     * 物流名称
+     */
+    express_name?: string;
+    /**
+     * 收货省份
+     */
+    province?: string;
+    /**
+     * 收货城市
+     */
+    city?: string;
+    /**
+     * 收货区县
+     */
+    county?: string;
+    /**
+     * 收货街道
+     */
+    street?: string;
+    /**
+     * 收货详情地址
+     */
+    address?: string;
+    /**
+     * 收货人名称
+     */
+    user_name?: string;
+    /**
+     * 收货人手机号
+     */
+    phone?: string;
+    /**
+     * 是否使用物流
+     */
+    use_express?: number;
+    /**
+     * 物流id
+     */
+    express_id?: number;
+    /**
+     * 电话区号
+     */
+    country_code?: string;
   }
 
 }

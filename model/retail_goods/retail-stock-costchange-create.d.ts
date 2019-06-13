@@ -6,7 +6,7 @@ export namespace RetailGoodsRetailStockCostchangeCreate {
     /**
      * 成本调价明细
      */
-    cost_change_order_items?: CostChangeOrderItemCreate[];
+    cost_change_order_items: CostChangeOrderItemCreate[];
     /**
      * 幂等单号（请求唯一标识）
      */
@@ -18,7 +18,7 @@ export namespace RetailGoodsRetailStockCostchangeCreate {
     /**
      * 请求来源（需调用方自定义标识：OPEN_XXXX）
      */
-    retail_source?: string;
+    retail_source: string;
     /**
      * 门店或独立仓id   注意：连锁版必填
      */

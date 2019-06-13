@@ -6,7 +6,7 @@ export namespace ItemItemSkuUpdate {
     /**
      * 商品数字编号
      */
-    item_id?: number;
+    item_id: number;
     /**
      * 商品编码
      */
@@ -22,7 +22,7 @@ export namespace ItemItemSkuUpdate {
     /**
      * sku id
      */
-    sku_id?: number;
+    sku_id: number;
   }
 
   /**

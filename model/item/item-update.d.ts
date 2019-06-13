@@ -66,7 +66,7 @@ export namespace ItemItemUpdate {
     /**
      * 商品ID
      */
-    item_id?: number;
+    item_id: number;
     /**
      * 商品货号（商家为商品设置的外部编号）
      */

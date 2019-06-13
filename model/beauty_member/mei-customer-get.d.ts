@@ -6,11 +6,11 @@ export namespace BeautyMemberMeiCustomerGet {
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 会员id
      */
-    yz_uid?: number;
+    yz_uid: number;
   }
 
   /**

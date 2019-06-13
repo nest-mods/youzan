@@ -6,15 +6,15 @@ export namespace BeautyStaffMeiStaffRecover {
     /**
      * 部门ID
      */
-    dept_id?: number;
+    dept_id: number;
     /**
      * 美业token
      */
-    m_token?: string;
+    m_token: string;
     /**
      * 员工ID
      */
-    yz_uid?: number;
+    yz_uid: number;
   }
 
   /**
