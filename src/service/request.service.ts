@@ -50,23 +50,24 @@
  *          ┗┻┛    ┗┻┛+ + + +
  * ----------- 永 无 BUG ------------
  */
-import { Inject, Injectable, LoggerService, OnModuleInit } from '@nestjs/common';
-import * as YZClient from 'yz-open-sdk-nodejs';
-import * as Token from 'yz-open-sdk-nodejs/Token';
-import { YOUZAN_MODULE_OPTIONS, YOUZAN_MODULE_TASK_INVOKE, YOUZAN_QUEUE_NAME } from '../constants';
-import { Youzan, YouzanOptions } from '../interfaces';
-import { TokenStoreService } from './token-store.service';
-import * as retry from 'async-retry';
-import { YouzanRemoteApiException } from '../error/youzan-remote-api.exception';
-import * as _ from 'lodash';
 import { Log } from '@nest-mods/log';
+import { Inject, Injectable, Logger, OnModuleInit } from '@nestjs/common';
+import * as retry from 'async-retry';
 import * as Bull from 'bull';
 import { DoneCallback, Job, Queue } from 'bull';
+import * as _ from 'lodash';
+import * as YZClient from 'yz-open-sdk-nodejs';
+import * as Token from 'yz-open-sdk-nodejs/Token';
+import { YOUZAN_LOG_PREFIX, YOUZAN_MODULE_OPTIONS, YOUZAN_MODULE_TASK_INVOKE, YOUZAN_QUEUE_NAME } from '../constants';
+import { YouzanRemoteApiException } from '../error/youzan-remote-api.exception';
+import { Youzan, YouzanOptions } from '../interfaces';
 import { itsDone } from '../util/it-is-done.util';
+import { TokenStoreService } from './token-store.service';
 
 @Injectable()
 export class RequestService implements OnModuleInit {
-  @Log() private logger: LoggerService;
+  @Log(YOUZAN_LOG_PREFIX) private logger: Logger;
+
   private cachedClient;
   private cachedToken;
 
@@ -74,6 +75,7 @@ export class RequestService implements OnModuleInit {
               private tokenStore: TokenStoreService) {
   }
 
+  // tslint:disable-next-line:variable-name
   private static _queue: Queue;
 
   protected get queue(): Queue {
@@ -88,6 +90,7 @@ export class RequestService implements OnModuleInit {
     await this.queue.clean(1000, 'active');
   }
 
+  // tslint:disable-next-line:variable-name
   async invoke(options: Youzan.APIOptions, client_id: string) {
     options = _.defaults(options, { version: '3.0.0', method: 'GET' });
     const token = await this.tokenStore.getToken(client_id);

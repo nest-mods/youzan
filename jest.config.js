@@ -51,21 +51,24 @@
  * ----------- 永 无 BUG ------------
  */
 const dotenv = require('dotenv');
-dotenv.load();
+dotenv.config();
 
 module.exports = {
-    moduleFileExtensions: [
-        'js',
-        'json',
-        'ts',
-    ],
-    roots: ['<rootDir>/src', '<rootDir>/test'],
-    testRegex: '\\.(e2e-)?spec\\.ts$',
-    transform: {
-        '^.+\\.(t|j)s$': 'ts-jest',
-    },
-    coverageDirectory: '../coverage',
-    testEnvironment: 'node',
-    forceExit: true,
-    setupFilesAfterEnv: ['./jest.setup.ts'],
+  moduleFileExtensions: [
+    'js',
+    'json',
+    'ts',
+  ],
+  roots: ['<rootDir>/src', '<rootDir>/test'],
+  testRegex: '\\.(e2e-)?spec\\.ts$',
+  transform: {
+    '^.+\\.(t|j)s$': 'ts-jest',
+  },
+  coverageDirectory: '../coverage',
+  testEnvironment: 'node',
+  forceExit: true,
+  setupFilesAfterEnv: ['./jest.setup.ts'],
 };
+
+process.env.DEBUG = 'youzan:*,def:*';
+process.env.DEBUG_LEVEL = 'debug';

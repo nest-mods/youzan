@@ -50,55 +50,57 @@
  *          ┗┻┛    ┗┻┛+ + + +
  * ----------- 永 无 BUG ------------
  */
-import {Inject, Injectable, LoggerService} from '@nestjs/common';
+import { Log } from '@nest-mods/log';
+import { Inject, Injectable, Logger } from '@nestjs/common';
 import * as rp from 'request-promise-native';
-import {YouzanOptions, YouzanTokenResponse} from '../interfaces';
-import {YOUZAN_MODULE_OPTIONS} from '../constants';
-import {YouzanApiConfigNotFoundException} from '../error';
-import {Log} from '@nest-mods/log';
-import {FactoryService} from './factory.service';
+import { YOUZAN_LOG_PREFIX, YOUZAN_MODULE_OPTIONS } from '../constants';
+import { YouzanApiConfigNotFoundException } from '../error';
+import { YouzanOptions, YouzanTokenResponse } from '../interfaces';
+import { FactoryService } from './factory.service';
+
+// tslint:disable:variable-name
 
 function getKey(client_id: string) {
-    return `TOKENS:youzan:${client_id}`;
+  return `TOKENS:youzan:${client_id}`;
 }
 
 @Injectable()
 export class TokenStoreService {
 
-    @Log() private logger: LoggerService;
+  @Log(YOUZAN_LOG_PREFIX) private logger: Logger;
 
-    constructor(@Inject(YOUZAN_MODULE_OPTIONS) private options: YouzanOptions,
-                private factory: FactoryService) {
+  constructor(@Inject(YOUZAN_MODULE_OPTIONS) private options: YouzanOptions,
+              private factory: FactoryService) {
+  }
+
+  async getToken(client_id: string, force: boolean = false) {
+    let token: string = await this.factory.getClient().get(getKey(client_id));
+    if (force || !token) {
+      token = await this.getNewAndSave(client_id);
+    }
+    return token;
+  }
+
+  private async getNewAndSave(client_id: string) {
+    const token = await this.requestNewToken(client_id);
+    await this.factory.getClient().setex(getKey(client_id), token.expires_in, token.access_token);
+    return token.access_token;
+  }
+
+  private async requestNewToken(client_id: string) {
+    const apiConfig = this.options.apiConfigs[client_id];
+    if (!apiConfig) {
+      throw new YouzanApiConfigNotFoundException(client_id);
     }
 
-    async getToken(client_id: string, force: boolean = false) {
-        let token: string = await this.factory.getClient().get(getKey(client_id));
-        if (force || !token) {
-            token = await this.getNewAndSave(client_id);
-        }
-        return token;
-    }
+    const token: YouzanTokenResponse = await rp('https://open.youzan.com/oauth/token', { qs: apiConfig, json: true });
 
-    private async getNewAndSave(client_id: string) {
-        const token = await this.requestNewToken(client_id);
-        await this.factory.getClient().setex(getKey(client_id), token.expires_in, token.access_token);
-        return token.access_token;
-    }
+    this.logger.verbose({
+      message: '有赞API Token',
+      client_id,
+      token,
+    });
 
-    private async requestNewToken(client_id: string) {
-        const apiConfig = this.options.apiConfigs[client_id];
-        if (!apiConfig) {
-            throw new YouzanApiConfigNotFoundException(client_id);
-        }
-
-        const token: YouzanTokenResponse = await rp('https://open.youzan.com/oauth/token', {qs: apiConfig, json: true});
-
-        this.logger.verbose({
-            message: '有赞API Token',
-            client_id,
-            token,
-        });
-
-        return token;
-    }
+    return token;
+  }
 }

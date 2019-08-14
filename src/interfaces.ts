@@ -85,6 +85,7 @@ export interface YouzanTokenResponse {
   scope: string;
 }
 
+// tslint:disable-next-line:no-namespace
 export namespace Youzan {
   export interface APIOptions {
     api: string;

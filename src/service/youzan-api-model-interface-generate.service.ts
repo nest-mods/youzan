@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+import { Log } from '@nest-mods/log';
+import { Injectable, Logger } from '@nestjs/common';
 /*
  * Created by Diluka on 2019-02-21.
  *
@@ -51,14 +53,14 @@
  * ----------- 永 无 BUG ------------
  */
 import * as fs from 'fs';
-import * as path from 'path';
-import { Injectable, LoggerService } from '@nestjs/common';
-import * as rp from 'request-promise-native';
 import * as _ from 'lodash';
-import { Log } from '@nest-mods/log';
+import * as path from 'path';
+import * as rp from 'request-promise-native';
+import { YOUZAN_LOG_PREFIX } from '../constants';
 
 const endpoint = 'https://open.youzan.com/v3/docs/debugger/interface/params';
 
+// tslint:disable-next-line:no-namespace
 namespace ApiInfoResponse {
 
   export interface RequestUrl {
@@ -87,6 +89,7 @@ namespace ApiInfoResponse {
     example?: any;
     isStruct: boolean;
     children: Struct[];
+    isRequired?: string;
   }
 
   export interface ResponseParam {
@@ -234,7 +237,7 @@ const outputFolder = '../../model';
 @Injectable()
 export class YouzanApiModelInterfaceGenerateService {
 
-  @Log() private logger: LoggerService;
+  @Log(YOUZAN_LOG_PREFIX) private logger: Logger;
 
   async generateAll(apis?: ApiDesc[]) {
     if (!apis) {
@@ -305,7 +308,7 @@ export class GeneratedYouzanService {
 
     await this.writeFile(api, codes);
 
-    this.logger.log({ message: `生成接口(${api.group}/${api.api}@${api.version})完成`, level: 'debug' });
+    this.logger.debug(`生成接口(${api.group}/${api.api}@${api.version})完成`);
     return codes;
   }
 
@@ -419,10 +422,9 @@ export class GeneratedYouzanService {
     api.desc = res.data.desc;
     api.method = res.data.name === 'get' ? 'GET' : 'POST';
 
-    this.logger.log({
+    this.logger.verbose({
       message: `fetchDesc from ${api.group}/${api.api}@${api.version}`,
       apiDesc,
-      level: 'silly',
     });
 
     fs.mkdirSync(path.join(__dirname, '../../docs', api.group), { recursive: true });
@@ -474,10 +476,9 @@ export class GeneratedYouzanService {
       });
     }
 
-    this.logger.log({
+    this.logger.verbose({
       message: 'generateTypes',
       types,
-      level: 'silly',
     });
 
     return types;
@@ -499,9 +500,8 @@ export class GeneratedYouzanService {
     });
     if (_.isArray(o.children)) {
       for (const c of o.children) {
-        this.logger.log({
+        this.logger.verbose({
           message: 'recruitStruct',
-          level: 'silly',
           check: c,
         });
         if (c.isStruct) {
@@ -512,24 +512,23 @@ export class GeneratedYouzanService {
   }
 
   private structProps(list: ApiInfoResponse.Struct[]) {
-    this.logger.log({ message: `生成结构体属性`, level: 'silly', props: list });
+    this.logger.verbose({ message: `生成结构体属性`, props: list });
     const props: PropDesc[] = [];
     for (const p of list) {
       props.push({
         name: p.name.replace(/\W/g, ''),
         type: getType(p),
-        optional: p['isRequired'] === '是'
+        optional: p.isRequired === '是'
           ? false
-          : p['isRequired'] === '否'
+          : p.isRequired === '否'
             ? true
             : !p.isNeed,
         comment: _.trim(p.desc),
       });
     }
-    this.logger.log({
+    this.logger.verbose({
       message: 'structProps',
       props,
-      level: 'silly',
     });
     return props;
   }
