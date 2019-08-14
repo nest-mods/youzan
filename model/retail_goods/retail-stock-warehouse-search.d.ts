@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailStockWarehouseSearch {
   /**
    * 请求参数
@@ -21,9 +22,9 @@ export namespace RetailGoodsRetailStockWarehouseSearch {
     query_group?: boolean;
     /**
      * 查询类型，
-  * 1:只查询基础信息（不包含仓库名称，地址）单次插询数量无限制
-  * 2:查询仓库名称地址信息。单次查询最大100.
-  * 3.查询包含仓库名称地址及物流供货相关信息，单次数量最大20
+     * 1:只查询基础信息（不包含仓库名称，地址）单次插询数量无限制
+     * 2:查询仓库名称地址信息。单次查询最大100.
+     * 3.查询包含仓库名称地址及物流供货相关信息，单次数量最大20
      */
     query_type?: number;
     /**

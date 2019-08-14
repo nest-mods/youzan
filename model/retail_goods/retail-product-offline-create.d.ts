@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailProductOfflineCreate {
   /**
    * 请求参数
@@ -5,9 +6,9 @@ export namespace RetailGoodsRetailProductOfflineCreate {
   export interface Request {
     /**
      * 是否全量上下架状态(连锁版生效)
-  * -1 未选择 默认
-  *  0 下架
-  * 1 上架
+     * -1 未选择 默认
+     *  0 下架
+     * 1 上架
      */
     all_batch_operate?: number;
     /**
@@ -16,7 +17,7 @@ export namespace RetailGoodsRetailProductOfflineCreate {
     category_id?: number;
     /**
      * 组合商品关联关系
-  * 例如：[{"related_combine_num":2000,"related_combine_price":1200,"related_combine_sku_id":7046628},{"related_combine_num":23000,"related_combine_price":1000,"related_combine_sku_id":7049994}]
+     * 例如：[{"related_combine_num":2000,"related_combine_price":1200,"related_combine_sku_id":7046628},{"related_combine_num":23000,"related_combine_price":1000,"related_combine_sku_id":7049994}]
      */
     combine_params?: OfflineCombineParam[];
     /**
@@ -25,7 +26,7 @@ export namespace RetailGoodsRetailProductOfflineCreate {
     display: number;
     /**
      * 商品编码
-  * 组合商品生效  单个销售商品使用关联的商品库商品 spuNo
+     * 组合商品生效  单个销售商品使用关联的商品库商品 spuNo
      */
     goods_no?: string;
     /**
@@ -42,9 +43,9 @@ export namespace RetailGoodsRetailProductOfflineCreate {
     photo_url?: string;
     /**
      * 商品库商品ID
-  * 只支持 无规格商品关联
-  * 后面会废弃掉该字段
-  * 统一使用spu_id
+     * 只支持 无规格商品关联
+     * 后面会废弃掉该字段
+     * 统一使用spu_id
      */
     relate_sku_id?: number;
     /**
@@ -61,7 +62,7 @@ export namespace RetailGoodsRetailProductOfflineCreate {
     sale_up_kdt_ids?: number[];
     /**
      * 销售库存
-  * 组合商品需要传计算后的可售库存
+     * 组合商品需要传计算后的可售库存
      */
     sell_stock_count?: number;
     /**
@@ -86,13 +87,13 @@ export namespace RetailGoodsRetailProductOfflineCreate {
     stocks?: OfflineStock[];
     /**
      * 商品单位
-  * 组合商品生效  单个销售商品使用关联的商品库商品的单位
+     * 组合商品生效  单个销售商品使用关联的商品库商品的单位
      */
     unit?: string;
   }
 
   /**
-   * 
+   *
    */
   export interface OfflineCombineParam {
     /**
@@ -110,7 +111,7 @@ export namespace RetailGoodsRetailProductOfflineCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface OfflineStock {
     /**
@@ -142,7 +143,7 @@ export namespace RetailGoodsRetailProductOfflineCreate {
      */
     sku_id?: number;
     /**
-     * 
+     *
      */
     specs?: SpecKeyValue[];
     /**
@@ -152,7 +153,7 @@ export namespace RetailGoodsRetailProductOfflineCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface SpecKeyValue {
     /**

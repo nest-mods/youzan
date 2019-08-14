@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailStockRetailOpenStockoutorderCreate {
   /**
    * 请求参数
@@ -54,7 +55,7 @@ export namespace RetailStockRetailOpenStockoutorderCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface StockOrderItem {
     /**

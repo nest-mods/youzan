@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BuyerCartTradeCartDelete {
   /**
    * 请求参数
@@ -5,8 +6,8 @@ export namespace BuyerCartTradeCartDelete {
   export interface Request {
     /**
      * 商品列表信息，goods_id(商品id)、sku_id(sku id)、kdt_id(店铺id)。
-  * 例如
-  * [{"kdt_id":55,"goods_id":1103945,"sku_id":2722}]
+     * 例如
+     * [{"kdt_id":55,"goods_id":1103945,"sku_id":2722}]
      */
     item_list: string;
     /**

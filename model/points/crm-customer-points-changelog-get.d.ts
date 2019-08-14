@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace PointsCrmCustomerPointsChangelogGet {
   /**
    * 请求参数
@@ -13,7 +14,7 @@ export namespace PointsCrmCustomerPointsChangelogGet {
     end_date?: string;
     /**
      * 粉丝id
-  * mobile/fans_id/open_user_id 三选一传入
+     * mobile/fans_id/open_user_id 三选一传入
      */
     fans_id?: number;
     /**
@@ -22,12 +23,12 @@ export namespace PointsCrmCustomerPointsChangelogGet {
     fans_type?: number;
     /**
      * 用户手机号
-  * mobile/fans_id/open_user_id 三选一传入
+     * mobile/fans_id/open_user_id 三选一传入
      */
     mobile?: string;
     /**
      * 三方用户ID 
-  * mobile/fans_id/open_user_id 三选一传入
+     * mobile/fans_id/open_user_id 三选一传入
      */
     open_user_id?: string;
     /**
@@ -59,13 +60,13 @@ export namespace PointsCrmCustomerPointsChangelogGet {
     /**
      * 积分变动记录
      */
-    details?: UserPointsChangeLogDTO[];
+    details?: UserPointsChangeLogDTOV2[];
   }
 
   /**
    * 积分变动记录
    */
-  export interface UserPointsChangeLogDTO {
+  export interface UserPointsChangeLogDTOV2 {
     /**
      * 积分值（负数为扣积分）
      */
@@ -82,6 +83,14 @@ export namespace PointsCrmCustomerPointsChangelogGet {
      * 创建时间
      */
     created_time?: string;
+    /**
+     * 过期时间(秒级时间戳, 0: 永不过期)
+     */
+    expired_at?: number;
+    /**
+     * 三方调用开放平台加/减积分接口传入的biz_value, 三方未传入则不会返回
+     */
+    third_biz_value?: string;
   }
 
 }

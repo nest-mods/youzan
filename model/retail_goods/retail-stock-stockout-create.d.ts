@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailStockStockoutCreate {
   /**
    * 请求参数
@@ -25,8 +26,8 @@ export namespace RetailGoodsRetailStockStockoutCreate {
     stock_out_order_items?: StockOutOrderItemCreateRequest;
     /**
      * 出库单类型（  OTHER_OUT_LOSS(43, "其他出库-报损"),
-  *   OTHER_OUT_USE(44, "其他出库-领用"),
-  *   OTHER_OUT_OTHER(49, "其他出库-其他"),）
+     *   OTHER_OUT_USE(44, "其他出库-领用"),
+     *   OTHER_OUT_OTHER(49, "其他出库-其他"),）
      */
     stock_out_type?: number;
     /**
@@ -36,7 +37,7 @@ export namespace RetailGoodsRetailStockStockoutCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface StockOutOrderItemCreateRequest {
     /**
@@ -56,7 +57,7 @@ export namespace RetailGoodsRetailStockStockoutCreate {
      */
     specifications?: string;
     /**
-     * 
+     *
      */
     totalSell?: number;
     /**
@@ -78,7 +79,7 @@ export namespace RetailGoodsRetailStockStockoutCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }

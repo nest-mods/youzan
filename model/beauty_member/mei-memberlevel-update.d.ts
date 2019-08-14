@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyMemberMeiMemberlevelUpdate {
   /**
    * 请求参数
@@ -26,7 +27,7 @@ export namespace BeautyMemberMeiMemberlevelUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface MeiLevelRightSetting {
     /**

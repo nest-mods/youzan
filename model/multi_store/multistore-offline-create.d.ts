@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace MultiStoreMultistoreOfflineCreate {
   /**
    * 请求参数
@@ -12,9 +13,13 @@ export namespace MultiStoreMultistoreOfflineCreate {
      */
     area: string;
     /**
-     * 营业时间,按天设置。示例[{"open_time":"00:10","close_time":"16:00","weekdays":["周一","周二","周三","周四","周五"]},{"open_time":"00:10","close_time":"20:00","weekdays":["周六","周日"]}]
+     * 营业时间,按天设置,一天只支持设置一个连续的时间段。
      */
     business_hours_advanced: string;
+    /**
+     * 1 营业、2 休息
+     */
+    bussiness_hours_type?: number;
     /**
      * 市
      */
@@ -28,7 +33,7 @@ export namespace MultiStoreMultistoreOfflineCreate {
      */
     description: string;
     /**
-     * 图片地址，逗号分隔
+     * 图片地址，逗号分隔。注：图片需要先上传到有赞平台
      */
     image: string;
     /**
@@ -52,11 +57,15 @@ export namespace MultiStoreMultistoreOfflineCreate {
      */
     lng: string;
     /**
+     * 固定配送费
+     */
+    local_delivery_fee?: number;
+    /**
      * 同城配送范围多边形,只有当local_delivery_scope_type=2时生效。格式如：点1经度,点1纬度|点2经度,点2纬度|点3经度，点3纬度|点4经度，点4纬度...（百度坐标系）
      */
     local_delivery_polygon?: string;
     /**
-     * 配送范围。单位米
+     * 配送范围，单位米。只有当local_delivery_scope_type=1时生效。
      */
     local_delivery_scope?: string;
     /**
@@ -75,6 +84,10 @@ export namespace MultiStoreMultistoreOfflineCreate {
      * 线下自提时间。格式同business_hours_advanced
      */
     offline_business_hours?: string;
+    /**
+     * 0 否， 1 只允许营业时间下单
+     */
+    only_bussiness_hours_open?: number;
     /**
      * 区号
      */
@@ -101,6 +114,10 @@ export namespace MultiStoreMultistoreOfflineCreate {
    * 响应参数
    */
   export interface Response {
+    /**
+     * 操作成功为true
+     */
+    is_success?: boolean;
     /**
      * 成功时返回新增的网点id
      */

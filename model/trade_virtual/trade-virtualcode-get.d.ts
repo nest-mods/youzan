@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace TradeVirtualTradeVirtualcodeGet {
   /**
    * 请求参数
@@ -35,7 +36,7 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     tid?: string;
     /**
      * 1 未核销 
-  * 2 已核销
+     * 2 已核销
      */
     status?: number;
     /**
@@ -78,16 +79,16 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     title?: string;
     /**
      * 交易类型。取值范围：<br>
-  * FIXED （一口价）<br>
-  * GIFT （送礼）<br>
-  * BULK_PURCHASE（来自分销商的采购）<br>
-  * PRESENT （赠品领取）<br>
-  * GROUP （拼团订单）<br>
-  * PIFA （批发订单）<br>
-  * COD （货到付款）<br>
-  * PEER （代付）<br>
-  * QRCODE（扫码商家二维码直接支付的交易）<br>
-  * QRCODE_3RD（线下收银台二维码交易)
+     * FIXED （一口价）<br>
+     * GIFT （送礼）<br>
+     * BULK_PURCHASE（来自分销商的采购）<br>
+     * PRESENT （赠品领取）<br>
+     * GROUP （拼团订单）<br>
+     * PIFA （批发订单）<br>
+     * COD （货到付款）<br>
+     * PEER （代付）<br>
+     * QRCODE（扫码商家二维码直接支付的交易）<br>
+     * QRCODE_3RD（线下收银台二维码交易)
      */
     type?: string;
     /**
@@ -104,7 +105,7 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     trade_memo?: string;
     /**
      * 收货人的所在城市。<br>
-  * PS：如果订单类型是送礼订单，收货地址在sub_trades字段中；如果物流方式是到店自提，收货地址在fetch_detail字段中
+     * PS：如果订单类型是送礼订单，收货地址在sub_trades字段中；如果物流方式是到店自提，收货地址在fetch_detail字段中
      */
     receiver_city?: string;
     /**
@@ -133,19 +134,19 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     receiver_mobile?: string;
     /**
      * 交易维权状态。<br>
-  *         0 无维权，1 顾客发起维权，2 顾客拒绝商家的处理结果，3 顾客接受商家的处理结果，9 商家正在处理,101 维权处理中,110 维权结束。<br>
-  *             备注：1到10的状态码是微信维权状态码，100以上的状态码是有赞维权状态码
+     *         0 无维权，1 顾客发起维权，2 顾客拒绝商家的处理结果，3 顾客接受商家的处理结果，9 商家正在处理,101 维权处理中,110 维权结束。<br>
+     *             备注：1到10的状态码是微信维权状态码，100以上的状态码是有赞维权状态码
      */
     feedback?: number;
     /**
      * 退款状态。取值范围：<br>
-  * NO_REFUND（无退款）<br>
-  * PARTIAL_REFUNDING（部分退款中）<br>
-  * PARTIAL_REFUNDED（已部分退款）<br>
-  * PARTIAL_REFUND_FAILED（部分退款失败）<br>
-  * FULL_REFUNDING（全额退款中）<br>
-  * FULL_REFUNDED（已全额退款）<br>
-  * FULL_REFUND_FAILED（全额退款失败）<br>
+     * NO_REFUND（无退款）<br>
+     * PARTIAL_REFUNDING（部分退款中）<br>
+     * PARTIAL_REFUNDED（已部分退款）<br>
+     * PARTIAL_REFUND_FAILED（部分退款失败）<br>
+     * FULL_REFUNDING（全额退款中）<br>
+     * FULL_REFUNDED（已全额退款）<br>
+     * FULL_REFUND_FAILED（全额退款失败）<br>
      */
     refund_state?: string;
     /**
@@ -158,14 +159,14 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     transaction_tid?: string;
     /**
      * 交易状态。取值范围：<br>
-  * TRADE_NO_CREATE_PAY (没有创建支付交易) <br>
-  * WAIT_BUYER_PAY (等待买家付款) <br>
-  * WAIT_PAY_RETURN (等待支付确认) <br>
-  * WAIT_GROUP（等待成团，即：买家已付款，等待成团）<br>
-  * WAIT_SELLER_SEND_GOODS (等待卖家发货，即：买家已付款) <br>
-  * WAIT_BUYER_CONFIRM_GOODS (等待买家确认收货，即：卖家已发货) <br>
-  * TRADE_BUYER_SIGNED (买家已签收) <br>
-  * TRADE_CLOSED (付款以后用户退款成功，交易自动关
+     * TRADE_NO_CREATE_PAY (没有创建支付交易) <br>
+     * WAIT_BUYER_PAY (等待买家付款) <br>
+     * WAIT_PAY_RETURN (等待支付确认) <br>
+     * WAIT_GROUP（等待成团，即：买家已付款，等待成团）<br>
+     * WAIT_SELLER_SEND_GOODS (等待卖家发货，即：买家已付款) <br>
+     * WAIT_BUYER_CONFIRM_GOODS (等待买家确认收货，即：卖家已发货) <br>
+     * TRADE_BUYER_SIGNED (买家已签收) <br>
+     * TRADE_CLOSED (付款以后用户退款成功，交易自动关
      */
     status?: string;
     /**
@@ -206,22 +207,22 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     pay_time?: Date;
     /**
      * 支付类型。取值范围：
-  * WEIXIN (微信自有支付)
-  * WEIXIN_DAIXIAO (微信代销支付)
-  * ALIPAY (支付宝支付)
-  * BANKCARDPAY (银行卡支付)
-  * PEERPAY (代付)
-  * CODPAY (货到付款)
-  * BAIDUPAY (百度钱包支付)
-  * PRESENTTAKE (直接领取赠品)
-  * COUPONPAY(优惠券/码全额抵扣)
-  * BULKPURCHASE(来自分销商的采购)
-  * MERGEDPAY(合并付货款)
-  * ECARD(有赞E卡支付)
-  * PURCHASE_PAY (采购单支付)
-  * MARKPAY (标记收款)
-  * OFCASH (现金支付)
-  * PREPAIDCARD (储值卡余额支付)
+     * WEIXIN (微信自有支付)
+     * WEIXIN_DAIXIAO (微信代销支付)
+     * ALIPAY (支付宝支付)
+     * BANKCARDPAY (银行卡支付)
+     * PEERPAY (代付)
+     * CODPAY (货到付款)
+     * BAIDUPAY (百度钱包支付)
+     * PRESENTTAKE (直接领取赠品)
+     * COUPONPAY(优惠券/码全额抵扣)
+     * BULKPURCHASE(来自分销商的采购)
+     * MERGEDPAY(合并付货款)
+     * ECARD(有赞E卡支付)
+     * PURCHASE_PAY (采购单支付)
+     * MARKPAY (标记收款)
+     * OFCASH (现金支付)
+     * PREPAIDCARD (储值卡余额支付)
      */
     pay_type?: string;
     /**
@@ -274,8 +275,8 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     relation_type?: string;
     /**
      * relation_type返回source时,为分销订单号列表<br>
-  * 返回fenxiao时,为供应商订单号列表<br>
-  * 返回空时,列表返回空
+     * 返回fenxiao时,为供应商订单号列表<br>
+     * 返回空时,列表返回空
      */
     relations?: string[];
     /**
@@ -348,7 +349,7 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     invoice_title?: string;
     /**
      * 订单状态描述:
-  * 待付款,待发货,待成团,待接单,已接单,已发货,已完成,已关闭
+     * 待付款,待发货,待成团,待接单,已接单,已发货,已完成,已关闭
      */
     status_str?: string;
   }
@@ -495,9 +496,9 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     promotion_name?: string;
     /**
      * 优惠的类型。可选值：<br>MEMBER_CARD_DISCOUNT（会员卡折扣）
-  *             <br>SCAN_DISCOUNT（扫码折扣）
-  *             <br>SCAN_DECREASE（扫码减额优惠）
-  *             <br>TIMELIMITED_DISCOUNT（限时折扣）
+     *             <br>SCAN_DISCOUNT（扫码折扣）
+     *             <br>SCAN_DECREASE（扫码减额优惠）
+     *             <br>TIMELIMITED_DISCOUNT（限时折扣）
      */
     promotion_type?: string;
     /**
@@ -524,8 +525,8 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     fetcher_mobile?: string;
     /**
      * 预约的领取时间。新版到店自提的数据格式:<br>
-  * 1: 2016-04-18 17:00-17:15<br>
-  * 2: 尽快到店提货
+     * 1: 2016-04-18 17:00-17:15<br>
+     * 2: 尽快到店提货
      */
     fetch_time?: string;
     /**
@@ -722,16 +723,16 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     title?: string;
     /**
      * 交易类型。取值范围：<br>
-  * FIXED （一口价）<br>
-  * GIFT （送礼）<br>
-  * BULK_PURCHASE（来自分销商的采购）<br>
-  * PRESENT （赠品领取）<br>
-  * GROUP （拼团订单）<br>
-  * PIFA （批发订单）<br>
-  * COD （货到付款）<br>
-  * PEER （代付）<br>
-  * QRCODE（扫码商家二维码直接支付的交易）<br>
-  * QRCODE_3RD（线下收银台二维码交易)
+     * FIXED （一口价）<br>
+     * GIFT （送礼）<br>
+     * BULK_PURCHASE（来自分销商的采购）<br>
+     * PRESENT （赠品领取）<br>
+     * GROUP （拼团订单）<br>
+     * PIFA （批发订单）<br>
+     * COD （货到付款）<br>
+     * PEER （代付）<br>
+     * QRCODE（扫码商家二维码直接支付的交易）<br>
+     * QRCODE_3RD（线下收银台二维码交易)
      */
     type?: string;
     /**
@@ -748,7 +749,7 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     trade_memo?: string;
     /**
      * 收货人的所在城市。<br>
-  * PS：如果订单类型是送礼订单，收货地址在sub_trades字段中；如果物流方式是到店自提，收货地址在fetch_detail字段中
+     * PS：如果订单类型是送礼订单，收货地址在sub_trades字段中；如果物流方式是到店自提，收货地址在fetch_detail字段中
      */
     receiver_city?: string;
     /**
@@ -777,19 +778,19 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     receiver_mobile?: string;
     /**
      * 交易维权状态。<br>
-  *         0 无维权，1 顾客发起维权，2 顾客拒绝商家的处理结果，3 顾客接受商家的处理结果，9 商家正在处理,101 维权处理中,110 维权结束。<br>
-  *             备注：1到10的状态码是微信维权状态码，100以上的状态码是有赞维权状态码
+     *         0 无维权，1 顾客发起维权，2 顾客拒绝商家的处理结果，3 顾客接受商家的处理结果，9 商家正在处理,101 维权处理中,110 维权结束。<br>
+     *             备注：1到10的状态码是微信维权状态码，100以上的状态码是有赞维权状态码
      */
     feedback?: number;
     /**
      * 退款状态。取值范围：<br>
-  * NO_REFUND（无退款）<br>
-  * PARTIAL_REFUNDING（部分退款中）<br>
-  * PARTIAL_REFUNDED（已部分退款）<br>
-  * PARTIAL_REFUND_FAILED（部分退款失败）<br>
-  * FULL_REFUNDING（全额退款中）<br>
-  * FULL_REFUNDED（已全额退款）<br>
-  * FULL_REFUND_FAILED（全额退款失败）<br>
+     * NO_REFUND（无退款）<br>
+     * PARTIAL_REFUNDING（部分退款中）<br>
+     * PARTIAL_REFUNDED（已部分退款）<br>
+     * PARTIAL_REFUND_FAILED（部分退款失败）<br>
+     * FULL_REFUNDING（全额退款中）<br>
+     * FULL_REFUNDED（已全额退款）<br>
+     * FULL_REFUND_FAILED（全额退款失败）<br>
      */
     refund_state?: string;
     /**
@@ -802,14 +803,14 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     transaction_tid?: string;
     /**
      * 交易状态。取值范围：<br>
-  * TRADE_NO_CREATE_PAY (没有创建支付交易) <br>
-  * WAIT_BUYER_PAY (等待买家付款) <br>
-  * WAIT_PAY_RETURN (等待支付确认) <br>
-  * WAIT_GROUP（等待成团，即：买家已付款，等待成团）<br>
-  * WAIT_SELLER_SEND_GOODS (等待卖家发货，即：买家已付款) <br>
-  * WAIT_BUYER_CONFIRM_GOODS (等待买家确认收货，即：卖家已发货) <br>
-  * TRADE_BUYER_SIGNED (买家已签收) <br>
-  * TRADE_CLOSED (付款以后用户退款成功，交易自动关
+     * TRADE_NO_CREATE_PAY (没有创建支付交易) <br>
+     * WAIT_BUYER_PAY (等待买家付款) <br>
+     * WAIT_PAY_RETURN (等待支付确认) <br>
+     * WAIT_GROUP（等待成团，即：买家已付款，等待成团）<br>
+     * WAIT_SELLER_SEND_GOODS (等待卖家发货，即：买家已付款) <br>
+     * WAIT_BUYER_CONFIRM_GOODS (等待买家确认收货，即：卖家已发货) <br>
+     * TRADE_BUYER_SIGNED (买家已签收) <br>
+     * TRADE_CLOSED (付款以后用户退款成功，交易自动关
      */
     status?: string;
     /**
@@ -850,22 +851,22 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     pay_time?: Date;
     /**
      * 支付类型。取值范围：
-  * WEIXIN (微信自有支付)
-  * WEIXIN_DAIXIAO (微信代销支付)
-  * ALIPAY (支付宝支付)
-  * BANKCARDPAY (银行卡支付)
-  * PEERPAY (代付)
-  * CODPAY (货到付款)
-  * BAIDUPAY (百度钱包支付)
-  * PRESENTTAKE (直接领取赠品)
-  * COUPONPAY(优惠券/码全额抵扣)
-  * BULKPURCHASE(来自分销商的采购)
-  * MERGEDPAY(合并付货款)
-  * ECARD(有赞E卡支付)
-  * PURCHASE_PAY (采购单支付)
-  * MARKPAY (标记收款)
-  * OFCASH (现金支付)
-  * PREPAIDCARD (储值卡余额支付)
+     * WEIXIN (微信自有支付)
+     * WEIXIN_DAIXIAO (微信代销支付)
+     * ALIPAY (支付宝支付)
+     * BANKCARDPAY (银行卡支付)
+     * PEERPAY (代付)
+     * CODPAY (货到付款)
+     * BAIDUPAY (百度钱包支付)
+     * PRESENTTAKE (直接领取赠品)
+     * COUPONPAY(优惠券/码全额抵扣)
+     * BULKPURCHASE(来自分销商的采购)
+     * MERGEDPAY(合并付货款)
+     * ECARD(有赞E卡支付)
+     * PURCHASE_PAY (采购单支付)
+     * MARKPAY (标记收款)
+     * OFCASH (现金支付)
+     * PREPAIDCARD (储值卡余额支付)
      */
     pay_type?: string;
     /**
@@ -914,8 +915,8 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     relation_type?: string;
     /**
      * relation_type返回source时,为分销订单号列表<br>
-  * 返回fenxiao时,为供应商订单号列表<br>
-  * 返回空时,列表返回空
+     * 返回fenxiao时,为供应商订单号列表<br>
+     * 返回空时,列表返回空
      */
     relations?: string[];
     /**
@@ -988,7 +989,7 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     invoice_title?: string;
     /**
      * 订单状态描述:
-  * 待付款,待发货,待成团,待接单,已接单,已发货,已完成,已关闭
+     * 待付款,待发货,待成团,待接单,已接单,已发货,已完成,已关闭
      */
     status_str?: string;
   }
@@ -1135,9 +1136,9 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     promotion_name?: string;
     /**
      * 优惠的类型。可选值：<br>MEMBER_CARD_DISCOUNT（会员卡折扣）
-  *             <br>SCAN_DISCOUNT（扫码折扣）
-  *             <br>SCAN_DECREASE（扫码减额优惠）
-  *             <br>TIMELIMITED_DISCOUNT（限时折扣）
+     *             <br>SCAN_DISCOUNT（扫码折扣）
+     *             <br>SCAN_DECREASE（扫码减额优惠）
+     *             <br>TIMELIMITED_DISCOUNT（限时折扣）
      */
     promotion_type?: string;
     /**
@@ -1164,8 +1165,8 @@ export namespace TradeVirtualTradeVirtualcodeGet {
     fetcher_mobile?: string;
     /**
      * 预约的领取时间。新版到店自提的数据格式:<br>
-  * 1: 2016-04-18 17:00-17:15<br>
-  * 2: 尽快到店提货
+     * 1: 2016-04-18 17:00-17:15<br>
+     * 2: 尽快到店提货
      */
     fetch_time?: string;
     /**

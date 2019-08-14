@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailStockRetailOpenAllotorderGet {
   /**
    * 请求参数
@@ -49,20 +50,20 @@ export namespace RetailStockRetailOpenAllotorderGet {
     to_warehouse_name?: string;
     /**
      * 单据状态：
-  * 1=待审核
-  * 2=待出库
-  * 3=待入库
-  * 4=已驳回
-  * 5=已关闭
-  * 6=已完成
-  * 7=出库执行中
-  * 8=入库执行中
+     * 1=待审核
+     * 2=待出库
+     * 3=待入库
+     * 4=已驳回
+     * 5=已关闭
+     * 6=已完成
+     * 7=出库执行中
+     * 8=入库执行中
      */
     status?: number;
     /**
      * 单据类型：
-  * 1=店内调拨单
-  * 2=店间调拨单
+     * 1=店内调拨单
+     * 2=店间调拨单
      */
     type?: number;
     /**

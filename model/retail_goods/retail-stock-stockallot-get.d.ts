@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailStockStockallotGet {
   /**
    * 请求参数
@@ -45,17 +46,17 @@ export namespace RetailGoodsRetailStockStockallotGet {
     idempotent_no?: string;
     /**
      * 单据类型
-  * 1.调拨单
-  * 2.要货申请单
-  * 3.配送单
+     * 1.调拨单
+     * 2.要货申请单
+     * 3.配送单
      */
     type?: number;
     /**
      * 单据详细类型
-  * 11:库间调拨单
-  * 12:库内调拨单
-  * 21:要货申请单
-  * 31:配送单
+     * 11:库间调拨单
+     * 12:库内调拨单
+     * 21:要货申请单
+     * 31:配送单
      */
     business_type?: number;
     /**

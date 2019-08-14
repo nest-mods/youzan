@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailProductRetailOpenSpuQuery {
   /**
    * 请求参数
@@ -25,8 +26,8 @@ export namespace RetailProductRetailOpenSpuQuery {
     retail_source: string;
     /**
      * 销售渠道
-  * 2=门店
-  * 4=网店
+     * 2=门店
+     * 4=网店
      */
     sell_channels?: number[];
     /**
@@ -79,7 +80,7 @@ export namespace RetailProductRetailOpenSpuQuery {
     bar_codes?: string[];
     /**
      * 销售渠道
-  * 2=门店,4=网店
+     * 2=门店,4=网店
      */
     sell_channels?: number[];
     /**

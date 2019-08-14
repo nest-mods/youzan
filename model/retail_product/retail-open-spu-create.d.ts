@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailProductRetailOpenSpuCreate {
   /**
    * 请求参数
@@ -54,13 +55,13 @@ export namespace RetailProductRetailOpenSpuCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }
 
   /**
-   * 
+   *
    */
   export interface OpenSkuCreate {
     /**
@@ -72,7 +73,7 @@ export namespace RetailProductRetailOpenSpuCreate {
      */
     sku_code?: string;
     /**
-     * 
+     *
      */
     sku_id?: number;
     /**
@@ -80,19 +81,19 @@ export namespace RetailProductRetailOpenSpuCreate {
      */
     sku_no?: string;
     /**
-     * 
+     *
      */
     specs?: OpenSpec[];
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }
 
   /**
-   * 
+   *
    */
   export interface OpenSpec {
     /**
@@ -106,21 +107,21 @@ export namespace RetailProductRetailOpenSpuCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface SpecDefineTuple {
     /**
-     * 
+     *
      */
     key?: Keys;
     /**
-     * 
+     *
      */
     values?: Values[];
   }
 
   /**
-   * 
+   *
    */
   export interface Keys {
     /**
@@ -134,7 +135,7 @@ export namespace RetailProductRetailOpenSpuCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface Values {
     /**

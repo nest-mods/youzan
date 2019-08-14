@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailProductOnlineCreate {
   /**
    * 请求参数
@@ -57,7 +58,7 @@ export namespace RetailGoodsRetailProductOnlineCreate {
     holidays_available?: boolean;
     /**
      * 是否上架
-  * 0：未发布，草稿状态（wap看不到） 1：发布 （正常状态）
+     * 0：未发布，草稿状态（wap看不到） 1：发布 （正常状态）
      */
     is_display: number;
     /**
@@ -70,7 +71,7 @@ export namespace RetailGoodsRetailProductOnlineCreate {
     item_id?: number;
     /**
      * 有sku规格情况下，
-  * 商品的计量属性
+     * 商品的计量属性
      */
     item_sku_meas_props?: ItemSkuMeasProp[];
     /**
@@ -204,7 +205,7 @@ export namespace RetailGoodsRetailProductOnlineCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface OnlineCombineParam {
     /**
@@ -222,7 +223,7 @@ export namespace RetailGoodsRetailProductOnlineCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface ItemSkuMeasProp {
     /**
@@ -256,7 +257,7 @@ export namespace RetailGoodsRetailProductOnlineCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface ImgUrlParam {
     /**
@@ -270,11 +271,11 @@ export namespace RetailGoodsRetailProductOnlineCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface OnlineStock {
     /**
-     * 
+     *
      */
     combine_params?: OnlineCombineParam[];
     /**
@@ -306,7 +307,7 @@ export namespace RetailGoodsRetailProductOnlineCreate {
      */
     price?: number;
     /**
-     * 
+     *
      */
     related_item_id?: number;
     /**
@@ -318,7 +319,7 @@ export namespace RetailGoodsRetailProductOnlineCreate {
      */
     sell_stock_count?: number;
     /**
-     * 
+     *
      */
     skus?: SkuParam;
     /**
@@ -340,7 +341,7 @@ export namespace RetailGoodsRetailProductOnlineCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface OnlineCombineParam {
     /**
@@ -358,7 +359,7 @@ export namespace RetailGoodsRetailProductOnlineCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface SkuParam {
     /**

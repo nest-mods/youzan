@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace CustomerScrmCustomerRemarkUpdate {
   /**
    * 请求参数
@@ -14,7 +15,7 @@ export namespace CustomerScrmCustomerRemarkUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface Account {
     /**

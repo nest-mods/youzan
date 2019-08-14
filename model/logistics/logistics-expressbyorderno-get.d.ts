@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace LogisticsLogisticsExpressbyordernoGet {
   /**
    * 请求参数
@@ -46,11 +47,7 @@ export namespace LogisticsLogisticsExpressbyordernoGet {
      */
     id?: number;
     /**
-     * 0,未签收
-  * 2,疑难件
-  * 3,已签收
-  * 5,派送中
-  * 7,运输中
+     * 0：在途 1：揽件 2：疑难 3：签收 4：退签 5：派件 6：退回
      */
     state?: number;
     /**
@@ -62,7 +59,7 @@ export namespace LogisticsLogisticsExpressbyordernoGet {
      */
     order_id?: number;
     /**
-     * 查询结果状态:0：物流单暂无结果，1：查询成功，2：接口出现异常
+     * (废弃)查询结果状态:0：物流单暂无结果，1：查询成功，2：接口出现异常
      */
     status?: string;
   }

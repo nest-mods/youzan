@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailProductSpuGet {
   /**
    * 请求参数
@@ -5,12 +6,12 @@ export namespace RetailGoodsRetailProductSpuGet {
   export interface Request {
     /**
      * 查询参数
-  * 1：库存信息
+     * 1：库存信息
      */
     attributes?: number[];
     /**
      * 请求来源
-  * 例如：OPEN—XXX
+     * 例如：OPEN—XXX
      */
     retail_source?: string;
     /**

@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailStockStockcheckGet {
   /**
    * 请求参数
@@ -57,9 +58,9 @@ export namespace RetailGoodsRetailStockStockcheckGet {
     remark?: string;
     /**
      * 业务类型（STOCK_CHECK(1, "库存盘点单"),
-  *   STOCK_IN(2, "采购入库单"),
-  *   STOCK_RETURN(3, "退货入库单"),
-  *   STOCK_OUT(4, "出库单")）
+     *   STOCK_IN(2, "采购入库单"),
+     *   STOCK_RETURN(3, "退货入库单"),
+     *   STOCK_OUT(4, "出库单")）
      */
     type?: number;
     /**
@@ -84,8 +85,8 @@ export namespace RetailGoodsRetailStockStockcheckGet {
     admin_id?: number;
     /**
      * 状态（DOING(1, "待处理"),
-  *   DONE(2, "处理成功"),
-  *   FAIL(3, "处理失败")）
+     *   DONE(2, "处理成功"),
+     *   FAIL(3, "处理失败")）
      */
     status?: number;
     /**

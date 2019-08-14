@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyMemberMeiCustomerGet {
   /**
    * 请求参数
@@ -23,9 +24,9 @@ export namespace BeautyMemberMeiCustomerGet {
     birthday?: string;
     /**
      * 性别
-  * 0 未知
-  * 1 男
-  * 2 女
+     * 0 未知
+     * 1 男
+     * 2 女
      */
     gender?: number;
     /**

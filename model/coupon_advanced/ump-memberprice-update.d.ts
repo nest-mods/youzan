@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace CouponAdvancedUmpMemberpriceUpdate {
   /**
    * 请求参数
@@ -14,7 +15,7 @@ export namespace CouponAdvancedUmpMemberpriceUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface GoodsCustomerDiscountDefinitionDTO {
     /**
@@ -34,19 +35,19 @@ export namespace CouponAdvancedUmpMemberpriceUpdate {
      */
     discount_value?: number;
     /**
-     * 
+     *
      */
     sku_id?: number;
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }

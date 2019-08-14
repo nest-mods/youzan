@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace ItemItemCreate {
   /**
    * 请求参数
@@ -45,10 +46,10 @@ export namespace ItemItemCreate {
     hide_stock?: number;
     /**
      * 酒店扩展信息，按以下格式：
-  * {
-  * "service_tel_code":"0571",//服务电话区号
-  * "service_tel":"4790043"//服务电话
-  * }
+     * {
+     * "service_tel_code":"0571",//服务电话区号
+     * "service_tel":"4790043"//服务电话
+     * }
      */
     hotel_extra?: string;
     /**
@@ -65,52 +66,52 @@ export namespace ItemItemCreate {
     item_no?: string;
     /**
      * 商品sku扩展信息，组装成一个JSON,与sku_stocks参数匹配。如上面传入的sku_stocks，则s1为颜色对应的vid，传入一定要按照这个格式
-  *      [
-  *      {
-  *      "cost_price":2000, //成本价
-  *      "s1":1217,规格层级1对应的规格属性ID
-  *      "s2":1367,
-  *      "s3":303435,
-  *      "s4":0,
-  *      "s5":0
-  *      },
-  *      {
-  *      "cost_price":2000,
-  *      "s1":1217,
-  *      "s2":1367,
-  *      "s3":6356,
-  *      "s4":0,
-  *      "s5":0
-  *      }
-  *      ]
-  * 无规格商品若需要设置成本价则传入
-  * [{"cost_price":1700,"s1":0,"s2":0,"s3":0,"s4":0,"s5":0}]，多规格商品若只设置部分规格商品成本价，则无成本价的sku成本价传入-1，如：
-  *  [
-  *      {
-  *      "cost_price":2000, //成本价
-  *      "s1":1217,规格层级1对应的规格属性ID
-  *      "s2":1367,
-  *      "s3":303435,
-  *      "s4":0,
-  *      "s5":0
-  *      },
-  *      {
-  *      "cost_price":-1,
-  *      "s1":1217,
-  *      "s2":1367,
-  *      "s3":6356,
-  *      "s4":0,
-  *      "s5":0
-  *      }
-  *      ]
+     *      [
+     *      {
+     *      "cost_price":2000, //成本价
+     *      "s1":1217,规格层级1对应的规格属性ID
+     *      "s2":1367,
+     *      "s3":303435,
+     *      "s4":0,
+     *      "s5":0
+     *      },
+     *      {
+     *      "cost_price":2000,
+     *      "s1":1217,
+     *      "s2":1367,
+     *      "s3":6356,
+     *      "s4":0,
+     *      "s5":0
+     *      }
+     *      ]
+     * 无规格商品若需要设置成本价则传入
+     * [{"cost_price":1700,"s1":0,"s2":0,"s3":0,"s4":0,"s5":0}]，多规格商品若只设置部分规格商品成本价，则无成本价的sku成本价传入-1，如：
+     *  [
+     *      {
+     *      "cost_price":2000, //成本价
+     *      "s1":1217,规格层级1对应的规格属性ID
+     *      "s2":1367,
+     *      "s3":303435,
+     *      "s4":0,
+     *      "s5":0
+     *      },
+     *      {
+     *      "cost_price":-1,
+     *      "s1":1217,
+     *      "s2":1367,
+     *      "s3":6356,
+     *      "s4":0,
+     *      "s5":0
+     *      }
+     *      ]
      */
     item_sku_extends?: string;
     /**
      * 商品类型
-  * 0：普通商品
-  * 35：酒店商品
-  * 60：虚拟商品
-  * 61：电子卡券
+     * 0：普通商品
+     * 35：酒店商品
+     * 60：虚拟商品
+     * 61：电子卡券
      */
     item_type?: number;
     /**
@@ -154,30 +155,50 @@ export namespace ItemItemCreate {
      */
     quantity?: number;
     /**
+     *
+     *  是否支持退款
+     *
+     *  虚拟商品不支持退款入参示例     {"isSupportVirtualRefund":0}
+     *  虚拟商品支持退款入参示例      {"isSupportVirtualRefund":1}
+     *  电子卡券商品支持退款入参示例   {"isSupportVirtualRefund":1,"refundType":1,"periodMillSeconds":1000}
+     *  电子卡券不支持退款入参示例    {"isSupportVirtualRefund":0,"periodMillSeconds":0,"refundType":-1}
+     *
+     *  {
+     *      "isSupportVirtualRefund":1,  //虚拟商品或电子卡券是否支持退款，1.支持  0.不支持
+     *      "refundType":1,    //电子卡券商品支持退款功能退款方式：0-未核销卡券即支持退款，1-未核销卡前在过期前若干时间前可退款
+     *      "periodMillSeconds":1000  //电子卡券商品支持退款功能  过期前periodMillSecond内支持退款；单位毫秒
+     *  }
+     *
+     *  注：若refundType为1，则periodMillSeconds不能为空
+     *
+     *
+     */
+    refund_param?: string;
+    /**
      * 商品卖点信息
      */
     sell_point?: string;
     /**
      * SKU图片，仅支持第一级规格，
-  * 参数一定要与sku_stocks参数匹配，
-  * 如sku_stocks参数是这样的
-  * [ { "price":10000, "quantity":100, "item_no":"MOYU-1", "skus":[ { "k":"颜色", "v":"绿色", }, { "k":"尺寸", "v":"l", }, { "k":"内存", "v":"1024G", } ] }, { "price":10000, "quantity":100, "item_no":"MOYU-2","skus":[ { "k":"颜色", "v":"绿色", }, { "k":"尺寸", "v":"l", }, { "k":"内存", "v":"16G", } ] } ]
-  * 颜色就是第一级规格。它下面的规格只有“绿色”这一项，sku_images应该与之一一对应，如下
-  * [{"v":"绿色","img_url":"www.youzan.com"}]
-  * 请务必按此格式传参数，不然校验通不过，无法新增商品
+     * 参数一定要与sku_stocks参数匹配，
+     * 如sku_stocks参数是这样的
+     * [ { "price":10000, "quantity":100, "item_no":"MOYU-1", "skus":[ { "k":"颜色", "v":"绿色", }, { "k":"尺寸", "v":"l", }, { "k":"内存", "v":"1024G", } ] }, { "price":10000, "quantity":100, "item_no":"MOYU-2","skus":[ { "k":"颜色", "v":"绿色", }, { "k":"尺寸", "v":"l", }, { "k":"内存", "v":"16G", } ] } ]
+     * 颜色就是第一级规格。它下面的规格只有“绿色”这一项，sku_images应该与之一一对应，如下
+     * [{"v":"绿色","img_url":"www.youzan.com"}]
+     * 请务必按此格式传参数，不然校验通不过，无法新增商品
      */
     sku_images?: string;
     /**
-     * sku 的JSON字符串，传入一定要按照这个格式[ { "price":10000, "quantity":100, "item_no":"MOYU-1", "skus":[ { "k":"颜色", "v":"绿色", }, { "k":"尺寸", "v":"l", }, { "k":"内存", "v":"1024G", } ] }, { "price":10000, "quantity":100, "item_no":"MOYU-2","skus":[ { "k":"颜色", "v":"绿色", }, { "k":"尺寸", "v":"l", }, { "k":"内存", "v":"16G", } ] } ] price是 sku 价格，quantity 是sku 的库存，item_no 是 sku 的商家编码，k 是规格名称，v 是规格值名称
-  * 要注意：sku_stocks数量=规格1数量 * 规格2数量 * 规格3数量
+     * sku 的JSON字符串，传入一定要按照这个格式[ {"price":10000,"quantity":100,"skus":[ { "k":"颜色","kid":1,"v":"绿色","vid":1217}, {"k":"尺寸", "kid":2,"v":"l","vid":1367},{ "k":"内存","kid":41,"v":"1024G", "vid":303435} ]},{"price":10000, "quantity":100, "skus":[{"k":"颜色","kid":1, "v":"绿色","vid":1217},{"k":"尺寸","kid":2, "v":"l","vid":1367}, {"k":"内存", "kid":41, "v":"16G","vid":6356} ]}]price是 sku 价格，quantity 是sku 的库存，item_no 是 sku 的商家编码，k 是规格名称，v 是规格值名称
+     * 要注意：sku_stocks数量=规格1数量 * 规格2数量 * 规格3数量
      */
     sku_stocks?: string;
     /**
      * SKU重量带有SKU时用
-  * 按如下格式
-  * “100，200”
-  * 由重量组成并且和SKU对应
-  * 顺序由业务方来维护
+     * 按如下格式
+     * “100，200”
+     * 由重量组成并且和SKU对应
+     * 顺序由业务方来维护
      */
     sku_weight?: string;
     /**
@@ -202,13 +223,13 @@ export namespace ItemItemCreate {
     ump_tags?: string;
     /**
      * 虚拟信息扩展信息，一定要按如下JSON格式，否则校验不通过
-  * {
-  *   "item_validity_start":2322222,//虚拟商品有效期开始时间, 1970-01-01 开始的秒数,留空表示长期有效
-  *   "item_validity_end":2322222,//虚拟商品有效期结束时间,1970-01-01 开始的秒数,留空表示长期有效
-  *   "effective_type":1,//电子凭证生效类型，0 立即生效， 1 自定义推迟时间， 2 隔天生效
-  *   "effective_delay_hours":1,//电子凭证自定义推迟时间
-  *   "holidays_available":true//节假日是否可用
-  * }
+     * {
+     *   "item_validity_start":2322222,//虚拟商品有效期开始时间, 1970-01-01 开始的秒数,留空表示长期有效
+     *   "item_validity_end":2322222,//虚拟商品有效期结束时间,1970-01-01 开始的秒数,留空表示长期有效
+     *   "effective_type":1,//电子凭证生效类型，0 立即生效， 1 自定义推迟时间， 2 隔天生效
+     *   "effective_delay_hours":1,//电子凭证自定义推迟时间
+     *   "holidays_available":true//节假日是否可用
+     * }
      */
     virtual_extra?: string;
   }
@@ -297,20 +318,20 @@ export namespace ItemItemCreate {
     price?: number;
     /**
      * 商品类型
-  * 0：普通商品
-  * 3：UMP降价拍
-  * 5：外卖商品
-  * 10：分销商品
-  * 20：会员卡商品
-  * 21：礼品卡商品
-  * 22：团购券
-  * 25：批发商品
-  * 30：收银台商品
-  * 31：知识付费商品
-  * 35：酒店商品
-  * 40：美业商品
-  * 60：虚拟商品
-  * 61：电子卡券
+     * 0：普通商品
+     * 3：UMP降价拍
+     * 5：外卖商品
+     * 10：分销商品
+     * 20：会员卡商品
+     * 21：礼品卡商品
+     * 22：团购券
+     * 25：批发商品
+     * 30：收银台商品
+     * 31：知识付费商品
+     * 35：酒店商品
+     * 40：美业商品
+     * 60：虚拟商品
+     * 61：电子卡券
      */
     item_type?: number;
     /**
@@ -523,20 +544,20 @@ export namespace ItemItemCreate {
     sku_unique_code?: string;
     /**
      * Sku所对应的销售属性的Json字符串（需另行解析）。
-  *        格式定义：
-  *      [
-  *      {
-  *      "kid": "20000",
-  *      "vid": "3275069",
-  *      "k": "品牌",
-  *      "v": "盈讯"
-  *      },
-  *      {
-  *      "kid": "1753146",
-  *      "vid": "3485013",
-  *      "k": "型号",
-  *      "v": "F908"
-  *      }
+     *        格式定义：
+     *      [
+     *      {
+     *      "kid": "20000",
+     *      "vid": "3275069",
+     *      "k": "品牌",
+     *      "v": "盈讯"
+     *      },
+     *      {
+     *      "kid": "1753146",
+     *      "vid": "3485013",
+     *      "k": "型号",
+     *      "v": "F908"
+     *      }
      */
     properties_name_json?: string;
     /**

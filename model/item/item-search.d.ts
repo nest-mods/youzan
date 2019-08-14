@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace ItemItemSearch {
   /**
    * 请求参数
@@ -21,9 +22,9 @@ export namespace ItemItemSearch {
     q?: string;
     /**
      * 是否在售:
-  *      0: 在售
-  *      1: 售罄或部分售罄
-  *      2: 全部
+     *      0: 在售
+     *      1: 售罄或部分售罄
+     *      2: 全部
      */
     show_sold_out?: number;
     /**

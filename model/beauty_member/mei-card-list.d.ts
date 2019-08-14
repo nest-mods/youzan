@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyMemberMeiCardList {
   /**
    * 请求参数
@@ -87,8 +88,8 @@ export namespace BeautyMemberMeiCardList {
   export interface MeiCardListInfo {
     /**
      * 是否在网店展示
-  * 0 否
-  * 1 是
+     * 0 否
+     * 1 是
      */
     wap_show?: number;
     /**
@@ -97,8 +98,8 @@ export namespace BeautyMemberMeiCardList {
     backgroud_img?: string;
     /**
      * 上否上架销售
-  * 0 否
-  * 1 是
+     * 0 否
+     * 1 是
      */
     on_shelve?: number;
     /**
@@ -107,9 +108,9 @@ export namespace BeautyMemberMeiCardList {
     created_at?: number;
     /**
      * 卡类型
-  * 1 折扣卡
-  * 2 次卡
-  * 3 储值卡
+     * 1 折扣卡
+     * 2 次卡
+     * 3 储值卡
      */
     card_type?: number;
     /**
@@ -122,8 +123,8 @@ export namespace BeautyMemberMeiCardList {
     kdt_id?: number;
     /**
      * 是否删除
-  * 0 删除
-  * 1 未删除
+     * 0 删除
+     * 1 未删除
      */
     deleted?: number;
     /**

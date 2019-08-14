@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace ShopShopGet {
   /**
    * 请求参数
@@ -22,9 +23,9 @@ export namespace ShopShopGet {
      */
     intro?: string;
     /**
-     * 店铺id
+     * 店铺类型：0微商城，7零售，...
      */
-    id?: number;
+    type?: string;
   }
 
 }

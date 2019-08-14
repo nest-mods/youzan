@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyAppointmentMeiReservationTechnicianList {
   /**
    * 请求参数
@@ -45,7 +46,7 @@ export namespace BeautyAppointmentMeiReservationTechnicianList {
     name?: string;
     /**
      * 资源类型
-  * 1 技师（目前只有这一种类型）
+     * 1 技师（目前只有这一种类型）
      */
     resource_type?: number;
     /**

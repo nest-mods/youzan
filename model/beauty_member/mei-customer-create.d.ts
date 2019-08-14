@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyMemberMeiCustomerCreate {
   /**
    * 请求参数
@@ -17,18 +18,18 @@ export namespace BeautyMemberMeiCustomerCreate {
     consultant_ids?: number[];
     /**
      * 客户来源
-  * 0 无来源
-  * 700 线上顾客
-  * 701 线下预约
-  * 702 手工录入
-  * 703 外部导入
+     * 0 无来源
+     * 700 线上顾客
+     * 701 线下预约
+     * 702 手工录入
+     * 703 外部导入
      */
     customer_source: number;
     /**
      * 性别
-  * 0 未知
-  * 1 男
-  * 2 女
+     * 0 未知
+     * 1 男
+     * 2 女
      */
     gender?: number;
     /**

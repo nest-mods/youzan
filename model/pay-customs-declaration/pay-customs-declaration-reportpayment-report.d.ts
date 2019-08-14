@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace PayCustomsDeclarationPayCustomsDeclarationReportpaymentReport {
   /**
    * 请求参数
@@ -38,13 +39,13 @@ export namespace PayCustomsDeclarationPayCustomsDeclarationReportpaymentReport {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }

@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace ExtensionAnalysisDatacenterPspagesourceDataFetch {
   /**
    * 请求参数
@@ -5,8 +6,8 @@ export namespace ExtensionAnalysisDatacenterPspagesourceDataFetch {
   export interface Request {
     /**
      * 追踪信息集合, 最大200个, 查找特定链接的信息时可以指定相应的dcps追踪号；
-  * 该追踪号在创建追踪链接时生成，也可以根据推广名称在获取推广信息接口中获取。
-  * 不传可以分页获取店铺下所有推广链接的数据
+     * 该追踪号在创建追踪链接时生成，也可以根据推广名称在获取推广信息接口中获取。
+     * 不传可以分页获取店铺下所有推广链接的数据
      */
     dcps_list?: string[];
     /**

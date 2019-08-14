@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace ItemItemsInventoryGet {
   /**
    * 请求参数

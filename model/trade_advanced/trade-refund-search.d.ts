@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace TradeAdvancedTradeRefundSearch {
   /**
    * 请求参数
@@ -25,20 +26,20 @@ export namespace TradeAdvancedTradeRefundSearch {
     refund_id?: string;
     /**
      * 退款类型：
-  * BUYER_APPLY_REFUND(买家申请退款)
-  * SELLER_REFUND(商家主动退款)
-  * SYSTEM_REFUND(系统退款)
-  * 注：默认不填写，返回除"系统退款"以外的退款信息
+     * BUYER_APPLY_REFUND(买家申请退款)
+     * SELLER_REFUND(商家主动退款)
+     * SYSTEM_REFUND(系统退款)
+     * 注：默认不填写，返回除"系统退款"以外的退款信息
      */
     refund_type?: string;
     /**
      * 退款状态:
-  * WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意)，
-  * WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货)，
-  * WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货)，
-  * SELLER_REFUSE_BUYER(卖家拒绝退款)，
-  * CLOSED(退款关闭)，
-  * SUCCESS(退款成功)。
+     * WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意)，
+     * WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货)，
+     * WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货)，
+     * SELLER_REFUSE_BUYER(卖家拒绝退款)，
+     * CLOSED(退款关闭)，
+     * SUCCESS(退款成功)。
      */
     status?: string;
     /**
@@ -56,25 +57,25 @@ export namespace TradeAdvancedTradeRefundSearch {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }
@@ -103,12 +104,12 @@ export namespace TradeAdvancedTradeRefundSearch {
     refund_id?: string;
     /**
      * 退款状态:
-  * WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意)，
-  * WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货)，
-  * WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货)，
-  * SELLER_REFUSE_BUYER(卖家拒绝退款)，
-  * CLOSED(退款关闭)，
-  * SUCCESS(退款成功)。
+     * WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意)，
+     * WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货)，
+     * WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货)，
+     * SELLER_REFUSE_BUYER(卖家拒绝退款)，
+     * CLOSED(退款关闭)，
+     * SUCCESS(退款成功)。
      */
     status?: string;
     /**
@@ -117,7 +118,7 @@ export namespace TradeAdvancedTradeRefundSearch {
     tid?: string;
     /**
      * 是否退货:
-  * false（仅退款），true（退货退款）。
+     * false（仅退款），true（退货退款）。
      */
     return_goods?: boolean;
     /**
@@ -138,14 +139,14 @@ export namespace TradeAdvancedTradeRefundSearch {
     modified?: Date;
     /**
      * 客满介入状态：
-  * 1（客满未介入），2（客满介入中）。
+     * 1（客满未介入），2（客满介入中）。
      */
     cs_status?: number;
     /**
      * 退款类型：
-  * BUYER_APPLY_REFUND(买家申请退款)
-  * SELLER_REFUND(商家主动退款)
-  * SYSTEM_REFUND(系统退款)
+     * BUYER_APPLY_REFUND(买家申请退款)
+     * SELLER_REFUND(商家主动退款)
+     * SYSTEM_REFUND(系统退款)
      */
     refund_type?: string;
   }

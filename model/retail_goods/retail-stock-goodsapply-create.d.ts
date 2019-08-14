@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailStockGoodsapplyCreate {
   /**
    * 请求参数
@@ -22,7 +23,7 @@ export namespace RetailGoodsRetailStockGoodsapplyCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface OutStockAllotItem {
     /**

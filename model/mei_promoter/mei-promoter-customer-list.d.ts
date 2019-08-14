@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace MeiPromoterMeiPromoterCustomerList {
   /**
    * 请求参数
@@ -63,16 +64,16 @@ export namespace MeiPromoterMeiPromoterCustomerList {
     order_count?: number;
     /**
      * 是否是会员
-  * 0 不是
-  * 1 是
+     * 0 不是
+     * 1 是
      */
     is_member?: number;
     /**
      * 绑定方式
-  * 0:浏览绑定
-  * 1:会员激活绑定
-  * 2:下单绑定 
-  * 3:手动添加
+     * 0:浏览绑定
+     * 1:会员激活绑定
+     * 2:下单绑定 
+     * 3:手动添加
      */
     bind_mode?: number;
     /**
@@ -125,8 +126,8 @@ export namespace MeiPromoterMeiPromoterCustomerList {
     customer_id?: number;
     /**
      * 状态
-  * 0 未生效
-  * 1 已生效
+     * 0 未生效
+     * 1 已生效
      */
     status?: number;
   }

@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailStockRetailOpenDistributionorderGet {
   /**
    * 请求参数
@@ -49,14 +50,14 @@ export namespace RetailStockRetailOpenDistributionorderGet {
     to_warehouse_name?: string;
     /**
      * 单据状态:
-  * TO_CHECK=待审核
-  * TO_OUT=待出库
-  * TO_IN=待入库
-  * REFUSED=已驳回
-  * CLOSED=已关闭
-  * FINISHED=已完成
-  * OUT_DOING=出库执行中
-  * IN_DOING=入库执行中
+     * TO_CHECK=待审核
+     * TO_OUT=待出库
+     * TO_IN=待入库
+     * REFUSED=已驳回
+     * CLOSED=已关闭
+     * FINISHED=已完成
+     * OUT_DOING=出库执行中
+     * IN_DOING=入库执行中
      */
     status?: string;
     /**

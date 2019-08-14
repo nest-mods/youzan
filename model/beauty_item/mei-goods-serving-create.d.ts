@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyItemMeiGoodsServingCreate {
   /**
    * 请求参数
@@ -62,7 +63,7 @@ export namespace BeautyItemMeiGoodsServingCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface MeiGoodsPictureInfo {
     /**
@@ -72,7 +73,7 @@ export namespace BeautyItemMeiGoodsServingCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface MeiGoodsSkuInfo {
     /**
@@ -80,7 +81,7 @@ export namespace BeautyItemMeiGoodsServingCreate {
      */
     code?: string;
     /**
-     * 
+     *
      */
     goods_stock_sku_param_list?: MeiGoodsCreateSkuLeafReq[];
     /**
@@ -94,7 +95,7 @@ export namespace BeautyItemMeiGoodsServingCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface MeiGoodsCreateSkuLeafReq {
     /**
@@ -116,7 +117,7 @@ export namespace BeautyItemMeiGoodsServingCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface MeiSkuTreeImageInfo {
     /**
@@ -128,13 +129,13 @@ export namespace BeautyItemMeiGoodsServingCreate {
      */
     name?: string;
     /**
-     * 
+     *
      */
     skuLeafList?: MeiSkuLeafImage[];
   }
 
   /**
-   * 
+   *
    */
   export interface MeiSkuLeafImage {
     /**

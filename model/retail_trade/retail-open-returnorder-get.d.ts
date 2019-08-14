@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailTradeRetailOpenReturnorderGet {
   /**
    * 请求参数
@@ -23,8 +24,8 @@ export namespace RetailTradeRetailOpenReturnorderGet {
     return_order_no?: string;
     /**
      * 销售渠道:
-  * ONLINE=网店
-  * OFFLINE=门店
+     * ONLINE=网店
+     * OFFLINE=门店
      */
     sale_way?: string;
     /**
@@ -37,10 +38,10 @@ export namespace RetailTradeRetailOpenReturnorderGet {
     remark?: string;
     /**
      * 退货单状态:
-  * WAIT_RECEIVED=卖家待收货
-  * RECEIVED=卖家已收货
-  * SELLER_REFUSE=卖家未收到货，拒绝退款
-  * RETURN_STOCK_SUCCESS=已入库
+     * WAIT_RECEIVED=卖家待收货
+     * RECEIVED=卖家已收货
+     * SELLER_REFUSE=卖家未收到货，拒绝退款
+     * RETURN_STOCK_SUCCESS=已入库
      */
     status?: string;
     /**
@@ -73,7 +74,7 @@ export namespace RetailTradeRetailOpenReturnorderGet {
     refund_mode?: string;
     /**
      * 支付方式(无法识别的情况下返回0):
-  * 0:默认值 1:微信自有支付 2:支付宝 3:银联银行卡 4:财付通银行卡 5:银行卡 6:找人代付 7:联动U付银行卡 8:货到付款 9:微信安全支付-代销 10:百度支付银行卡 11:合并付货款 12:领取赠品 13:优惠兑换 14:自动付货款 15:爱学贷 16:微信红包支付 17:返利 18:ump红包 19:payza支付 20:易宝支付银行卡 21:paypal 22:qq支付 23:有赞E卡-代销 24:储值余额付款 25:礼品卡支付 26:分销商余额支付 27:信用卡银联支付 28:储蓄卡银联支付 29:代收账户 30:储值账户 31:保证金账户 32:收款码 33:微信 34:刷卡 35:二维码台卡 36:储值卡 37:有赞E卡 38:标记收款-自有微信支付 39:标记收款-自有支付宝 40:标记收款-自有POS刷卡 41:通联刷卡支付 42:记账账户 43:现金支付 44:组合支付 114:自定义标记付款(具体名称见pay_way_desc);
+     * 0:默认值 1:微信自有支付 2:支付宝 3:银联银行卡 4:财付通银行卡 5:银行卡 6:找人代付 7:联动U付银行卡 8:货到付款 9:微信安全支付-代销 10:百度支付银行卡 11:合并付货款 12:领取赠品 13:优惠兑换 14:自动付货款 15:爱学贷 16:微信红包支付 17:返利 18:ump红包 19:payza支付 20:易宝支付银行卡 21:paypal 22:qq支付 23:有赞E卡-代销 24:储值余额付款 25:礼品卡支付 26:分销商余额支付 27:信用卡银联支付 28:储蓄卡银联支付 29:代收账户 30:储值账户 31:保证金账户 32:收款码 33:微信 34:刷卡 35:二维码台卡 36:储值卡 37:有赞E卡 38:标记收款-自有微信支付 39:标记收款-自有支付宝 40:标记收款-自有POS刷卡 41:通联刷卡支付 42:记账账户 43:现金支付 44:组合支付 114:自定义标记付款(具体名称见pay_way_desc);
      */
     pay_way?: string;
     /**
@@ -128,7 +129,7 @@ export namespace RetailTradeRetailOpenReturnorderGet {
     real_sales_price?: string;
     /**
      * 商品类型  
-  * 0:普通类型商品; 1:拍卖商品; 5:餐饮商品; 10:分销商品; 20:会员卡商品; 21:礼品卡商品; 23:有赞会议商品; 24:周期购; 30:收银台商品; 31:知识付费商品; 35:酒店商品; 40:普通服务类商品; 182:普通虚拟商品; 183:电子卡券商品; 201:外部会员卡商品; 202:外部直接收款商品; 203:外部普通商品; 205:mock不存在商品; 206:小程序二维码
+     * 0:普通类型商品; 1:拍卖商品; 5:餐饮商品; 10:分销商品; 20:会员卡商品; 21:礼品卡商品; 23:有赞会议商品; 24:周期购; 30:收银台商品; 31:知识付费商品; 35:酒店商品; 40:普通服务类商品; 182:普通虚拟商品; 183:电子卡券商品; 201:外部会员卡商品; 202:外部直接收款商品; 203:外部普通商品; 205:mock不存在商品; 206:小程序二维码
      */
     item_type?: number;
     /**

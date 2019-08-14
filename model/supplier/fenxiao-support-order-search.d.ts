@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace SupplierFenxiaoSupportOrderSearch {
   /**
    * 请求参数
@@ -65,12 +66,12 @@ export namespace SupplierFenxiaoSupportOrderSearch {
     receiver_phone?: string;
     /**
      * 维权状态
-  * 0:没有维权, 1:维权申请中,2:等待精选供货商收货中,3:退货退款完成,4:仅退款完成
+     * 0:没有维权, 1:维权申请中,2:等待精选供货商收货中,3:退货退款完成,4:仅退款完成
      */
     refund_status?: number;
     /**
      * 订单状态
-  * 10:待支付, 50:待发货, 60:已发货, 80:已收货, 99:已关闭,100:已完成
+     * 10:待支付, 50:待发货, 60:已发货, 80:已收货, 99:已关闭,100:已完成
      */
     status?: number;
     /**

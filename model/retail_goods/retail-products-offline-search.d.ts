@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailProductsOfflineSearch {
   /**
    * 请求参数
@@ -33,13 +34,13 @@ export namespace RetailGoodsRetailProductsOfflineSearch {
     page_size?: number;
     /**
      * 售罄状态（  
-  *   * 0: 在售, 对内表示sold_status in (0, 1, 3)
-  *    * 1: 售罄或部分售罄,对内表示 sold_status in (2, 3)
-  *    * 2： 全部，等同于不填
-  *    * 3: 有赞出售中，对内表示 1 出售中, 3 部分售罄
-  *    * 4. 有赞全部，对内表示：1, 2 全部售罄, 3
-  *    * 5. 全部售罄：对内: sold_status = 2
-  *    * 6. 部分售罄：对内： sold_status = 3）
+     *  0: 在售, 对内表示sold_status in (0, 1, 3)
+     *  1: 售罄或部分售罄,对内表示 sold_status in (2, 3)
+     *  2： 全部，等同于不填
+     *  3: 有赞出售中，对内表示 1 出售中, 3 部分售罄
+     *  4. 有赞全部，对内表示：1, 2 全部售罄, 3
+     *  5. 全部售罄：对内: sold_status = 2
+     *  6. 部分售罄：对内： sold_status = 3）
      */
     show_sold_out?: number;
     /**

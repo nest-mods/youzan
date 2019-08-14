@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace StoredValueCardCardvoucherValuecardFundRecharge {
   /**
    * 请求参数
@@ -55,10 +56,10 @@ export namespace StoredValueCardCardvoucherValuecardFundRecharge {
     amount?: number;
     /**
      * 结果码
-  * 200：充值受理成功
-  * 1001：充值受理失败
-  * 1002：充值受理失败，店铺未签约或签约已过期
-  * 1003：充值受理失败，储值卡状态异常
+     * 200：充值受理成功
+     * 1001：充值受理失败
+     * 1002：充值受理失败，店铺未签约或签约已过期
+     * 1003：充值受理失败，储值卡状态异常
      */
     code?: string;
     /**

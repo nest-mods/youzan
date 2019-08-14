@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailStockRetailOpenStockcheckorderGet {
   /**
    * 请求参数
@@ -45,11 +46,11 @@ export namespace RetailStockRetailOpenStockcheckorderGet {
     warehouse_name?: string;
     /**
      * 单据状态:
-  * CHECKING=盘点中
-  * DONE=已完成
-  * CANCEL=已作废
-  * ASYNC_DOING=异步处理中
-  * FAILURE=失败
+     * CHECKING=盘点中
+     * DONE=已完成
+     * CANCEL=已作废
+     * ASYNC_DOING=异步处理中
+     * FAILURE=失败
      */
     status?: string;
     /**

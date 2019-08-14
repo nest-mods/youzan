@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace CircleTradeDcQueryMultiperiodQuerylatestplan {
   /**
    * 请求参数
@@ -14,7 +15,7 @@ export namespace CircleTradeDcQueryMultiperiodQuerylatestplan {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }

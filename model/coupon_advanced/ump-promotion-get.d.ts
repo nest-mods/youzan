@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace CouponAdvancedUmpPromotionGet {
   /**
    * 请求参数
@@ -53,12 +54,12 @@ export namespace CouponAdvancedUmpPromotionGet {
   export interface UmpPromotionItem {
     /**
      * 优惠活动类型编码：
-  *             <br>2：团购
-  *             <br>3：降价拍
-  *             <br>4：多人拼团
-  *             <br>6：秒杀
-  *             <br>10：会员折扣
-  *             <br>11：限时折扣
+     *             <br>2：团购
+     *             <br>3：降价拍
+     *             <br>4：多人拼团
+     *             <br>6：秒杀
+     *             <br>10：会员折扣
+     *             <br>11：限时折扣
      */
     promotion_type_id?: number;
     /**
@@ -109,8 +110,8 @@ export namespace CouponAdvancedUmpPromotionGet {
   export interface UmpPromotionOrder {
     /**
      * 优惠活动类型编码：
-  *             <br>101：满减送
-  *             <br>102：订单返现
+     *             <br>101：满减送
+     *             <br>102：订单返现
      */
     promotion_type_id?: number;
     /**

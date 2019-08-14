@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailProductRetailOpenOfflineSpuRelease {
   /**
    * 请求参数
@@ -94,7 +95,7 @@ export namespace RetailProductRetailOpenOfflineSpuRelease {
   }
 
   /**
-   * 
+   *
    */
   export interface OpenOnlineCombineParam {
     /**
@@ -112,7 +113,7 @@ export namespace RetailProductRetailOpenOfflineSpuRelease {
   }
 
   /**
-   * 
+   *
    */
   export interface OpenPropParam {
     /**
@@ -130,7 +131,7 @@ export namespace RetailProductRetailOpenOfflineSpuRelease {
   }
 
   /**
-   * 
+   *
    */
   export interface OfflineStock {
     /**
@@ -162,7 +163,7 @@ export namespace RetailProductRetailOpenOfflineSpuRelease {
      */
     sku_id?: number;
     /**
-     * 
+     *
      */
     specs?: SpecKeyValue[];
     /**
@@ -172,7 +173,7 @@ export namespace RetailProductRetailOpenOfflineSpuRelease {
   }
 
   /**
-   * 
+   *
    */
   export interface SpecKeyValue {
     /**

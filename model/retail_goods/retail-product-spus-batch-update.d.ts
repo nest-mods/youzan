@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailProductSpusBatchUpdate {
   /**
    * 请求参数
@@ -9,7 +10,7 @@ export namespace RetailGoodsRetailProductSpusBatchUpdate {
     category_id?: number;
     /**
      * 请求来源
-  * 如：OPEN—XXX
+     * 如：OPEN—XXX
      */
     retail_source?: string;
     /**

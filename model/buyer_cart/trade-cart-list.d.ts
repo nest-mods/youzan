@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BuyerCartTradeCartList {
   /**
    * 请求参数
@@ -142,11 +143,11 @@ export namespace BuyerCartTradeCartList {
      */
     discount?: number;
     /**
-     * 
+     *
      */
     thumb_url?: string;
     /**
-     * 
+     *
      */
     sub_type?: number;
     /**
@@ -158,11 +159,11 @@ export namespace BuyerCartTradeCartList {
      */
     title?: string;
     /**
-     * 
+     *
      */
     channel_id?: number;
     /**
-     * 
+     *
      */
     direct_seller?: number;
     /**
@@ -264,11 +265,11 @@ export namespace BuyerCartTradeCartList {
      */
     discount?: number;
     /**
-     * 
+     *
      */
     thumb_url?: string;
     /**
-     * 
+     *
      */
     sub_type?: number;
     /**
@@ -280,11 +281,11 @@ export namespace BuyerCartTradeCartList {
      */
     title?: string;
     /**
-     * 
+     *
      */
     channel_id?: number;
     /**
-     * 
+     *
      */
     direct_seller?: number;
     /**

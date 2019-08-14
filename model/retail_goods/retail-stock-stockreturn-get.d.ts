@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailStockStockreturnGet {
   /**
    * 请求参数
@@ -61,9 +62,9 @@ export namespace RetailGoodsRetailStockStockreturnGet {
     stock_return_order_items?: StockReturnOrderItemVO[];
     /**
      * 业务类型（STOCK_CHECK(1, "库存盘点单"),
-  *   STOCK_IN(2, "采购入库单"),
-  *   STOCK_RETURN(3, "退货入库单"),
-  *   STOCK_OUT(4, "出库单")）
+     *   STOCK_IN(2, "采购入库单"),
+     *   STOCK_RETURN(3, "退货入库单"),
+     *   STOCK_OUT(4, "出库单")）
      */
     type?: number;
     /**

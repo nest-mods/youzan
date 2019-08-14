@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace CircleTradeDcQueryMultiperiodQuerydeliveryrecords {
   /**
    * 请求参数
@@ -77,16 +78,16 @@ export namespace CircleTradeDcQueryMultiperiodQuerydeliveryrecords {
     kdtId?: number;
     /**
      * 发货类型
-  * 11 快递-系统呼叫快递
-  * 12 快递-商家呼叫快递
-  * 13 快递-无需物流
-  * 14 快递-电子面单
-  * 21 同城送-商家呼叫三方配送
-  * 22 同城送-商家自主配送
-  * 23 同城送-系统呼叫三方配送
-  * 24 自提-核销提货
-  * 92 自提-无码提货
-  * 91 自提-有码提货
+     * 11 快递-系统呼叫快递
+     * 12 快递-商家呼叫快递
+     * 13 快递-无需物流
+     * 14 快递-电子面单
+     * 21 同城送-商家呼叫三方配送
+     * 22 同城送-商家自主配送
+     * 23 同城送-系统呼叫三方配送
+     * 24 自提-核销提货
+     * 92 自提-无码提货
+     * 91 自提-有码提货
      */
     deliveryType?: number;
     /**
@@ -107,17 +108,17 @@ export namespace CircleTradeDcQueryMultiperiodQuerydeliveryrecords {
     version?: string;
     /**
      * 配送单状态
-  * 0 未发货
-  * 1 发货中
-  * 2 已发货
-  * 3 已取消
+     * 0 未发货
+     * 1 发货中
+     * 2 已发货
+     * 3 已取消
      */
     status?: number;
     /**
      * 配送方式
-  * 1 快递
-  * 2 同城送
-  * 3 自提
+     * 1 快递
+     * 2 同城送
+     * 3 自提
      */
     distType?: number;
     /**
@@ -170,12 +171,12 @@ export namespace CircleTradeDcQueryMultiperiodQuerydeliveryrecords {
     expressProgressInfo?: string;
     /**
      * 物流状态 
-  * 0 待发货
-  * 1 已发货
-  * 2 已签收
-  * 6 待取货
-  * 7 已取消
-  * 8 已过期
+     * 0 待发货
+     * 1 已发货
+     * 2 已签收
+     * 6 待取货
+     * 7 已取消
+     * 8 已过期
      */
     expressStatus?: string;
     /**
@@ -198,28 +199,28 @@ export namespace CircleTradeDcQueryMultiperiodQuerydeliveryrecords {
     deductFee?: number;
     /**
      * 同城送状态描述
-  *   STATUS_NONE(Integer.valueOf(-1), "初始状态", false),
-  *   STATUS_NORMAL(Integer.valueOf(0), "初始状态", false),
-  *   STATUS_ORDERING(Integer.valueOf(1), "待接单", false),
-  *   STATUS_TAKING(Integer.valueOf(2), "待取货", false),
-  *   STATUS_SENDING(Integer.valueOf(3), "配送中", false),
-  *   STATUS_DONE(Integer.valueOf(4), "已完成", true),
-  *   STATUS_CANCEL(Integer.valueOf(5), "已取消", true),
-  *   STATUS_CANCEL_EXCEPTION(Integer.valueOf(6), "取消异常", false),
-  *   STATUS_OVERDUE(Integer.valueOf(7), "已过期", true);
+     *   STATUS_NONE(Integer.valueOf(-1), "初始状态", false),
+     *   STATUS_NORMAL(Integer.valueOf(0), "初始状态", false),
+     *   STATUS_ORDERING(Integer.valueOf(1), "待接单", false),
+     *   STATUS_TAKING(Integer.valueOf(2), "待取货", false),
+     *   STATUS_SENDING(Integer.valueOf(3), "配送中", false),
+     *   STATUS_DONE(Integer.valueOf(4), "已完成", true),
+     *   STATUS_CANCEL(Integer.valueOf(5), "已取消", true),
+     *   STATUS_CANCEL_EXCEPTION(Integer.valueOf(6), "取消异常", false),
+     *   STATUS_OVERDUE(Integer.valueOf(7), "已过期", true);
      */
     distStatus?: string;
     /**
      * 同城送状态码
-  *   STATUS_NONE(Integer.valueOf(-1), "初始状态", false),
-  *   STATUS_NORMAL(Integer.valueOf(0), "初始状态", false),
-  *   STATUS_ORDERING(Integer.valueOf(1), "待接单", false),
-  *   STATUS_TAKING(Integer.valueOf(2), "待取货", false),
-  *   STATUS_SENDING(Integer.valueOf(3), "配送中", false),
-  *   STATUS_DONE(Integer.valueOf(4), "已完成", true),
-  *   STATUS_CANCEL(Integer.valueOf(5), "已取消", true),
-  *   STATUS_CANCEL_EXCEPTION(Integer.valueOf(6), "取消异常", false),
-  *   STATUS_OVERDUE(Integer.valueOf(7), "已过期", true);
+     *   STATUS_NONE(Integer.valueOf(-1), "初始状态", false),
+     *   STATUS_NORMAL(Integer.valueOf(0), "初始状态", false),
+     *   STATUS_ORDERING(Integer.valueOf(1), "待接单", false),
+     *   STATUS_TAKING(Integer.valueOf(2), "待取货", false),
+     *   STATUS_SENDING(Integer.valueOf(3), "配送中", false),
+     *   STATUS_DONE(Integer.valueOf(4), "已完成", true),
+     *   STATUS_CANCEL(Integer.valueOf(5), "已取消", true),
+     *   STATUS_CANCEL_EXCEPTION(Integer.valueOf(6), "取消异常", false),
+     *   STATUS_OVERDUE(Integer.valueOf(7), "已过期", true);
      */
     distStatusCode?: number;
     /**

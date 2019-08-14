@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailProductSpuUpdate {
   /**
    * 请求参数
@@ -25,8 +26,8 @@ export namespace RetailGoodsRetailProductSpuUpdate {
     photo_url?: string;
     /**
      * 建议零售价 无规格商品时传输
-  * 最大为9999999元
-  * 最小为0.01元
+     * 最大为9999999元
+     * 最小为0.01元
      */
     retail_price?: number;
     /**
@@ -39,7 +40,7 @@ export namespace RetailGoodsRetailProductSpuUpdate {
     skus?: SkuSaveRequest[];
     /**
      * 规格定义组
-  * [{"key":{"k":"颜色","kId":1},"values":[{"v":"蓝色 ","vId":3},{"v":"红色 ","vId":10}]}]
+     * [{"key":{"k":"颜色","kId":1},"values":[{"v":"蓝色 ","vId":3},{"v":"红色 ","vId":10}]}]
      */
     spec_define_tuple?: string;
     /**
@@ -61,7 +62,7 @@ export namespace RetailGoodsRetailProductSpuUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface SkuSaveRequest {
     /**
@@ -89,7 +90,7 @@ export namespace RetailGoodsRetailProductSpuUpdate {
      */
     sku_no?: string;
     /**
-     * 
+     *
      */
     specs?: SpecKeyValue[];
     /**
@@ -99,7 +100,7 @@ export namespace RetailGoodsRetailProductSpuUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface SpecKeyValue {
     /**

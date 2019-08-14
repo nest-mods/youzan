@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace CrmAdvancedScrmCardUrlGet {
   /**
    * 请求参数

@@ -277,7 +277,8 @@ export class YouzanApiModelInterfaceGenerateService {
       imports.push(ns);
     }
 
-    let source = `import { YouzanOptions } from '../interfaces';
+    let source = `// tslint:disable:max-line-length variable-name
+import { YouzanOptions } from '../interfaces';
 import { RequestService } from './request.service';
 `;
 
@@ -371,7 +372,8 @@ export class GeneratedYouzanService {
   private render(api: ApiDesc, types: TypeDesc[]) {
     this.logger.log(`渲染文档(${api.group}/${api.api}@${api.version})`);
     const ns = getNamespace(api);
-    let codes = `export namespace ${ns} {\n`;
+    let codes = '// tslint:disable:max-line-length variable-name\n';
+    codes += `export namespace ${ns} {\n`;
     for (const type of types) {
       const code = this.renderType(type);
       const lines = code.split('\n');
@@ -394,15 +396,13 @@ export class GeneratedYouzanService {
       return `export type ${type.name} = ${type.type};\n`;
     }
     let code = '';
-    code += `/**
- ${this.renderComment(type.comment)}
- */\n`;
+    code += this.renderComment(type.comment);
+    code += '\n';
     code += `export interface ${type.name} {\n`;
 
     for (const p of type.props) {
-      code += `\t/**
-\t ${this.renderComment(p.comment)}
-\t */\n`;
+      code += this.renderComment(p.comment, '\t');
+      code += '\n';
       code += `\t${p.name}${p.optional ? '?' : ''}: ${p.type};\n`;
     }
 
@@ -533,7 +533,22 @@ export class GeneratedYouzanService {
     return props;
   }
 
-  private renderComment(comment: string) {
-    return _.chain(comment).trim().split('\n').map(o => `* ${o}`).join('\n').value();
+  private renderComment(comment: string, prefix: string = '') {
+    return _.chain(comment)
+      .trim()
+      .split('\n')
+      .map(o => {
+        // 去掉原来的注释符号
+        o = o
+          .replace(/^\s*\/\*\*/, '')
+          .replace(/^\s*\*\//, '')
+          .replace(/^\s*\*/, '');
+        return o ? ` * ${o}` : ' *';
+      })
+      .unshift('/**')
+      .push(' */')
+      .map(o => `${prefix}${o}`)
+      .join('\n')
+      .value();
   }
 }

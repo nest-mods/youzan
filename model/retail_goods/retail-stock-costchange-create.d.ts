@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailStockCostchangeCreate {
   /**
    * 请求参数
@@ -26,11 +27,11 @@ export namespace RetailGoodsRetailStockCostchangeCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface CostChangeOrderItemCreate {
     /**
-     * 
+     *
      */
     after_unit_cost?: number;
     /**
@@ -38,7 +39,7 @@ export namespace RetailGoodsRetailStockCostchangeCreate {
      */
     after_with_tax_cost_str?: string;
     /**
-     * 
+     *
      */
     before_unit_cost?: number;
     /**
@@ -54,7 +55,7 @@ export namespace RetailGoodsRetailStockCostchangeCreate {
      */
     product_name?: string;
     /**
-     * 
+     *
      */
     sku_id?: number;
     /**
@@ -72,25 +73,25 @@ export namespace RetailGoodsRetailStockCostchangeCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }

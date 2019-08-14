@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace PointsCrmCustomerPointsChangelogSearch {
   /**
    * 请求参数
@@ -44,13 +45,13 @@ export namespace PointsCrmCustomerPointsChangelogSearch {
     /**
      * 明细
      */
-    details?: UserPointsChangeLogDTO[];
+    details?: UserPointsChangeLogDTOV2[];
   }
 
   /**
    * 明细
    */
-  export interface UserPointsChangeLogDTO {
+  export interface UserPointsChangeLogDTOV2 {
     /**
      * 积分值（负数为扣积分）
      */
@@ -67,6 +68,14 @@ export namespace PointsCrmCustomerPointsChangelogSearch {
      * 创建时间
      */
     created_time?: string;
+    /**
+     * 过期时间(秒级时间戳, 0: 永不过期)
+     */
+    expired_at?: number;
+    /**
+     * 三方调用开放平台加/减积分接口传入的biz_value, 三方未传入则不会返回
+     */
+    third_biz_value?: string;
   }
 
 }

@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace LogisticsLogisticsTemplateSearch {
   /**
    * 请求参数
@@ -54,17 +55,17 @@ export namespace LogisticsLogisticsTemplateSearch {
    */
   export interface DeliveryTemplateModelListWithPaginatorVO {
     /**
-     * 
+     *
      */
     paginator?: Paginator;
     /**
-     * 
+     *
      */
     items?: LogisticsDeliveryTemplateModel[];
   }
 
   /**
-   * 
+   *
    */
   export interface Paginator {
     /**
@@ -82,7 +83,7 @@ export namespace LogisticsLogisticsTemplateSearch {
   }
 
   /**
-   * 
+   *
    */
   export interface LogisticsDeliveryTemplateModel {
     /**

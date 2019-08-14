@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace ItemItemTemplateListSearch {
   /**
    * 请求参数
@@ -40,7 +41,7 @@ export namespace ItemItemTemplateListSearch {
      */
     alias?: string;
     /**
-     * 
+     *
      */
     components?: string;
     /**

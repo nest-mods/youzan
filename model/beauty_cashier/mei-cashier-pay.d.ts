@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyCashierMeiCashierPay {
   /**
    * 请求参数
@@ -5,11 +6,11 @@ export namespace BeautyCashierMeiCashierPay {
   export interface Request {
     /**
      * 支付方式
-  * 120, "会员余额"
-  * 130, "刷卡"
-  * 201, "现金"
-  * 204, "刷卡"
-  * 微信和支付宝支付该字段不用传
+     * 120, "会员余额"
+     * 130, "刷卡"
+     * 201, "现金"
+     * 204, "刷卡"
+     * 微信和支付宝支付该字段不用传
      */
     channel_type?: number;
     /**
@@ -40,13 +41,13 @@ export namespace BeautyCashierMeiCashierPay {
     order_no?: string;
     /**
      * 支付状态
-  * 0, "待开单"
-  * 10, "待支付"
-  * 20, "支付中"
-  * 30, "已支付"
-  * 40, "退款中"
-  * 50, "已退款"
-  * 98, "支付失败"
+     * 0, "待开单"
+     * 10, "待支付"
+     * 20, "支付中"
+     * 30, "已支付"
+     * 40, "退款中"
+     * 50, "已退款"
+     * 98, "支付失败"
      */
     pay_status?: number;
   }

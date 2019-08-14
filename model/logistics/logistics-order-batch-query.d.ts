@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace LogisticsLogisticsOrderBatchQuery {
   /**
    * 请求参数
@@ -10,7 +11,7 @@ export namespace LogisticsLogisticsOrderBatchQuery {
   }
 
   /**
-   * 
+   *
    */
   export interface QueryOrderDetailParam {
     /**
@@ -179,17 +180,17 @@ export namespace LogisticsLogisticsOrderBatchQuery {
     com?: string;
     /**
      * 物流详情信息，返回json字符串，例如：[
-  *     {
-  *         "context": "已签收,签收人是:【邮件签收章】", 
-  *         "time": "2018-11-21 10:25:48", 
-  *         "status": "签收"
-  *     }, 
-  *     {
-  *         "context": "【浙江杭州康桥公司】的【xxx 手机(13811112222)】正在派件,扫描员是【xxx】", 
-  *         "time": "2018-11-21 01:43:00", 
-  *         "status": "派送"
-  *     }
-  * ]
+     *     {
+     *         "context": "已签收,签收人是:【邮件签收章】", 
+     *         "time": "2018-11-21 10:25:48", 
+     *         "status": "签收"
+     *     }, 
+     *     {
+     *         "context": "【浙江杭州康桥公司】的【xxx 手机(13811112222)】正在派件,扫描员是【xxx】", 
+     *         "time": "2018-11-21 01:43:00", 
+     *         "status": "派送"
+     *     }
+     * ]
      */
     data?: string;
   }

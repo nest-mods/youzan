@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyShopMeiDeptBrandinfoGet {
   /**
    * 请求参数
@@ -19,10 +20,10 @@ export namespace BeautyShopMeiDeptBrandinfoGet {
     contact_name?: string;
     /**
      * 主体认证状态。
-  * 10:"成功",
-  *  20:"未认证",
-  *  30:"认证中",
-  *  40:"认证失败"
+     * 10:"成功",
+     *  20:"未认证",
+     *  30:"认证中",
+     *  40:"认证失败"
      */
     principal_cert_status?: number;
     /**
@@ -31,18 +32,18 @@ export namespace BeautyShopMeiDeptBrandinfoGet {
     pre_code?: string;
     /**
      * 品牌认证状态 10:"成功", 
-  * 20:"未认证", 
-  * 30:"认证中", 
-  * 40:"认证失败"
+     * 20:"未认证", 
+     * 30:"认证中", 
+     * 40:"认证失败"
      */
     brand_cert_status?: number;
     /**
      * 主体认证类型。
-  * 2: 企业
-  *  3:个人 
-  * 4:个人快捷
-  *  10:社会团体 
-  * 12:个体工商户
+     * 2: 企业
+     *  3:个人 
+     * 4:个人快捷
+     *  10:社会团体 
+     * 12:个体工商户
      */
     principal_cert_type?: number;
     /**

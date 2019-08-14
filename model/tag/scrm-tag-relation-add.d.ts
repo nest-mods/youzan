@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace TagScrmTagRelationAdd {
   /**
    * 请求参数
@@ -18,7 +19,7 @@ export namespace TagScrmTagRelationAdd {
   }
 
   /**
-   * 
+   *
    */
   export interface UserTagCreate {
     /**

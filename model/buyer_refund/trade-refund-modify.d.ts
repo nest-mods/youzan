@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BuyerRefundTradeRefundModify {
   /**
    * 请求参数
@@ -24,7 +25,7 @@ export namespace BuyerRefundTradeRefundModify {
      */
     return_goods: boolean;
     /**
-     * 
+     *
      */
     version: number;
   }

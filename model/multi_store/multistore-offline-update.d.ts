@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace MultiStoreMultistoreOfflineUpdate {
   /**
    * 请求参数
@@ -12,9 +13,13 @@ export namespace MultiStoreMultistoreOfflineUpdate {
      */
     area: string;
     /**
-     * 营业时间,按天设置。示例[{"open_time":"00:10","close_time":"16:00","weekdays":["周一","周二","周三","周四","周五"]},{"open_time":"00:10","close_time":"20:00","weekdays":["周六","周日"]}]
+     * 营业时间,按天设置,每天只允许设置一个连续的时间段。示例：[{"open_time":"00:10","close_time":"16:00","weekdays":["\u5468\u4e00","\u5468\u4e8c","\u5468\u4e09","\u5468\u56db","\u5468\u4e94"]},{"open_time":"00:10","close_time":"20:00","weekdays":["\u5468\u516d","\u5468\u65e5"]}]
      */
     business_hours_advanced?: string;
+    /**
+     * 营业时间类型 1 营业、2 休息
+     */
+    bussiness_hours_type?: number;
     /**
      * 市
      */
@@ -28,11 +33,11 @@ export namespace MultiStoreMultistoreOfflineUpdate {
      */
     description: string;
     /**
-     * id
+     * 网点id
      */
     id: number;
     /**
-     * 图片地址，逗号分隔
+     * 图片地址列表，逗号分隔
      */
     image: string;
     /**
@@ -60,7 +65,7 @@ export namespace MultiStoreMultistoreOfflineUpdate {
      */
     local_delivery_fee?: number;
     /**
-     * 同城配送范围多边形,只有当local_delivery_scope_type=2时生效。格式如：点1经度,点1纬度|点2经度,点2纬度|点3经度，点3纬度|点4经度，点4纬度...（百度坐标系）
+     * 同城配送范围多边形,只有当local_delivery_scope_type=2时生效。格式如：点1经度,点1纬度|点2经度,点2纬度|点3经度，点3纬度|点4经度，点4纬度...。示例：119.912149,80.571455|120.122463,80.573706|120.132076,80.548051|119.9918,80.5476
      */
     local_delivery_polygon?: string;
     /**
@@ -80,15 +85,23 @@ export namespace MultiStoreMultistoreOfflineUpdate {
      */
     name: string;
     /**
-     * 线下自提时间。格式同business_hours_advanced
+     * 线下自提时间，格式同business_hours_advanced。示例：[{"open_time":"00:10","close_time":"16:00","weekdays":["\u5468\u4e00","\u5468\u4e8c","\u5468\u4e09","\u5468\u56db","\u5468\u4e94"]},{"open_time":"00:10","close_time":"20:00","weekdays":["\u5468\u516d","\u5468\u65e5"]}]
      */
     offline_business_hours?: string;
+    /**
+     * 0 否， 1 只允许营业时间下单
+     */
+    only_bussiness_hours_open?: number;
+    /**
+     * 外部编码
+     */
+    outer_id?: string;
     /**
      * 区号
      */
     phone1: string;
     /**
-     * 电话号码
+     * 电话或者手机号码
      */
     phone2: string;
     /**
@@ -96,11 +109,11 @@ export namespace MultiStoreMultistoreOfflineUpdate {
      */
     province: string;
     /**
-     * 是否支持本地配送。1表示支持，0表示不支持
+     * 是否支持本地配送
      */
     support_local_delivery?: number;
     /**
-     * 标签id列表，逗号分隔。需要先创建网点分组
+     * 标签列表，逗号分隔。需要先创建网点分组
      */
     tag_ids?: string;
   }

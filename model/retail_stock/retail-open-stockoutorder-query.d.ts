@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailStockRetailOpenStockoutorderQuery {
   /**
    * 请求参数
@@ -13,12 +14,12 @@ export namespace RetailStockRetailOpenStockoutorderQuery {
     create_time_start: string;
     /**
      * 出库单类型:
-  * BSCK=报损出库
-  * PKCK=盘亏出库
-  * CGTC=采购退厂
-  * XSCK=销售出库
-  * DBCK=调拨出库
-  * PSCK=配送出库
+     * BSCK=报损出库
+     * PKCK=盘亏出库
+     * CGTC=采购退厂
+     * XSCK=销售出库
+     * DBCK=调拨出库
+     * PSCK=配送出库
      */
     order_type?: string;
     /**
@@ -71,7 +72,7 @@ export namespace RetailStockRetailOpenStockoutorderQuery {
     create_time?: string;
     /**
      * 出库单类型(BSCK=报损出库;PKCK=盘亏出库;
-  * CGTC=采购退厂; XSCK=销售出库;DBCK=调拨出库;)
+     * CGTC=采购退厂; XSCK=销售出库;DBCK=调拨出库;)
      */
     order_type?: string;
     /**

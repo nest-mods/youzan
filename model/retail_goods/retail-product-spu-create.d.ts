@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailProductSpuCreate {
   /**
    * 请求参数
@@ -25,13 +26,13 @@ export namespace RetailGoodsRetailProductSpuCreate {
     name?: string;
     /**
      * 图片地址 
-  * [{"url":"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg"}]
+     * [{"url":"https://img.yzcdn.cn/public_files/2017/08/30/63a8d28bce4ca2e5d081e1e69926288e.jpg"}]
      */
     photo_url?: string;
     /**
      * 建议零售价 无规格商品时传输
-  * 最大为9999999元
-  * 最小为0.01元
+     * 最大为9999999元
+     * 最小为0.01元
      */
     retail_price?: number;
     /**
@@ -44,7 +45,7 @@ export namespace RetailGoodsRetailProductSpuCreate {
     skus?: SkuSaveRequest[];
     /**
      * 规格定义组
-  * [{"key":{"k":"颜色","kId":1},"values":[{"v":"蓝色 ","vId":3},{"v":"红色 ","vId":10}]}]
+     * [{"key":{"k":"颜色","kId":1},"values":[{"v":"蓝色 ","vId":3},{"v":"红色 ","vId":10}]}]
      */
     spec_define_tuple?: string;
     /**
@@ -66,7 +67,7 @@ export namespace RetailGoodsRetailProductSpuCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface SkuSaveRequest {
     /**
@@ -94,7 +95,7 @@ export namespace RetailGoodsRetailProductSpuCreate {
      */
     sku_no?: string;
     /**
-     * 
+     *
      */
     specs?: SpecKeyValue[];
     /**
@@ -104,7 +105,7 @@ export namespace RetailGoodsRetailProductSpuCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface SpecKeyValue {
     /**

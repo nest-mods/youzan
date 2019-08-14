@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailProductSpusSearch {
   /**
    * 请求参数
@@ -5,7 +6,7 @@ export namespace RetailGoodsRetailProductSpusSearch {
   export interface Request {
     /**
      * 返回属性
-  * 1:商品基本信息
+     * 1:商品基本信息
      */
     attributes?: number[];
     /**

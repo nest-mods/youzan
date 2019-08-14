@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace CrmAdvancedScrmCardUpdate {
   /**
    * 请求参数
@@ -10,7 +11,7 @@ export namespace CrmAdvancedScrmCardUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface CardUpdate {
     /**
@@ -30,7 +31,7 @@ export namespace CrmAdvancedScrmCardUpdate {
      */
     description?: string;
     /**
-     * 
+     *
      */
     grant_condition?: GrantCondition;
     /**
@@ -46,7 +47,7 @@ export namespace CrmAdvancedScrmCardUpdate {
      */
     name?: string;
     /**
-     * 
+     *
      */
     rights?: CardRights[];
     /**
@@ -80,7 +81,7 @@ export namespace CrmAdvancedScrmCardUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface GrantCondition {
     /**
@@ -98,11 +99,11 @@ export namespace CrmAdvancedScrmCardUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface CardRights {
     /**
-     * 
+     *
      */
     coupon?: Coupon[];
     /**
@@ -124,7 +125,7 @@ export namespace CrmAdvancedScrmCardUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface Coupon {
     /**

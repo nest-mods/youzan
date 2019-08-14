@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyMemberMeiCardCreate {
   /**
    * 请求参数
@@ -5,13 +6,13 @@ export namespace BeautyMemberMeiCardCreate {
   export interface Request {
     /**
      * 是否启用全店折扣。
-  * 0 不启用
-  * 1 启用
+     * 0 不启用
+     * 1 启用
      */
     all_discount?: number;
     /**
      * 全店折扣值，当时启用全店折扣时才生效。
-  * 例如9折，则写90
+     * 例如9折，则写90
      */
     all_discount_value?: number;
     /**
@@ -32,9 +33,9 @@ export namespace BeautyMemberMeiCardCreate {
     card_rights: MeiCardRight[];
     /**
      * 会员卡类型。
-  * 1 次卡
-  * 2 折扣卡
-  * 3 充值卡
+     * 1 次卡
+     * 2 折扣卡
+     * 3 充值卡
      */
     card_type: number;
     /**
@@ -51,26 +52,26 @@ export namespace BeautyMemberMeiCardCreate {
     prepaid_gift_price?: number;
     /**
      * 是否同步微信卡包
-  * 0 不同步
-  * 1 同步
+     * 0 不同步
+     * 1 同步
      */
     sync_wx?: number;
     /**
      * 有效期。
-  * 0 表示永久有效
-  * 其他数字表示有效天数
+     * 0 表示永久有效
+     * 其他数字表示有效天数
      */
     term_days?: number;
     /**
      * 是否显示在网店
-  * 0 不显示 
-  * 1 显示
+     * 0 不显示 
+     * 1 显示
      */
     wap_show?: number;
   }
 
   /**
-   * 
+   *
    */
   export interface MeiCardRight {
     /**

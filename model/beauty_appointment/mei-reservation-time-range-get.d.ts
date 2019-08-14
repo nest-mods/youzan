@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyAppointmentMeiReservationTimeRangeGet {
   /**
    * 请求参数
@@ -49,8 +50,8 @@ export namespace BeautyAppointmentMeiReservationTimeRangeGet {
     end_time?: number;
     /**
      * 不可预约原因
-  * 101 已经被预约满的不可预约时间
-  * 102 商家定义的不可预约时间
+     * 101 已经被预约满的不可预约时间
+     * 102 商家定义的不可预约时间
      */
     status?: number;
   }

@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace MeiPromoterMeiPromoterGet {
   /**
    * 请求参数
@@ -35,9 +36,9 @@ export namespace MeiPromoterMeiPromoterGet {
     invitation_count?: number;
     /**
      * 来源
-  * 1. 自己申请 
-  * 2. 好友邀请 
-  * 3.手动添加
+     * 1. 自己申请 
+     * 2. 好友邀请 
+     * 3.手动添加
      */
     from_source?: number;
     /**

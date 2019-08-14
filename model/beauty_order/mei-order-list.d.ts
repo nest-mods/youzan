@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyOrderMeiOrderList {
   /**
    * 请求参数
@@ -17,16 +18,16 @@ export namespace BeautyOrderMeiOrderList {
     keyword?: string;
     /**
      * 搜索词类型 
-  * 1, "根据手机号搜索" 
-  * 2, "根据订单编号搜索" 
-  * 3, "根据yzUid搜索" 
-  * 4, "根据父退款单号搜索"
-  * 5, "收货人姓名"
-  * 6, "收货人电话"
-  * 7, "收货人电话后4位"
-  * 8, "订单备注"
-  * 9, "订单商品名称"
-  * 10, "会员编号"
+     * 1, "根据手机号搜索" 
+     * 2, "根据订单编号搜索" 
+     * 3, "根据yzUid搜索" 
+     * 4, "根据父退款单号搜索"
+     * 5, "收货人姓名"
+     * 6, "收货人电话"
+     * 7, "收货人电话后4位"
+     * 8, "订单备注"
+     * 9, "订单商品名称"
+     * 10, "会员编号"
      */
     keyword_type?: number;
     /**
@@ -35,11 +36,11 @@ export namespace BeautyOrderMeiOrderList {
     m_token: string;
     /**
      * 订单状态 
-  * 30 待付款
-  * 32 待发货
-  * 34 待收货
-  * 40 已完成
-  * 99 取消
+     * 30 待付款
+     * 32 待发货
+     * 34 待收货
+     * 40 已完成
+     * 99 取消
      */
     order_status?: number;
     /**

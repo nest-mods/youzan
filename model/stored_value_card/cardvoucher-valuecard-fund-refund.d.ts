@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace StoredValueCardCardvoucherValuecardFundRefund {
   /**
    * 请求参数
@@ -47,11 +48,11 @@ export namespace StoredValueCardCardvoucherValuecardFundRefund {
     msg?: string;
     /**
      * 结果码
-  * 200：成功、支付中
-  * 1001：退款失败
-  * 1002：退款失败，原支付订单可退金额不足
-  * 1003：退款失败，原支付订单不存在
-  * 1004：退款失败，原支付订单交易失败
+     * 200：成功、支付中
+     * 1001：退款失败
+     * 1002：退款失败，原支付订单可退金额不足
+     * 1003：退款失败，原支付订单不存在
+     * 1004：退款失败，原支付订单交易失败
      */
     code?: string;
     /**

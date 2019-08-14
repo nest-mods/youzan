@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace StoredValueCardCardvoucherValuecardFundAdjust {
   /**
    * 请求参数
@@ -45,6 +46,38 @@ export namespace StoredValueCardCardvoucherValuecardFundAdjust {
     request_no: string;
   }
 
-  export type Response = void;
+  /**
+   * 响应参数
+   */
+  export interface Response {
+    /**
+     * 请求号
+     */
+    request_no?: string;
+    /**
+     * 调账单号
+     */
+    adjust_no?: string;
+    /**
+     * 调账状态
+     * SUCCESS:成功
+     * FAIL:失败
+     * ING:处理中
+     */
+    status?: string;
+    /**
+     * 结果码
+     * 200：调账成功
+     * 1001：调账处理失败
+     * 1002：调账失败，卡号不存在
+     * 1003：调账失败，本金余额不足
+     * 1004：调账失败，赠送金余额不足
+     */
+    code?: string;
+    /**
+     * 状态描述
+     */
+    msg?: string;
+  }
 
 }

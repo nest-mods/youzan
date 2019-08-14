@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyMemberMeiCardUpdate {
   /**
    * 请求参数
@@ -29,14 +30,14 @@ export namespace BeautyMemberMeiCardUpdate {
     m_token: string;
     /**
      * 是否显示在网店
-  * 0 不显示 
-  * 1 显示
+     * 0 不显示 
+     * 1 显示
      */
     wap_show?: number;
   }
 
   /**
-   * 
+   *
    */
   export interface MeiCardRight {
     /**

@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace CustomerScrmCustomerCreate {
   /**
    * 请求参数
@@ -14,7 +15,7 @@ export namespace CustomerScrmCustomerCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface CustomerCreate {
     /**
@@ -22,7 +23,7 @@ export namespace CustomerScrmCustomerCreate {
      */
     birthday?: string;
     /**
-     * 
+     *
      */
     contact_address?: ContactAddressCreate;
     /**
@@ -36,7 +37,7 @@ export namespace CustomerScrmCustomerCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface ContactAddressCreate {
     /**

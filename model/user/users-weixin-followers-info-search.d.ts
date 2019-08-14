@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace UserUsersWeixinFollowersInfoSearch {
   /**
    * 请求参数
@@ -66,7 +67,7 @@ export namespace UserUsersWeixinFollowersInfoSearch {
     /**
      * 关注时间
      */
-    follow_time?: number;
+    follow_time?: Date;
     /**
      * 性别。可选值：m(男)，f(女)。未知则为空
      */

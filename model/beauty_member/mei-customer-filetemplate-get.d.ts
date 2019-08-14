@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyMemberMeiCustomerFiletemplateGet {
   /**
    * 请求参数
@@ -41,9 +42,9 @@ export namespace BeautyMemberMeiCustomerFiletemplateGet {
     name?: string;
     /**
      * 档案条目类型
-  * 1 文本
-  * 2 日期
-  * 3 图片
+     * 1 文本
+     * 2 日期
+     * 3 图片
      */
     type?: number;
   }
@@ -62,9 +63,9 @@ export namespace BeautyMemberMeiCustomerFiletemplateGet {
     name?: string;
     /**
      * 档案条目类型
-  * 1 文本
-  * 2 日期
-  * 3 图片
+     * 1 文本
+     * 2 日期
+     * 3 图片
      */
     type?: number;
   }

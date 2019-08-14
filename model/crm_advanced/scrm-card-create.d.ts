@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace CrmAdvancedScrmCardCreate {
   /**
    * 请求参数
@@ -10,7 +11,7 @@ export namespace CrmAdvancedScrmCardCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface CardCreate {
     /**
@@ -30,7 +31,7 @@ export namespace CrmAdvancedScrmCardCreate {
      */
     description?: string;
     /**
-     * 
+     *
      */
     grant_condition?: GrantCondition;
     /**
@@ -46,7 +47,7 @@ export namespace CrmAdvancedScrmCardCreate {
      */
     name?: string;
     /**
-     * 
+     *
      */
     rights?: CardRights[];
     /**
@@ -80,7 +81,7 @@ export namespace CrmAdvancedScrmCardCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface GrantCondition {
     /**
@@ -98,11 +99,11 @@ export namespace CrmAdvancedScrmCardCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface CardRights {
     /**
-     * 
+     *
      */
     coupon?: Coupon[];
     /**
@@ -124,7 +125,7 @@ export namespace CrmAdvancedScrmCardCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface Coupon {
     /**
@@ -171,7 +172,7 @@ export namespace CrmAdvancedScrmCardCreate {
     activate_mode?: number;
     /**
      * 微信卡包的同步设置
-  * 0:不同步；1:基于卡号核销；2:基于卡号和条形码；3:基于卡号和二维码
+     * 0:不同步；1:基于卡号核销；2:基于卡号和条形码；3:基于卡号和二维码
      */
     sync_weixin_mode?: number;
     /**
@@ -192,7 +193,7 @@ export namespace CrmAdvancedScrmCardCreate {
     term_days?: number;
     /**
      * 生效方式类型，1:从领取开始无期限；2:从固定时刻开始，到固定时刻结束；
-  * 3:从领取开始，持续一段时长(termDays)
+     * 3:从领取开始，持续一段时长(termDays)
      */
     term_type?: number;
     /**

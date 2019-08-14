@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailProductRetailOpenOnlineSpuRelease {
   /**
    * 请求参数
@@ -5,9 +6,9 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
   export interface Request {
     /**
      * 是否全量上下架状态
-  * 0 下架
-  * 1 上架
-  * 未操作不传
+     * 0 下架
+     * 1 上架
+     * 未操作不传
      */
     all_batch_operate?: number;
     /**
@@ -124,7 +125,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
     invoice?: number;
     /**
      * 是否上架
-  * 0：未发布，草稿状态（wap看不到） 1：发布 （正常状态）
+     * 0：未发布，草稿状态（wap看不到） 1：发布 （正常状态）
      */
     is_display?: number;
     /**
@@ -149,7 +150,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
     item_sku_mark_aggregates?: OpenProductSkuMarkAggregateParam[];
     /**
      * 有sku规格情况下，
-  * 商品的计量属性
+     * 商品的计量属性
      */
     item_sku_meas_props?: OpenProductSkuMeasProp[];
     /**
@@ -351,7 +352,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
   }
 
   /**
-   * 
+   *
    */
   export interface OpenOnlineCombineParam {
     /**
@@ -369,41 +370,41 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
   }
 
   /**
-   * 
+   *
    */
   export interface OpenProductSkuMarkAggregateParam {
     /**
-     * 
+     *
      */
     prepare_time_mark?: OpenPrepareTimeMark;
     /**
-     * 
+     *
      */
     s1?: number;
     /**
-     * 
+     *
      */
     s2?: number;
     /**
-     * 
+     *
      */
     s3?: number;
     /**
-     * 
+     *
      */
     s4?: number;
     /**
-     * 
+     *
      */
     s5?: number;
     /**
-     * 
+     *
      */
     sku_code?: string;
   }
 
   /**
-   * 
+   *
    */
   export interface OpenPrepareTimeMark {
     /**
@@ -413,41 +414,41 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
   }
 
   /**
-   * 
+   *
    */
   export interface OpenProductSkuMeasProp {
     /**
-     * 
+     *
      */
     s1?: number;
     /**
-     * 
+     *
      */
     s2?: number;
     /**
-     * 
+     *
      */
     s3?: number;
     /**
-     * 
+     *
      */
     s4?: number;
     /**
-     * 
+     *
      */
     s5?: number;
     /**
-     * 
+     *
      */
     sku_code?: string;
     /**
-     * 
+     *
      */
     weight?: number;
   }
 
   /**
-   * 
+   *
    */
   export interface ImgUrlParam {
     /**
@@ -461,17 +462,17 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
   }
 
   /**
-   * 
+   *
    */
   export interface MapStringBoolean {
   }
 
   /**
-   * 
+   *
    */
   export interface OpenOnlineStock {
     /**
-     * 
+     *
      */
     combineParams?: OpenOnlineCombineParam[];
     /**
@@ -515,7 +516,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
      */
     sell_stock_count?: string;
     /**
-     * 
+     *
      */
     skus?: SkuParam[];
     /**
@@ -525,7 +526,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
   }
 
   /**
-   * 
+   *
    */
   export interface OpenOnlineCombineParam {
     /**
@@ -543,7 +544,7 @@ export namespace RetailProductRetailOpenOnlineSpuRelease {
   }
 
   /**
-   * 
+   *
    */
   export interface SkuParam {
     /**

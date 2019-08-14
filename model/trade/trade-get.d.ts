@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace TradeTradeGet {
   /**
    * 请求参数
@@ -79,7 +80,7 @@ export namespace TradeTradeGet {
     status?: string;
     /**
      * 主订单类型
-  * 0:普通订单; 1:送礼订单; 2:代付; 3:分销采购单; 4:赠品; 5:心愿单; 6:二维码订单; 7:合并付货款; 8:1分钱实名认证; 9:品鉴; 10:拼团; 15:返利; 35:酒店; 40:外卖; 41:堂食点餐; 46:外卖买单; 51:全员开店; 61:线下收银台订单; 71:美业预约单; 72:美业服务单; 75:知识付费; 81:礼品卡; 100:批发
+     * 0:普通订单; 1:送礼订单; 2:代付; 3:分销采购单; 4:赠品; 5:心愿单; 6:二维码订单; 7:合并付货款; 8:1分钱实名认证; 9:品鉴; 10:拼团; 15:返利; 35:酒店; 40:外卖; 41:堂食点餐; 46:外卖买单; 51:全员开店; 61:线下收银台订单; 71:美业预约单; 72:美业服务单; 75:知识付费; 81:礼品卡; 100:批发
      */
     type?: number;
     /**
@@ -96,17 +97,17 @@ export namespace TradeTradeGet {
     pay_type?: number;
     /**
      * 店铺类型
-  * 0:微商城; 1:微小店; 2:爱学贷微商城; 3:批发店铺; 4:批发商城; 5:外卖; 6:美业; 7:超级门店; 8:收银; 9:收银加微商城; 10:零售总部; 99:有赞开放平台平台型应用创建的店铺
+     * 0:微商城; 1:微小店; 2:爱学贷微商城; 3:批发店铺; 4:批发商城; 5:外卖; 6:美业; 7:超级门店; 8:收银; 9:收银加微商城; 10:零售总部; 99:有赞开放平台平台型应用创建的店铺
      */
     team_type?: number;
     /**
      * 关闭类型
-  * 0:未关闭; 1:过期关闭; 2:标记退款; 3:订单取消; 4:买家取消; 5:卖家取消; 6:部分退款; 10:无法联系上买家; 11:买家误拍或重拍了; 12:买家无诚意完成交易; 13:已通过银行线下汇款; 14:已通过同城见面交易; 15:已通过货到付款交易; 16:已通过网上银行直接汇款; 17:已经缺货无法交易
+     * 0:未关闭; 1:过期关闭; 2:标记退款; 3:订单取消; 4:买家取消; 5:卖家取消; 6:部分退款; 10:无法联系上买家; 11:买家误拍或重拍了; 12:买家无诚意完成交易; 13:已通过银行线下汇款; 14:已通过同城见面交易; 15:已通过货到付款交易; 16:已通过网上银行直接汇款; 17:已经缺货无法交易
      */
     close_type?: number;
     /**
      * 物流类型
-  * 0:快递发货; 1:到店自提; 2:同城配送; 9:无需发货（虚拟商品订单）
+     * 0:快递发货; 1:到店自提; 2:同城配送; 9:无需发货（虚拟商品订单）
      */
     express_type?: number;
     /**
@@ -337,6 +338,10 @@ export namespace TradeTradeGet {
      * 分销单内部支付流水号
      */
     fx_inner_transaction_no?: string;
+    /**
+     * 导购信息
+     */
+    daogou?: string;
   }
 
   /**
@@ -353,22 +358,22 @@ export namespace TradeTradeGet {
     source?: StructurizationTradeSource;
     /**
      * 订单标记
-  * wx_apps:微信小程序买家版
-  * wx_shop:微信小程序商家版
-  * wx_wm:微信小程序外卖
-  * wap_wm:移动端外卖
-  * super_store:超级门店
-  * weapp_spotlight:新微信小程序买家版
-  * wx_meiye:美业小程序
-  * wx_apps_maidan:小程序餐饮买单
-  * wx_apps_diancan:小程序堂食
-  * weapp_youzan:有赞小程序
-  * retail_free_buy:零售自由购
-  * weapp_owl:知识付费小程序
-  * app_spotlight:有赞精选app
-  * retail_scan_buy:零售扫码购
-  * weapp_plugin:小程序插件
-  * 除以上之外为其他
+     * wx_apps:微信小程序买家版
+     * wx_shop:微信小程序商家版
+     * wx_wm:微信小程序外卖
+     * wap_wm:移动端外卖
+     * super_store:超级门店
+     * weapp_spotlight:新微信小程序买家版
+     * wx_meiye:美业小程序
+     * wx_apps_maidan:小程序餐饮买单
+     * wx_apps_diancan:小程序堂食
+     * weapp_youzan:有赞小程序
+     * retail_free_buy:零售自由购
+     * weapp_owl:知识付费小程序
+     * app_spotlight:有赞精选app
+     * retail_scan_buy:零售扫码购
+     * weapp_plugin:小程序插件
+     * 除以上之外为其他
      */
     order_mark?: string;
     /**
@@ -387,12 +392,12 @@ export namespace TradeTradeGet {
   export interface StructurizationTradeSource {
     /**
      * 平台
-  * wx:微信; merchant_3rd:商家自有app; buyer_v:买家版; browser:系统浏览器; alipay:支付宝;qq:腾讯QQ; wb:微博; other:其他
+     * wx:微信; merchant_3rd:商家自有app; buyer_v:买家版; browser:系统浏览器; alipay:支付宝;qq:腾讯QQ; wb:微博; other:其他
      */
     platform?: string;
     /**
      * 微信平台细分
-  * wx_gzh:微信公众号; yzdh:有赞大号; merchant_xcx:商家小程序; yzdh_xcx:有赞大号小程序; direct_buy:直接购买
+     * wx_gzh:微信公众号; yzdh:有赞大号; merchant_xcx:商家小程序; yzdh_xcx:有赞大号小程序; direct_buy:直接购买
      */
     wx_entrance?: string;
   }
@@ -411,7 +416,7 @@ export namespace TradeTradeGet {
     buyer_phone?: string;
     /**
      * 粉丝类型
-  * 1:自有粉丝; 9:代销粉丝
+     * 1:自有粉丝; 9:代销粉丝
      */
     fans_type?: number;
     /**
@@ -442,7 +447,7 @@ export namespace TradeTradeGet {
     post_fee?: string;
     /**
      * 最终支付价格
-  * payment=orders.payment的总和
+     * payment=orders.payment的总和
      */
     payment?: string;
     /**
@@ -541,12 +546,12 @@ export namespace TradeTradeGet {
     delivery_address?: string;
     /**
      * 字段为json格式，需要开发者自行解析
-  * lng、lon（经纬度）；
-  * checkOutTime（酒店退房时间）；
-  * recipients（入住人）；
-  * checkInTime（酒店入住时间）；
-  * idCardNumber（海淘身份证信息）；
-  * areaCode（邮政编码）
+     * lng、lon（经纬度）；
+     * checkOutTime（酒店退房时间）；
+     * recipients（入住人）；
+     * checkInTime（酒店入住时间）；
+     * idCardNumber（海淘身份证信息）；
+     * areaCode（邮政编码）
      */
     address_extra?: string;
     /**
@@ -559,12 +564,12 @@ export namespace TradeTradeGet {
     self_fetch_info?: string;
     /**
      * 同城送预计送达时间-开始时间
-  * 非同城送以及没有开启定时达的订单不返回
+     * 非同城送以及没有开启定时达的订单不返回
      */
     delivery_start_time?: Date;
     /**
      * 同城送预计送达时间-结束时间
-  * 非同城送以及没有开启定时达的订单不返回
+     * 非同城送以及没有开启定时达的订单不返回
      */
     delivery_end_time?: Date;
   }
@@ -579,7 +584,7 @@ export namespace TradeTradeGet {
     oid?: string;
     /**
      * 订单类型
-  * 0:普通类型商品; 1:拍卖商品; 5:餐饮商品; 10:分销商品; 20:会员卡商品; 21:礼品卡商品; 23:有赞会议商品; 24:周期购; 30:收银台商品; 31:知识付费商品; 35:酒店商品; 40:普通服务类商品; 182:普通虚拟商品; 183:电子卡券商品; 201:外部会员卡商品; 202:外部直接收款商品; 203:外部普通商品; 205:mock不存在商品; 206:小程序二维码
+     * 0:普通类型商品; 1:拍卖商品; 5:餐饮商品; 10:分销商品; 20:会员卡商品; 21:礼品卡商品; 23:有赞会议商品; 24:周期购; 30:收银台商品; 31:知识付费商品; 35:酒店商品; 40:普通服务类商品; 182:普通虚拟商品; 183:电子卡券商品; 201:外部会员卡商品; 202:外部直接收款商品; 203:外部普通商品; 205:mock不存在商品; 206:小程序二维码
      */
     item_type?: number;
     /**
@@ -686,6 +691,34 @@ export namespace TradeTradeGet {
      * 分销单实付金额，单位元
      */
     fenxiao_payment?: string;
+    /**
+     * 税费
+     */
+    tax_total?: string;
+    /**
+     * 运杂费
+     */
+    freight?: string;
+    /**
+     * 非现金抵扣金额
+     */
+    discount?: string;
+    /**
+     * 分销税费
+     */
+    fenxiao_tax_total?: string;
+    /**
+     * 分销运杂费
+     */
+    fenxiao_freight?: string;
+    /**
+     * 分销非现金抵扣金额
+     */
+    fenxiao_discount?: string;
+    /**
+     * 分销商品折后价
+     */
+    fenxiao_discount_price?: string;
   }
 
   /**
@@ -750,7 +783,7 @@ export namespace TradeTradeGet {
   export interface StructurizationTradeRefundInfoDetail {
     /**
      * 退款类型
-  * 1:退款 - 买家申请退款; 2:退款 - 商家主动退款; 3:退款 - 一键退款
+     * 1:退款 - 买家申请退款; 2:退款 - 商家主动退款; 3:退款 - 一键退款
      */
     refund_type?: number;
     /**
@@ -763,7 +796,7 @@ export namespace TradeTradeGet {
     refund_id?: string;
     /**
      * 退款状态
-  * 1:买家已经申请退款，等待卖家同意;  10:卖家拒绝退款;  20:卖家已经同意退货，等待买家退货;  30:买家已经退货，等待卖家确认收货;  40:卖家未收到货,拒绝退款;  50:退款关闭;  60:退款成功;
+     * 1:买家已经申请退款，等待卖家同意;  10:卖家拒绝退款;  20:卖家已经同意退货，等待买家退货;  30:买家已经退货，等待卖家确认收货;  40:卖家未收到货,拒绝退款;  50:退款关闭;  60:退款成功;
      */
     refund_state?: number;
     /**
@@ -788,17 +821,17 @@ export namespace TradeTradeGet {
   export interface StructurizationTradeDeliveryDetail {
     /**
      * 改字段已弃用
-  * 包裹id已移至dists中的dist_id字段
+     * 包裹id已移至dists中的dist_id字段
      */
     pk_id?: number;
     /**
      * 物流状态
-  * 0:待发货; 1:已发货
+     * 0:待发货; 1:已发货
      */
     express_state?: number;
     /**
      * 物流类型
-  * 0:手动发货; 1:系统自动发货
+     * 0:手动发货; 1:系统自动发货
      */
     express_type?: number;
     /**
@@ -907,32 +940,32 @@ export namespace TradeTradeGet {
   export interface StructurizationTradePromotionDetail {
     /**
      * 优惠类型
-  * tuan:团购返现
-  * auction:降价拍
-  * groupOn:多人拼团
-  * pointsExchange:积分抵扣
-  * seckill:秒杀
-  * packageBuy:优惠套餐
-  * presentExchange:赠品领取
-  * goodsScan:商品扫码
-  * customerDiscount:会员折扣
-  * timelimitedDiscount:限时折扣
-  * paidPromotion:支付有礼
-  * periodBuy:周期购
-  * scanReduce:收款码优惠
-  * meetReduce:满减送
-  * cashBack:订单返现
-  * supplierMeetReduce:供货商满包邮
-  * bale:打包一口价
-  * coupon:优惠卡券
-  * entireDiscount:整单优惠
-  * groupOnHeaderDiscount:团长优惠
-  * customerPostageFree:会员包邮
-  * periodBuyPostageFree:周期购包邮
-  * ignoreOddChange:抹零
-  * pfGuideMarketing:引导促销
-  * helpCut:助力砍价
-  * sellerDiscount:分销商等级折扣
+     * tuan:团购返现
+     * auction:降价拍
+     * groupOn:多人拼团
+     * pointsExchange:积分抵扣
+     * seckill:秒杀
+     * packageBuy:优惠套餐
+     * presentExchange:赠品领取
+     * goodsScan:商品扫码
+     * customerDiscount:会员折扣
+     * timelimitedDiscount:限时折扣
+     * paidPromotion:支付有礼
+     * periodBuy:周期购
+     * scanReduce:收款码优惠
+     * meetReduce:满减送
+     * cashBack:订单返现
+     * supplierMeetReduce:供货商满包邮
+     * bale:打包一口价
+     * coupon:优惠卡券
+     * entireDiscount:整单优惠
+     * groupOnHeaderDiscount:团长优惠
+     * customerPostageFree:会员包邮
+     * periodBuyPostageFree:周期购包邮
+     * ignoreOddChange:抹零
+     * pfGuideMarketing:引导促销
+     * helpCut:助力砍价
+     * sellerDiscount:分销商等级折扣
      */
     promotion_type?: string;
     /**
@@ -965,8 +998,8 @@ export namespace TradeTradeGet {
     promotion_id?: number;
     /**
      * 优惠子类型
-  * card 优惠券
-  * code 优惠码
+     * card 优惠券
+     * code 优惠码
      */
     sub_promotion_type?: string;
     /**
@@ -981,32 +1014,32 @@ export namespace TradeTradeGet {
   export interface StructurizationTradePromotionDetail {
     /**
      * 优惠类型
-  * tuan:团购返现
-  * auction:降价拍
-  * groupOn:多人拼团
-  * pointsExchange:积分抵扣
-  * seckill:秒杀
-  * packageBuy:优惠套餐
-  * presentExchange:赠品领取
-  * goodsScan:商品扫码
-  * customerDiscount:会员折扣
-  * timelimitedDiscount:限时折扣
-  * paidPromotion:支付有礼
-  * periodBuy:周期购
-  * scanReduce:收款码优惠
-  * meetReduce:满减送
-  * cashBack:订单返现
-  * supplierMeetReduce:供货商满包邮
-  * bale:打包一口价
-  * coupon:优惠卡券
-  * entireDiscount:整单优惠
-  * groupOnHeaderDiscount:团长优惠
-  * customerPostageFree:会员包邮
-  * periodBuyPostageFree:周期购包邮
-  * ignoreOddChange:抹零
-  * pfGuideMarketing:引导促销
-  * helpCut:助力砍价
-  * sellerDiscount:分销商等级折扣
+     * tuan:团购返现
+     * auction:降价拍
+     * groupOn:多人拼团
+     * pointsExchange:积分抵扣
+     * seckill:秒杀
+     * packageBuy:优惠套餐
+     * presentExchange:赠品领取
+     * goodsScan:商品扫码
+     * customerDiscount:会员折扣
+     * timelimitedDiscount:限时折扣
+     * paidPromotion:支付有礼
+     * periodBuy:周期购
+     * scanReduce:收款码优惠
+     * meetReduce:满减送
+     * cashBack:订单返现
+     * supplierMeetReduce:供货商满包邮
+     * bale:打包一口价
+     * coupon:优惠卡券
+     * entireDiscount:整单优惠
+     * groupOnHeaderDiscount:团长优惠
+     * customerPostageFree:会员包邮
+     * periodBuyPostageFree:周期购包邮
+     * ignoreOddChange:抹零
+     * pfGuideMarketing:引导促销
+     * helpCut:助力砍价
+     * sellerDiscount:分销商等级折扣
      */
     promotion_type?: string;
     /**
@@ -1039,8 +1072,8 @@ export namespace TradeTradeGet {
     promotion_id?: number;
     /**
      * 优惠子类型
-  * card 优惠券
-  * code 优惠码
+     * card 优惠券
+     * code 优惠码
      */
     sub_promotion_type?: string;
     /**

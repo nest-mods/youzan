@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace CouponUmpPromocardAdd {
   /**
    * 请求参数
@@ -145,8 +146,8 @@ export namespace CouponUmpPromocardAdd {
     group_id?: number;
     /**
      * 可用范围的类型，可选值：
-  *             <br>PART（部分商品可用，或指定商品可用）
-  *             <br>ALL（全部商品可用）
+     *             <br>PART（部分商品可用，或指定商品可用）
+     *             <br>ALL（全部商品可用）
      */
     range_type?: string;
     /**
@@ -533,25 +534,25 @@ export namespace CouponUmpPromocardAdd {
     properties_name?: string;
     /**
      * Sku所对应的销售属性的Json字符串（需另行解析），
-  *         该字段内容与properties_name字段除了格式不一样，内容完全一致。
-  *         由于产品规格信息难以避免涉及到‘:’、‘,’、‘;’这些与解析规则冲突的字符，所以增加该字段。
-  *         </br>格式定义：
-  * <pre>
-  * 
-  * [
-  *   {
-  *     "kid": "20000",
-  *     "vid": "3275069",
-  *     "k": "品牌",
-  *     "v": "盈讯"
-  *   },
-  *   {
-  *     "kid": "1753146",
-  *     "vid": "3485013",
-  *     "k": "型号",
-  *     "v": "F908"
-  *   }
-  *   .....
+     *         该字段内容与properties_name字段除了格式不一样，内容完全一致。
+     *         由于产品规格信息难以避免涉及到‘:’、‘,’、‘;’这些与解析规则冲突的字符，所以增加该字段。
+     *         </br>格式定义：
+     * <pre>
+     *
+     * [
+     *   {
+     *     "kid": "20000",
+     *     "vid": "3275069",
+     *     "k": "品牌",
+     *     "v": "盈讯"
+     *   },
+     *   {
+     *     "kid": "1753146",
+     *     "vid": "3485013",
+     *     "k": "型号",
+     *     "v": "F908"
+     *   }
+     *   .....
      */
     properties_name_json?: string;
     /**
@@ -628,11 +629,11 @@ export namespace CouponUmpPromocardAdd {
     created?: Date;
     /**
      * 商品二维码类型。可选值：<br>
-  * GOODS_SCAN_FOLLOW(扫码关注后购买商品) <br>
-  * GOODS_SCAN_FOLLOW_DECREASE(扫码关注后减优惠额) <br>
-  * GOODS_SCAN_FOLLOW_DISCOUNT(扫码关注后折扣) <br>
-  * GOODS_SCAN_DECREASE(扫码直接减优惠额) <br>
-  * GOODS_SCAN_DISCOUNT(扫码直接折扣) <br>
+     * GOODS_SCAN_FOLLOW(扫码关注后购买商品) <br>
+     * GOODS_SCAN_FOLLOW_DECREASE(扫码关注后减优惠额) <br>
+     * GOODS_SCAN_FOLLOW_DISCOUNT(扫码关注后折扣) <br>
+     * GOODS_SCAN_DECREASE(扫码直接减优惠额) <br>
+     * GOODS_SCAN_DISCOUNT(扫码直接折扣) <br>
      */
     type?: string;
     /**

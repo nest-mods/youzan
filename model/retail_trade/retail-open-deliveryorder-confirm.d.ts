@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailTradeRetailOpenDeliveryorderConfirm {
   /**
    * 请求参数
@@ -21,7 +22,7 @@ export namespace RetailTradeRetailOpenDeliveryorderConfirm {
     operator_name?: string;
     /**
      * 发货的商品明细ID
-  * 如果需要拆单发货，使用该字段指定要发货的商品明细ID，不需要拆单发货，则该字段不传或值为空。
+     * 如果需要拆单发货，使用该字段指定要发货的商品明细ID，不需要拆单发货，则该字段不传或值为空。
      */
     order_item_nos?: string[];
     /**

@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace CouponUmpCouponsUnfinishedSearch {
   /**
    * 请求参数
@@ -33,8 +34,8 @@ export namespace CouponUmpCouponsUnfinishedSearch {
     coupon_type?: string;
     /**
      * 可用范围的类型，可选值：
-  *             <br>PART（部分商品可用，或指定商品可用）
-  *             <br>ALL（全部商品可用）
+     *             <br>PART（部分商品可用，或指定商品可用）
+     *             <br>ALL（全部商品可用）
      */
     range_type?: string;
     /**

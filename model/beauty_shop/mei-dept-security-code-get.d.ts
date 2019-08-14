@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyShopMeiDeptSecurityCodeGet {
   /**
    * 请求参数
@@ -23,9 +24,9 @@ export namespace BeautyShopMeiDeptSecurityCodeGet {
     code?: string;
     /**
      * 规则列表
-  * 1 顾客的私密档案
-  * 2 顾客的手机号
-  * 3 顾客的微信号
+     * 1 顾客的私密档案
+     * 2 顾客的手机号
+     * 3 顾客的微信号
      */
     rules?: number[];
     /**
@@ -34,8 +35,8 @@ export namespace BeautyShopMeiDeptSecurityCodeGet {
     code_id?: number;
     /**
      * 状态
-  * 1 开启
-  * 2 关闭
+     * 1 开启
+     * 2 关闭
      */
     status?: number;
   }

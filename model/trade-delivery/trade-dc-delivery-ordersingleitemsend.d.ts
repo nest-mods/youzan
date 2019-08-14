@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace TradeDeliveryTradeDcDeliveryOrdersingleitemsend {
   /**
    * 请求参数
@@ -26,11 +27,11 @@ export namespace TradeDeliveryTradeDcDeliveryOrdersingleitemsend {
   }
 
   /**
-   * 
+   *
    */
   export interface ExPackage {
     /**
-     * 
+     *
      */
     express?: Express;
     /**
@@ -44,7 +45,7 @@ export namespace TradeDeliveryTradeDcDeliveryOrdersingleitemsend {
   }
 
   /**
-   * 
+   *
    */
   export interface Express {
     /**
@@ -62,7 +63,7 @@ export namespace TradeDeliveryTradeDcDeliveryOrdersingleitemsend {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }

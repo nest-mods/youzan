@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyShopMeiDeptStatusGet {
   /**
    * 请求参数
@@ -23,11 +24,11 @@ export namespace BeautyShopMeiDeptStatusGet {
     remain_time?: number;
     /**
      * 店铺状态
-  * 10, "试用期"
-  * 20, "保护期"
-  * 20, "保护期"
-  * 40, "试用期打烊"
-  * 50, "服务期打烊"
+     * 10, "试用期"
+     * 20, "保护期"
+     * 20, "保护期"
+     * 40, "试用期打烊"
+     * 50, "服务期打烊"
      */
     valid_status?: number;
   }

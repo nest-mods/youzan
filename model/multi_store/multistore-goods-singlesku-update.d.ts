@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace MultiStoreMultistoreGoodsSingleskuUpdate {
   /**
    * 请求参数
@@ -21,7 +22,7 @@ export namespace MultiStoreMultistoreGoodsSingleskuUpdate {
     price?: string;
     /**
      * 商品无sku的时候，这个值不填
-  * 商品有sku的时候，需要填写sku_id
+     * 商品有sku的时候，需要填写sku_id
      */
     sku_id?: number;
     /**

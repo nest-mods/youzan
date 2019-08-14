@@ -37,7 +37,9 @@
     "only-arrow-functions": false,
     "radix": false,
     "no-shadowed-variable": false,
-    "max-classes-per-file": false
+    "max-classes-per-file": false,
+    "no-namespace": false,
+    "jsdoc-format": false
   },
   "rulesDirectory": []
 }

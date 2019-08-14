@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace MeiPromoterMeiPromoterOrderList {
   /**
    * 请求参数
@@ -107,10 +108,10 @@ export namespace MeiPromoterMeiPromoterOrderList {
     parent_promoter?: MeiPromoter;
     /**
      * 分润状态
-  * 5  人工结算
-  * 10 待结算
-  * 40 已结算
-  * 95 结算失败
+     * 5  人工结算
+     * 10 待结算
+     * 40 已结算
+     * 95 结算失败
      */
     settle_status?: number;
     /**
@@ -119,8 +120,8 @@ export namespace MeiPromoterMeiPromoterOrderList {
     items?: MeiPromoterOrderItem;
     /**
      * 结算类型
-  * 1 人工结算
-  * 2 自动结算
+     * 1 人工结算
+     * 2 自动结算
      */
     settlement_type?: number;
   }
@@ -207,8 +208,8 @@ export namespace MeiPromoterMeiPromoterOrderList {
     origin_price?: number;
     /**
      * 商品类型。（当商品不是卡时存在）
-  * 1  服务
-  * 2  实物商品
+     * 1  服务
+     * 2  实物商品
      */
     goods_type?: number;
     /**
@@ -217,9 +218,9 @@ export namespace MeiPromoterMeiPromoterOrderList {
     parent_ratio?: number;
     /**
      * 卡类型（当商品是卡时存在）
-  * 1 次卡
-  * 2 折扣卡
-  * 3 充值卡
+     * 1 次卡
+     * 2 折扣卡
+     * 3 充值卡
      */
     card_type?: number;
   }

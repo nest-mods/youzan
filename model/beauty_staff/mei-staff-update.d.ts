@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyStaffMeiStaffUpdate {
   /**
    * 请求参数
@@ -46,7 +47,7 @@ export namespace BeautyStaffMeiStaffUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface MeiBeautyStoreRoleDTO {
     /**

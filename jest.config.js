@@ -72,3 +72,6 @@ module.exports = {
 
 process.env.DEBUG = 'youzan:*,def:*';
 process.env.DEBUG_LEVEL = 'debug';
+const util = require('util');
+defaultOptions = util.inspect.defaultOptions;
+defaultOptions.depth = 10;

@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailProductUnitsSearch {
   /**
    * 请求参数
@@ -75,7 +76,7 @@ export namespace RetailGoodsRetailProductUnitsSearch {
     name?: string;
     /**
      * 单位是否启用状态。
-  * 1表示启用，0表示禁用
+     * 1表示启用，0表示禁用
      */
     status?: number;
     /**

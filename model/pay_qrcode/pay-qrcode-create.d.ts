@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace PayQrcodePayQrcodeCreate {
   /**
    * 请求参数
@@ -21,9 +22,9 @@ export namespace PayQrcodePayQrcodeCreate {
     qr_source?: string;
     /**
      * 二维码类型.
-  * QR_TYPE_FIXED_BY_PERSON ：无金额二维码，扫码后用户需自己输入金额；
-  * QR_TYPE_NOLIMIT ： 确定金额二维码，可以重复支付;
-  * QR_TYPE_DYNAMIC：确定金额二维码，只能被支付一次
+     * QR_TYPE_FIXED_BY_PERSON ：无金额二维码，扫码后用户需自己输入金额；
+     * QR_TYPE_NOLIMIT ： 确定金额二维码，可以重复支付;
+     * QR_TYPE_DYNAMIC：确定金额二维码，只能被支付一次
      */
     qr_type: string;
   }

@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailStockRetailOpenStockinorderGet {
   /**
    * 请求参数
@@ -35,11 +36,11 @@ export namespace RetailStockRetailOpenStockinorderGet {
     create_time?: string;
     /**
      * 入库单据类型：
-  * BYRK=报溢入库
-  * PYRK=盘盈入库
-  * CGRK=采购入库
-  * THRK=退货入库
-  * DBRK=调拨入库
+     * BYRK=报溢入库
+     * PYRK=盘盈入库
+     * CGRK=采购入库
+     * THRK=退货入库
+     * DBRK=调拨入库
      */
     order_type?: string;
     /**

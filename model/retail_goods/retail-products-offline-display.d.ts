@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailProductsOfflineDisplay {
   /**
    * 请求参数
@@ -5,8 +6,8 @@ export namespace RetailGoodsRetailProductsOfflineDisplay {
   export interface Request {
     /**
      * 是否全量上下架状态 默认false
-  *    * false 非全量 
-  *    * true   全量
+     *  false 非全量 
+     *  true   全量
      */
     all_batch_operate?: boolean;
     /**

@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailProductSellSkuUpdate {
   /**
    * 请求参数
@@ -13,7 +14,7 @@ export namespace RetailGoodsRetailProductSellSkuUpdate {
     item_sku_id: number;
     /**
      * 规格价格，单位：分
-  * （价格最小0.01元，最大值9999999元）
+     * （价格最小0.01元，最大值9999999元）
      */
     price: number;
     /**

@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailStockDeliverySearch {
   /**
    * 请求参数
@@ -96,7 +97,7 @@ export namespace RetailGoodsRetailStockDeliverySearch {
      */
     items?: DeliverySearchVO[];
     /**
-     * 
+     *
      */
     paginator?: Paginator;
   }
@@ -131,15 +132,15 @@ export namespace RetailGoodsRetailStockDeliverySearch {
     idempotent_no?: string;
     /**
      * 业务单据类型
-  * 1.调拨单   2.要货申请单
-  * 3.配送单
+     * 1.调拨单   2.要货申请单
+     * 3.配送单
      */
     type?: number;
     /**
      * 业务单据详细类型
-  * 11.库间调拨单  12.库内调拨单
-  * 21.要货申请单
-  * 31.配送单
+     * 11.库间调拨单  12.库内调拨单
+     * 21.要货申请单
+     * 31.配送单
      */
     business_type?: number;
     /**
@@ -176,7 +177,7 @@ export namespace RetailGoodsRetailStockDeliverySearch {
     warehsoue_of_admin?: string;
     /**
      * 状态
-  * 1.待审核  2.待出库  3.待入库  4.已驳回  5.已关闭  6.已完成  7.出库执行中  8.入库执行中
+     * 1.待审核  2.待出库  3.待入库  4.已驳回  5.已关闭  6.已完成  7.出库执行中  8.入库执行中
      */
     status?: number;
     /**
@@ -268,7 +269,7 @@ export namespace RetailGoodsRetailStockDeliverySearch {
   }
 
   /**
-   * 
+   *
    */
   export interface Paginator {
     /**

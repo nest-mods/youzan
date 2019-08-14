@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailTradeRetailOpenReturnorderConfirm {
   /**
    * 请求参数

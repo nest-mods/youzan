@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace SalesmanSalesmanAccountsGet {
   /**
    * 请求参数

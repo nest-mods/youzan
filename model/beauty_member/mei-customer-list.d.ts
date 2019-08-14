@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyMemberMeiCustomerList {
   /**
    * 请求参数
@@ -5,8 +6,8 @@ export namespace BeautyMemberMeiCustomerList {
   export interface Request {
     /**
      * 按照归属门店进行过滤
-  * 0 表示不归属任何门店的会员
-  * 其他数字表示门店id
+     * 0 表示不归属任何门店的会员
+     * 其他数字表示门店id
      */
     belong_dept_ids?: number[];
     /**
@@ -19,7 +20,7 @@ export namespace BeautyMemberMeiCustomerList {
     birthday_number_min?: number;
     /**
      * 按照持有的卡id过滤。
-  * 需要拉取到所有的卡列表后的，使用里面的卡id
+     * 需要拉取到所有的卡列表后的，使用里面的卡id
      */
     card_id?: number;
     /**
@@ -36,7 +37,7 @@ export namespace BeautyMemberMeiCustomerList {
     current_points_min?: number;
     /**
      * 1 表示按照降序排列
-  * 2 表示按照升序排列
+     * 2 表示按照升序排列
      */
     desc?: number;
     /**
@@ -45,17 +46,17 @@ export namespace BeautyMemberMeiCustomerList {
     keyword?: string;
     /**
      * 关键词过滤的类型
-  * 1 表示关键词是手机号
-  * 2 表示关键词是会员名称
+     * 1 表示关键词是手机号
+     * 2 表示关键词是会员名称
      */
     keyword_type?: number;
     /**
      * 过滤消费频次。
-  * d 表示天
-  * w 表示周
-  * m 表示月
-  * y 表示年
-  * 例如1d 表示1天内没有消费；1w 表示一周内没有消费；1m 表示一个月内没有消费；1y 表示一年内没有消费
+     * d 表示天
+     * w 表示周
+     * m 表示月
+     * y 表示年
+     * 例如1d 表示1天内没有消费；1w 表示一周内没有消费；1m 表示一个月内没有消费；1y 表示一年内没有消费
      */
     last_trade?: string;
     /**
@@ -68,11 +69,11 @@ export namespace BeautyMemberMeiCustomerList {
     m_token: string;
     /**
      * 排序字段
-  * 0 对创建时间排序
-  * 1 对购次排序
-  * 2 对购买均价排序
-  * 3 对最后购买时间排序
-  * 4 对总价排序
+     * 0 对创建时间排序
+     * 1 对购次排序
+     * 2 对购买均价排序
+     * 3 对最后购买时间排序
+     * 4 对总价排序
      */
     order_by_type?: number;
     /**
@@ -85,7 +86,7 @@ export namespace BeautyMemberMeiCustomerList {
     page_size: number;
     /**
      * 按照来源过滤。
-  * 需要先拉取来源列表后，在使用里面的来源id
+     * 需要先拉取来源列表后，在使用里面的来源id
      */
     source?: number;
     /**
@@ -94,7 +95,7 @@ export namespace BeautyMemberMeiCustomerList {
     tag_ids?: number[];
     /**
      * 过滤交易次数。
-  * 例如 3 表示消费3次以内
+     * 例如 3 表示消费3次以内
      */
     trade_count?: number;
   }

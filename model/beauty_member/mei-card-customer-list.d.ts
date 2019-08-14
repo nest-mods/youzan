@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyMemberMeiCardCustomerList {
   /**
    * 请求参数
@@ -75,8 +76,8 @@ export namespace BeautyMemberMeiCardCustomerList {
     card_no?: string;
     /**
      * 卡类型
-  * 1 折扣
-  * 2 次数
+     * 1 折扣
+     * 2 次数
      */
     card_type?: number;
     /**
@@ -163,8 +164,8 @@ export namespace BeautyMemberMeiCardCustomerList {
     remain_value?: number;
     /**
      * 权益类型：
-  * 1 折扣；
-  * 2 次数
+     * 1 折扣；
+     * 2 次数
      */
     rights_type?: number;
     /**

@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyOrderMeiOrderCreate {
   /**
    * 请求参数
@@ -54,7 +55,7 @@ export namespace BeautyOrderMeiOrderCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface OrderGiftItem {
     /**
@@ -76,7 +77,7 @@ export namespace BeautyOrderMeiOrderCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface OrderItemRequest {
     /**
@@ -144,7 +145,7 @@ export namespace BeautyOrderMeiOrderCreate {
      */
     reserve_price?: number;
     /**
-     * 
+     *
      */
     salesmen?: Salesman[];
     /**
@@ -156,13 +157,13 @@ export namespace BeautyOrderMeiOrderCreate {
      */
     stage?: number;
     /**
-     * 
+     *
      */
     technicians?: Technician[];
   }
 
   /**
-   * 
+   *
    */
   export interface Salesman {
     /**
@@ -172,7 +173,7 @@ export namespace BeautyOrderMeiOrderCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface Technician {
     /**
@@ -186,7 +187,7 @@ export namespace BeautyOrderMeiOrderCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface Promotion {
     /**

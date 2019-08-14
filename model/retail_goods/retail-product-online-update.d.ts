@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailProductOnlineUpdate {
   /**
    * 请求参数
@@ -65,7 +66,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     is_delete?: number;
     /**
      * 是否上架
-  * 0：未发布，草稿状态（wap看不到） 1：发布 （正常状态）
+     * 0：未发布，草稿状态（wap看不到） 1：发布 （正常状态）
      */
     is_display?: number;
     /**
@@ -82,7 +83,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     item_sku_extend_param_list?: ItemSkuExtendParam[];
     /**
      * 有sku规格情况下，
-  * 商品的计量属性
+     * 商品的计量属性
      */
     item_sku_meas_props?: ItemSkuMeasProp[];
     /**
@@ -119,7 +120,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     origin?: string;
     /**
      * 图片地址,注意 图片地址必须是符合以下规则的json，且必须已https开头。
-  * （例如：[{"url":"https://img.youzan.com/upload_files/2016/05/16/FjvGju7UwGfol_yAXK3RzxOGelt0.png","id":"642430978","width":"300","height":"299"},{"url":"https://img.youzan.com/upload_files/2016/05/20/FgNkCcgqoGd_fMDPPCas1UIX3aCM.jpg","id":"644360875","width":"640","height":"379"}]）
+     * （例如：[{"url":"https://img.youzan.com/upload_files/2016/05/16/FjvGju7UwGfol_yAXK3RzxOGelt0.png","id":"642430978","width":"300","height":"299"},{"url":"https://img.youzan.com/upload_files/2016/05/20/FgNkCcgqoGd_fMDPPCas1UIX3aCM.jpg","id":"644360875","width":"640","height":"379"}]）
      */
     picture?: string;
     /**
@@ -200,10 +201,10 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
     start_sold_time?: number;
     /**
      * 多规格商品库存信息
-  * 注意：
-  * 实物商品至少关联一个商品库商品
-  * 当实物商品存在部分规格不关联的情况时，sku售价传0.01元，库存值传0。
-  * 例如：[{"sku_id":0,"related_sku_id":2250523,"price":100,"sell_stock_count":0,"sold_num":0,"cost_price":null,"sku_no":"P171011010602432","name":"测绘0333","skus":[{"k":"颜色","v":"粉色","kid":1,"vid":40172}],"k1":"颜色","v1":"粉色"},{"sku_id":0,"related_sku_id":2250523,"price":100,"sell_stock_count":12,"sold_num":0,"cost_price":null,"sku_no":"P171010025662807","name":"测试删除2","skus":[{"k":"颜色","v":"红色","kid":1,"vid":1215}],"k1":"颜色","v1":"红色"}]
+     * 注意：
+     * 实物商品至少关联一个商品库商品
+     * 当实物商品存在部分规格不关联的情况时，sku售价传0.01元，库存值传0。
+     * 例如：[{"sku_id":0,"related_sku_id":2250523,"price":100,"sell_stock_count":0,"sold_num":0,"cost_price":null,"sku_no":"P171011010602432","name":"测绘0333","skus":[{"k":"颜色","v":"粉色","kid":1,"vid":40172}],"k1":"颜色","v1":"粉色"},{"sku_id":0,"related_sku_id":2250523,"price":100,"sell_stock_count":12,"sold_num":0,"cost_price":null,"sku_no":"P171010025662807","name":"测试删除2","skus":[{"k":"颜色","v":"红色","kid":1,"vid":1215}],"k1":"颜色","v1":"红色"}]
      */
     stocks?: OnlineStock[];
     /**
@@ -237,7 +238,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface OnlineCombineParam {
     /**
@@ -255,7 +256,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface ItemSkuExtendParam {
     /**
@@ -289,7 +290,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface ItemSkuMeasProp {
     /**
@@ -323,7 +324,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface ImgUrlParam {
     /**
@@ -337,11 +338,11 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface OnlineStock {
     /**
-     * 
+     *
      */
     combine_params?: OnlineCombineParam[];
     /**
@@ -373,7 +374,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
      */
     price?: number;
     /**
-     * 
+     *
      */
     related_item_id?: number;
     /**
@@ -385,7 +386,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
      */
     sell_stock_count?: number;
     /**
-     * 
+     *
      */
     skus?: SkuParam;
     /**
@@ -407,7 +408,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface OnlineCombineParam {
     /**
@@ -425,7 +426,7 @@ export namespace RetailGoodsRetailProductOnlineUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface SkuParam {
     /**

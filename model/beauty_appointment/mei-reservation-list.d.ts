@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyAppointmentMeiReservationList {
   /**
    * 请求参数
@@ -33,37 +34,37 @@ export namespace BeautyAppointmentMeiReservationList {
     page_size: number;
     /**
      * 要查询的预约状态（该字段不传默认是10）
-  * 5 已创建
-  * 10 待服务
-  * 20 已开单
-  * 30 已完成
-  * 98 已取消
-  * 97 已取消（由外部业务取消）
+     * 5 已创建
+     * 10 待服务
+     * 20 已开单
+     * 30 已完成
+     * 98 已取消
+     * 97 已取消（由外部业务取消）
      */
     reservation_statuses?: number[];
     /**
      * 搜索的关键字匹配的类型
-  * 1. 到店人姓名
-  * 2. 到店人手机
-  * 3. 会员姓名 
-  * 4. 会员手机号 
-  * 5. 会员编号 
-  * 6. 备注 
-  * 7. 服务名称搜索 
-  * 8.技师昵称搜索
+     * 1. 到店人姓名
+     * 2. 到店人手机
+     * 3. 会员姓名 
+     * 4. 会员手机号 
+     * 5. 会员编号 
+     * 6. 备注 
+     * 7. 服务名称搜索 
+     * 8.技师昵称搜索
      */
     search_type?: number;
     /**
      * 搜索的排序字段：
-  *       100 - 创建时间排序（默认）
-  *       101 - 到店时间排序
-  *       102 - 取消时间排序
+     *       100 - 创建时间排序（默认）
+     *       101 - 到店时间排序
+     *       102 - 取消时间排序
      */
     sort_field?: number;
     /**
      * 排序方式：
-  * 1 正序（默认）
-  * 2 逆序
+     * 1 正序（默认）
+     * 2 逆序
      */
     sort_rule?: number;
   }
@@ -110,8 +111,8 @@ export namespace BeautyAppointmentMeiReservationList {
     order_no?: string;
     /**
      * 预约单是否需哟啊支付
-  * 0 不需要支付
-  * 1 需要支付
+     * 0 不需要支付
+     * 1 需要支付
      */
     need_pay?: number;
     /**
@@ -120,9 +121,9 @@ export namespace BeautyAppointmentMeiReservationList {
     customer_name?: string;
     /**
      * 取消来源
-  * 1 商家主动取消
-  * 2 买家主动取消
-  * 3 开单后取消
+     * 1 商家主动取消
+     * 2 买家主动取消
+     * 3 开单后取消
      */
     cancel_source?: number;
     /**
@@ -151,8 +152,8 @@ export namespace BeautyAppointmentMeiReservationList {
     yz_uid?: number;
     /**
      * 预约来源
-  * 1 商家发起的预约
-  * 2 买家发起的预约
+     * 1 商家发起的预约
+     * 2 买家发起的预约
      */
     from_source?: number;
     /**
@@ -165,19 +166,19 @@ export namespace BeautyAppointmentMeiReservationList {
     cancel_reason?: string;
     /**
      * 支付状态
-  * 10 待支付
-  * 20 无需支付
-  * 30 已支付
+     * 10 待支付
+     * 20 无需支付
+     * 30 已支付
      */
     pay_status?: number;
     /**
      * 预约单状态
-  * 5 已创建
-  * 10 待服务
-  * 20 已开单
-  * 30 已完成
-  * 97 已取消（由外部业务取消）
-  * 98 已取消
+     * 5 已创建
+     * 10 待服务
+     * 20 已开单
+     * 30 已完成
+     * 97 已取消（由外部业务取消）
+     * 98 已取消
      */
     reservation_status?: number;
     /**
@@ -236,8 +237,8 @@ export namespace BeautyAppointmentMeiReservationList {
     num?: number;
     /**
      * 预约的资源类型：
-  * 0 没有占用资源
-  * 1占用了技师资源
+     * 0 没有占用资源
+     * 1占用了技师资源
      */
     resource_type?: number;
     /**
@@ -258,7 +259,7 @@ export namespace BeautyAppointmentMeiReservationList {
     sku_id?: number;
     /**
      * 预约项的资源id
-  * 0 表示没有使用预约资源
+     * 0 表示没有使用预约资源
      */
     resource_id?: number;
     /**

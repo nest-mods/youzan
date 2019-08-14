@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailStocksStockoutSearch {
   /**
    * 请求参数
@@ -37,7 +38,7 @@ export namespace RetailGoodsRetailStocksStockoutSearch {
     start_time?: string;
     /**
      * 出库单类型（41, "网店销售出库",
-  * 42, "门店销售出库",  43, "其他出库-报损",44, "其他出库-领用",49, "其他出库-其他"）
+     * 42, "门店销售出库",  43, "其他出库-报损",44, "其他出库-领用",49, "其他出库-其他"）
      */
     stock_out_types?: number[];
     /**
@@ -47,7 +48,7 @@ export namespace RetailGoodsRetailStocksStockoutSearch {
   }
 
   /**
-   * 
+   *
    */
   export interface Long {
   }
@@ -98,9 +99,9 @@ export namespace RetailGoodsRetailStocksStockoutSearch {
     business_time?: Date;
     /**
      * 业务类型（STOCK_CHECK(1, "库存盘点单"),
-  *   STOCK_IN(2, "采购入库单"),
-  *   STOCK_RETURN(3, "退货入库单"),
-  *   STOCK_OUT(4, "出库单")）
+     *   STOCK_IN(2, "采购入库单"),
+     *   STOCK_RETURN(3, "退货入库单"),
+     *   STOCK_OUT(4, "出库单")）
      */
     type?: number;
     /**
@@ -121,7 +122,7 @@ export namespace RetailGoodsRetailStocksStockoutSearch {
     source_order_no?: string;
     /**
      * 单据业务类型（  SELL_ONLINE_OUT(41, "网店销售出库"),
-  *   SELL_OFFLINE_OUT(42, "门店销售出库"),）
+     *   SELL_OFFLINE_OUT(42, "门店销售出库"),）
      */
     order_biz_type?: number;
     /**

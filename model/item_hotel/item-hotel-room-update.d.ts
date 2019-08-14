@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace ItemHotelItemHotelRoomUpdate {
   /**
    * 请求参数
@@ -9,7 +10,7 @@ export namespace ItemHotelItemHotelRoomUpdate {
     item_id: number;
     /**
      * 房态详情列表，一次最多30条数据
-  * [{stock_date:"2017-10-31",status:1,price:322.01,stock_num:65}]
+     * [{stock_date:"2017-10-31",status:1,price:322.01,stock_num:65}]
      */
     room_stock: RoomStock[];
     /**
@@ -19,7 +20,7 @@ export namespace ItemHotelItemHotelRoomUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface RoomStock {
     /**

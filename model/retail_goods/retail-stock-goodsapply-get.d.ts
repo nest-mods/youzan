@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailStockGoodsapplyGet {
   /**
    * 请求参数
@@ -49,17 +50,17 @@ export namespace RetailGoodsRetailStockGoodsapplyGet {
     idempotent_no?: string;
     /**
      * 业务单据类型
-  * 1.调拨单
-  * 2.要货申请单
-  * 3.配送单
+     * 1.调拨单
+     * 2.要货申请单
+     * 3.配送单
      */
     type?: number;
     /**
      * 单据详细类型
-  * 11.库间调拨单
-  * 12.库内调拨单
-  * 21.要货申请单
-  * 31.配送单
+     * 11.库间调拨单
+     * 12.库内调拨单
+     * 21.要货申请单
+     * 31.配送单
      */
     business_type?: number;
     /**
@@ -92,9 +93,9 @@ export namespace RetailGoodsRetailStockGoodsapplyGet {
     warehouse_of_admin?: string;
     /**
      * 单据状态 
-  * 1.待审核  2:待出库  3:待入库
-  * 4.已驳回  5:已关闭  6已完成
-  * 7:出库执行中  8:入库执行中
+     * 1.待审核  2:待出库  3:待入库
+     * 4.已驳回  5:已关闭  6已完成
+     * 7:出库执行中  8:入库执行中
      */
     status?: number;
     /**

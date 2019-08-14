@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace TradeTradesSoldGet {
   /**
    * 请求参数
@@ -17,9 +18,9 @@ export namespace TradeTradesSoldGet {
     end_update?: Date;
     /**
      * 物流类型搜索
-  * 同城送订单：LOCAL_DELIVERY
-  * 自提订单：SELF_FETCH
-  * 快递配送：EXPRESS
+     * 同城送订单：LOCAL_DELIVERY
+     * 自提订单：SELF_FETCH
+     * 快递配送：EXPRESS
      */
     express_type?: string;
     /**
@@ -80,12 +81,12 @@ export namespace TradeTradesSoldGet {
     start_update?: Date;
     /**
      * 订单状态，一次只能查询一种状态
-  * 待付款：WAIT_BUYER_PAY
-  * 待发货：WAIT_SELLER_SEND_GOODS
-  * 等待买家确认：WAIT_BUYER_CONFIRM_GOODS
-  * 订单完成：TRADE_SUCCESS
-  * 订单关闭：TRADE_CLOSE
-  * 退款中：TRADE_REFUND
+     * 待付款：WAIT_BUYER_PAY
+     * 待发货：WAIT_SELLER_SEND_GOODS
+     * 等待买家确认：WAIT_BUYER_CONFIRM_GOODS
+     * 订单完成：TRADE_SUCCESS
+     * 订单关闭：TRADE_CLOSE
+     * 退款中：TRADE_REFUND
      */
     status?: string;
     /**
@@ -94,30 +95,30 @@ export namespace TradeTradesSoldGet {
     tid?: string;
     /**
      * 订单类型
-  * NORMAL：普通订单
-  * PEERPAY：代付
-  * GIFT：我要送人
-  * FX_CAIGOUDAN：分销采购单
-  * PRESENT：赠品
-  * WISH：心愿单
-  * QRCODE：二维码订单
-  * QRCODE_3RD：线下收银台订单
-  * FX_MERGED：合并付货款
-  * VERIFIED：1分钱实名认证
-  * PINJIAN：品鉴
-  * REBATE：返利
-  * FX_QUANYUANDIAN：全员开店
-  * FX_DEPOSIT：保证金
-  * PF：批发
-  * GROUP：拼团
-  * HOTEL：酒店
-  * TAKE_AWAY：外卖
-  * CATERING_OFFLINE：堂食点餐
-  * CATERING_QRCODE：外卖买单
-  * BEAUTY_APPOINTMENT：美业预约单
-  * BEAUTY_SERVICE：美业服务单
-  * KNOWLEDGE_PAY：知识付费
-  * GIFT_CARD：礼品卡
+     * NORMAL：普通订单
+     * PEERPAY：代付
+     * GIFT：我要送人
+     * FX_CAIGOUDAN：分销采购单
+     * PRESENT：赠品
+     * WISH：心愿单
+     * QRCODE：二维码订单
+     * QRCODE_3RD：线下收银台订单
+     * FX_MERGED：合并付货款
+     * VERIFIED：1分钱实名认证
+     * PINJIAN：品鉴
+     * REBATE：返利
+     * FX_QUANYUANDIAN：全员开店
+     * FX_DEPOSIT：保证金
+     * PF：批发
+     * GROUP：拼团
+     * HOTEL：酒店
+     * TAKE_AWAY：外卖
+     * CATERING_OFFLINE：堂食点餐
+     * CATERING_QRCODE：外卖买单
+     * BEAUTY_APPOINTMENT：美业预约单
+     * BEAUTY_SERVICE：美业服务单
+     * KNOWLEDGE_PAY：知识付费
+     * GIFT_CARD：礼品卡
      */
     type?: string;
   }
@@ -194,7 +195,7 @@ export namespace TradeTradesSoldGet {
     status?: string;
     /**
      * 主订单类型
-  * 0:普通订单; 1:送礼订单; 2:代付; 3:分销采购单; 4:赠品; 5:心愿单; 6:二维码订单; 7:合并付货款; 8:1分钱实名认证; 9:品鉴; 10:拼团; 15:返利; 35:酒店; 40:外卖; 41:堂食点餐; 46:外卖买单; 51:全员开店; 61:线下收银台订单; 71:美业预约单; 72:美业服务单; 75:知识付费; 81:礼品卡; 100:批发
+     * 0:普通订单; 1:送礼订单; 2:代付; 3:分销采购单; 4:赠品; 5:心愿单; 6:二维码订单; 7:合并付货款; 8:1分钱实名认证; 9:品鉴; 10:拼团; 15:返利; 35:酒店; 40:外卖; 41:堂食点餐; 46:外卖买单; 51:全员开店; 61:线下收银台订单; 71:美业预约单; 72:美业服务单; 75:知识付费; 81:礼品卡; 100:批发
      */
     type?: number;
     /**
@@ -211,17 +212,17 @@ export namespace TradeTradesSoldGet {
     pay_type?: number;
     /**
      * 店铺类型
-  * 0:微商城; 1:微小店; 2:爱学贷微商城; 3:批发店铺; 4:批发商城; 5:外卖; 6:美业; 7:超级门店; 8:收银; 9:收银加微商城; 10:零售总部; 99:有赞开放平台平台型应用创建的店铺
+     * 0:微商城; 1:微小店; 2:爱学贷微商城; 3:批发店铺; 4:批发商城; 5:外卖; 6:美业; 7:超级门店; 8:收银; 9:收银加微商城; 10:零售总部; 99:有赞开放平台平台型应用创建的店铺
      */
     team_type?: number;
     /**
      * 关闭类型
-  * 0:未关闭; 1:过期关闭; 2:标记退款; 3:订单取消; 4:买家取消; 5:卖家取消; 6:部分退款; 10:无法联系上买家; 11:买家误拍或重拍了; 12:买家无诚意完成交易; 13:已通过银行线下汇款; 14:已通过同城见面交易; 15:已通过货到付款交易; 16:已通过网上银行直接汇款; 17:已经缺货无法交易
+     * 0:未关闭; 1:过期关闭; 2:标记退款; 3:订单取消; 4:买家取消; 5:卖家取消; 6:部分退款; 10:无法联系上买家; 11:买家误拍或重拍了; 12:买家无诚意完成交易; 13:已通过银行线下汇款; 14:已通过同城见面交易; 15:已通过货到付款交易; 16:已通过网上银行直接汇款; 17:已经缺货无法交易
      */
     close_type?: number;
     /**
      * 物流类型
-  * 0:快递发货; 1:到店自提; 2:同城配送; 9:无需发货（虚拟商品订单）
+     * 0:快递发货; 1:到店自提; 2:同城配送; 9:无需发货（虚拟商品订单）
      */
     express_type?: number;
     /**
@@ -452,6 +453,10 @@ export namespace TradeTradesSoldGet {
      * 分销单内部支付流水号
      */
     fx_inner_transaction_no?: string;
+    /**
+     * 导购信息
+     */
+    daogou?: string;
   }
 
   /**
@@ -468,22 +473,22 @@ export namespace TradeTradesSoldGet {
     source?: StructurizationTradeSource;
     /**
      * 订单标记
-  * wx_apps:微信小程序买家版
-  * wx_shop:微信小程序商家版
-  * wx_wm:微信小程序外卖
-  * wap_wm:移动端外卖
-  * super_store:超级门店
-  * weapp_spotlight:新微信小程序买家版
-  * wx_meiye:美业小程序
-  * wx_apps_maidan:小程序餐饮买单
-  * wx_apps_diancan:小程序堂食
-  * weapp_youzan:有赞小程序
-  * retail_free_buy:零售自由购
-  * weapp_owl:知识付费小程序
-  * app_spotlight:有赞精选app
-  * retail_scan_buy:零售扫码购
-  * weapp_plugin:小程序插件
-  * 除以上之外为其他
+     * wx_apps:微信小程序买家版
+     * wx_shop:微信小程序商家版
+     * wx_wm:微信小程序外卖
+     * wap_wm:移动端外卖
+     * super_store:超级门店
+     * weapp_spotlight:新微信小程序买家版
+     * wx_meiye:美业小程序
+     * wx_apps_maidan:小程序餐饮买单
+     * wx_apps_diancan:小程序堂食
+     * weapp_youzan:有赞小程序
+     * retail_free_buy:零售自由购
+     * weapp_owl:知识付费小程序
+     * app_spotlight:有赞精选app
+     * retail_scan_buy:零售扫码购
+     * weapp_plugin:小程序插件
+     * 除以上之外为其他
      */
     order_mark?: string;
     /**
@@ -502,12 +507,12 @@ export namespace TradeTradesSoldGet {
   export interface StructurizationTradeSource {
     /**
      * 平台
-  * wx:微信; merchant_3rd:商家自有app; buyer_v:买家版; browser:系统浏览器; alipay:支付宝;qq:腾讯QQ; wb:微博; other:其他
+     * wx:微信; merchant_3rd:商家自有app; buyer_v:买家版; browser:系统浏览器; alipay:支付宝;qq:腾讯QQ; wb:微博; other:其他
      */
     platform?: string;
     /**
      * 微信平台细分
-  * wx_gzh:微信公众号; yzdh:有赞大号; merchant_xcx:商家小程序; yzdh_xcx:有赞大号小程序; direct_buy:直接购买
+     * wx_gzh:微信公众号; yzdh:有赞大号; merchant_xcx:商家小程序; yzdh_xcx:有赞大号小程序; direct_buy:直接购买
      */
     wx_entrance?: string;
   }
@@ -526,7 +531,7 @@ export namespace TradeTradesSoldGet {
     buyer_phone?: string;
     /**
      * 粉丝类型
-  * 1:自有粉丝; 9:代销粉丝
+     * 1:自有粉丝; 9:代销粉丝
      */
     fans_type?: number;
     /**
@@ -557,7 +562,7 @@ export namespace TradeTradesSoldGet {
     post_fee?: string;
     /**
      * 最终支付价格
-  * payment=orders.payment的总和
+     * payment=orders.payment的总和
      */
     payment?: string;
     /**
@@ -656,12 +661,12 @@ export namespace TradeTradesSoldGet {
     delivery_address?: string;
     /**
      * 字段为json格式，需要开发者自行解析
-  * lng、lon（经纬度）；
-  * checkOutTime（酒店退房时间）；
-  * recipients（入住人）；
-  * checkInTime（酒店入住时间）；
-  * idCardNumber（海淘身份证信息）；
-  * areaCode（邮政编码）
+     * lng、lon（经纬度）；
+     * checkOutTime（酒店退房时间）；
+     * recipients（入住人）；
+     * checkInTime（酒店入住时间）；
+     * idCardNumber（海淘身份证信息）；
+     * areaCode（邮政编码）
      */
     address_extra?: string;
     /**
@@ -674,12 +679,12 @@ export namespace TradeTradesSoldGet {
     self_fetch_info?: string;
     /**
      * 同城送预计送达时间-开始时间
-  * 非同城送以及没有开启定时达的订单不返回
+     * 非同城送以及没有开启定时达的订单不返回
      */
     delivery_start_time?: Date;
     /**
      * 同城送预计送达时间-结束时间
-  * 非同城送以及没有开启定时达的订单不返回
+     * 非同城送以及没有开启定时达的订单不返回
      */
     delivery_end_time?: Date;
   }
@@ -694,7 +699,7 @@ export namespace TradeTradesSoldGet {
     oid?: string;
     /**
      * 订单类型
-  * 0:普通类型商品; 1:拍卖商品; 5:餐饮商品; 10:分销商品; 20:会员卡商品; 21:礼品卡商品; 23:有赞会议商品; 24:周期购; 30:收银台商品; 31:知识付费商品; 35:酒店商品; 40:普通服务类商品; 182:普通虚拟商品; 183:电子卡券商品; 201:外部会员卡商品; 202:外部直接收款商品; 203:外部普通商品; 205:mock不存在商品; 206:小程序二维码
+     * 0:普通类型商品; 1:拍卖商品; 5:餐饮商品; 10:分销商品; 20:会员卡商品; 21:礼品卡商品; 23:有赞会议商品; 24:周期购; 30:收银台商品; 31:知识付费商品; 35:酒店商品; 40:普通服务类商品; 182:普通虚拟商品; 183:电子卡券商品; 201:外部会员卡商品; 202:外部直接收款商品; 203:外部普通商品; 205:mock不存在商品; 206:小程序二维码
      */
     item_type?: number;
     /**
@@ -801,6 +806,34 @@ export namespace TradeTradesSoldGet {
      * 分销单实付金额，单位元
      */
     fenxiao_payment?: string;
+    /**
+     * 税费
+     */
+    tax_total?: string;
+    /**
+     * 运杂费
+     */
+    freight?: string;
+    /**
+     * 非现金抵扣金额
+     */
+    discount?: string;
+    /**
+     * 分销税费
+     */
+    fenxiao_tax_total?: string;
+    /**
+     * 分销运杂费
+     */
+    fenxiao_freight?: string;
+    /**
+     * 分销非现金抵扣金额
+     */
+    fenxiao_discount?: string;
+    /**
+     * 分销商品折后价
+     */
+    fenxiao_discount_price?: string;
   }
 
   /**

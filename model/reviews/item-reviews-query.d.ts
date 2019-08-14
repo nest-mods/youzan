@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace ReviewsItemReviewsQuery {
   /**
    * 请求参数
@@ -108,13 +109,13 @@ export namespace ReviewsItemReviewsQuery {
      */
     message?: string;
     /**
-     * 
+     *
      */
     data?: ItemReviewsModelExtListWithPaginatorVOPaginator;
   }
 
   /**
-   * 
+   *
    */
   export interface ItemReviewsModelExtListWithPaginatorVOPaginator {
     /**
@@ -130,13 +131,13 @@ export namespace ReviewsItemReviewsQuery {
      */
     totalCount?: number;
     /**
-     * 
+     *
      */
     items?: ItemReviewsModel[];
   }
 
   /**
-   * 
+   *
    */
   export interface ItemReviewsModel {
     /**

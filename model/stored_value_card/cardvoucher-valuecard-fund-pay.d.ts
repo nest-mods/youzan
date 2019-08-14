@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace StoredValueCardCardvoucherValuecardFundPay {
   /**
    * 请求参数
@@ -13,8 +14,8 @@ export namespace StoredValueCardCardvoucherValuecardFundPay {
     buyer_id?: number;
     /**
      * 用于支付的卡号列表，目前仅支持一张卡。
-  * 可通过以下接口获取用户可用储值卡列表，以及卡内余额
-  * youzan.cardvoucher.valuecard.info.bysup.query
+     * 可通过以下接口获取用户可用储值卡列表，以及卡内余额
+     * youzan.cardvoucher.valuecard.info.bysup.query
      */
     card_nos: string[];
     /**
@@ -40,7 +41,7 @@ export namespace StoredValueCardCardvoucherValuecardFundPay {
   }
 
   /**
-   * 
+   *
    */
   export interface ListString {
   }
@@ -63,11 +64,11 @@ export namespace StoredValueCardCardvoucherValuecardFundPay {
     msg?: string;
     /**
      * 结果码
-  * 200：成功、支付中
-  * 1001：支付失败
-  * 1002：支付失败，未订阅储值插件
-  * 1003：支付失败，卡号不存在
-  * 1004：支付失败，余额不足
+     * 200：成功、支付中
+     * 1001：支付失败
+     * 1002：支付失败，未订阅储值插件
+     * 1003：支付失败，卡号不存在
+     * 1004：支付失败，余额不足
      */
     code?: string;
     /**

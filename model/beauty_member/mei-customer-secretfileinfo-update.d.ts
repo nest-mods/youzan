@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyMemberMeiCustomerSecretfileinfoUpdate {
   /**
    * 请求参数
@@ -22,7 +23,7 @@ export namespace BeautyMemberMeiCustomerSecretfileinfoUpdate {
   }
 
   /**
-   * 
+   *
    */
   export interface MeiMemberFileInfo {
     /**
@@ -34,13 +35,13 @@ export namespace BeautyMemberMeiCustomerSecretfileinfoUpdate {
      */
     value?: string;
     /**
-     * 
+     *
      */
     value_list?: MeiMemberFileInfoItem[];
   }
 
   /**
-   * 
+   *
    */
   export interface MeiMemberFileInfoItem {
     /**

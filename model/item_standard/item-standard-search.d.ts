@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace ItemStandardItemStandardSearch {
   /**
    * 请求参数
@@ -45,7 +46,7 @@ export namespace ItemStandardItemStandardSearch {
     price?: number;
     /**
      * 图片，格式为JSON，如下
-  * [{"width":320,"id":"20177","url":"http://img.yzcdn.cn/upload_files/2017/07/11/FjM2RwUUXEvcEr6lEyyeH9E_C8rZ.jpg","height":320},{"width":790,"id":"20178","url":"http://img.yzcdn.cn/upload_files/2017/07/11/FlkOmdespJXZg70D40LDODCw51Um.jpg","height":955},{"width":790,"id":"20179","url":"ht
+     * [{"width":320,"id":"20177","url":"http://img.yzcdn.cn/upload_files/2017/07/11/FjM2RwUUXEvcEr6lEyyeH9E_C8rZ.jpg","height":320},{"width":790,"id":"20178","url":"http://img.yzcdn.cn/upload_files/2017/07/11/FlkOmdespJXZg70D40LDODCw51Um.jpg","height":955},{"width":790,"id":"20179","url":"ht
      */
     imgs?: string;
     /**

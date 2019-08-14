@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace BeautyStockMeiStockCreate {
   /**
    * 请求参数
@@ -34,51 +35,51 @@ export namespace BeautyStockMeiStockCreate {
   }
 
   /**
-   * 
+   *
    */
   export interface MeiCreateInventoryIoBillDetailDTO {
     /**
-     * 
+     *
      */
     before_negative_quantity?: number;
     /**
-     * 
+     *
      */
     before_physical_quantity?: number;
     /**
-     * 
+     *
      */
     image_url?: string;
     /**
-     * 
+     *
      */
     input_price?: number;
     /**
-     * 
+     *
      */
     input_total_pay?: number;
     /**
-     * 
+     *
      */
     io_quantity?: number;
     /**
-     * 
+     *
      */
     item_id?: number;
     /**
-     * 
+     *
      */
     item_title?: string;
     /**
-     * 
+     *
      */
     sku_code?: string;
     /**
-     * 
+     *
      */
     sku_id?: number;
     /**
-     * 
+     *
      */
     sku_name?: string;
   }

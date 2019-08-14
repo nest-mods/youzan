@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace RetailGoodsRetailStockStockoutGet {
   /**
    * 请求参数
@@ -45,9 +46,9 @@ export namespace RetailGoodsRetailStockStockoutGet {
     business_time?: Date;
     /**
      * 业务类型（STOCK_CHECK(1, "库存盘点单"),
-  *   STOCK_IN(2, "采购入库单"),
-  *   STOCK_RETURN(3, "退货入库单"),
-  *   STOCK_OUT(4, "出库单")）
+     *   STOCK_IN(2, "采购入库单"),
+     *   STOCK_RETURN(3, "退货入库单"),
+     *   STOCK_OUT(4, "出库单")）
      */
     type?: number;
     /**
@@ -68,7 +69,7 @@ export namespace RetailGoodsRetailStockStockoutGet {
     source_order_no?: string;
     /**
      * 单据业务类型（  SELL_ONLINE_OUT(41, "网店销售出库"),
-  *   SELL_OFFLINE_OUT(42, "门店销售出库"),）
+     *   SELL_OFFLINE_OUT(42, "门店销售出库"),）
      */
     order_biz_type?: number;
     /**

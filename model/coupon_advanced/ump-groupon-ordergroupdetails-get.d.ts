@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace CouponAdvancedUmpGrouponOrdergroupdetailsGet {
   /**
    * 请求参数
@@ -10,7 +11,7 @@ export namespace CouponAdvancedUmpGrouponOrdergroupdetailsGet {
   }
 
   /**
-   * 
+   *
    */
   export interface ListString {
   }

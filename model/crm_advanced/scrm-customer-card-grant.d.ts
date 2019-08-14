@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length variable-name
 export namespace CrmAdvancedScrmCustomerCardGrant {
   /**
    * 请求参数
@@ -9,7 +10,7 @@ export namespace CrmAdvancedScrmCustomerCardGrant {
     card_alias: string;
     /**
      * 粉丝ID，与 fans_type 同时出现，如果没有写0
-  * mobile/fans_id/open_user_id 三选一传入
+     * mobile/fans_id/open_user_id 三选一传入
      */
     fans_id?: number;
     /**
@@ -18,12 +19,12 @@ export namespace CrmAdvancedScrmCustomerCardGrant {
     fans_type?: number;
     /**
      * 手机号，如果没有则传空字符串
-  * mobile/fans_id/open_user_id 三选一传入
+     * mobile/fans_id/open_user_id 三选一传入
      */
     mobile?: string;
     /**
      * 三方用户ID，如果没有则传空字符串
-  * mobile/fans_id/open_user_id 三选一传入
+     * mobile/fans_id/open_user_id 三选一传入
      */
     open_user_id?: string;
   }
